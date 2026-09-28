@@ -7,7 +7,13 @@ if os.path.exists('.env'):
     load_dotenv()
 
 class Config:
-    SECRET_KEY = os.environ.get('SECRET_KEY') or 'dev-secret-key-please-change'
+    IS_VERCEL = bool(os.environ.get('VERCEL'))
+    SECRET_KEY = os.environ.get('SECRET_KEY')
+
+    if IS_VERCEL and not SECRET_KEY:
+        raise RuntimeError('SECRET_KEY must be configured for Vercel deployments')
+    if not SECRET_KEY:
+        SECRET_KEY = 'dev-secret-key-please-change'
     
     # Nile Database Configuration
     # Priority order: NILEDB_URL > POSTGRES_URL > DATABASE_URL > SQLite fallback
@@ -23,6 +29,10 @@ class Config:
     if database_url:
         SQLALCHEMY_DATABASE_URI = database_url
         print(f"Using Nile/PostgreSQL database: {database_url.split('@')[1] if '@' in database_url else 'configured'}")
+    elif IS_VERCEL:
+        raise RuntimeError(
+            'DATABASE_URL, POSTGRES_URL, or NILEDB_URL must be configured on Vercel'
+        )
     else:
         # Fallback to SQLite for local development
         SQLALCHEMY_DATABASE_URI = 'sqlite:///brandcartel.db'
@@ -41,7 +51,7 @@ class Config:
     MAX_CONTENT_LENGTH = 16 * 1024 * 1024  # 16MB max file size
     
     # For Vercel, use /tmp directory for file uploads
-    if os.environ.get('VERCEL_ENV') == 'production':
+    if IS_VERCEL:
         UPLOAD_FOLDER = '/tmp/uploads'
     else:
         UPLOAD_FOLDER = 'static/uploads'

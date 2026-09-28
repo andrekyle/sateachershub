@@ -54,6 +54,27 @@ python app.py
 
 The application will be available at `http://localhost:5004`
 
+### Vercel deployment
+
+Configure `SECRET_KEY` and one of `DATABASE_URL`, `POSTGRES_URL`, or
+`NILEDB_URL` in the Vercel project settings. The application deliberately
+refuses to use SQLite or a development secret on Vercel.
+
+Initialize the production schema once, from a trusted machine with the same
+database environment variable configured:
+
+```bash
+ADMIN_EMAIL=you@example.com \
+ADMIN_PASSWORD='use-a-unique-password-of-at-least-12-characters' \
+python init_production_db.py
+```
+
+This command creates or updates the schema without creating the local demo
+accounts. `ADMIN_EMAIL` and `ADMIN_PASSWORD` are optional, but when supplied
+they securely create or update the first administrator. Do not commit these
+values. Files written to `/tmp` on Vercel are temporary; configure external
+object storage before relying on user uploads in production.
+
 ### Default Admin Login
 - **Email**: admin@brandcartel.com
 - **Password**: admin123

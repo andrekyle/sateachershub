@@ -39,6 +39,7 @@ data/APP_USERS.csv
 data/APP_GENERATED_PAPERS.csv
 data/APP_TEACHER_DOCUMENTS.csv
 data/APP_TEACHER_SCHEDULES.csv
+data/files/APP_USERS/
 
 # Caches
 .webassets-cache

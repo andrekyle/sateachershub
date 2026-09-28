@@ -26,6 +26,14 @@ __pycache__/
 server.log
 server_output.log
 cookies.txt
+*.log
+
+# Local and generated runtime records
+data/APP_USERS.csv
+data/APP_GENERATED_PAPERS.csv
+data/APP_TEACHER_DOCUMENTS.csv
+data/APP_TEACHER_SCHEDULES.csv
+data/files/APP_USERS/
 
 # OS
 .DS_Store
@@ -38,6 +46,11 @@ Thumbs.db
 # IDE
 .vscode/
 .idea/
+
+# Development audits and generated previews
+verification/
+_mj23p1_audit/
+__tmp_mg/
 
 # Build
 build/

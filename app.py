@@ -10731,7 +10731,7 @@ def seed_data():
             db.session.add(Grade(**gd))
     db.session.commit()
 
-def init_db():
+def init_db(seed_demo_users=True):
     with app.app_context():
         db.create_all()
         # Lightweight in-place migration: add columns introduced after the
@@ -10988,16 +10988,17 @@ def init_db():
         except Exception as _bf_err:
             db.session.rollback()
             print(f"Subject backfill skipped: {_bf_err}")
-        admin = User.query.filter_by(username='admin').first()
-        if not admin and not User.query.filter_by(email='admin@catcaps.edu.za').first():
-            admin = User(username='admin', email='admin@catcaps.edu.za', first_name='Admin', last_name='User', is_admin=True)
-            admin.set_password('admin123'); db.session.add(admin); db.session.commit()
-            print('Admin created (admin / admin123)')
-        student = User.query.filter_by(username='student').first()
-        if not student and not User.query.filter_by(email='student@catcaps.edu.za').first():
-            student = User(username='student', email='student@catcaps.edu.za', first_name='Test', last_name='Student', grade=12)
-            student.set_password('student123'); db.session.add(student); db.session.commit()
-            print('Student created (student / student123)')
+        if seed_demo_users:
+            admin = User.query.filter_by(username='admin').first()
+            if not admin and not User.query.filter_by(email='admin@catcaps.edu.za').first():
+                admin = User(username='admin', email='admin@catcaps.edu.za', first_name='Admin', last_name='User', is_admin=True)
+                admin.set_password('admin123'); db.session.add(admin); db.session.commit()
+                print('Admin created (admin / admin123)')
+            student = User.query.filter_by(username='student').first()
+            if not student and not User.query.filter_by(email='student@catcaps.edu.za').first():
+                student = User(username='student', email='student@catcaps.edu.za', first_name='Test', last_name='Student', grade=12)
+                student.set_password('student123'); db.session.add(student); db.session.commit()
+                print('Student created (student / student123)')
         seed_data()
         print('Database initialized successfully')
 
