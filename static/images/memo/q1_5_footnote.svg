@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 64" font-family="Calibri, Arial, sans-serif" font-size="11">
+  <rect x="0.5" y="0.5" width="559" height="63" fill="#fff" stroke="#222" stroke-width="0.8"/>
+  <!-- short separator line above footnotes -->
+  <line x1="14" y1="14" x2="120" y2="14" stroke="#222" stroke-width="0.8"/>
+  <!-- footnote 1 -->
+  <text x="14" y="36"><tspan font-size="8" baseline-shift="super">1</tspan> Zoo School</text>
+  <!-- footnote 2 (double-dagger style ‡) -->
+  <text x="220" y="36"><tspan font-size="8" baseline-shift="super">‡</tspan> Be Mad Club</text>
+  <!-- footnote 3 -->
+  <text x="400" y="36"><tspan font-size="8" baseline-shift="super">‡‡</tspan> Environmental Projects</text>
+</svg>

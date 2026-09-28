@@ -1,0 +1,430 @@
+
+
+===== PDF PAGE 1 =====
+NATIONAL
+SENIOR CE RTIFICATE
+GRADE 12
+COMPUTER APPLICAT IONS TECHNOLOGY P2
+NOVEMBER 2023
+MARKS: 150
+TIME: 3 hours
+This question paper consists of 15 pages.
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 2 =====
+Computer Applications Technology/P2 2 DBE/November 2023
+NSC
+INSTRUCTIONS AND INFORMATION
+1. This question paper consists of:
+SECTION A (25)
+SECTION B (75)
+SECTION C (50)
+2. Answer ALL the questions.
+3. Number the answers correctly according to the numbering system used in this
+question paper.
+4. Start EACH question on a NEW page.
+5. Do NOT write in the right-hand margin of the ANSWER BOOK.
+6. Leave a line after EACH subquestion.
+7. Generally, one mark is allocated per fact; therefore, a 2-mark question would
+require TWO facts, etc.
+8. Read the questions carefully. DO NOT give more answers than the question
+requires as it will NOT be marked.
+9. All answers MUST be related to Computer Applications Technology.
+10. Unless otherwise specified, answers such as 'cheaper', 'slower'/'faster', etc.
+will NOT be accepted.
+11. Do NOT use brand names in your answers, unless specifically required.
+12. Write neatly and legibly.
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 3 =====
+Computer Applications Technology/P2 3 DBE/November 2023
+NSC
+SECTION A
+QUESTION 1: MULTIPLE-CHOICE QUESTIONS
+Various options are given as possible answers to the following questions. Choose the
+answer and write only the letter (A–D) next to the question numbers (1.1 to 1.10) in the
+ANSWER BOOK, e.g. 1.11 D.
+1.1 Which ONE of the following can be considered a strong password?
+A qwerty1234
+B Sunshine
+C Spr!ng+w@t3r
+D Password (1)
+1.2 You need to backup an entire hard drive. Which of the following devices is
+best suited for this purpose?
+A Portable hard drive
+B Flash disk
+C DVD
+D Cloud storage (1)
+1.3 A … component is unlikely to be found in a new computer.
+A motherboard
+B solid state drive
+C processor
+D DVD-writer (1)
+1.4 A … is NOT an example of a peripheral.
+A printer
+B motherboard
+C keyboard
+D monitor (1)
+1.5 The URL of a website refers to …
+A a way for users to identify a website on the internet.
+B the relative ranking of the website by a search engine.
+C the password needed to access the website.
+D the e-mail address of the webmaster of the website. (1)
+1.6 If you think the web page you are viewing is outdated (old), you can …
+A change to a different ISP.
+B update your antivirus software.
+C change to a 4G connection.
+D refresh the page. (1)
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 4 =====
+Computer Applications Technology/P2 4 DBE/November 2023
+NSC
+1.7 Which upgrade will most likely improve the performance of a PC?
+A Adding more memory (RAM)
+B Increasing the refresh rate of the monitor
+C Adding a second hard drive
+D Installing a video capture card (1)
+1.8 … refers to the use of resource material without acknowledgement.
+A Data theft
+B Plagiarism
+C Identity theft
+D Data cloning (1)
+1.9 Which ONE of the following should NOT be used as a data source?
+A A spreadsheet worksheet
+B A database report
+C A word processing document
+D A Notepad++ text file (1)
+1.10 For which ONE of the following fields in a database will you most likely use an
+input mask?
+A The cellphone number of a client
+B The surname of a client
+C The number of items ordered by the client
+D The web address of a client's company (1)
+[10]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 5 =====
+Computer Applications Technology/P2 5 DBE/November 2023
+NSC
+QUESTION 2: MATCHING ITEMS
+Choose a term/concept from COLUMN B that matches the description in COLUMN A.
+Write only the letter (A–T) next to the question numbers (2.1 to 2.10) in the
+ANSWER BOOK, e.g. 2.11 U.
+COLUMN A COLUMN B
+2.1 High-speed internet connection, which A switch
+is referred to as 'always on'
+B web page
+2.2 A collection of instructions that
+enables a computer to perform C broadband
+specific tasks
+D fraud
+2.3 Used to connect multiple devices
+within a LAN E AI
+2.4 A preventative action to protect your F firewall
+work from piracy
+G VPN
+2.5 Used to encrypt and secure your
+internet traffic H software
+2.6 Machines that can perform tasks I bandwidth
+(autonomously) that would normally
+require human action J patch
+2.7 Setting the space between the content K cell spacing
+of a cell and its border in an HTML
+table L blockchain
+2.8 Used to fix a specific programming M AR
+problem in software
+N copyright
+2.9 The electronic record of a person's
+online activity O digital footprint
+2.10 A single HTML file on the internet P website
+Q Bluetooth
+R service pack
+S cell padding
+T hub
+(10 x 1) [10]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 6 =====
+Computer Applications Technology/P2 6 DBE/November 2023
+NSC
+QUESTION 3: TRUE/FALSE ITEMS
+Indicate whether the following statements are TRUE or FALSE. Write 'true' or 'false'
+next to the question numbers (3.1 to 3.5) in the ANSWER BOOK. If the statement is
+true, write 'TRUE'. If the statement is false, write 'FALSE' and change the underlined
+word(s) to make the statement TRUE. (Do NOT simply use the word 'NOT' to change
+the statement.)
+NO mark will be awarded if FALSE is written without a correct answer.
+EXAMPLES:
+QUESTION ANSWER
+The initial start-up instructions are stored in the ROM. True
+An NIC has slots for hardware components, such as
+False, motherboard
+the CPU.
+3.1 A hub allows a computer to send and receive data via a telephone line. (1)
+3.2 ISP is a company that provides a service, such as web page hosting. (1)
+3.3 The data label is a visual indicator on a graph of related sets of values in an
+Excel worksheet/spreadsheet. (1)
+3.4 Green computing is the study of the impact of technology on users. (1)
+3.5 In word processing, auto numbering can also start when you type a number
+with a full stop, then a space, followed by text. (1)
+[5]
+TOTAL SECTION A: 25
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 7 =====
+Computer Applications Technology/P2 7 DBE/November 2023
+NSC
+SECTION B
+QUESTION 4: SYSTEMS TECHNOLOGIES
+4.1 Give ONE example of a device that can be classified as an input device and
+output device. (1)
+4.2 Describe TWO ways in which communication in an information cycle takes
+place. (2)
+4.3 Data and information are crucial elements in an ICT system.
+4.3.1 Describe what is meant by data and give an example. (3)
+4.3.2 Describe TWO processes that will transform data into information. (2)
+4.4 Describe TWO ways how you could determine if your computer has been
+infected by malware. (2)
+4.5 State TWO ways in which spooling can be utilised in a network printer. (2)
+4.6 Give TWO disadvantages of frequently defragmenting a hard drive. (2)
+4.7 Briefly explain the purpose of a user interface (UI) and give an example of an
+input device commonly used with a user interface. (2)
+4.8 The new monitor you connected to your computing device displays a
+resolution error message.
+Where would you change the resolution to resolve/fix this error message? (1)
+4.9 Give TWO disadvantages of convergence. (2)
+4.10 Give TWO reasons why a company would choose to use grid computing. (2)
+4.11 State TWO limitations of firewalls. (2)
+4.12 Give TWO possible solutions to resolve restrictions (bottlenecks) in data flow
+that appear in local storage areas. (2)
+[25]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 8 =====
+Computer Applications Technology/P2 8 DBE/November 2023
+NSC
+QUESTION 5: INTERNET AND NETWORK TECHNOLOGIES
+5.1 Give TWO reasons why you would choose a wireless network for a home or a
+small business. (2)
+5.2 State TWO good guidelines/hints for users using video conferencing. (2)
+5.3 What is the function of an NIC? (1)
+5.4 Name any TWO technologies that form part of the Fourth Industrial
+Revolution (4IR). (2)
+5.5 Give TWO advantages of cloud computing in terms of storage. (2)
+5.6 State TWO factors to consider when installing wireless access points in a
+network. (2)
+5.7 Give TWO disadvantages of using a PAN. (2)
+5.8 Analyse the picture below and give the term and description for the process.
+(2)
+[15]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 9 =====
+Computer Applications Technology/P2 9 DBE/November 2023
+NSC
+QUESTION 6: INFORMATION MANAGEMENT
+6.1 What is the importance of report writing in the PAT? (1)
+6.2 Give TWO considerations when formulating a task definition. (2)
+6.3 A learner wants to show how the number of e-book readers have increased/
+decreased over a period of time using a chart.
+What spreadsheet feature can be used to show this on the chart? (1)
+6.4 State TWO aspects to consider when planning a questionnaire. (2)
+6.5 Evaluation of the contents of a website is essential in research.
+6.5.1 Briefly explain why evaluation is essential. (2)
+6.5.2 State TWO criteria used for evaluating websites. (2)
+[10]
+QUESTION 7: SOCIAL IMPLICATIONS
+7.1 Briefly describe the positive impact of ICT on the global community. (2)
+7.2 Name TWO common internet attacks, other than malware. (2)
+7.3 Briefly describe what data protection is AND give ONE method to protect
+data/information, excluding any physical methods. (2)
+7.4 What are the responsibilities of a network administrator to ensure network
+security? (2)
+7.5 State TWO ways how a company can prevent data loss when unscheduled
+power failures occur. (2)
+[10]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 10 =====
+Computer Applications Technology/P2 10 DBE/November 2023
+NSC
+QUESTION 8: SOLUTION DEVELOPMENT
+8.1 Discuss TWO reasons why you would use page headers and page footers in a
+document AND give an example of the type of information that can be
+included in a header or a footer. (3)
+8.2 Your friend generated a spreadsheet for stationery items sold to a customer.
+However, the total for all the stationery items displays zero as an answer.
+Study the screenshot below and give TWO reasons why the function returns a
+zero.
+(2)
+8.3 Microsoft Access provides field property settings such as validation rules to
+improve the accuracy of data capturing.
+Name TWO other additional field properties that can be used. (2)
+8.4 Name a word processing feature which will force certain text to move to the
+beginning of the next column. (1)
+8.5 Briefly explain the criteria of the following validation rule:
+<0 or >=5 (2)
+8.6 The following criteria appears for the Username field in a database query:
+Like "??an*"
+Explain the output of this query. (3)
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 11 =====
+Computer Applications Technology/P2 11 DBE/November 2023
+NSC
+8.7 Examine the piece of HTML code below, which is used to insert the image on
+the web page:
+<img src = "School.jpg" width = "120" alt = "image of school">
+What effect will the missing height attribute have on the image? (1)
+8.8 Give ONE reason why you would use the button in the image below in an
+Access database table.
+(1)
+[15]
+TOTAL SECTION B: 75
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 12 =====
+Computer Applications Technology/P2 12 DBE/November 2023
+NSC
+SECTION C
+QUESTION 9: INTEGRATED SCENARIO
+The management of the community hall decided to open a gaming room. The gaming
+room will include access to board games and video games.
+9.1 The management needs to purchase PCs for the gaming room and are
+considering PCs with the specifications below.
+COMPUTER SPECIFICATIONS
+AMD Ryzen 7 5700X 8-Core 3.4 GHz (up to 4.6 GHz)
+MSI GeForce RTX 3070 graphics card
+MSI x570 chipset AM4 ATX motherboard
+32 GB DDR4 3 600 MHz gaming memory
+1 TB Gen4 NVMe SSD
+Corsair Airflow 5000D ATX gaming chassis
+Microsoft Windows 11
+NOD32 antivirus
+Office 365
+Microsoft mouse and keyboard
+Including steering wheel/joystick
+9.1.1 What kind of computer user will most likely use a computer with
+these specifications? (1)
+9.1.2 How is the size of monitors normally measured? (1)
+9.1.3 Name TWO types of utility software that can be used on this
+computer. (2)
+9.1.4 Suggest TWO additional hardware devices that can be bought for
+this computer. (2)
+9.2 A small network needs to be created with ten computers in the gaming room.
+9.2.1 What type of cabled media will most likely be used to connect the
+computers? Motivate your answer. (2)
+9.2.2 Give ONE reason why this network would NOT require a server. (1)
+9.2.3 A printer will be added for administration purposes.
+State TWO factors that should be considered when buying a
+printer. (2)
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 13 =====
+Computer Applications Technology/P2 13 DBE/November 2023
+NSC
+9.3 The new computers must be secured and protected.
+9.3.1 Name TWO physical safeguards to protect the computers. (2)
+9.3.2 What technology can the management add to all devices/
+equipment to ensure easy tracking/monitoring of devices/
+equipment? (1)
+9.4 The secure storage area is protected by a lock which opens by scanning a
+fingerprint.
+Briefly explain what this type of security is called and give ONE disadvantage. (2)
+9.5 Virtual reality games are very popular among the community members.
+9.5.1 Briefly explain what virtual reality is. (2)
+9.5.2 Give TWO disadvantages or limitations of virtual reality. (2)
+9.6 The management of the community hall decided to host a gaming
+tournament.
+9.6.1 Special gaming chairs were bought for the tournament.
+Give ONE feature that a gaming chair should have. (1)
+9.6.2 Give TWO examples of how ICT can be used to advertise the
+tournament. (2)
+9.6.3 What Microsoft Office application is best suited to capture and
+store the individual entries for the tournament? (1)
+9.6.4 The management wants to send a standard letter to all tournament
+participants to thank them.
+What word processing feature can be used to quickly generate a
+personalised, standard thank-you letter for each participant? (1)
+[25]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 14 =====
+Computer Applications Technology/P2 14 DBE/November 2023
+NSC
+QUESTION 10: INTEGRATED SCENARIO
+Your school has decided to hold a team racing car competition. Teams must create
+their own racing cars from scratch using specific guidelines regarding the car weight.
+Teams consist of learners in the same grade. A maximum of 10 drivers per team are
+allowed.
+10.1 Study the entry form for registration below and answer the questions that
+follow:
+1. Team name _________________________
+2. Car weight____________________________________
+3. Number of drivers ______________________________
+4. Do you have a disabled team member? Yes/No
+5.
+Grade 8 9 10 11 12
+10.1.1 Suggest THREE ways in which the layout of this form can be
+improved for electronic use. (3)
+10.1.2 Write down ONE question in the form that can be improved by
+changing it to a closed-ended question. Describe how you would
+improve it. (2)
+10.2 Information from the electronic forms is sent to a spreadsheet.
+10.2.1 Name ONE online application that can be used to capture the entry
+form data. (1)
+10.2.2 Give TWO advantages of using online forms. (2)
+10.2.3 Name a spreadsheet feature that will allow you to highlight all
+racing cars that meet a certain criterion. (1)
+10.3 How can a 3D printer be used to create a distinguishing feature for each car? (1)
+10.4 During the event, the races will be streamed.
+10.4.1 Briefly explain what streaming is. (2)
+10.4.2 A camera fixed onto a drone will record the races.
+State TWO ways how data can be transferred from the drone
+camera to the computer for streaming. (2)
+10.4.3 The broadcasting computer must have a high-speed connection.
+Give an example of a high-speed connection. (1)
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 15 =====
+Computer Applications Technology/P2 15 DBE/November 2023
+NSC
+10.5 Internet speed is usually indicated in the following format:
+30/5 Mbps
+10.5.1 What does the numbers usually represent? (2)
+10.5.2 What unit of measurement is used for internet speed? (1)
+10.6 Certificates are created in a word processor using a standardised document.
+What is this standardised document called? (1)
+10.7 The racing car competition will be covered by the school newspaper.
+10.7.1 The school newspaper will be publishing photos of the event.
+What word processing feature will they use to include a visible
+description above/below the photos? (1)
+10.7.2 When pasting the table containing the results of the races, it does
+not fit across the width of the page of the word processing
+document.
+Suggest an appropriate action to resolve this problem. (1)
+10.7.3 Suggest TWO ways how the school newspaper can give
+recognition to community members who contributed photos and
+articles about the races. (2)
+10.8 According to the POPI Act, geographic information is regarded as private.
+Other than geographic metadata, give TWO examples of metadata that can
+be added to photos. (2)
+[25]
+TOTAL SECTION C: 50
+GRAND TOTAL: 150
+Copyright reserved *

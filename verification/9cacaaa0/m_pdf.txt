@@ -1,0 +1,686 @@
+
+
+===== PDF PAGE 1 =====
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+COMPUTER APPLICATIONS TECHNOLOGY P2
+2022
+MARKING GUIDELINES
+MARKS: 150
+These marking guidelines consist of 20 pages.
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 2 =====
+Computer Applications Technology/P2 2 DBE/2022
+SC/NSC – Marking Guidelines
+SUGGESTIONS AND RECOMMENDATIONS TO MARKERS
+● Revisit the questions and the marking guideline frequently during the marking session.
+● It is advisable to read (and re-read) the question frequently together with the
+candidate's response to check that they correlate, so that you are not misled by the
+candidate's statements/answers.
+● Be careful not to focus on keywords or general statements, but rather read the entire
+answer. If in doubt, read the entire answer and then the question and the answer in
+the marking guideline.
+o Ask yourself or your senior marker if the response could 'fit' into the marking
+guideline before allocating the correct marks to the candidate.
+o Accept correct answers that are expressed differently, e.g. the marking guideline
+states 'slow' and the learner responds with 'not fast'.
+● Beware of overlapping answers to a specific question. In general, ONE mark is
+awarded per fact.
+● Do not choose answers on the candidate's behalf. Where a question requires a
+candidate to LIST or NAME, mark the first number of instances required, e.g. the first
+TWO facts if the candidate presents a list of FIVE facts and only TWO facts were
+required, even if presented in paragraph format.
+● Questions requiring longer answers must be regarded as a single unit. Marks can be
+awarded if correct statements are found anywhere in the paragraph.
+SECTION A
+QUESTION 1: MULTIPLE-CHOICE QUESTION 2: MATCHING ITEMS
+1.1 A  1 2.1 P  1
+1.2 C
+
+1 2.2 R  1
+1.3 A  1 2.3 H  1
+1.4 C  1 2.4 K  1
+1.5 D
+
+1 2.5 B  1
+1.6 B  1 2.6 F  1
+1.7 D
+
+1 2.7 D  1
+1.8 A  1 2.8 A  1
+1.9 C  1 2.9 E  1
+1.10 B
+
+1 2.10 J  1
+Total: [10] Total: [10]
+Copyright reserved Please turn over*
+
+
+===== PDF PAGE 3 =====
+Computer Applications Technology/P2 3 DBE/2022
+SC/NSC – Marking Guidelines
+QUESTION 3: TRUE/FALSE ITEMS
+(Note to marker: In Question, 3.1, 3.4 and 3.5 candidates need to provide both the word 'False'
+and the correct term, e.g. Motherboard, in order to get the mark.)
+3.1 False, VGA/DVI  1
+3.2 True  1
+3.3 True  1
+3.4 False, Artificial Intelligence  /AI 1
+3.5 False, Big Data  1
+[5]
+TOTAL SECTION A: [25]
+Copyright reserved Please turn over*
+
+
+===== PDF PAGE 4 =====
+Computer Applications Technology/P2 4 DBE/2022
+SC/NSC – Marking Guidelines
+SECTION B
+QUESTION 4: SYSTEMS TECHNOLOGIES
+4.1 Concept of communication in the information processing cycle
+The result of processing is shared  with users/other devices 1
+connected to each other
+4.2 ONE reason why a hard disk drive is NOT preferred in a laptop
+1) HDD can be easily damaged because of moving parts
+2) Heavier than other options
+3) Uses more electricity/Depletes battery faster
+ (Any one) 1
+4.3.1 TWO criteria for selecting a printer for a SOHO
+1) Speed: Pages per minute/Productivity
+2) Budget consideration: Cost of printer/Cost of printing
+3) Print quality: Quality of printouts required/DPI
+4) Paper: Variety of paper sizes/thickness required
+5) Durability: Maximum printouts per printer life cycle
+6) Size of printer: Available physical space/multiple trays
+7) Colour: Monochrome or colour printing required
+8) Type of printer: Suitability for SOHO, e.g. Multifunction printer
+9) Connectivity: Network printer, e.g. Wireless
+10) System compatibility: Compatibility between device and printer
+ (Any two)
+(Note to marker: Do NOT accept one-word answers) 2
+4.3.2 Type of software license for a SOHO
+Type of software license  Motivation 
+Site License/Once-off license No intention of upgrading
+Software of all the computers on the
+site will be licensed
+Can be installed on several
+computers simultaneously
+Subscription license Latest features and updates are
+always available
+Multi-user license Intended for multiple users,
+irrespective of number of computers
+Multiple Activation Key (MAK) Licenses are purchased in a bundle
+which depletes as licenses are used
+GNU/Open Source license Low budget/start-up business
+(Note to marker: Motivation must match the type of license) 2
+Copyright reserved Please turn over*
+
+
+===== PDF PAGE 5 =====
+Computer Applications Technology/P2 5 DBE/2022
+SC/NSC – Marking Guidelines
+4.3.3 TWO benefits of UPS for a SOHO
+1) Backup power for limited time
+2) Safe/Automatic shutdown
+3) Allows time to save work/Prevents loss of data
+4) Protects equipment against power surges/fluctuations
+ (Any two) 2
+4.3.4 Problem related to a printer not set as the default printer
+1) Print jobs go to the wrong printer
+2) Nothing will print
+3) May print with incorrect layout formatting
+4) Less productive – will need to select a printer every time to print
+ (Any one) 1 7
+4.4 TWO disadvantages of using open source software
+1) No regular updates
+2) No official support
+3) Lack of 'Help' features
+4) Open to software vulnerabilities, e.g. hacking with malicious code
+5) Lack of proper testing of the software for bugs
+ (Any two) 2
+4.5 ONE reason for preferring a virtual keyboard over a physical
+keyboard
+1) Use less physical desk space
+2) Improves portability of the device
+3) Can customise the keyboard
+4) Surface on which virtual keyboard is projected may be easier to
+clean
+ (Any one) 1
+Copyright reserved Please turn over*
+
+
+===== PDF PAGE 6 =====
+Computer Applications Technology/P2 6 DBE/2022
+SC/NSC – Marking Guidelines
+4.6.1 TWO reasons why offline backups are important
+1) Backup files are accessible when no internet is available
+2) Faster to restore data from a local source
+3) Not reliant on a 3rd party for data security
+4) Have a backup in case of ransomware
+5) No need to pay a subscription
+ (Any two) 2
+4.6.2 Reason for NOT making a backup on the same device as the
+original work
+The backup can be destroyed/infected/lost/stolen together with the
+original work  1
+4.6.3 File extension for files that have been reduced in size
+.Zip/.Rar/.7Z, etc.  1 4
+4.7 Change made to resolution to assist a visually impaired user
+Resolution decreased  to make the display appear larger 1
+4.8 Most common use of the Task Manager
+1) Close a non-responding program/Forcefully end a task
+2) Check computer performance to identify processes causing issues
+ (Any one) 1
+4.9 TWO reasons why an accountant should not use a trial version of
+financial software
+1) Lose data when trial expires/Program becomes unusable
+2) Unable to upgrade to the full version
+3) Not all features are available/limited functionality
+4) Could result in loss of income for the business
+ (Any two) 2
+4.10 TWO ways to resolve the problem of a faulty mouse
+1) Change the mouse surface/use a mousepad
+2) Check connection/cable/Bluetooth/ports
+3) Restart/reboot the computer
+4) Change batteries/Check for battery corrosion
+5) Clean optical sensor
+6) Re-install the driver/unpair and re-pair Bluetooth mouse
+7) Check if the mouse receiver is working, e.g. wireless mouse
+dongle
+ (Any two) 2
+Copyright reserved Please turn over*
+
+
+===== PDF PAGE 7 =====
+Computer Applications Technology/P2 7 DBE/2022
+SC/NSC – Marking Guidelines
+4.11 TWO kinds of metadata information
+1) Author/Who last modified
+2) Dates/Time created/modified
+3) Geographic location
+4) File size
+5) Revision number
+6) Attributes
+7) Number of pages/words
+8) Valid descriptive data related to video or audio file
+ (Any two) 2
+4.12 Purpose of a QR code
+Quick access/link to information,  e.g. URL, videos, network
+password, text, business card, etc. 1
+[25]
+Copyright reserved Please turn over*
+
+
+===== PDF PAGE 8 =====
+Computer Applications Technology/P2 8 DBE/2022
+SC/NSC – Marking Guidelines
+QUESTION 5: INTERNET AND NETWORK TECHNOLOGIES
+5.1 Type of internet connection recommended for a school AND
+motivation
+Type of internet
+Motivation 
+connection 
+Cellular 1) High speed internet access
+(4G/LTE/5G) 2) Only option available in an area
+Wireless/WiMAX 1) High speed internet access
+1) High speed internet access
+Fibre 2) Cost effective internet access
+3) Reliable/stable
+1) High speed internet access
+Satellite
+2) Available in rural areas
+1) Cost effective internet access
+ADSL 2) Available in an area
+3) Reliable
+2
+5.2 Advantage of using https protocol over http protocol
+Https indicates that the website is secure/encrypted  1 3
+5.3 TWO ways software can be used to protect a network from
+unauthorised users
+1) Use a firewall
+2) Set up access rights/logins for authorised users (username and
+password)
+3) Use data encryption
+ (Any two) 2
+5.4 TWO reasons why a podcast is preferred over reading a
+document
+1) For visually impaired people/special needs/physical disabilities
+2) To learn pronunciation of words
+3) Some people learn better through audio means
+4) Many people multi-task when listening to a podcast, e.g. wear
+earphones while jogging
+5) User can control the listening speed, etc.
+ (Any two) 2
+5.5 TWO ways to connect more than four devices to this router
+1) Add a wireless connection/Access Point 
+2) Add a switch  2
+Copyright reserved Please turn over*
+
+
+===== PDF PAGE 9 =====
+Computer Applications Technology/P2 9 DBE/2022
+SC/NSC – Marking Guidelines
+5.6 TWO reasons why internet access is important to users
+1) Search for information
+2) E-learning
+3) Use social media
+4) Internet services, e.g. financial services, etc.
+5) Software updates for latest features
+6) Cloud computing/storage
+7) Collaboration/Communication between users
+8) Working from home
+9) Entertainment/streaming/gaming
+ (Any two) 2
+5.7 TWO advantages of using a VPN
+1) Secure connection to a network/internet/application
+2) Can virtually change your geographic location
+3) Provides privacy by masking your IP address
+4) Provide simultaneous access to multiple users and remote users
+ (Any two) 2
+5.8 TWO ways to resolve the problem when not able to connect to a
+computer network
+1) Check network cable connection
+2) Check for flashing lights on the switch/router and the ports
+3) Restart the PC/router/switch
+4) Log out, log in
+5) Check network adaptor settings
+6) Check whether network adaptor is enabled
+7) Check if the wireless network has reached the maximum
+connected devices
+8) Disable the airplane mode on the device
+9) Check power supply to all devices
+10) Check username and password
+11) Network administrator updates/creates profile
+ (Any two) 2
+[15]
+Copyright reserved Please turn over*
+
+
+===== PDF PAGE 10 =====
+Computer Applications Technology/P2 10 DBE/2022
+SC/NSC – Marking Guidelines
+QUESTION 6: INFORMATION MANAGEMENT
+6.1 Question is suitable/unsuitable for questionnaire AND reason
+Question 1 Reason
+1) Answer can be found elsewhere
+Unsuitable  2) Too open-ended for a questionnaire
+ (Any one)
+Question 2 Reason
+1) Information cannot be found in other sources
+2) Only two options possible, e.g. Yes/No
+Suitable  3) Data can be processed electronically/Closed
+question
+ (Any one) 4
+6.2.1 What makes this author trustworthy?
+The author/editor is associated/has credentials with a renowned
+university  1
+6.2.2 How to check if the given information is accurate
+1) Check/Verify other sources with similar information
+2) Ask an expert in the field
+ (Any one) 1 2
+6.3 TWO word processing features to reference a source
+1) Bibliography
+2) Citation
+3) Footnotes/Endnotes
+4) Captions
+ (Any two) 2
+6.4.1 ONE reason for using a pie chart
+1) All portions of the whole
+2) When the total of the numbers is 100%
+3) When there are only a few categories/not too many
+categories/easier to understand
+ (Any one) 1
+6.4.2 ONE reason for using a line chart
+1) Displays trends/changes over time (years, months, days)
+2) Used when the order of the categories is important
+3) Used when there are many data points
+ (Any one) 1 2
+[10]
+Copyright reserved Please turn over*
+
+
+===== PDF PAGE 11 =====
+Computer Applications Technology/P2 11 DBE/2022
+SC/NSC – Marking Guidelines
+QUESTION 7: SOCIAL IMPLICATIONS
+7.1 ONE example of an intellectual property product/(creation)
+1) Music
+2) Software
+3) Art
+4) Books
+5) Design/Industrial design
+6) Podcast etc.
+ (Any one)
+(Note to marker: Accept one specific intangible example, e.g.
+Photograph) 1
+7.2 TWO guidelines that can be found in BYOD policy
+1) Install an antivirus program
+2) Use legal/approved software
+3) Do not store sensitive/personal information
+4) School has the right to install software on your device
+5) Limitation placed on data usage
+6) Prescribe times for network connection/device usage
+7) School information should be encrypted
+8) Limitation on using social media/software/school resources
+9) Conform to required hardware specifications
+10) Ensure devices are fully functional
+11) School does not accept liability for loss or theft
+12) School reserves the right to disconnect/disable devices
+ (Any two) 2
+7.3 TWO ways to prevent computer hardware theft
+1) Install security gates and burglar bars
+2) Limit access/employ security companies/guards
+3) Install security cameras
+4) Install alarm systems
+5) Biometric security for entry into the computer lab
+6) Place devices in a strong room/safe
+7) Secure computers to the desk or floor, e.g. Kensington lock
+8) Attach a security device to computers e.g. RFID tags
+ (Any two) 2
+Copyright reserved Please turn over*
+
+
+===== PDF PAGE 12 =====
+Computer Applications Technology/P2 12 DBE/2022
+SC/NSC – Marking Guidelines
+7.4 TWO ways to protect your privacy when using a public hotspot
+1) Do not perform financial transactions
+2) Do not give out/enter personal information/Do not share data over
+network
+3) Do not login to any apps that have your sensitive information
+4) Ensure that nobody is looking at your screen/shoulder surfing
+5) Use a VPN/Incognito mode
+ (Any two) 2
+7.5 ONE reason why companies may NOT allow employees to
+telecommute
+1) Security of sensitive information
+2) Cannot easily measure their performance/productivity when
+employees are not in the office/Too many distractions at home
+3) Costly to set up work infrastructure/resources at the office and at
+the homes of employees
+4) Job description requires physical presence
+5) Eliminate professional isolation/Encourages teamwork
+ (Any one) 1
+7.6 TWO negative effects a user can experience if they overuse
+social media
+1) Lack of social interaction/Person becomes anti-social
+2) Can become addicted to social media/Neglects important work
+3) Addictive behaviour can lead to depression/Body dysmorphia
+4) Could affect the normal development of children/Could lead to low
+self-esteem
+5) High data usage may lead to financial strain
+6) More likely to become a victim of online harassment/cyberbullying,
+etc.
+ (Any two)
+(Note to marker: Do NOT accept any reference to lack of physical
+activity) 2
+[10]
+Copyright reserved Please turn over*
+
+
+===== PDF PAGE 13 =====
+Computer Applications Technology/P2 13 DBE/2022
+SC/NSC – Marking Guidelines
+QUESTION 8: SOLUTION DEVELOPMENT
+8.1 Purpose of a bookmark in a word processing document
+Quickly links/navigates to different locations in the document  1
+8.2 Prepare headings to appear in an automatic table of contents
+Apply styles to the headings  (Accept if steps are given) 1
+8.3.1 Appropriate size of the sName field
+Any size between 2 and 50  1
+8.3.2 Appropriate field for a primary key
+SA_ID  1
+8.3.3 Data type for Gender field to select appropriate option
+1) Boolean (Yes/No)
+2) Short text (Combo box/Drop-down list/Lookup wizard)
+ (Any one) 1
+8.3.4 Field property used to automatically insert data
+Default value  1 4
+8.4 Database feature to retrieve all records ending in '.com' in a query
+Use a wildcard  / *.com / Like "*.com" 1
+8.5 Spreadsheet feature to copy results without the formula
+Paste Special  /Paste values 1
+8.6.1 Spreadsheet function to return the next whole number in
+column C
+ROUNDUP  1
+8.6.2 Reason for '0' displaying in cell C6
+Circular reference  /C6 is in the formula/B6=0 1
+8.6.3 Spreadsheet function to determine the number of learners
+COUNT / COUNTA / COUNTIF 1 3
+Copyright reserved Please turn over*
+
+
+===== PDF PAGE 14 =====
+Computer Applications Technology/P2 14 DBE/2022
+SC/NSC – Marking Guidelines
+8.7 Illustrate the display of the web page
+Shopping List
+ Butter
+ Eggs
+ Flour
+20.Soap
+21.Shampoo
+22.Toothpaste
+1) 1 mark for the heading 
+2) 1 mark for the first unordered/bulleted list 
+3) 1 mark for second ordered/numbered list 
+4) 1 mark for illustration of the web page  4
+[15]
+TOTAL SECTION B: [75]
+Copyright reserved Please turn over*
+
+
+===== PDF PAGE 15 =====
+Computer Applications Technology/P2 15 DBE/2022
+SC/NSC – Marking Guidelines
+SECTION C
+QUESTION 9: INTEGRATED SCENARIO
+9.1.1 Missing computer specifications
+Computer Specifications
+(a) CPU  /Processor Celeron
+Storage device (b) SSD/HDD 
+(c) Wi-Fi (connectivity) standard  802.11
+3
+9.1.2 ONE reason why tablets are preferred for registration
+1) Portability, e.g. lighter, smaller, etc.
+2) Battery power during power outages
+ (Any one) 1
+9.1.3 Voice recognition software for registration
+Motivation for Motivation against
+1) Faster data capture 1) Background noise
+2) No need for a mouse or 2) Spelling recognition of names
+keyboard and surnames is less
+accurate/Voice recognition
+training is required
+ (Any one)  (Any one)
+2 6
+9.2 TWO reasons for using online storage for fundraising data
+1) Data can be accessed from anywhere with internet connection
+2) Easier to collaboration/share data
+3) No need to use local storage space/save space/easily scalable
+4) Interface can be easily customised
+5) Better data security in the cloud
+ (Any two) 2
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 16 =====
+Computer Applications Technology/P2 16 DBE/2022
+SC/NSC – Marking Guidelines
+9.3 ONE reason for link opening an unexpected website AND
+solution
+Reason
+1) Click-jacking
+2) Pharming
+3) Malware infection
+ (Any one)
+(Note to marker: Accept any valid explanation)
+Solution
+Install/Update anti-virus/anti-malware  2
+9.4.1 TWO spreadsheet features to minimise data capture errors
+1) Data validation
+2) Conditional formatting
+3) Combo box/Drop-down list from Developer Tab
+4) Comment giving guidance
+5) Set cells/columns to certain data types
+6) Date Picker
+7) Use Freeze Panes
+ (Any two) 2
+9.4.2 TWO methods possibly used to display values in column C
+1) VLOOKUP / LOOKUP / HLOOKUP / XLOOKUP function
+2) Import/Export data
+3) Functions over two worksheets
+ (Any two)
+(Note to marker: Accept any specific method/description) 2
+9.4.3 Formatting that can make the worksheet more user-friendly
+1) Merge cells for the heading/Wrap text
+2) Currency symbol for column D
+3) Use of colours/Shading/Cell styles
+4) Use of different fonts/font sizes/border line thicknesses, etc.
+ (Any two) 2 6
+9.5 TWO ways to use ICTs to distribute documents for the talent
+show
+1) Send electronic tickets/programmes/roster to smartphones via
+IM/SMS/MMS
+2) Use social media/school website to advertise
+3) Communicate via WhatsApp/D6 App/QR code
+4) E-mail tickets/receipts to people
+5) Download a digital programme – no printing
+ (Any two) 2
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 17 =====
+Computer Applications Technology/P2 17 DBE/2022
+SC/NSC – Marking Guidelines
+9.6 TWO advantages of using online forms for a voting system
+1) Data capture is immediate
+2) Data is available in a spreadsheet automatically
+3) Graphs are created automatically
+4) Functions and formulae can be used to determine scores/winners
+5) Can be set to allow only one vote per person
+6) Paperless/Environmentally friendly
+7) Can vote from anywhere/no queues
+ (Any two) 2
+9.7 TWO advantages of printing the trophies with a 3D printer
+1) Can be cheaper than other manufacturing methods 
+2) Trophies can be customised  2
+9.8.1 ONE possible problem using a smartphone for night-time
+photographs
+1) Faster battery depletion due to use of the flash
+2) Poorer image quality due to poor/insufficient lighting
+3) Photographs have to be taken from a shorter distance, etc.
+ (Any one) 1
+9.8.2 TWO guidelines to follow before posting pictures to social media
+1) Ask for permission before posting
+2) Do not post pictures of minors
+3) Do not post sensitive/inappropriate pictures of people,
+4) Do not post pictures for malicious purposes, etc.
+ (Any two) 2 3
+[25]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 18 =====
+Computer Applications Technology/P2 18 DBE/2022
+SC/NSC – Marking Guidelines
+QUESTION 10: INTEGRATED SCENARIO
+10.1 Reason why institution may not be able to upgrade their laptops
+1) Laptops are too old for a cost effective upgrade
+2) New parts are not compatible/Compatible parts are not available
+3) Hardware specifications do not allow for software upgrade
+4) Institution does not have budget for upgrade
+ (Any one) 1
+10.2.1 Definition of broadband
+A high-speed internet connection  with wide bandwidth  / that is
+always on 2
+10.2.2 Unit of measurement for data transmission speed
+bits  / Mb / Megabits (per second) / Mbps 1
+10.2.3 Effect of throttling on users while doing online learning
+1) Video/Audio feeds will buffer/lagging
+2) Resources may take long to download
+3) Tasks cannot be completed on time/Access to services times out
+ (Any one) 1 4
+10.3 TWO disadvantages of video conferencing
+1) Requires fast internet connection
+2) Consumes a lot of data when using video/Depletes cap quickly
+3) Lack of physical face-to-face contact
+ (Any two) 2
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 19 =====
+Computer Applications Technology/P2 19 DBE/2022
+SC/NSC – Marking Guidelines
+10.4.1 Keylogger threat to online privacy and security
+Gain access to user names and passwords  to commit fraud/identity
+theft/hacking/access to information  2
+10.4.2 TWO advantages of two-factor authentication for the user
+1) Offers more security for accounts/financial transactions
+2) Even if your password is compromised, second step prevents
+access
+3) You will be alerted to attempts to access your account
+ (Any two) 2
+10.4.3 TWO examples of web services that use two-factor authentication
+1) Banking/Financial websites
+2) Cloud storage, e.g. OneDrive
+3) SaaS, e.g. Microsoft products, Google account
+4) E-commerce websites
+5) Social media
+6) E-mail services, e.g. Yahoo, Gmail, etc.
+ (Any two)
+(Note to marker: Accept any valid specific examples) 2 6
+10.5 TWO reasons why e-mails were NOT received
+1) Inboxes are full
+2) E-mail is flagged as spam
+3) Service provider blocked the e-mail, e.g. attachment size/type
+4) Data depleted
+5) No data connection
+6) Incorrect e-mail address was used
+7) Message still in the sender’s outbox/remains unsent, etc.
+ (Any two) 2
+10.6.1 Benefit of an add-on
+Adds additional functionality  to a browser/application 1
+10.6.2 Example of add-ons
+1) PrintFriendly
+2) Ad blocker
+3) Pop-up blocker, etc.
+ (Any one)
+(Note to marker: Accept any valid example or brand name of an add-
+on) 1 2
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 20 =====
+Computer Applications Technology/P2 20 DBE/2022
+SC/NSC – Marking Guidelines
+10.7 Concept of augmented reality
+(Takes physical world and) adds/overlays objects/graphics  (on a
+digital interface) within the real world 1
+10.8 Advantages of online learning for the learner
+1) Accessible any time any place/flexible mode of learning
+2) Personalised learning – select parts of a lesson/repeat or view
+previous lessons
+3) Do not have to waste time and money travelling to an institution
+4) Safer learning environment, especially during a pandemic
+5) Access to teachers/subjects not available at your school, etc.
+ (Any two) 2
+10.9 Application that opens PDF files other than PDF reader
+Web browser 
+(Note to marker: Accept any specific example of a web browser, e.g.
+Microsoft Edge) 1
+10.10.1 Reason why the title does not display in the web browser tab
+There is no title closing tag  /Two opening title tags 1
+10.10.2 Number of columns in the first row of the web page
+1  1 2
+10.11 TWO ways to ensure that an image fully visible
+1) Specify the dimensions of the picture in the image tag
+2) Change viewing percentage on the browser
+3) Resize the original image/Stretch/Make the image smaller/bigger
+ (Any two) 2
+[25]
+TOTAL SECTION C: [50]
+GRAND TOTAL: 150
+Copyright reserved

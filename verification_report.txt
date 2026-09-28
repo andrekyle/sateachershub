@@ -1,0 +1,18 @@
+
+=== Verification summary ===
+Total items checked   : 1369
+Exact/near-match (OK) : 1369
+Mismatched            : 0
+Missing from PDF      : 0
+Unparseable subtopic  : 0
+Match rate            : 100.0%
+
+--- MISMATCHES ---
+
+
+(showing 0 of 0)
+
+--- MISSING ---
+
+
+(showing 0 of 0)

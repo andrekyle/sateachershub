@@ -1,0 +1,383 @@
+{% extends "base.html" %}
+
+{% block title %}Terms and Conditions - South African Teachers Hub{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8 max-w-4xl">
+    <div class="azure-card p-8">
+        <!-- Header -->
+        <div class="border-b border-gray-200 pb-6 mb-8">
+            <h1 class="text-4xl font-light text-black mb-3">Terms and Conditions</h1>
+            <p class="text-sm text-gray-600 mb-2">
+                <i class="far fa-calendar mr-2"></i>Last updated: {{ current_date }}
+            </p>
+            <p class="text-sm text-gray-500">
+                Please read these terms carefully before using our services.
+            </p>
+        </div>
+
+        <!-- Important Notice -->
+        <div class="bg-blue-50 border-l-4 border-blue-500 p-4 mb-8">
+            <div class="flex">
+                <div class="flex-shrink-0">
+                    <i class="fas fa-info-circle text-blue-500 text-xl"></i>
+                </div>
+                <div class="ml-3">
+                    <p class="text-sm text-blue-600 font-light">
+                        <strong class="font-medium">Important:</strong> By using South African Teachers Hub, you agree to these Terms and Conditions. 
+                        If you do not agree, please do not use our services.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Table of Contents -->
+        <div class="bg-gray-50 p-6 rounded-lg mb-8">
+            <h2 class="text-lg font-medium text-black mb-4 flex items-center">
+                <i class="fas fa-list mr-2 text-gray-600"></i>Table of Contents
+            </h2>
+            <div class="grid md:grid-cols-2 gap-2 text-sm">
+                <a href="#introduction" class="text-blue-600 hover:text-blue-600 hover:underline">1. Introduction</a>
+                <a href="#acceptance" class="text-blue-600 hover:text-blue-600 hover:underline">2. Acceptance of Terms</a>
+                <a href="#accounts" class="text-blue-600 hover:text-blue-600 hover:underline">3. User Accounts</a>
+                <a href="#products" class="text-blue-600 hover:text-blue-600 hover:underline">4. Products and Services</a>
+                <a href="#orders" class="text-blue-600 hover:text-blue-600 hover:underline">5. Orders and Payment</a>
+                <a href="#shipping" class="text-blue-600 hover:text-blue-600 hover:underline">6. Shipping and Delivery</a>
+                <a href="#returns" class="text-blue-600 hover:text-blue-600 hover:underline">7. Returns and Refunds</a>
+                <a href="#conduct" class="text-blue-600 hover:text-blue-600 hover:underline">8. User Conduct</a>
+                <a href="#ip" class="text-blue-600 hover:text-blue-600 hover:underline">9. Intellectual Property</a>
+                <a href="#privacy" class="text-blue-600 hover:text-blue-600 hover:underline">10. Privacy</a>
+                <a href="#disclaimers" class="text-blue-600 hover:text-blue-600 hover:underline">11. Disclaimers</a>
+                <a href="#liability" class="text-blue-600 hover:text-blue-600 hover:underline">12. Limitation of Liability</a>
+                <a href="#law" class="text-blue-600 hover:text-blue-600 hover:underline">13. Governing Law</a>
+                <a href="#contact" class="text-blue-600 hover:text-blue-600 hover:underline">14. Contact Information</a>
+            </div>
+        </div>
+
+        <div class="space-y-8">
+            <!-- Introduction -->
+            <section id="introduction" class="scroll-mt-4">
+                <h2 class="text-xl font-normal text-black mb-4 flex items-center">
+                    <span class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">1</span>
+                    Introduction
+                </h2>
+                <p class="text-gray-700 font-light leading-relaxed mb-4">
+                    Welcome to South African Teachers Hub, South Africa's leading online marketplace. These Terms and Conditions ("Terms") govern your use of our website, mobile application, and services (collectively, the "Service") operated by South African Teachers Hub ("us", "we", or "our").
+                </p>
+                <p class="text-gray-700 font-light leading-relaxed">
+                    By accessing or using our Service, you agree to be bound by these Terms. If you disagree with any part of these terms, then you may not access the Service.
+                </p>
+            </section>
+
+            <!-- Acceptance of Terms -->
+            <section id="acceptance" class="scroll-mt-4">
+                <h2 class="text-xl font-normal text-black mb-4 flex items-center">
+                    <span class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">2</span>
+                    Acceptance of Terms
+                </h2>
+                <p class="text-gray-700 font-light leading-relaxed mb-4">
+                    By creating an account, making a purchase, or using any part of our Service, you acknowledge that you have read, understood, and agree to be bound by these Terms and our Privacy Policy.
+                </p>
+                <p class="text-gray-700 font-light leading-relaxed">
+                    We reserve the right to modify these Terms at any time. Changes will be effective immediately upon posting on our website. Your continued use of the Service after any changes constitutes acceptance of the new Terms.
+                </p>
+            </section>
+
+            <!-- User Accounts -->
+            <section id="accounts" class="scroll-mt-4">
+                <h2 class="text-xl font-normal text-black mb-4 flex items-center">
+                    <span class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">3</span>
+                    User Accounts
+                </h2>
+                <div class="space-y-3">
+                    <p class="text-gray-700 font-light leading-relaxed">
+                        <strong class="font-normal">3.1 Account Creation:</strong> You must create an account to access certain features of our Service. You are responsible for maintaining the confidentiality of your account credentials.
+                    </p>
+                    <p class="text-gray-700 font-light leading-relaxed">
+                        <strong class="font-normal">3.2 Account Responsibility:</strong> You are responsible for all activities that occur under your account. You must notify us immediately of any unauthorized access or use of your account.
+                    </p>
+                    <p class="text-gray-700 font-light leading-relaxed">
+                        <strong class="font-normal">3.3 Account Termination:</strong> We reserve the right to suspend or terminate your account at any time for violation of these Terms or for any other reason we deem appropriate.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Products and Services -->
+            <section id="products" class="scroll-mt-4">
+                <h2 class="text-xl font-normal text-black mb-4 flex items-center">
+                    <span class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">4</span>
+                    Products and Services
+                </h2>
+                <div class="space-y-3">
+                    <p class="text-gray-700 font-light leading-relaxed">
+                        <strong class="font-normal">4.1 Product Information:</strong> We strive to provide accurate product descriptions, prices, and availability information. However, we do not warrant that product descriptions or other content is accurate, complete, reliable, current, or error-free.
+                    </p>
+                    <p class="text-gray-700 font-light leading-relaxed">
+                        <strong class="font-normal">4.2 Pricing:</strong> All prices are displayed in South African Rand (ZAR) and include applicable taxes unless otherwise stated. We reserve the right to change prices at any time without notice.
+                    </p>
+                    <p class="text-gray-700 font-light leading-relaxed">
+                        <strong class="font-normal">4.3 Availability:</strong> Product availability is subject to change without notice. We reserve the right to limit quantities and discontinue products at any time.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Orders and Payment -->
+            <section id="orders" class="scroll-mt-4">
+                <h2 class="text-xl font-normal text-black mb-4 flex items-center">
+                    <span class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">5</span>
+                    Orders and Payment
+                </h2>
+                <div class="space-y-3">
+                    <p class="text-gray-700 font-light leading-relaxed">
+                        <strong class="font-normal">5.1 Order Acceptance:</strong> All orders are subject to acceptance by us. We may refuse or cancel any order for any reason, including but not limited to product availability, errors in product information, or suspected fraudulent activity.
+                    </p>
+                    <p class="text-gray-700 font-light leading-relaxed">
+                        <strong class="font-normal">5.2 Payment:</strong> Payment is required at the time of purchase. We accept major credit cards, debit cards, and other payment methods as displayed on our website.
+                    </p>
+                    <p class="text-gray-700 font-light leading-relaxed">
+                        <strong class="font-normal">5.3 Order Confirmation:</strong> You will receive an email confirmation after placing an order. This confirmation does not constitute acceptance of your order.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Shipping and Delivery -->
+            <section id="shipping" class="scroll-mt-4">
+                <h2 class="text-xl font-normal text-black mb-4 flex items-center">
+                    <span class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">6</span>
+                    Shipping and Delivery
+                </h2>
+                <div class="space-y-3">
+                    <p class="text-gray-700 font-light leading-relaxed">
+                        <strong class="font-normal">6.1 Delivery:</strong> We offer delivery services within South Africa. Delivery times are estimates and may vary based on location and product availability.
+                    </p>
+                    <p class="text-gray-700 font-light leading-relaxed">
+                        <strong class="font-normal">6.2 Free Delivery:</strong> Free delivery is available on orders over R500 within South Africa, subject to terms and conditions.
+                    </p>
+                    <p class="text-gray-700 font-light leading-relaxed">
+                        <strong class="font-normal">6.3 Risk of Loss:</strong> Risk of loss and title for products pass to you upon delivery to the carrier.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Returns and Refunds -->
+            <section id="returns" class="scroll-mt-4">
+                <h2 class="text-xl font-normal text-black mb-4 flex items-center">
+                    <span class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">7</span>
+                    Returns and Refunds
+                </h2>
+                <div class="space-y-3">
+                    <p class="text-gray-700 font-light leading-relaxed">
+                        <strong class="font-normal">7.1 Return Policy:</strong> You may return most items within 30 days of delivery for a full refund, provided they are in original condition and packaging.
+                    </p>
+                    <p class="text-gray-700 font-light leading-relaxed">
+                        <strong class="font-normal">7.2 Return Process:</strong> To initiate a return, contact our customer service team. Return shipping costs may apply unless the item is defective or we made an error.
+                    </p>
+                    <p class="text-gray-700 font-light leading-relaxed">
+                        <strong class="font-normal">7.3 Refund Processing:</strong> Refunds will be processed to the original payment method within 5-10 business days after we receive the returned item.
+                    </p>
+                </div>
+            </section>
+
+            <!-- User Conduct -->
+            <section id="conduct" class="scroll-mt-4">
+                <h2 class="text-xl font-normal text-black mb-4 flex items-center">
+                    <span class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">8</span>
+                    User Conduct
+                </h2>
+                <p class="text-gray-700 font-light leading-relaxed mb-4">You agree not to use the Service to:</p>
+                <ul class="list-disc list-inside space-y-2 text-gray-700 font-light ml-4">
+                    <li>Violate any applicable laws or regulations</li>
+                    <li>Infringe upon the rights of others</li>
+                    <li>Transmit any harmful, offensive, or inappropriate content</li>
+                    <li>Interfere with or disrupt the Service or servers</li>
+                    <li>Attempt to gain unauthorized access to any part of the Service</li>
+                    <li>Use the Service for any commercial purpose without our written consent</li>
+                </ul>
+            </section>
+
+            <!-- Intellectual Property -->
+            <section id="ip" class="scroll-mt-4">
+                <h2 class="text-xl font-normal text-black mb-4 flex items-center">
+                    <span class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">9</span>
+                    Intellectual Property
+                </h2>
+                <p class="text-gray-700 font-light leading-relaxed mb-4">
+                    The Service and its original content, features, and functionality are and will remain the exclusive property of South African Teachers Hub and its licensors. The Service is protected by copyright, trademark, and other laws.
+                </p>
+                <p class="text-gray-700 font-light leading-relaxed">
+                    You may not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any of the material on our Service without our prior written consent.
+                </p>
+            </section>
+
+            <!-- Privacy -->
+            <section id="privacy" class="scroll-mt-4">
+                <h2 class="text-xl font-normal text-black mb-4 flex items-center">
+                    <span class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">10</span>
+                    Privacy
+                </h2>
+                <p class="text-gray-700 font-light leading-relaxed">
+                    Your privacy is important to us. Please review our Privacy Policy, which also governs your use of the Service, to understand our practices regarding the collection and use of your personal information.
+                </p>
+            </section>
+
+            <!-- Disclaimers -->
+            <section id="disclaimers" class="scroll-mt-4">
+                <h2 class="text-xl font-normal text-black mb-4 flex items-center">
+                    <span class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">11</span>
+                    Disclaimers
+                </h2>
+                <div class="space-y-3">
+                    <p class="text-gray-700 font-light leading-relaxed">
+                        <strong class="font-normal">11.1 Service Availability:</strong> We do not guarantee that the Service will be available at all times or that it will be free from errors, viruses, or other harmful components.
+                    </p>
+                    <p class="text-gray-700 font-light leading-relaxed">
+                        <strong class="font-normal">11.2 Third-Party Links:</strong> Our Service may contain links to third-party websites or services. We are not responsible for the content, privacy policies, or practices of any third-party websites or services.
+                    </p>
+                    <p class="text-gray-700 font-light leading-relaxed">
+                        <strong class="font-normal">11.3 Warranty Disclaimer:</strong> The Service is provided on an "as is" and "as available" basis. We disclaim all warranties, express or implied, including but not limited to warranties of merchantability, fitness for a particular purpose, and non-infringement.
+                    </p>
+                </div>
+            </section>
+
+            <!-- Limitation of Liability -->
+            <section id="liability" class="scroll-mt-4">
+                <h2 class="text-xl font-normal text-black mb-4 flex items-center">
+                    <span class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">12</span>
+                    Limitation of Liability
+                </h2>
+                <p class="text-gray-700 font-light leading-relaxed">
+                    In no event shall South African Teachers Hub, its directors, employees, partners, agents, suppliers, or affiliates be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation, loss of profits, data, use, goodwill, or other intangible losses, resulting from your use of the Service.
+                </p>
+            </section>
+
+            <!-- Governing Law -->
+            <section id="law" class="scroll-mt-4">
+                <h2 class="text-xl font-normal text-black mb-4 flex items-center">
+                    <span class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">13</span>
+                    Governing Law
+                </h2>
+                <p class="text-gray-700 font-light leading-relaxed">
+                    These Terms shall be governed by and construed in accordance with the laws of South Africa, without regard to its conflict of law provisions. Any disputes arising under these Terms shall be subject to the exclusive jurisdiction of the courts of South Africa.
+                </p>
+            </section>
+
+            <!-- Contact Information -->
+            <section id="contact" class="scroll-mt-4">
+                <h2 class="text-xl font-normal text-black mb-4 flex items-center">
+                    <span class="bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm mr-3">14</span>
+                    Contact Information
+                </h2>
+                <p class="text-gray-700 font-light leading-relaxed mb-4">
+                    If you have any questions about these Terms and Conditions, please contact us:
+                </p>
+                <div class="bg-gray-50 p-4 rounded">
+                    <p class="text-gray-700 font-light"><strong class="font-normal">Email:</strong> legal@brandcartel.co.za</p>
+                    <p class="text-gray-700 font-light"><strong class="font-normal">Phone:</strong> +27 11 123 4567</p>
+                    <p class="text-gray-700 font-light"><strong class="font-normal">Address:</strong> South African Teachers Hub Head Office, 123 Commerce Street, Johannesburg, 2000, South Africa</p>
+                </div>
+            </section>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="mt-12 pt-8 border-t border-gray-200">
+            <div class="flex flex-col md:flex-row gap-4 justify-center items-center">
+                <a href="#top" class="btn-azure-primary flex items-center">
+                    <i class="fas fa-arrow-up mr-2"></i>Back to Top
+                </a>
+                <button onclick="window.print()" class="btn-azure-secondary flex items-center">
+                    <i class="fas fa-print mr-2"></i>Print Terms
+                </button>
+                <a href="{{ url_for('index') }}" class="btn-azure-secondary flex items-center">
+                    <i class="fas fa-home mr-2"></i>Return Home
+                </a>
+            </div>
+        </div>
+
+        <!-- Agreement Notice -->
+        <div class="mt-8 bg-green-50 border border-green-200 rounded-lg p-6 text-center">
+            <i class="fas fa-check-circle text-green-600 text-2xl mb-3"></i>
+            <p class="text-sm text-green-800 font-light mb-3">
+                By continuing to use South African Teachers Hub, you acknowledge that you have read and agree to these Terms and Conditions.
+            </p>
+            <p class="text-xs text-green-700">
+                Questions? <a href="{{ url_for('contact') }}" class="underline font-normal">Contact our support team</a>
+            </p>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Print styles */
+    @media print {
+        .azure-navbar, footer, .btn-azure-primary, .btn-azure-secondary, nav {
+            display: none !important;
+        }
+        .azure-card {
+            box-shadow: none !important;
+            border: none !important;
+        }
+    }
+
+    /* Smooth scroll */
+    html {
+        scroll-behavior: smooth;
+    }
+
+    /* Section hover effect */
+    section:hover {
+        background-color: rgba(249, 250, 251, 0.5);
+        border-radius: 8px;
+        padding: 1rem;
+        margin: -1rem;
+    }
+</style>
+
+<script>
+    // Smooth scroll for all internal links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+                // Highlight the section briefly
+                target.style.transition = 'background-color 0.3s';
+                target.style.backgroundColor = 'rgba(59, 130, 246, 0.1)';
+                setTimeout(() => {
+                    target.style.backgroundColor = '';
+                }, 1500);
+            }
+        });
+    });
+
+    // Add progress indicator
+    window.addEventListener('scroll', function() {
+        const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+        const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+        const scrolled = (winScroll / height) * 100;
+        
+        // Create progress bar if it doesn't exist
+        let progressBar = document.getElementById('reading-progress');
+        if (!progressBar) {
+            progressBar = document.createElement('div');
+            progressBar.id = 'reading-progress';
+            progressBar.style.cssText = 'position: fixed; top: 0; left: 0; width: 0%; height: 3px; background: linear-gradient(to right, #0078D4, #50E6FF); z-index: 9999; transition: width 0.2s;';
+            document.body.appendChild(progressBar);
+        }
+        progressBar.style.width = scrolled + '%';
+    });
+
+    // Show back to top button when scrolled
+    window.addEventListener('scroll', function() {
+        const backToTop = document.querySelector('a[href="#top"]');
+        if (window.scrollY > 300) {
+            backToTop.style.opacity = '1';
+        } else {
+            backToTop.style.opacity = '0.7';
+        }
+    });
+</script>
+{% endblock %}

@@ -1,0 +1,228 @@
+
+==== [0] marks=1 type=short_answer img='' ====
+QID=2c56b5ba-f23d-41a3-a023-ac7550471002
+"Insert the text 'eSports' in the Status property of the document."
+
+==== [1] marks=2 type=short_answer img='' ====
+QID=c0086453-e4d2-41c9-9fef-c501d573e80b
+"Change the drop cap applied to the text 'eSports' so that it is left-aligned with\n               the rest of the text and dropped at five lines."
+
+==== [2] marks=3 type=short_answer img='' ====
+QID=6d014361-becc-42bc-9238-868eca27068d
+"Modify the 'Win' style as follows:\n\n               • Change the character spacing to a scale of 150% with an expanded spacing\n                 of 2 pt.\n               • Add a preset orange glow text effect of 8 pt."
+
+==== [3] marks=3 type=short_answer img='' ====
+QID=e0853d41-d9a8-49eb-9f3b-ecc8201dd5c3
+"Find and replace all occurrences of the exact word 'games' with the 'Win Char'\n               style."
+
+==== [4] marks=3 type=short_answer img='' ====
+QID=d0b2d335-a513-4393-a469-3221088dc027
+"Find the image next to the paragraph that starts with 'How eSports\n               Competitions Work' and format the picture as follows:\n\n               • Format the picture style to a white rotated border.\n               • Change the border colour to light blue.\n               • Add an artistic Paint Strokes effect."
+
+==== [5] marks=2 type=short_answer img='' ====
+QID=d81cf83f-fad1-46b3-8a66-0dd0f52a9d4f
+"Edit the footnote on the text 'DOTA 2' as follows:\n\n               • Change the number format to a symbol:\n                   (Webdings character code: 185)\n               • Convert the footnote to an endnote."
+
+==== [6] marks=2 type=short_answer img='' ====
+QID=b2535de5-6e02-43c0-90c7-9b22e4cba5d3
+"Create a new bookmark called 'Sponsor' to replace the current bookmark\n               'Organiser'. Make sure the new bookmark still moves to the same location."
+
+==== [7] marks=3 type=short_answer img='uploads/cat_p1_mj25/q1_8_smartart.png' ====
+QID=7b51f188-a5f7-4524-82c1-d9b87df50eaf
+"Find the SmartArt below the heading 'The growth of eSports' and modify the\n               SmartArt to appear as shown in the example below. Use the text below the\n               SmartArt.\n\n               NOTE: Ignore the font size."
+
+==== [8] marks=2 type=short_answer img='' ====
+QID=8c6e6e72-4782-4b7b-9d7a-b45f6f5d2664
+'Move the SmartArt with the heading so that it always appears at the top of a\n               new page. Change the page orientation of only the last two pages to landscape.'
+
+==== [9] marks=2 type=short_answer img='' ====
+QID=30280de6-17e3-44c5-b824-700410c127ab
+'Add a footer to the document as follows:\n\n               •  Insert the built-in ViewMaster (Vertical) footer.\n               •  Change the page numbers of the last two pages to continue in the format\n                  A, B, C, ...'
+
+==== [10] marks=4 type=short_answer img='uploads/cat_p1_mj25/q1_11_table.png' ====
+QID=f16a0557-ee4f-47ce-a59a-67652c067b27
+"Find the text below the heading 'Budget for 2026' and change the text into a table to appear as shown in the example below.\n\nSave and close the 1eSports document."
+
+==== [11] marks=2 type=short_answer img='' ====
+QID=fd6ccab7-3b48-4253-bd69-02ce5186275c
+"Insert the Slice (Dark) cover page and add the title 'Statistics' in the Title control."
+
+==== [12] marks=4 type=short_answer img='' ====
+QID=7f558d03-d117-46ed-b811-7b866691caff
+"Change the layout of the text that starts with 'Viewer Demographics' and ends\n               with '… and sponsorship opportunities.' to appear in two columns with a space\n               of 1.5 cm and a line between the columns.\n\n               Make sure that the paragraph 'The relationship between …' appears at the top\n               of the second column."
+
+==== [13] marks=1 type=short_answer img='' ====
+QID=dd6e2f3d-1939-45f2-a33c-4b98458a18ee
+"Find the list below the text 'The following list …' and apply the same bullet style\n               and formatting to this list as the other lists in the document."
+
+==== [14] marks=3 type=short_answer img='uploads/cat_p1_mj25/q2_4.png' ====
+QID=af122592-78b8-4462-a265-f5e9e3237c14
+"Change the text and the image below the text 'Question/Vraag 2.4' to appear\n               as shown in the example below.\n\n               NOTE: The image and the text should move as one object."
+
+==== [15] marks=3 type=spreadsheet img='' ====
+QID=65fa353b-4194-4d70-8d6a-fd53cc17e4e5
+"Find the text 'Question/Vraag 2.5' and insert the data from the 2Team\n               spreadsheet found in your examination folder as a linked object."
+
+==== [16] marks=2 type=short_answer img='' ====
+QID=d0887b4e-8d46-49c4-bcb1-42fde4a0d1e2
+'Apply any 3-line page border to appear on each side of the document pages.'
+
+==== [17] marks=3 type=short_answer img='' ====
+QID=898e5d8e-a8fd-4737-90c5-2d4c1eedc40d
+'Find the text box at the end of the document and do the following:\n\n• Insert the total number of words as a field in the format: First, Second, Third, …\n• Change the direction of the text to horizontal.\n\nSave and close the 2Stats document.'
+
+==== [18] marks=2 type=short_answer img='' ====
+QID=2d0f6299-b25a-4032-9bb6-4f9ddb53cf75
+'Rename Sheet1 to Medals and move the worksheet to appear as the last worksheet in the workbook.\n\nWork in the Players worksheet.'
+
+==== [19] marks=2 type=short_answer img='uploads/cat_p1_mj25/q3_2_headings.png' ====
+QID=180e3f3a-d81d-48b6-9934-23882f4b242a
+'Format the headings in row 5 to appear as shown in the example below.'
+
+==== [20] marks=2 type=short_answer img='' ====
+QID=b9f7aa7a-2b7f-4ba3-8dbf-5fcc0b69773d
+'Insert a function in cell D3 to determine the fourth highest total prize money\n               won by a player for the current year.'
+
+==== [21] marks=1 type=calculation img='' ====
+QID=ae624d44-cc66-425a-986c-76995e632bf5
+"Insert a formula in cell F6 to calculate what percentage Sven's total prize money is of his overall prize money.\n\nWork in the Tournament worksheet."
+
+==== [22] marks=1 type=short_answer img='' ====
+QID=5a8efe90-b3cb-498c-9cac-e146daa20ebf
+'Insert a function in cell C3 to determine the number of all tournaments held.'
+
+==== [23] marks=4 type=calculation img='' ====
+QID=f3e51d9f-9729-417f-a730-d7dc7a3eaf63
+'Insert a function in cell C4 to calculate the total prize money for all tournaments\n\n               held in Washington.'
+
+==== [24] marks=4 type=spreadsheet img='' ====
+QID=da017089-918b-4ff6-874b-d719efb79200
+'An attempt was made to find the three-letter abbreviation of each country from the CountryCode worksheet.\n\nModify the function in cell F9 so the correct abbreviation will be shown.\n\nSave and close the 3Rank spreadsheet.'
+
+==== [25] marks=0 type=short_answer img='' ====
+QID=177bd330-cf3e-4cef-a6c2-09677a2b1c5d
+'The shop has a policy which allows a customer to pay off a product on a\n               monthly basis over a 24-month period. The customer will pay an extra amount\n               for the 24-month contract (column G).'
+
+==== [26] marks=1 type=short_answer img='' ====
+QID=705fc740-8c95-4ee3-929c-5854c57547d4
+'Insert a function in cell D3 to determine how many customers did not\n                      take a 24-month contract.'
+
+==== [27] marks=3 type=spreadsheet img='' ====
+QID=ddee78d8-7e30-4b65-be35-ded3f05cae33
+'Insert a formula in cell H10 to determine how much money Jacob\n                      Msibi must pay each month for the 24-month contract.'
+
+==== [28] marks=4 type=spreadsheet img='' ====
+QID=0a26241b-c4b4-4c2c-b455-ae1191339029
+'Use a spreadsheet feature to display the customer name in any green fill colour\n\n               if a customer bought three or more items.'
+
+==== [29] marks=5 type=short_answer img='' ====
+QID=e5147f04-a2ea-4323-a3bd-08dcd3e6c29b
+"The shop will send a notice to a customer with a 24-month contract.\n\nInsert a function in cell I6 to display the text 'Notice' if a customer has a 24-month contract; otherwise the cell must be left blank.\n\nWork in the Games worksheet."
+
+==== [30] marks=5 type=short_answer img='' ====
+QID=11932f6b-a4ac-428e-b0b3-68c90d5c65d9
+'Insert a function in cell C3 to determine how many games have a discount\n               percentage between 60 and 75 (inclusive).'
+
+==== [31] marks=6 type=spreadsheet img='uploads/cat_p1_mj25/q4_5_chart.png' ====
+QID=8a3086f6-45c6-4a8b-97ee-3d21d9fbbba0
+"Create a chart/graph to display as shown in the example below.\n\nNOTE:\n• Use the 4Screen image in your examination folder.\n• Move the chart to a new sheet called 'Price'.\n\nSave and close the 4Shop spreadsheet."
+
+==== [32] marks=0 type=short_answer img='' ====
+QID=c8187fdf-43ff-41b5-9b80-72ad5c8cfdaa
+'Open the tbl5_1 table in Design View.'
+
+==== [33] marks=1 type=short_answer img='' ====
+QID=23c80a80-4dfd-4ce0-9f31-50c28c11d60c
+'Edit the properties of the Tournament field so that the text would not\n                      exceed 15 characters.'
+
+==== [34] marks=2 type=short_answer img='' ====
+QID=421e872f-95fa-4cd0-8d70-fbdac3a4a0f6
+'Change the Date field to display in the format yyyy/mm/dd. Make sure\n                      a user can choose a date.'
+
+==== [35] marks=3 type=short_answer img='uploads/cat_p1_mj25/q5_1_3_location.png' ====
+QID=001d6bb5-efe0-499c-acf4-a8c57c293d4a
+"Modify the properties of the Location field so that it displays as shown\n                      in the example below.\n\n                      NOTE:\n\n                      • Use the tblCountry table.\n                      • Select 'Yes' if a warning message appears."
+
+==== [36] marks=2 type=short_answer img='' ====
+QID=d3826c28-da12-4c89-a65f-61a02768d2c7
+'Edit the Prize field so that it only accepts values above R15 000. Add any descriptive text that refers to the rule.\n\nSave and close the tbl5_1 table.'
+
+==== [37] marks=6 type=short_answer img='uploads/cat_p1_mj25/q5_2_form.png' ====
+QID=e751fd66-ddc7-4a53-8722-f6fc91afadf7
+'Modify the frm5_2 form to display as shown in the example below.\n\nNOTE:\n• 10% discount will be given on the registration fee for all the games listed.\n• Use the picture in the form footer.\n\nSave and close the frm5_2 form.'
+
+==== [38] marks=4 type=database img='' ====
+QID=474f2a75-2ee2-4945-884d-cd68cd5ea216
+'Create a query named qry5_3, based on the tblGames table.\n\n               Display the Game and Fee fields for ALL the games played from January 2025\n               to April 2025. Sort the list in alphabetical order according to the Game field.\n\n               Save and close the qry5_3 query.'
+
+==== [39] marks=4 type=database img='' ====
+QID=9de50403-6856-4fdd-b00d-01e91e0b38f9
+'Open the qry5_4 query based on the tblGames table in Design View.\n\n               Modify the query to display the following:\n\n               • All the classic games AND\n               • All the non-action games with a rating higher than 8\n\n               Save and close the qry5_4 query.'
+
+==== [40] marks=3 type=database img='uploads/cat_p1_mj25/q5_5_query.png' ====
+QID=a7292bac-68f3-4244-9ee2-831abcd14c63
+'Modify the qry5_5 query based on the tblGames table in Design View to display as shown in the example below.\n\nSave and close the qry5_5 query.'
+
+==== [41] marks=4 type=database img='' ====
+QID=cca0eb23-76c1-4904-b8eb-8c3a1e1ec363
+'Open the qry5_6 query based on the tblGames table in Design View.\n\n               An incomplete attempt was made to create a code for each game.\n\n               Rename the calculated field as Code and make sure that a combination of\n               functions is used to create the code as follows:\n\n               •  The first three letters of the game (Game), followed by\n               •  The month of the GameDate field\n\n               Save and close the qry5_6 query.'
+
+==== [42] marks=6 type=database img='uploads/cat_p1_mj25/q5_7_report.png' ====
+QID=0d141d57-f6fb-4ae6-aa36-9db4d97c5511
+'Create a report called rpt5_7 based on the tblGames table, as shown in the example below.\n\nNOTE: Ignore the format and border of the text box.\n\nSave and close the rpt5_7 report.\n\nSave and close the 5Games database.'
+
+==== [43] marks=0 type=html_web img='uploads/cat_p1_mj25/q6_1_web.png' ====
+QID=036e32d6-dff4-48e7-9062-c20c1026d454
+'Open the incomplete 6_1Tournament web page in a web browser and also in\n              a text/HTML editor (NOT a word processing program such as Word).\n\n              Complete the web page to appear as shown in the example below.\n\n               NOTE:\n\n               • Use the example on the previous page as a guideline when answering this\n                 question.\n               • Question numbers appear as comments in the coding to indicate where you\n                 should insert the answer(s). Do NOT delete these comments.'
+
+==== [44] marks=1 type=short_answer img='' ====
+QID=60029c82-55c1-4446-a161-c966879e5cd2
+'Modify the body tag to align the text to display as shown in the\n                      example on the previous page.'
+
+==== [45] marks=2 type=short_answer img='' ====
+QID=f64980af-b9e5-4963-9fb5-d5b814cc7997
+"Edit the tag so that the 6_1Logo image will display. Make sure the\n                      text 'Logo' will display if the image cannot display."
+
+==== [46] marks=1 type=short_answer img='' ====
+QID=eb923346-69c7-47da-b742-9b95437e4468
+"Format the heading 'Welcome to the Tournament!' to display as the\n                      second biggest heading."
+
+==== [47] marks=1 type=short_answer img='' ====
+QID=553d9c40-4282-4828-b551-aaf6af8f78ad
+"Format the text below the heading 'Tournament Details' to display as\n                      shown in the example on the previous page."
+
+==== [48] marks=3 type=html_web img='' ====
+QID=b54897c9-a46b-41c5-8c02-490683a5a025
+"Modify the HTML code to display a horizontal line above 'Registration'\n                      with a thickness of 10% and a gold colour."
+
+==== [49] marks=2 type=html_web img='' ====
+QID=c1fbb3ce-87af-45e3-92b0-7681949f6952
+'Correct the HTML code at the end of the document so that the hyperlink will move to the web page.\n\nSave and close the 6_1Tournament file.'
+
+==== [50] marks=4 type=html_web img='uploads/cat_p1_mj25/q6_2_web.png' ====
+QID=b37f023d-ee84-48e8-8a6d-ec669affb0f2
+'Open the incomplete 6_2Entry web page in a web browser and also in a text/HTML editor (NOT a word processing program such as Word).\n\nComplete the web page to appear as shown in the example below.\n\nNOTE: The background colour should be light yellow.\n\nSave and close the 6_2Entry file.\n\nONE mark will be allocated for closing tags and correct nesting in both web pages. (1)'
+
+==== [51] marks=0 type=short_answer img='' ====
+QID=416f9417-4e60-4f72-adfa-c8c94d0abb2e
+'Open the 7Report document.\n\n               A general report was created to show the growth potential of eSports in South\n               Africa.\n\n               Edit the report as follows:'
+
+==== [52] marks=3 type=short_answer img='' ====
+QID=e0dac17f-68c8-4daa-9d87-ff0b86cd708e
+"Find the heading 'Table of contents' and create a table of contents\n                      with two levels, below this heading, as follows:\n\n                      • Use the 'Gaming' style for level 1, and\n\n                      • The 'Heading 3' style for level 2"
+
+==== [53] marks=2 type=short_answer img='' ====
+QID=d5f8e519-08cb-4339-a1ac-05f5f3f21e40
+"Find the QR code below the text 'Winners of the …' and do the\n                      following:\n\n                      • Link the QR code to the 7Results web page found in your\n                        examination folder.\n                      • Add a screen tip called 'Viewing'.\n\n               Save and close the 7Report document."
+
+==== [54] marks=4 type=spreadsheet img='' ====
+QID=f9a440f2-4236-4251-a4c7-e3b7930be55e
+'Open the 7Staff spreadsheet.\n\n               The staff members can only be part of the hosting team in the 2025 eSports\n               Tournament if they were not a host in the last two years and if they are not\n               Game Masters.\n\n               Insert an AND function in cell H5 to determine if Visagie, Werner can be part\n               of the hosting team in 2025.\n\n               Save and close the 7Staff spreadsheet.'
+
+==== [55] marks=3 type=spreadsheet img='' ====
+QID=b26cd970-04d0-4af5-b387-1700f0145392
+'Open the 7SA database in Datasheet View.\n\n               Export the first 20 players from the tblSA table, with ALL the formatting, to a\n               new spreadsheet called 7Export in your examination folder.\n\n               Save and close the 7SA database.'
+
+==== [56] marks=3 type=html_web img='uploads/cat_p1_mj25/q7_4_web.png' ====
+QID=0181bc05-ac34-483c-899a-e1567c1d59c4
+'Open the incomplete 7Results web page in a web browser and also in a text/HTML editor (NOT a word processing program such as Word).\n\nComplete the web page to appear as shown in the example below.\n\nNOTE: Add a 3 pt border around the image.'

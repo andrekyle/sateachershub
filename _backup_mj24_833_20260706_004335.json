@@ -1,0 +1,3 @@
+{
+ "answer_text": "Difference between queries\nQuery 1 Query 2 Mark\nShows all the fields Shows Amount and DOB fields ✓\nOR\nDoes not show NumberOfNights\nfield\n  ✓\n(NumberOfNights ((NumberOfNights <=5)\n<=5) AND (Amount <800)\nAND (Amount <800 AND (DOB is Null))\nOR Amount >2000) OR\nAND (DOB is Null) (Amount >2000)\nNo sorting Sorting on Amount field ✓\n Query 1 displays all records where Amount less than 800 or\ngreater than 2000 and the NumberOfNights is less and equal to\n5 and DOB is empty\n Query 2 show all records where:\n• Amount more than 2000 whether DOB is empty or not and\nignores NumberOfNights; or\n• Amount less than 800 where the NumberOfNights is less\nand equal to 5 and DOB is empty."
+}

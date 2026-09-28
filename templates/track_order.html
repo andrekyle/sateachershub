@@ -1,0 +1,413 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Track My Order - South African Teachers Hub{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8 max-w-4xl">
+    <div class="azure-card p-8">
+        <h1 class="text-3xl font-light text-black mb-6">Track My Order</h1>
+        <p class="text-gray-600 font-light mb-8">Enter your order number or email address to track your order status and delivery information.</p>
+
+        <!-- Track Order Form -->
+        <div class="mb-8">
+            <form method="POST" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <!-- Order Number -->
+                    <div>
+                        <label for="order_number" class="block text-sm font-normal text-black mb-2">Order Number</label>
+                        <input type="text" 
+                               id="order_number" 
+                               name="order_number" 
+                               value="{{ request.form.order_number if request.form.order_number }}"
+                               class="azure-input w-full px-4 py-3 text-sm font-light" 
+                               placeholder="Enter your order number (e.g., ORD-20251017-2392)">
+                        <p class="text-xs text-gray-500 font-light mt-1">Order number format: ORD-YYYYMMDD-XXXX</p>
+                    </div>
+                    
+                    <!-- Email Address -->
+                    <div>
+                        <label for="email" class="block text-sm font-normal text-black mb-2">Email Address</label>
+                        <input type="email" 
+                               id="email" 
+                               name="email" 
+                               value="{{ request.form.email if request.form.email }}"
+                               class="azure-input w-full px-4 py-3 text-sm font-light" 
+                               placeholder="Enter your email address">
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="btn-azure-primary px-8 py-3">
+                        <i class="fas fa-search mr-2"></i>Track Order
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Order Results -->
+        {% if orders %}
+        <div class="space-y-6">
+            <h2 class="text-xl font-normal text-black mb-4">Your Orders</h2>
+            {% for order in orders %}
+            <div class="border border-gray-300 rounded p-6">
+                <!-- Order Header -->
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                    <div>
+                        <h3 class="text-lg font-normal text-black">Order #{{ order.order_number or order.id }}</h3>
+                        <p class="text-sm text-gray-600 font-light">Placed on {{ order.created_at.strftime('%B %d, %Y at %I:%M %p') }}</p>
+                    </div>
+                    <div class="mt-2 md:mt-0">
+                        {% if order.status == 'pending' %}
+                        <span class="azure-badge text-yellow-600">
+                            <i class="fas fa-clock mr-1"></i>Pending
+                        </span>
+                        {% elif order.status == 'processing' %}
+                        <span class="azure-badge text-blue-600">
+                            <i class="fas fa-cog mr-1"></i>Processing
+                        </span>
+                        {% elif order.status == 'shipped' %}
+                        <span class="azure-badge text-gray-600">
+                            <i class="fas fa-truck mr-1"></i>Shipped
+                        </span>
+                        {% elif order.status == 'delivered' %}
+                        <span class="azure-badge text-green-600">
+                            <i class="fas fa-check-circle mr-1"></i>Delivered
+                        </span>
+                        {% elif order.status == 'cancelled' %}
+                        <span class="azure-badge text-red-600">
+                            <i class="fas fa-times-circle mr-1"></i>Cancelled
+                        </span>
+                        {% endif %}
+                    </div>
+                </div>
+
+                <!-- Order Progress -->
+                <div class="mb-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm font-normal text-black">Order Progress</span>
+                        <span class="text-sm text-gray-600 font-light">
+                            {% if order.status == 'pending' %}25%{% elif order.status == 'processing' %}50%{% elif order.status == 'shipped' %}75%{% elif order.status == 'delivered' %}100%{% else %}0%{% endif %}
+                        </span>
+                    </div>
+                    <div class="w-full bg-gray-200 rounded-full h-2">
+                        <div class="bg-azure h-2 rounded-full transition-all duration-300 
+                            {% if order.status == 'pending' %}w-1/4{% elif order.status == 'processing' %}w-1/2{% elif order.status == 'shipped' %}w-3/4{% elif order.status == 'delivered' %}w-full{% else %}w-0{% endif %}">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Order Timeline -->
+                <div class="mb-6">
+                    <h4 class="text-sm font-normal text-black mb-6">Order Timeline</h4>
+                    <div class="relative">
+                        <!-- Progress Line Container -->
+                        <div class="absolute left-3 top-6 bottom-6 w-0.5 bg-gray-200"></div>
+                        
+                        <!-- Progress Dotted Line -->
+                        {% set progress_height = '33.33%' if order.status == 'pending' else '66.66%' if order.status == 'processing' else '100%' if order.status in ['shipped', 'delivered'] else '0%' %}
+                        <div class="absolute left-3 top-6 w-0.5 order-progress-line order-progress-{{ order.status }}"></div>
+                        
+                        <div class="space-y-8 relative">
+                            <!-- Order Placed -->
+                            <div class="flex items-start timeline-item">
+                                <div class="flex-shrink-0 w-6 h-6 bg-white border-2 border-green-500 rounded-full flex items-center justify-center relative z-10 progress-dot completed">
+                                    <i class="fas fa-check text-green-500 text-xs"></i>
+                                </div>
+                                <div class="ml-4 flex-1">
+                                    <p class="text-sm font-semibold text-black">Order Placed</p>
+                                    <p class="text-xs text-gray-600 font-light mt-1">{{ order.created_at.strftime('%B %d, %Y at %I:%M %p') }}</p>
+                                    <p class="text-xs text-green-600 font-light mt-1 status-badge">
+                                        <i class="fas fa-check-circle mr-1"></i>Confirmed
+                                    </p>
+                                </div>
+                            </div>
+
+                            <!-- Processing -->
+                            <div class="flex items-start timeline-item">
+                                <div class="flex-shrink-0 w-6 h-6 {% if order.status in ['processing', 'shipped', 'delivered'] %}bg-white border-2 border-green-500 progress-dot completed{% else %}bg-white border-2 border-gray-300 progress-dot pending{% endif %} rounded-full flex items-center justify-center relative z-10">
+                                    {% if order.status in ['processing', 'shipped', 'delivered'] %}
+                                        <i class="fas fa-check text-green-500 text-xs"></i>
+                                    {% else %}
+                                        <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                                    {% endif %}
+                                </div>
+                                <div class="ml-4 flex-1">
+                                    <p class="text-sm font-semibold text-black">Processing</p>
+                                    <p class="text-xs text-gray-600 font-light mt-1">
+                                        {% if order.status in ['processing', 'shipped', 'delivered'] %}
+                                            Order is being prepared for shipment
+                                        {% else %}
+                                            Waiting for processing
+                                        {% endif %}
+                                    </p>
+                                    {% if order.status in ['processing', 'shipped', 'delivered'] %}
+                                    <p class="text-xs text-green-600 font-light mt-1 status-badge">
+                                        <i class="fas fa-cog mr-1"></i>In Progress
+                                    </p>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <!-- Shipped -->
+                            <div class="flex items-start timeline-item">
+                                <div class="flex-shrink-0 w-6 h-6 {% if order.status in ['shipped', 'delivered'] %}bg-white border-2 border-green-500 progress-dot completed{% else %}bg-white border-2 border-gray-300 progress-dot pending{% endif %} rounded-full flex items-center justify-center relative z-10">
+                                    {% if order.status in ['shipped', 'delivered'] %}
+                                        <i class="fas fa-check text-green-500 text-xs"></i>
+                                    {% else %}
+                                        <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                                    {% endif %}
+                                </div>
+                                <div class="ml-4 flex-1">
+                                    <p class="text-sm font-semibold text-black">Shipped</p>
+                                    <p class="text-xs text-gray-600 font-light mt-1">
+                                        {% if order.status in ['shipped', 'delivered'] %}
+                                            Order is on its way to you
+                                        {% else %}
+                                            Not yet shipped
+                                        {% endif %}
+                                    </p>
+                                    {% if order.status in ['shipped', 'delivered'] %}
+                                    <p class="text-xs text-blue-600 font-light mt-1 status-badge">
+                                        <i class="fas fa-truck mr-1"></i>In Transit
+                                    </p>
+                                    {% endif %}
+                                </div>
+                            </div>
+
+                            <!-- Delivered -->
+                            <div class="flex items-start timeline-item">
+                                <div class="flex-shrink-0 w-6 h-6 {% if order.status == 'delivered' %}bg-white border-2 border-green-500 progress-dot completed{% else %}bg-white border-2 border-gray-300 progress-dot pending{% endif %} rounded-full flex items-center justify-center relative z-10">
+                                    {% if order.status == 'delivered' %}
+                                        <i class="fas fa-check text-green-500 text-xs"></i>
+                                    {% else %}
+                                        <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+                                    {% endif %}
+                                </div>
+                                <div class="ml-4 flex-1">
+                                    <p class="text-sm font-semibold text-black">Delivered</p>
+                                    <p class="text-xs text-gray-600 font-light mt-1">
+                                        {% if order.status == 'delivered' %}
+                                            Order has been successfully delivered
+                                        {% else %}
+                                            Awaiting delivery
+                                        {% endif %}
+                                    </p>
+                                    {% if order.status == 'delivered' %}
+                                    <p class="text-xs text-green-600 font-light mt-1 status-badge">
+                                        <i class="fas fa-home mr-1"></i>Completed
+                                    </p>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Shipping Information -->
+                {% if order.shipping_address %}
+                <div class="mb-6">
+                    <h4 class="text-sm font-normal text-black mb-3">Shipping Information</h4>
+                    <div class="bg-gray-50 p-4 rounded">
+                        <p class="text-sm font-light text-gray-700">{{ order.shipping_address }}</p>
+                        {% if order.status == 'shipped' %}
+                        <p class="text-sm text-azure font-light mt-2">
+                            <i class="fas fa-truck mr-1"></i>
+                            Estimated delivery: 2-3 business days
+                        </p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endif %}
+
+                <!-- Order Items -->
+                <div class="mb-6">
+                    <h4 class="text-sm font-normal text-black mb-3">Order Items</h4>
+                    <div class="space-y-3">
+                        {% for item in order.items %}
+                        <div class="flex items-center space-x-4">
+                            <div class="w-16 h-16 bg-gray-100 rounded overflow-hidden flex-shrink-0">
+                                {% if item.product.image_url %}
+                                <img src="{{ item.product.image_url }}" alt="{{ item.product.name }}" class="w-full h-full object-cover">
+                                {% else %}
+                                <div class="w-full h-full flex items-center justify-center text-gray-400">
+                                    <i class="fas fa-image"></i>
+                                </div>
+                                {% endif %}
+                            </div>
+                            <div class="flex-1">
+                                <h5 class="text-sm font-normal text-black">{{ item.product.name }}</h5>
+                                <p class="text-xs text-gray-600 font-light">Quantity: {{ item.quantity }}</p>
+                                <p class="text-sm text-black font-light">R{{ "%.2f"|format(item.price) }}</p>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+                <!-- Order Total -->
+                <div class="border-t border-gray-200 pt-4">
+                    <div class="flex justify-between items-center">
+                        <span class="text-lg font-normal text-black">Total</span>
+                        <span class="text-lg font-normal text-black">R{{ "%.2f"|format(order.total_amount) }}</span>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="mt-6 flex flex-wrap gap-3">
+                    <a href="{{ url_for('order_detail', id=order.id) }}" class="btn-azure-secondary">
+                        <i class="fas fa-eye mr-2"></i>View Details
+                    </a>
+                    {% if order.status in ['pending', 'processing'] %}
+                    <button onclick="cancelOrder('{{ order.id }}')" class="bg-red-500 text-white px-4 py-2 rounded text-sm font-light hover:bg-red-600 transition">
+                        <i class="fas fa-times mr-2"></i>Cancel Order
+                    </button>
+                    {% endif %}
+                    {% if order.status == 'delivered' %}
+                    <button class="bg-azure text-white px-4 py-2 rounded text-sm font-light hover:bg-azure-dark transition">
+                        <i class="fas fa-star mr-2"></i>Leave Review
+                    </button>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% elif request.method == 'POST' %}
+        <!-- No Results Found -->
+        <div class="text-center py-12">
+            <div class="mb-4">
+                <i class="fas fa-search text-6xl text-gray-300"></i>
+            </div>
+            <h3 class="text-xl font-normal text-black mb-2">No Orders Found</h3>
+            <p class="text-gray-600 font-light mb-6">
+                We couldn't find any orders matching your search criteria. Please check your order number and email address.
+            </p>
+            <div class="space-y-2 text-sm text-gray-600 font-light">
+                <p>• Make sure your order ID is complete and correct</p>
+                <p>• Verify you're using the same email address used during checkout</p>
+                <p>• Orders may take a few minutes to appear in our system</p>
+            </div>
+        </div>
+        {% endif %}
+
+        <!-- Help Section -->
+        <div class="mt-12 border-t border-gray-200 pt-8">
+            <h3 class="text-lg font-normal text-black mb-4">Need Help?</h3>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h4 class="text-sm font-normal text-black mb-2">Contact Customer Service</h4>
+                    <p class="text-sm text-gray-600 font-light mb-2">Our team is here to help with any questions about your order.</p>
+                    <p class="text-sm text-azure font-light">
+                        <i class="fas fa-phone mr-1"></i>+27 11 123 4567
+                    </p>
+                    <p class="text-sm text-azure font-light">
+                        <i class="fas fa-envelope mr-1"></i>support@brandcartel.co.za
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-sm font-normal text-black mb-2">Shipping Information</h4>
+                    <p class="text-sm text-gray-600 font-light mb-2">Learn more about our delivery options and timelines.</p>
+                    <a href="{{ url_for('shipping_policy') }}" class="text-sm text-azure font-light hover:underline">
+                        <i class="fas fa-truck mr-1"></i>View Shipping Policy
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function cancelOrder(orderId) {
+    if (confirm('Are you sure you want to cancel this order? This action cannot be undone.')) {
+        // Here you would make an AJAX call to cancel the order
+        fetch(`/cancel-order/${orderId}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                location.reload();
+            } else {
+                alert('Failed to cancel order. Please try again or contact customer service.');
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again or contact customer service.');
+        });
+    }
+}
+</script>
+
+<style type="text/css">
+/* Order Progress Line Animation */
+.order-progress-line {
+    background: repeating-linear-gradient(
+        #10B981,
+        #10B981 6px,
+        transparent 6px,
+        transparent 10px
+    );
+    animation: progressFlow 1s linear infinite;
+    transition: height 0.5s ease-in-out;
+}
+
+/* Progress height classes for different order statuses */
+.order-progress-pending {
+    height: 33.33%;
+}
+
+.order-progress-processing {
+    height: 66.66%;
+}
+
+.order-progress-shipped,
+.order-progress-delivered {
+    height: 100%;
+}
+
+.order-progress-cancelled {
+    height: 0%;
+}
+
+@keyframes progressFlow {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 0 10px;
+    }
+}
+
+/* Timeline item hover effect */
+.timeline-item {
+    transition: all 0.2s ease;
+    padding: 8px;
+    border-radius: 8px;
+    margin: -8px;
+}
+
+.timeline-item:hover {
+    background-color: rgba(16, 185, 129, 0.05);
+    transform: translateX(4px);
+}
+
+/* Status badge animations */
+.status-badge {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.8;
+    }
+}
+</style>
+
+{% endblock %}

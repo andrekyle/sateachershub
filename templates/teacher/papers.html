@@ -1,0 +1,499 @@
+﻿{% extends "teacher/_layout.html" %}
+{% block extra_css %}
+<style>
+  body { background: #0b0b0d !important; padding-top: 0 !important; }
+  main { padding: 0 !important; }
+  .t-shell { padding-top: 30px !important; }
+  .t-shell .t-head { margin-top: 0 !important; padding-top: 0 !important; }
+  .sath-nav { background: transparent !important; border-bottom: none !important; }
+</style>
+{% endblock %}
+{% block t_title %}Past papers & resources{% endblock %}
+{% block t_sub %}Download CAPS past papers, memos and data files.{% endblock %}
+{% block t_action %}
+    <a class="t-btn primary" href="{{ url_for('teacher_paper_upload') }}"><i class="fas fa-upload"></i> Upload</a>
+{% endblock %}
+
+{% block t_body %}
+
+<style>
+/* ---- Dark mode override (matches team.html / profile.html) ---- */
+body { background: #0b0b0d !important; }
+.t-shell {
+  background: #0b0b0d !important;
+  color: #f5f5f7 !important;
+  padding-top: 30px !important;
+}
+.t-shell .t-head { margin-top: 0 !important; padding-top: 0 !important; }
+.t-shell,
+.t-shell *:not(.navbar):not(.navbar *) { color: #f5f5f7 !important; }
+.t-shell .t-eyebrow, .t-shell .t-eyebrow * { color: #9a9aa3 !important; }
+.t-shell .t-sub,     .t-shell .t-sub *     { color: #d6d6da !important; }
+
+.t-shell, .t-shell * {
+  --az-bg: #0b0b0d !important;
+  --az-surface: #1a1a1d !important;
+  --az-border: #2a2a2f !important;
+  --az-border-2: #3a3a40 !important;
+  --az-text: #f5f5f7 !important;
+  --az-text-2: #d6d6da !important;
+  --az-text-3: #9a9aa3 !important;
+  --bg: #0b0b0d !important;
+  --bg-elevated: #1a1a1d !important;
+  --bg-card: #1a1a1d !important;
+  --bg-input: #1a1a1d !important;
+  --text: #f5f5f7 !important;
+  --text-secondary: #d6d6da !important;
+  --text-tertiary: #9a9aa3 !important;
+  --separator: #2a2a2f !important;
+  --separator-light: #2a2a2f !important;
+  --fill: #1a1a1d !important;
+  --blue: #2997ff !important;
+}
+.t-shell .t-head   { border-bottom-color: #2a2a2f !important; }
+
+
+/* Cards / tables / forms inside the shell */
+.t-shell .t-card,
+.t-shell .t-section,
+.t-shell .t-box,
+.t-shell .t-panel {
+  background: #141414 !important;
+  border: 1px solid #2a2a2f !important;
+  border-radius: 8px !important;
+  box-shadow: none !important;
+  color: #f5f5f7 !important;
+}
+.t-shell .t-card h1, .t-shell .t-card h2, .t-shell .t-card h3,
+.t-shell .t-card h4, .t-shell .t-card h5 { color: #f5f5f7 !important; }
+.t-shell table,
+.t-shell .t-table { background: #141414 !important; color: #f5f5f7 !important; }
+
+/* Defeat layout's high-specificity blue banner on table headers */
+.t-shell.t-shell .t-table thead th,
+.t-shell.t-shell .t-table thead th *,
+.t-shell.t-shell table.t-table > thead > tr > th,
+.t-shell.t-shell table.t-table > thead > tr > th *,
+.t-shell.t-shell .t-card table thead th,
+.t-shell.t-shell .t-card table thead th *,
+.t-shell.t-shell table thead th,
+.t-shell.t-shell table thead th * {
+  background: #141414 !important;
+  color: #d6d6da !important;
+  border-color: #2a2a2f !important;
+}
+.t-shell .t-table th,
+.t-shell .t-card table th {
+  border-bottom: 1px solid #2a2a2f !important;
+}
+.t-shell .t-table td,
+.t-shell .t-card table td {
+  border-bottom: 1px solid #23232a !important;
+  color: #f5f5f7 !important;
+  background: transparent !important;
+}
+.t-shell .t-table tbody tr:hover td,
+.t-shell .t-card table tbody tr:hover td { background: #1a1a1a !important; }
+
+/* Defeat layout's blue banner on first-child card headings */
+.t-shell.t-shell .t-card > h2:first-child,
+.t-shell.t-shell .t-card > h2:first-child *,
+.t-shell.t-shell .t-card > h3:first-child,
+.t-shell.t-shell .t-card > h3:first-child *,
+.t-shell.t-shell .t-card > h4:first-child,
+.t-shell.t-shell .t-card > h4:first-child * {
+  background: transparent !important;
+  color: #f5f5f7 !important;
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  text-align: left !important;
+  font-size: 18px !important;
+}
+
+/* Form fields */
+.t-shell .t-field label,
+.t-shell label {
+  color: #9a9aa3 !important;
+  font-size: 13px !important; font-weight: 600 !important;
+  text-transform: none !important; letter-spacing: 0 !important;
+}
+.t-shell input[type="text"], .t-shell input[type="search"],
+.t-shell input[type="email"], .t-shell input[type="number"],
+.t-shell input[type="date"], .t-shell select, .t-shell textarea,
+.t-shell .t-input, .t-shell .t-select {
+  background: #0f0f12 !important;
+  border: 1px solid #2a2a2f !important;
+  color: #f5f5f7 !important;
+  border-radius: 6px !important;
+  color-scheme: dark;
+}
+.t-shell input:hover, .t-shell select:hover, .t-shell textarea:hover { border-color: #3a3a40 !important; }
+.t-shell input:focus, .t-shell select:focus, .t-shell textarea:focus {
+  outline: none !important; border-color: #2997ff !important; background: #131317 !important;
+}
+.t-shell input::placeholder, .t-shell textarea::placeholder { color: #6b6b73 !important; }
+.t-shell select option { background: #0f0f12 !important; color: #f5f5f7 !important; }
+
+/* Custom dropdown (fdd) — planner spec, slim (matches Question Bank) */
+.t-shell.t-shell .fdd { color: #f5f5f7 !important; }
+.t-shell.t-shell .fdd-toggle {
+  background: #141414 !important; color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 8px !important;
+  padding: 7px 12px !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.005em !important;
+  min-height: 36px !important;
+  display: inline-flex; align-items: center; justify-content: space-between;
+  width: 100%;
+  transition: background .15s ease, border-color .15s ease !important;
+}
+.t-shell.t-shell .fdd-toggle:hover { background: #1A1A1A !important; border-color: rgba(255,255,255,0.18) !important; }
+.t-shell.t-shell .fdd-toggle:focus, .t-shell.t-shell .fdd-toggle.is-open { border-color: rgba(255,255,255,0.30) !important; outline: none !important; box-shadow: none !important; }
+.t-shell.t-shell .fdd-label,
+.t-shell.t-shell .fdd-toggle * { color: #ffffff !important; font-weight: 300 !important; }
+.t-shell.t-shell .fdd-toggle .caret { color: rgba(255,255,255,0.45) !important; }
+.t-shell.t-shell .fdd-panel {
+  background: #1A1A1A !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.55) !important;
+  padding: 4px !important;
+  margin-top: 4px !important;
+}
+.t-shell.t-shell .fdd-item {
+  color: rgba(255,255,255,0.88) !important;
+  background: transparent !important;
+  padding: 6px 10px !important;
+  border-radius: 5px !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  cursor: pointer;
+}
+.t-shell.t-shell .fdd-item:hover { background: rgba(255,255,255,0.06) !important; color: #ffffff !important; }
+.t-shell.t-shell .fdd-item.selected,
+.t-shell.t-shell .fdd-item.is-selected,
+.t-shell.t-shell .fdd-item[aria-selected="true"] {
+  background: rgba(255,255,255,0.08) !important;
+  color: #ffffff !important;
+}
+
+/* Buttons */
+.t-shell .t-btn {
+  background: transparent !important; color: #f5f5f7 !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+}
+.t-shell .t-btn:hover { background: #1A1A1A !important; border-color: rgba(255,255,255,0.18) !important; }
+.t-shell .t-btn.primary,
+.t-shell .t-btn.is-primary {
+  background: transparent !important; color: #f5f5f7 !important; border-color: rgba(255,255,255,0.08) !important;
+}
+.t-shell .t-btn.primary:hover { background: #1A1A1A !important; border-color: rgba(255,255,255,0.18) !important; }
+
+/* Status text / muted */
+.t-shell .muted, .t-shell .t-muted, .t-shell small { color: #9a9aa3 !important; }
+
+/* Autofill */
+.t-shell input:-webkit-autofill,
+.t-shell input:-webkit-autofill:hover,
+.t-shell input:-webkit-autofill:focus,
+.t-shell select:-webkit-autofill {
+  -webkit-text-fill-color: #f5f5f7 !important;
+  -webkit-box-shadow: 0 0 0 1000px #0f0f12 inset !important;
+  caret-color: #f5f5f7;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.t-shell .t-title {
+    font-size: clamp(36px, 4.2vw, 56px) !important;
+    font-weight: 700 !important;
+    letter-spacing: -1px !important;
+    line-height: 1.05 !important;
+}
+
+/* Past papers action icons: remove boxed borders. */
+.papers-results .t-icon-btn,
+.papers-results .t-icon-btn:hover,
+.papers-results .t-icon-btn.danger,
+.papers-results .t-icon-btn.danger:hover,
+.papers-results .t-icon-btn.danger:active {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+}
+.papers-results .t-icon-btn { color: #d6d6da !important; }
+.papers-results .t-icon-btn:hover { color: #ffffff !important; }
+.papers-results .t-icon-btn.danger,
+.papers-results .t-icon-btn.danger:hover,
+.papers-results .t-icon-btn.danger:active {
+    color: #ff6b5e !important;
+}
+
+.papers-results .t-icon-btn.danger svg,
+.papers-results .t-icon-btn.danger:hover svg,
+.papers-results .t-icon-btn.danger:active svg {
+    stroke: currentColor !important;
+}
+
+/* Match generator list table styling (thin grid, zebra rows, subtle hover) */
+.t-shell .papers-results.t-table {
+    background: rgba(20,20,20,0.52) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    border-radius: 12px !important;
+    border-collapse: separate !important;
+    border-spacing: 0 !important;
+    overflow: hidden;
+}
+.t-shell.t-shell .papers-results.t-table thead th,
+.t-shell.t-shell .papers-results.t-table thead th * {
+    background: rgba(20,20,20,0.55) !important;
+    color: #b8b8c0 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+}
+.t-shell .papers-results.t-table th,
+.t-shell .papers-results.t-table td {
+    border-right: 1px solid rgba(255,255,255,0.04) !important;
+}
+.t-shell .papers-results.t-table th:last-child,
+.t-shell .papers-results.t-table td:last-child {
+    border-right: none !important;
+}
+.t-shell .papers-results.t-table td {
+    border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+    color: #f5f5f7 !important;
+    background: transparent !important;
+    font-weight: 300 !important;
+}
+.t-shell .papers-results.t-table tbody tr:last-child td {
+    border-bottom: none !important;
+}
+.t-shell .papers-results.t-table td strong {
+    font-weight: 300 !important;
+}
+.t-shell .papers-results.t-table tbody tr:nth-child(odd) td {
+    background: rgba(255,255,255,0.008) !important;
+}
+.t-shell .papers-results.t-table tbody tr:nth-child(even) td {
+    background: rgba(255,255,255,0.016) !important;
+}
+.t-shell .papers-results.t-table tbody tr:hover td {
+    background: rgba(255,255,255,0.028) !important;
+}
+.t-shell .papers-results.t-table tbody tr:hover td:first-child {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
+}
+.t-shell .papers-results.t-table tbody tr:hover td:last-child {
+    border-top-right-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+/* Subject dropdown: long list — keep inner panel scrollable */
+#papersFilterForm .fdd-subject .fdd-panel {
+    max-height: 320px !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+</style>
+
+<form method="get" id="papersFilterForm" class="t-card" style="display:flex; gap:12px; flex-wrap:wrap; align-items:flex-end; margin-bottom:18px;">
+    <div class="t-field" style="flex:0 0 240px;">
+        <label>Subject</label>
+        <div class="fdd fdd-subject" data-fdd="single" data-auto-submit="1">
+            <button type="button" class="fdd-toggle">
+                <span class="fdd-label">{{ subject if subject else 'All' }}</span>
+                <span class="caret">▾</span>
+            </button>
+            <input type="hidden" name="subject" value="{{ subject or '' }}">
+            <div class="fdd-panel">
+                <div class="fdd-item" data-value="">All</div>
+                {% for s in subjects %}<div class="fdd-item" data-value="{{ s }}">{{ s }}</div>{% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="t-field" style="flex:0 0 150px;">
+        <label>Grade</label>
+        <div class="fdd" data-fdd="single" data-auto-submit="1">
+            <button type="button" class="fdd-toggle">
+                <span class="fdd-label">{% if grade %}Grade {{ grade }}{% else %}All{% endif %}</span>
+                <span class="caret">▾</span>
+            </button>
+            <input type="hidden" name="grade" value="{{ grade or '' }}">
+            <div class="fdd-panel">
+                <div class="fdd-item" data-value="">All</div>
+                {% for g in [10,11,12] %}<div class="fdd-item" data-value="{{ g }}">Grade {{ g }}</div>{% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="t-field" style="flex:0 0 200px;">
+        <label>Type</label>
+        {% set type_opts = [('past_paper','Past paper'),('memo','Memo'),('data_files','Data files'),('other','Other')] %}
+        {% set type_label = 'All' %}
+        {% for k,v in type_opts %}{% if k == ptype %}{% set type_label = v %}{% endif %}{% endfor %}
+        <div class="fdd" data-fdd="single" data-auto-submit="1">
+            <button type="button" class="fdd-toggle">
+                <span class="fdd-label">{{ type_label }}</span>
+                <span class="caret">▾</span>
+            </button>
+            <input type="hidden" name="type" value="{{ ptype or '' }}">
+            <div class="fdd-panel">
+                <div class="fdd-item" data-value="">All</div>
+                {% for k,v in type_opts %}<div class="fdd-item" data-value="{{ k }}">{{ v }}</div>{% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="t-field" style="flex:0 0 140px;">
+        <label>Year</label>
+        <div class="fdd" data-fdd="single" data-auto-submit="1">
+            <button type="button" class="fdd-toggle">
+                <span class="fdd-label">{% if year %}{{ year }}{% else %}All{% endif %}</span>
+                <span class="caret">▾</span>
+            </button>
+            <input type="hidden" name="year" value="{{ year or '' }}">
+            <div class="fdd-panel">
+                <div class="fdd-item" data-value="">All</div>
+                {% for y in years %}<div class="fdd-item" data-value="{{ y }}">{{ y }}</div>{% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="t-field" style="flex:0 0 160px;">
+        <label>Paper</label>
+        <div class="fdd" data-fdd="single" data-auto-submit="1">
+            <button type="button" class="fdd-toggle">
+                <span class="fdd-label">{% if pnum %}Paper {{ pnum }}{% else %}All{% endif %}</span>
+                <span class="caret">▾</span>
+            </button>
+            <input type="hidden" name="paper" value="{{ pnum or '' }}">
+            <div class="fdd-panel">
+                <div class="fdd-item" data-value="">All</div>
+                <div class="fdd-item" data-value="1">Paper 1</div>
+                <div class="fdd-item" data-value="2">Paper 2</div>
+            </div>
+        </div>
+    </div>
+    <noscript><button class="t-thin-btn"><i class="fas fa-filter"></i> Filter</button></noscript>
+</form>
+
+<script>
+    // Filter without a full page reload to avoid the scroll-jump glitch.
+    (function () {
+        var form = document.getElementById('papersFilterForm');
+        var results = document.getElementById('papersResults');
+        if (!form) return;
+
+        // We swap only the results block to avoid a full-page refresh.
+        function findResultsBlock() {
+            return results || document.getElementById('papersResults');
+        }
+
+        function submitAjax() {
+            var fd = new FormData(form);
+            var qs = new URLSearchParams();
+            fd.forEach(function (v, k) { if (v !== '' && v !== null) qs.append(k, v); });
+            // Use the page pathname only — form.action returns the full
+            // current document URL (incl. existing query string) which would
+            // produce broken URLs like ?grade=10?grade=11 on subsequent edits.
+            var url = window.location.pathname;
+            var full = url + (qs.toString() ? '?' + qs.toString() : '');
+            fetch(full, { headers: { 'X-Requested-With': 'XMLHttpRequest' }, credentials: 'same-origin' })
+                .then(function (r) { return r.text(); })
+                .then(function (html) {
+                    var doc = new DOMParser().parseFromString(html, 'text/html');
+                    var newBlock = doc.getElementById('papersResults');
+                    var oldBlock = findResultsBlock();
+                    if (newBlock && oldBlock) {
+                        oldBlock.innerHTML = newBlock.innerHTML;
+                    }
+                    history.replaceState(null, '', full);
+                })
+                .catch(function () {
+                    if (form._nativeSubmit) form._nativeSubmit();
+                });
+        }
+
+        form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            submitAjax();
+        });
+
+        // The shared dropdown widget calls form.submit() programmatically,
+        // which does NOT trigger the 'submit' event. Override it so the
+        // AJAX path is used instead and there is no full reload / jump.
+        var nativeSubmit = HTMLFormElement.prototype.submit.bind(form);
+        form.submit = function () { submitAjax(); };
+        form._nativeSubmit = nativeSubmit;
+    })();
+</script>
+
+{% if docs %}
+        <table id="papersResults" class="papers-results t-table">
+            <thead><tr>
+                <th>Title</th><th>Grade</th><th>Year</th><th>Paper</th><th>Type</th><th style="width:1px; text-align:center; padding-left:6px; padding-right:6px; font-size:11px; line-height:1.1;">Down&shy;loads</th><th></th>
+            </tr></thead>
+            <tbody>
+            {% for d in docs %}
+                <tr>
+                    <td>
+                        <strong>{{ d.title }}</strong>
+                        {% if d.description %}<div style="color:var(--text-tertiary); font-size:12px;">{{ d.description }}</div>{% endif %}
+                    </td>
+                    <td>{{ d.grade or '–' }}</td>
+                    <td>{{ d.paper_year or '–' }}</td>
+                    <td>{% if d.paper_number %}P{{ d.paper_number }}{% else %}–{% endif %}</td>
+                    <td style="font-weight:300; color:var(--text-secondary);">{{ d.paper_type|replace('_',' ')|title }}</td>
+                    <td style="width:1px; white-space:nowrap; text-align:center; padding-left:6px; padding-right:6px;">{{ d.download_count or 0 }}</td>
+                    <td style="text-align:right; white-space:nowrap;">
+                        <a class="t-icon-btn" title="Download" href="{{ url_for('teacher_paper_download', doc_id=d.id) }}">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M12 4v12"/><path d="m6 12 6 6 6-6"/><path d="M5 20h14"/></svg>
+                        </a>
+                        {% if d.uploaded_by == current_user.id or current_user.is_admin %}
+                            <form method="post" action="{{ url_for('teacher_paper_delete', doc_id=d.id) }}" style="display:inline;" data-confirm="Delete this document? This cannot be undone." data-confirm-no-backdrop="1">
+                                <button class="t-icon-btn danger" title="Delete">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M4 7h16"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+                                </button>
+                            </form>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+{% else %}
+        <div id="papersResults" class="papers-results t-empty"><i class="fas fa-file-pdf"></i>No documents found. Upload your first past paper.</div>
+{% endif %}
+
+<style>
+/* Single-selection row highlight: light-blue text + icons, no bg. */
+.t-shell .t-table tbody tr.is-selected td,
+.t-shell .t-table tbody tr.is-selected td *,
+.t-shell .t-table tbody tr.is-selected td .t-icon-btn,
+.t-shell .t-table tbody tr.is-selected td .t-icon-btn * {
+    color: #60a5fa !important;
+    background: transparent !important;
+}
+.t-shell .t-table tbody tr.is-selected td input[type="checkbox"] {
+    accent-color: #60a5fa !important;
+}
+</style>
+<script>
+(function(){
+    var tbody = document.querySelector('.t-shell .t-table tbody');
+    if (!tbody) return;
+    tbody.addEventListener('click', function(ev){
+        if (ev.target.closest('input, label')) return;
+        var tr = ev.target.closest('tr');
+        if (!tr || !tbody.contains(tr)) return;
+        tbody.querySelectorAll('tr.is-selected').forEach(function(r){
+            if (r !== tr) r.classList.remove('is-selected');
+        });
+        tr.classList.add('is-selected');
+    });
+})();
+</script>
+{% endblock %}

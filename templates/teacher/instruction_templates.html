@@ -1,0 +1,384 @@
+{% extends "teacher/_layout.html" %}
+
+{% block t_title %}Instruction Templates{% endblock %}
+{% block t_sub %}Reusable exam cover instructions and section intros for your papers.{% endblock %}
+
+{% block t_action %}
+<button class="t-btn primary" onclick="openAddModal()">
+    <i class="fas fa-plus"></i> New custom instruction
+</button>
+{% endblock %}
+
+{% block t_body %}
+<style>
+/* ---- page-specific styles ---- */
+.it-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-top: 24px;
+}
+@media (max-width: 1100px) { .it-grid { grid-template-columns: 1fr; } }
+
+.it-panel {
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.it-panel-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 13px 16px;
+    cursor: pointer;
+    user-select: none;
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    gap: 10px;
+    transition: background 120ms ease, border-color 120ms ease;
+}
+.it-panel-header:hover { background: #1A1A1A; }
+.it-panel.open .it-panel-header { border-bottom-color: rgba(255,255,255,0.06); }
+.it-panel-title {
+    font-size: 13px; font-weight: 600;
+    color: #F1F2F4 !important;
+    flex: 1;
+}
+.it-panel-chevron {
+    font-size: 12px;
+    color: #6B7280 !important;
+    transition: transform .2s;
+    flex-shrink: 0;
+}
+.it-panel.open .it-panel-chevron { transform: rotate(180deg); }
+.it-panel-body {
+    display: none;
+    padding: 4px 0;
+}
+.it-panel.open .it-panel-body { display: block; }
+
+.it-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 9px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    transition: background .12s;
+}
+.it-item:last-child { border-bottom: none; }
+.it-item:hover { background: rgba(255,255,255,0.04); }
+.it-item-text {
+    flex: 1;
+    font-size: 12.5px; line-height: 1.55;
+    color: #A0A6B2 !important;
+}
+.it-item-text strong, .it-item-text em { color: #F1F2F4 !important; }
+
+.it-add-btn {
+    flex-shrink: 0;
+    padding: 4px 10px;
+    font-size: 11px; font-weight: 500;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.18);
+    border-radius: 5px;
+    color: #d6d6da !important;
+    cursor: pointer;
+    transition: background .12s, border-color .12s;
+    white-space: nowrap;
+}
+.it-add-btn:hover { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.30); }
+.it-add-btn.saved { border-color: rgba(74,222,128,0.4); color: #4ADE80 !important; }
+
+/* ---- my templates panel (full-width at bottom) ---- */
+.it-mine {
+    margin-top: 24px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    overflow: hidden;
+}
+.it-mine-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 13px 16px;
+    border-bottom: 1px solid transparent;
+    background: transparent;
+    cursor: pointer;
+    user-select: none;
+    transition: background 120ms ease, border-color 120ms ease;
+}
+.it-mine-header:hover { background: #1A1A1A; }
+.it-mine-header h3 {
+    font-size: 13px; font-weight: 600;
+    color: #F1F2F4 !important; margin: 0; flex: 1;
+}
+.it-mine-chevron {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    margin-left: 8px;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    transition: transform .2s;
+    color: #d6d6da !important;
+    font-size: 14px !important;
+}
+.it-mine-chevron::before {
+    content: '';
+    display: block;
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 6px solid #d6d6da;
+    transition: transform .2s;
+}
+.it-mine.open .it-mine-chevron { transform: rotate(180deg); }
+.it-mine-header { border-bottom: none; }
+.it-mine.open .it-mine-header { border-bottom: 1px solid rgba(255,255,255,0.06); }
+.it-mine-body { display: none; }
+.it-mine.open .it-mine-body { display: block; }
+.it-mine-empty {
+    padding: 28px 20px;
+    text-align: center;
+    color: #6B7280 !important;
+    font-size: 13px;
+}
+.it-mine-item {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+    transition: background .12s;
+}
+.it-mine-item:last-child { border-bottom: none; }
+.it-mine-item:hover { background: rgba(255,255,255,0.04); }
+.it-mine-num {
+    font-size: 11px; font-weight: 600;
+    color: #4B5563 !important;
+    padding-top: 3px;
+    min-width: 20px;
+}
+.it-mine-text {
+    flex: 1;
+    font-size: 12.5px; line-height: 1.55;
+    color: #C9CDD4 !important;
+}
+
+/* ---- add modal ---- */
+.it-modal-backdrop {
+    display: none;
+    position: fixed; inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 1000;
+    align-items: center; justify-content: center;
+}
+.it-modal-backdrop.open { display: flex; }
+.it-modal {
+    background: #161616;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 24px;
+    width: 560px; max-width: 95vw;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+.it-modal h3 { margin: 0 0 6px; font-size: 16px; font-weight: 600; color: #F1F2F4 !important; }
+.it-modal p  { margin: 0 0 16px; font-size: 13px; color: #6B7280 !important; }
+.it-modal textarea {
+    width: 100%; min-height: 100px;
+    background: #0f0f12; border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 7px; color: #F1F2F4 !important;
+    font-size: 13px; line-height: 1.55; padding: 10px 12px;
+    resize: vertical; font-family: inherit;
+    box-sizing: border-box;
+}
+.it-modal textarea:focus { outline: none; border-color: rgba(255,255,255,0.30); }
+.it-modal-actions { display: flex; justify-content: flex-end; gap: 8px; margin-top: 14px; }
+.it-char-count { font-size: 11px; color: #4B5563 !important; margin-top: 5px; text-align: right; }
+.it-char-count.warn { color: #FCD34D !important; }
+</style>
+
+{# ====== LIBRARY GRID ====== #}
+<div class="it-grid">
+    {% for cat in categories %}
+    <div class="it-panel" data-panel>
+        <div class="it-panel-header" onclick="this.parentElement.classList.toggle('open')">
+            <span class="it-panel-title">{{ cat.name }}</span>
+            <span class="it-panel-chevron"><i class="fas fa-chevron-down"></i></span>
+        </div>
+        <div class="it-panel-body">
+            {% for item in cat.instructions %}
+            <div class="it-item">
+                <span class="it-item-text">{{ item }}</span>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{# ====== MY TEMPLATES ====== #}
+<div class="it-mine open">
+    <div class="it-mine-header" onclick="this.parentElement.classList.toggle('open')">
+        <h3><i class="fas fa-bookmark"></i>&nbsp; My Custom Instructions
+            <span id="mineCount" style="font-weight:400;opacity:.7;">({{ my_templates|length }})</span>
+        </h3>
+        <span class="it-mine-chevron"></span>
+    </div>
+    <div class="it-mine-body">
+    <div id="mineList">
+        {% if not my_templates %}
+        <div class="it-mine-empty" id="mineEmpty">
+            No custom instructions yet. Save items from the library above, or click <strong style="color:#f5f5f7!important;">New custom instruction</strong>.
+        </div>
+        {% else %}
+        {% for t in my_templates %}
+        <div class="it-mine-item" id="mine-{{ t.id }}">
+            <span class="it-mine-num">{{ loop.index }}</span>
+            <span class="it-mine-text">{{ t.text }}</span>
+            <button class="t-icon-btn danger" onclick="deleteMine('{{ t.id }}')" title="Delete">
+                <i class="fas fa-trash-can"></i>
+            </button>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+    </div>
+</div>
+
+{# ====== ADD MODAL ====== #}
+<div class="it-modal-backdrop" id="addModal" onclick="if(event.target===this)closeAddModal()">
+    <div class="it-modal">
+        <h3>New custom instruction</h3>
+        <p>Write any instruction text to add to your personal library.</p>
+        <textarea id="addText" maxlength="1000" placeholder="Type your instruction here…" oninput="updateCharCount()"></textarea>
+        <div class="it-char-count" id="charCount">0 / 1000</div>
+        <div class="it-modal-actions">
+            <button class="t-btn" onclick="closeAddModal()">Cancel</button>
+            <button class="t-btn primary" onclick="submitAdd()">Save instruction</button>
+        </div>
+    </div>
+</div>
+
+<script>
+(function () {
+
+    /* ---- helpers ---- */
+    function req(url, method, body) {
+        return fetch(url, {
+            method: method,
+            headers: { 'Content-Type': 'application/json' },
+            body: body ? JSON.stringify(body) : undefined,
+        }).then(function (r) { return r.json(); });
+    }
+
+    /* ---- save a library item to "mine" ---- */
+    window.saveToMine = function (btn, text) {
+        btn.disabled = true;
+        req('{{ url_for("teacher_instruction_templates_create") }}', 'POST', { text: text })
+            .then(function (data) {
+                if (data.ok) {
+                    btn.classList.add('saved');
+                    btn.innerHTML = '<i class="fas fa-check"></i> Saved';
+                    appendMineItem(data.id, data.text);
+                } else {
+                    btn.disabled = false;
+                    alert(data.error || 'Error saving');
+                }
+            })
+            .catch(function () { btn.disabled = false; alert('Network error'); });
+    };
+
+    /* ---- delete a "mine" item ---- */
+    window.deleteMine = function (id) {
+        if (!confirm('Remove this instruction from your list?')) return;
+        req('/teacher/instruction-templates/' + id, 'DELETE')
+            .then(function (data) {
+                if (data.ok) {
+                    var el = document.getElementById('mine-' + id);
+                    if (el) el.remove();
+                    renumberMine();
+                }
+            });
+    };
+
+    function appendMineItem(id, text) {
+        var empty = document.getElementById('mineEmpty');
+        if (empty) empty.remove();
+        var list = document.getElementById('mineList');
+        var count = list.querySelectorAll('.it-mine-item').length + 1;
+        var div = document.createElement('div');
+        div.className = 'it-mine-item';
+        div.id = 'mine-' + id;
+        div.innerHTML =
+            '<span class="it-mine-num">' + count + '</span>' +
+            '<span class="it-mine-text">' + escHtml(text) + '</span>' +
+            '<button class="t-icon-btn danger" onclick="deleteMine(\'' + id + '\')" title="Delete">' +
+            '<i class="fas fa-trash-can"></i></button>';
+        list.appendChild(div);
+        updateCount();
+    }
+
+    function renumberMine() {
+        var items = document.querySelectorAll('#mineList .it-mine-item');
+        items.forEach(function (el, i) {
+            var num = el.querySelector('.it-mine-num');
+            if (num) num.textContent = (i + 1);
+        });
+        updateCount();
+        if (items.length === 0) {
+            var list = document.getElementById('mineList');
+            var d = document.createElement('div');
+            d.className = 'it-mine-empty';
+            d.id = 'mineEmpty';
+            d.innerHTML = 'No custom instructions yet. Save items from the library above, or click <strong style="color:#f5f5f7!important;">New custom instruction</strong>.';
+            list.appendChild(d);
+        }
+    }
+
+    function updateCount() {
+        var n = document.querySelectorAll('#mineList .it-mine-item').length;
+        var el = document.getElementById('mineCount');
+        if (el) el.textContent = '(' + n + ')';
+    }
+
+    function escHtml(s) {
+        return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+    }
+
+    /* ---- add modal ---- */
+    window.openAddModal = function () {
+        document.getElementById('addText').value = '';
+        document.getElementById('charCount').textContent = '0 / 1000';
+        document.getElementById('charCount').classList.remove('warn');
+        document.getElementById('addModal').classList.add('open');
+        setTimeout(function () { document.getElementById('addText').focus(); }, 50);
+    };
+    window.closeAddModal = function () {
+        document.getElementById('addModal').classList.remove('open');
+    };
+    window.updateCharCount = function () {
+        var n = document.getElementById('addText').value.length;
+        var el = document.getElementById('charCount');
+        el.textContent = n + ' / 1000';
+        el.classList.toggle('warn', n > 900);
+    };
+    window.submitAdd = function () {
+        var text = document.getElementById('addText').value.trim();
+        if (!text) { alert('Please enter some text.'); return; }
+        req('{{ url_for("teacher_instruction_templates_create") }}', 'POST', { text: text })
+            .then(function (data) {
+                if (data.ok) {
+                    if (!data.duplicate) appendMineItem(data.id, data.text);
+                    closeAddModal();
+                } else {
+                    alert(data.error || 'Error saving');
+                }
+            })
+            .catch(function () { alert('Network error'); });
+    };
+
+    /* ---- Escape key closes modal ---- */
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') closeAddModal();
+    });
+
+})();
+</script>
+{% endblock %}

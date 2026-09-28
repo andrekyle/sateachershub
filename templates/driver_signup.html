@@ -1,0 +1,938 @@
+{% extends "base.html" %}
+
+{% block title %}Become a Driver - South African Teachers Hub{% endblock %}
+
+{% block head %}
+<script src="https://unpkg.com/feather-icons"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700&display=swap');
+    
+    /* Azure Design System Colors */
+    :root {
+        --azure-blue: #0078D4;
+        --azure-blue-dark: #005A9E;
+        --azure-blue-light: #50E6FF;
+        --azure-teal: #008272;
+        --azure-purple: #5C2D91;
+        --white: #FFFFFF;
+        --black: #000000;
+        --gray-50: #FAFAFA;
+        --gray-100: #F8F8F8;
+        --gray-200: #F3F2F1;
+        --gray-300: #EDEBE9;
+        --gray-400: #D2D0CE;
+        --gray-500: #B3B0AD;
+        --gray-600: #979593;
+        --gray-700: #605E5C;
+        --gray-800: #323130;
+        --gray-900: #201F1E;
+        --success-green: #107C10;
+        --error-red: #D13438;
+        --warning-orange: #FFB900;
+    }
+
+    body {
+        font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        background-color: var(--gray-50);
+        color: var(--gray-800);
+        line-height: 1.5;
+        font-weight: 400;
+    }
+
+    .page-header {
+        background: linear-gradient(135deg, var(--azure-blue) 0%, var(--azure-blue-dark) 100%);
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+    }
+
+    .form-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 1rem;
+    }
+
+    .azure-card {
+        background: var(--white);
+        border: 1px solid var(--gray-300);
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    }
+
+    .azure-input {
+        background: var(--white);
+        border: 1px solid var(--gray-400);
+        border-radius: 2px;
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: var(--gray-800);
+        transition: all 0.15s ease;
+        width: 100%;
+    }
+
+    .azure-input:focus {
+        outline: none;
+        border-color: var(--azure-blue);
+        box-shadow: 0 0 0 1px var(--azure-blue);
+    }
+
+    .azure-select {
+        background: var(--white);
+        border: 1px solid var(--gray-400);
+        border-radius: 2px;
+        padding: 0.75rem 1rem;
+        font-size: 0.875rem;
+        font-weight: 400;
+        color: var(--gray-800);
+        transition: all 0.15s ease;
+        width: 100%;
+        cursor: pointer;
+    }
+
+    .azure-select:focus {
+        outline: none;
+        border-color: var(--azure-blue);
+        box-shadow: 0 0 0 1px var(--azure-blue);
+    }
+
+    .section-header {
+        display: flex;
+        align-items: center;
+        font-size: 1.125rem;
+        font-weight: 500;
+        color: var(--gray-800);
+        margin-bottom: 1.5rem;
+        padding-bottom: 0.75rem;
+        border-bottom: 1px solid var(--gray-300);
+    }
+
+    .btn-primary {
+        background: var(--azure-blue);
+        border: 1px solid var(--azure-blue);
+        color: var(--white);
+        border-radius: 2px;
+        transition: all 0.1s ease;
+        font-weight: 500;
+        font-size: 0.875rem;
+        padding: 0.75rem 1.5rem;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+    }
+
+    .btn-primary:hover {
+        background: var(--azure-blue-dark);
+        border-color: var(--azure-blue-dark);
+        color: var(--white);
+        text-decoration: none;
+    }
+
+    .btn-secondary {
+        background: var(--white);
+        color: var(--gray-800);
+        border: 0.5px solid var(--gray-400);
+        border-radius: 2px;
+        transition: all 0.1s ease;
+        font-weight: 400;
+        font-size: 0.875rem;
+        padding: 0.5rem 1.25rem;
+        cursor: pointer;
+    }
+
+    .btn-secondary:hover {
+        background: var(--gray-100);
+        border-color: var(--gray-500);
+    }
+
+    .info-box {
+        background: #EFF6FF;
+        border: 1px solid #DBEAFE;
+        border-radius: 4px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .file-upload-container {
+        border: 2px dashed #D1D5DB;
+        border-radius: 8px;
+        padding: 1.5rem 1rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        background: #FAFAFA;
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .file-upload-container:hover {
+        border-color: var(--azure-blue);
+        background: #F8FAFF;
+    }
+
+    .file-upload-container.drag-over,
+    .file-upload-container.has-file {
+        border-color: var(--success-green);
+        background: #F0FDF4;
+    }
+    
+    .upload-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+    }
+    
+    .upload-icon {
+        color: #9CA3AF;
+        margin-bottom: 0.25rem;
+    }
+    
+    .file-upload-container:hover .upload-icon {
+        color: var(--azure-blue);
+    }
+    
+    .file-upload-container.has-file .upload-icon {
+        color: var(--success-green);
+    }
+    
+    .upload-text {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: #374151;
+        margin-bottom: 0.125rem;
+    }
+    
+    .upload-formats {
+        font-size: 0.7rem;
+        color: #6B7280;
+    }
+    
+    .uploaded-file-display {
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+        background: #F0FDF4;
+        border: 1px solid #BBF7D0;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        color: #166534;
+        display: none;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .uploaded-file-display::before {
+        content: "?";
+        color: var(--success-green);
+        font-weight: bold;
+    }
+
+    .step-indicator {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+    .step {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        margin: 0 0.5rem;
+        border-radius: 20px;
+        font-size: 0.875rem;
+        font-weight: 500;
+    }
+
+    .step.active {
+        background: var(--azure-blue);
+        color: var(--white);
+    }
+
+    .step.completed {
+        background: var(--success-green);
+        color: var(--white);
+    }
+
+    .step.upcoming {
+        background: var(--gray-200);
+        color: var(--gray-600);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="form-container">
+        <div>
+            <h1 class="text-xl font-light text-white">Become a South African Teachers Hub Driver</h1>
+            <p class="text-xs font-light text-white mt-1 opacity-90">Complete your driver application to start earning</p>
+        </div>
+    </div>
+</div>
+
+<div class="form-container">
+    <!-- Step Indicator -->
+    <div class="step-indicator">
+        <div class="step active">
+            <i data-feather="user" class="w-4 h-4 mr-2"></i>
+            Personal Info
+        </div>
+        <div class="step upcoming">
+            <i data-feather="car" class="w-4 h-4 mr-2"></i>
+            Vehicle Details
+        </div>
+        <div class="step upcoming">
+            <i data-feather="file-text" class="w-4 h-4 mr-2"></i>
+            Documents
+        </div>
+        <div class="step upcoming">
+            <i data-feather="check-circle" class="w-4 h-4 mr-2"></i>
+            Complete
+        </div>
+    </div>
+
+    <!-- Info Box -->
+    <div class="info-box">
+        <div class="flex items-start">
+            <i data-feather="info" class="w-5 h-5 text-blue-600 mr-3 mt-0.5"></i>
+            <div>
+                <h4 class="font-medium text-blue-600 mb-1">Drive with South African Teachers Hub</h4>
+                <p class="text-sm text-blue-700">Join our delivery network and start earning on your schedule. Requirements: Valid driver's license, vehicle insurance, smartphone, and be 18+ years old.</p>
+            </div>
+        </div>
+    </div>
+
+    <form method="POST" enctype="multipart/form-data" id="driverForm">
+        <!-- Personal Information Section -->
+        <div class="azure-card p-6 mb-6">
+            <div class="mb-6">
+                <h4 class="section-header">
+                    <i data-feather="user" class="w-4 h-4 mr-2" style="color: #0078D4;"></i>
+                    Personal Information
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">First Name <span class="text-red-500">*</span></label>
+                        <input type="text" id="first_name" name="first_name" required
+                               class="azure-input w-full" placeholder="Enter your first name">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Last Name <span class="text-red-500">*</span></label>
+                        <input type="text" id="last_name" name="last_name" required
+                               class="azure-input w-full" placeholder="Enter your last name">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Email Address <span class="text-red-500">*</span></label>
+                        <input type="email" id="email" name="email" required
+                               class="azure-input w-full" placeholder="your.email@example.com">
+                        <p class="text-xs font-light text-gray-500 mt-1">We'll use this for important updates</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Phone Number <span class="text-red-500">*</span></label>
+                        <input type="tel" id="phone" name="phone" required
+                               class="azure-input w-full" placeholder="0XX XXX XXXX">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Date of Birth <span class="text-red-500">*</span></label>
+                        <input type="date" id="date_of_birth" name="date_of_birth" required
+                               class="azure-input w-full">
+                        <p class="text-xs font-light text-gray-500 mt-1">You must be 18 or older</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">South African ID Number <span class="text-red-500">*</span></label>
+                        <input type="text" id="id_number" name="id_number" required maxlength="13"
+                               class="azure-input w-full" placeholder="YYMMDDXXXXXXX">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Address Information Section -->
+        <div class="azure-card p-6 mb-6">
+            <div class="mb-6">
+                <h4 class="section-header">
+                    <i data-feather="map-pin" class="w-4 h-4 mr-2" style="color: #0078D4;"></i>
+                    Address Information
+                </h4>
+                <div class="grid grid-cols-1 gap-4">
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Home Address <span class="text-red-500">*</span></label>
+                        <textarea id="home_address" name="home_address" required rows="3"
+                                  class="azure-input w-full" placeholder="Enter your full home address"></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-sm font-light text-gray-700 mb-2">City <span class="text-red-500">*</span></label>
+                            <input type="text" id="city" name="city" required
+                                   class="azure-input w-full" placeholder="City">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-light text-gray-700 mb-2">Province <span class="text-red-500">*</span></label>
+                            <select id="province" name="province" required class="azure-select w-full">
+                                <option value="">Select Province</option>
+                                <option value="Eastern Cape">Eastern Cape</option>
+                                <option value="Free State">Free State</option>
+                                <option value="Gauteng">Gauteng</option>
+                                <option value="KwaZulu-Natal">KwaZulu-Natal</option>
+                                <option value="Limpopo">Limpopo</option>
+                                <option value="Mpumalanga">Mpumalanga</option>
+                                <option value="Northern Cape">Northern Cape</option>
+                                <option value="North West">North West</option>
+                                <option value="Western Cape">Western Cape</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-light text-gray-700 mb-2">Postal Code <span class="text-red-500">*</span></label>
+                            <input type="text" id="postal_code" name="postal_code" required
+                                   class="azure-input w-full" placeholder="1234">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Emergency Contact Section -->
+        <div class="azure-card p-6 mb-6">
+            <div class="mb-6">
+                <h4 class="section-header">
+                    <i data-feather="phone" class="w-4 h-4 mr-2" style="color: #0078D4;"></i>
+                    Emergency Contact
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Contact Name <span class="text-red-500">*</span></label>
+                        <input type="text" id="emergency_contact_name" name="emergency_contact_name" required
+                               class="azure-input w-full" placeholder="Full name">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Contact Phone <span class="text-red-500">*</span></label>
+                        <input type="tel" id="emergency_contact_phone" name="emergency_contact_phone" required
+                               class="azure-input w-full" placeholder="0XX XXX XXXX">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Relationship <span class="text-red-500">*</span></label>
+                        <select id="emergency_contact_relationship" name="emergency_contact_relationship" required class="azure-select w-full">
+                            <option value="">Select Relationship</option>
+                            <option value="Parent">Parent</option>
+                            <option value="Spouse">Spouse</option>
+                            <option value="Sibling">Sibling</option>
+                            <option value="Child">Child</option>
+                            <option value="Friend">Friend</option>
+                            <option value="Other Family">Other Family</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Vehicle Information Section -->
+        <div class="azure-card p-6 mb-6">
+            <div class="mb-6">
+                <h4 class="section-header">
+                    <i data-feather="car" class="w-4 h-4 mr-2" style="color: #0078D4;"></i>
+                    Vehicle Information
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Vehicle Make <span class="text-red-500">*</span></label>
+                        <input type="text" id="vehicle_make" name="vehicle_make" required
+                               class="azure-input w-full" placeholder="e.g., Toyota, Ford, Honda">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Vehicle Model <span class="text-red-500">*</span></label>
+                        <input type="text" id="vehicle_model" name="vehicle_model" required
+                               class="azure-input w-full" placeholder="e.g., Corolla, Focus, Civic">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Vehicle Year <span class="text-red-500">*</span></label>
+                        <input type="number" id="vehicle_year" name="vehicle_year" required min="1990" max="2025"
+                               class="azure-input w-full" placeholder="2020">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Vehicle Color <span class="text-red-500">*</span></label>
+                        <input type="text" id="vehicle_color" name="vehicle_color" required
+                               class="azure-input w-full" placeholder="e.g., White, Black, Silver">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">License Plate <span class="text-red-500">*</span></label>
+                        <input type="text" id="vehicle_license_plate" name="vehicle_license_plate" required
+                               class="azure-input w-full" placeholder="ABC 123 GP" style="text-transform: uppercase;">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Vehicle Type <span class="text-red-500">*</span></label>
+                        <select id="vehicle_type" name="vehicle_type" required class="azure-select w-full">
+                            <option value="">Select Vehicle Type</option>
+                            <option value="Car">Car</option>
+                            <option value="Motorcycle">Motorcycle</option>
+                            <option value="Scooter">Scooter</option>
+                            <option value="Bicycle">Bicycle</option>
+                        </select>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-light text-gray-700 mb-2">Vehicle VIN (Optional)</label>
+                        <input type="text" id="vehicle_vin" name="vehicle_vin"
+                               class="azure-input w-full" placeholder="17-character Vehicle Identification Number">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Driver's License Information -->
+        <div class="azure-card p-6 mb-6">
+            <div class="mb-6">
+                <h4 class="section-header">
+                    <i data-feather="credit-card" class="w-4 h-4 mr-2" style="color: #0078D4;"></i>
+                    Driver's License Information
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">License Number <span class="text-red-500">*</span></label>
+                        <input type="text" id="drivers_license_number" name="drivers_license_number" required
+                               class="azure-input w-full" placeholder="License number">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">License Type <span class="text-red-500">*</span></label>
+                        <select id="license_type" name="license_type" required class="azure-select w-full">
+                            <option value="">Select License Type</option>
+                            <option value="A">A - Motorcycle</option>
+                            <option value="B">B - Light Vehicle</option>
+                            <option value="C1">C1 - Light Truck</option>
+                            <option value="C">C - Heavy Vehicle</option>
+                            <option value="EB">EB - Light Vehicle + Trailer</option>
+                            <option value="EC1">EC1 - Light Truck + Trailer</option>
+                            <option value="EC">EC - Heavy Vehicle + Trailer</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">License Expiry Date <span class="text-red-500">*</span></label>
+                        <input type="date" id="license_expiry_date" name="license_expiry_date" required
+                               class="azure-input w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Banking Information Section -->
+        <div class="azure-card p-6 mb-6">
+            <div class="mb-6">
+                <h4 class="section-header">
+                    <i data-feather="dollar-sign" class="w-4 h-4 mr-2" style="color: #0078D4;"></i>
+                    Banking Information
+                </h4>
+                <p class="text-sm text-gray-600 mb-4">Your earnings will be deposited into this account</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Bank Name <span class="text-red-500">*</span></label>
+                        <select id="bank_name" name="bank_name" required class="azure-select w-full">
+                            <option value="">Select Bank</option>
+                            <option value="ABSA Bank">ABSA Bank</option>
+                            <option value="Standard Bank">Standard Bank</option>
+                            <option value="First National Bank (FNB)">First National Bank (FNB)</option>
+                            <option value="Nedbank">Nedbank</option>
+                            <option value="Capitec Bank">Capitec Bank</option>
+                            <option value="Investec">Investec</option>
+                            <option value="African Bank">African Bank</option>
+                            <option value="Bidvest Bank">Bidvest Bank</option>
+                            <option value="Discovery Bank">Discovery Bank</option>
+                            <option value="TymeBank">TymeBank</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Account Holder Name <span class="text-red-500">*</span></label>
+                        <input type="text" id="account_holder" name="account_holder" required
+                               class="azure-input w-full" placeholder="Full name as per bank records">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Account Number <span class="text-red-500">*</span></label>
+                        <input type="text" id="account_number" name="account_number" required
+                               class="azure-input w-full" placeholder="Account number">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Branch Code <span class="text-red-500">*</span></label>
+                        <input type="text" id="branch_code" name="branch_code" required
+                               class="azure-input w-full" placeholder="6-digit branch code">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Account Type <span class="text-red-500">*</span></label>
+                        <select id="account_type" name="account_type" required class="azure-select w-full">
+                            <option value="">Select Account Type</option>
+                            <option value="Current">Current Account</option>
+                            <option value="Savings">Savings Account</option>
+                            <option value="Transmission">Transmission Account</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Document Upload Section -->
+        <div class="azure-card p-6 mb-6">
+            <div class="mb-6">
+                <h4 class="section-header">
+                    <i data-feather="upload" class="w-4 h-4 mr-2" style="color: #0078D4;"></i>
+                    Required Documents
+                </h4>
+                <p class="text-sm text-gray-600 mb-4">Upload clear photos or scans of the following documents. All documents are required for verification.</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- ID Copy -->
+                    <div class="upload-section">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">South African ID Copy <span class="text-red-500">*</span></label>
+                        <div class="file-upload-container" onclick="triggerDriverFileInput('id_copy')">
+                            <div class="upload-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17,8 12,3 7,8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <div class="upload-text">Click to upload ID copy</div>
+                                <div class="upload-formats">PNG, JPG, PDF (max 5MB)</div>
+                            </div>
+                            <input type="file" id="id_copy" name="id_copy" accept="image/*,.pdf" class="hidden" onchange="updateDriverFileName(this)">
+                        </div>
+                        <div class="uploaded-file-display" id="id_copy_file"></div>
+                    </div>
+
+                    <!-- Driver's License -->
+                    <div class="upload-section">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Driver's License <span class="text-red-500">*</span></label>
+                        <div class="file-upload-container" onclick="triggerDriverFileInput('drivers_license')">
+                            <div class="upload-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17,8 12,3 7,8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <div class="upload-text">Click to upload license</div>
+                                <div class="upload-formats">PNG, JPG, PDF (max 5MB)</div>
+                            </div>
+                            <input type="file" id="drivers_license" name="drivers_license" accept="image/*,.pdf" class="hidden" onchange="updateDriverFileName(this)">
+                        </div>
+                        <div class="uploaded-file-display" id="drivers_license_file"></div>
+                    </div>
+
+                    <!-- Proof of Address -->
+                    <div class="upload-section">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Proof of Address <span class="text-red-500">*</span></label>
+                        <div class="file-upload-container" onclick="triggerDriverFileInput('proof_of_address')">
+                            <div class="upload-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17,8 12,3 7,8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <div class="upload-text">Click to upload proof of address</div>
+                                <div class="upload-formats">Utility bill, bank statement (max 5MB)</div>
+                            </div>
+                            <input type="file" id="proof_of_address" name="proof_of_address" accept="image/*,.pdf" class="hidden" onchange="updateDriverFileName(this)">
+                        </div>
+                        <div class="uploaded-file-display" id="proof_of_address_file"></div>
+                    </div>
+
+                    <!-- Vehicle Registration -->
+                    <div class="upload-section">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Vehicle Registration <span class="text-red-500">*</span></label>
+                        <div class="file-upload-container" onclick="triggerDriverFileInput('vehicle_registration')">
+                            <div class="upload-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17,8 12,3 7,8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <div class="upload-text">Click to upload vehicle registration</div>
+                                <div class="upload-formats">PNG, JPG, PDF (max 5MB)</div>
+                            </div>
+                            <input type="file" id="vehicle_registration" name="vehicle_registration" accept="image/*,.pdf" class="hidden" onchange="updateDriverFileName(this)">
+                        </div>
+                        <div class="uploaded-file-display" id="vehicle_registration_file"></div>
+                    </div>
+
+                    <!-- Vehicle Insurance -->
+                    <div class="upload-section">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Vehicle Insurance <span class="text-red-500">*</span></label>
+                        <div class="file-upload-container" onclick="triggerDriverFileInput('vehicle_insurance')">
+                            <div class="upload-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17,8 12,3 7,8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <div class="upload-text">Click to upload insurance certificate</div>
+                                <div class="upload-formats">PNG, JPG, PDF (max 5MB)</div>
+                            </div>
+                            <input type="file" id="vehicle_insurance" name="vehicle_insurance" accept="image/*,.pdf" class="hidden" onchange="updateDriverFileName(this)">
+                        </div>
+                        <div class="uploaded-file-display" id="vehicle_insurance_file"></div>
+                    </div>
+
+                    <!-- Profile Photo -->
+                    <div class="upload-section">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Profile Photo <span class="text-red-500">*</span></label>
+                        <div class="file-upload-container" onclick="triggerDriverFileInput('profile_photo')">
+                            <div class="upload-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+                                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                    <circle cx="12" cy="13" r="4"></circle>
+                                </svg>
+                                <div class="upload-text">Click to upload profile photo</div>
+                                <div class="upload-formats">Clear headshot photo (max 5MB)</div>
+                            </div>
+                            <input type="file" id="profile_photo" name="profile_photo" accept="image/*" class="hidden" onchange="updateDriverFileName(this)">
+                        </div>
+                        <div class="uploaded-file-display" id="profile_photo_file"></div>
+                    </div>
+                </div>
+
+                <!-- Optional Documents -->
+                <div class="mt-6 pt-6 border-t border-gray-200">
+                    <h5 class="text-sm font-medium text-gray-700 mb-4">Optional Documents (recommended)</h5>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <!-- Vehicle Roadworthy -->
+                        <div class="upload-section">
+                            <label class="block text-sm font-light text-gray-700 mb-3">Vehicle Roadworthy Certificate</label>
+                            <div class="file-upload-container" onclick="triggerDriverFileInput('vehicle_roadworthy')">
+                                <div class="upload-content">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="17,8 12,3 7,8"></polyline>
+                                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                                    </svg>
+                                    <div class="upload-text">Click to upload roadworthy certificate</div>
+                                    <div class="upload-formats">PNG, JPG, PDF (max 5MB)</div>
+                                </div>
+                                <input type="file" id="vehicle_roadworthy" name="vehicle_roadworthy" accept="image/*,.pdf" class="hidden" onchange="updateDriverFileName(this)">
+                            </div>
+                            <div class="uploaded-file-display" id="vehicle_roadworthy_file"></div>
+                        </div>
+
+                        <!-- Bank Statement -->
+                        <div class="upload-section">
+                            <label class="block text-sm font-light text-gray-700 mb-3">Bank Statement</label>
+                            <div class="file-upload-container" onclick="triggerDriverFileInput('bank_statement')">
+                                <div class="upload-content">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+                                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                        <polyline points="17,8 12,3 7,8"></polyline>
+                                        <line x1="12" y1="3" x2="12" y2="15"></line>
+                                    </svg>
+                                    <div class="upload-text">Click to upload bank statement</div>
+                                    <div class="upload-formats">Recent 3-month statement (max 5MB)</div>
+                                </div>
+                                <input type="file" id="bank_statement" name="bank_statement" accept="image/*,.pdf" class="hidden" onchange="updateDriverFileName(this)">
+                            </div>
+                            <div class="uploaded-file-display" id="bank_statement_file"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terms and Agreements Section -->
+        <div class="azure-card p-6 mb-6">
+            <div class="mb-6">
+                <h4 class="section-header">
+                    <i data-feather="file-text" class="w-4 h-4 mr-2" style="color: #0078D4;"></i>
+                    Terms and Agreements
+                </h4>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <input type="checkbox" id="terms_accepted" name="terms_accepted" required class="mt-1 mr-3">
+                        <label for="terms_accepted" class="text-sm text-gray-700">
+                            I have read and agree to the <a href="{{ url_for('terms_and_conditions') }}" target="_blank" class="text-blue-600 hover:underline">Terms and Conditions</a> <span class="text-red-500">*</span>
+                        </label>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <input type="checkbox" id="privacy_accepted" name="privacy_accepted" required class="mt-1 mr-3">
+                        <label for="privacy_accepted" class="text-sm text-gray-700">
+                            I have read and agree to the <a href="/privacy-policy" target="_blank" class="text-blue-600 hover:underline">Privacy Policy</a> <span class="text-red-500">*</span>
+                        </label>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <input type="checkbox" id="driver_agreement_accepted" name="driver_agreement_accepted" required class="mt-1 mr-3">
+                        <label for="driver_agreement_accepted" class="text-sm text-gray-700">
+                            I agree to the Driver Partnership Agreement and understand that I am an independent contractor <span class="text-red-500">*</span>
+                        </label>
+                    </div>
+                    
+                    <div class="flex items-start">
+                        <input type="checkbox" id="data_sharing_consent" name="data_sharing_consent" required class="mt-1 mr-3">
+                        <label for="data_sharing_consent" class="text-sm text-gray-700">
+                            I consent to background checks and data sharing for verification purposes <span class="text-red-500">*</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit Section -->
+        <div class="flex justify-end space-x-3 mt-6 pt-4 border-t border-gray-200">
+            <button type="button" onclick="window.history.back()" class="btn-secondary">Cancel</button>
+            <button type="submit" class="btn-primary" id="submitBtn">
+                <i data-feather="send" class="w-4 h-4" style="stroke-width: 1.5;"></i>
+                <span>Submit Driver Application</span>
+            </button>
+        </div>
+    </form>
+</div>
+
+<!-- Add 20px margin above footer -->
+<div style="margin-bottom: 20px;"></div>
+
+<script>
+// Driver upload area functions
+function triggerDriverFileInput(inputId) {
+    document.getElementById(inputId).click();
+}
+
+function updateDriverFileName(input) {
+    const file = input.files[0];
+    const uploadArea = input.parentElement;
+    const fileDisplay = document.getElementById(input.id + '_file');
+    
+    if (file) {
+        // Update the upload area visual state
+        uploadArea.classList.add('has-file');
+        
+        // Show the uploaded file name
+        fileDisplay.style.display = 'flex';
+        fileDisplay.textContent = file.name;
+        
+        // Update the upload text
+        const uploadText = uploadArea.querySelector('.upload-text');
+        uploadText.textContent = 'File selected: ' + file.name;
+        
+        // Size validation (5MB for driver documents)
+        if (file.size > 5 * 1024 * 1024) {
+            alert('File size must be less than 5MB. Please compress your file and try again.');
+            input.value = '';
+            uploadArea.classList.remove('has-file');
+            fileDisplay.style.display = 'none';
+            uploadText.textContent = uploadText.textContent.replace('File selected: ' + file.name, 'Click to upload');
+            return;
+        }
+        
+        // File type validation
+        const allowedTypes = ['.pdf', '.jpg', '.jpeg', '.png'];
+        const fileExtension = '.' + file.name.split('.').pop().toLowerCase();
+        if (!allowedTypes.includes(fileExtension)) {
+            alert('Only PDF, JPG, and PNG files are allowed.');
+            input.value = '';
+            uploadArea.classList.remove('has-file');
+            fileDisplay.style.display = 'none';
+            uploadText.textContent = uploadText.textContent.replace('File selected: ' + file.name, 'Click to upload');
+            return;
+        }
+    } else {
+        // Reset the visual state
+        uploadArea.classList.remove('has-file');
+        fileDisplay.style.display = 'none';
+        const uploadText = uploadArea.querySelector('.upload-text');
+        uploadText.textContent = uploadText.textContent.replace(/File selected: .*/, 'Click to upload');
+    }
+}
+
+// Initialize Feather icons
+document.addEventListener('DOMContentLoaded', function() {
+    feather.replace();
+    
+    // File upload handling
+    const fileInputs = document.querySelectorAll('input[type="file"]');
+    fileInputs.forEach(input => {
+        input.addEventListener('change', function() {
+            const container = this.closest('.file-upload-container');
+            const label = container.querySelector('label p');
+            
+            if (this.files.length > 0) {
+                const fileName = this.files[0].name;
+                const fileSize = (this.files[0].size / 1024 / 1024).toFixed(2);
+                label.textContent = `${fileName} (${fileSize}MB)`;
+                container.style.borderColor = 'var(--success-green)';
+                container.style.backgroundColor = '#f0f9ff';
+            }
+        });
+    });
+    
+    // License plate uppercase transformation
+    const licensePlateInput = document.getElementById('vehicle_license_plate');
+    if (licensePlateInput) {
+        licensePlateInput.addEventListener('input', function() {
+            this.value = this.value.toUpperCase();
+        });
+    }
+    
+    // Form validation
+    const form = document.getElementById('driverForm');
+    form.addEventListener('submit', function(e) {
+        const submitBtn = document.getElementById('submitBtn');
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<i data-feather="loader" class="w-4 h-4 animate-spin"></i><span>Submitting...</span>';
+        feather.replace();
+    });
+    
+    // Date validation - ensure user is 18+
+    const dobInput = document.getElementById('date_of_birth');
+    if (dobInput) {
+        dobInput.addEventListener('change', function() {
+            const today = new Date();
+            const birthDate = new Date(this.value);
+            const age = today.getFullYear() - birthDate.getFullYear();
+            const monthDiff = today.getMonth() - birthDate.getMonth();
+            
+            if (monthDiff < 0 || (monthDiff === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            
+            if (age < 18) {
+                alert('You must be at least 18 years old to become a driver.');
+                this.value = '';
+            }
+        });
+    }
+    
+    // License expiry validation - ensure license is not expired
+    const licenseExpiryInput = document.getElementById('license_expiry_date');
+    if (licenseExpiryInput) {
+        licenseExpiryInput.addEventListener('change', function() {
+            const today = new Date();
+            const expiryDate = new Date(this.value);
+            
+            if (expiryDate <= today) {
+                alert('Your driver\'s license appears to be expired. Please renew your license before applying.');
+                this.value = '';
+            }
+        });
+    }
+});
+</script>
+
+{% endblock %}

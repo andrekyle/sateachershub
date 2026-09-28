@@ -1,0 +1,1083 @@
+﻿{% extends "teacher/_layout.html" %}
+{% block extra_css %}
+<style>
+  body { background: #0b0b0d !important; padding-top: 0 !important; }
+  main { padding: 0 !important; }
+  .t-shell { padding-top: 30px !important; }
+  .t-shell .t-head { margin-top: 0 !important; padding-top: 0 !important; }
+  .sath-nav { background: transparent !important; border-bottom: none !important; }
+</style>
+{% endblock %}
+{% block t_title %}Question bank{% endblock %}
+{% block t_sub %}Build, share and reuse questions across papers and tests.{% endblock %}
+{% block t_action %}
+    <a class="bank-head-btn bank-head-btn-primary" href="{{ url_for('teacher_bank_edit') }}">
+        <svg class="bank-head-icon bank-head-icon-grad" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+        <span>New question</span>
+    </a>
+    <form method="post" action="{{ url_for('teacher_bank_delete_mine') }}" style="display:inline-block; margin-left:8px;"
+          onsubmit="return confirm('Delete ALL of your own questions? Default and shared questions will be kept. This cannot be undone.');">
+        <button type="submit" class="bank-head-btn bank-head-btn-danger">
+            <svg class="bank-head-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M4 7h16"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+            <span>Delete all my questions</span>
+        </button>
+    </form>
+    <style>
+      .bank-head-btn {
+        display: inline-flex; align-items: center; gap: 8px;
+        padding: 9px 16px; border-radius: 8px;
+        font-size: 14px; font-weight: 500; line-height: 1.3;
+        text-decoration: none; white-space: nowrap;
+        background: #141414; color: #f5f5f7 !important;
+        border: 1px solid rgba(255,255,255,0.08);
+        cursor: pointer; font-family: inherit;
+        transition: background 120ms ease, border-color 120ms ease;
+      }
+      .bank-head-btn:hover { background: #1A1A1A; border-color: rgba(255,255,255,0.18); }
+      .bank-head-btn .bank-head-icon { flex: 0 0 auto; color: rgba(255,255,255,0.75); }
+      .bank-head-btn-primary .bank-head-icon-grad {
+        color: #c084fc;
+        stroke: url(#bankHeadGrad);
+      }
+      .bank-head-btn-danger .bank-head-icon { color: #ff8a8a; }
+      .bank-head-btn-danger:hover { border-color: rgba(255,138,138,0.35); }
+    </style>
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+      <defs>
+        <linearGradient id="bankHeadGrad" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#ff6b9d"/>
+          <stop offset="50%" stop-color="#c084fc"/>
+          <stop offset="100%" stop-color="#60a5fa"/>
+        </linearGradient>
+      </defs>
+    </svg>
+{% endblock %}
+
+{% block t_body %}
+<style>
+/* ---- Dark mode override (matches papers.html / team.html / profile.html) ---- */
+body { background: #0b0b0d !important; }
+.t-shell {
+  background: #0b0b0d !important;
+  color: #f5f5f7 !important;
+  padding-top: 30px !important;
+}
+.t-shell .t-head { margin-top: 0 !important; padding-top: 0 !important; }
+.t-shell,
+.t-shell *:not(.navbar):not(.navbar *) { color: #f5f5f7 !important; }
+.t-shell .t-eyebrow, .t-shell .t-eyebrow * { color: #9a9aa3 !important; }
+.t-shell .t-sub,     .t-shell .t-sub *     { color: #d6d6da !important; }
+.t-shell .t-tabs a,  .t-shell .t-tabs a *  { color: #d6d6da !important; }
+.t-shell .t-tabs a.is-active,
+.t-shell .t-tabs a.is-active *              { color: #2997ff !important; }
+.t-shell, .t-shell * {
+  --az-bg: #0b0b0d !important;
+  --az-surface: #1a1a1d !important;
+  --az-border: #2a2a2f !important;
+  --az-border-2: #3a3a40 !important;
+  --az-text: #f5f5f7 !important;
+  --az-text-2: #d6d6da !important;
+  --az-text-3: #9a9aa3 !important;
+  --az-blue-bg: rgba(41,151,255,0.18) !important;
+  --bg: #0b0b0d !important;
+  --bg-elevated: #1a1a1d !important;
+  --bg-card: #1a1a1d !important;
+  --bg-input: #1a1a1d !important;
+  --text: #f5f5f7 !important;
+  --text-secondary: #d6d6da !important;
+  --text-tertiary: #9a9aa3 !important;
+  --separator: #2a2a2f !important;
+  --separator-light: #2a2a2f !important;
+  --fill: #1a1a1d !important;
+  --blue: #2997ff !important;
+}
+.t-shell .t-head { border-bottom-color: #2a2a2f !important; }
+.t-shell .t-tabs { border-bottom-color: #2a2a2f !important; }
+.t-shell .t-tabs a:hover     { color: #2997ff !important; background: rgba(41,151,255,0.08) !important; }
+.t-shell .t-tabs a.is-active { color: #2997ff !important; border-bottom-color: #2997ff !important; }
+
+/* Cards / tables */
+.t-shell .t-card,
+.t-shell .t-section,
+.t-shell .t-box,
+.t-shell .t-panel {
+  background: #141414 !important;
+  border: 1px solid #2a2a2f !important;
+  border-radius: 8px !important;
+  color: #f5f5f7 !important;
+}
+.t-shell .t-card h1, .t-shell .t-card h2, .t-shell .t-card h3,
+.t-shell .t-card h4, .t-shell .t-card h5 { color: #f5f5f7 !important; }
+.t-shell table,
+.t-shell .t-table { background: #141414 !important; color: #f5f5f7 !important; }
+
+/* Defeat layout's high-specificity blue banner on table headers */
+.t-shell.t-shell .t-table thead th,
+.t-shell.t-shell .t-table thead th *,
+.t-shell.t-shell table.t-table > thead > tr > th,
+.t-shell.t-shell table.t-table > thead > tr > th *,
+.t-shell.t-shell .t-card table thead th,
+.t-shell.t-shell .t-card table thead th *,
+.t-shell.t-shell table thead th,
+.t-shell.t-shell table thead th * {
+  background: #141414 !important;
+  color: #b8b8c0 !important;
+  border-color: rgba(255,255,255,0.08) !important;
+}
+.t-shell .t-table th,
+.t-shell .t-card table th { border-bottom: 1px solid rgba(255,255,255,0.10) !important; }
+.t-shell .t-table td,
+.t-shell .t-card table td {
+  border-bottom: none !important;
+  color: #f5f5f7 !important;
+  background: transparent !important;
+}
+.t-shell .t-table tbody tr:hover td,
+.t-shell .t-card table tbody tr:hover td { background: transparent !important; }
+.t-shell .t-table tbody tr:hover td:first-child,
+.t-shell .t-card table tbody tr:hover td:first-child { border-top-left-radius: 6px; border-bottom-left-radius: 6px; }
+.t-shell .t-table tbody tr:hover td:last-child,
+.t-shell .t-card table tbody tr:hover td:last-child { border-top-right-radius: 6px; border-bottom-right-radius: 6px; }
+
+/* Defeat layout's blue banner on first-child card headings */
+.t-shell.t-shell .t-card > h2:first-child,
+.t-shell.t-shell .t-card > h2:first-child *,
+.t-shell.t-shell .t-card > h3:first-child,
+.t-shell.t-shell .t-card > h3:first-child *,
+.t-shell.t-shell .t-card > h4:first-child,
+.t-shell.t-shell .t-card > h4:first-child * {
+  background: transparent !important;
+  color: #f5f5f7 !important;
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  text-align: left !important;
+  font-size: 18px !important;
+}
+
+/* Form fields */
+.t-shell .t-field label,
+.t-shell label {
+  color: #9a9aa3 !important;
+  font-size: 13px; font-weight: 600;
+  text-transform: none; letter-spacing: 0;
+}
+.t-shell input[type="text"], .t-shell input[type="search"],
+.t-shell input[type="email"], .t-shell input[type="number"],
+.t-shell input[type="date"], .t-shell select, .t-shell textarea,
+.t-shell .t-input, .t-shell .t-select {
+  background: #0f0f12 !important;
+  border: 1px solid #2a2a2f !important;
+  color: #f5f5f7 !important;
+  border-radius: 6px !important;
+  color-scheme: dark;
+}
+.t-shell input:hover, .t-shell select:hover, .t-shell textarea:hover { border-color: #3a3a40 !important; }
+.t-shell input:focus, .t-shell select:focus, .t-shell textarea:focus {
+  outline: none !important; border-color: #2997ff !important; background: #131317 !important;
+}
+.t-shell input::placeholder, .t-shell textarea::placeholder { color: #6b6b73 !important; }
+.t-shell select option { background: #0f0f12 !important; color: #f5f5f7 !important; }
+
+/* Custom dropdown (fdd) — base (matches planner.html year-dropdown spec) */
+.t-shell .fdd { color: #f5f5f7 !important; }
+.t-shell .fdd-toggle {
+  background: #141414 !important; color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 8px !important;
+  padding: 7px 12px !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.005em !important;
+  transition: background .15s ease, border-color .15s ease !important;
+}
+.t-shell .fdd-toggle:hover { background: #1A1A1A !important; border-color: rgba(255,255,255,0.18) !important; }
+.t-shell .fdd-toggle:focus, .t-shell .fdd-toggle.is-open { border-color: rgba(255,255,255,0.30) !important; outline: none !important; box-shadow: none !important; }
+.t-shell .fdd-label { color: #ffffff !important; font-weight: 300 !important; }
+.t-shell .fdd-toggle .caret { color: rgba(255,255,255,0.45) !important; }
+.t-shell .fdd-panel {
+  background: #1A1A1A !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.55) !important;
+  padding: 4px !important;
+  margin-top: 4px !important;
+}
+.t-shell .fdd-item {
+  color: rgba(255,255,255,0.88) !important;
+  background: transparent !important;
+  padding: 6px 10px !important;
+  border-radius: 5px !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+}
+.t-shell .fdd-item:hover { background: rgba(255,255,255,0.06) !important; color: #ffffff !important; }
+.t-shell .fdd-item.selected,
+.t-shell .fdd-item.is-selected,
+.t-shell .fdd-item.is-checked,
+.t-shell .fdd-item[aria-selected="true"] {
+  background: rgba(255,255,255,0.08) !important;
+  color: #ffffff !important;
+}
+
+/* Buttons */
+.t-shell .t-btn {
+  background: #1f1f24 !important; color: #f5f5f7 !important;
+  border: 1px solid #3a3a40 !important;
+}
+.t-shell .t-btn:hover { background: #26262c !important; border-color: #4a4a52 !important; }
+.t-shell .t-btn.primary,
+.t-shell .t-btn.is-primary {
+  background: #2997ff !important; color: #fff !important; border-color: #2997ff !important;
+}
+.t-shell .t-btn.primary:hover { background: #0a84ff !important; border-color: #0a84ff !important; }
+
+/* Icon buttons in table rows */
+.t-card .t-icon-btn,
+.t-card .t-icon-btn:hover,
+.bank-table .t-icon-btn,
+.bank-table .t-icon-btn:hover {
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+.t-card .t-icon-btn,
+.bank-table .t-icon-btn { color: #d6d6da !important; }
+.t-card .t-icon-btn:hover,
+.bank-table .t-icon-btn:hover { color: #ffffff !important; }
+.t-card .t-icon-btn.danger,
+.t-card .t-icon-btn.danger:hover,
+.bank-table .t-icon-btn.danger,
+.bank-table .t-icon-btn.danger:hover { color: #ff6b5e !important; background: transparent !important; border: none !important; }
+
+/* Status text / muted */
+.t-shell .muted, .t-shell .t-muted, .t-shell small { color: #9a9aa3 !important; }
+
+/* Autofill */
+.t-shell input:-webkit-autofill,
+.t-shell input:-webkit-autofill:hover,
+.t-shell input:-webkit-autofill:focus,
+.t-shell select:-webkit-autofill {
+  -webkit-text-fill-color: #f5f5f7 !important;
+  -webkit-box-shadow: 0 0 0 1000px #0f0f12 inset !important;
+  caret-color: #f5f5f7;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.t-shell .t-title {
+    font-size: clamp(36px, 4.2vw, 56px) !important;
+    font-weight: 700 !important;
+    letter-spacing: -1px !important;
+    line-height: 1.05 !important;
+}
+
+.t-table td, .t-table th { font-weight: 400; }
+
+/* ---- Filter dropdown sizing (theme is inherited from dark rules above) ---- */
+#bankFilterForm .fdd-toggle {
+    min-height: 36px;
+    height: auto;
+    padding: 7px 12px !important;
+    font-size: 14px !important;
+    font-weight: 300 !important;
+    line-height: 1.3 !important;
+    border-radius: 8px !important;
+}
+#bankFilterForm .fdd-panel {
+    padding: 4px !important;
+    max-height: 320px !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    border-radius: 8px !important;
+}
+#bankFilterForm .fdd-panel::-webkit-scrollbar { width: 10px; }
+#bankFilterForm .fdd-panel::-webkit-scrollbar-track { background: #0f0f12; }
+#bankFilterForm .fdd-panel::-webkit-scrollbar-thumb {
+    background: #3a3a40; border-radius: 4px;
+}
+#bankFilterForm .fdd-panel::-webkit-scrollbar-thumb:hover { background: #4a4a52; }
+
+#bankFilterForm .fdd-item {
+    display: flex; align-items: center;
+    padding: 6px 10px !important;
+    font-size: 14px;
+    font-weight: 300 !important;
+    border-radius: 5px !important;
+    cursor: pointer;
+}
+/* Hide the native radio/checkbox + the custom-drawn circle/box pseudo elements */
+#bankFilterForm .fdd-item input[type="radio"],
+#bankFilterForm .fdd-item input[type="checkbox"] {
+    position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; pointer-events: none;
+}
+#bankFilterForm .fdd-item > span {
+    padding-left: 0 !important;
+    position: static !important;
+    color: inherit !important;
+    font-weight: inherit !important;
+}
+#bankFilterForm .fdd-item > span::before,
+#bankFilterForm .fdd-item > span::after { content: none !important; display: none !important; }
+
+    /* Subject dropdown wider so long subject names don't truncate */
+    #bankFilterForm .fdd-subject .fdd-panel { min-width: 260px; }
+
+    /* Question-bank table: predictable column widths so action buttons never spill outside the card */
+    .bank-table-wrap { width: 100%; overflow-x: auto; }
+    .bank-table { width: 100%; table-layout: fixed; border-collapse: separate; border-spacing: 0; }
+    .bank-table th, .bank-table td { vertical-align: top; }
+    .t-shell .bank-table thead th,
+    .t-shell .bank-table tbody td {
+        border-right: 1px solid rgba(255,255,255,0.08) !important;
+    }
+    .t-shell .bank-table thead th:last-child,
+    .t-shell .bank-table tbody td:last-child {
+        border-right: none !important;
+    }
+    .t-shell .bank-table tbody td {
+        border-bottom: 1px solid rgba(255,255,255,0.14) !important;
+    }
+    .t-shell .bank-table tbody tr:last-child td {
+        border-bottom: none !important;
+    }
+    .t-shell .bank-table tbody tr:nth-child(odd) td {
+        background: rgba(255,255,255,0.015) !important;
+    }
+    .t-shell .bank-table tbody tr:nth-child(even) td {
+        background: rgba(255,255,255,0.03) !important;
+    }
+    .t-shell .bank-table tbody tr:hover td {
+        background: rgba(255,255,255,0.06) !important;
+    }
+    .bank-table th {
+        white-space: nowrap;
+        word-wrap: normal;
+        overflow-wrap: normal;
+    }
+    /* Keep compact/meta columns single-line; allow long text columns to wrap. */
+    .bank-table td:nth-child(1),
+    .bank-table td:nth-child(4),
+    .bank-table td:nth-child(5),
+    .bank-table td:nth-child(6) {
+        white-space: nowrap;
+        word-wrap: normal;
+        overflow-wrap: normal;
+    }
+    .bank-table td:nth-child(2),
+    .bank-table td:nth-child(3) {
+        word-wrap: break-word;
+        overflow-wrap: anywhere;
+    }
+    .bank-table col.c-num    { width: 92px; }
+    .bank-table col.c-question { width: 38%; }
+    .bank-table col.c-topic  { width: 140px; }
+    .bank-table col.c-type   { width: 124px; }
+    .bank-table col.c-diff   { width: 156px; }
+    .bank-table col.c-marks  { width: 74px; }
+    .bank-table col.c-act    { width: 108px; }
+    .bank-table thead th { text-align: center; }
+    .bank-table th.c-marks-h, .bank-table td.c-marks-cell,
+    .bank-table thead th:nth-child(6), .bank-table tbody td:nth-child(6) {
+        padding-left: 4px;
+        padding-right: 4px;
+        text-align: center;
+    }
+    .bank-table th:first-child,
+    .bank-table td:first-child {
+        padding-left: 12px;
+        padding-right: 12px;
+        white-space: nowrap;
+        text-align: center;
+    }
+    .bank-table td.c-act-cell { text-align: right; white-space: nowrap; padding-right: 18px; }
+    .bank-table td.c-act-cell .t-icon-btn { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; padding: 0; }
+    .bank-table td.c-act-cell .t-icon-btn + form,
+    .bank-table td.c-act-cell .t-icon-btn + .t-icon-btn { margin-left: 4px; }
+    @media (max-width: 980px) {
+        .bank-table col.c-num { width: 82px; }
+        .bank-table col.c-topic { width: 110px; }
+        .bank-table col.c-type { width: 104px; }
+        .bank-table col.c-diff { width: 132px; }
+        .bank-table col.c-marks { width: 64px; }
+        .bank-table col.c-act { width: 100px; }
+    }
+</style>
+
+<form method="get" id="bankFilterForm" class="t-card" style="display:flex; gap:12px; flex-wrap:wrap; align-items:flex-end; margin-bottom:18px;">
+    <div class="t-field" style="flex:0 0 240px; width:240px;">
+        <label>Subject</label>
+        <div class="fdd fdd-subject" data-fdd="single">
+            <button type="button" class="fdd-toggle">
+                <span class="fdd-label" data-empty="All subjects">{% if subject %}{{ subject }}{% else %}All subjects{% endif %}</span>
+                <span class="caret">▾</span>
+            </button>
+            <div class="fdd-panel" style="max-height:320px; overflow-y:auto; overscroll-behavior:contain;">
+                <label class="fdd-item"><input type="radio" name="subject" value="" {% if not subject %}checked{% endif %}><span>All subjects</span></label>
+                {% for s in subjects %}
+                    <label class="fdd-item"><input type="radio" name="subject" value="{{ s }}" {% if subject==s %}checked{% endif %}><span>{{ s }}</span></label>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="t-field" style="flex:0 0 180px;">
+        <label>Show</label>
+        <div class="fdd" data-fdd="single">
+            <button type="button" class="fdd-toggle">
+                <span class="fdd-label">{% if owner_scope == 'mine' %}My questions only{% else %}All questions{% endif %}</span>
+                <span class="caret">▾</span>
+            </button>
+            <div class="fdd-panel">
+                <label class="fdd-item"><input type="radio" name="owner" value="all"  {% if owner_scope != 'mine' %}checked{% endif %}><span>All questions</span></label>
+                <label class="fdd-item"><input type="radio" name="owner" value="mine" {% if owner_scope == 'mine' %}checked{% endif %}><span>My questions only</span></label>
+            </div>
+        </div>
+    </div>
+    <div class="t-field" style="flex:0 0 160px;">
+        <label>Grade</label>
+        <div class="fdd" data-fdd="single">
+            <button type="button" class="fdd-toggle">
+                <span class="fdd-label" data-empty="All grades">{% if grade %}Grade {{ grade }}{% else %}All grades{% endif %}</span>
+                <span class="caret">▾</span>
+            </button>
+            <div class="fdd-panel">
+                <label class="fdd-item"><input type="radio" name="grade" value="" {% if not grade %}checked{% endif %}><span>All grades</span></label>
+                {% for g in [10,11,12] %}
+                    <label class="fdd-item"><input type="radio" name="grade" value="{{ g }}" {% if grade==g %}checked{% endif %}><span>Grade {{ g }}</span></label>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="t-field" style="flex:1 1 240px;">
+        <label>Topic</label>
+        <div class="fdd" id="topicDD" data-fdd="multi">
+            <button type="button" class="fdd-toggle" id="topicDDToggle">
+                <span class="fdd-label" id="topicDDLabel">{% if selected_topics %}{{ selected_topics|length }} selected{% else %}All topics{% endif %}</span>
+                <span class="caret">▾</span>
+            </button>
+            <div class="fdd-panel" id="topicDDPanel">
+                <div class="fdd-actions">
+                    <a id="topicDDAll">Select all</a>
+                    <a id="topicDDNone">Clear</a>
+                </div>
+                {% set _topic_to_subjects = {} %}
+                {% for s, ts in (topics_by_subject or {}).items() %}
+                    {% for t in ts %}
+                        {% if _topic_to_subjects.update({t: (_topic_to_subjects.get(t, []) + [s])}) %}{% endif %}
+                    {% endfor %}
+                {% endfor %}
+                {% for t in topics %}
+                    <label class="fdd-item" data-subjects="{{ (_topic_to_subjects.get(t, []))|join('|') }}">
+                        <input type="checkbox" name="topic" value="{{ t }}" {% if t in selected_topics %}checked{% endif %}>
+                        <span>{{ t }}</span>
+                    </label>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="t-field" style="flex:0 0 170px;">
+        <label>Difficulty</label>
+        <div class="fdd" data-fdd="single">
+            <button type="button" class="fdd-toggle">
+                <span class="fdd-label" data-empty="All difficulties">{% if diff %}{{ diff|title }}{% else %}All difficulties{% endif %}</span>
+                <span class="caret">▾</span>
+            </button>
+            <div class="fdd-panel">
+                <label class="fdd-item"><input type="radio" name="difficulty" value="" {% if not diff %}checked{% endif %}><span>All difficulties</span></label>
+                {% for d in ['easy','medium','hard'] %}
+                    <label class="fdd-item"><input type="radio" name="difficulty" value="{{ d }}" {% if diff==d %}checked{% endif %}><span>{{ d|title }}</span></label>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% if papers %}
+    <div class="t-field" style="flex:0 0 240px; width:240px;">
+        <label>Question paper</label>
+        <div class="fdd" data-fdd="single">
+            <button type="button" class="fdd-toggle">
+                <span class="fdd-label" data-empty="All papers">{% if paper %}{{ paper }}{% else %}All papers{% endif %}</span>
+                <span class="caret">▾</span>
+            </button>
+            <div class="fdd-panel">
+                {% set _paper_to_subjects = {} %}
+                {% for s, ps in (papers_by_subject or {}).items() %}
+                    {% for p in ps %}
+                        {% if _paper_to_subjects.update({p: (_paper_to_subjects.get(p, []) + [s])}) %}{% endif %}
+                    {% endfor %}
+                {% endfor %}
+                <label class="fdd-item" data-subjects=""><input type="radio" name="paper" value="" {% if not paper %}checked{% endif %}><span>All papers</span></label>
+                {% for p in papers %}
+                    <label class="fdd-item" data-subjects="{{ (_paper_to_subjects.get(p, []))|join('|') }}"><input type="radio" name="paper" value="{{ p }}" {% if paper==p %}checked{% endif %}><span>{{ p }}</span></label>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+    <noscript>
+        <input type="hidden" name="server_filter" value="1">
+        <button class="t-btn primary"><i class="fas fa-filter"></i> Filter</button>
+    </noscript>
+</form>
+<script>
+(function(){
+    try { history.scrollRestoration = 'manual'; } catch(e) {}
+    var KEY = 'teacherBankScrollY';
+    var saved = sessionStorage.getItem(KEY);
+    if (saved !== null) { window.scrollTo(0, parseInt(saved, 10) || 0); sessionStorage.removeItem(KEY); }
+    var form = document.getElementById('bankFilterForm');
+    if (form) {
+        form.addEventListener('submit', function(){ sessionStorage.setItem(KEY, String(window.scrollY || 0)); });
+    }
+
+    var topicDD = document.getElementById('topicDD');
+    if (!topicDD) return;
+
+    var topicPanel = document.getElementById('topicDDPanel');
+    var topicLabel = document.getElementById('topicDDLabel');
+    var topicBoxes = topicPanel.querySelectorAll('input[type="checkbox"]');
+    var paperTagRe = /^[A-Z]{2,5}\s+P\d+\s+(May\/June|Nov|November|March|Sept|September|Feb|February)\s+\d{4}$/;
+
+    function normalizeTopic(v) {
+        return (v || '')
+            .toLowerCase()
+            .replace(/&/g, ' and ')
+            .replace(/[^a-z0-9]+/g, ' ')
+            .replace(/\s+/g, ' ')
+            .trim();
+    }
+
+    function papersFromTags(tags) {
+        var out = [];
+        if (!tags) return out;
+        tags.split(',').forEach(function(part){
+            var t = part.trim();
+            if (paperTagRe.test(t)) out.push(t);
+        });
+        return out;
+    }
+
+    function currentRadioValue(name) {
+        var r = form ? form.querySelector('input[name="' + name + '"]:checked') : null;
+        return r ? (r.value || '') : '';
+    }
+
+    function syncQueryInUrl() {
+        if (!window.history || !window.history.replaceState) return;
+        var params = new URLSearchParams(window.location.search);
+        params.delete('grade');
+        params.delete('subject');
+        params.delete('difficulty');
+        params.delete('paper');
+        params.delete('topic');
+
+        var grade = currentRadioValue('grade');
+        var subject = currentRadioValue('subject');
+        var diff = currentRadioValue('difficulty');
+        var paper = currentRadioValue('paper');
+        if (grade) params.set('grade', grade);
+        if (subject) params.set('subject', subject);
+        if (diff) params.set('difficulty', diff);
+        if (paper) params.set('paper', paper);
+        topicBoxes.forEach(function(b){ if (b.checked) params.append('topic', b.value); });
+
+        var qs = params.toString();
+        var next = window.location.pathname + (qs ? ('?' + qs) : '');
+        window.history.replaceState(null, '', next);
+    }
+
+    function applyClientFilters() {
+        var rows = document.querySelectorAll('.bank-table tbody tr');
+        if (!rows.length) return;
+
+        var grade = currentRadioValue('grade');
+        var subject = currentRadioValue('subject');
+        var diff = (currentRadioValue('difficulty') || '').toLowerCase();
+        var paper = currentRadioValue('paper');
+        var selectedTopics = Array.from(topicBoxes)
+            .filter(function(b){ return b.checked; })
+            .map(function(b){ return normalizeTopic(b.value); });
+        var hasTopicFilter = selectedTopics.length > 0;
+
+        var visibleIdx = 0;
+        rows.forEach(function(tr){
+            var rowGrade = (tr.dataset.grade || '').trim();
+            var rowSubject = (tr.dataset.subject || '').trim();
+            var rowDiff = (tr.dataset.difficulty || '').toLowerCase().trim();
+            var rowTopic = normalizeTopic(tr.dataset.topic || (tr.children[2] ? tr.children[2].textContent : ''));
+            var rowPapers = papersFromTags(tr.dataset.tags || '');
+
+            var show = true;
+            if (grade && rowGrade !== grade) show = false;
+            if (show && subject && rowSubject !== subject) show = false;
+            if (show && diff && rowDiff !== diff) show = false;
+            if (show && hasTopicFilter && selectedTopics.indexOf(rowTopic) === -1) show = false;
+            if (show && paper && rowPapers.indexOf(paper) === -1) show = false;
+
+            tr.style.display = show ? '' : 'none';
+            if (show) {
+                visibleIdx += 1;
+                if (tr.children[0]) tr.children[0].textContent = String(visibleIdx);
+            }
+        });
+    }
+
+    function refreshSingleSelectionVisual() {
+        document.querySelectorAll('#bankFilterForm .fdd[data-fdd="single"] .fdd-item').forEach(function(item){
+            var input = item.querySelector('input[type="radio"]');
+            item.classList.toggle('is-checked', !!(input && input.checked));
+        });
+    }
+
+    function refreshSingleLabels() {
+        document.querySelectorAll('#bankFilterForm .fdd[data-fdd="single"]').forEach(function(dd){
+            var label = dd.querySelector('.fdd-label');
+            if (!label) return;
+            var checked = dd.querySelector('input[type="radio"]:checked');
+            var span = checked ? checked.parentElement.querySelector('span') : null;
+            label.textContent = span ? span.textContent : (label.dataset.empty || '');
+        });
+    }
+
+    function refreshTopicSelectionVisual() {
+        topicBoxes.forEach(function(b){
+            var item = b.closest('.fdd-item');
+            if (item) item.classList.toggle('is-checked', !!b.checked);
+        });
+    }
+
+    function refreshTopicLabel() {
+        var selectedVals = Array.from(topicBoxes)
+            .filter(function(b){ return b.checked; })
+            .map(function(b){ return b.value; });
+        if (!selectedVals.length) {
+            topicLabel.textContent = 'All topics';
+            return;
+        }
+        if (selectedVals.length <= 2) {
+            topicLabel.textContent = selectedVals.join(', ');
+            return;
+        }
+        topicLabel.textContent = selectedVals.slice(0, 2).join(', ') + ' +' + (selectedVals.length - 2);
+    }
+
+    function updateAllFilterUiAndResults() {
+        refreshSingleLabels();
+        refreshSingleSelectionVisual();
+        filterTopicOptionsBySubject();
+        filterPaperOptionsBySubject();
+        refreshTopicLabel();
+        refreshTopicSelectionVisual();
+        applyClientFilters();
+        syncQueryInUrl();
+    }
+
+    // Show only topic options that belong to the currently selected subject.
+    // Topic items carry data-subjects="Subject A|Subject B". When a subject
+    // is selected we hide every topic that doesn't list it (including topics
+    // with no subject mapping at all).
+    function filterTopicOptionsBySubject() {
+        var subj = currentRadioValue('subject');
+        var anyChange = false;
+        topicPanel.querySelectorAll('.fdd-item').forEach(function(item){
+            var subs = (item.getAttribute('data-subjects') || '').split('|').filter(Boolean);
+            var visible = !subj || subs.indexOf(subj) !== -1;
+            item.style.display = visible ? '' : 'none';
+            // If we hide a checked topic, uncheck it so it doesn't silently
+            // continue filtering rows.
+            var cb = item.querySelector('input[type="checkbox"]');
+            if (!visible && cb && cb.checked) { cb.checked = false; anyChange = true; }
+        });
+        return anyChange;
+    }
+
+    // Same idea for the Question paper dropdown — show only papers tagged
+    // with the selected subject. The "All papers" option is always visible.
+    function filterPaperOptionsBySubject() {
+        var subj = currentRadioValue('subject');
+        var paperDD = form ? form.querySelector('.fdd input[name="paper"]') : null;
+        if (!paperDD) return;
+        var panel = paperDD.closest('.fdd').querySelector('.fdd-panel');
+        if (!panel) return;
+        var anyChange = false;
+        panel.querySelectorAll('.fdd-item').forEach(function(item){
+            var input = item.querySelector('input[type="radio"]');
+            if (!input) return;
+            if (input.value === '') { item.style.display = ''; return; }
+            var subs = (item.getAttribute('data-subjects') || '').split('|').filter(Boolean);
+            var visible = !subj || subs.indexOf(subj) !== -1;
+            item.style.display = visible ? '' : 'none';
+            if (!visible && input.checked) {
+                input.checked = false;
+                var allRadio = panel.querySelector('input[type="radio"][value=""]');
+                if (allRadio) allRadio.checked = true;
+                anyChange = true;
+            }
+        });
+        return anyChange;
+    }
+
+    updateAllFilterUiAndResults();
+
+    document.querySelectorAll('#bankFilterForm .fdd[data-fdd="single"]').forEach(function(dd){
+        dd.querySelectorAll('input[type="radio"]').forEach(function(r){
+            r.addEventListener('change', function(){
+                dd.classList.remove('open');
+                // The "Show: My questions only / All questions" toggle changes
+                // the visible row set on the server, so we must round-trip.
+                if (r.name === 'owner') {
+                    if (form) {
+                        // Make sure server_filter is present so the backend
+                        // applies all currently-selected filters too.
+                        if (!form.querySelector('input[name="server_filter"]')) {
+                            var sf = document.createElement('input');
+                            sf.type = 'hidden'; sf.name = 'server_filter'; sf.value = '1';
+                            form.appendChild(sf);
+                        }
+                        form.submit();
+                    }
+                    return;
+                }
+                // When the Subject changes, reset Paper to "All papers" so the
+                // user immediately sees every question for the new subject
+                // instead of being filtered to a stale paper selection.
+                if (r.name === 'subject') {
+                    var paperAll = form ? form.querySelector('input[name="paper"][value=""]') : null;
+                    if (paperAll && !paperAll.checked) paperAll.checked = true;
+                }
+                updateAllFilterUiAndResults();
+            });
+        });
+    });
+
+    topicBoxes.forEach(function(b){
+        b.addEventListener('change', function(){
+            updateAllFilterUiAndResults();
+        });
+    });
+
+    document.getElementById('topicDDAll').addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        topicBoxes.forEach(function(b){ b.checked = true; });
+        updateAllFilterUiAndResults();
+    });
+
+    document.getElementById('topicDDNone').addEventListener('click', function(e){
+        e.preventDefault();
+        e.stopPropagation();
+        topicBoxes.forEach(function(b){ b.checked = false; });
+        updateAllFilterUiAndResults();
+    });
+})();
+</script>
+
+<div class="bank-table-wrap">
+    {% if items %}
+        <table class="t-table bank-table">
+            <colgroup>
+                <col class="c-num">
+                <col class="c-question">
+                <col class="c-topic">
+                <col class="c-type">
+                <col class="c-diff">
+                <col class="c-marks">
+                <col class="c-act">
+            </colgroup>
+            <thead><tr><th>Number</th><th>Question</th><th>Topic</th><th>Type</th><th>Difficulty</th><th>Marks</th><th></th></tr></thead>
+            <tbody>
+            {% set _subj_full = {'CAT':'Computer Applications Technology','IT':'Information Technology'} %}
+            {% for q in items %}
+                {% set _can_edit = (q.owner_id == current_user.id or current_user.is_admin) %}
+                <tr class="bank-row"
+                    data-grade="{{ q.grade or '' }}"
+                    data-subject="{{ _subj_full.get(q.subject, q.subject) or '' }}"
+                    data-topic="{{ q.topic or '' }}"
+                    data-subtopic="{{ q.subtopic or '' }}"
+                    data-difficulty="{{ q.difficulty or '' }}"
+                    data-tags="{{ q.tags or '' }}"
+                    data-type="{{ q.question_type or '' }}"
+                    data-marks="{{ q.marks or 0 }}"
+                    data-question="{{ q.question_text or '' }}"
+                    data-answer="{{ q.answer_text or '' }}"
+                    data-image="{% if q.image_path %}{{ url_for('static', filename=q.image_path) }}{% endif %}"
+                    data-edit-url="{% if _can_edit %}{{ url_for('teacher_bank_edit', item_id=q.id) }}{% endif %}"
+                    data-can-edit="{{ '1' if _can_edit else '0' }}">
+                    <td style="color:var(--text-tertiary); font-variant-numeric:tabular-nums;">{{ loop.index }}</td>
+                    <td class="bank-q-cell" tabindex="0" role="button" aria-label="View question">
+                        <div style="display:flex; gap:10px; align-items:flex-start;">
+                            {% if q.image_path %}
+                                <img src="{{ url_for('static', filename=q.image_path) }}" alt="" style="width:60px; height:45px; object-fit:cover; border:1px solid rgba(127,127,127,0.25); border-radius:4px; background:#fff; flex-shrink:0;">
+                            {% endif %}
+                            <span>{{ q.question_text|truncate(140) }}</span>
+                        </div>
+                    </td>
+                    <td>{{ q.topic or '–' }}</td>
+                    <td style="color:var(--text-secondary);">{{ q.question_type|replace('_',' ')|title }}</td>
+                    <td style="color:var(--text-secondary);">{{ q.difficulty|title }}</td>
+                    <td>{{ q.marks }}</td>
+                    <td class="c-act-cell">
+                        {% if _can_edit %}
+                            <a class="t-icon-btn" title="Edit" href="{{ url_for('teacher_bank_edit', item_id=q.id) }}">
+                                <img src="{{ url_for('static', filename='images/edit.png') }}" alt="Edit" width="14" height="14" style="filter: invert(78%) sepia(6%) saturate(0%) hue-rotate(180deg) brightness(95%);">
+                            </a>
+                            <form method="post" action="{{ url_for('teacher_bank_delete', item_id=q.id) }}" style="display:inline;" data-confirm="Delete this question? This cannot be undone.">
+                                <button class="t-icon-btn danger" title="Delete">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M4 7h16"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+                                </button>
+                            </form>
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <div class="t-empty"><i class="fas fa-question-circle"></i>No questions yet. Add your first one.</div>
+    {% endif %}
+</div>
+
+<!-- ===== View question modal ===== -->
+<div id="bankViewOverlay" class="bank-view-overlay" hidden></div>
+<div id="bankViewModal" class="bank-view-modal" role="dialog" aria-modal="true" aria-labelledby="bankViewTitle" hidden>
+    <div class="bank-view-head">
+        <h3 id="bankViewTitle">Question</h3>
+        <button type="button" class="bank-view-close" id="bankViewClose" aria-label="Close">&times;</button>
+    </div>
+    <div class="bank-view-body">
+        <div class="bank-view-meta" id="bankViewMeta"></div>
+        <img id="bankViewImage" alt="" hidden>
+        <div class="bank-view-section">
+            <div class="bank-view-label">Question</div>
+            <div class="bank-view-text" id="bankViewQuestion"></div>
+        </div>
+        <div class="bank-view-section" id="bankViewAnswerWrap" hidden>
+            <div class="bank-view-label">Answer / memo</div>
+            <div class="bank-view-text" id="bankViewAnswer"></div>
+        </div>
+        <div class="bank-view-section" id="bankViewTagsWrap" hidden>
+            <div class="bank-view-label">Tags</div>
+            <div class="bank-view-tags" id="bankViewTags"></div>
+        </div>
+    </div>
+    <div class="bank-view-foot">
+        <button type="button" class="t-btn" id="bankViewCancel">Close</button>
+        <a id="bankViewEdit" class="t-btn primary" href="#" hidden><i class="fas fa-pen"></i> Edit</a>
+    </div>
+</div>
+
+<style>
+.bank-q-cell { cursor: pointer; }
+.bank-q-cell:hover span { color: #ffffff !important; text-decoration: none !important; }
+.bank-q-cell:focus { outline: 2px solid rgba(255,255,255,0.30); outline-offset: -2px; }
+
+.bank-view-overlay {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.65);
+    z-index: 9998; backdrop-filter: blur(2px);
+}
+.bank-view-overlay[hidden] { display: none !important; }
+.bank-view-modal {
+    position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: min(720px, calc(100vw - 32px));
+    max-height: calc(100vh - 60px);
+    background: #1a1a1d; color: #f5f5f7;
+    border: 1px solid #2a2a2f; border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    z-index: 9999; display: flex; flex-direction: column;
+    overflow: hidden;
+}
+.bank-view-modal[hidden] { display: none !important; }
+.bank-view-head {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 16px 22px; border-bottom: 1px solid #2a2a2f;
+}
+.bank-view-head h3 { margin: 0; font-size: 17px; font-weight: 600; color: #f5f5f7; }
+.bank-view-close {
+    background: transparent; border: 0; color: #9a9aa3;
+    font-size: 26px; line-height: 1; cursor: pointer; padding: 4px 8px;
+}
+.bank-view-close:hover { color: #fff; }
+.bank-view-body {
+    padding: 18px 22px; overflow-y: auto; flex: 1 1 auto;
+}
+.bank-view-meta {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin-bottom: 14px;
+}
+.bank-view-meta .chip {
+    display: inline-flex; align-items: center;
+    background: rgba(41,151,255,0.14); color: #7ec0ff;
+    border: 1px solid rgba(41,151,255,0.28);
+    padding: 3px 10px; border-radius: 999px;
+    font-size: 12px; font-weight: 500;
+}
+.bank-view-meta .chip.gray {
+    background: rgba(255,255,255,0.05); color: #d6d6da;
+    border-color: #2a2a2f;
+}
+#bankViewImage {
+    display: block; max-width: 100%; max-height: 240px;
+    border: 1px solid #2a2a2f; border-radius: 6px; background: #fff;
+    margin-bottom: 14px;
+}
+.bank-view-section { margin-bottom: 16px; }
+.bank-view-section:last-child { margin-bottom: 0; }
+.bank-view-label {
+    font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: #9a9aa3; font-weight: 600; margin-bottom: 6px;
+}
+.bank-view-text {
+    background: #0f0f12; border: 1px solid #2a2a2f; border-radius: 6px;
+    padding: 12px 14px; color: #f5f5f7; font-size: 14px; line-height: 1.55;
+    white-space: pre-wrap; word-wrap: break-word;
+}
+.bank-view-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.bank-view-tags .tag {
+    background: rgba(255,255,255,0.05); color: #d6d6da;
+    border: 1px solid #2a2a2f; padding: 3px 9px;
+    border-radius: 4px; font-size: 12px;
+}
+.bank-view-foot {
+    display: flex; justify-content: flex-end; gap: 10px;
+    padding: 14px 22px; border-top: 1px solid #2a2a2f;
+    background: #14141a;
+}
+</style>
+
+<script>
+(function () {
+    var overlay = document.getElementById('bankViewOverlay');
+    var modal = document.getElementById('bankViewModal');
+    if (!overlay || !modal) return;
+
+    // Reparent to body so a transformed ancestor doesn't reanchor position:fixed.
+    document.body.appendChild(overlay);
+    document.body.appendChild(modal);
+
+    var elTitle = document.getElementById('bankViewTitle');
+    var elMeta = document.getElementById('bankViewMeta');
+    var elImg = document.getElementById('bankViewImage');
+    var elQ = document.getElementById('bankViewQuestion');
+    var elA = document.getElementById('bankViewAnswer');
+    var elAWrap = document.getElementById('bankViewAnswerWrap');
+    var elTags = document.getElementById('bankViewTags');
+    var elTagsWrap = document.getElementById('bankViewTagsWrap');
+    var elEdit = document.getElementById('bankViewEdit');
+
+    function titleCase(s) {
+        s = (s || '').replace(/_/g, ' ').toLowerCase();
+        return s.replace(/\b([a-z])/g, function (m, c) { return c.toUpperCase(); });
+    }
+    function chip(text, gray) {
+        if (!text) return '';
+        var d = document.createElement('span');
+        d.className = 'chip' + (gray ? ' gray' : '');
+        d.textContent = text;
+        return d;
+    }
+
+    function openFromRow(row, idx) {
+        var q       = row.getAttribute('data-question') || '';
+        var a       = row.getAttribute('data-answer') || '';
+        var img     = row.getAttribute('data-image') || '';
+        var topic   = row.getAttribute('data-topic') || '';
+        var subtopic= row.getAttribute('data-subtopic') || '';
+        var subject = row.getAttribute('data-subject') || '';
+        var grade   = row.getAttribute('data-grade') || '';
+        var diff    = row.getAttribute('data-difficulty') || '';
+        var type    = row.getAttribute('data-type') || '';
+        var marks   = row.getAttribute('data-marks') || '';
+        var tags    = row.getAttribute('data-tags') || '';
+        var editUrl = row.getAttribute('data-edit-url') || '';
+        var canEdit = row.getAttribute('data-can-edit') === '1';
+
+        elTitle.textContent = 'Question ' + (idx ? '#' + idx : '');
+        elMeta.innerHTML = '';
+        if (subject) elMeta.appendChild(chip(subject));
+        if (grade)   elMeta.appendChild(chip('Grade ' + grade, true));
+        if (topic)   elMeta.appendChild(chip(topic, true));
+        if (subtopic)elMeta.appendChild(chip(subtopic, true));
+        if (type)    elMeta.appendChild(chip(titleCase(type), true));
+        if (diff)    elMeta.appendChild(chip(titleCase(diff), true));
+        if (marks)   elMeta.appendChild(chip(marks + ' mark' + (marks === '1' ? '' : 's'), true));
+
+        if (img) { elImg.src = img; elImg.hidden = false; }
+        else     { elImg.removeAttribute('src'); elImg.hidden = true; }
+
+        elQ.textContent = q;
+
+        if (a && a.trim()) {
+            elA.textContent = a;
+            elAWrap.hidden = false;
+        } else {
+            elAWrap.hidden = true;
+        }
+
+        elTags.innerHTML = '';
+        var tagList = tags.split(',').map(function (t) { return t.trim(); }).filter(Boolean);
+        if (tagList.length) {
+            tagList.forEach(function (t) {
+                var s = document.createElement('span');
+                s.className = 'tag';
+                s.textContent = t;
+                elTags.appendChild(s);
+            });
+            elTagsWrap.hidden = false;
+        } else {
+            elTagsWrap.hidden = true;
+        }
+
+        if (canEdit && editUrl) {
+            elEdit.href = editUrl;
+            elEdit.hidden = false;
+        } else {
+            elEdit.removeAttribute('href');
+            elEdit.hidden = true;
+        }
+
+        overlay.hidden = false;
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+    }
+
+    function close() {
+        overlay.hidden = true;
+        modal.hidden = true;
+        document.body.style.overflow = '';
+    }
+
+    document.addEventListener('click', function (e) {
+        var cell = e.target.closest('.bank-q-cell');
+        if (cell) {
+            var row = cell.closest('.bank-row');
+            if (!row) return;
+            // Index = position in tbody (1-based)
+            var idx = '';
+            var first = row.querySelector('td');
+            if (first) idx = first.textContent.trim();
+            openFromRow(row, idx);
+            return;
+        }
+        if (e.target === overlay) close();
+        if (e.target.id === 'bankViewClose' || e.target.id === 'bankViewCancel') close();
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+            var cell = document.activeElement && document.activeElement.classList && document.activeElement.classList.contains('bank-q-cell') ? document.activeElement : null;
+            if (cell) {
+                e.preventDefault();
+                var row = cell.closest('.bank-row');
+                if (!row) return;
+                var idx = '';
+                var first = row.querySelector('td');
+                if (first) idx = first.textContent.trim();
+                openFromRow(row, idx);
+            }
+        }
+        if (e.key === 'Escape' && !modal.hidden) close();
+    });
+})();
+</script>
+{% endblock %}

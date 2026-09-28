@@ -1,0 +1,112 @@
+﻿{% extends "base.html" %}
+
+{% block title %}{{ product.name }} - South African Teachers Hub{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <div class="azure-card overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
+            <!-- Product Image -->
+            <div>
+                <div class="aspect-square rounded overflow-hidden bg-gray-50">
+                    <img src="{{ product.image_url }}" alt="{{ product.name }}" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <!-- Product Details -->
+            <div class="flex flex-col justify-center">
+                <div class="mb-3">
+                    <span class="azure-badge bg-blue-50 text-azure">
+                        {{ product.category.name }}
+                    </span>
+                </div>
+                
+                <h1 class="text-2xl font-light text-black mb-2">{{ product.name }}</h1>
+                
+                <p class="text-sm text-gray-600 mb-3 font-light">Product ID: <span class="font-medium text-blue-600">{{ product.order_number or product.id }}</span></p>
+                
+                <!-- Single Star Rating with Partial Fill -->
+                <div class="flex items-center gap-2 mb-4">
+                    <div class="relative inline-flex items-center" style="width: 20px; height: 20px;">
+                        <!-- Background (empty) star -->
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 0L12.2452 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" fill="#E0E0E0"/>
+                        </svg>
+                        <!-- Foreground (filled) star with 96% width (4.8 out of 5) -->
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0; clip-path: inset(0 4% 0 0);">
+                            <path d="M10 0L12.2452 6.90983H19.5106L13.6327 11.1803L15.8779 18.0902L10 13.8197L4.12215 18.0902L6.36729 11.1803L0.489435 6.90983H7.75486L10 0Z" fill="#FF9800"/>
+                        </svg>
+                    </div>
+                    <span class="text-base font-normal text-black">4.8</span>
+                    <span class="text-sm font-light" style="color: var(--gray-500);">(24 reviews)</span>
+                </div>
+                
+                <div class="flex items-baseline gap-4 mb-4">
+                    <span class="text-3xl font-light text-black">R{{ "%.2f"|format(product.price) }}</span>
+                    {% if product.stock > 0 %}
+                    <span class="text-green-600 text-sm font-light">
+                        <i class="fas fa-check-circle text-xs"></i> In Stock ({{ product.stock }})
+                    </span>
+                    {% else %}
+                    <span class="text-red-600 text-sm font-light">
+                        <i class="fas fa-times-circle text-xs"></i> Out of Stock
+                    </span>
+                    {% endif %}
+                </div>
+                
+                <p class="text-black text-sm mb-6 leading-relaxed font-light">{{ product.description }}</p>
+                
+                <div class="space-y-3">
+                    {% if product.stock > 0 %}
+                    <button class="add-to-cart-btn btn-azure-primary w-full inline-flex items-center justify-center"
+                            data-product-id="{{ product.id }}"
+                            data-product-name="{{ product.name }}"
+                            data-product-price="{{ '%.2f'|format(product.price) }}"
+                            data-product-image="{{ product.image_url }}"
+                            data-product-category="{{ product.category.name }}">
+                        <i class="fas fa-cart-plus mr-2 text-xs"></i> Add to Cart
+                    </button>
+                    {% else %}
+                    <button disabled class="btn-azure-secondary w-full cursor-not-allowed opacity-50">
+                        Out of Stock
+                    </button>
+                    {% endif %}
+                    
+                    <a href="{{ url_for('products') }}" class="btn-azure-secondary block text-center">
+                        Continue Shopping
+                    </a>
+                </div>
+                
+                <div class="mt-6 pt-6" style="border-top: 1px solid var(--gray-300);">
+                    <h3 class="font-normal text-sm mb-3 text-black">Product Features</h3>
+                    <ul class="space-y-2 text-black text-sm font-light">
+                        <li><i class="fas fa-check text-green-600 mr-2 text-xs"></i> High Quality Product</li>
+                        <li><i class="fas fa-check text-green-600 mr-2 text-xs"></i> Fast Delivery</li>
+                        <li><i class="fas fa-check text-green-600 mr-2 text-xs"></i> Secure Payment</li>
+                        <li><i class="fas fa-check text-green-600 mr-2 text-xs"></i> 30-Day Return Policy</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Add event listener to the add to cart button
+    const addToCartBtn = document.querySelector('.add-to-cart-btn');
+    if (addToCartBtn) {
+        addToCartBtn.addEventListener('click', function() {
+            const productId = this.dataset.productId;
+            const productName = this.dataset.productName;
+            const productPrice = this.dataset.productPrice;
+            const productImage = this.dataset.productImage;
+            const productCategory = this.dataset.productCategory;
+            
+            // Call the addToCart function from base.html
+            addToCart(productId, productName, productPrice, productImage, productCategory);
+        });
+    }
+});
+</script>
+{% endblock %}

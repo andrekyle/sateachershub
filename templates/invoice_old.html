@@ -1,0 +1,618 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice - South African Teachers Hub Platform Development</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --azure-blue: #0078D4;
+            --azure-light: #E1F5FE;
+            --azure-dark: #005A9E;
+            --text-primary: #323130;
+            --text-secondary: #605E5C;
+            --border-light: #EDEBE9;
+            --success-green: #107C10;
+            --bg-white: #FFFFFF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #F8F9FA 0%, #E9ECEF 100%);
+            color: var(--text-primary);
+            font-weight: 300;
+            line-height: 1.6;
+        }
+
+        .invoice-container {
+            max-width: 900px;
+            margin: 40px auto;
+            background: var(--bg-white);
+            box-shadow: 0 8px 32px rgba(0, 120, 212, 0.08);
+            overflow: hidden;
+            border: 1px solid var(--border-light);
+        }
+
+        .invoice-header {
+            background: linear-gradient(135deg, var(--azure-blue) 0%, var(--azure-dark) 100%);
+            color: white;
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .invoice-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .header-content {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 40px;
+            align-items: start;
+            position: relative;
+            z-index: 1;
+        }
+
+        .company-info h1 {
+            font-size: 2.5rem;
+            font-weight: 200;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .company-tagline {
+            font-size: 1rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .invoice-details {
+            text-align: right;
+        }
+
+        .invoice-number {
+            font-size: 1.5rem;
+            font-weight: 300;
+            margin-bottom: 8px;
+        }
+
+        .invoice-date {
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .invoice-body {
+            padding: 40px;
+        }
+
+        .billing-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .bill-to, .bill-from {
+            background: #FAFAFA;
+            padding: 24px;
+            border-radius: 12px;
+            border-left: 4px solid var(--azure-blue);
+        }
+
+        .section-title {
+            color: var(--azure-blue);
+            font-size: 0.875rem;
+            font-weight: 400;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title i {
+            font-size: 0.75rem;
+        }
+
+        .contact-info {
+            font-weight: 300;
+            line-height: 1.8;
+        }
+
+        .contact-info strong {
+            font-weight: 400;
+            color: var(--text-primary);
+        }
+
+        .services-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            background: var(--bg-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+        }
+
+        .services-table th {
+            background: var(--azure-light);
+            color: var(--azure-dark);
+            padding: 20px;
+            text-align: left;
+            font-weight: 400;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid var(--azure-blue);
+        }
+
+        .services-table td {
+            padding: 24px 20px;
+            border-bottom: 1px solid var(--border-light);
+            font-weight: 300;
+        }
+
+        .services-table tbody tr:hover {
+            background: rgba(0, 120, 212, 0.02);
+        }
+
+        .service-description {
+            font-weight: 400;
+            margin-bottom: 8px;
+        }
+
+        .service-details {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            font-weight: 300;
+        }
+
+        .technology-tag {
+            display: inline-block;
+            background: var(--azure-light);
+            color: var(--azure-dark);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 400;
+            margin: 2px 4px 2px 0;
+        }
+
+        .amount {
+            text-align: right;
+            font-weight: 400;
+            font-size: 1.1rem;
+        }
+
+        .total-section {
+            background: #FAFAFA;
+            padding: 32px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .total-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 0;
+            border-bottom: 1px solid var(--border-light);
+        }
+
+        .total-row:last-child {
+            border-bottom: none;
+            padding-top: 20px;
+            margin-top: 12px;
+            border-top: 2px solid var(--azure-blue);
+        }
+
+        .total-label {
+            font-weight: 300;
+            color: var(--text-secondary);
+        }
+
+        .total-amount {
+            font-weight: 400;
+            font-size: 1.1rem;
+        }
+
+        .grand-total {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: var(--azure-blue);
+        }
+
+        .payment-terms {
+            background: var(--azure-light);
+            padding: 24px;
+            border-radius: 12px;
+            margin-top: 40px;
+            border-left: 4px solid var(--azure-blue);
+        }
+
+        .terms-title {
+            color: var(--azure-dark);
+            font-weight: 400;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .terms-content {
+            font-weight: 300;
+            color: var(--text-secondary);
+            line-height: 1.7;
+        }
+
+        .footer-actions {
+            display: flex;
+            gap: 16px;
+            margin-top: 40px;
+            padding-top: 32px;
+            border-top: 1px solid var(--border-light);
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: 8px;
+            border: none;
+            font-size: 0.875rem;
+            font-weight: 400;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+        }
+
+        .btn-primary {
+            background: var(--azure-blue);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: var(--azure-dark);
+            transform: translateY(-1px);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: var(--azure-blue);
+            border: 1px solid var(--azure-blue);
+        }
+
+        .btn-secondary:hover {
+            background: var(--azure-light);
+        }
+
+        .status-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(16, 124, 16, 0.1);
+            color: var(--success-green);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+            font-weight: 400;
+        }
+
+        .status-indicator {
+            width: 8px;
+            height: 8px;
+            background: var(--success-green);
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .invoice-container {
+                margin: 20px;
+                border-radius: 12px;
+            }
+
+            .invoice-header {
+                padding: 24px;
+            }
+
+            .header-content {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .invoice-details {
+                text-align: left;
+            }
+
+            .invoice-body {
+                padding: 24px;
+            }
+
+            .billing-section {
+                grid-template-columns: 1fr;
+                gap: 24px;
+            }
+
+            .company-info h1 {
+                font-size: 2rem;
+            }
+
+            .services-table {
+                font-size: 0.875rem;
+            }
+
+            .services-table th,
+            .services-table td {
+                padding: 16px 12px;
+            }
+
+            .footer-actions {
+                flex-direction: column;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            
+            .invoice-container {
+                box-shadow: none;
+                border: none;
+                margin: 0;
+            }
+            
+            .footer-actions {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <!-- Header -->
+        <div class="invoice-header">
+            <div class="header-content">
+                <div class="company-info">
+                    <h1>South African Teachers Hub</h1>
+                    <p class="company-tagline">E-Commerce Platform Development</p>
+                </div>
+                <div class="invoice-details">
+                    <div class="invoice-number">Invoice #BC-2025-001</div>
+                    <div class="invoice-date">October 27, 2025</div>
+                    <div style="margin-top: 16px;">
+                        <span class="status-badge">
+                            <span class="status-indicator"></span>
+                            Completed
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Body -->
+        <div class="invoice-body">
+            <!-- Billing Information -->
+            <div class="billing-section">
+                <div class="bill-to">
+                    <div class="section-title">
+                        <i class="fas fa-user"></i>
+                        Bill To
+                    </div>
+                    <div class="contact-info">
+                        <strong>Client Name</strong><br>
+                        Company Name<br>
+                        123 Business Street<br>
+                        Cape Town, 8001<br>
+                        South Africa<br>
+                        <br>
+                        <strong>Email:</strong> client@company.com<br>
+                        <strong>Phone:</strong> +27 21 123 4567
+                    </div>
+                </div>
+                
+                <div class="bill-from">
+                    <div class="section-title">
+                        <i class="fas fa-building"></i>
+                        From
+                    </div>
+                    <div class="contact-info">
+                        <strong>South African Teachers Hub Development</strong><br>
+                        Digital Solutions Provider<br>
+                        456 Tech Hub<br>
+                        Johannesburg, 2000<br>
+                        South Africa<br>
+                        <br>
+                        <strong>Email:</strong> info@brandcartel.dev<br>
+                        <strong>Phone:</strong> +27 11 987 6543
+                    </div>
+                </div>
+            </div>
+
+            <!-- Services Table -->
+            <table class="services-table">
+                <thead>
+                    <tr>
+                        <th style="width: 60%;">Description</th>
+                        <th style="width: 20%;">Duration</th>
+                        <th style="width: 20%;">Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="service-description">E-Commerce Platform Development</div>
+                            <div class="service-details">
+                                Complete online marketplace with vendor management, product catalog, shopping cart, and payment integration
+                                <br><br>
+                                <strong>Core Features:</strong><br>
+                                • Multi-vendor marketplace functionality<br>
+                                • Advanced product management system<br>
+                                • Shopping cart and checkout process<br>
+                                • User authentication and profiles<br>
+                                • Admin dashboard and analytics<br>
+                                • Responsive design for all devices
+                            </div>
+                        </td>
+                        <td>4 weeks</td>
+                        <td class="amount">R12,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="service-description">Driver Management System</div>
+                            <div class="service-details">
+                                Uber-style driver onboarding and management system with document verification and approval workflow
+                                <br><br>
+                                <strong>Key Components:</strong><br>
+                                • Driver registration and onboarding<br>
+                                • Document upload and verification<br>
+                                • Admin approval workflow<br>
+                                • Driver performance tracking<br>
+                                • Status management system
+                            </div>
+                        </td>
+                        <td>1 week</td>
+                        <td class="amount">R4,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="service-description">Database Architecture & Cloud Deployment</div>
+                            <div class="service-details">
+                                Professional database design with Nile PostgreSQL and Vercel deployment with auto-scaling
+                                <br><br>
+                                <strong>Technologies Used:</strong><br>
+                                <span class="technology-tag">Flask</span>
+                                <span class="technology-tag">PostgreSQL</span>
+                                <span class="technology-tag">Nile DB</span>
+                                <span class="technology-tag">Vercel</span>
+                                <span class="technology-tag">Python</span>
+                                <span class="technology-tag">SQLAlchemy</span>
+                                <span class="technology-tag">Tailwind CSS</span>
+                                <span class="technology-tag">JavaScript</span>
+                            </div>
+                        </td>
+                        <td>1 week</td>
+                        <td class="amount">R3,000.00</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="service-description">Quality Assurance & Testing</div>
+                            <div class="service-details">
+                                Comprehensive testing, bug fixes, performance optimization, and deployment support
+                                <br><br>
+                                <strong>Testing Scope:</strong><br>
+                                • End-to-end functionality testing<br>
+                                • Cross-browser compatibility<br>
+                                • Mobile responsiveness<br>
+                                • Performance optimization<br>
+                                • Security validation
+                            </div>
+                        </td>
+                        <td>0.5 weeks</td>
+                        <td class="amount">R1,000.00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <!-- Total Section -->
+            <div class="total-section">
+                <div class="total-row">
+                    <span class="total-label">Subtotal:</span>
+                    <span class="total-amount">R20,000.00</span>
+                </div>
+                <div class="total-row">
+                    <span class="total-label">VAT (15%):</span>
+                    <span class="total-amount">R0.00</span>
+                </div>
+                <div class="total-row">
+                    <span class="total-label"><strong>Total Amount:</strong></span>
+                    <span class="total-amount grand-total">R20,000.00</span>
+                </div>
+            </div>
+
+            <!-- Payment Terms -->
+            <div class="payment-terms">
+                <div class="terms-title">
+                    <i class="fas fa-credit-card"></i>
+                    Payment Terms & Information
+                </div>
+                <div class="terms-content">
+                    <strong>Payment Due:</strong> 30 days from invoice date<br>
+                    <strong>Payment Methods:</strong> Bank transfer, Credit card, PayPal<br>
+                    <strong>Late Fee:</strong> 2% per month on overdue amounts<br>
+                    <br>
+                    <strong>Bank Details:</strong><br>
+                    South African Teachers Hub Development (Pty) Ltd<br>
+                    Standard Bank - Account: 123456789<br>
+                    Branch Code: 051001<br>
+                    Reference: BC-2025-001
+                </div>
+            </div>
+
+            <!-- Footer Actions -->
+            <div class="footer-actions">
+                <button class="btn btn-primary" onclick="window.print()">
+                    <i class="fas fa-print"></i>
+                    Print Invoice
+                </button>
+                <button class="btn btn-secondary" onclick="downloadPDF()">
+                    <i class="fas fa-download"></i>
+                    Download PDF
+                </button>
+                <a href="mailto:client@company.com?subject=Invoice BC-2025-001" class="btn btn-secondary">
+                    <i class="fas fa-envelope"></i>
+                    Email Invoice
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function downloadPDF() {
+            // In a real implementation, this would generate a PDF
+            alert('PDF download functionality would be implemented here using libraries like jsPDF or server-side PDF generation.');
+        }
+
+        // Auto-focus and smooth scrolling
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add smooth animations
+            const elements = document.querySelectorAll('.invoice-container');
+            elements.forEach(el => {
+                el.style.opacity = '0';
+                el.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    el.style.transition = 'all 0.6s ease';
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, 100);
+            });
+        });
+
+        // Print optimization
+        window.addEventListener('beforeprint', function() {
+            document.body.style.background = 'white';
+        });
+
+        window.addEventListener('afterprint', function() {
+            document.body.style.background = '';
+        });
+    </script>
+</body>
+</html>

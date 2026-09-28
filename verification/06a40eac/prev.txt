@@ -1,0 +1,624 @@
+﻿
+
+CAT P1 Nov 2023 
+
+CAT P1 Nov 2023
+
+Print / Save as PDF 
+
+Edit 
+
+Close 
+
+Past Paper Template
+
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+
+COMPUTER APPLICATIONS TECHNOLOGY P1
+
+NOVEMBER 2023
+
+MARKS: 180
+
+TIME: 3 Hours
+
+This question paper consists of 3 pages.
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+2 
+DBE/November 2023 
+
+INSTRUCTIONS AND INFORMATION
+
+Owing to the nature of this practical examination, it is important to note that, even if you complete the examination early, you will NOT be permitted to leave the examination room until all the administrative tasks associated with the examination have been finalised. During the examination, the standard examination rules regarding leaving the examination room apply. 
+
+If you are working on the network, or the data files have been preloaded on your system, you must follow the instructions provided by the invigilator/teacher. 
+
+At the end of the examination, you must make sure that ALL your answer files are saved on the network/computer as explained to you by the invigilator/teacher. 
+
+Make absolutely sure that all files can be read. Do NOT save unnecessary files/folders and do NOT hand in duplicate answer files/folders. Do NOT delete any original files that you did not work on. 
+
+The information sheet that has been provided with the question paper MUST BE COMPLETED AFTER THE THREE-HOUR EXAMINATION SESSION. Hand it to the invigilator at the end of the examination. 
+
+A copy of the master files will be available from the invigilator. Should there be any problems with a file, you may request another copy from the invigilator. 
+
+This question paper consists of SEVEN questions. Answer ALL the questions. 
+
+Read through each question before answering or solving the problem. Do NOT do more than is required by the question. 
+
+Ensure that you save each document using the file name given in the question paper. Save your work regularly as a precaution against possible power failures. 
+
+You may NOT use any resource material. 
+
+Accuracy will be taken into account. 
+
+Ensure that the regional settings are set to South Africa and date and time settings, number settings and currency settings are correctly set. 
+
+In all questions involving word processing, you should set the language to English (South Africa). The paper size is assumed to be A4 Portrait, unless instructed otherwise. Use centimetres as the unit of measurement. 
+
+Ensure that the Developer tab and Ruler are activated. 
+
+Ensure that the decimal symbol is set as a full stop ( . ) and the list separator is set as a comma ( , ). 
+
+Formulae and/or functions must be used for ALL calculations in questions involving spreadsheets. Use absolute cell references only where necessary to ensure that formulae are correct when you copy them to other cells in a spreadsheet. 
+
+NOTE: All formulae and/or functions should be inserted in such a manner that the correct results will still be obtained even if changes are made to the existing data.
+
+You may NOT use a word processing program such as Word to answer the HTML question. 
+
+Borders around images or screenshots in this question paper are intended for clarity. Do NOT insert borders unless you are instructed to do so. 
+
+Copyright reserved Please turn over 
+
+Computer Applications Technology/P1 
+3 
+DBE/November 2023 
+
+Use the correct settings or features in an application as required by a question. 
+
+The data files that you need to complete this question paper have been provided to you on the disk/CD/DVD/flash disk or on the disk space allocated to you. 
+
+Do the following:
+
+Verify the contents of the folder by opening one or more files. 
+
+Rename the folder with your examination number. 
+
+The list of files in the folder will be available on the next page.
+
+Copyright reserved Please turn over 
+
+Computer Applications Technology/P1 
+4 
+DBE/November 2023 
+
+SECTION A
+
+QUESTION 1: PRACTICAL
+
+1.1
+
+Insert the Retrospect cover page as follows: Document title: Popular Cars Remove the subtitle control. 
+
+(3)
+
+1.2
+
+Find the heading that starts with These were South … and use font formatting to display the heading as shown below. 
+
+(2)
+
+1.3
+
+Find the text Question/Vraag 1.3 and replace it with the image 1Toyota. Apply a Soft-Edge Rectangle picture style to the image. 
+
+(2)
+
+1.4
+
+Find and replace all occurrences of the word Hilux so that it appears expanded by 1 pt with a scale of 150%. 
+
+(3)
+
+1.5
+
+Find the table below the heading that starts with South Africa s 10 … and modify it to appear as the example below. NOTE: The data for Volkswagen is moved into the table. 
+
+(5)
+
+1.6
+
+Find the chart/graph below the text that starts with The graph below … and insert the caption to display as Graph 2: Bestsellers . 
+
+(2)
+
+1.7
+
+Find the letter D below the heading Expectations for new … and format the letter as displayed in the example below. NOTE: The background colour of the letter D should display in a green shading. 
+
+(4)
+
+1.8
+
+Find the heading that starts with The top 10 … and the table below the heading. Change the settings to make sure that the heading and the table will always remain together. 
+
+(1)
+
+1.9
+
+(2) Insert the file path in the header of the last page only. Save and close the 1Top10 document. 
+
+(2)
+
+[24]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+5 
+DBE/November 2023 
+
+QUESTION 2: PRACTICAL
+
+2.1
+
+Change the margins of the document to narrow margins. 
+
+(1)
+
+2.2
+
+Add a 3 pt border on the left and right side of the first page only. 
+
+(3)
+
+2.3
+
+Create a link as follows: Find the text Contact form and create a bookmark called Contact . Insert a link on the text choosing in the first paragraph to the Contact bookmark. 
+
+(3)
+
+2.4
+
+Find the text that starts with 1. A new vehicle … and ends with … start the research: . Change the numbered list to a bulleted list with the symbol (Webdings: Character code: 142). 
+
+(2)
+
+2.5
+
+Edit the form controls below the heading Contact form as follows: 
+
+2.5.1
+
+Find the text form field next to the text Surname and apply a word processing feature to the text form field so that it appears as the rest of the form fields. 
+
+(1)
+
+2.5.2
+
+Change the text form field next to the text Name to display the data in capital letters. 
+
+(1)
+
+2.5.3
+
+Edit the text form field next to the Contact number so that it can only accept the correct number of digits. Examples: 0825893654 or 0359586321 
+
+(1)
+
+2.5.4
+
+Edit the text form field next to the text Preferred time to call so that a user can insert a specific time of day in the format: h:mm am/pm 
+
+(2)
+
+2.6
+
+Insert a shape to appear as in the example below. 
+
+(3)
+
+2.7
+
+Find the SmartArt on the last page and format the SmartArt to appear as shown in the example below. (4) NOTE: A 3D Cartoon style was applied. Save and close the 2Tips document. 
+
+(4)
+
+[21]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+6 
+DBE/November 2023 
+
+QUESTION 3: PRACTICAL
+
+3.1
+
+Edit the heading in row 1 as follows: Merge and centre cells A1:J1. Apply a Distributed (Indent) horizontal text alignment with an indent of 13. 
+
+(3)
+
+3.2
+
+The total number of cars sold by each salesperson for the period 2022/2023 is stored in row 7. Insert a function in cell E3 to determine the second lowest total number of cars sold by a salesperson for the period 2022/2023. 
+
+(2)
+
+3.3
+
+Insert a function in cell E4 to determine the number of months in which the total monthly sales of cars were fewer than 15. 
+
+(2)
+
+3.4
+
+Apply a spreadsheet feature to cells C9:I20 to display the percentage values of 0 to 50 in a two-colour scale format style. Change the colour of the minimum value to blue. 
+
+(4)
+
+3.5
+
+(6) Insert a lookup function in cell F23 to display the name of the salesperson who sold the most cars for the period 2022/2023. Save and close the 3CarSales spreadsheet. 
+
+(6)
+
+[17]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+7 
+DBE/November 2023 
+
+QUESTION 4: PRACTICAL
+
+4.1
+
+Change the format in column H to an appropriate data type and make sure that all the information in the column is visible. 
+
+(2)
+
+4.2
+
+The function in cell C3 was an attempt to determine if the total interest (cell E3) is 8% of the total car prices (column E). However, the function displays an incorrect result. Correct the formula in cell C3 to display the correct result. 
+
+(1)
+
+4.3
+
+Insert a function in cell C5 to calculate the total price (column E) for all the Hyundai i-models. 
+
+(6)
+
+4.4
+
+Modify the function in cell A11 to only display the initial(s) of the customer (column B). 
+
+(4)
+
+4.5
+
+The total cost for a car is calculated by adding the price and the interest. However, if a buyer wants extra accessories (column G), an additional 5% is added to the total cost. (4) Insert a formula/function in cell H10 to calculate the final total cost for Basson. Work in the Chart worksheet. 
+
+(4)
+
+4.6
+
+Modify the chart to appear as the example below. (6) NOTE: The column colours have been set to vary by point. Save and close the 4Sales spreadsheet. 
+
+(6)
+
+[23]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+8 
+DBE/November 2023 
+
+QUESTION 5: PRACTICAL
+
+5.1
+
+Change the properties of the Name field to make sure that a name is always entered. 
+
+(1)
+
+5.1.1
+
+Edit the properties of the StartDate field to display in the format: dd-mmm-yy 
+
+(2)
+
+5.1.2
+
+A driver s licence number must be entered in a specific format. Change the properties of the LicenceNo field so that a user will enter data as follows: SIX compulsory numbers; followed by THREE capital letters; followed by ONE optional number Examples: 435698XKJ8 or 963214PJH 
+
+(4)
+
+5.1.3
+
+Change the properties of the Rating field to ONLY accept ratings from 1 to 5. No default value should appear in this field. 
+
+(2)
+
+5.1.4
+
+Insert a new field called LicenceCard above the LicenceNo field. (4) Insert the 5Card image, in Datasheet View, for the driver Mark Lopez. Save and close the tbl5_1 table. 
+
+(4)
+
+5.2
+
+Open the frm5_2 form, based on the Pre-bookings table, in Design View and edit as follows: Insert the 5Bus image in the form header as a logo. Change the properties of the Reason field to a combo box to display the options Business and Personal . Save and close the frm5_2 form. 
+
+(5)
+
+5.3
+
+Create a query called qry5_3 based on the Pre-bookings table as follows: Display only the name, surname and contact number of the following clients: Business clients who travel more than 30 km Any clients who travel 10 km or less Save and close the qry5_3 query. 
+
+(5)
+
+5.4
+
+Open the qry5_4 query, based on the Pre-bookings table, in Design View. Modify the query to display the clients who will use the shuttle services to depart in December. Save and close the qry5_4 query. 
+
+(3)
+
+5.5
+
+Open the qry5_5 query, based on the Pre-bookings table, in Design View. Insert a new field Total to calculate the total travel cost for a client for a return trip. The client is charged R6,25 per kilometre travelled. Save and close the qry5_5 query. 
+
+(4)
+
+5.6
+
+Open the rpt5_6 report, based on the Pre-bookings table, in Design View and modify as follows: Insert a function in the group footer to indicate the total clients per Reason. Change the page orientation to landscape. Export the report as a PDF document called 5Pre-bookings to your data folder. (5) Save and close the rpt5_6 report. Save and close the 5Shuttle database. 
+
+(35)
+
+[65]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+9 
+DBE/November 2023 
+
+QUESTION 6: PRACTICAL
+
+6.1
+
+Open the incomplete 6_1Win file in a web browser and also in a text/HTML editor. Your final web page should look like the example below. NOTE: Use the example above as a guide when answering this question. Question numbers appear as comments in the coding to indicate where you should insert the answer(s). DO NOT delete these comments. 
+
+6.1.1
+
+Insert an attribute to the body tag so that the web page colour displays light blue. 
+
+(2)
+
+6.1.2
+
+Modify the image tag attributes so that the images appear as shown in the example on the previous page. 
+
+(2)
+
+6.1.3
+
+Change the HTML code so that the Home text displays in the table as shown in the example on the previous page. 
+
+(1)
+
+6.1.4
+
+Insert a tag to the table heading Ts and Cs so that it will link to the 6_1Win web page. 
+
+(2)
+
+6.1.5
+
+(2) Modify the HTML code to display the list as shown in the example on the previous page. Save and close the 6_1Win file. 
+
+(2)
+
+6.2
+
+Open the incomplete 6_2Opening web page in a web browser and also in a text/HTML editor. Complete the web page to resemble the example below. (5) Save and close the 6_2Opening file. ONE mark will be allocated for closing tags and correct nesting in both the files. 
+
+(5)
+
+[14]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+10 
+DBE/November 2023 
+
+QUESTION 7: PRACTICAL
+
+7.1
+
+The shuttle company is upgrading their logo. Use WordArt and the images in the file to create a new logo, as shown below. NOTE: The final logo should be one image. (5) Save the final logo as an image called 7NewLogo. Save and close the 7New document. 
+
+(5)
+
+7.2
+
+Open the 7Bookings spreadsheet. 
+
+7.2.1
+
+Shuttle drivers need to be notified one and a half hours before a client s departure time. Insert a function in cell D8 to calculate the time a driver should be notified. 
+
+(5)
+
+7.2.2
+
+Insert a formula in column G to calculate the number of days between the departure and return dates for all clients. 
+
+(3)
+
+7.2.3
+
+Edit the worksheet as follows: Change the settings to make sure that when the entire worksheet is printed, the information in columns A to G will appear on the first page. (2) Edit the print options to include the row and column headings. Save and close the 7Bookings spreadsheet. [15] TOTAL: 150 HTML TAG SHEET Basic Tags Formatting Tags continued Tag Description Tag Description Defines the body of the web Inserted before each list item, page and adds a number or symbol body Sets the background colour of depending on the type of list bgcolor= pink the web page selected Sets the colour of the body text Adds an image Contains information about the img src= name Aligns an image: can be right , web page align= left bottom , top Creates an HTML document – img Aligns an image in the center , starts and ends a web page src= name can also be middle img src= name Sets the size of the border Defines a title for the web page border= 1 around an image Inserts a line break img src= name Sets the height and width of an width= 200 height Comment image = 200 Text Tags Displays alternative text when Tag Description img src= name the mouse hovers over the alt= alternative text image or when the image is not Creates the largest heading found Creates the smallest heading Inserts a horizontal line Creates bold text Sets size (height) of a line Creates italic text Sets the width of a line, in Creates underlined text percentage or absolute value Sets size of font, from 1 to 7 Sets font colour Sets the colour of the line font face= Times New Table Tags Sets font type Roman Tag Description Links Tags Creates a table Tag Description Creates a row in a table Creates a hyperlink Creates a cell in a table img Creates an image link src= name Creates a table header (a cell Creates a target location in the with bold, centred text) document Links to a target location created somewhere else in the Sets the width of the table document a href= Sets the width of the border Links to an e-mail address mailto:#NAME around the table cells Sets the space between the Formatting Tags table cells Sets the space between a cell Tag Description border and its contents Creates a new paragraph Sets the alignment for cell(s) ( left , can also be center or Aligns a paragraph to the left right ) (default), can also be right or center Sets the vertical alignment for Centre text, a table of an image cell(s) ( top , can also be horizontally middle or bottom ) Creates a numbered list ol type= A , a , Defines the type of numbering Sets the number of columns a I , i , 1 used cell should span Creates a bulleted list ul type= disc , Sets the number of rows a cell Defines the type of bullets used square , circle should span INPUT MASK CHARACTER SHEET CHARACTER DESCRIPTION 0 Digit (0 to 9, entry required, plus [+] and minus [–] signs not allowed) Digit or space (entry not required, plus [+] and minus [–] signs not allowed) Digit or space (entry not required; spaces are displayed as blanks while # in E 
+
+(2)
+
+[15]
+
+TOTAL SECTION A: [179]
+
+GRAND TOTAL: 180
+
+Copyright reserved 
+
+Computer Applications Technology/P1 
+11 
+DBE/November 2023 
+
+Computer Applications Technology 
+DBE/May/June 2025 
+
+SC/NSC Confidential
+
+Examination sticker
+
+184
+
+COMPUTER APPLICATIONS TECHNOLOGY P1 – MAY/JUNE 2025
+
+INFORMATION SHEET (to be completed by the candidate AFTER the 3-hour session) 
+
+CENTRE NUMBER 
+
+EXAMINATION NUMBER 
+
+WORK STATION NUMBER 
+
+SUITE USED (Mark appropriate box with a cross (X)) 
+
+Microsoft Office 2016
+
+Microsoft Office 2019
+
+Microsoft Office 2021
+
+Office 365
+
+WEB BROWSER USED (Mark appropriate box with a cross (X)) 
+
+Mozilla Firefox
+
+Google Chrome
+
+Internet Explorer
+
+Microsoft Edge
+
+Other (Specify)
+
+FOLDER NAME 
+
+Candidate must enter the file name(s) used for each answer. Tick if saved and/or attempted.
+
+Question
+Number
+
+File name
+
+Saved
+(✓)
+
+Attempted
+(✓)
+
+Maximum
+Mark
+
+Mark
+Achieved
+
+Marker
+Initial/
+Code
+
+1
+
+1eSports
+
+27
+
+2
+
+2Stats
+
+21
+
+3
+
+3Rank
+
+17
+
+4
+
+4Shop
+
+24
+
+5
+
+5Games
+
+65
+
+6
+
+6_1Tournament
+
+15
+
+6_2Entry
+
+7
+
+7Report
+
+15
+
+7Staff
+
+7Export
+
+7Results
+
+TOTAL
+
+184
+
+Comment: (for office/marker use only) 
+
+Copyright reserved
+
+Copyright reserved

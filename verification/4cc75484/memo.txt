@@ -1,0 +1,1008 @@
+﻿
+
+CAT P1 May-June 2023 – Marking Guidelines 
+
+CAT P1 May-June 2023 — MARKING GUIDELINES
+
+Print / Save as PDF 
+
+Edit 
+
+Close 
+
+Past Paper Template
+
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+
+COMPUTER APPLICATIONS TECHNOLOGY P1
+
+JUNE 2023
+
+MARKING GUIDELINES
+
+MARKS: 180
+
+These marking guidelines consist of 3 pages.
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+2 
+DBE/June 2023 
+
+SUGGESTIONS AND RECOMMENDATIONS TO MARKERS
+
+Revisit the questions and the marking guidelines frequently during the marking session.
+
+It is advisable to read (and re-read) the question frequently together with the candidate s response to check that it correlates, so that you are not misled by the candidate s statements/answers.
+
+Be careful not to focus on keywords or general statements, but rather read the entire answer. If in doubt, read the entire answer and then the question paper and the marking guidelines.
+
+Ask yourself or your senior marker if the response could fit into the marking guidelines before allocating the correct marks to the candidate.
+
+Accept correct answers that are expressed differently, e.g. the marking guidelines state slow and the candidate responds with not fast .
+
+Beware of overlapping answers to a specific question. In general, ONE mark is awarded per fact.
+
+Do not choose answers on the candidate s behalf. Where a question requires a candidate to LIST or NAME : mark the first number of answers/facts required, e.g. the first TWO facts if the candidate presents a list of FIVE facts and only TWO facts were required, even if presented in paragraph format.
+
+Questions requiring longer answers must be regarded as a single unit. Marks can be awarded if correct statements are found anywhere in the paragraph.
+
+Copyright reserved Please turn over 
+
+Computer Applications Technology/P1 
+3 
+DBE/June 2023 
+
+SECTION A
+
+QUESTION 1: PRACTICAL
+
+1.1
+
+Header 2
+
+• Double strikethrough removed 1 
+
+• Position: Header from Top/From edge: 1 cm 
+
+2
+
+1.2
+
+Hyphenation 1
+
+• Hyphenate words in CAPS: Unchecked 
+
+1
+
+1.3
+
+Footnote: Reasons 3
+
+• Footnote inserted on the word Reasons 1 
+
+• Custom mark: @ 1 
+
+• Text added: Elements of life (Ignore spelling) 
+
+3
+
+1.4
+
+Columns: The Cape Peninsula … 5 reasons why. 3
+
+• Line between 1 
+
+• First column width: 6 cm 1 
+
+• Spacing between columns: 1 cm 
+
+3
+
+1.5
+
+Citation: Interesting fact according … 2
+
+(Mark from the Dialog box)
+• Citation: Sterne 1 
+
+• Suppress: Year 1 
+ALT+F9: { CITATION Ste16 \y \I …. }
+
+2
+
+1.6
+
+Comment: Two oceans 1
+
+• Reply: sometimes 
+
+1
+
+1.7
+
+Watermark 2
+
+• Font: Arial Narrow 1 
+
+• WordArt: Shape: Arch Down (Curve) 1 
+DBE Stamp EXAMINATION NUMBER
+
+2
+
+1.8
+
+Tab Stops: Funicular Tickets 4
+
+• First tab stop 
+
+• Position: 6 cm AND Alignment: Left 1 
+
+• Leader: 2 ……. 1 
+
+• Second tab stop 
+
+• Position: 9.5 cm AND Alignment: Centre 
+
+• Tabs applied (Inspect rows 2 and 3) 
+
+4
+
+1.9
+
+Page border 3
+
+• Any page border inserted (Accept any style) 1 
+
+• 3 pt box border 1 
+
+• Measure from: Text: Top Margin: 12 pt 1 
+Total for QUESTION 1 [21] DBE Stamp EXAMINATION NUMBER Check the accuracy and skill required before awarding a mark throughout.
+
+3
+
+[21]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+4 
+DBE/June 2023 
+
+QUESTION 2: PRACTICAL
+
+2.1
+
+File Properties 1 • Subject: Mountain 1
+
+(Note to marker: File → Properties → Show All Properties) 
+
+1
+
+2.2
+
+Cover page: Picture 2
+
+• Picture replaced with 2Table 1 
+
+• Any half reflection variation effect applied 
+
+2
+
+2.3
+
+Page numbering 3
+
+• Automatic page numbering format: - 1 -, - 2 -, - 3 - 1 
+
+• Page number starts with 1 from Section 2 1 
+
+• Section 1 is not numbered 
+
+3
+
+2.4
+
+Table of Contents 4 • TOC inserted • In Distinctive style with a solid line • Show levels: 2 1 • Second level heading style: TableSub 1 Alt+F9: { TOC \o 1-1 \h \z \t TableSub,2 }
+
+(Note to marker: Ignore page numbering style in the TOC) 
+
+4
+
+2.5
+
+Cross-reference: cableway 2
+
+• Reference type: Bookmark: cableway 1 
+
+• Reference to: Page number 1 
+Alt+F9: { PAGEREF cableway \h } DBE Stamp EXAMINATION NUMBER
+
+2
+
+2.6
+
+Paragraph: Pagination on Hiking … with a group 1
+
+• Keep with next AND Keep lines together 
+
+1
+
+2.7
+
+Multilevel List: Below Facts 3 • List style: TableList modified 1 • 2nd Level: Bullets 1 • Bullet: Webdings, Character Code: 77 () 1
+
+(Note to marker: In the Multilevel List settings →
+Find the List Styles → Right click on TableList) 
+
+3
+
+2.8
+
+Image: Below Access 3
+
+• Picture Layout: Bending Picture (Blocks) 1 
+
+• Text: View 1 
+
+• SmartArt size: 7 cm high and 10 cm wide 1 
+
+(Notes to marker:
+• Select ONLY the SmartArt to check the size 
+
+• Click in the blank top left area of the objects) 
+
+3
+
+2.9
+
+Text box 2
+
+• Text box rotated 1 
+
+• Text adjusted ( National appears in second line) 
+
+2
+
+2.10
+
+Unzip file and sort table 3
+
+• 2Dates file unzipped and saved in the examination 
+folder 1
+• Date opened column sorted in descending order 2 
+(Mark by inspection) Total for QUESTION 2 [24] DBE Stamp EXAMINATION NUMBER
+
+3
+
+[24]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+5 
+DBE/June 2023 
+
+QUESTION 3: PRACTICAL
+
+3.1
+
+Delete worksheet 1
+
+• Sheet3 deleted 
+
+1
+
+3.2
+
+Cells A12:E62: Print Area 1
+
+• Print area set to A12:E62 
+
+1
+
+3.3
+
+Cell A3: Image: Alt text 1
+
+• Alt text: Marathon Logo 
+
+1
+
+3.4
+
+Cell F5: 1
+
+=AVERAGE(I13:I62)
+• Function: AVERAGE(I13:I62) 
+
+1
+
+3.5
+
+Cell F8: 4
+
+=ROUNDDOWN((F3/5)+2,0)
+OR
+=ROUNDDOWN((F3/5),0)+2
+OR
+=TRUNC(F3/5)+2
+• Function: ROUNDDOWN (… , 0) 1 
+
+• F3 (Accept absolute cell referencing) 1 
+
+• /5 1 
+
+• +2 1 
+DBE Stamp EXAMINATION NUMBER
+
+4
+
+3.6
+
+Cell B20: 6
+
+=CONCATENATE(RANDBETWEEN(1,50),
+LEFT(C20,2),A20)
+OR
+=RANDBETWEEN(1,50)&LEFT(C20,2)&A20
+• Function: RANDBETWEEN (1,50) 
+
+• Function: CONCATENATE OR & 
+
+• Function: LEFT (C20,2) 
+
+• A20 
+
+6
+
+3.7
+
+Cell J17: 4 =VLOOKUP(F17,Band!$A$1:$B$6,2) • Lookup value: F17 1 • Table array: Band!$A$1:$B$6 OR Band!$A$2:$B$6 OR Band!A$1:B$6 • Column Index Number: 2 (Ignore range) 1 • Function copied down and displays correctly as a result of absolute cell referencing used 1
+
+(Note to marker: If a candidate used XLOOKUP function,
+do not allocate the first mark, and then mark the
+parameters according to the following options: 
+=XLOOKUP(F17,Band!$A$2:$A$6,
+Band!$B$2:$B$6,0,-1,1)
+OR
+=XLOOKUP(F17,Band!$A$2:$A$6,
+Band!$B$2:$B$6,,-1)
+The same principle applies to other LOOKUP functions)
+Total for QUESTION 3 [18]
+DBE Stamp
+EXAMINATION
+NUMBER 
+
+4
+
+[18]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+6 
+DBE/June 2023 
+
+QUESTION 4: PRACTICAL
+
+4.1
+
+Cells A2:M2 3
+
+• Wrap text 1 
+
+• Top and bottom borders ONLY 1 
+
+• Any broken line style 
+
+3
+
+4.2
+
+Cell C4: 1
+
+=COUNTBLANK(H10:H70)
+OR
+=COUNTIF(H10:H70, )
+• Function: COUNTBLANK(H10:H70) 1 
+DBE Stamp EXAMINATION NUMBER
+
+1
+
+4.3
+
+Cell F10: 7 =IF(E10 100, Long ,(IF(E10 SMALL($E$10:$E$70,6), Medi um , Short ))) OR =IF(E10 =SMALL($E$10:$E$70,6), Short , IF(E10 100, Long , Medium )) Concept marking
+
+1. Test for two concepts and then check for the third concept 
+output. 
+2. The sequence of the concepts is determined by the logic 
+used 
+• SMALL ($E$10:$E$70,6) 2 
+
+• First condition Output for first condition 2 
+
+• Second condition Output for second condition 
+
+• Output for the third condition 
+
+Concepts: 
+• Determine whether within 6 shortest distances for Output: 
+Short 
+• Determine whether distance exceeds 100 for 
+Output: Long 
+• Determine whether distance is between 6 shortest and 100 
+for Output Medium E10100, Long Medium E10 =SMALL($E$10:$E$70,6), Short E10 100, Medium Long E10 100, Long E10 =SMALL($E$10:$E$70,6), Short Medium E10 100, Long E10 SMALL($E$10:$E$70,6), Medium Short IF(AND(E10 =SMALL(E10:E70,6), E10 =SMALL($E$10:$E$70,6), Short Long E10 =100), Medium IF(AND(E10 =SMALL(E10:E70,6), E10 100, Long Short E10 =100), Medium Medium =E10 = SMALL($E$10:$E$70,6) 100 Long Short DBE Stamp EXAMINATION NUMBER
+
+7
+
+4.4
+
+Cell G10: 2
+
+=AND(C10 1000,L10= Yes )
+OR
+=AND(L10= Yes ,C10 1000)
+OR
+=IF(AND(C10 1000,L10= Yes ), True , False )
+• Criteria 1: C10 1000 1 
+
+• Criteria 2: L10= Yes 
+
+2
+
+4.5
+
+Cell M13: 3
+
+=C13-(C13*12.5%)
+OR
+=C13*0.875
+OR
+=C13-(C13*12.5/100)
+OR
+=C13-(C13*0.125)
+• Cell reference and subtraction: C13- 1 
+
+• Calculate percentage: C13 * 12.5% 1 
+
+• Number format: Currency 1 
+Q4_6 worksheet
+
+3
+
+4.6
+
+Chart/Graph 6
+
+• Column chart with data series: Q4_6 !$A$1:$B$6 1 
+
+• Hotels bar: Fill Texture: Paper bag 1 
+
+• Y-axis major units: 15000 1 
+
+• Trendline: Moving average 1 
+
+• Trendline: Ending arrow added 1 
+
+• Gridlines removed 1 
+Total for QUESTION 4 [22] DBE Stamp EXAMINATION NUMBER
+
+22
+
+[38]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+7 
+DBE/June 2023 
+
+QUESTION 5: PRACTICAL
+
+5.1
+
+Field: IDNo 2
+
+• Field size: 13 1 
+
+• Set as Primary Key 
+
+2
+
+5.1.1
+
+Field: Experience: Lookup 2
+
+• Safari added to value list 1 
+
+• Allow Multiple Values: Yes 
+
+2
+
+11
+
+5.1.2
+
+Field: Date: Validation Rule and Validation Text 4
+
+=#2023/07/01# AND =#2024/08/31#
+OR
+#2023/06/30# AND #2024/09/01#
+OR
+Between #2023/07/01# AND #2024/08/31#
+• Validation Rule: 
+
+• Dates in the correct range 1 
+
+• AND 1 
+
+• Appropriate use of operators 1 
+
+• Validation Text: 
+
+Any appropriate text relevant to dates
+
+4
+
+5.1.3
+
+Field: Picture 3
+
+• Data type: OLE object (OR Hyperlink) 1 
+
+• Position: Appears below IDNo 1 
+
+• Caption: IDPhoto 
+
+3
+
+5.1.4
+
+Gridlines 2
+
+(Mark in Datasheet View (CTRL+.))
+• Colour: Black 1 
+
+• Only horizontal gridlines display 1 
+DBE Stamp EXAMINATION NUMBER Form: frm5_2
+
+2
+
+5.2
+
+Image 4
+
+• Display When: Screen Only 1 
+Field: Duration - Conditional formatting (Mark in Form View (CTRL+.))
+• Compare to other records 1 
+
+• Show Bar only: checked 1 
+
+• Bar colour: Yellow 1 
+Query: qry5_3
+
+1
+
+5.3
+
+• Morning criteria: Game drive 1 4
+
+• Morning criteria: Shark cage diving 1 
+
+• Transport criteria: Yes/True 1 
+
+• AND/OR logic 1 
+(Transport is Yes ONLY for Game drive)
+
+(Expected number of records: 3)
+Query: qry5_4
+
+4
+
+5.4
+
+Design view 5
+
+• Experience and TourName fields display 1 
+
+• Experience: Total: Group by 1 
+
+• Experience criteria: 
+NOT Romance OR Romance 
+• TourName: Total: Count 1 
+Datasheet view
+• Total row: Sum 1 
+DBE Stamp EXAMINATION NUMBER Query: qry5_5
+
+5
+
+5.5
+
+Calculated field: Hours: [Duration]/60 4
+
+• Calculated field: Hours 1 
+
+• [Duration] 1 
+
+• /60 1 
+
+• Criteria: =24 1 
+(Expected number of records: 5) Report: rpt5_6
+
+4
+
+5.6
+
+• Experience textbox moved from Detail section to 5
+
+Experience header 1
+• Keep the whole group together on one page 1 
+(Mark from the Group & Sort bar, NOT the Report properties)
+• Function: 
+
+• Inserted in the Experience group header 
+=MIN([CostPerPerson]) 1
+• Formatted to SA currency 1 
+
+• Label: Removed/Label text removed 1 
+Total for QUESTION 5 [35] DBE Stamp EXAMINATION NUMBER
+
+5
+
+[32]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+8 
+DBE/June 2023 
+
+QUESTION 6: PRACTICAL
+
+6.1.1
+
+Bold tag 1
+
+123…
+• Bold tags and examination number inserted 
+
+1
+
+9
+
+6.1.2
+
+Image 1
+
+• Attribute: align= left 
+
+1
+
+6.1.3
+
+Horizontal line 1
+
+• Attribute: width= 80% 
+
+1
+
+6.1.4
+
+Font colour 1
+
+• Colour: black 
+
+1
+
+6.1.5
+
+Image 2
+
+img src= 6_1Urban.jpg height= 250 
+width= 180 
+• Image inserted: 6_1Urban.jpg 1 
+
+• Attribute: height= 250 
+
+2
+
+6.1.6
+
+Break tag 1
+
+Surfing; kayaking; hiking; discovering
+flowers
+• Break tag inserted 1 
+DBE Stamp EXAMINATION NUMBER
+
+1
+
+6.1.7
+
+Unordered list 1
+
+• changed to 
+
+1
+
+6.1.8
+
+Link tag 1
+
+• Attribute: name changed to href 
+
+1
+
+6.2
+
+6_2Big6
+
+5
+
+V&A Waterfront
+img src= 6_2Arrows.png 
+align= center 
+Life on the
+edge of an historical working harbour
+
+Cape Point
+The
+panoramic views that spread out before you are
+breathtaking
+
+Groot
+Constantia
+…
+
+Table
+Table tag: table
+Attribute: cellspacing= 50 
+1
+Border= 0 (Accept without border attribute) 1
+Rowspan= 6 
+1
+Groot Constantia row: 1
+Attribute: bgcolor= lightblue 
+Closing tag(s) and nesting correctly used 
+1 1
+............
+Total for QUESTION 6 [15]
+DBE Stamp
+EXAMINATION
+NUMBER 
+
+5
+
+[14]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+9 
+DBE/June 2023 
+
+QUESTION 7: PRACTICAL
+
+7.1.1
+
+Table: Formatting 1
+
+• Inside borders: Any blue colour 
+
+1
+
+7
+
+7.1.2
+
+Table: Formatting 1
+
+• First cell in first row split into 2 cells 1 
+(Tourist Name and Tourist Surname)
+
+1
+
+7.1.3
+
+Table: Formula 5
+
+(Note to marker: Mark from the Dialog box or ALT+F9)
+=IF(SUM(LEFT) =6,1000,500) OR
+=IF(SUM(LEFT) 5,1000,500) OR
+=IF(SUM(LEFT) =5,500,1000) OR
+=IF(C6+D6 =6,1000,500)
+• Function: IF 1 
+
+• Total number of visits: SUM(LEFT) OR C6 + D6 1 
+
+• Total is greater than 5: =6 OR 5 
+
+• Value if TRUE: 1000 1 
+
+• Value if FALSE: 500 1 
+DBE Stamp EXAMINATION NUMBER 7Tourists List worksheet
+
+5
+
+7.2.1
+
+Convert Text to Columns 3 • Column A converted into columns 1 Find and Replace • Maybe replaced with No (10 occurrences) 1 • Font colour: Red 1
+
+(Note to marker: If the text was not converted to columns,
+accept if the entire line appears in red font in 10 places)
+Details worksheet 
+
+3
+
+8
+
+7.2.2
+
+Cell D2: 5
+
+=DATE(YEAR(TODAY()),MONTH(C2)-1,DAY(C2))
+• Function: DATE( … ) 1 
+
+• Function: YEAR (TODAY() ) (OR NOW()) 2 
+
+• MONTH(C2) -1 1 
+
+• DAY(C2) 1 
+TOTAL FOR QUESTION 7 [15] TOTAL 150 DBE Stamp
+
+5
+
+[15]
+
+TOTAL SECTION A: [162]
+
+GRAND TOTAL: 180
+
+Copyright reserved 
+
+Computer Applications Technology/P1 
+2 
+DBE/June 2023 
+
+Computer Applications Technology 
+DBE/May/June 2025 
+
+SC/NSC Confidential
+
+Examination sticker
+
+172
+
+COMPUTER APPLICATIONS TECHNOLOGY P1 – MAY/JUNE 2025
+
+INFORMATION SHEET (to be completed by the candidate AFTER the 3-hour session) 
+
+CENTRE NUMBER 
+
+EXAMINATION NUMBER 
+
+WORK STATION NUMBER 
+
+SUITE USED (Mark appropriate box with a cross (X)) 
+
+Microsoft Office 2016
+
+Microsoft Office 2019
+
+Microsoft Office 2021
+
+Office 365
+
+WEB BROWSER USED (Mark appropriate box with a cross (X)) 
+
+Mozilla Firefox
+
+Google Chrome
+
+Internet Explorer
+
+Microsoft Edge
+
+Other (Specify)
+
+FOLDER NAME 
+
+Candidate must enter the file name(s) used for each answer. Tick if saved and/or attempted.
+
+Question
+Number
+
+File name
+
+Saved
+(✓)
+
+Attempted
+(✓)
+
+Maximum
+Mark
+
+Mark
+Achieved
+
+Marker
+Initial/
+Code
+
+1
+
+1eSports
+
+27
+
+2
+
+2Stats
+
+24
+
+3
+
+3Rank
+
+18
+
+4
+
+4Shop
+
+38
+
+5
+
+5Games
+
+35
+
+6
+
+6_1Tournament
+
+15
+
+6_2Entry
+
+7
+
+7Report
+
+15
+
+7Staff
+
+7Export
+
+7Results
+
+TOTAL
+
+172
+
+Comment: (for office/marker use only) 
+
+Copyright reserved
+
+Copyright reserved

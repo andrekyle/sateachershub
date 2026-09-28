@@ -1,0 +1,646 @@
+
+
+===== PDF PAGE 1 =====
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+COMPUTER APPLICATIONS TECHNOLOGY P2
+2023
+MARKING GUIDELINES
+MARKS: 150
+These marking guidelines consist of 20 pages.
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 2 =====
+Computer Applications Technology/P2 2 DBE/2023
+SC/NSC (Marking Guidelines)
+SUGGESTIONS AND RECOMMENDATIONS TO MARKERS
+ Revisit the questions and the marking guidelines frequently during the marking
+session.
+ It is advisable to read (and re-read) the question frequently together with the
+candidate's response to check that it correlates, so that you are not misled by the
+candidate's statements/answers.
+ Be careful not to focus on keywords or general statements, but rather read the entire
+answer. If in doubt, read the entire answer and then the question paper and the
+marking guidelines.
+o Ask yourself or your senior marker if the response could 'fit' into the marking
+guidelines before allocating the correct marks to the candidate.
+o Accept correct answers that are expressed differently, e.g. the marking guidelines
+state 'slow' and the candidate responds with 'not fast'.
+ Beware of overlapping answers to a specific question. In general, ONE mark is
+awarded per fact.
+ Do not choose answers on the candidate's behalf. Where a question requires a
+candidate to LIST or NAME: mark the first number of instances required, e.g. the first
+TWO facts if the candidate presents a list of FIVE facts and only TWO facts were
+required, even if presented in paragraph format.
+ Questions requiring longer answers must be regarded as a single unit. Marks can be
+awarded if correct statements are found anywhere in the paragraph.
+SECTION A
+QUESTION 1: MULTIPLE-CHOICE QUESTION 2: MATCHING ITEMS
+1.1 C
+
+1 2.1 E  1
+1.2 B  1 2.2 F  1
+1.3 C
+
+1 2.3 A / D  1
+1.4 A  1 2.4 J  1
+1.5 B  1 2.5 T  1
+1.6 D
+
+1 2.6 S  1
+1.7 A  1 2.7 C  1
+1.8 B
+
+1 2.8 B  1
+1.9 D  1 2.9 R  1
+1.10 A  1 2.10 H  1
+Total: [10] Total: [10]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 3 =====
+Computer Applications Technology/P2 3 DBE/2023
+SC/NSC (Marking Guidelines)
+QUESTION 3: TRUE/FALSE ITEMS
+(Note to marker: In Question 3.1, 3.3, and 3.4:
+ Candidates need to provide the correct term, e.g. Motherboard, in order to get the mark
+ Award the mark if the correct answer is given without the word FALSE
+ Do NOT award the mark if only the word FALSE is given without the correct answer)
+3.1 False, Widow  1
+3.2 True  1
+3.3 False, Relative (cell referencing)  1
+3.4 False, Pharming  1
+3.5 True  1
+[5]
+TOTAL SECTION A: 25
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 4 =====
+Computer Applications Technology/P2 4 DBE/2023
+SC/NSC (Marking Guidelines)
+SECTION B
+QUESTION 4: SYSTEMS TECHNOLOGIES
+4.1 TWO input devices than can be used on a Point of Sales system
+(1) Keyboard/Keypad/Touchscreen
+(2) Barcode scanner
+(3) Speed point/Bank card facility machine
+(4) Scale for measuring weight (of items)
+(5) NFC reader/QR code scanner
+ (Any two) 2
+4.2 Definition of convergence
+Convergence is where the functionality of two or more devices  are
+combined in one device  2
+4.3 TWO reasons why USB ports are commonly used to connect
+peripheral devices
+(1) High speed data transfer
+(2) Provides power to devices
+(3) Computers/Laptops compatible with most external devices
+(4) Hot swappable (Accept Plug & Play)
+ (Any two) 2
+4.4 TWO specifications to consider when buying a monitor
+(1) Resolution/Pixel density
+(2) Physical size
+(3) Contrast ratio/Colour depth
+(4) Aspect ratio
+(5) Panel type (curved/flat)/LED/LCD/QLED
+(6) Refresh rate/Response time
+(7) Connectivity options
+ (Any two) 2
+4.5 TWO reasons why a monitor does not display anything even
+though both the computer and monitor are switched on
+(1) Cables/Signal cable not connected properly/faulty
+(2) Faulty graphics card
+(3) Display is set to a secondary monitor
+(4) Sleep mode is active
+ (Any two) 2
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 5 =====
+Computer Applications Technology/P2 5 DBE/2023
+SC/NSC (Marking Guidelines)
+4.6 TWO limitations of using web-based applications
+(1) Requires reliable internet connection
+(2) Requires additional data and sufficient speed
+(3) Possibility of security risks while online
+(4) Applications may not be compatible with all web browsers
+(5) Applications can be much slower than installed ones
+(6) Applications may not have all the functionality/features of installed
+ones/may cause formatting changes
+ (Any two) 2
+4.7 TWO ways to complete the installation when a program reports an
+error message that there is insufficient disk space
+(1) Delete/Move unwanted programs/data onto an external drive or the
+cloud
+(2) Use Disk Cleanup
+(3) Replace/Add a larger storage device/drive
+(4) Compress data/folders not frequently used
+ (Any two) 2
+4.8 ONE reason to distribute educational resources on an optical disk
+(1) Users may not have data/sufficient cap
+(2) Connectivity issues/slow internet
+(3) Control the spread of viruses and other malware
+ (Any one) 1
+4.9.1 ONE disadvantage of using NFC
+NFC has a low transfer speed  / Will take a long time to transfer
+photographs or videos 1
+4.9.2 TWO uses of NFC other than the transfer of photos
+(1) Making payments
+(2) Open/Launch an app on other devices
+(3) Pair/Trigger accessories with device
+(4) Security purposes, e.g. Unlocking doors/Access control
+(5) Transfer other kinds of media, e.g. video/documents
+(6) Printing via NFC
+ (Any two) 2 3
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 6 =====
+Computer Applications Technology/P2 6 DBE/2023
+SC/NSC (Marking Guidelines)
+4.10 TWO software technologies to assist physically disabled users,
+who cannot use their hands, to work on a computer
+(1) Voice recognition software
+(2) Speech-to-text software
+(3) Eye tracking/Gesture recognition software
+(4) Virtual assistant
+ (Any two) 2
+4.11 Application to switch off all computers at a certain time in the
+afternoon
+(1) Task Scheduler
+(2) LanSchool/EyeSpy/Classroom Spy, etc. (Accept Classroom
+Management Software)
+ (Any one) 1
+4.12 TWO risks of using flawed software
+(1) Corrupted data/loss of data/loss of productivity
+(2) Invalid/Unexpected results
+(3) Security issues
+(4) Malware infection
+(5) Unusual behaviour of computer-controlled devices/temporarily
+malfunction
+ (Any two) 2
+4.13 TWO advantages of using the Snipping Tool compared to the Print
+Screen option
+(1) Specific area can be selected
+(2) The screenshot can be saved directly in different file formats
+(3) Can edit within the Snipping Tool application
+(4) The screenshot can be directly attached to an e-mail or added to
+another application
+(5) Can print from within the Snipping Tool application
+ (Any two) 2
+[25]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 7 =====
+Computer Applications Technology/P2 7 DBE/2023
+SC/NSC (Marking Guidelines)
+QUESTION 5: INTERNET AND NETWORK TECHNOLOGIES
+5.1 Concept of grid computing
+Processing power  of many computers are combined in order to
+complete a single task/solve a problem  2
+5.2 Communication technology that uses light for data transfer
+(1) Fibre optic
+(2) Li-Fi (Light fidelity)
+(3) IR (Infrared)
+ (Any one) 1
+5.3.1 TWO good practices for managing video conferencing
+(1) Ensure all participants hear/see the speaker and/or other
+participants/presentations
+(2) Have participants mute their microphones if they are not
+speaking/Mute the participants
+(3) Give all participants an opportunity to participate, e.g. chat box,
+hands-up, voice and sharing their screen
+(4) Enable setting for filtering out background noises/Disallow
+distracting backgrounds
+(5) Enable transcripts
+(6) Record the proceedings of the meeting
+(7) Add security measures for joining, e.g. waiting room
+ (Any two) 2
+5.3.2 TWO disadvantages of video conferencing
+(1) Less in-person contact
+(2) Possible network instability and time lag/Intermittent software issues
+(3) Lack of full participation/engagement
+(4) Participants' inability to use the technology adequately
+(5) Requires specific hardware, e.g. webcam
+(6) Data intensive
+ (Any two) 2 4
+5.4 TWO reasons why users cannot access a file on a network
+(1) Access rights may prevent users from opening the file
+(2) Problem with the connection to the server
+(3) Server is offline
+(4) The file is corrupt
+ (Any two)
+(Note to marker: Do NOT accept password) 2
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 8 =====
+Computer Applications Technology/P2 8 DBE/2023
+SC/NSC (Marking Guidelines)
+5.5 TWO ways to prevent buffering and delays without having to close
+applications
+(1) Disable automatic updates/Enable data saver
+(2) Stream at a lower resolution
+(3) Reduce use of multimedia/Disable automatic video play in certain
+apps
+(4) Reduce distance/obstacles between router and user
+ (Any two) 2
+5.6 TWO reasons why instant messaging is widely used
+(1) Easy access to IM apps via smartphones/multiple platforms
+(2) Real-time communication
+(3) Easy to create and manage groups
+(4) Messages are usually secure/End-to-end encryption
+(5) Additional functionality, e.g. voice call/group call/voice note
+ (Any two) 2
+5.7 TWO reasons for price differences between fibre connections with
+the same speed
+Throttled 
+Capped  2
+[15]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 9 =====
+Computer Applications Technology/P2 9 DBE/2023
+SC/NSC (Marking Guidelines)
+QUESTION 6: INFORMATION MANAGEMENT
+6.1 TWO aspects to be included in a task definition
+(1) Problem stated/current situation/Why it is a problem
+(2) Focus/purpose of the investigation
+(3) How to go about doing the research
+(4) Where to look for information/How information will be used
+(5) Target audience
+(6) How the information will be presented
+ (Any two) 2
+6.2.1 Purpose of questions
+Questions starting with… Level Purpose of question
+Who, what, when, where, how 1 a) Gather facts 
+many
+Why, How 2 b) Explore  / Examine
+If, What if 3 c) Adjust, alter or predict
+Would it be better if … 4 d) /c) Reach a conclusion 
+How can I determine …
+What would be the best way
+… 3
+6.2.2 ONE reason for using different level questions when doing research
+(1) To gather enough/varied information
+(2) To guide your research
+(3) To add depth to your research
+(4) To help you order the content when you write your report
+ (Any one) 1 4
+6.3 How to avoid being guilty of plagiarism
+(1) Acknowledge sources, (e.g. bibliography and citations)
+(2) Write in your own words/use a paraphrasing tool
+(3) Do not copy and paste text
+(4) Use a similarity checker (e.g.Turnitin)
+ (Any two) 2
+6.4 TWO reasons why the survey is NOT useful
+(1) Do not know what this survey is about/No introduction
+(2) No focus, questions do not all relate to the same context/No guidance
+for the respondent to answer the questions
+(3) Difficult to process, e.g. Open-ended questions/Questions are not
+numbered/Name is irrelevant/should not be asked according to POPIA
+(4) Clarity of questions not ideal, e.g. Check box used for space where text
+should be entered/No descriptor for checkbox/Rating scale is
+illogical/No space to answer question
+ (Any two) 2
+[10]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 10 =====
+Computer Applications Technology/P2 10 DBE/2023
+SC/NSC (Marking Guidelines)
+QUESTION 7: SOCIAL IMPLICATIONS
+7.1 TWO ways to reduce the possible negative impact of ICTs on the
+environment
+(1) Recycle/Reuse old computers/devices/parts
+(2) Buy energy efficient hardware
+(3) Switch off computers when not in use
+(4) Proofread before printing/Print on both sides of the paper/Print 2 pages
+per sheet/Print in draft/eco-mode
+(5) Adjust device settings to use less energy, etc.
+ (Any two) 2
+7.2 TWO dangers of sharing your location online
+(1) You could be spammed with location-based advertising
+(2) You could be stalked and harassed
+(3) Criminals could target your premises while you are away
+ (Any two) 2
+7.3 ONE way to reduce the spread of fake news when using social media
+(1) Verify the authority of the source/content/Check the facts
+(2) Do not forward messages that are emotionally charged/not
+confirmed/seems too good to be true
+(3) Educate people about fake news
+(4) Report fake news
+ (Any one) 1
+7.4 TWO consequences for victims of identity theft
+(1) Others will have access to bank accounts and steal your funds
+(2) Financial implications, e.g. others are able to take out loans in your
+name that you will have to repay/You may be blacklisted
+(3) Reputational damage/Emotional distress as a result of being a victim of
+identity theft
+(4) Others can impersonate you so that they can commit fraud/to commit
+criminal activity
+ (Any two) 2
+7.5 Reason for a screen lock pattern being less secure than a strong
+password
+(1) Easier to trace the pattern by following the marks (residue) that your
+fingers have left on the screen
+(2) Easy for someone to see if they are looking over your shoulder
+(3) There are a limited number of patterns available/Strong passwords
+require alphabetical characters, digits and other characters (symbols)
+offering more combinations
+ (Any one) 1
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 11 =====
+Computer Applications Technology/P2 11 DBE/2023
+SC/NSC (Marking Guidelines)
+7.6 TWO recommendations to prevent ransomware attacks
+(1) Update all software
+(2) Install and update antivirus/anti-ransomware software
+(3) Do not click on links in pop-up windows or phishing e-mails/Spam
+filtering for less exposure to adware
+(4) Implement advanced security measures on the network
+ (Any two) 2
+[10]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 12 =====
+Computer Applications Technology/P2 12 DBE/2023
+SC/NSC (Marking Guidelines)
+QUESTION 8: SOLUTION DEVELOPMENT
+8.1.1 Purpose of using the ruler bar in a word processing document
+(1) You can see and set tab stops
+(2) You can see and adjust the margin settings/alignment
+(3) You can move table borders
+(4) You can line up objects/set indentations in a document
+(5) You can measure the width of columns, objects, etc.
+ (Any two) 2
+8.1.2 Type of alignment AND its benefit
+Justify 
+AND
+Uniform layout of text on both sides/Give text clean, crisp edges/Looks
+more professional  2
+8.1.3 ONE way to see the address of the hyperlink in a document
+(1) Hover the mouse over the hyperlink
+(2) Right click on the hyperlink and click on Edit Hyperlink
+(3) Alt+F9
+(4) Click on the link and check the address in the address bar of the
+browser
+ (Any one) 1 5
+8.2.1 Spreadsheet feature that completes the list of months in a column
+Auto Fill  1
+8.2.2 TWO ways to format the number values in a more meaningful way
+(1) Apply the Currency/Accounting/Custom number format
+(2) Format all the cells to 2 decimal places
+(3) Apply a 1000 separator
+ (Any two) 2
+8.2.3 Reason for incorrect values in D3:D9
+VAT was subtracted  instead of added 1
+8.2.4 Function to determine the total of the values in columns B, C and D
+Use the SUM  function for each column 1 5
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 13 =====
+Computer Applications Technology/P2 13 DBE/2023
+SC/NSC (Marking Guidelines)
+8.3.1 Reason for input mask of Worker_ID field
+(1) To enforce a specific format/length
+(2) Reduce the possibility of input errors
+ (Any one) 1
+8.3.2 THREE corrections to the validation rule
+>=15 and <=65
+Remove 'Only',  / The text 'Only' does NOT appear
+Insert = signs,  / >= <=
+Change 'Or' to 'And'  / And 3
+8.3.3 ONE reason why the design of the Age field may cause errors
+(1) Data type is incorrect/Data type of the Age field must be set on
+Number/Data type of the Age field cannot be a Boolean/ Yes/No value
+(2) Age field is set as a primary key which will not accept duplicates/is not
+unique
+ (Any one) 1 5
+[15]
+TOTAL SECTION B: 75
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 14 =====
+Applications Technology/P2 14 DBE/2023
+SC/NSC (Marking Guidelines)
+SECTION C
+QUESTION 9: INTEGRATED SCENARIO
+9.1.1 TWO reasons why the latest Windows OS cannot be installed
+Processor is too slow/not compatible 
+Insufficient RAM  2
+9.1.2 ONE alternative operating system instead of propriety OS
+A Free Open Source Software (FOSS) operating system /Open Source
+Software (OSS) operating system
+(Note to Marker: Accept examples such as Linux, Ubuntu, etc.) 1
+9.1.3 ONE reason why it is NOT advisable to upgrade this computer
+(1) Computer is too old/Components are too old
+(2) Compatibility issues between old and new components
+(3) May be impossible to add more RAM
+(4) Faster processor may be incompatible with the motherboard
+ (Any one) 1 4
+9.2 TWO advantages of using social media platforms when
+communicating with the public
+(1) The message can be widely distributed/Easily accessible to a large
+audience
+(2) Instant communication/Real-time newsfeeds
+(3) Free exposure/advertising for the donors of the event
+(4) Can use multimedia
+(5) Public can give feedback
+ (Any two) 2
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 15 =====
+Applications Technology/P2 15 DBE/2023
+SC/NSC (Marking Guidelines)
+9.3.1 TWO reasons why people may not trust a shortened URL
+(1) There is no indication whether the website is secure
+(2) The URL could be flagged as spam in the recipient's inbox
+(3) The URL gives no logical indication of the website they are being
+directed to
+ (Any two) 2
+9.3.2 THREE benefits of using online forms instead of pen-and-paper
+based forms
+(1) Ensures accuracy/Prevents spelling and other input issues
+(2) Quicker to complete/More efficient as a result of lists to select from
+(3) Save on paper/ink /More environmentally-friendly method
+(4) Easy management and analysis of data
+ (Any three) 3 5
+9.4.1 Mail merge option for select name tags
+Edit Recipient List  (Accept Filter) 1
+9.4.2 A spreadsheet function to select a lucky winner
+(1) RANDBETWEEN
+(2) RAND
+ (Any one) 1 2
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 16 =====
+Applications Technology/P2 16 DBE/2023
+SC/NSC (Marking Guidelines)
+9.5.1 TWO possible reasons for NOT offering free internet access during
+the event
+(1) The school does not have sufficient bandwidth for the event
+(2) The data costs for the event may be too high/Data cap may be used
+up too quickly during the event
+(3) Possibility of security issues
+ (Any two) 2
+9.5.2 TWO precautions you can take when using free internet access
+(1) Do not access personal bank accounts or sensitive personal data
+(2) Only visit secure sites (HTTPS)
+(3) Log out of accounts when you have finished using them
+(4) Disable file sharing
+(5) Use a VPN when connecting to the internet
+(6) Update your antivirus after logging on and before continuing to surf
+the internet
+ (Any two) 2 4
+9.6.1 Concept of crowdfunding
+Crowdfunding is a process where a business idea/event  is funded by
+(online) multiple small donations  from volunteer contributors 2
+9.6.2 ONE crowdfunding platform
+(1) Indiegogo (6) SeedInvest
+(2) Kickstarter (7) Patreon
+(3) BackaBuddy (8) StartEngine
+(4) GoFundMe (9) Mightycause
+(5) Crowdcube (10) Twitch TV, etc.
+ (Any one) 1
+9.6.3 TWO spreadsheet features (not functions) to determine the top 10
+donations
+(1) Sort
+(2) Filter
+(3) Conditional formatting
+(4) Pivot tables
+ (Any two) 2 5
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 17 =====
+Applications Technology/P2 17 DBE/2023
+SC/NSC (Marking Guidelines)
+9.7.1 Form of currency that Bitcoin belongs to
+Crypto (currency) /Digital (currency)/Virtual (currency) 1
+9.7.2 TWO benefits of making donations in Bitcoin
+(1) Donations can be made anonymously
+(2) Very secure method of payment
+(3) Very low transaction fees
+ (Any two) 2 3
+[25]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 18 =====
+Applications Technology/P2 18 DBE/2023
+SC/NSC (Marking Guidelines)
+QUESTION 10: INTEGRATED SCENARIO
+10.1.1 E-mail feature to efficiently send an e-mail to many people at the
+same time
+Distribution list/Mailing list  1
+10.1.2 E-mail field to hide multiple e-mail addresses from a recipient
+Use Bcc field for all e-mail addresses  1
+10.1.3 ONE way to prevent future e-mails from going to the Spam folder
+(1) Mark as not Spam
+(2) Add to safe senders' list
+(3) Create a mailing rule to move the e-mail to a separate folder/inbox
+(4) Click on the allow message dialog
+ (Any one) 1
+10.1.4 TWO ways to share a video that is too large
+(1) Share a link of the folder in the cloud/FTP
+(2) Compress the file to reduce file size
+(3) Share through a social media platform, e.g.YouTube, Facebook, etc
+(4) Use Peer-to-peer networking, e.g. Torrent
+ (Any two) 2 5
+10.2.1 Explanation of biometric security
+Technology that is used to identify a person  based on their physical
+features,  (e.g. fingerprint, iris, voice, etc.) 2
+10.2.2 TWO disadvantages of using biometric locks
+(1) Moisture/water affects accuracy of biometric scanning
+(2) Injury/illness could result in the physical feature not being recognised
+(3) Dust/dirt/grime can affect accuracy of sensors
+ (Any two) 2 4
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 19 =====
+Applications Technology/P2 19 DBE/2023
+SC/NSC (Marking Guidelines)
+10.3.1 Database feature to uniquely identify uniquely identify a record
+Primary key  1
+10.3.2 Data type for ChronicConditions field AND motivation
+Data type Motivation
+Memo/Long text Brief description of the condition that a
+person has
+OR
+Lookup Wizard Select a condition from a list
+One mark for the data type 
+One mark for a matching motivation  2 3
+10.4.1 TWO user-centred design (UCD) guidelines for creating a website
+(1) Priority content should be suitably placed
+(2) Consistent themes and layout
+(3) Appropriate colour contrast
+(4) Appropriate font sizes
+(5) Navigation should be consistently placed
+(6) Clear/appropriate images
+ (Any two) 2
+10.4.2 TWO corrections for the HTML table to display correctly
+(1) Change rowspan to colspan 
+(2) Add <tr> tags for the third row  2 4
+10.5.1 A technology that allows a drone to create a map of a running route
+(1) GPS
+(2) Drone mapping software (Using photos to create a map), e.g.
+Photogrammetry
+ (Any one) 1
+10.5.2 TWO benefits of equipping a drone with a camera to follow runners
+or walkers
+(1) Livestream events
+(2) To monitor the safety of the runners or walkers
+(3) Analyse running and walking techniques
+(4) To alert emergency services if a runner or walker is injured
+(5) To ensure that nobody is left behind
+(6) To track cheating, foul play, etc.
+(7) Analyse the route (elevations/downhills)
+ (Any two) 2 4
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 20 =====
+Applications Technology/P2 20 DBE/2023
+SC/NSC (Marking Guidelines)
+10.5.3 Solution to the problem of limited space on a SD card
+(1) Reduce the resolution/Use a lower image quality
+(2) Use monochrome settings for pictures
+(3) Different file formats
+ (Any one) 1
+10.6 Category of user that wants high-end hardware to edit videos
+Power user  1
+10.7.1 Definition of AR technology
+Real world images/videos  are overlaid  with computer-generated
+objects or graphics  3
+10.7.2 ONE example of where AR can be used
+(1) Overlay to create interactive workouts/meditation/yoga, etc.
+(2) Virtual coaching and feedback in the gym
+(3) Overlay to create an interactive fitness group
+(4) Overlay to gamify exercise routines
+(5) Overlay used to display heart rate, calories burned, distance covered,
+etc.
+(6) Overlay used to provide real-time feedback and analysis during sports
+training sessions
+(Note to marker: Accept general AR solutions, e.g. Medical training /
+Military training / Entertainment / Marketing / Advertising / Engineering
+design / Consumer design / Robotics / Manufacturing, Maintenance and
+repairs / Hazard detection, etc.)
+ (Any one) 1 4
+[25]
+TOTAL SECTION C: 50
+GRAND TOTAL: 150
+Copyright reserved

@@ -1,0 +1,4 @@
+paper_id=9cacaaa0-c251-43c7-9837-4524b68031f0
+title=CAT P2 May-June 2022
+q_pdf=Computer Applications Technology P2 May-June 2022 Eng.pdf
+m_pdf=Computer Applications Technology P2 May-June 2022 MG Eng.pdf

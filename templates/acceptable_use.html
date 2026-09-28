@@ -1,0 +1,169 @@
+{% extends "lms_base.html" %}
+
+{% block title %}Acceptable Use Policy — South African Teachers Hub{% endblock %}
+
+{% block body_class %}apple-home{% endblock %}
+
+{% block head %}
+<script>document.documentElement.setAttribute('data-theme','light');</script>
+{% endblock %}
+
+{% block theme_init %}
+document.documentElement.setAttribute('data-theme','light');
+{% endblock %}
+
+{% block content %}
+<style>
+    html, body, main { background: #fff !important; color: #1d1d1f !important; font-weight: 400 !important; }
+    .navbar { background: rgba(255,255,255,0.9) !important; }
+    /* Force black nav text on this light page (overrides white-on-dark defaults) */
+    .sath-nav { background: #fff !important; border-bottom: 1px solid rgba(0,0,0,0.08) !important; }
+    .sath-brand { color: #000 !important; }
+    .sath-brand .sath-brand-accent { color: #06c !important; }
+    .sath-links a,
+    .sath-cta .sath-ghost { color: #000 !important; opacity: 1 !important; font-weight: 500 !important; }
+    .sath-links a:hover,
+    .sath-cta .sath-ghost:hover { color: #000 !important; background: rgba(0,0,0,0.05) !important; }
+    .sath-links a.active { color: #000 !important; }
+    .sath-links a.sath-admin { color: #000 !important; }
+    .sath-mobile-toggle { color: #000 !important; }
+    .aup-wrap { max-width: 720px; margin: 0 auto; padding: 60px 24px 80px; }
+    .aup-wrap h1 { font-size: 2.4rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 6px; color: #1d1d1f; }
+    .aup-wrap .aup-sub { font-size: 1rem; color: #1d1d1f; margin-bottom: 6px; }
+    .aup-wrap .aup-date { font-size: 0.85rem; color: #1d1d1f; margin-bottom: 48px; }
+    .aup-wrap h2 { font-size: 1.1rem; font-weight: 700; color: #1d1d1f; margin: 36px 0 8px; }
+    .aup-wrap p { font-size: 0.95rem; color: #1d1d1f; line-height: 1.75; margin-bottom: 10px; }
+    .aup-wrap ol { padding-left: 1.4rem; margin: 8px 0 12px; }
+    .aup-wrap ol li { font-size: 0.95rem; color: #1d1d1f; line-height: 1.75; margin-bottom: 6px; }
+    .aup-wrap a { color: #2997ff; text-decoration: none; }
+    .aup-wrap a:hover { text-decoration: underline; }
+    .aup-wrap hr { border: none; border-top: 1px solid #e5e5e5; margin: 40px 0; }
+    .aup-wrap strong { color: #1d1d1f; font-weight: 600; }
+</style>
+
+<div class="aup-wrap">
+    <h1>Acceptable Use Policy</h1>
+    <p class="aup-sub">Rules that govern how South African Teachers Hub may be used by all account holders.</p>
+    <p class="aup-date">Last updated: May 2026</p>
+
+    <h2>1. Purpose</h2>
+    <p>This Acceptable Use Policy ("AUP") sets out the standards of conduct expected of all users of the South African Teachers Hub platform ("the Platform"). It applies to every person who accesses or uses the Platform, including teachers, administrators, learners, and any other authorised users.</p>
+    <p>This AUP forms part of and must be read together with our <a href="{{ url_for('terms_of_service') }}">Terms of Service</a> and <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a>. By using the Platform you agree to comply with this AUP.</p>
+
+    <h2>2. Permitted Use</h2>
+    <p>The Platform is provided exclusively for lawful, educational purposes. You may use it to:</p>
+    <ol>
+        <li>Create, generate, and download CAPS-aligned exam papers and assessment materials for classroom use</li>
+        <li>Build and manage question banks for your own teaching practice</li>
+        <li>Deliver and participate in LMS courses, quizzes, and educational content</li>
+        <li>Access lesson materials and resources aligned to the South African curriculum</li>
+        <li>Communicate with learners and colleagues through Platform features</li>
+        <li>Manage your professional development and lesson planning</li>
+    </ol>
+
+    <h2>3. Prohibited Conduct</h2>
+    <p>The following actions are strictly prohibited and may result in immediate account suspension or termination:</p>
+
+    <h2>3.1 Content Violations</h2>
+    <ol>
+        <li>Uploading, posting, or distributing content that is unlawful, defamatory, obscene, hateful, threatening, or harassing</li>
+        <li>Sharing content that discriminates on the basis of race, gender, religion, nationality, disability, sexual orientation, or age</li>
+        <li>Posting content that violates the intellectual property rights of any third party, including leaked or unauthorised exam memoranda</li>
+        <li>Uploading malware, viruses, ransomware, or any other harmful code</li>
+        <li>Publishing private personal information of other users or learners without their explicit consent</li>
+    </ol>
+
+    <h2>3.2 Academic Integrity Violations</h2>
+    <ol>
+        <li>Sharing live, unseen exam papers or memoranda publicly before or during an examination sitting</li>
+        <li>Using the Platform to facilitate cheating, plagiarism, or academic fraud in any form</li>
+        <li>Distributing generated assessment content on public platforms (e.g. social media, public websites) in a manner that compromises academic integrity</li>
+        <li>Impersonating another teacher, learner, or school official on the Platform</li>
+    </ol>
+
+    <h2>3.3 Technical Abuse</h2>
+    <ol>
+        <li>Attempting to gain unauthorised access to any account, system, or network connected to the Platform</li>
+        <li>Using automated tools, bots, scrapers, or crawlers to extract data from the Platform without written permission</li>
+        <li>Conducting denial-of-service attacks or otherwise attempting to disrupt Platform availability</li>
+        <li>Probing, scanning, or testing the vulnerability of any Platform system or network without authorisation</li>
+        <li>Circumventing, disabling, or interfering with any security feature of the Platform</li>
+        <li>Using the Platform to mine cryptocurrency or perform computationally intensive tasks unrelated to the educational service</li>
+    </ol>
+
+    <h2>3.4 Commercial Misuse</h2>
+    <ol>
+        <li>Selling, reselling, or commercially redistributing Platform-generated content or features without prior written consent from South African Teachers Hub</li>
+        <li>Using the Platform to promote or advertise third-party products or services without authorisation</li>
+        <li>Creating accounts on behalf of others for commercial gain</li>
+        <li>Using the Platform to send unsolicited bulk communications (spam)</li>
+    </ol>
+
+    <h2>3.5 Account Misuse</h2>
+    <ol>
+        <li>Sharing your login credentials with any other person</li>
+        <li>Creating multiple accounts for the same individual</li>
+        <li>Registering under a false identity or misrepresenting your affiliation with a school or organisation</li>
+        <li>Allowing minors under 18 to register directly as account holders</li>
+    </ol>
+
+    <h2>4. Content You Upload</h2>
+    <p>You are solely responsible for all content you upload, create, or share on the Platform. By uploading content you confirm that:</p>
+    <ol>
+        <li>You own the content or have the necessary rights and permissions to use and share it</li>
+        <li>The content does not infringe any third-party intellectual property, privacy, or other legal rights</li>
+        <li>The content complies with this AUP and all applicable South African laws</li>
+    </ol>
+    <p>We reserve the right to remove any content that violates this AUP without notice.</p>
+
+    <h2>5. Learner Accounts and School Use</h2>
+    <p>Where the Platform is used with learners:</p>
+    <ol>
+        <li>The teacher or school administrator is responsible for ensuring learners use the Platform in accordance with this AUP</li>
+        <li>Learner accounts must only be created with appropriate parental or guardian consent as required by the Children's Act 38 of 2005 and POPIA</li>
+        <li>Learner personal information must not be shared beyond what is necessary for the educational purpose</li>
+        <li>Teachers must supervise learner use and report any misuse to <a href="mailto:support@sateachershub.co.za">support@sateachershub.co.za</a></li>
+    </ol>
+
+    <h2>6. Monitoring and Enforcement</h2>
+    <p>South African Teachers Hub reserves the right to:</p>
+    <ol>
+        <li>Monitor Platform use to ensure compliance with this AUP</li>
+        <li>Investigate reports or suspicions of AUP violations</li>
+        <li>Remove content that violates this AUP at our sole discretion and without prior notice</li>
+        <li>Suspend or permanently terminate the account of any user who violates this AUP</li>
+        <li>Report illegal activity to the South African Police Service (SAPS) or other relevant authorities</li>
+    </ol>
+    <p>We will exercise these rights proportionately and in good faith. Where feasible, we will notify you before taking action — except where doing so would compromise an investigation or cause further harm.</p>
+
+    <h2>7. Reporting Violations</h2>
+    <p>If you become aware of any content or conduct on the Platform that violates this AUP, please report it immediately:</p>
+    <ol>
+        <li><strong>Email:</strong> <a href="mailto:abuse@sateachershub.co.za">abuse@sateachershub.co.za</a></li>
+        <li><strong>Subject line:</strong> "AUP Violation Report"</li>
+        <li><strong>Include:</strong> a description of the violation, the URL or content location, and any supporting evidence</li>
+    </ol>
+    <p>We investigate all reports and aim to respond within 3 business days.</p>
+
+    <h2>8. Consequences of Violation</h2>
+    <p>Depending on the severity and frequency of violations, consequences may include:</p>
+    <ol>
+        <li>A formal warning issued to your account</li>
+        <li>Temporary suspension of your account</li>
+        <li>Permanent termination of your account without refund</li>
+        <li>Legal action under South African law, including referral to the SAPS Cybercrime Unit under the Cybercrimes Act 19 of 2020</li>
+        <li>Notification to your school, district, or employer where the violation is serious</li>
+    </ol>
+
+    <h2>9. Changes to This Policy</h2>
+    <p>We may update this AUP from time to time to reflect changes in the law, our services, or community standards. We will notify you of material changes by email or in-app notice at least 14 days before they take effect. Continued use of the Platform after that date constitutes acceptance of the revised AUP.</p>
+
+    <h2>10. Contact</h2>
+    <p><strong>South African Teachers Hub — Trust &amp; Safety</strong><br>
+    Email: <a href="mailto:abuse@sateachershub.co.za">abuse@sateachershub.co.za</a><br>
+    We aim to respond to all AUP-related enquiries within 3 business days.</p>
+
+    <hr>
+    <p style="font-size:0.8rem; color:#1d1d1f; text-align:center;">This Acceptable Use Policy is governed by the laws of the Republic of South Africa, including the Cybercrimes Act 19 of 2020 and the Electronic Communications and Transactions Act 25 of 2002.</p>
+</div>
+{% endblock %}

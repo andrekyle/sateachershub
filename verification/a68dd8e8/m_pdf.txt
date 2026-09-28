@@ -1,0 +1,460 @@
+
+
+===== PDF PAGE 1 =====
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+COMPUTER APPLICATIONS TECHNOLOGY P1
+2022
+MARKING GUIDELINES
+MARKS: 150
+CENTRE FINAL MARK
+NUMBER
+EXAMINATION
+NUMBER
+QUESTION 1 2 3 4 5 6 7 TOTAL
+POSSIBLE MARK 22 23 25 15 35 15 15 150
+CANDIDATE
+MARK
+MARKER CODE/
+SIGNATURE
+MODERATED
+MARK
+These marking guidelines consist of 12 pages.
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 2 =====
+Computer Applications Technology/P1 2 DBE/2022
+SC/NSC – Marking Guidelines
+EXAM NUMBER
+Check the accuracy and skill required before awarding a mark throughout.
+QUESTION 1 File name: 1Types Total Q1: 22
+Maximum Candidate
+No Criteria
+Mark Mark
+1.1 Style: Island Types 1
+ Title style applied  1
+1.2 Image grouping 1
+ Five images grouped  1
+1.3 Paragraph formatting: Continental islands … volcanic origin. 2
+ Paragraph border: Shadow border  1
+ Border width: 3 pt  1
+1.4 Drop Cap: O of Oceanic 2
+ Lines to drop: 3  1
+ Distance from text: 1 cm  1
+1.5 Columns: How many islands … island formation. 3
+ Text placed in two columns  1
+ Alignment: Justified  1
+ Hyphenation applied  1
+1.6 Image inserted and formatted 4
+ Image: 1Seychelles inserted  1
+ Picture style: Soft Edge Oval  1
+ Layout option: Through or Tight text wrap  1
+ Position: Top left: 'calmness and', Bottom left: 'sediment,',
+Bottom right: 'which …'  1
+1.7 Endnote: Magma 2
+ Endnote numbering: I, II, III …  1
+ Endnote text: 'Dangerous'  1
+1.8 References: Manage Sources: Tarbuck 2
+ City field: New Jersey  1
+ Comments field: Island Structure  1
+(Show All Bibliography Fields)
+1.9 Edit Citation 2
+ Author and Year displays  (Only Title suppressed) 1
+ Pages: 130-140  1
+1.10 Find and Replace 3
+ Find: Island – Match case used  1
+ Find: Island – Find whole words  1
+ Replace with: Symbol  (Webdings, Character code 74)  1
+(Expect 6 or 7 occurrences)
+Total for QUESTION 1 [22]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 3 =====
+Computer Applications Technology/P1 3 DBE/2022
+SC/NSC – Marking Guidelines
+EXAM NUMBER
+Check the accuracy and skill required before awarding a mark throughout.
+QUESTION 2 File name: 2Top10, 2Confidential Total Q2: 23
+Maximum Candidate
+No Criteria
+Mark Mark
+2Top10
+2.1 Cover Page 3
+ Title (Top 10 …) moved (not copied) into Title control  1
+ Abstract (The world's …) moved into Abstract control  1
+ Page break removed  1
+2.2 Image: below 9. TASMANIA (AUSTRALIA) 3
+ Height: 5 cm  1
+ Width: 10 cm  1
+ Alignment: Centred  1
+2.3 Hyperlink: on heading 8. BALI (INDONESIA) (Alt+F9) 2
+ Hyperlink created on heading  1
+ Linked to: Top of the Document  1
+2.4 Page Orientation: Last page 2
+ Orientation: Landscape  1
+ Last page only  1
+2.5 SmartArt graphics 4
+ 1st level shape: Text inserted: Islands  1
+Font colour: White  1
+ 2nd level shape: Shape added: Coral islands  1
+Shape position: Bottom right  1
+2.6 Field: (Alt+F9) { FILENAME \* Upper \* MERGEFORMAT } 2
+ FileName field inserted: 2Top10  1
+ Field format: Uppercase  /Capital letters 1
+2.7 Page numbering 5
+ Automatic page numbering inserted in the footer  1
+ No page numbering on the first two pages  1
+ Page numbering starts with 1 on third page and continues  1
+ Odd page numbers: Right aligned  } 1
+(If Odd/even selected)
+ Even page numbers: Left aligned  1
+2Confidential
+2.8 Unzip file 2
+ File unzipped  1
+ Watermark: Confidential  1
+(Accept diagonal or horizontal Confidential watermark)
+Total for QUESTION 2 [23]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 4 =====
+Computer Applications Technology/P1 4 DBE/2022
+SC/NSC – Marking Guidelines
+EXAM NUMBER
+QUESTION 3 File name: 3Population Total Q3: 25
+ Mark the questions from the formulae and not the values/answers in the cell.
+ Check against candidate's actual work (Cell references may differ, depending on the candidate's
+response).
+ Candidate may use multiple formulae, cells or 'building blocks' to reach answers.
+ Named ranges can be used instead of cell references.
+ The answers must still be correct even if changes are made to the existing data.
+Maximum Candidate
+No Criteria
+Mark Mark
+Islands worksheet
+3.1 Column B: Formatting 2
+ Column Width: 40 pt  1
+ Wrap text: applied to B8:B55  1
+3.2 Cell C3: 2
+=AVERAGE(E8:E55)
+ Function: AVERAGE  1
+ Range: E8:E55  1
+3.3 Cell C4: 4
+=COUNTIF(B8:B55,"*part*")
+ Function: COUNTIF  1
+ Range: B8:B55  1
+ Criteria: part  *…* (both wildcards)  2
+(Expected answer: 10)
+3.4 Cell C5: 5
+=SUMIFS(E8:E55,C8:C55,"Oceanic",D8:D55,">1000")
+OR
+=SUMIFS(E8:E55, D8:D55,">1000",C8:C55,"Oceanic")
+ Sum range: E8:E55  1
+ Criteria range 1: C8:C55  1
+ Criteria 1: "Oceanic"  1
+ Criteria range 2: D8:D55  1
+ Criteria 2: >1000  1
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 5 =====
+Computer Applications Technology/P1 5 DBE/2022
+SC/NSC – Marking Guidelines
+EXAM NUMBER
+3.5 Column D: Conditional Formatting 4
+ Icon set: 3 Flags  1
+ Green flag icon: >=280000  1
+ Orange flag icon: >=30001  OR >30000 1
+ Value Type: Number  1
+3.6 Cell F9: 3
+=E9/D9
+ E9  /D9  2
+ Formatted to zero decimal places  1
+Polynesia worksheet
+3.7 Chart 5
+ Density (in millions) Digtheid (in miljoene) data series graph
+type: Column chart  1
+ Primary axis display units: Millions  1
+ Area (km2) Oppervlakte (km2) data series: Secondary
+axis  1
+ Legend added  1
+ Legend appears below – no overlap  1
+Total for QUESTION 3 [25]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 6 =====
+Computer Applications Technology/P1 6 DBE/2022
+SC/NSC – Marking Guidelines
+EXAM NUMBER
+QUESTION 4 File name: 4Bookings Total Q4: 15
+ Mark the questions from the formulae and not the values/answers in the cell.
+ Check against candidate's actual work (Cell references may differ, depending on the candidate's
+response).
+ Candidate may use multiple formulae, cells or 'building blocks' to reach answers.
+ Named ranges can be used instead of cell references.
+ The answers must still be correct even if changes are made to the existing data.
+Maximum Candidate
+No Criteria
+Mark Mark
+Travellers worksheet
+4.1 Background 1
+ 4Logo inserted as background  1
+4.2 Gridlines 1
+ Gridlines do not display  1
+4.3 Column B: 5
+=MID(A10,FIND(" ",A10)+1,LEN(A10)) OR
+=MID(A10,FIND(" ",A10)+1,LEN(A10)-FIND(" ",A10)) OR
+=RIGHT(A10,LEN(A10)-FIND(" ",A10))
+ Function to find space: FIND(" "  1
+ Extract from cell: A10 
+1
+ Function to copy text from space onwards:
+ MID +1  OR 2
+ RIGHT subtract text before space
+ Function to copy text from space to end of text: LEN  1
+4.4 Cell I15: 5
+=VLOOKUP(F15,Cost!$A$3:$D$18,TravelIers!H15+1) OR
+=VLOOKUP(F15,Cost!A1:D18,IF(Travellers!H15="1",2,
+IF(Travellers!H15="2",3,4)))
+ Function: VLOOKUP  1
+ Lookup value: F15  1
+ Array table: Cost!$A$3:$D$18  OR Cost!$A$1:$D$18 1
+ Column index: H15 +1  2
+Style worksheet
+4.5 Subtotal feature (Mark by inspection) 3
+ At each change in: Travel Style Reisstyl  1
+ Function: Max  1
+ Subtotal added to: Group Cost Groepkoste  1
+Total for QUESTION 4 [15]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 7 =====
+Computer Applications Technology/P1 7 DBE/2022
+SC/NSC – Marking Guidelines
+EXAM NUMBER
+QUESTION 5 File name: 5Details Total Q5: 35
+Maximum Candidate
+No Criteria
+Mark Mark
+Table: tbl5_1
+5.1.1 Field: Name 1
+ Field size set to 20  1
+5.1.2 Field: StartDate 2
+Validation Rule: >= #15/03/2012# OR >#14/03/2012#
+ >=  OR > 1
+ #15/03/2012#  1
+5.1.3 Field: AccessCode 4
+Input Mask: LL\@0009 OR LL"@"0009
+ LL  1
+ @  1
+ 000  1
+ 9  OR # 1
+5.1.4 Field: Position 3
+ Display control: Combo box  1
+ Row source type: Value list  1
+ Row source:
+Manager; Administrator; Accountant  1
+5.1.5 Field: IDPhoto 2
+ Field inserted: IDPhoto  1
+ Data type: OLE object OR Attachment 1
+Form: frm5_2
+5.2  Rectangle control added around the last four fields  1 5
+ (Any) Command button control added  1
+ Button Action: Go to Next Record  1
+ Date displays in medium date format  1
+ Date appears in form footer 
+1
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 8 =====
+Computer Applications Technology/P1 8 DBE/2022
+SC/NSC – Marking Guidelines
+EXAM NUMBER
+Query: qry5_3
+5.3  DestinationIsland field moved to be first field  1 3
+ Totals option: Group By applied  1
+ LeisureCost field function: Sum  1
+Query: qry5_4 / tblData Query / Query1
+5.4  Query created based on: tblData  1 7
+ Only Name, Surname, DateOfBirth and DestinationIsland
+fields displayed  1
+ Sorted by Surname field in ascending order  1
+ DestinationIsland field criteria:
+Bora Bora Island  OR  Cyprus 
+3
+ LeisureActivity field criteria: Fishing 
+1
+(Expected number of records: 3)
+(Note to marker: Accept wild card character for Bora Bora
+Island, e.g. B*, Bora*, Bora Bora*)
+Query: qry5_5
+5.5 Calculated field 5
+60&Older: (Date()–[DateOfBirth])/365.25
+ Field name: 60&Older:  1
+ Current date: (Date()  OR Now() 1
+ Subtract date of birth: –[DateOfBirth])  1
+ Expressed as years: /365.25  OR /365
+1
+ Field criteria: >=60 
+1
+(Expected number of records: 15)
+Report: rpt5_6
+5.6 Display 3
+ TotalLeisureCost field displays full values  1
+Calculation:
+=AVG([LeisureCost])
+ Function: =AVG (…)  1
+ Field: [LeisureCost] 1
+Total for QUESTION 5 [35]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 9 =====
+Computer Applications Technology/P1 9 DBE/2022
+SC/NSC – Marking Guidelines
+EXAM NUMBER
+QUESTION 6 File name: 6_1Win, 6_2Expensive Total Q6: 15
+ This question should be marked from the HTML code.
+ Numerical attribute values and single words do not need to be in inverted commas.
+Maximum Candidate
+No Criteria
+Mark Mark
+6_1Win
+6.1.1 Font 1
+<font face="Tempus Sans ITC" size="5">
+ Font attribute: face  1
+6.1.2 Horizontal line 3
+<hr color="black" size="5"/> OR
+<hr size="5" color="black"/> OR
+<hr size="5" color="#000000"/>
+ Tag: <hr .../>  1
+ Attribute: color="black"  1
+ Attribute: size="5"  1
+6.1.3 Hyperlink 2
+<center><a href="https://www.travelstart.co.za/lp/birthday-
+competition"><img src="6_1Button.png"></a></center>
+ Anchor tags <a …>… </a> correctly inserted  1
+ Hyperlink created to website  1
+6.1.4 Heading 2
+<center><h3>Fun things to do</h3></center>
+ Heading: <h3>…</h3>  1
+ Text inserted: Fun things to do  1
+6.1.5 Ordered List 2
+<ol>
+<li>Visit Port Louis</li>
+<li>Try Deep Sea Fishing</li>
+<li>Head to Caudan Waterfront</li>
+<li>Shop at Chinatown</li>
+</ol>
+ Ordered list tags: <ol> … </ol>  1
+ First list tags inserted: <li>Visit Port Louis</li>  1
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 10 =====
+Computer Applications Technology/P1 10 DBE/2022
+SC/NSC – Marking Guidelines
+EXAM NUMBER
+6_2 Expensive
+6.2 <body> 4
+<center>
+…
+<img src="6_2Cocoa.jpg" width="250 "height="150">
+<img src="6_2Fregate.jpg" width="250" height="150">
+<img src="6_2Mustique.jpg" width="250" height="150">
+<br/>
+<br/>
+<table border="1" width="50%">
+<tr>
+<th>Island</th>
+<th>Country</th>
+<th>Language 1</th>
+<th>Language 2</th>
+</tr>
+<tr>
+<td>Cocoa Island</td>
+<td>Maldives</td>
+<td align="center">Divehi </td>
+<td align="center" rowspan="5">English</td>
+</tr>
+</table>
+<center>
+ Web page centred 
+ Center tags inserted correctly  1
+ Image 
+ Image inserted with correct width and height  1
+ Table  & 
+ Table attribute: border="1" 
+1
+ Cell attribute: rowspan="5"  1
+Close tag(s) or triangular brackets and nesting correctly 1
+used.  1
+Total for QUESTION 6 [15]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 11 =====
+Computer Applications Technology/P1 11 DBE/2022
+SC/NSC – Marking Guidelines
+EXAM NUMBER
+QUESTION 7 File name: 7Discount, 7Card, 7MergedCard Total Q7: 15
+Maximum Candidate
+No Criteria
+Mark Mark
+7Discount
+Code worksheet
+7.1.1 Cell D2: Nested IF(AND 6
+=IF(AND(YEAR(B2)<1960,C2="Mid-Range"), 5,
+IF(AND(YEAR(B2)<1960,C2="Luxury"),4,0))
+OR
+=IF((AND(YEAR(B2)<1960,C2="Mid-Range"),"5",IF(AND
+(YEAR(B2)<1960,C2="Luxury"),"4","0")))
+ Function: YEAR(B2)  1
+ Criteria 1: Check Date of Birth <1960 AND travel style Mid-
+Range  1
+ Output for Criteria 1: Discount code is 5  1
+ Criteria 2: Check year <1960 AND travel style is Luxury  1
+ Output for Criteria 2: Discount code is 4  1
+ Output for all other values: 0  1
+Alternative answer: Cell D2: Nested IF
+=IF(YEAR(B2)<1960,IF(C2="Mid-range",5,IF(C2=
+"Luxury",4,0)),0)
+OR
+=IF(YEAR(B2)>=1960,0,IF(C2="Budget",0,IF(C2= "Mid-
+Range",5,4)))
+ Function: YEAR(B2)
+ Logical test: Date of Birth >=1960 then travel style Budget
+ Output: Discount code is 0
+ Criteria: Travel style is Mid-Range
+ Output: Discount code is 5
+ Output for all other values: 4
+List worksheet
+7.1.2 Filter 3
+ Filter option switched on  1
+ Filter criteria: 1979  1
+ Filter sub-criteria: January, February, March  (3 records) 1
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 12 =====
+Computer Applications Technology/P1 12 DBE/2022
+SC/NSC – Marking Guidelines
+EXAM NUMBER
+7Card and 7MergedCard
+7.2 Mail merge 6
+ Recipients' list is filtered to: Travel Style = Luxury  1
+ Merge field: Name Naam  1
+ Merge field: Entrance Code Toegangskode  1
+ Labels updated  1
+ Mail merge completed 
+1
+1
+ Saved as 7MergedCard 
+[15]
+TOTAL 150
+Copyright reserved

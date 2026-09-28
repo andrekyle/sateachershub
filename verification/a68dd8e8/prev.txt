@@ -1,0 +1,618 @@
+﻿
+
+CAT P1 May-June 2022 
+
+CAT P1 May-June 2022
+
+Print / Save as PDF 
+
+Edit 
+
+Close 
+
+Past Paper Template
+
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+
+COMPUTER APPLICATIONS TECHNOLOGY P1
+
+JUNE 2022
+
+MARKS: 180
+
+TIME: 3 Hours
+
+This question paper consists of 3 pages.
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+2 
+DBE/June 2022 
+
+INSTRUCTIONS AND INFORMATION
+
+Owing to the nature of this practical examination, it is important to note that, even if you complete the examination early, you will NOT be permitted to leave the examination room until all the administrative tasks associated with the examination have been finalised. During the examination, the standard examination rules regarding leaving the examination room apply. 
+
+If you are working on the network, or the data files have been preloaded on your system, you must follow the instructions provided by the invigilator/teacher. 
+
+At the end of the examination, you must make sure that ALL your answer files are saved on the network/computer as explained to you by the invigilator/teacher. 
+
+Make absolutely sure that all files can be read. Do NOT save unnecessary files/folders and do NOT hand in duplicate answer files/folders. Do NOT delete any original files that you did not work on. 
+
+The information sheet that has been provided with the question paper MUST BE COMPLETED AFTER THE THREE-HOUR EXAMINATION SESSION. Hand it to the invigilator at the end of the examination. 
+
+A copy of the master files will be available from the invigilator. Should there be any problems with a file, you may request another copy from the invigilator. 
+
+This question paper consists of SEVEN questions. Answer ALL the questions. 
+
+Read through each question before answering or solving the problem. Do NOT do more than is required by the question. 
+
+Ensure that you save each document using the file name given in the question paper. Save your work regularly as a precaution against possible power failures. 
+
+You may NOT use any resource material. 
+
+Accuracy will be taken into account. 
+
+Ensure that the regional settings are set to South Africa and date and time settings, number settings and currency settings are correctly set. 
+
+In all questions involving word processing, you should set the language to English (South Africa). The paper size is assumed to be A4 Portrait, unless instructed otherwise. Use centimetres as the unit of measurement. 
+
+Ensure that the Developer tab and Ruler are activated. 
+
+Ensure that the decimal symbol is set as a full stop ( . ) and the list separator is set as a comma ( , ). 
+
+Formulae and/or functions must be used for ALL calculations in questions involving spreadsheets. Use absolute cell references only where necessary to ensure that formulae are correct when you copy them to other cells in a spreadsheet. 
+
+NOTE: All formulae and/or functions should be inserted in such a manner that the correct results will still be obtained even if changes are made to the existing data.
+
+You may NOT use a word processing program such as Word to answer the HTML question. 
+
+Borders around images or screenshots in this question paper are intended for clarity. Do NOT insert borders unless you are instructed to do so. 
+
+Copyright reserved Please turn over 
+
+Computer Applications Technology/P1 
+3 
+DBE/June 2022 
+
+Use the correct settings or features in an application as required by a question. 
+
+The data files that you need to complete this question paper have been provided to you on the disk/CD/DVD/flash disk or on the disk space allocated to you. 
+
+Do the following:
+
+Verify the contents of the folder by opening one or more files. 
+
+Rename the folder with your examination number. 
+
+The list of files in the folder will be available on the next page.
+
+Copyright reserved Please turn over 
+
+Computer Applications Technology/P1 
+4 
+DBE/June 2022 
+
+SECTION A
+
+QUESTION 1: PRACTICAL
+
+1.1
+
+Format the heading Island Types to the Title style. 
+
+(1)
+
+1.2
+
+Apply a word processing feature to the five images found on page 1, so that the images can move as one object. 
+
+(1)
+
+1.3
+
+Find the text starting with Continental islands … and ending with … volcanic origin. and apply a 3 pt shadow border to surround both paragraphs. 
+
+(2)
+
+1.4
+
+Modify the drop cap O of the word Oceanic below the heading Oceanic Islands so that it drops three lines and appears 1 cm away from the text. 
+
+(2)
+
+1.5
+
+Find the text starting with How many islands … and ending with … island formation. . Change the layout of the text to appear as follows: 
+
+(3)
+
+1.6
+
+Find the paragraph below the heading Coral Islands . Insert the 1Seychelles image and apply a picture style to resemble the example below. NOTE: The position of the image is in line with the text calmness, and at the top and sediment, at the bottom. 
+
+(4)
+
+1.7
+
+Insert an endnote on the green highlighted text Magma found on the last page, as follows: Set the endnote numbering format to uppercase Roman numerals. Add the text Dangerous to the endnote. 
+
+(2)
+
+1.8
+
+Edit the reference source for the author Tarbuck to include the following bibliographical fields: City: New Jersey Comments: Island Structure 
+
+(2)
+
+1.9
+
+Edit the citation found on the last page to display only the author s name, year published and pages 130–140. 
+
+(2)
+
+1.10
+
+(3) Replace the exact word Island with the symbol (Webdings: Character code: 74). Save and close the 1Types document. 
+
+(3)
+
+[22]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+5 
+DBE/June 2022 
+
+QUESTION 2: PRACTICAL
+
+2.1
+
+Change the cover page as follows: Move the information found on page 2 into the relevant content controls. Ensure that there are no blank pages or comments in the document. 
+
+(3)
+
+2.2
+
+Find the image below the heading 9. TASMANIA (AUSTRALIA) and modify the image to match the other images in the document. 
+
+(3)
+
+2.3
+
+Find the heading 8. BALI (INDONESIA) and create a link to the beginning of the document. 
+
+(2)
+
+2.4
+
+Change the orientation of only the last page to landscape. 
+
+(2)
+
+2.5
+
+Find the SmartArt graphic on the last page and modify it to appear as shown below. NOTE: Ignore the colours of the SmartArt graphic. 
+
+(4)
+
+2.6
+
+Replace the text Question 2.6 on the last page with a field to display the file name of this document in capital letters. 
+
+(2)
+
+2.7
+
+Insert automatic page numbering in the footer of each page as follows: Page numbering must start on the third page with page number 1. Even pages must be left-aligned. Odd pages must be right-aligned. (5) The first two pages must not be numbered. Save and close the 2Top10 document. Work with the 2Confidential file. 
+
+(5)
+
+2.8
+
+(2) Unzip the file with the password 1234 and insert any Confidential watermark in the document. Save and close the 2Confidential document. 
+
+(2)
+
+[23]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+6 
+DBE/June 2022 
+
+QUESTION 3: PRACTICAL
+
+3.1
+
+Change the column width of column B to 40 pt and apply text wrapping to cells B8:B55. 
+
+(2)
+
+3.2
+
+Insert a function in cell C3 to display the average population (column E). 
+
+(2)
+
+3.3
+
+Insert a function in cell C4 to display the number of islands where the word part appears in the description of the Formation in column B. 
+
+(4)
+
+3.4
+
+Insert a SUMIFS function in cell C5 to display the total population (column E) for all oceanic type islands (column C) with an area larger than 1 000 km2 (column D). 
+
+(5)
+
+3.5
+
+Apply conditional formatting to Area (km2) (column D), using the 3 Flags icon set as follows: Flag colour Area km2 Green Greater than and equal to 280 000 Orange 30 001–279 999 Red 0–30 000 
+
+(4)
+
+3.6
+
+Insert a formula in cell F9 to display the population per km2 for the Bahamas. Use the area (km2) in column D and the population in column E. (3) Format the answer to display NO decimal places. Work in the Polynesia worksheet. 
+
+(3)
+
+3.7
+
+Format the chart/graph to display as shown below. NOTE: Chart/Graph type of the Density (in millions) Digtheid (in miljoene) series Area (km2) Oppervlakte (km2) series is plotted on a secondary axis Primary vertical axis displays in units (5) The display of the legends Save and close the 3Population spreadsheet. 
+
+(5)
+
+[25]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+7 
+DBE/June 2022 
+
+QUESTION 4: PRACTICAL
+
+4.1
+
+Insert the 4Logo image as the background of the worksheet. 
+
+(1)
+
+4.2
+
+Modify the spreadsheet so that the gridlines do not show. 
+
+(1)
+
+4.3
+
+The name and surname of a traveller is stored in column A. Insert a combination of text functions in column B to extract the traveller s surname from column A. NOTE: You may assume that a traveller only has ONE first name. 
+
+(5)
+
+4.4
+
+The Cost worksheet stores the daily accommodation cost per person based on their travel style, i.e. Budget, Mid-Range or Luxury. Insert a suitable LOOKUP function in cell I15 to determine the cost per person for Necker Island. (5) Use Necker Island (cell F15) as the lookup value, the travel style code in column H AND the table in the Cost worksheet. Work in the Style worksheet. 
+
+(5)
+
+4.5
+
+(3) Use the subtotal feature to display the highest group cost (column C) for each travel style (column B). Save and close the 4Bookings spreadsheet. 
+
+(3)
+
+[15]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+8 
+DBE/June 2022 
+
+QUESTION 5: PRACTICAL
+
+5.1
+
+Open the tbl5_1 table in Design View. 
+
+5.1.1
+
+Change the field size for the Name field to 20. 
+
+(1)
+
+5.1.2
+
+Insert an appropriate validation rule for the StartDate field that matches the validation text. 
+
+(2)
+
+5.1.3
+
+Create an input mask for the AccessCode in the following format: TWO compulsory letters, followed by The @ sign, followed by At least THREE, but possibly FOUR digits 
+
+(4)
+
+5.1.4
+
+Create a combo box for the Position field with the following options: Manager Administrator Accountant 
+
+(3)
+
+5.1.5
+
+(2) Insert a new field called IDPhoto and set an appropriate data type for the field. Save and close the tbl5_1 table. NOTE: TblData stores information about travellers to the various islands. 
+
+(2)
+
+5.2
+
+Open the form called frm5_2, based on the tblData table, in Design View. Modify the form to display as shown in the example below. NOTE: Place a rectangle control as a border around the four fields, as shown above. Insert the current date in the footer of the form in the same format as shown above. Insert a button control to go to the next record when the button is clicked. Accept the default arrow on the button. Save and close the frm5_2 form. (5 ) 
+
+(1)
+
+5.3
+
+The qry5_3 query is based on the tblData table. Open the query in Design View and change the query to display the following: DestinationIsland SumOfLeisureCost Bora Bora Island R12 995.00 Calivigny Island R1 988.00 Cayo Espanto R6 067.00 Cerralvo Island R8 316.00 Cocoa Island R20 051.00 Cyprus R4 878.00 Fogo Island R4 440.00 Fregate Island R4 364.00 Galapagos Islands R7 033.00 Lanai Island R8 568.00 Laucala Island R5 747.00 Moorea Island R3 785.00 Musha Cay R9 917.00 Mustique Island R1 640.00 Necker Island R4 775.00 Rang Yai Island R1 752.00 Save and close the qry5_3 query. (3 ) 
+
+(1)
+
+5.4
+
+Create a query called qry5_4, based on the tblData table. Display only the Name, Surname, DateOfBirth and DestinationIsland fields. Include only those travellers going to Bora Bora Island or Cyprus for a fishing holiday. Display the Surname field in alphabetical order. Save and close the qry5_4 query. 
+
+(7)
+
+5.5
+
+Open the qry5_5 query, based on the tblData table in Design View. Insert a calculated field called 60&Older to display ONLY the travellers who are 60 years and older. Save and close the qry5_5 query. 
+
+(5)
+
+5.6
+
+Open the rpt5_6 report, based on the tblData table, in Design View and change it as follows: Correct the display of the amounts in the TotalLeisureCost field so that the values are fully visible. (3) Insert a function/calculation to display the average cost per leisure activity. Save and close the rpt5_6 report. Save and close the 5Details database. 
+
+(3)
+
+[29]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+9 
+DBE/June 2022 
+
+QUESTION 6: PRACTICAL
+
+6.1
+
+A web page was created to give people travel information on Mauritius. Open the incomplete 6_1Win file in a web browser and also in a text/HTML editor. NOTE: Use the example on the previous page as a guide when answering this question. Question numbers appear as comments in the coding to indicate where you should insert the answer(s). DO NOT delete these comments. 
+
+6.1.1
+
+Modify the HTML code so that the document displays in the Tempus Sans ITC font, as shown in the example on the previous page. 
+
+(1)
+
+6.1.2
+
+Insert a black horizontal line with a size of 5 below the image. (3 ) 
+
+(1)
+
+6.1.3
+
+Link the 6_1Button image to the web address found at the end of the document so that the website opens when the button is clicked. 
+
+(2)
+
+6.1.4
+
+Insert the text that appears in the example on the previous page but was left out in the web page as a level 3 heading. 
+
+(2)
+
+6.1.5
+
+(2) Modify the list at the bottom of the web page so that the list appears as shown in the example on the previous page. Save and close the 6_1Win file. 
+
+(2)
+
+6.2
+
+Open the incomplete 6_2Expensive web page in a web browser and also in a text/HTML editor (NOT a word processing program such as Word). Complete the web page to look exactly as shown in the example below. (4) Save and close the 6_2Expensive file. (1) ONE mark will be allocated for closing tags and correct nesting in both the files. [1 5] 
+
+(4)
+
+[12]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+10 
+DBE/June 2022 
+
+QUESTION 7: PRACTICAL
+
+7.1
+
+Open the 7Discount spreadsheet. Work in the Code worksheet. 
+
+7.1.1
+
+The travel company has decided to give some of their travellers a pensioner s discount if their year of birth is before 1960 (column B). The travel style (column C) will determine the discount code that a pensioner will receive. Use a nested IF function or a formula in cell D2 to display the following values: 5 if the traveller is a pensioner and has a mid-range travel style OR 4 if the traveller is a pensioner and has a luxury travel style OR (6) 0 for all other travellers Work in the List worksheet. 
+
+(1)
+
+7.1.2
+
+(3) Filter the worksheet to display the records of the travellers born in the first three months of 1979. Save and close the 7Discount spreadsheet. 
+
+(3)
+
+7.2
+
+Luxury style travellers will each receive a VIP ticket. Open the 7Card file and choose Yes in the dialog box to continue the mail merge. In the data source dialog, select the 7Entrance file in your data folder. Edit the recipient list to ensure that only Luxury travellers will get VIP cards. Replace the text on the label with the appropriate merge fields. Update the labels to display as the example below. (6) Complete the mail merge and save the file as 7MergedCard. Save and close the 7Card and 7MergedCard documents. [15] TOTAL: 150 HTML TAG SHEET Basic Tags Formatting Tags continued Tag Description Tag Description Defines the body of the web Inserted before each list item, page and adds a number or symbol body Sets the background colour of depending on the type of list bgcolor= pink the web page selected Sets the colour of the body text Adds an image Contains information about the img src= name Aligns an image: can be right , web page align= left bottom , top Creates an HTML document – img Aligns an image in the center , starts and ends a web page src= name can also be middle img src= name Sets the size of the border Defines a title for the web page border= 1 around an image Inserts a line break img src= name Sets the height and width of an width= 200 height Comment image = 200 Text Tags Displays alternative text when Tag Description img src= name the mouse hovers over the alt= alternative text image or when the image is not Creates the largest heading found Creates the smallest heading Inserts a horizontal line Creates bold text Sets size (height) of a line Creates italic text Sets the width of a line, in Creates underlined text percentage or absolute value Sets size of font, from 1 to 7 Sets font colour Sets the colour of the line font face= Times New Table Tags Sets font type Roman Tag Description Links Tags Creates a table Tag Description Creates a row in a table Creates a hyperlink Creates a cell in a table img Creates an image link src= name Creates a table header (a cell Creates a target location in the with bold, centred text) document Links to a target location created somewhere else in the Sets the width of the table document a href= Sets the width of the border Links to an e-mail address mailto:#NAME around the table cells Sets the space between the Formatting Tags table cells Sets the space between a cell Tag Description border and its contents Creates a new paragraph Sets the alignment for cell(s) ( left , can also be center or Aligns a paragraph to the left right ) (default), can also be right or center Sets the vertical alignment for Horizontally centres text, a table cell(s) ( top , can also be or an image middle or bottom ) Creates a numbered list ol type= A , a , Defines the type of numbering Sets the number of columns a I , i , 1 used cell should span Creates a bulleted list ul type= disc , Sets the number of rows a cell Defines the type of bullets used square , circle should span INPUT MASK CHARACTER SHEET CHARACTER DESCRIPTION 0 Digit (0 to 9, entry required, plus [+] and minus [–] signs not allowed) Digit or space (entry not required, plus [+] and minus [ 
+
+(1)
+
+[5]
+
+TOTAL SECTION A: [131]
+
+GRAND TOTAL: 180
+
+Copyright reserved 
+
+Computer Applications Technology/P1 
+11 
+DBE/June 2022 
+
+Computer Applications Technology 
+DBE/May/June 2025 
+
+SC/NSC Confidential
+
+Examination sticker
+
+164
+
+COMPUTER APPLICATIONS TECHNOLOGY P1 – MAY/JUNE 2025
+
+INFORMATION SHEET (to be completed by the candidate AFTER the 3-hour session) 
+
+CENTRE NUMBER 
+
+EXAMINATION NUMBER 
+
+WORK STATION NUMBER 
+
+SUITE USED (Mark appropriate box with a cross (X)) 
+
+Microsoft Office 2016
+
+Microsoft Office 2019
+
+Microsoft Office 2021
+
+Office 365
+
+WEB BROWSER USED (Mark appropriate box with a cross (X)) 
+
+Mozilla Firefox
+
+Google Chrome
+
+Internet Explorer
+
+Microsoft Edge
+
+Other (Specify)
+
+FOLDER NAME 
+
+Candidate must enter the file name(s) used for each answer. Tick if saved and/or attempted.
+
+Question
+Number
+
+File name
+
+Saved
+(✓)
+
+Attempted
+(✓)
+
+Maximum
+Mark
+
+Mark
+Achieved
+
+Marker
+Initial/
+Code
+
+1
+
+1eSports
+
+27
+
+2
+
+2Stats
+
+23
+
+3
+
+3Rank
+
+25
+
+4
+
+4Shop
+
+24
+
+5
+
+5Games
+
+35
+
+6
+
+6_1Tournament
+
+15
+
+6_2Entry
+
+7
+
+7Report
+
+15
+
+7Staff
+
+7Export
+
+7Results
+
+TOTAL
+
+164
+
+Comment: (for office/marker use only) 
+
+Copyright reserved
+
+Copyright reserved

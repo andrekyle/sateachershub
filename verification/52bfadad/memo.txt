@@ -1,0 +1,1158 @@
+﻿
+
+CAT P2 Nov 2023 – Marking Guidelines 
+
+CAT P2 Nov 2023 — MARKING GUIDELINES
+
+Print / Save as PDF 
+
+Edit 
+
+Close 
+
+Past Paper Template
+
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+
+COMPUTER APPLICATIONS TECHNOLOGY P2
+
+NOVEMBER 2023
+
+MARKING GUIDELINES
+
+MARKS: 150
+
+These marking guidelines consist of 5 pages.
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+2 
+DBE/November 2023 
+
+SUGGESTIONS AND RECOMMENDATIONS TO MARKERS
+
+Revisit the questions and the marking guidelines frequently during the marking session.
+
+It is advisable to read (and re-read) the question frequently together with the candidate s response to check that it correlates, so that you are not misled by the candidate s statements/answers.
+
+Be careful not to focus on keywords or general statements, but rather read the entire answer. If in doubt, read the entire answer and then the question paper and the marking guidelines.
+
+Ask yourself or your senior marker if the response could fit into the marking guidelines before allocating the correct marks to the candidate.
+
+Accept correct answers that are expressed differently, e.g. the marking guidelines state slow and the candidate responds with not fast .
+
+Beware of overlapping answers to a specific question. In general, ONE mark is awarded per fact.
+
+Do not choose answers on the candidate s behalf. Where a question requires a candidate to LIST or NAME : mark the first number of answers/facts required, e.g. the first TWO facts if the candidate presents a list of FIVE facts and only TWO facts were required, even if presented in paragraph format.
+
+Questions requiring longer answers must be regarded as a single unit. Marks can be awarded if correct statements are found anywhere in the paragraph.
+
+Copyright reserved Please turn over 
+
+Computer Applications Technology/P2 
+3 
+DBE/November 2023 
+
+SECTION A
+
+QUESTION 1: MULTIPLE-CHOICE QUESTIONS
+
+(Note to marker:
+
+1.1
+
+Cover page 3
+
+• Cover page: Retrospect inserted 1 
+
+• Document title: Popular Cars 1 
+
+• Subtitle control removed 
+
+1
+
+1.2
+
+Font formatting 2
+
+• Font Colour: white OR Fill Colour: No Fill OR 1 
+Transparency: 100%
+• Text Effect: Tight Reflection: Touching OR 1 
+Half Reflection: Touching
+
+1
+
+1.3
+
+Image 2
+
+• 1Toyota image inserted 1 
+
+• Picture style: Soft Edge Rectangle 
+
+1
+
+1.4
+
+Find and replace: Hilux 3
+
+• Character scale: 150% 1 
+
+• Character spacing: Expanded 1 pt 1 
+
+• 5 replacements 
+
+1
+
+1.5
+
+Table formatting 5
+
+• Volkswagen data moved into table 1 
+
+• Last row – first 2 cells: merged 1 
+
+• Formula: =MIN(ABOVE)*100 1 
+
+• AutoFit: Auto Fit to Contents 1 
+
+• Table: Alignment: Centre 1 
+
+ALT+F9: { =MIN(ABOVE)*100 \# 0.00% }
+
+1
+
+1.6
+
+Caption 2
+
+• New label: Graph 1 
+
+• Caption: Bestsellers 1 
+ALT+F9: Graph { SEQ Graph \* ARABIC }
+
+1
+
+1.7
+
+Drop Cap 4
+
+• Drop cap inserted on the letter D 1 
+
+• Lines: 4 1 
+
+• Highlight removed 1 
+
+• Shading: Green 
+
+1
+
+1.8
+
+Paragraph settings 1
+
+• Pagination: Keep with next 1 
+DBE Stamp EXAMINATION NUMBER
+
+1
+
+1.9
+
+Section break AND File path 2
+
+• File path inserted in header 1 
+
+• Appears only on the last page 1 
+ALT+F9: { FILENAME \p \* MERGEFORMAT } Total for QUESTION 1 [24] DBE Stamp EXAMINATION NUMBER Check the accuracy and skill required before awarding a mark throughout.
+
+1
+
+1.10
+
+For which ONE of the following fields in a database will you most likely use an
+input mask?
+
+A The cellphone number of a client
+B The surname of a client
+C The number of items ordered by the client
+D The web address of a client s company (1)
+
+1
+
+[10]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+4 
+DBE/November 2023 
+
+QUESTION 2: MATCHING ITEMS
+
+(Note to marker:
+
+2.1
+
+Margins 1
+
+• Layout: Margins: Narrow 
+
+1
+
+2.2
+
+Page border 3
+
+• Width: 3 pt 1 
+
+• Left and right side only 1 
+
+• Page border on first page only 
+
+1
+
+2.3
+
+Hyperlink AND bookmark 3
+
+• Bookmark Contact created at the text Contact form 1 
+
+• Hyperlink created on text choosing 1 
+
+• Hyperlink links to bookmark Contact 1 
+ALT+F9: { HYPERLINK \l Contact }
+
+1
+
+2.4
+
+Bulleted list 2
+
+• Changed first four numbered paragraphs to bulleted list 
+1
+• Symbol: Font: Webdings: Character code: 
+
+1
+
+2.5
+
+Used to encrypt and secure your internet traffic
+
+1
+
+2.6
+
+Shape 3
+
+• Left arrow shape inserted 1 
+
+• Text: Choose (appears as in screenshot) 1 
+
+• No fill colour/white fill colour 
+
+1
+
+2.7
+
+SmartArt 4
+
+• Shape added: Negotiate (between Insurance & Finance) 1 
+
+• Layout changed: Continuous block process 1 
+
+• 3-D style: Cartoon 1 
+
+• Right to Left selected 1 
+Total for QUESTION 2 [21] DBE Stamp EXAMINATION NUMBER
+
+1
+
+2.8
+
+Used to fix a specific programming problem in software
+
+1
+
+2.9
+
+The electronic record of a person s online activity
+
+1
+
+2.10
+
+A single HTML file on the internet
+
+1
+
+[10]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+5 
+DBE/November 2023 
+
+QUESTION 3: TRUE/FALSE ITEMS
+
+(Note to marker:
+
+3.1
+
+Row 1: 3
+• A1:J1: merged and centred 1
+• Horizontal alignment: Distribute (Indent) 1
+• Indent: 13
+
+1
+
+3.2
+
+Cell E3: 2
+=SMALL(C7:I7,2)
+• Function: SMALL(C7:I7, …) 1
+• Value: 2
+
+1
+
+3.3
+
+Cell E4: 2
+=COUNTIF(J9:J20, 15 )
+• Function: COUNTIF(J9:J20,…) 1
+• Criteria: 15 OR =14 
+
+1
+
+3.4
+
+Cells C9:I20 4
+Conditional formatting
+• Two-colour scale applied to correct cells only 1
+• Minimum colour: blue 1
+• Type: Percent (both) 1
+• Maximum value: 50
+
+1
+
+3.5
+
+Cell F23: 6
+=HLOOKUP(MAX(C7:I7),C7:I8,2,FALSE)
+OR
+=XLOOKUP(MAX(C7:I7),C7:I7,C8:I8)
+• Function: HLOOKUP/XLOOKUP
+• Lookup Value: 
+• Function: MAX (C7:I7) OR LARGE (C7:I7,1) 2
+• Table array: C7:I8 OR A7:I8 1
+• Row number: 2 If XLOOKUP(…,C8:I8) 1
+• Range lookup: FALSE Award both marks 1 Total for QUESTION 3 [17] DBE Stamp EXAMINATION NUMBER
+
+1
+
+[5]
+
+TOTAL SECTION A: [25]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+6 
+DBE/November 2023 
+
+SECTION B
+
+QUESTION 4: SYSTEM TECHNOLOGIES
+
+4.1
+
+Column H 2
+
+• Data type: Currency OR Accounting 1 
+
+• Column width: data is visible 
+
+1
+
+4.2
+
+Cell C3: Circular reference error 1
+
+= SUM(E9:E50)*0.08=E3
+• E3 
+
+2
+
+4.3
+
+Cell C5: 6
+
+=SUMIFS(E9:E50,C9:C50, Hyundai ,D9:D50, i* )
+OR
+=SUMIFS(E9:E50,D9:D50, i* ,C9:C50, Hyundai )
+• Function: SUMIFS
+• Sum range: E9:E50
+• Criteria range 1: C9:C50
+• Criteria 1: Hyundai 1
+• Criteria range 2: D9:D50 1
+• Criteria 2: i* OR I* 1 DBE Stamp EXAMINATION NUMBER
+
+4.3.1
+
+Describe what is meant by data and give an example.
+
+3
+
+5
+
+4.3.2
+
+Describe TWO processes that will transform data into information.
+
+2
+
+4.4
+
+Cell A11: 4
+
+=MID(B11,0,LEN(B11)): Function modified not replaced
+=MID(B11,FIND( , ,B11)+2,LEN(B11))
+OR
+=MID(B11,FIND( , ,B11)+2,LEN(B11)-FIND( , ,B11)+2)
+OR
+=MID(B11,FIND( ,B11)+1,LEN(B11))
+OR
+=MID(B11,FIND( ,B11)+1,LEN(B11)-FIND( ,B11))
+OR
+=RIGHT(B11,LEN(B11)-FIND( ,B11))
+OR
+=RIGHT(B11,LEN(B11)-FIND( , ,B11)-1)
+• Function: FIND 1 
+
+• Find , OR 1 
+
+• Within cell: B11 1 
+
+• Correct initials without space 
+
+2
+
+4.5
+
+Cell H10: 4 =IF(G10= Yes ,SUM(E10:F10)*1.05,SUM(E10:F10)) OR =IF(G10= Yes ,SUM(E10:F10)*5%+SUM(E10:F10), SUM(E10:F10)) OR =IF(G10= Yes ,(E10+F10)*1.05,E10+F10) OR =IF(G10= Yes ,(E10+F10)*5%+E10+F10, E10+F10)
+
+Concepts: 
+• Determine if extras are Yes 
+
+• If TRUE: 
+
+• Determine total price and interest 
+
+• With a 5% added to the total 
+
+• If FALSE: 
+
+• Determine total price and interest 
+
+• Function: IF 1 
+
+• Criteria: G10= Yes 1 
+
+• Output if true: SUM(E10+F10)*1.05 1 
+OR (E10+F10)*5%+E10+F10
+• Output if false: SUM(E10:F10) OR E10+F10 1 
+
+(Note to marker: Building blocks)
+DBE Stamp
+EXAMINATION
+NUMBER
+Chart worksheet
+
+2
+
+4.6
+
+Chart/Graph 6
+
+• Data selected: Audi ticked 
+
+• Y-Axis options: Display units: Thousands 1 
+
+• Column Shape: Cylinder 1 
+
+• Data Series: Fill: Vary colors by point 1 
+
+• Legend added at the bottom 1 
+
+• Major vertical gridlines added 1 
+Total for QUESTION 4 [23] DBE Stamp EXAMINATION NUMBER
+
+2
+
+4.7
+
+Briefly explain the purpose of a user interface (UI) and give an example of an
+input device commonly used with a user interface.
+
+2
+
+4.8
+
+The new monitor you connected to your computing device displays a
+resolution error message.
+
+Where would you change the resolution to resolve/fix this error message?
+
+1
+
+4.9
+
+Give TWO disadvantages of convergence.
+
+2
+
+4.10
+
+Give TWO reasons why a company would choose to use grid computing.
+
+2
+
+4.11
+
+State TWO limitations of firewalls.
+
+2
+
+4.12
+
+Give TWO possible solutions to resolve restrictions (bottlenecks) in data flow
+that appear in local storage areas. (2)
+
+2
+
+[25]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+7 
+DBE/November 2023 
+
+QUESTION 5: INTERNET AND NETWORK TECHNOLOGIES
+
+5.1
+
+Give TWO reasons why you would choose a wireless network for a home or a
+small business.
+
+2
+
+5.2
+
+Logo 5
+
+• Inserted 5Bus 1 
+
+• As a logo in the header 1 
+Field: Reason
+• Change to Combo box 1 
+
+• Row Source: Business ; Personal 1 
+
+• Row Source Type: Value list 1 
+DBE Stamp EXAMINATION NUMBER Query: qry5_3
+
+2
+
+5.3
+
+• Only Name, Surname and ContactNo displays 1 5
+
+• Reason criteria: Business 1 
+KMTravel criteria: 30 1
+• KMTravel criteria: =10 OR 11 1 
+
+• AND (Business AND 30)/ 
+OR ( 30 OR =10) logic correct (Expected records: 19) Query: qry5_4
+
+1
+
+5.4
+
+Field: DepartDate 3
+
+• Between #2023/12/01# AND #2023/12/31# 
+OR =#2023/12/01# AND = #2023/12/31# OR #2023/11/30# AND #2024/01/01# OR Like 2023/12/* OR Like */12/* OR =#2023/12/01# OR #2023/11/30# OR Month([DepartDate])=12
+• Date range correct 1 
+
+• Between/AND/Like/*/Month/Single criterion 1 
+
+• Operators correct 1 
+(Expected records: 9) Query: qry5_5
+
+2
+
+5.5
+
+New field: 4
+
+Total: [KMTravel]*2*6.25
+OR
+Total: [KMTravel]*6.25*2
+• Calculated field: 
+
+• Total field inserted 
+
+• [KMTravel] 1 
+
+• *2 1 
+
+• *6.25 1 
+DBE Stamp EXAMINATION NUMBER Report: rpt5_6
+
+2
+
+5.6
+
+• Group footer: Function inserted 1 5
+
+• Function: =COUNT(*) OR any other field name 1 
+
+• Page orientation: Landscape 1 
+
+• Report exported as .pdf 1 
+
+• File name: 5Pre-bookings 1 
+Total for QUESTION 5 [35] DBE Stamp EXAMINATION NUMBER
+
+2
+
+5.7
+
+Give TWO disadvantages of using a PAN.
+
+2
+
+5.8
+
+Analyse the picture below and give the term and description for the process.
+
+(2)
+
+2
+
+[15]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+8 
+DBE/November 2023 
+
+QUESTION 6: INFORMATION MANAGEMENT
+
+6.1
+
+What is the importance of report writing in the PAT?
+
+1
+
+6.2
+
+… 5
+
+New branch opening
+soon
+
+…
+
+…
+
+Font type: 
+• Attribute: face 1 
+
+Horizontal line: 
+• Moved to appear below the heading 1 
+
+Table: 
+• Attribute: border 1 
+
+• Border size: 5 (accept size between 2 – 6) 1 
+
+Image: 
+• .gif changed to .jpg 1 
+Closing tag(s) or triangular brackets and nesting 1 correctly used. .......... 1 Total for QUESTION 6 [15] DBE Stamp EXAMINATION NUMBER
+
+2
+
+6.3
+
+A learner wants to show how the number of e-book readers have increased/
+decreased over a period of time using a chart.
+
+What spreadsheet feature can be used to show this on the chart?
+
+1
+
+6.4
+
+State TWO aspects to consider when planning a questionnaire.
+
+2
+
+6.5.1
+
+Briefly explain why evaluation is essential.
+
+2
+
+4
+
+6.5.2
+
+State TWO criteria used for evaluating websites. (2)
+
+2
+
+[10]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+9 
+DBE/November 2023 
+
+QUESTION 7: SOCIAL IMPLICATIONS
+
+7.1
+
+Image manipulation 5
+
+• WordArt inserted: n time 
+
+• Shuttle Image: Text wrapping changed 1 
+
+• Images and text moved in correct positions 1 
+
+• Grouped: Image moves as one object 1 
+
+• Saved as 7NewLogo image 1 
+7Bookings
+
+2
+
+7.2
+
+Name TWO common internet attacks, other than malware.
+
+2
+
+7.3
+
+Briefly describe what data protection is AND give ONE method to protect
+data/information, excluding any physical methods.
+
+2
+
+7.4
+
+What are the responsibilities of a network administrator to ensure network
+security?
+
+2
+
+7.5
+
+State TWO ways how a company can prevent data loss when unscheduled
+power failures occur. (2)
+
+2
+
+[10]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+10 
+DBE/November 2023 
+
+QUESTION 8: SOLUTION DEVELOPMENT
+
+8.1
+
+Discuss TWO reasons why you would use page headers and page footers in a
+document AND give an example of the type of information that can be
+included in a header or a footer.
+
+3
+
+8.2
+
+Your friend generated a spreadsheet for stationery items sold to a customer.
+However, the total for all the stationery items displays zero as an answer.
+
+Study the screenshot below and give TWO reasons why the function returns a
+zero.
+
+2
+
+8.3
+
+Microsoft Access provides field property settings such as validation rules to
+improve the accuracy of data capturing.
+
+Name TWO other additional field properties that can be used.
+
+2
+
+8.4
+
+Name a word processing feature which will force certain text to move to the
+beginning of the next column.
+
+1
+
+8.5
+
+Briefly explain the criteria of the following validation rule:
+
+=5
+
+2
+
+8.6
+
+The following criteria appears for the Username field in a database query:
+
+Like ??an* 
+
+Explain the output of this query.
+
+3
+
+8.7
+
+Examine the piece of HTML code below, which is used to insert the image on
+the web page:
+
+What effect will the missing height attribute have on the image?
+
+1
+
+8.8
+
+Give ONE reason why you would use the button in the image below in an
+Access database table.
+
+1
+
+[15]
+
+TOTAL SECTION B: [75]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+11 
+DBE/November 2023 
+
+SECTION C
+
+QUESTION 9: INTEGRATED SCENARIO
+
+9.1.1
+
+What kind of computer user will most likely use a computer with
+these specifications?
+
+1
+
+6
+
+9.1.2
+
+How is the size of monitors normally measured?
+
+1
+
+9.1.3
+
+Name TWO types of utility software that can be used on this
+computer.
+
+2
+
+9.1.4
+
+Suggest TWO additional hardware devices that can be bought for
+this computer.
+
+2
+
+9.2.1
+
+What type of cabled media will most likely be used to connect the
+computers? Motivate your answer.
+
+2
+
+5
+
+9.2.2
+
+Give ONE reason why this network would NOT require a server.
+
+1
+
+9.2.3
+
+A printer will be added for administration purposes.
+
+State TWO factors that should be considered when buying a
+printer.
+
+2
+
+9.3.1
+
+Name TWO physical safeguards to protect the computers.
+
+2
+
+3
+
+9.3.2
+
+What technology can the management add to all devices/
+equipment to ensure easy tracking/monitoring of devices/
+equipment?
+
+1
+
+9.4
+
+The secure storage area is protected by a lock which opens by scanning a
+fingerprint.
+
+Briefly explain what this type of security is called and give ONE disadvantage.
+
+2
+
+9.5.1
+
+Briefly explain what virtual reality is.
+
+2
+
+4
+
+9.5.2
+
+Give TWO disadvantages or limitations of virtual reality.
+
+2
+
+9.6.1
+
+Special gaming chairs were bought for the tournament.
+
+Give ONE feature that a gaming chair should have.
+
+1
+
+5
+
+9.6.2
+
+Give TWO examples of how ICT can be used to advertise the
+tournament.
+
+2
+
+9.6.3
+
+What Microsoft Office application is best suited to capture and
+store the individual entries for the tournament?
+
+1
+
+9.6.4
+
+The management wants to send a standard letter to all tournament
+participants to thank them.
+
+What word processing feature can be used to quickly generate a
+personalised, standard thank-you letter for each participant? (1)
+
+1
+
+[25]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+12 
+DBE/November 2023 
+
+QUESTION 10
+
+10.1.1
+
+Suggest THREE ways in which the layout of this form can be
+improved for electronic use.
+
+3
+
+5
+
+10.1.2
+
+Write down ONE question in the form that can be improved by
+changing it to a closed-ended question. Describe how you would
+improve it.
+
+2
+
+10.2.1
+
+Name ONE online application that can be used to capture the entry
+form data.
+
+1
+
+4
+
+10.2.2
+
+Give TWO advantages of using online forms.
+
+2
+
+10.2.3
+
+Name a spreadsheet feature that will allow you to highlight all
+racing cars that meet a certain criterion.
+
+1
+
+10.3
+
+How can a 3D printer be used to create a distinguishing feature for each car?
+
+1
+
+10.4.1
+
+Briefly explain what streaming is.
+
+2
+
+5
+
+10.4.2
+
+A camera fixed onto a drone will record the races.
+
+State TWO ways how data can be transferred from the drone
+camera to the computer for streaming.
+
+2
+
+10.4.3
+
+The broadcasting computer must have a high-speed connection.
+
+Give an example of a high-speed connection.
+
+1
+
+10.5.1
+
+What does the numbers usually represent?
+
+2
+
+3
+
+10.5.2
+
+What unit of measurement is used for internet speed?
+
+1
+
+10.6
+
+Certificates are created in a word processor using a standardised document.
+
+What is this standardised document called?
+
+1
+
+10.7.1
+
+The school newspaper will be publishing photos of the event.
+
+What word processing feature will they use to include a visible
+description above/below the photos?
+
+1
+
+4
+
+10.7.2
+
+When pasting the table containing the results of the races, it does
+not fit across the width of the page of the word processing
+document.
+
+Suggest an appropriate action to resolve this problem.
+
+1
+
+10.7.3
+
+Suggest TWO ways how the school newspaper can give
+
+recognition to community members who contributed photos and
+articles about the races.
+
+2
+
+10.8
+
+According to the POPI Act, geographic information is regarded as private.
+
+Other than geographic metadata, give TWO examples of metadata that can
+be added to photos.
+
+2
+
+[25]
+
+TOTAL SECTION C: [50]
+
+GRAND TOTAL: 150
+
+Copyright reserved

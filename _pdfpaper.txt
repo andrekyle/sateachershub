@@ -1,0 +1,600 @@
+
+=========== PAGE 1 ===========
+Confidential
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+COMPUTER APPLICATIONS TECHNOLOGY P1
+MAY/JUNE 2024
+MARKS: 150
+TIME: 3 hours
+This question paper consists of 21 pages, an HTML tag sheet,
+an input mask character sheet, two pages for planning and
+a separate information sheet.
+Copyright reserved Please turn over
+=========== PAGE 2 ===========
+Computer Applications Technology/P1 2 DBE/May/June 2024
+SC/NSC Confidential
+INSTRUCTIONS AND INFORMATION
+1. Owing to the nature of this practical examination, it is important to note that,
+even if you complete the examination early, you will NOT be permitted to
+leave the examination room until all the administrative tasks associated with
+the examination have been finalised. During the examination, the standard
+examination rules regarding leaving the examination room apply.
+2. If you are working on the network, or the data files have been preloaded on
+your system, you must follow the instructions provided by the
+invigilator/educator.
+3. At the end of the examination, you must make sure that ALL your answer files
+are saved on the network/computer as explained to you by the
+invigilator/educator.
+4. Make absolutely sure that all files can be read. Do NOT save unnecessary
+files/folders and do NOT hand in duplicate answer files/folders. Do NOT
+delete any original files that you did not work on.
+5. The information sheet that has been provided with the question paper MUST
+BE COMPLETED AFTER THE THREE-HOUR EXAMINATION SESSION.
+Hand it to the invigilator at the end of the examination.
+6. A copy of the master files will be available from the invigilator. Should there
+be any problems with a file, you may request another copy from the
+invigilator.
+7. This question paper consists of SEVEN questions. Answer ALL the questions.
+8. Read through each question before answering or solving the problem. Do
+NOT do more than is required by the question.
+9. Ensure that you save each document using the file name given in the
+question paper. Save your work regularly as a precaution against possible
+power failures.
+10. You may NOT use any resource material.
+11. Accuracy will be taken into account.
+12. Ensure that the regional settings are set to South Africa and date and time
+settings, number settings and currency settings are correctly set.
+13. In all questions involving word processing, you should set the language to
+English (South Africa). The paper size is assumed to be A4 Portrait, unless
+instructed otherwise. Use centimetres as the unit of measurement.
+Copyright reserved Please turn over
+=========== PAGE 3 ===========
+Computer Applications Technology/P1 3 DBE/May/June 2024
+SC/NSC Confidential
+14. Ensure that the Developer tab and Ruler are activated.
+15. Ensure that the decimal symbol is set as a full stop ('.') and the list separator
+is set as a comma (',').
+16. Formulae and/or functions must be used for ALL calculations in questions
+involving spreadsheets. Use absolute cell references only where necessary to
+ensure that formulae are correct when you copy them to other cells in a
+spreadsheet.
+NOTE: All formulae and/or functions should be inserted in such a manner
+that the correct results will still be obtained even if changes are
+made to the existing data.
+17. You may NOT use a word processing program such as Word to answer the
+HTML question.
+18. Borders around images or screenshots in this question paper are intended for
+clarity. Do NOT insert borders unless you are instructed to do so.
+19. The data files that you need to complete this question paper have been
+provided to you on the disk/CD/DVD/flash disk or on the disk space allocated
+to you. The files are provided in the form of a password-protected executable
+file.
+Do the following:
+ Double-click on the password-protected executable file:
+CAT P1 June 2024 DATA.exe
+ Click on the 'Extract' button.
+ Click the 'Show Password' check box.
+ Enter the following password: Zoo321
+ Once extracted, verify the contents of the folder by opening one or more
+files.
+ Once the contents of the files have been verified, rename the folder
+CAT P1 June 2024 DATA with your examination number.
+The following list of files will be available in the folder:
+Copyright reserved Please turn over
+=========== PAGE 4 ===========
+Computer Applications Technology/P1 4 DBE/May/June 2024
+SC/NSC Confidential
+ 7Pics Folder
+ 1Zoo Word processing document
+ 2Adoption Word processing document
+ 3Budget Spreadsheet
+ 4Excursions Spreadsheet
+ 5Animals Database
+ 5ZooLogo Image
+ 6_1Advert HTML file
+ 6_1Nav HTML file
+ 6_2Fees HTML file
+ 6Banner Image
+ 6Map Image
+ 7AccessCard Word processing document
+ 7MemAccess Database
+ 7Reproduction Spreadsheet
+Copyright reserved Please turn over
+=========== PAGE 5 ===========
+Computer Applications Technology/P1 5 DBE/May/June 2024
+SC/NSC Confidential
+SCENARIO
+The management of the City Zoo wishes to re-invent the image of the zoo. They are
+running a campaign to promote the zoo. The management hopes that more people will
+visit the zoo and help to protect the animals of the Earth.
+QUESTION 1: WORD PROCESSING
+The management of the City Zoo is studying various other zoos to find ideas for their
+campaign. A document was created on the history of the Johannesburg Zoo.
+Open the 1Zoo word processing document and insert your examination number in the
+header of the document.
+1.1 Apply automatic hyphenation to the document. (1)
+1.2 Insert a Slice (Light) cover page in the document to display only the title and
+subtitle controls. (2)
+1.3 Modify the Heading 1 style as follows:
+ Expand the character spacing by 3 pt.
+ Apply any 3-D top bevel format text effect with a height of 5 pt. (3)
+1.4 Insert and right-align a field in the header to display only the current year. (3)
+1.5 Modify the footnote layout and format on page 2, as shown in the screenshot
+below.
+(2)
+1.6 Find the subheading 'Did you know?' and apply a paragraph setting so that this
+heading will always appear on a new page. (1)
+20242
+Copyright reserved Please turn over
+=========== PAGE 6 ===========
+Computer Applications Technology/P1 6 DBE/May/June 2024
+SC/NSC Confidential
+1.7 Find the text below the subheading 'Prices start from:' and modify this text to
+display in a table, as shown below.
+NOTE: Allow a 1 cm spacing between cells in the table options. (4)
+1.8 Accept ALL the track changes in the document. (1)
+1.9 Add a 7 cm tab to the existing tab settings so that the text below the heading
+'Emergency numbers:' will appear as follows:
+NOTE: Do NOT use columns. (3)
+1.10 Find the text 'Question/Vraag 1.10' and insert a table of figures without page
+numbers below this text. (2)
+Copyright reserved Please turn over
+=========== PAGE 7 ===========
+Computer Applications Technology/P1 7 DBE/May/June 2024
+SC/NSC Confidential
+1.11 Find and replace all occurrences of the text 'Johannesburg Zoo' with 'JHB ' .
+NOTE:
+ The  symbol is the Webdings character code 246.
+ Only the  symbol appears in a red font. (4)
+Save and close the 1Zoo document. [26]
+Copyright reserved Please turn over
+=========== PAGE 8 ===========
+Computer Applications Technology/P1 8 DBE/May/June 2024
+SC/NSC Confidential
+QUESTION 2: WORD PROCESSING
+A document was created on the various ways of supporting the zoo by adopting an
+animal.
+Open the 2Adoption word processing document and insert your examination number
+in the header.
+2.1 Change the top margin to 2 cm AND change the gutter position to left. (2)
+2.2 Insert automatic page numbering in the footer of the document as follows:
+ Use the outline circle format.
+ Odd page numbers should appear on the left side of the page.
+ Even page numbers should appear on the right side of the page. (3)
+2.3 Use a word processing feature to replace the word 'endangered' with a word
+that has a similar meaning. (1)
+2.4 Find the word 'List' and apply a drop cap to appear in the margin at 0.5 cm from
+the text. (2)
+2.5 Find the list below the heading 'Type of adoption sets' and change the list to a
+multilevel list, as shown in the screenshot below.
+(3)
+Copyright reserved Please turn over
+=========== PAGE 9 ===========
+Computer Applications Technology/P1 9 DBE/May/June 2024
+SC/NSC Confidential
+2.6 Find the text 'anna@cityzoo.org.za' in the paragraph above the tiger picture and
+create a hyperlink to this e-mail address. (1)
+2.7 Find the tiger picture on page 3 and make changes so that it resembles the
+screenshot below.
+Adopt me!
+NOTE:
+ The picture and the speech bubble must move as one object.
+ Do NOT make any changes to the colour of the picture. (3)
+2.8 Find the 'Adoption Form' on the last page and format the form controls as
+follows:
+ Edit the form field control for the 'What animal would you like to adopt?' text
+to display a blank option at the top of the options list.
+ Set the properties for the 'Payment Amount' field to display the amount as
+currency.
+ Set the properties for the 'Cellphone Number' field to automatically display
+'+27' before a user inserts the number. (4)
+Save and close the 2Adoption document. [19]
+Copyright reserved Please turn over
+=========== PAGE 10 ===========
+Computer Applications Technology/P1 10 DBE/May/June 2024
+SC/NSC Confidential
+QUESTION 3: SPREADSHEET
+NOTE:
+ Use formulae and/or functions for ALL calculations in the spreadsheet.
+ Use absolute cell references ONLY where necessary to ensure that formulae are
+correct when you copy it to other cells in a spreadsheet.
+ Insert formulae and/or functions in such a manner that the correct results will still be
+obtained even if values are changed in the existing data.
+ Should you need to use building blocks, use the space allocated for this in the
+spreadsheet data file.
+Open the 3Budget spreadsheet that contains information about the budget for all the
+animals that arrived at the zoo between 2010 and 2024.
+Work in the Budget worksheet.
+3.1 Change the tab colour of the worksheet to any orange colour. (1)
+3.2 Change the page setup so that cells A1:I59 will fit on one page. (2)
+3.3 Insert a SUMIFS function in cell E3 to determine the total food budget for all
+the mammals that arrived after 2015. (5)
+3.4 Modify the conditional formatting of the grooming budget so that:
+ A value of 15000 or more will be marked with a red flag
+ A value of 10000 and above will be marked with a yellow flag
+ Any other values will be marked with a green flag (3)
+3.5 The zoo manager is preparing the annual (yearly) budget for 2025.
+Insert a formula in cell I7 to determine the amount for the 2025 budget based
+on the annual food and grooming budgets plus an increase of 2.25%. (4)
+Copyright reserved Please turn over
+=========== PAGE 11 ===========
+Computer Applications Technology/P1 11 DBE/May/June 2024
+SC/NSC Confidential
+Work in the Totals worksheet.
+3.6 Modify the chart to appear as follows:
+(4)
+Save and close the 3Budget spreadsheet. [19]
+Copyright reserved Please turn over
+=========== PAGE 12 ===========
+Computer Applications Technology/P1 12 DBE/May/June 2024
+SC/NSC Confidential
+QUESTION 4: SPREADSHEET
+NOTE:
+ Use formulae and/or functions for ALL calculations in the spreadsheet.
+ Use absolute cell references ONLY where necessary to ensure that formulae are
+correct when you copy it to other cells in a spreadsheet.
+ Insert formulae and/or functions in such a manner that the correct results will still be
+obtained even if values are changed in the existing data.
+ Should you need to use building blocks, use the space allocated for this in the
+spreadsheet data file.
+Open the 4Excursions spreadsheet which contains the details of a school holiday
+programme where school groups visited the zoo in December 2023.
+4.1 Move the Trip worksheet so that it appears before the Q4_6 worksheet. (1)
+Work in the Trip worksheet.
+4.2 Insert a function in cell C3 to determine how many schools from the
+Eastern Cape (EC) visited the zoo during December. (3)
+4.3 Insert a function in cell G3 to determine the most frequent date on which schools
+visited the zoo. (1)
+4.4 Insert a combination of functions in cell D7 to display the contact numbers in the
+following format:
+Contact number Format
+0871522635 +27 871522635
+0729237425 +27 729237425
+NOTE: There are two spaces between the country code (+27) and the
+number. (5)
+4.5 One teacher per group of 30 learners, or part thereof, must accompany school
+groups when they visit the zoo.
+Use a formula in cell F13 to determine the number of teachers that accompanied
+the learners from the school in row 13. (3)
+4.6 Data validation has been applied to column H.
+ Modify the data validation rule for column H to accept only dates in
+December 2023.
+ Use a validation feature to circle invalid data.
+ Create a screenshot of cells H5:H30 showing the circled invalid data and
+paste the screenshot in the Q4_6 worksheet. (3)
+Copyright reserved Please turn over
+=========== PAGE 13 ===========
+Computer Applications Technology/P1 13 DBE/May/June 2024
+SC/NSC Confidential
+4.7 Learners that visited the zoo in a school group on 9 December and
+16 December received a wildlife badge.
+Use a combination of IF and OR functions in cell I12 to display the message
+'Badge' if the learners received a wildlife badge, otherwise the cell must be left
+blank. (5)
+Save and close the 4Excursions spreadsheet. [21]
+Copyright reserved Please turn over
+=========== PAGE 14 ===========
+Computer Applications Technology/P1 14 DBE/May/June 2024
+SC/NSC Confidential
+QUESTION 5: DATABASE
+Open the 5Animals database that contains information about the animals in the zoo
+and the measures taken to protect their physical and emotional wellbeing.
+5.1 Edit the tbl5_1 table, in Design View, as follows:
+5.1.1 Set a property to the KeeperName field that will make sure a
+zookeeper is always assigned to an animal enclosure. (1)
+5.1.2 Change the Time field to accept values in the 00:00 time format. (2)
+5.1.3 Set the properties of the Enclosure field so that it will display a
+message as shown below, should incorrect information be entered.
+(3)
+5.1.4 The keepers of the animals have a code they use to access the
+enclosures.
+Create an input mask on the AccessCode field to accept data as
+follows:
+ A letter (such as the first letter of their surnames), followed by
+ @, followed by
+ The last 4 digits of their cellphone number, followed by
+ Any optional character
+Example: s@8536$ or O@4892f or r@3084 or t@1234k (4)
+5.1.5 Delete the field NextFeed. (1)
+Save and close the tbl5_1 table.
+Copyright reserved Please turn over
+=========== PAGE 15 ===========
+Computer Applications Technology/P1 15 DBE/May/June 2024
+SC/NSC Confidential
+5.2 Open the frm5_2 form, based on the tblAnimals table, in Design View.
+5.2.1 Modify the Group field so that it displays as follows:
+5.2.2 The average lifespan of the animals is 25 years.
+Insert a formula in the textbox in the form header, to determine
+whether an animal's lifespan is more than the average.
+Display the answer in the Yes/No format.
+HINT: Do NOT use an IF function. (5 )
+Save and close the frm5_2 form.
+5.3 Open the qry5_3 query, based on the tblAnimals table, in Design View.
+Modify the query to create a list of all the animals that originated from Africa
+and belong to the 'Carnivore' group. Display only the Animal and Status fields.
+Save and close the qry5_3 query. (3)
+5.4 Open the qry5_4 query, based on the tblAnimals table, in Design View.
+Modify the query to display a list of animals:
+ With the status 'Endangered'; AND
+ A lifespan of less than 20 years; OR
+ Where no population size has been captured.
+Save and close the qry5_4 query. (4)
+5.5 Create a query named qry5_5, based on the tblAnimals table, in Design
+View, as follows:
+Display the average lifespan of animals according to their group. Format your
+results to display with ONE decimal place.
+Save and close the qry5_5 query. (5)
+Copyright reserved Please turn over
+=========== PAGE 16 ===========
+Computer Applications Technology/P1 16 DBE/May/June 2024
+SC/NSC Confidential
+5.6 Create a report named rpt5_6, based on the tblAnimals table to display as
+follows:
+NOTE:
+ Use the 5ZooLogo image.
+ The border of the Group field (e.g. Carnivore, Herbivore) appears. (7)
+Save and close the rpt5_6 report.
+Save and close the 5Animals database. [35]
+Copyright reserved Please turn over
+=========== PAGE 17 ===========
+Computer Applications Technology/P1 17 DBE/May/June 2024
+SC/NSC Confidential
+QUESTION 6: WEB DESIGN (HTML)
+NOTE:
+ You may NOT use a word processing program such as Word to answer the
+HTML questions.
+ An HTML tag sheet has been attached for reference.
+ All files needed to complete this question can be found in the examination folder.
+You are required to modify a web page about membership packages offered by the
+City Zoo.
+6.1 Open the incomplete 6_1Advert file in a web browser and also in a text/HTML
+editor (NOT a word processing program such as Word).
+Your final web page should look like the example below.
+Copyright reserved Please turn over
+=========== PAGE 18 ===========
+Computer Applications Technology/P1 18 DBE/May/June 2024
+SC/NSC Confidential
+NOTE:
+ Use the example on the previous page as a guideline when answering this
+question.
+ Question numbers appear as comments in the coding to indicate where
+you should insert the answer(s). Do NOT delete these comments.
+6.1.1 Insert HTML code so that the word 'Membership' will display in the
+web browser tab. (1)
+6.1.2 Change the background colour of the whole web page to 'bisque'. (1 )
+6.1.3 Modify the code to display a horizontal line between the text
+'25 December: closed' and 'Terms of Membership'. (1)
+6.1.4 Format the last sentence starting with 'Zoo animals are …' to
+display as in the screenshot. (1)
+6.1.5 Create a hyperlink to display the word 'Map', as shown in the
+screenshot on the previous page, linking to the 6_1Nav web page. (3)
+Save and close the 6_1Advert file.
+6.1.6 Open and work in the 6_1Nav web page.
+Edit the tag so that the 6Map image displays. Insert HTML code so
+that if the image does not display, the text 'Zoo-map' should appear. (2)
+Save and close the 6_1Nav file.
+Copyright reserved Please turn over
+=========== PAGE 19 ===========
+Computer Applications Technology/P1 19 DBE/May/June 2024
+SC/NSC Confidential
+6.2 Open the incomplete 6_2Fees file in a web browser and also in a text/HTML
+editor (NOT a word processing program such as Word).
+Modify the HTML code so that your final web page looks like the example
+below.
+NOTE: The contents of the web page is centred. (5 )
+ONE mark will be allocated for closing tags and correct nesting in the web
+page. (1)
+Save and close the 6_2Fees file. [1 5]
+Copyright reserved Please turn over
+=========== PAGE 20 ===========
+Computer Applications Technology/P1 20 DBE/May/June 2024
+SC/NSC Confidential
+QUESTION 7: GENERAL
+7.1 Find the 7Pics folder and do the following:
+ Rename the Q7_1 image file in this folder to: Lions
+ Change this folder to a compressed folder in your examination data folder. (2)
+Open the 7Reproduction spreadsheet.
+Work in the Q7_2 worksheet.
+7.2 Use a spreadsheet feature to display a list of all bear species where the
+reproduction in captivity is very easy. (2)
+Work in the Q7_3 worksheet.
+7.3 Use a spreadsheet feature to display the unique mating systems. (1)
+Work in the Q7_4 worksheet.
+7.4 Use spreadsheet features to modify the data so that it appears as in the
+screenshot below.
+(4)
+HINT: Note the sorting applied.
+Save and close the 7Reproduction spreadsheet.
+Copyright reserved Please turn over
+=========== PAGE 21 ===========
+Computer Applications Technology/P1 21 DBE/May/June 2024
+SC/NSC Confidential
+7.5 Open the 7AccessCard word processing document.
+7.5.1 Only members who joined the Zoo Membership Programme in the
+year 2000 to the end of 2020 will receive a Gold status access card.
+ Use the 7MemAccess database to create a merged document
+for only those members who qualify for a Gold status access
+card.
+ Replace the text <<Name>>, <<Surname>> and <<ID Number>>
+with the appropriate merge fields. (5)
+Save the 7AccessCard word processing document.
+7.5.2 Complete the mail merge and save the merged document as
+7Merged.
+NOTE: Ignore if a blank access card displays at the end of the
+merged document. (1)
+[15]
+TOTAL: 150
+Copyright reserved
+=========== PAGE 22 ===========
+Computer Applications Technology/P1 DBE/May/June 2024
+SC/NSC Confidential
+HTML TAG SHEET
+Basic Tags Formatting Tags continued
+Tag Description Tag Description
+Defines the body of the web Inserted before each list item,
+<body></body>
+page and adds a number or symbol
+<li></li>
+<body Sets the background colour of depending on the type of list
+bgcolor="pink"> the web page selected
+<body text="black"> Sets the colour of the body text <img src="name"> Adds an image
+Contains information about the <img src="name" Aligns an image: can be
+<head></head>
+web page align="left"> "right", "bottom", "top"
+Creates an HTML document – <p align="center"><img Aligns an image in the
+<html></html>
+starts and ends a web page src="name"></p> "center", can also be "middle"
+<img src="name" Sets the size of the border
+<title></title> Defines a title for the web page
+border="1"> around an image
+<br/> Inserts a line break <img src="name" Sets the height and width of an
+<!-- --> Comment width="200" height ="200"> image
+Text Tags Displays alternative text when
+Tag Description <img src="name" the mouse hovers over the
+alt="alternative text"> image or when the image is
+<h1></h1> Creates the largest heading
+not found
+<h6></h6> Creates the smallest heading <hr/> Inserts a horizontal line
+<b></b> Creates bold text <hr size="3"/> Sets size (height) of a line
+<i></i> Creates italic text
+Sets the width of a line, in
+<u></u> Creates underlined text <hr width=”80%”/>
+percentage or absolute value
+<font size="3"></font> Sets size of font, from "1" to "7"
+<font color= "green">
+Sets font colour <hr color= "ff0000"/> Sets the colour of the line
+</font>
+<font face="Times New Table Tags
+Sets font type
+Roman"></font> Tag Description
+Links Tags <table></table> Creates a table
+Tag Description <tr></tr> Creates a row in a table
+<a href="URL"></a> Creates a hyperlink <td></td> Creates a cell in a table
+<a href="URL"><img
+Creates an image link
+src="name"></a> Creates a table header (a cell
+<th></th>
+Creates a target location in the with bold, centred text)
+<aname="NAME"></a>
+document
+Links to a target location created
+<a href="#NAME"></a> somewhere else in the <table width="50"> Sets the width of the table
+document
+<a href= Sets the width of the border
+Links to an e-mail address <table border="1">
+"mailto:#NAME"></a> around the table cells
+Sets the space between the
+Formatting Tags <table cellspacing="1">
+table cells
+Sets the space between a cell
+Tag Description <table cellpadding="1">
+border and its contents
+<p></p> Creates a new paragraph
+Sets the alignment for cell(s)
+Aligns a paragraph to the "left"
+<tr align="left"> ("left", can also be "center" or
+<p align="left"> (default), can also be "right" or
+"right")
+"center"
+Centres a paragraph, image or
+<center></center>
+section
+Sets the vertical alignment for
+<ol></ol> Creates a numbered list <tr valign="top"> cell(s) ("top", can also be
+"middle" or "bottom")
+<ol type="A","a", Defines the type of numbering
+"I","i","1"></ol> used
+Sets the number of columns a
+<ul></ul> Creates a bulleted list <td colspan="2">
+cell should span
+<ul type="disc", Sets the number of rows a cell
+Defines the type of bullets used <td rowspan="4">
+"square","circle"> </ul> should span
+Copyright reserved
+=========== PAGE 23 ===========
+Computer Applications Technology/P1 DBE/May/June 2024
+SC/NSC Confidential
+INPUT MASK CHARACTER SHEET
+CHARACTER DESCRIPTION
+0 Digit (0 to 9, entry required, plus [+] and minus [–] signs not allowed)
+Digit or space (entry not required, plus [+] and minus [–] signs not
+9
+allowed)
+Digit or space (entry not required; spaces are displayed as blanks while
+# in Edit mode, but blanks are removed when data is saved; plus [+] and
+minus [–] signs allowed)
+L Letter (A to Z, entry required)
+? Letter (A to Z, entry optional)
+A Letter or digit (entry required)
+a Letter or digit (entry optional)
+& Any character or a space (entry required)
+C Any character or a space (entry optional)
+Decimal placeholder and thousand, date and time separators (The actual
+. , : ; - / character used depends on the settings in the Regional Settings
+Properties dialog box in the Windows Control Panel.)
+< Causes all characters to be converted to lower case
+> Causes all characters to be converted to upper case
+Causes the input mask to display from right to left, rather than from left to
+! right. Characters typed into the mask always fill it from left to right. You
+can include the exclamation mark anywhere in the input mask.
+Causes the character that follows to be displayed as the literal character
+\
+(e.g. \A is displayed as just A)
+Copyright reserved
+=========== PAGE 24 ===========
+Computer Applications Technology/P1 DBE/May/June 2024
+SC/NSC Confidential
+YOU MAY USE THIS PAGE FOR ANY PLANNING PURPOSES.
+Copyright reserved
+=========== PAGE 25 ===========
+Computer Applications Technology/P1 DBE/May/June 2024
+SC/NSC Confidential
+YOU MAY USE THIS PAGE FOR ANY PLANNING PURPOSES.
+Copyright reserved
+=========== PAGE 26 ===========
+Computer Applications Technology/P1 DBE/May/June 2024
+SC/NSC Confidential
+Examination sticker
+150
+COMPUTER APPLICATIONS TECHNOLOGY P1 – MAY/JUNE 2024
+INFORMATION SHEET (to be completed by the candidate AFTER the 3-hour session)
+CENTRE NUMBER ___________________________________________________________
+EXAMINATION NUMBER _______________________________________________________
+WORK STATION NUMBER _____________________________________________________
+SUITE USED
+Microsoft Microsoft Microsoft Office 365/
+(Mark appropriate
+Office 2013 Office 2016 Office 2019 Microsoft Office 2021
+box with a cross (X))
+Other
+WEB BROWSER USED
+Mozilla Google Internet Microsoft (Specify)
+(Mark appropriate
+Firefox Chrome Explorer Edge
+box with a cross (X))
+FOLDER NAME ______________________________________________________________
+Candidate must enter the file name(s) used for each answer. Tick if saved and/or attempted.
+Marker
+Question Saved Attempted Maximum Mark
+File name Initials/
+Number () () Mark Achieved
+Code
+1 1Zoo 26
+2 2Adoption 19
+3 3Budget 19
+4 4Excursions 21
+5 5Animals 35
+6_1Advert
+6 6_1Nav 15
+6_2Fees
+7AccessCard
+7Merged
+7 15
+7Reproduction
+7Pics (compressed folder)
+TOTAL 150
+Comment: (For office/marker use only)
+___________________________________________________________________________
+___________________________________________________________________________
+Copyright reserved

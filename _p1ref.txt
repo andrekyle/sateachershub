@@ -1,0 +1,86 @@
+===== SCENARIO =====
+'<b>TechnoGeek</b> is a tertiary institution that specialises in computer-related courses. They have designed a few documents to promote the institution and need your assistance with modifying the files.'
+
+===== SPLITS =====
+[0, 9, 17, 23, 29, 40, 48]
+subitems=[30, 31, 32, 33, 41, 42, 43, 44, 45, 46]
+forced_breaks=[]
+no_breaks=['d979f1c7-791c-4ddf-9fc4-abb5a7548cf8', '9b4bd34f-752b-4834-b85f-04bbfa81344a', '5464b0b9-ac76-4335-90bc-b1c928f21ea2', 'da19ff19-0f81-4acb-b5e7-6f3f4ce168b7', 'eb4df7cd-fa3b-4266-8e73-545a48afbad6', '9b51b966-d4a1-4cc6-bd38-885a313f16d5', 'f6826392-aa53-498e-b7cf-7abf9c17522f', '38987763-0e3f-4f5e-ad1f-623448851b85', '773d462c-a76f-4593-a6c3-05b02af2f761', '9350295e-7726-472d-b2f4-73fe779756c6', 'df944aff-fd61-4961-8d45-cfb669f70824', '7b14a38c-f732-460f-ac10-ac3125fb140f']
+
+===== QTITLES =====
+  [0] ''
+  [1] ''
+  [2] ''
+  [3] ''
+  [4] ''
+  [5] ''
+  [6] ''
+
+===== QINSTRUCTIONS (per-question intros) =====
+  [0] 'Open the **1Courses** word processing document that contains information about the different types of courses that TechnoGeek offers.\n\nInsert your examination number in the header of the document.'
+  [1] 'Open the **2Brochure** word processing document that contains information about the history and courses of the TechnoGeek institution.\n\nInsert your examination number in the header of the document.'
+  [2] 'NOTE:\n• Use formulae and/or functions for ALL calculations in the spreadsheet.\n• Use absolute cell references ONLY where necessary to ensure that formulae are correct when you copy it to other cells in a spreadsheet.\n• Insert formulae and/or functions in such a manner that the correct results will still be obtained even if values are changed in the existing data.\n• Should you need to use building blocks, use the space allocated for this in the spreadsheet data file.\n\nOpen the **3Lecturers** spreadsheet that contains information about the lecturers that teach at the different campuses of the TechnoGeek institution.\n\nWork in the Lecturers worksheet.'
+  [3] 'NOTE:\n• Use formulae and/or functions for ALL calculations in the spreadsheet.\n• Use absolute cell references ONLY where necessary to ensure that formulae are correct when you copy it to other cells in a spreadsheet.\n• Insert formulae and/or functions in such a manner that the correct results will still be obtained even if values are changed in the existing data.\n• Should you need to use building blocks, use the space allocated for this in the spreadsheet data file.\n\nOpen the **4Students** spreadsheet that contains information about courses which part-time students will take during 2026.\n\nWork in the Students worksheet.'
+  [4] 'The database contains details of lecturers and students at the TechnoGeek institution.\n\nOpen the **5Records** database.'
+  [5] 'NOTE:\n• You may NOT use a word processing program such as Word to answer the HTML questions.\n• An HTML tag sheet has been attached for reference.\n• All files needed to complete this question can be found in the examination folder.\n\nA web page was created for the Home page of the TechnoGeek institution.'
+  [6] 'Open the **7Letter** document that contains an acceptance letter for new students.'
+
+===== QPOST_TEXTS =====
+  qid idx=40: '**NOTE:**\n• Use the example on the previous page as a guideline when answering this question.\n• Question numbers appear as comments in the coding to indicate where you should insert the answer(s). Do NOT delete these comments.'
+  qid idx=47: 'Save and close the 6_2Popular file. (5)\n\nONE mark will be allocated for closing tags and correct nesting in both web pages. (1)'
+  qid idx=48: 'Save and close the 7Letter document.\n\nOpen the 7Stats spreadsheet.\n\nWork in the TotalCost worksheet.'
+  qid idx=49: '**Step 1:**\n• Use a formula in cell E8 to determine the total income for Web Design.\n\n**Step 2:**\n• Create a data validation drop-down list in cell B5 and use the list in the Courses worksheet.\n\n**Step 3:**\n• Modify the function in cell C5 so that the total income percentage per course is automatically calculated based on the type of course selected in cell B5. (5)\n\nWork in the Time worksheet.'
+  qid idx=50: 'Modify the function in cell D3 to randomly generate a time slot for each student.\n\n**NOTE:** Ignore if students have the same time slot. (5)\n\nSave and close the 7Stats spreadsheet.'
+
+===== ITEMS (with image_path) =====
+  [0] m=1 type=short_answer img='' iw=0 | Set the proofing language of the whole document to English (South Africa).
+  [1] m=2 type=short_answer img='' iw=0 | Modify the cover page as follows: \n  \n                • Remove the black background from
+  [2] m=3 type=short_answer img='' iw=0 | Find the heading 'Our journey' and apply a new style to the heading as follows: \n  \n    
+  [3] m=3 type=short_answer img='uploads/cat_p1_n25/q1_4.png' iw=0 | Format the paragraphs that starts with 'TechnoGeek started in …' and ends \n              
+  [4] m=4 type=short_answer img='' iw=0 | Find and replace the exact word 'Course' to display as follows: [wd:209]Info \n  \n Use th
+  [5] m=2 type=short_answer img='' iw=0 | Find the citation below the subheading 'What is Data Science?'. Make the \n               
+  [6] m=4 type=short_answer img='uploads/cat_p1_n25/q1_7.png' iw=0 | Edit the paragraph below the heading 'Mobile App Development' to display as \n            
+  [7] m=1 type=short_answer img='' iw=0 | Find the word 'business' below the heading 'Networking Fundamentals' and \n               
+  [8] m=2 type=short_answer img='' iw=0 | Insert an automatic index below the heading 'Index' to appear in the modern \n            
+  [9] m=1 type=short_answer img='' iw=0 | Add a Follow Path Arch Down transformation effect on the WordArt of the \n                
+  [10] m=2 type=short_answer img='' iw=0 | Change the page border to only appear on the first page. Make sure that the \n            
+  [11] m=1 type=short_answer img='' iw=0 | Change the line spacing of the first paragraph that starts with 'TechnoGeek is \n         
+  [12] m=4 type=short_answer img='uploads/cat_p1_n25/q2_4.png' iw=0 | Change the 'T' in the first paragraph to display as shown in the example below. \n  \n    
+  [13] m=1 type=short_answer img='' iw=0 | Add a line between the columns on the second page.
+  [14] m=6 type=calculation img='uploads/cat_p1_n25/q2_6.png' iw=0 | Modify the table below the heading 'Course prices' to display as shown in the \n          
+  [15] m=4 type=short_answer img='uploads/cat_p1_n25/q2_7.png' iw=0 | Find the SmartArt below the heading 'Slogan' and modify the SmartArt to \n                
+  [16] m=4 type=short_answer img='' iw=0 | Make sure that the page numbering in the footer appears on all the pages. Set \n          
+  [17] m=1 type=short_answer img='' iw=0 | Centre the contents of the worksheet horizontally and vertically.
+  [18] m=1 type=short_answer img='' iw=0 | Insert a function in cell D3 to determine the total number of lecturers.
+  [19] m=5 type=short_answer img='' iw=0 | Insert a SUMIFS function in cell D5 to determine the total monthly salary paid \n  \n     
+  [20] m=4 type=compare img='' iw=0 | Insert a formula in cell D7 to calculate the difference between the highest \n            
+  [21] m=5 type=short_answer img='' iw=0 | Modify the function in cell C15 to extract the first name of the lecturer.
+  [22] m=6 type=calculation img='' iw=0 | The full-time lecturers who are paid a monthly salary from R25 000 to R40 000 \n          
+  [23] m=1 type=short_answer img='' iw=0 | Change the tab colour to any orange colour.
+  [24] m=1 type=spreadsheet img='' iw=0 | Use a spreadsheet feature that will allow the headings in row 3 to remain on \n           
+  [25] m=3 type=calculation img='' iw=0 | Students can pay for the course on a monthly basis for a year, or pay the full \n         
+  [26] m=4 type=short_answer img='' iw=0 | Modify the conditional formatting in column E as follows: \n  \n                • Display 
+  [27] m=5 type=short_answer img='' iw=0 | Use a LOOKUP function in cell G8 to display the cost of the course for \n  \n             
+  [28] m=4 type=spreadsheet img='uploads/cat_p1_n25/q4_6.png' iw=0 | Modify the chart/graph to display as shown in the example below. \n  \n                NOT
+  [29] m=0 type=short_answer img='' iw=0 | Open the tbl5_1 table in Datasheet View and edit the table as follows:
+  [30] m=2 type=short_answer img='' iw=0 | Make the following changes to the rows: \n  \n                       • Change the row heig
+  [31] m=2 type=short_answer img='' iw=0 | Edit the ContactNo field as follows: \n  \n                       • Change the properties 
+  [32] m=3 type=database img='' iw=0 | Insert a new field called Photo below the Qualification field. Make sure \n               
+  [33] m=4 type=short_answer img='' iw=0 | Set the properties of the LeaveDate field to only accept dates from \n                    
+  [34] m=3 type=short_answer img='uploads/cat_p1_n25/q5_2.png' iw=0 | Modify the frm5_2 form, based on the tblStudents table, to display as shown \n            
+  [35] m=2 type=database img='uploads/cat_p1_n25/q5_3.png' iw=0 | Create a query called qry5_3, based on the tblStudents table, to display as \n            
+  [36] m=3 type=database img='' iw=0 | Open the qry5_4 query based on the tblStudents table in Design View. \n  \n               
+  [37] m=5 type=database img='' iw=0 | Open the qry5_5 query based on the tblStudents table in Design View. \n  \n               
+  [38] m=5 type=calculation img='' iw=0 | Open the qry5_6 query based on the tblStudents table in Design View. \n  \n               
+  [39] m=6 type=database img='' iw=0 | Open the rpt5_7 report based on the tblStudents table in Design View and do \n            
+  [40] m=0 type=html_web img='uploads/cat_p1_n25/q6_1.png' iw=0 | Open the incomplete 6_1Home file in a web browser and also in a text/HTML editor (NOT a wo
+  [41] m=1 type=short_answer img='' iw=0 | Insert the text 'TechnoGeek' to appear in the web browser tab.
+  [42] m=1 type=short_answer img='' iw=0 | Set the background colour of the web page to '#ADB9CA'.
+  [43] m=1 type=short_answer img='' iw=0 | Format the main heading 'TechnoGeek' and the image to appear \n                       hori
+  [44] m=1 type=short_answer img='' iw=0 | The text 'Icons' should display if the 6_1Head image is not visible.
+  [45] m=2 type=html_web img='' iw=0 | Modify the HTML code to display the horizontal line as shown in the \n                    
+  [46] m=3 type=short_answer img='' iw=0 | Insert a hyperlink on the text 'www.technogeek.org' at the end of the \n                  
+  [47] m=5 type=html_web img='uploads/cat_p1_n25/q6_2.png' iw=0 | Open the incomplete 6_2Popular file in a web browser and also in a text/HTML editor (NOT a
+  [48] m=5 type=spreadsheet img='' iw=0 | Prepare a mail merge document as follows: \n  \n • Link the 7Letter document with the 7New
+  [49] m=5 type=calculation img='uploads/cat_p1_n25/q7_2.png' iw=0 | TechnoGeek's head office wants to calculate the total income percentage in cell C5 per cou
+  [50] m=5 type=html_web img='uploads/cat_p1_n25/q7_3.png' iw=0 | Students who completed a course will collect their certificates in an allocated time slot 

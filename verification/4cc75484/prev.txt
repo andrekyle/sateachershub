@@ -1,0 +1,660 @@
+﻿
+
+CAT P1 May-June 2023 
+
+CAT P1 May-June 2023
+
+Print / Save as PDF 
+
+Edit 
+
+Close 
+
+Past Paper Template
+
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+
+COMPUTER APPLICATIONS TECHNOLOGY P1
+
+JUNE 2023
+
+MARKS: 180
+
+TIME: 3 Hours
+
+This question paper consists of 3 pages.
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+2 
+DBE/June 2023 
+
+INSTRUCTIONS AND INFORMATION
+
+Owing to the nature of this practical examination, it is important to note that, even if you complete the examination early, you will NOT be permitted to leave the examination room until all the administrative tasks associated with the examination have been finalised. During the examination, the standard examination rules regarding leaving the examination room apply. 
+
+If you are working on the network, or the data files have been preloaded on your system, you must follow the instructions provided by the invigilator/teacher. 
+
+At the end of the examination, you must make sure that ALL your answer files are saved on the network/computer as explained to you by the invigilator/teacher. 
+
+Make absolutely sure that all files can be read. Do NOT save unnecessary files/folders and do NOT hand in duplicate answer files/folders. Do NOT delete any original files that you did not work on. 
+
+The information sheet that has been provided with the question paper MUST BE COMPLETED AFTER THE THREE-HOUR EXAMINATION SESSION. Hand it to the invigilator at the end of the examination. 
+
+A copy of the master files will be available from the invigilator. Should there be any problems with a file, you may request another copy from the invigilator. 
+
+This question paper consists of SEVEN questions. Answer ALL the questions. 
+
+Read through each question before answering or solving the problem. Do NOT do more than is required by the question. 
+
+Ensure that you save each document using the file name given in the question paper. Save your work regularly as a precaution against possible power failures. 
+
+You may NOT use any resource material. 
+
+Accuracy will be taken into account. 
+
+Ensure that the regional settings are set to South Africa and date and time settings, number settings and currency settings are correctly set. 
+
+In all questions involving word processing, you should set the language to English (South Africa). The paper size is assumed to be A4 Portrait, unless instructed otherwise. Use centimetres as the unit of measurement. 
+
+Ensure that the Developer tab and Ruler are activated. 
+
+Ensure that the decimal symbol is set as a full stop ( . ) and the list separator is set as a comma ( , ). 
+
+Formulae and/or functions must be used for ALL calculations in questions involving spreadsheets. Use absolute cell references only where necessary to ensure that formulae are correct when you copy them to other cells in a spreadsheet. 
+
+NOTE: All formulae and/or functions should be inserted in such a manner that the correct results will still be obtained even if changes are made to the existing data.
+
+You may NOT use a word processing program such as Word to answer the HTML question. 
+
+Borders around images or screenshots in this question paper are intended for clarity. Do NOT insert borders unless you are instructed to do so. 
+
+Copyright reserved Please turn over 
+
+Computer Applications Technology/P1 
+3 
+DBE/June 2023 
+
+Use the correct settings or features in an application as required by a question. 
+
+The data files that you need to complete this question paper have been provided to you on the disk/CD/DVD/flash disk or on the disk space allocated to you. 
+
+Do the following:
+
+Verify the contents of the folder by opening one or more files. 
+
+Rename the folder with your examination number. 
+
+The list of files in the folder will be available on the next page.
+
+Copyright reserved Please turn over 
+
+Computer Applications Technology/P1 
+4 
+DBE/June 2023 
+
+SECTION A
+
+QUESTION 1: PRACTICAL
+
+1.1
+
+Make the following changes in the header: Remove the double strikethrough from the text CAPE TOWN, SOUTH AFRICA . Change the position of the header to 1 cm from the top of the first page. 
+
+(2)
+
+1.2
+
+Set the hyphenation so that words in capital letters are NOT hyphenated. 
+
+(1)
+
+1.3
+
+Insert a custom mark footnote on the word Reasons , found in the main heading, to display as: 
+
+(3)
+
+1.4
+
+Find the text that starts with The Cape Peninsula … and ends with … 5 reasons why. and modify it to display as shown below. NOTE: The spacing between the columns is 1 cm. 
+
+(3)
+
+1.5
+
+Find the text Question/Vraag 1.5 and replace this text with a citation referencing the source Matthew Sterne. Do NOT display the year. 
+
+(2)
+
+1.6
+
+Find the comment and reply to the comment with the text sometimes . 
+
+(1)
+
+1.7
+
+Edit the watermark as follows: Change the font type to Arial Narrow. Format the shape of the WordArt to an Arch Down (Curve) shape. 
+
+(2)
+
+1.8
+
+Find the text below the heading Funicular Tickets that starts with Description and ends with R35 . Change the layout of this text to appear as shown below. 
+
+(4)
+
+1.9
+
+Apply a 3 pt page border to the document and set the top margin to appear (3) 12 pt from the text. Save and close the 1CapePoint word processing document. 
+
+(3)
+
+[21]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+5 
+DBE/June 2023 
+
+QUESTION 2: PRACTICAL
+
+2.1
+
+Add the text Mountain as the subject to the file properties of the document. 
+
+(1)
+
+2.2
+
+Replace the picture on the cover page with the 2Table picture. Apply any half reflection effect to this picture. 
+
+(2)
+
+2.3
+
+Insert automatic page numbers to display as shown below. NOTE: Page numbers should NOT appear in Section 1. 
+
+(3)
+
+2.4
+
+Insert a Table of Contents using the Distinctive format below the heading Question/Vraag 2.4 to appear as follows: NOTE: Ignore the format of the page numbering if it is different. 
+
+(4)
+
+2.5
+
+Find the text Question/Vraag 2.5 below the heading Table Mountain and replace this text with a cross-reference to the bookmark cableway . Display the page number only. 
+
+(2)
+
+2.6
+
+Find the heading Hiking and the text below it that ends with … with a group. . Apply paragraph formatting to this heading and the text so that it will always remain together. 
+
+(1)
+
+2.7
+
+Find the numbered list below the heading Facts . In the Multilevel list dialog, a style TableList appears below the option List Styles. In the TableList style, change the number style of the second level to a Webdings bullet symbol: (character code: 77). HINT: Hover over the list below the List Styles option to view the names of the styles. 
+
+(3)
+
+2.8
+
+Find the picture below the heading Access and make the following changes: Format the Picture Layout to that of the Bending Picture Blocks SmartArt graphic. Insert the text View in the shape that is part of the SmartArt graphic. Format the size of the SmartArt graphic to exactly 7 cm high and 10 cm wide. 
+
+(3)
+
+2.9
+
+Find the text box above the map that contains the subheading Table Mountain National Park Map . Adjust the text and the text box so that it appears on the map image as follows: (2) Save and close the 2Mountain word processing document. 
+
+(2)
+
+2.10
+
+Locate the 2Dates zipped file and do the following: Extract the 2Dates file by using the password: #d/m (3) Sort the table according to the dates on which the places were opened, starting with the most recent opening date. Save and close the 2Dates word processing document. 
+
+(3)
+
+[24]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+6 
+DBE/June 2023 
+
+QUESTION 3: PRACTICAL
+
+3.1
+
+(1) Delete Sheet3 from the workbook. Work in the Participants worksheet. 
+
+(1)
+
+3.2
+
+Set the print area to cells A12:E62. 
+
+(1)
+
+3.3
+
+Add the text Marathon Logo as the Alt Text of the image in cell A3. 
+
+(1)
+
+3.4
+
+Insert a function in cell F5 to determine the average qualifying time. 
+
+(1)
+
+3.5
+
+The distance of the race is stored in cell F3. For every complete 5 km from the starting point of the race, a medical station will be placed on the route. The start and finish points will also have a medical station. Insert a formula in cell F8 to calculate how many stations will be placed on the route. 
+
+(4)
+
+3.6
+
+Each of the 50 athletes will receive a special entry number. Generate an entry number in cell B20 for the athlete, Kuda, as follows: A number between 1 and 50; followed by The first two letters of the athlete s name; followed by The registration number of the athlete 
+
+(6)
+
+3.7
+
+During the race, athletes will wear wristbands in different colours according to their age group. Insert a VLOOKUP function in cell J17 to display the colour of the wristband that Lucky will wear. Use the data in the Band worksheet. (4) Copy the function down to the rest of the cells in column J. Save and close the 3Marathon spreadsheet. 
+
+(4)
+
+[18]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+7 
+DBE/June 2023 
+
+QUESTION 4: PRACTICAL
+
+4.1
+
+Change cells A2:M2 and its contents to display as follows: 
+
+(3)
+
+4.2
+
+Insert a function in cell C4 to determine how many of the places do NOT allow pets. 
+
+(1)
+
+4.3
+
+Distance from the airport to a place of accommodation is displayed as follows: The six shortest distances: Short Distances between the six shortest distances and 100 km: Medium Distances greater than 100 km: Long Insert a nested IF function in cell F10 to display the distance for the Boutique Hotel and Guest House. 
+
+(7)
+
+4.4
+
+Use an AND function in cell G10 to return TRUE if the price per room is less than R1 000 and the place has a pool. 
+
+(2)
+
+4.5
+
+During the off-peak season, places of accommodation give a 12.5% discount on the price per room. Insert a formula in cell M13 to calculate the price of accommodation during the off-peak season, after the discount has been given. (3) Format the amount to display in the same format as the rest of the values in the column. Work in the Q4_6 worksheet that contains the number of reviews for each of the accommodation types. 
+
+(3)
+
+4.6
+
+Create a column chart using the data series A1:B6 to display the total number of reviews for each of the accommodation types as follows: Total Reviews Totale Resensies 90000 75000 60000 45000 30000 15000 Hotels Villa Apartments Guest House Bed & Breakfast (6) NOTE: The Hotels bar has a Paper bag texture fill. Save and close the 4Accommodation spreadsheet. 
+
+(22)
+
+[38]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+8 
+DBE/June 2023 
+
+QUESTION 5: PRACTICAL
+
+5.1
+
+Modify the properties of the IDNo field as follows: Set an appropriate field size. Set the field properties so that records are uniquely identified. 
+
+(2)
+
+5.1.1
+
+Add Safari as a value list option to the Experience field. Change the lookup properties so that tourists can choose more than one option as an experience type. 
+
+(2)
+
+5.1.2
+
+Change the properties of the Date field to only accept dates from the beginning of July 2023 to the end of August 2024. Display an appropriate message if the date entered is incorrect. 
+
+(4)
+
+5.1.3
+
+Change the Picture field as follows: Set an appropriate data type so that a tourist can upload their ID photo. Move the field to appear below the IDNo field. Change the properties so that the heading IDPhoto will display in Datasheet View, instead of the heading Picture . (3) NOTE: Do not rename the Picture field. Switch to Datasheet View. 
+
+(3)
+
+5.1.4
+
+(2) Change the colour of the gridlines to black AND set the option to display only the horizontal gridlines. Save and close the tbl5_1 table. 
+
+(2)
+
+5.2
+
+Open the frm5_2 form, based on the tblActivities table, in Design View, and modify the form as follows: Change the Display when property of the image so that the image will only display on the screen. Apply conditional formatting to the Duration field to compare records in a yellow bar colour. Display the bar only. Save and close the frm5_2 form. (4 ) 
+
+(1)
+
+5.3
+
+Open the qry5_3 query, based on the tblActivities table, in Design View. Display all the tours where morning activities include game drives with transport OR shark cage diving. Save and close the qry5_3 query. 
+
+(4)
+
+5.4
+
+Create a query named qry5_4 based on the tblActivities table as follows: Experience CountOfTourName Adventure 14 Biking 11 Culture 4 Hiking 1 Safari 6 Total 36 NOTE: The records in the Experience field The last row total is calculated in Datasheet View Save and close the qry5_4 query. 
+
+(5)
+
+5.5
+
+Open the qry5_5 query, based on the tblActivities table, in Design View. Insert a calculated field Hours to determine how many hours each tour will take, based on the Duration field. Display only the tours that will take a day or longer. HINT: Refer to field descriptions in the Design View of the table. Save and close the qry5_5 query. 
+
+(4)
+
+5.6
+
+Open the report called rpt5_6 based on the tblActivities table. Modify the report as shown below. NOTE: Grouping does not split over pages. (5) Ignore any textbox borders. Save and close the rpt5_6 report. Save and close the 5Tours database. 
+
+(5)
+
+[32]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+9 
+DBE/June 2023 
+
+QUESTION 6: PRACTICAL
+
+6.1
+
+Open the incomplete 6_1Interactive file in a web browser and also in a text/HTML editor (NOT a word processing program such as Word). Your final web page should look like the example below. NOTE: Use the example on the previous page as a guide when answering this question. Question numbers appear as comments in the coding to indicate where you should insert the answer(s). Do NOT delete these comments. 
+
+6.1.1
+
+Insert your examination number between the center tags to display in bold text. NOTE: The number on the screenshot is only an example. 
+
+(1)
+
+6.1.2
+
+Insert HTML code so that the image appears next to the text Find your Freedom! as displayed in the screenshot. 
+
+(1)
+
+6.1.3
+
+Modify the horizontal line to display across 80% of the web page. (1 ) 
+
+(1)
+
+6.1.4
+
+Modify the code so that the text colour above the table appears the same as in the table. 
+
+(1)
+
+6.1.5
+
+Insert the 6_1Urban image to match the other images as shown in the screenshot. 
+
+(2)
+
+6.1.6
+
+Modify the code so that the words discovering flowers will display on the next line, with no open line between the text. 
+
+(1)
+
+6.1.7
+
+Edit the numbered list in the second column to appear the same as the other two lists found in the last row of the table. 
+
+(1)
+
+6.1.8
+
+(1) Modify the code so that the link will direct the user to the web address given in the data. Save and close the 6_1Interactive file. 
+
+(1)
+
+6.2
+
+Open the incomplete 6_2Big6 file in a web browser and also in a text/HTML editor (NOT a word processing program such as Word). Modify the HTML code so that your final web page displays like the example below. (5) NOTE: The size of the spacing between the cells is 50. Save and close the 6_2Big6 file. ONE mark will be allocated for closing tags and correct nesting in both the web pages. 
+
+(5)
+
+[14]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+10 
+DBE/June 2023 
+
+QUESTION 7: PRACTICAL
+
+7.1
+
+Open the 7CapeTown word processing document. 
+
+7.1.1
+
+Change the inside borders of the table to any blue colour. 
+
+(1)
+
+7.1.2
+
+Modify the heading row of the table to appear as shown below. 
+
+(1)
+
+7.1.3
+
+A tourist receives points that can be used as discount on future travels. Insert a formula to calculate the points for Allan Nel as follows: Determine the total visits from 2020 to 2023, then Display 1 000 if the total visits are more than 5, otherwise (5) Display 500 Save and close the 7CapeTown word processing document. 
+
+(5)
+
+7.2
+
+Open the 7Tourists spreadsheet. Work in the List worksheet. 
+
+7.2.1
+
+Do the following: Apply a spreadsheet feature to column A to arrange the text into columns. (3) Find and replace all occurrences of the word Maybe with the word No in a red font. Work in the Details worksheet. 
+
+(3)
+
+7.2.2
+
+Every year tourists receive a message, one month before their birthday, about a special voucher that they can use when they book a trip. (5) Use a combination of functions in cell D2 to determine the date in the current year on which Adriaan Barnard received/will receive a message. The current year must be entered as a function. Save and close the 7Tourists spreadsheet. [15] TOTAL: 150 HTML TAG SHEET Basic Tags Formatting Tags continued Tag Description Tag Description Defines the body of the web Inserted before each list item, page and adds a number or symbol body Sets the background colour of depending on the type of list bgcolor= pink the web page selected Sets the colour of the body text Adds an image Contains information about the img src= name Aligns an image: can be web page align= left right , bottom , top Creates an HTML document – img Aligns an image in the starts and ends a web page src= name center , can also be middle img src= name Sets the size of the border Defines a title for the web page border= 1 around an image Inserts a line break img src= name Sets the height and width of an Comment width= 200 height = 200 image Text Tags Displays alternative text when Tag Description img src= name the mouse hovers over the alt= alternative text image or when the image is Creates the largest heading not found Creates the smallest heading Inserts a horizontal line Creates bold text Sets size (height) of a line Creates italic text Sets the width of a line, in Creates underlined text percentage or absolute value Sets size of font, from 1 to 7 Sets font colour Sets the colour of the line font face= Times New Table Tags Sets font type Roman Tag Description Links Tags Creates a table Tag Description Creates a row in a table Creates a hyperlink Creates a cell in a table img Creates an image link src= name Creates a table header (a cell Creates a target location in the with bold, centred text) document Links to a target location created somewhere else in the Sets the width of the table document a href= Sets the width of the border Links to an e-mail address mailto:#NAME around the table cells Sets the space between the Formatting Tags table cells Sets the space between a cell Tag Description border and its contents Creates a new paragraph Sets the alignment for cell(s) Aligns a paragraph to the left ( left , can also be center or (default), can also be right or right ) center Centres a paragraph, image or section Sets the vertical alignment for Creates a numbered list cell(s) ( top , can also be middle or bottom ) ol type= A , a , Defines the type of numbering I , i , 1 used Sets the number of columns a Creates a bulleted list cell should span ul type= disc , Sets the number of rows a cell Defines the type of bullets used square , circle should span INPUT MASK CHARACTER SHEET CHARACTER DESCRIPTION 0 Digit (0 to 9, entry required, plus [+] and minus [–] signs not allowed) Digit or space (entry not required, plus [+] and minus [–] signs not allowed) Digit or space (entry not required; spaces are displayed as blanks while # in Edit mode, but blanks are removed when data is saved; plus [+] a 
+
+(5)
+
+[15]
+
+TOTAL SECTION A: [162]
+
+GRAND TOTAL: 180
+
+Copyright reserved 
+
+Computer Applications Technology/P1 
+11 
+DBE/June 2023 
+
+Computer Applications Technology 
+DBE/May/June 2025 
+
+SC/NSC Confidential
+
+Examination sticker
+
+172
+
+COMPUTER APPLICATIONS TECHNOLOGY P1 – MAY/JUNE 2025
+
+INFORMATION SHEET (to be completed by the candidate AFTER the 3-hour session) 
+
+CENTRE NUMBER 
+
+EXAMINATION NUMBER 
+
+WORK STATION NUMBER 
+
+SUITE USED (Mark appropriate box with a cross (X)) 
+
+Microsoft Office 2016
+
+Microsoft Office 2019
+
+Microsoft Office 2021
+
+Office 365
+
+WEB BROWSER USED (Mark appropriate box with a cross (X)) 
+
+Mozilla Firefox
+
+Google Chrome
+
+Internet Explorer
+
+Microsoft Edge
+
+Other (Specify)
+
+FOLDER NAME 
+
+Candidate must enter the file name(s) used for each answer. Tick if saved and/or attempted.
+
+Question
+Number
+
+File name
+
+Saved
+(✓)
+
+Attempted
+(✓)
+
+Maximum
+Mark
+
+Mark
+Achieved
+
+Marker
+Initial/
+Code
+
+1
+
+1eSports
+
+27
+
+2
+
+2Stats
+
+24
+
+3
+
+3Rank
+
+18
+
+4
+
+4Shop
+
+38
+
+5
+
+5Games
+
+35
+
+6
+
+6_1Tournament
+
+15
+
+6_2Entry
+
+7
+
+7Report
+
+15
+
+7Staff
+
+7Export
+
+7Results
+
+TOTAL
+
+172
+
+Comment: (for office/marker use only) 
+
+Copyright reserved
+
+Copyright reserved

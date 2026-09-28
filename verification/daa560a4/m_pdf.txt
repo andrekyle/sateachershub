@@ -1,0 +1,670 @@
+
+
+===== PDF PAGE 1 =====
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+COMPUTER APPLICATIONS TECHNOLOGY P2
+2021
+MARKING GUIDELINES
+MARKS: 150
+These marking guidelines consist of 20 pages.
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 2 =====
+Computer Applications Technology/P2 2 DBE/2021
+SC/NSC – Marking Guidelines
+SUGGESTIONS AND RECOMMENDATIONS TO MARKERS
+ Revisit the questions and the marking guidelines frequently during the marking
+session.
+ It is advisable to read (and re-read) the question frequently together with the
+candidate's response to check that they correlate, so that you are not misled by the
+candidate's statements/answers.
+ Be careful not to focus on keywords or general statements, but rather read the entire
+answer. If in doubt, read the entire answer and then the question and the answer in
+the marking guideline.
+o Ask yourself or your senior marker if the response could 'fit' into the marking
+guideline before allocating the correct marks to the candidate.
+o Accept correct answers that are expressed differently, e.g. the marking guideline
+states 'slow' and the learner responds with 'not fast'.
+ Beware of overlapping answers to a specific question. In general, ONE mark is
+awarded per fact.
+ Do not choose answers on the candidate's behalf. Where a question requires a
+candidate to LIST, NAME or STATE: mark the first number of instances required, e.g.
+the first TWO facts if the candidate presents a list of FIVE facts and only TWO facts
+were required, even if presented in paragraph format.
+ Questions requiring longer answers must be regarded as a single unit. Marks can be
+awarded if correct statements are found anywhere in the paragraph.
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 3 =====
+Computer Applications Technology/P2 3 DBE/2021
+SC/NSC – Marking Guidelines
+SECTION A
+QUESTION 1: MULTIPLE-CHOICE QUESTION 2: MATCHING ITEMS
+1.1 B  1 2.1 P  1
+1.2 C  1 2.2 O  1
+1.3 D
+
+1 2.3 H  1
+1.4 C  1 2.4 K  1
+1.5 C
+
+1 2.5 M  1
+1.6 A  1 2.6 A  1
+1.7 D  1 2.7 D  1
+1.8 B
+
+1 2.8 C  1
+1.9 A  1 2.9 E  1
+1.10 B
+
+1 2.10 F  1
+Total: [10] Total: [10]
+QUESTION 3: TRUE/FALSE ITEMS
+(Note to marker: In Question, 3.3, and 3.5 candidates need to provide both the word 'False' and
+the correct term, e.g. False - motherboard, in order to get the mark.)
+3.1 True  1
+3.2 True  1
+3.3 False, size/type/extension  1
+3.4 True  1
+3.5 False, Antivirus/Anti-malware  1
+[5]
+TOTAL SECTION A: 25
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 4 =====
+Computer Applications Technology/P2 4 DBE/2021
+SC/NSC – Marking Guidelines
+SECTION B
+QUESTION 4: SYSTEMS TECHNOLOGIES
+4.1.1 Choice:
+HDD  1
+4.1.2 Reason:
+(1) Improves performance/speed
+(2) More RAM will enable working with many programs/data files opened
+at the same time without slowing the computer down, etc.
+ (Any one) 1
+4.1.3 Choice:
+Windows 10 Professional Edition  1
+4.1.4 Reason for choosing an operating system
+(1) Business users will require latest features/security offered by Windows
+10
+(2) Windows 7 is not supported by Microsoft anymore
+(3) Windows 10 is currently preloaded
+ (Any one) 1 4
+4.2 TWO reasons for an entry level CPU
+(1) An entry level CPU has enough processing power for a computer
+used in a SOHO  
+(2) It would be an unnecessary expense to get a more powerful CPU that
+is used to capacity  2
+4.3 Software/Hardware used to prevent unauthorised network access
+Firewall/Router  1
+4.4.1 TWO problems that occur when the hard disk drive is full
+(1) (Getting prompts that) there is no space left/Cannot save anything
+(2) Thrashing/System is slow
+(3) System sometimes freezes/crashes
+(4) Programs do not open
+ (Any two) 2
+4.4.2 A system utility used to remove unwanted files
+Disk Cleanup/CCleaner, etc. (Accept any other valid response) 1 4
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 5 =====
+Computer Applications Technology/P2 5 DBE/2021
+SC/NSC – Marking Guidelines
+4.4.3 ONE way to free up space on the HDD
+(1) Compress (Zip/Archive) files/folders/drive (Do not accept any
+reference to removing files or defragging)
+(2) Disable hibernation/Disable System Restore (on Windows 10)/
+Change the settings of the virtual memory (Windows 7)
+ (Any one) 1
+4.5 TWO ways to solve the problem of a PC that will not boot
+(1) Re-seat all cards/modules on the motherboard
+(2) Boot up/Repair/Update/Reinstall the system from an external device,
+e.g. drive, USB stick or optical drive, etc.
+(3) Check for and replace faulty hardware
+ (Any two) 2
+4.6 Disadvantage of convergence
+(1) Functionality of many devices is lost if the device fails
+(2) Difficult to upgrade only one part of the device
+ (Any one) 1
+4.7 TWO reasons to use note-taking software
+(1) Enables rapid capturing of ideas from a variety of inputs, e.g. video,
+audio, handwriting, etc.
+(2) Access on the go/Synchronises notes between devices
+(3) Realtime collaboration
+(4) Can synchronise notes and a sound recording
+(5) Handwriting recognition can convert 'handwritten' notes into typed text
+(when a stylus/finger is used on a touchscreen)
+(6) Enables effective searches for items in notes, i.e. text in diagrams
+ (Any two) 2
+4.8 TWO functions of a web browser other than viewing web pages
+(1) Provides a facility to download files/content
+(2) Manages plug-ins/extensions
+(3) Stores the link/URL to recently visited web pages
+(4) Can store favourites/bookmarks/history
+(5) Provides a pop-up blocker
+(6) Enables caching
+(7) Has a feature to block websites
+(8) Manages data usage
+(9) Manages proxy settings
+(10) Acts as a file explorer/opens different types of files/documents
+(11) Enables video streaming
+(12) Allows SaaS (software as a service)
+ (Any two) 2
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 6 =====
+Computer Applications Technology/P2 6 DBE/2021
+SC/NSC – Marking Guidelines
+4.9.1 TWO challenges when updating software
+(1) May consume too much data
+(2) Automatic updates could slow down the computer/reduced
+performance
+(3) Features could be removed
+(4) Could be time consuming
+(5) Updates could be interrupted/corrupted
+(6) Cannot use software/applications while updating
+Accept:
+Bugs/Security loopholes could be introduced to software/Software
+could become unstable
+ (Any two) 2
+4.9.2 ONE way to ensure computer does not update while it is in use
+Set a suitable time for updates  /Use Task Scheduler 1 3
+4.10 Reason for not successfully saving with Send to and solution
+Reason:
+This action will only create a shortcut, and not save the actual file to
+desktop 
+Solution:
+(1) Copy and paste to the desktop
+(2) Open the document and save it to the desktop ('File Save As')
+(3) Click and drag to the Desktop if already saved elsewhere
+(Any one) 2
+4.11 TWO solutions for voice recognition software not understanding
+(1) Change/Replace/Check the microphone
+(2) Adjust the gain on the microphone
+(3) Reduce background noise
+(4) Try to speak clearer/slower
+(5) Spend time training the voice recognition software
+(6) Update the driver/reset the hardware
+ (Any two) 2
+[25]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 7 =====
+Computer Applications Technology/P2 7 DBE/2021
+SC/NSC – Marking Guidelines
+QUESTION 5: INTERNET AND NETWORK TECHNOLOGIES
+5.1 TWO advantages of grid computing
+(1) Ability to use many combined resources
+(2) The use of a combination of resources saves time and money
+(Do NOT accept 'saves time/money' only – must be qualified)
+(3) Solves complex problems that need a huge amount of processing
+power
+(4) If one computer fails, the task can be taken over by another
+computer
+ (Any two) 2
+5.2.1 Identify devices in a network
+A – Switch/Router/Hub 
+B – (Print/NAS) Server  (Accept main computer)
+C – Router/Modem/Gateway  3
+5.2.2 Type of network for D
+LAN/HAN  (Accept client-server network) 1 4
+5.3 TWO reasons to turn off Bluetooth if connectivity is not required
+(1) May interfere with other wireless signals
+(2) Avoid being tracked
+(3) Reduces the possibility of hacking attacks/more secure
+(4) Prevent auto-connect (to other paired devices)
+(5) Saves battery power
+ (Any two) 2
+5.4 TWO changes to make a password more secure
+(1) Include at least one special character (Accept an example of a
+special character)
+(2) Include at least one upper case character
+(3) Change the repeating characters
+ (Any two) 2
+5.5 Reason for an OTP sent to your smartphone
+(1) To continue using the service/To ensure only the authorised/allowed
+user is using the account
+(2) Extra layer of security that will prevent use of the service if login
+details are stolen
+(3) 2-step/factor authentication
+ (Any one) 1
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 8 =====
+Computer Applications Technology/P2 8 DBE/2021
+SC/NSC – Marking Guidelines
+5.6 Reason for using Bcc feature in e-mails
+To hide the addresses of some other recipients/To hide the fact that the
+e-mail was sent to more recipients  1
+5.7 Communication medium used for undersea cables
+(Optical) fibre /Fibre (optic) 1
+5.8 TWO disadvantages of FTP technology
+(1) More complex/Transfer process may be more complicated than
+using drag-and-drop methods
+(2) Modern web browsers are dropping support for FTP
+(3) In some cases, one has to resort to specialised software
+(4) FTP lacks security/can be vulnerable to hacking
+(5) Interruptions and restarting may slow down the process
+ (Any two) 2
+[15]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 9 =====
+Computer Applications Technology/P2 9 DBE/2021
+SC/NSC – Marking Guidelines
+QUESTION 6: INFORMATION MANAGEMENT
+6.1 TWO ways to detect plagiarism in a learner's PAT
+(1) Search for specific sentences from the PAT on the internet to check
+for the original source/Check internet search history
+(2) Investigate if no references were given
+(3) Look for words or phrases that seem beyond the ability of the
+learner/Americanisms/Some sentences do not seem to fit with the
+style of the writing
+(4) Compare work from different learners for similarities
+(5) Check learner's previous files/folder activity or phases to verify
+authentic work
+(6) Use online plagiarism software (Accept valid plagiarism detection
+services, e.g. Turnitin, SafeAssign, etc.)
+ (Any two) 2
+6.2 TWO ways that make a chart/graph easier to interpret
+(1) Add a chart title/heading
+(2) Use legends
+(3) Use axes/series labels
+(4) Use gridlines
+(5) Add data labels
+(6) Add colours
+(7) Use trend lines
+(8) Select appropriate chart type
+ (Any two) 2
+6.3.1 TWO advantages of using drop-down form fields in an electronic
+questionnaire
+(1) User is restricted to options given
+(2) Easier to process the data from the responses
+(3) Reduce spelling errors
+(4) Quicker to answer the questionnaire than typing answers
+(5) Save space on the questionnaire
+ (Any two) 2
+6.3.2 Option that should be removed from the drop-down box and
+reason why
+Longer than five days 
+Motivation
+Partial overlap with 'Three days or more'  2 4
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 10 =====
+Computer Applications Technology/P2 10 DBE/2021
+SC/NSC – Marking Guidelines
+6.4 TWO ways to ensure logical grouping and flow of information in a
+formal report
+(1) Use (numbered) headings/subheadings to group related information
+in paragraphs
+(2) Use a Table of Contents as an overview of the document structure
+(3) Note the order of precedence, e.g. never start with a conclusion
+ahead of findings, with findings ahead of project background, etc.
+(4) Remain consistent, e.g. each finding should be linked to the
+evidence in the same order
+ (Any two) 2
+[10]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 11 =====
+Computer Applications Technology/P2 11 DBE/2021
+SC/NSC – Marking Guidelines
+QUESTION 7: SOCIAL IMPLICATIONS
+7.1 Definition of social engineering
+The act of misleading/manipulating people  to obtain confidential
+information  for fraudulent purposes 2
+7.2 TWO negative implications for a company of employees using
+work computers for private tasks
+(1) Less time for work purposes/Waste of time/Lower productivity
+(2) Possible loss of revenue/profits for the employer
+(3) Risk of malware infecting computers
+(4) Employer may be liable for crimes committed from the workplace
+(5) Data costs for the employer may rise
+(6) Company information may be hacked
+(7) Reputational risk to the company
+ (Any two) 2
+7.3 ONE software technology used with cameras to identify criminals
+(1) Artificial Intelligence (AI) to enhance quality of images
+(2) Push technology to alert user when movement is sensed by the
+camera/to identify the size of moving object or suspicious
+movement
+(3) Facial recognition/thermal imaging
+(4) Number plate/license plate recognition
+(Any one) 1
+7.4 TWO strategies to discourage cyberbullying
+(1) Report the offender
+(2) Block the offender from contacting them
+(3) Do not respond to taunts/messages from the bully
+(4) Avoid/Be selective in your use of social media/Do not initiate a
+discussion that could lead to cyberbullying of anyone
+(5) Do not make controversial posts that may open you up to
+harassment
+ (Any two) 2
+7.5 ONE reason for unknowingly trusting a program containing a
+Trojan
+Program containing a Trojan pretends to be a useful program  1
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 12 =====
+Computer Applications Technology/P2 12 DBE/2021
+SC/NSC – Marking Guidelines
+7.6.1 Term to describe furniture design in a working environment
+Ergonomics  1
+7.6.2 Health benefit of the advertised chair
+(1) Provides back support to prevent backache
+(2) Allows the user to sit comfortably for longer periods/improves
+productivity
+(3) Adjustable height
+(4) Head rest for neck support
+(Any one) 1 2
+[10]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 13 =====
+Computer Applications Technology/P2 13 DBE/2021
+SC/NSC – Marking Guidelines
+QUESTION 8: SOLUTION DEVELOPMENT
+8.1 TWO methods to set the indents in a word processing document
+(1) Use the ruler
+(2) Use the paragraph dialog box/Indentation option in paragraph dialog
+box
+(3) Use a tab dialog box
+(4) Use a style
+(5) Use the Increase Indent/Decrease Indent button on the ribbon
+ (Any two) 2
+8.2 ONE example of formatting restriction in an electronic form
+(1) Prevent formatting changes (Read-Only)
+(2) Force all changes to be tracked
+(3) Allow comments only
+(4) Allow only the filling in of the form
+(5) Limit formatting to a selection of styles
+(Any one) 1
+8.3 Reason why an existing file does not show in the file list/dialog
+(1) 'All files' option is not selected from the list of extensions in the
+Open dialogThe file has a hidden attribute set
+(2) Wrong application/folder/drive is used when trying to find the file
+(Any one) 1
+8.4 Purpose of a small square in the bottom right corner of cell C1
+To perform an Auto Fill/copy function  by dragging or double-clicking 1
+8.5 Reason for absolute cell reference in VLOOKUP table range
+So that if the VLOOKUP function is copied and pasted the range being
+checked will not change /So that it can copy down correctly 1
+8.6 Processing that was done to the original data
+(1) Sorting according to Department first 
+(2) Then sorted by Number_in_Stock 
+(Note to marker: Allocate only one mark if reference has been made to
+sorting but is not specified) 2
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 14 =====
+Computer Applications Technology/P2 14 DBE/2021
+SC/NSC – Marking Guidelines
+8.7.1 Reason why a merge field cannot be inserted
+(1) The data source (Recipients) is not linked/connected/created/
+selected
+(2) Incorrect data source
+ (Any one) 1
+8.7.2 Reason why some expected records do not display in Mail Merge
+(1) Errors in creating the filter or recipient list
+(2) Some data is missing from the data source
+ (Any one) 1 2
+8.8.1 Objects on which database queries can be based
+(1) Tables
+(2) Queries
+ (Any one) 1
+8.8.2 How to view the name of the object on which a query is based
+Open the query in Design View and view the name of the object in the
+Table row  /The name of the object will appear above the field list in
+Design view 1 2
+8.9 Diagram of table in HTML
+DESCRIPTION
+Item 2 Item 1
+Mark distribution:
+(1) Correct diagram of a table structure: 2 rows x 2 columns, 1st row
+merged 
+(2) Correct labels 
+(3) Correct order: Description, Item 2, Item 1  3
+[15]
+TOTAL SECTION B: 75
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 15 =====
+Computer Applications Technology/P2 15 DBE/2021
+SC/NSC – Marking Guidelines
+SECTION C: INTEGRATED SCENARIO
+QUESTION 9
+9.1 TWO reasons for using ICTs to record/manage health screening data
+(1) Capture data more efficiently/Devices can record data/Reduce
+queues when capturing data
+(2) Easier to share data
+(3) Easier to see patterns
+(4) Processing/Analysing the data is easier
+(5) Green computing, saves paper
+(6) Less handling of paper to reduce the spread of the virus/ ICTs can
+be easily sanitised
+ (Any two) 2
+9.2.1 TWO reasons for a tablet over a laptop for health screening
+(1) Tablet is smaller, which makes it more portable and easier to handle
+while moving around
+(2) Tablets generally have a longer battery life
+(3) Input can be faster with a touch screen
+(4) Graphical input, e.g. barcodes, QR codes
+(5) Tablets are easier to sanitise
+(6) Low-end tablets will generally be cheaper than laptops, in this
+context
+ (Any two) 2
+9.2.2 TWO specifications when buying a tablet
+(1) Wi-Fi/Cellular/Bluetooth connectivity
+(2) Front and rear facing cameras
+(3) Expandable storage/Size of internal storage
+(4) Battery life
+(5) (Screen) size/resolution
+(6) RAM
+(7) CPU
+(8) Software version/Current operating system
+ (Any two) 2 4
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 16 =====
+Computer Applications Technology/P2 16 DBE/2021
+SC/NSC – Marking Guidelines
+9.3.1 ONE way for the tablet to communicate with the server
+(1) Can be connected via Wi-Fi/Wi-Fi access point
+(2) Use a USB cable to connect the tablet directly to the server
+ (Any one) 1
+9.3.2 TWO ways to solve the problem of the tablet not connecting
+(1) Install an access point closer to the where the tablet is used
+(2) Restart network devices
+(3) Move the tablet to a better line of sight to the access point
+(4) Install range extender/repeater/boost signal strength
+(5) Set tablet to Wi-Fi Always On/connect automatically/by default
+ (Any two) 2 3
+9.4.1 Spreadsheet feature to remove unnecessary spaces in the headings
+Find and Replace  1
+9.4.2 Spreadsheet feature to automatically highlight a value
+Conditional formatting  1
+9.4.3 Spreadsheet function to determine number of learners with a cough
+COUNTIF  1 3
+9.5.1 THREE improvements that could be made to Date of birth field
+(1) Change Data Type to Date/Time
+(2) Set Format to Short/Long date
+(3) Show Date Picker
+(4) Add a validation rule to limit input to relevant dates
+(5) Use an input mask to ensure correct format
+ (Any three) 3
+9.5.2 Reason for filling in Description options in database table
+Enables understanding the data required for the records in the
+database  /Maintenance purposes 1 4
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 17 =====
+Computer Applications Technology/P2 17 DBE/2021
+SC/NSC – Marking Guidelines
+9.6 TWO reasons to make a cloud backup of data
+(1) Data can be accessed from any device with access to the internet
+anywhere in the world
+(2) Backup is at a remote location (Accept any reference to the
+reasons for offsite backup,e.g. theft, fire, virus, etc.)
+(3) More secure than removable drives/No physical damage
+(Do NOT accept: Free up space on the hard drive)
+ (Any two) 2
+9.7 TWO ways for school to share health information electronically
+(1) Attached the data to an e-mail/WhatsApp/SMS/MMS/Fax
+(2) Provide access/send a link to the data in a folder on a shared drive
+(3) Provide the District Office with an electronic storage medium that
+contains the data
+(4) Upload data to a central database (via an app)
+ (Any two) 2
+9.8.1 Service that makes sharing of long web addresses easier
+URL shortener  e.g. Bitly, TinyURL, etc. (Accept any other valid
+response) 1
+9.8.2 TWO ways in which fake information is made to seem believable
+(1) Experts are incorrectly cited or referenced
+(2) Pretends to be from a reliable author
+(3) Information presented in a professional/technical format that seems
+to be reliable
+(4) Sometimes shared by people you normally trust on social media
+(5) 'Made up' statistics made to seem believable
+ (Any two) 2
+9.8.3 TWO ways to avoid being fooled by fake information
+(1) Check information accuracy against other sources
+(2) Check the credibility of the author
+(3) Look for bias
+(4) Use checking services such as Snopes
+(5) Check the spelling and grammar
+ (Any two) 2 5
+[25]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 18 =====
+Computer Applications Technology/P2 18 DBE/2021
+SC/NSC – Marking Guidelines
+QUESTION 10
+10.1.1 Definition of m-learning
+Education and training delivered over the internet 
+using mobile devices such as tablets/laptops/smartphones 
+that can be accessed anywhere/anytime/at home  3
+10.1.2 TWO kinds of e-learning resources
+(1) Online lessons/virtual meetings/streaming of lessons/webinars, etc.
+(2) (Educational) videos/images
+(3) E-books/electronic notes, etc.
+(4) Online quizzes and tests
+(5) Simulation apps
+(6) Podcasts/audio files/pre-recorded lessons
+(7) Tutoring apps
+(Note to marker:
+Do NOT accept examples such as: Zoom, Google Classroom, etc.)
+ (Any two) 2
+10.1.3 TWO examples of virtual reality (VR) enhancing learning
+(1) Go on virtual 3D educational tours
+(2) Simulate science experiments, etc.
+(3) Can develop skills through simulations, e.g. flight simulator
+ (Any two) 2
+10.1.4 TWO word processing features for feedback
+(1) Comments
+(2) Track changes
+(3) Highlights/Different font colours to indicate issues
+(4) Hyperlinks/Embed links
+ (Any two) 2 9
+10.2 Term for concept of lack of access to ICTs
+Digital divide  1
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 19 =====
+Computer Applications Technology/P2 19 DBE/2021
+SC/NSC – Marking Guidelines
+10.3.1 TWO advantages of using the ISP for the website
+(1) No need for extra local storage space/server
+(2) Maintenance of hardware/software is outsourced
+(3) Reduced downtime
+(4) Separate internal and external networks
+(5) School does not need to have a server with a fixed IP address
+(6) Easily scalable
+ (Any two) 2
+10.3.2 TWO reasons for image not displaying in a browser
+(1) Picture resource is not available/deleted
+(2) Picture is in another folder
+(3) Browser security may be blocking the picture
+(4) Browser settings do not show pictures to limit data usage
+(5) Browser does not recognise the file type associated with the image
+(Note to marker: Do not accept any reference to HTML code or misspelt
+file extension.)
+ (Any two) 2
+10.3.3 Reason why website displays differently on smartphone screens
+Layout of the webpage may not have been designed for a smartphone/
+smaller screen  1 5
+10.4.1 Reason for having broadband connection for e-learning
+(1) High speed access to the internet
+(2) Always on
+(3) Large volumes of data
+ (Any one) 1
+10.4.2 Advantage of unshaped line for e-learning
+No other services will be given preference over downloading learning
+material. /Line speed will not be negatively affected 1
+10.4.3 A way to avoid information overload
+(1) Give priority to certain tasks
+(2) Take regular breaks from your devices/Do not check your
+smartphone all the time
+(3) Organise school work according to subject
+(4) Limit the number of links followed
+ (Any one) 1 3
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 20 =====
+Computer Applications Technology/P2 20 DBE/2021
+SC/NSC – Marking Guidelines
+10.5 TWO criteria to determine if devices are usable for learning
+(1) Devices are in good working order
+(2) Devices are not too old/Compatible with current software/Compatible
+with school programs
+(3) Have enough storage space for necessary software
+(4) All the connected hardware is included, e.g. mouse, keyboard,
+charger, etc.
+(5) OS/Application software is licenced
+ (Any two) 2
+10.6 TWO technologies used to control stock
+(1) RFID tags
+(2) Barcodes
+(3) Scanners to read tags/barcodes
+(4) Database (of stock items)
+ (Any two) 2
+10.7.1 ONE reason why a database is more suitable than a spreadsheet
+(1) Ease of capturing through forms
+(2) Queries based on criteria
+(3) Easy to do reports
+(4) Use of functions/calculations in a summary/report
+(5) Data does not require extensive 'number-crunching'/calculations
+ (Any one) 1
+10.7.2 ONE way to transfer graph data from database to spreadsheet
+without retyping
+Import the data from a database/Export the data to a spreadsheet  /
+Copy and paste the data to a spreadsheet 1
+10.7.3 ONE way to ensure that graph updates in word processor if
+spreadsheet data changes
+Link the graph/Select update 1 3
+[25]
+TOTAL SECTION C: 50
+GRAND TOTAL: 150
+Copyright reserved *

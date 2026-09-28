@@ -1,0 +1,1039 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>{% block title %}{{ global_settings.store_name }} - {{ global_settings.store_tagline }}{% endblock %}</title>
+    {# Serve favicon through dedicated route with cache busting #}
+    {% set cache_bust = now.timestamp() | int %}
+    <link rel="icon" type="image/x-icon" href="{{ url_for('serve_favicon') }}?v={{ cache_bust }}">
+    <link rel="shortcut icon" type="image/x-icon" href="{{ url_for('serve_favicon') }}?v={{ cache_bust }}">
+    <link rel="apple-touch-icon" href="{{ url_for('serve_favicon') }}?v={{ cache_bust }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/tailwind.css') }}?v=4">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    {% block head %}{% endblock %}
+    <script>
+        // Simple favicon refresh - no aggressive cache busting to avoid long URLs
+        function refreshFavicon() {
+            const timestamp = Math.floor(Date.now() / 60000); // Update every minute instead of every millisecond
+            const existingLinks = document.querySelectorAll('link[rel*="icon"]');
+            existingLinks.forEach(link => {
+                const url = new URL(link.href);
+                url.searchParams.set('v', timestamp);
+                link.href = url.toString();
+            });
+        }
+        
+        // Only refresh on page load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', refreshFavicon);
+        } else {
+            refreshFavicon();
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700&display=swap');
+        
+        /* Azure Design System Colors */
+        :root {
+            --azure-blue: #0078D4;
+            --azure-blue-dark: #005A9E;
+            --azure-blue-light: #50E6FF;
+            --azure-teal: #008272;
+            --azure-purple: #5C2D91;
+            --azure-grey: #F3F2F1;
+            --azure-grey-dark: #E1DFDD;
+            --white: #FFFFFF;
+            --black: #000000;
+            --gray-50: #FAFAFA;
+            --gray-100: #F8F8F8;
+            --gray-200: #F3F2F1;
+            --gray-300: #EDEBE9;
+            --gray-400: #D2D0CE;
+            --gray-500: #A19F9D;
+            --gray-600: #8A8886;
+            --gray-700: #605E5C;
+            --gray-800: #323130;
+            --gray-900: #201F1E;
+            --success-green: #107C10;
+            --warning-yellow: #F7B500;
+            --error-red: #D13438;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Always reserve space for the vertical scrollbar so navigating
+           between short and tall pages does not shift content sideways
+           (the visible "jump" between tabs). */
+        html {
+            scrollbar-gutter: stable;
+        }
+
+        body {
+            font-family: 'Roboto', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-weight: 300;
+            color: var(--gray-900);
+            line-height: 1.5;
+            background-color: var(--gray-100);
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 300;
+            letter-spacing: -0.02em;
+            color: var(--gray-900);
+        }
+        
+        .font-light {
+            font-weight: 300;
+        }
+        
+        .font-normal {
+            font-weight: 400;
+        }
+        
+        .font-medium {
+            font-weight: 500;
+        }
+        
+        .font-semibold {
+            font-weight: 600;
+        }
+        
+        /* Azure Card Style */
+        .azure-card {
+            background: white;
+            border-radius: 4px;
+            border: 1px solid var(--gray-300);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            align-self: stretch;
+        }
+        
+        /* Azure Buttons */
+        .btn-azure-primary {
+            background: var(--azure-blue);
+            color: white;
+            border: none;
+            border-radius: 2px;
+            transition: all 0.1s ease;
+            font-weight: 400;
+            font-size: 0.875rem;
+            padding: 0.5rem 1.25rem;
+            cursor: pointer;
+        }
+        
+        .btn-azure-primary:hover {
+            background: var(--azure-blue-dark);
+        }
+        
+        .btn-azure-secondary {
+            background: white;
+            color: var(--gray-800);
+            border: 1px solid var(--gray-400);
+            border-radius: 2px;
+            transition: all 0.1s ease;
+            font-weight: 400;
+            font-size: 0.875rem;
+            padding: 0.5rem 1.25rem;
+            cursor: pointer;
+        }
+        
+        .btn-azure-secondary:hover {
+            background: var(--gray-100);
+            border-color: var(--gray-500);
+        }
+        
+        .btn-azure-success {
+            background: var(--success-green);
+            color: white;
+            border: none;
+            border-radius: 2px;
+            transition: all 0.1s ease;
+            font-weight: 400;
+            font-size: 0.875rem;
+            padding: 0.5rem 1.25rem;
+            cursor: pointer;
+        }
+        
+        .btn-azure-success:hover {
+            background: #0E6B0E;
+        }
+        
+        /* Azure Navigation */
+        .azure-navbar {
+            background-color: white;
+            border-bottom: 1px solid var(--gray-300);
+            box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+        }
+        
+        /* Azure Input Fields */
+        .azure-input {
+            border: 1px solid var(--gray-400);
+            border-radius: 2px;
+            padding: 0.5rem 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 300;
+            transition: all 0.1s ease;
+            background: white;
+        }
+        
+        .azure-input:focus {
+            outline: none;
+            border-color: var(--azure-blue);
+            box-shadow: 0 0 0 1px var(--azure-blue);
+        }
+        
+        /* Azure Badge */
+        .azure-badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 0.125rem 0.5rem;
+            font-size: 0.75rem;
+            font-weight: 400;
+            border-radius: 2px;
+        }
+        
+        /* Color Utilities */
+        .text-azure {
+            color: var(--azure-blue);
+        }
+        
+        .bg-azure {
+            background-color: var(--azure-blue);
+        }
+        
+        .border-azure {
+            border-color: var(--azure-blue);
+        }
+        
+        .bg-azure-grey {
+            background-color: var(--gray-100);
+        }
+        
+        .input-field {
+            border: 1px solid var(--gray-400);
+            border-radius: 0.25rem;
+            padding-left: 5px;
+            transition: all 0.2s;
+            font-weight: 300;
+        }
+        
+        .input-field:focus {
+            outline: none;
+            border-color: var(--oxford-blue);
+            box-shadow: 0 0 0 1px var(--oxford-blue);
+        }
+        
+        .top-bar {
+            background: var(--gray-100);
+            border-bottom: 1px solid var(--gray-200);
+            font-size: 0.8125rem;
+        }
+        
+        .footer-link {
+            font-weight: 300;
+            font-size: 0.875rem;
+        }
+        
+        /* Cart Side Panel */
+        .cart-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .cart-panel.active {
+            right: 0;
+        }
+        
+        .cart-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+            z-index: 999;
+        }
+        
+        .cart-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Notification Panel */
+        .notification-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 400px;
+            height: 100vh;
+            background: white;
+            box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+            transition: right 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .notification-panel.active {
+            right: 0;
+        }
+        
+        /* Flash Message Styles */
+        .flash-message {
+            max-width: 380px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 4px;
+            border: 1px solid var(--gray-300);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-top-color: #f8f8f8;
+            border-right-color: #f8f8f8;
+            border-bottom-color: #f8f8f8;
+            backdrop-filter: blur(10px);
+        }
+        
+        .flash-success {
+            border-left: 3px solid var(--azure-blue);
+        }
+        
+        .flash-danger {
+            border-left: 3px solid var(--error-red);
+        }
+        
+        .flash-info {
+            border-left: 3px solid var(--azure-blue);
+        }
+        
+        .flash-warning {
+            border-left: 3px solid var(--warning-yellow);
+        }
+        
+        .flash-icon-success {
+            color: var(--azure-blue);
+        }
+        
+        .flash-icon-danger {
+            color: var(--error-red);
+        }
+        
+        .flash-icon-info {
+            color: var(--azure-blue);
+        }
+        
+        .flash-icon-warning {
+            color: var(--warning-yellow);
+        }
+        
+        .flash-text {
+            color: var(--gray-800);
+        }
+        
+        .flash-close {
+            color: var(--gray-500);
+        }
+        
+        /* App Store Buttons - ABSOLUTE SIZING ENFORCEMENT */
+        .app-store-btn {
+            display: inline-block !important;
+            background: transparent;
+            padding: 0 !important;
+            margin: 0 !important;
+            border: none;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-radius: 4px;
+            width: 135px !important;
+            height: 40px !important;
+            overflow: hidden;
+            box-sizing: border-box !important;
+            vertical-align: top !important;
+        }
+        
+        .app-store-btn:hover {
+            transform: translateY(-1px);
+            opacity: 0.9;
+            text-decoration: none;
+        }
+        
+        .app-store-btn img {
+            display: block !important;
+            transition: all 0.2s ease;
+            width: 135px !important;
+            height: 40px !important;
+            object-fit: fill !important;
+            max-width: 135px !important;
+            max-height: 40px !important;
+            min-width: 135px !important;
+            min-height: 40px !important;
+            flex-shrink: 0 !important;
+            flex-grow: 0 !important;
+            margin: 0 !important;
+            padding: 0 !important;
+            border: none !important;
+            outline: none !important;
+            box-sizing: border-box !important;
+            vertical-align: top !important;
+        }
+        
+        /* NUCLEAR OPTION - Force exact dimensions for every possible selector */
+        .google-play-btn,
+        .app-store-btn-apple,
+        .galaxy-store-btn {
+            width: 135px !important;
+            height: 40px !important;
+            display: inline-block !important;
+        }
+        
+        .google-play-btn img,
+        .app-store-btn-apple img,
+        .galaxy-store-btn img {
+            width: 135px !important;
+            height: 40px !important;
+            object-fit: fill !important;
+            display: block !important;
+        }
+        
+        /* App Store Button Styles - Commented out since mobile apps section is hidden */
+        /*
+        /* Target specific image files */
+        img[src*="Google_Play_Store_badge_EN.svg"],
+        img[src*="appleSVG.svg"],
+        img[src*="20200225-GalaxyStore_English.png"] {
+            width: 135px !important;
+            height: 40px !important;
+            object-fit: fill !important;
+            max-width: 135px !important;
+            max-height: 40px !important;
+            min-width: 135px !important;
+            min-height: 40px !important;
+        }
+        */
+        
+        @media (max-width: 768px) {
+            /* App Store Button Mobile Styles - Commented out since mobile apps section is hidden */
+            /*
+            .app-store-btn {
+                width: 120px !important;
+                height: 36px !important;
+            }
+            
+            .app-store-btn img {
+                width: 120px !important;
+                height: 36px !important;
+                max-width: 120px !important;
+                max-height: 36px !important;
+                min-width: 120px !important;
+                min-height: 36px !important;
+            }
+            
+            .google-play-btn,
+            .app-store-btn-apple,
+            .galaxy-store-btn {
+                width: 120px !important;
+                height: 36px !important;
+            }
+            
+            .google-play-btn img,
+            .app-store-btn-apple img,
+            .galaxy-store-btn img {
+                width: 120px !important;
+                height: 36px !important;
+                object-fit: fill !important;
+            }
+            
+            img[src*="Google_Play_Store_badge_EN.svg"],
+            img[src*="appleSVG.svg"],
+            img[src*="20200225-GalaxyStore_English.png"] {
+                width: 120px !important;
+                height: 36px !important;
+                object-fit: fill !important;
+                max-width: 120px !important;
+                max-height: 36px !important;
+                min-width: 120px !important;
+                min-height: 36px !important;
+            }
+            */
+        }
+        
+        /* Banner Section Styles */
+        .banner-section {
+            margin-bottom: 30px; /* Ensure minimum 30px margin above footer */
+        }
+        
+        .banner-section img {
+            max-height: 200px; /* Limit banner height on larger screens */
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        /* Responsive banner heights */
+        @media (min-width: 768px) {
+            .banner-section img {
+                max-height: 250px;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .banner-section img {
+                max-height: 300px;
+            }
+        }
+        
+        /* Banner hover effects */
+        .banner-section .relative:hover img {
+            transform: scale(1.02);
+        }
+        
+        .banner-section .relative {
+            overflow: hidden;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Cart Overlay -->
+    <div class="cart-overlay" id="cartOverlay" onclick="closeAllPanels()"></div>
+    
+    <!-- Cart Side Panel -->
+    <div class="cart-panel" id="cartPanel">
+        <div class="flex flex-col h-full">
+            <!-- Header -->
+            <div class="flex items-center justify-between p-5 border-b border-gray-200">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-check-circle text-green-500 text-xl"></i>
+                    <h3 class="text-base font-normal text-black">Added to Cart</h3>
+                </div>
+                <button onclick="closeCartPanel()" class="text-gray-400 hover:text-black transition">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Product Info -->
+            <div class="flex-1 overflow-y-auto p-5">
+                <div id="cartPanelContent" class="space-y-4">
+                    <!-- Product will be inserted here -->
+                </div>
+            </div>
+            
+            <!-- Footer Actions -->
+            <div class="p-5 border-t border-gray-300 space-y-3">
+                <a href="{{ url_for('cart') }}" class="btn-azure-primary block text-center">
+                    View Cart
+                </a>
+                <button onclick="closeCartPanel()" class="btn-azure-secondary w-full">
+                    Continue Shopping
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Notification Panel (for removal confirmation) -->
+    <div class="notification-panel" id="notificationPanel">
+        <div class="flex flex-col h-full">
+            <!-- Header -->
+            <div class="flex items-center justify-between p-5 border-b border-gray-200">
+                <div class="flex items-center space-x-2">
+                    <i class="fas fa-trash-alt text-red-500 text-xl" id="notificationIcon"></i>
+                    <h3 class="text-base font-normal text-black" id="notificationTitle">Item Removed</h3>
+                </div>
+                <button onclick="closeNotificationPanel()" class="text-gray-400 hover:text-black transition">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            
+            <!-- Content -->
+            <div class="flex-1 overflow-y-auto p-5">
+                <div id="notificationContent" class="space-y-4">
+                    <!-- Content will be inserted here -->
+                </div>
+            </div>
+            
+            <!-- Footer Actions -->
+            <div class="p-5 border-t border-gray-300" id="notificationFooter">
+                <button onclick="closeNotificationPanel()" class="btn-azure-primary w-full">
+                    Close
+                </button>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function addToCart(productId, productName, productPrice, productImage, productCategory) {
+            // Send AJAX request
+            fetch(`/add-to-cart/${productId}`, {
+                method: 'GET',
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Add to cart response:', data); // Debug logging
+                if (data.success) {
+                    // Update cart count in navbar (update all badges in case there are multiple)
+                    const cartBadges = document.querySelectorAll('.cart-count');
+                    console.log('Found cart badges:', cartBadges.length); // Debug logging
+                    cartBadges.forEach(badge => {
+                        console.log('Updating badge to:', data.cart_count); // Debug logging
+                        badge.textContent = data.cart_count;
+                        if (data.cart_count > 0) {
+                            badge.classList.remove('hidden');
+                        } else {
+                            badge.classList.add('hidden');
+                        }
+                    });
+                    
+                    // Open cart panel with product info
+                    openCartPanel({
+                        name: productName,
+                        price: productPrice,
+                        image: productImage,
+                        category: productCategory
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error adding to cart:', error);
+                alert('Failed to add product to cart. Please try again.');
+            });
+        }
+        
+        function openCartPanel(product) {
+            const panel = document.getElementById('cartPanel');
+            const overlay = document.getElementById('cartOverlay');
+            const content = document.getElementById('cartPanelContent');
+            
+            // Build product HTML
+            content.innerHTML = `
+                <div class="flex gap-4 p-4 bg-gray-50 rounded">
+                    <div class="w-24 h-24 rounded overflow-hidden bg-white flex-shrink-0">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-light text-sm text-black mb-1">${product.name}</h4>
+                        <p class="text-gray-500 text-xs font-light mb-2">${product.category}</p>
+                        <p class="text-lg font-light text-black">R${product.price}</p>
+                    </div>
+                </div>
+            `;
+            
+            panel.classList.add('active');
+            overlay.classList.add('active');
+        }
+        
+        function closeCartPanel() {
+            const panel = document.getElementById('cartPanel');
+            const overlay = document.getElementById('cartOverlay');
+            
+            panel.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+        
+        function closeAllPanels() {
+            closeCartPanel();
+            closeNotificationPanel();
+        }
+        
+        function showNotification(title, message, iconClass = 'fa-check-circle', iconColor = 'text-green-500') {
+            const panel = document.getElementById('notificationPanel');
+            const overlay = document.getElementById('cartOverlay');
+            const titleEl = document.getElementById('notificationTitle');
+            const iconEl = document.getElementById('notificationIcon');
+            const content = document.getElementById('notificationContent');
+            const footer = document.getElementById('notificationFooter');
+            
+            // Update notification content
+            titleEl.textContent = title;
+            iconEl.className = `fas ${iconClass} ${iconColor} text-xl`;
+            content.innerHTML = `
+                <div class="p-4 bg-gray-50 rounded">
+                    <p class="text-sm font-light text-black">${message}</p>
+                </div>
+            `;
+            
+            // Reset footer to default close button
+            footer.innerHTML = `
+                <button onclick="closeNotificationPanel()" class="btn-azure-primary w-full">
+                    Close
+                </button>
+            `;
+            
+            // Close cart panel if open
+            closeCartPanel();
+            
+            // Show notification panel
+            panel.classList.add('active');
+            overlay.classList.add('active');
+            
+            // Auto-close after 3 seconds
+            setTimeout(() => {
+                closeNotificationPanel();
+            }, 3000);
+        }
+        
+        function closeNotificationPanel() {
+            const panel = document.getElementById('notificationPanel');
+            const overlay = document.getElementById('cartOverlay');
+            
+            panel.classList.remove('active');
+            overlay.classList.remove('active');
+        }
+    </script>
+    
+    <!-- Top Bar - Azure Blue Style -->
+    <div style="background-color: #2ecc71;">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-1 text-white">
+                <div class="flex items-center space-x-4 text-xs font-light">
+                    <span><i class="fas fa-truck mr-1 text-white"></i>Free Delivery on orders over R500</span>
+                    <span class="hidden md:inline"><i class="fas fa-shield-alt mr-1 text-white"></i>Secure Shopping</span>
+                </div>
+                <div class="flex items-center space-x-4 text-xs">
+                    <a href="#" class="text-white hover:text-gray-200 transition font-light">Help</a>
+                    <a href="{{ url_for('track_order') }}" class="text-white hover:text-gray-200 transition font-light">Track Order</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Navigation - Azure Style -->
+    <nav class="azure-navbar sticky top-0 z-50">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center h-10">
+                <div class="flex items-center space-x-8">
+                    <a href="{{ url_for('index') }}" class="hover:opacity-80 transition">
+                        {% if global_settings.store_logo_url.startswith('http') %}
+                            <img src="{{ global_settings.store_logo_url }}?v={{ range(1, 10000) | random }}" alt="{{ global_settings.store_name }}" class="h-6">
+                        {% else %}
+                            <img src="{{ url_for('static', filename=global_settings.store_logo_url) }}?v={{ range(1, 10000) | random }}" alt="{{ global_settings.store_name }}" class="h-6">
+                        {% endif %}
+                    </a>
+                    <div class="hidden md:flex space-x-6">
+                        <a href="{{ url_for('index') }}" class="text-black hover:text-azure transition font-light text-sm">Home</a>
+                        <a href="{{ url_for('products') }}" class="text-black hover:text-azure transition font-light text-sm">Products</a>
+                        <a href="#" class="text-black hover:text-azure transition font-light text-sm">Deals</a>
+                        <a href="{{ url_for('vendor_signup') }}" class="text-black hover:text-azure transition font-light text-sm">Sell with Us</a>
+                        <a href="{{ url_for('driver_signup') }}" class="text-black hover:text-azure transition font-light text-sm">Drive with Us</a>
+                        {% if current_user.is_authenticated and current_user.is_admin %}
+                        <a href="{{ url_for('admin_dashboard') }}" class="text-black hover:text-azure transition font-light text-sm">Admin</a>
+                        {% endif %}
+                    </div>
+                </div>
+                
+                <div class="flex items-center space-x-6">
+                    <!-- Search Bar - Azure Style -->
+                    {% if global_settings.show_search_bar %}
+                    <div class="hidden lg:block">
+                        <form method="GET" action="{{ url_for('search') }}" class="relative">
+                            <input type="text" name="q" placeholder="Search products, pages..." 
+                                   class="azure-input w-80 px-4 py-2 text-sm font-light pr-10"
+                                   value="{{ request.args.get('q', '') }}">
+                            <button type="submit" class="absolute right-3 top-3 text-gray-500 hover:text-azure transition-colors">
+                                <i class="fas fa-search"></i>
+                            </button>
+                        </form>
+                    </div>
+                    {% endif %}
+                    
+                    <a href="{{ url_for('cart') }}" class="relative text-gray-600 hover:text-azure transition flex items-center justify-center w-7 h-7">
+                        <i class="fas fa-shopping-cart" style="font-size: 13px; opacity: 0.9;"></i>
+                        <span class="cart-count absolute -top-1.5 -right-1.5 bg-azure text-white text-xs rounded-full h-5 w-5 flex items-center justify-center font-normal {% if not cart_count or cart_count == 0 %}hidden{% endif %}" style="font-size: 0.65rem; box-shadow: 0 2px 4px rgba(0,120,212,0.3);">
+                            {{ cart_count if cart_count else 0 }}
+                        </span>
+                    </a>
+                    
+                    {% if current_user.is_authenticated %}
+                    <div class="relative group">
+                        <button class="flex items-center space-x-2 text-gray-600 hover:text-azure transition">
+                            <div class="flex items-center justify-center w-7 h-7">
+                                <i class="fas fa-user" style="font-size: 13px; opacity: 0.9;"></i>
+                            </div>
+                            <span class="hidden md:inline font-light text-sm">{{ current_user.username }}</span>
+                            <i class="fas fa-chevron-down text-xs ml-1"></i>
+                        </button>
+                        <div class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all" style="border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);">
+                            <div class="py-2">
+                                <a href="{{ url_for('my_orders') }}" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 font-light transition">
+                                    <i class="fas fa-box mr-2" style="font-size: 13px; opacity: 0.9;"></i>
+                                    <span>My Orders</span>
+                                </a>
+                                <!-- Check if user is an approved vendor -->
+                                {% set user_vendor = current_user.email | get_approved_vendor %}
+                                {% if user_vendor %}
+                                <a href="{{ url_for('vendor_dashboard') }}" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 font-light transition">
+                                    <i class="fas fa-store mr-2" style="font-size: 13px; opacity: 0.9;"></i>
+                                    <span>Vendor Dashboard</span>
+                                </a>
+                                {% endif %}
+                                <a href="{{ url_for('logout') }}" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-50 font-light transition">
+                                    <i class="fas fa-sign-out-alt mr-2" style="font-size: 13px; opacity: 0.9;"></i>
+                                    <span>Logout</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    {% else %}
+                    <a href="{{ url_for('login') }}" class="text-black hover:text-azure transition font-light text-sm">Login</a>
+                    <a href="{{ url_for('register') }}" class="btn-azure-primary">Sign Up</a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Flash Messages -->
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+            {% for category, message in messages %}
+            <div id="flash-message-{{ loop.index }}" class="flash-message flash-{{ category }} fixed top-24 right-6 z-50 animate-slide-in">
+                <div class="p-3.5 flex items-start">
+                    <div class="flex-shrink-0 mr-3">
+                        {% if category == 'success' %}
+                        <i class="fas fa-check-circle text-base flash-icon-success"></i>
+                        {% elif category == 'danger' %}
+                        <i class="fas fa-times-circle text-base flash-icon-danger"></i>
+                        {% elif category == 'info' %}
+                        <i class="fas fa-info-circle text-base flash-icon-info"></i>
+                        {% else %}
+                        <i class="fas fa-exclamation-triangle text-base flash-icon-warning"></i>
+                        {% endif %}
+                    </div>
+                    <div class="flex-1">
+                        <p class="text-sm font-normal flash-text">{{ message }}</p>
+                    </div>
+                    <button onclick="dismissFlashMessage('flash-message-{{ loop.index }}')" class="flex-shrink-0 ml-2 hover:opacity-70 transition flash-close">
+                        <i class="fas fa-times text-xs"></i>
+                    </button>
+                </div>
+            </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+
+    <style>
+        @keyframes slideIn {
+            from {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(400px);
+                opacity: 0;
+            }
+        }
+        
+        .animate-slide-in {
+            animation: slideIn 0.3s ease-out forwards;
+        }
+        
+        .animate-slide-out {
+            animation: slideOut 0.3s ease-in forwards;
+        }
+    </style>
+
+    <script>
+        // Auto-dismiss flash messages after 4 seconds
+        document.addEventListener('DOMContentLoaded', function() {
+            const flashMessages = document.querySelectorAll('[id^="flash-message-"]');
+            flashMessages.forEach(function(message) {
+                setTimeout(function() {
+                    dismissFlashMessage(message.id);
+                }, 4000);
+            });
+        });
+        
+        function dismissFlashMessage(messageId) {
+            const message = document.getElementById(messageId);
+            if (message) {
+                message.classList.remove('animate-slide-in');
+                message.classList.add('animate-slide-out');
+                setTimeout(function() {
+                    message.remove();
+                }, 300);
+            }
+        }
+    </script>
+
+    <!-- Main Content -->
+    <main style="margin-top: 60px;">
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Banner Section - Above Footer (Home Page Only) -->
+    {% if global_settings.banner_enabled and request.endpoint == 'index' %}
+    <section class="banner-section mb-8" style="margin-top: 40px; margin-bottom: 30px;">
+        <div class="container mx-auto px-4">
+            {% if global_settings.banner_link_url %}
+            <a href="{{ global_settings.banner_link_url }}" 
+               {% if global_settings.banner_target_blank %}target="_blank" rel="noopener noreferrer"{% endif %}
+               class="block">
+            {% endif %}
+            
+            <div class="relative overflow-hidden rounded-lg shadow-lg group">
+                {% if global_settings.banner_image %}
+                    {% if global_settings.banner_image.startswith('data:') %}
+                        <img src="{{ global_settings.banner_image }}" 
+                             alt="Banner" 
+                             class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105">
+                    {% elif global_settings.banner_image.startswith('http') %}
+                        <img src="{{ global_settings.banner_image }}" 
+                             alt="Banner" 
+                             class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105">
+                    {% else %}
+                        <img src="{{ url_for('static', filename=global_settings.banner_image) }}" 
+                             alt="Banner" 
+                             class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105">
+                    {% endif %}
+                {% else %}
+                    <img src="{{ url_for('static', filename='images/banner.png') }}" 
+                         alt="Banner" 
+                         class="w-full h-auto object-cover transition-transform duration-300 group-hover:scale-105">
+                {% endif %}
+                
+                <!-- Content Overlay -->
+                {% if global_settings.banner_title or global_settings.banner_subtitle or global_settings.banner_button_text %}
+                <div class="absolute inset-0 bg-gradient-to-r from-black/40 via-black/20 to-black/40"></div>
+                <div class="absolute inset-0 flex items-center justify-center">
+                    <div class="text-center text-white px-4">
+                        {% if global_settings.banner_title %}
+                        <h2 class="text-2xl md:text-4xl font-bold mb-2 drop-shadow-lg">{{ global_settings.banner_title }}</h2>
+                        {% endif %}
+                        
+                        {% if global_settings.banner_subtitle %}
+                        <p class="text-lg md:text-xl mb-4 drop-shadow-lg">{{ global_settings.banner_subtitle }}</p>
+                        {% endif %}
+                        
+                        {% if global_settings.banner_button_text and global_settings.banner_button_url and not global_settings.banner_link_url %}
+                        <a href="{{ global_settings.banner_button_url }}" 
+                           class="inline-block bg-azure hover:bg-azure-dark text-white font-medium py-3 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 shadow-lg">
+                            {{ global_settings.banner_button_text }}
+                        </a>
+                        {% endif %}
+                    </div>
+                </div>
+                {% else %}
+                <!-- Subtle hover overlay when no content -->
+                <div class="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-black/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                {% endif %}
+            </div>
+            
+            {% if global_settings.banner_link_url %}
+            </a>
+            {% endif %}
+        </div>
+    </section>
+    {% endif %}
+
+    <!-- Footer -->
+    {% if global_settings.footer_enabled %}
+    <footer class="bg-white border-t border-gray-200">
+        <div class="container mx-auto px-4 py-12">
+            <!-- Three Column Layout (3 columns on mobile, 5 columns on desktop) -->
+            <div class="grid grid-cols-3 md:grid-cols-5 gap-6 md:gap-8">
+                <!-- Logo Column (spans 2 columns on desktop) -->
+                <div class="col-span-3 md:col-span-2">
+                    {% if global_settings.store_logo_url.startswith('http') %}
+                        <img src="{{ global_settings.store_logo_url }}?v={{ range(1, 10000) | random }}" alt="{{ global_settings.store_name }}" class="h-12 mb-3">
+                    {% else %}
+                        <img src="{{ url_for('static', filename=global_settings.store_logo_url) }}?v={{ range(1, 10000) | random }}" alt="{{ global_settings.store_name }}" class="h-12 mb-3">
+                    {% endif %}
+                    <p class="text-black text-sm font-light mb-6">{{ global_settings.store_tagline }}</p>
+                    
+                    <!-- Social Media Links -->
+                    <div class="mb-6">
+                        <h4 class="font-normal mb-3 text-sm" style="color: var(--gray-700);">Follow Us</h4>
+                        <div class="flex space-x-3">
+                            <a href="{{ global_settings.facebook_url if global_settings.facebook_url else '#' }}" target="_blank" rel="noopener noreferrer" class="transition duration-200 hover:opacity-70">
+                                <img src="{{ url_for('static', filename='images/facebook.svg') }}" alt="Facebook" class="w-6 h-6">
+                            </a>
+                            <a href="{{ global_settings.twitter_url if global_settings.twitter_url else '#' }}" target="_blank" rel="noopener noreferrer" class="transition duration-200 hover:opacity-70">
+                                <img src="{{ url_for('static', filename='images/twitter.svg') }}" alt="Twitter" class="w-6 h-6">
+                            </a>
+                            <a href="{{ global_settings.instagram_url if global_settings.instagram_url else '#' }}" target="_blank" rel="noopener noreferrer" class="transition duration-200 hover:opacity-70">
+                                <img src="{{ url_for('static', filename='images/Instagram_logo_2016.svg') }}" alt="Instagram" class="w-6 h-6">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Shop Column -->
+                <div>
+                    <h4 class="font-normal text-black mb-4 text-sm">Shop</h4>
+                    <ul class="space-y-1.5 md:space-y-2">
+                        <li><a href="{{ url_for('products') }}" class="footer-link text-black hover:text-azure transition">All Products</a></li>
+                        <li><a href="#" class="footer-link text-black hover:text-azure transition">Daily Deals</a></li>
+                        <li><a href="#" class="footer-link text-black hover:text-azure transition">New Arrivals</a></li>
+                        <li><a href="{{ url_for('cart') }}" class="footer-link text-black hover:text-azure transition">Shopping Cart</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Customer Care Column -->
+                <div>
+                    <h4 class="font-normal text-black mb-4 text-sm">Customer Care</h4>
+                    <ul class="space-y-1.5 md:space-y-2">
+                        <li><a href="#" class="footer-link text-black hover:text-azure transition">Help Centre</a></li>
+                        <li><a href="{{ url_for('track_order') }}" class="footer-link text-black hover:text-azure transition">Track Order</a></li>
+                        <li><a href="{{ url_for('returns_policy') }}" class="footer-link text-black hover:text-azure transition">Returns</a></li>
+                        <li><a href="{{ url_for('contact') }}" class="footer-link text-black hover:text-azure transition">Contact Us</a></li>
+                        <li><a href="mailto:hello@southafricanteachershub.co.za" class="footer-link text-black hover:text-azure transition">hello@southafricanteachershub.co.za</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Legal & About Column -->
+                <div>
+                    <h4 class="font-normal text-black mb-4 text-sm">Legal & About</h4>
+                    <ul class="space-y-1.5 md:space-y-2">
+                        <li><a href="{{ url_for('terms_and_conditions') }}" class="footer-link text-black hover:text-azure transition">Terms & Conditions</a></li>
+                        <li><a href="{{ url_for('privacy_policy') }}" class="footer-link text-black hover:text-azure transition">Privacy Policy</a></li>
+                        <li><a href="{{ url_for('shipping_policy') }}" class="footer-link text-black hover:text-azure transition">Shipping Policy</a></li>
+                        <li><a href="#" class="footer-link text-black hover:text-azure transition">About Us</a></li>
+                        
+                        <!-- Dynamic Footer Links -->
+                        {% for link in global_settings.footer_links_parsed %}
+                        <li><a href="{{ link.url }}" class="footer-link text-black hover:text-azure transition">{{ link.name }}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-200 mt-10 pt-8">
+                <div class="flex flex-col md:flex-row items-center space-y-4 md:space-y-0">
+                    <p class="text-gray-500 text-sm font-light">{{ global_settings.footer_text }}</p>
+                    <div class="flex items-center space-x-4 md:ml-auto md:mr-6">
+                        <img src="{{ url_for('static', filename='images/visa.svg') }}" alt="Visa" class="h-10">
+                        <img src="{{ url_for('static', filename='images/Mastercard-logo.svg') }}" alt="MasterCard" class="h-8">
+                        <span class="text-gray-400 text-xs font-light">Secure payments</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    {% endif %}
+</body>
+</html>

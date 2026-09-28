@@ -1,0 +1,215 @@
+splits=[0, 9, 20, 25, 31, 41, 48]
+subitems=[14, 15, 16, 17, 32, 33, 34, 35, 42, 43, 44, 45, 46, 50, 51, 52]
+n_items=53
+
+--- idx0 id=59e524c5-441f-4c60-8cbb-405f3499b318 marks=3 ---
+ANSWER:
+"Cover page 3\n• Cover page: Retrospect inserted  1\n• Document title: 'Popular Cars'  1\n• Subtitle control removed"
+
+--- idx1 id=15020803-6418-41c4-a867-48704d252342 marks=2 ---
+ANSWER:
+'Font formatting 2\n• Font Colour: white OR Fill Colour: No Fill OR 1\nTransparency: 100% \n• Text Effect: Tight Reflection: Touching  OR 1\nHalf Reflection: Touching'
+
+--- idx2 id=1f74eec6-1b31-4604-bc82-1b063272ab5e marks=2 ---
+ANSWER:
+'Image 2\n• 1Toyota image inserted  1\n• Picture style: Soft Edge Rectangle'
+
+--- idx3 id=7c55b5b6-57d5-4623-912a-207b79438def marks=3 ---
+ANSWER:
+"Find and replace: 'Hilux' 3\n• Character scale: 150%  1\n• Character spacing: Expanded 1 pt  1\n• 5 replacements"
+
+--- idx4 id=a47f18fc-5c2c-4be7-bee9-1c2a5b41cf9b marks=5 ---
+ANSWER:
+'Table formatting 5\n• Volkswagen data moved into table  1\n• Last row – first 2 cells: merged  1\n• Formula: =MIN(ABOVE)*100  1\n• AutoFit: Auto Fit to Contents  1\n• Table: Alignment: Centre  1\n\nALT+F9: { =MIN(ABOVE)*100 \\# "0.00%" }'
+
+--- idx5 id=6465e9ce-26dd-4f41-ae03-85a78c37d6de marks=2 ---
+ANSWER:
+'Caption 2\n• New label: Graph  1\n• Caption: Bestsellers  1\nALT+F9: Graph { SEQ Graph \\* ARABIC }'
+
+--- idx6 id=404507f8-9315-4e0e-8565-ccf77fbbbbe2 marks=4 ---
+ANSWER:
+'Drop Cap 4\n• Drop cap inserted on the letter D  1\n• Lines: 4  1\n• Highlight removed  1\n• Shading: Green'
+
+--- idx7 id=2430d2fb-9fa5-41fc-82b1-12ff5fed4e23 marks=1 ---
+ANSWER:
+'Paragraph settings 1\n• Pagination: Keep with next  1\nDBE Stamp\nEXAMINATION\nNUMBER'
+
+--- idx8 id=5abd750a-151b-4145-aa28-900fd896b209 marks=2 ---
+ANSWER:
+'Section break AND File path 2\n• File path inserted in header  1\n• Appears only on the last page  1\nALT+F9: { FILENAME \\p \\* MERGEFORMAT }\nTotal for QUESTION 1 [24]\nDBE Stamp\nEXAMINATION\nNUMBER\nCheck the accuracy and skill required before awarding a mark throughout.'
+
+--- idx9 id=c7be1122-6e42-4c5d-87d6-b76e020ef36f marks=1 ---
+ANSWER:
+'Margins 1\n• Layout: Margins: Narrow'
+
+--- idx10 id=0f57521c-2696-45ed-8760-234ed1533ce2 marks=3 ---
+ANSWER:
+'Page border 3\n• Width: 3 pt  1\n• Left and right side only  1\n• Page border on first page only'
+
+--- idx11 id=95f70912-6138-4c89-a7f5-eae24dfd9f3c marks=3 ---
+ANSWER:
+'Hyperlink AND bookmark 3\n• Bookmark \'Contact\' created at the text \'Contact form\'  1\n• Hyperlink created on text \'choosing\'  1\n• Hyperlink links to bookmark \'Contact\'  1\nALT+F9: { HYPERLINK \\l "Contact" }'
+
+--- idx12 id=2cf9bb60-02ea-48f7-b958-7448a645b996 marks=2 ---
+ANSWER:
+'Bulleted list 2\n• Changed first four numbered paragraphs to bulleted list 1 ✓\n• Symbol: [[CAR]] Font: Webdings: Character code: 142 1 ✓'
+
+--- idx13 id=f6ef7908-b81b-44d0-ac09-4b5f3826e32e marks=0 ---
+ANSWER:
+''
+
+--- idx14 id=0de714a0-8800-461e-ad77-d531829a0cfa marks=1 ---
+ANSWER:
+'Tab stops: Form field: Surname 1\n• Left tab stop OR Hanging indent: 7cm'
+
+--- idx15 id=a6c598c3-ee98-421d-8078-2d636ca23f57 marks=1 ---
+ANSWER:
+'Form field: Name 1\n• Text format: Uppercase'
+
+--- idx16 id=c192fb09-7650-4b95-b8cb-81fb8c4463e7 marks=1 ---
+ANSWER:
+'Form field: Contact number 1\n• Maximum length: 10'
+
+--- idx17 id=5fad7dee-743a-4004-bd9c-cb461012663b marks=2 ---
+ANSWER:
+'Form field: Preferred time to call 2\n• Type: Date  1\n• Text format: h:mm am/pm  OR h:mm:ss am/pm'
+
+--- idx18 id=27a77e91-b629-4093-a7d5-2c92115bf92b marks=3 ---
+ANSWER:
+"Shape 3\n• Left arrow shape inserted  1\n• Text: 'Choose'  (appears as in screenshot) 1\n• No fill colour/white fill colour"
+
+--- idx19 id=34f5000c-6fc0-4545-87ae-63b42d37644c marks=4 ---
+ANSWER:
+'SmartArt 4\n• Shape added: Negotiate  (between Insurance & Finance) 1\n• Layout changed: Continuous block process  1\n• 3-D style: Cartoon  1\n• Right to Left selected  1\nTotal for QUESTION 2 [21]\nDBE Stamp\nEXAMINATION\nNUMBER'
+
+--- idx20 id=f07fd9d6-80ca-469c-a959-56b783a8f59b marks=3 ---
+ANSWER:
+'Row 1: 3\n• A1:J1: merged and centred  1\n• Horizontal alignment: Distribute (Indent)  1\n• Indent: 13'
+
+--- idx21 id=467026f1-8a22-4b5d-923b-f17259ef79fa marks=2 ---
+ANSWER:
+'Cell E3: 2\n=SMALL(C7:I7,2)\n• Function: SMALL(C7:I7, …)  1\n• Value: 2'
+
+--- idx22 id=f4114c76-b1b8-49fd-98cc-c6c079f48609 marks=2 ---
+ANSWER:
+'Cell E4: 2\n=COUNTIF(J9:J20,"<15")\n• Function: COUNTIF(J9:J20,…)  1\n• Criteria: "<15"  OR "<=14"'
+
+--- idx23 id=0ff952fd-ba10-42cb-b900-54bfe5626172 marks=4 ---
+ANSWER:
+'Cells C9:I20 4\nConditional formatting\n• Two-colour scale applied to correct cells only  1\n• Minimum colour: blue  1\n• Type: Percent (both)  1\n• Maximum value: 50'
+
+--- idx24 id=1da8aacc-72f1-4913-a9d7-2c613710bf4e marks=6 ---
+ANSWER:
+'Cell F23: 6\n=HLOOKUP(MAX(C7:I7),C7:I8,2,FALSE)\nOR\n=XLOOKUP(MAX(C7:I7),C7:I7,C8:I8)\n• Function: HLOOKUP/XLOOKUP \n• Lookup Value:\n• Function: MAX  (C7:I7)  OR LARGE (C7:I7,1) 2\n• Table array: C7:I8  OR A7:I8 1\n• Row number: 2  If XLOOKUP(…,C8:I8) 1\n• Range lookup: FALSE  Award both marks 1\nTotal for QUESTION 3 [17]\nDBE Stamp\nEXAMINATION\nNUMBER'
+
+--- idx25 id=dd539160-bc91-4204-884a-1a5209ff4e4d marks=2 ---
+ANSWER:
+'Column H 2\n• Data type: Currency  OR Accounting 1\n• Column width: data is visible'
+
+--- idx26 id=0fd760bd-f47e-4d5d-a335-e8baeda687ee marks=1 ---
+ANSWER:
+'Cell C3: Circular reference error 1\n= SUM(E9:E50)*0.08=E3\n• E3'
+
+--- idx27 id=0967fc3b-fc0f-42ab-b611-c04a3359682c marks=6 ---
+ANSWER:
+'Cell C5: 6\n=SUMIFS(E9:E50,C9:C50,"Hyundai",D9:D50,"i*")\nOR\n=SUMIFS(E9:E50,D9:D50,"i*",C9:C50,"Hyundai")\n• Function: SUMIFS \n• Sum range: E9:E50 \n• Criteria range 1: C9:C50 \n• Criteria 1: "Hyundai"  1\n• Criteria range 2: D9:D50  1\n• Criteria 2: "i*"  OR \'I*\' 1\nDBE Stamp\nEXAMINATION\nNUMBER'
+
+--- idx28 id=e79538b5-c7af-475c-93bc-f38d59cb65c8 marks=4 ---
+ANSWER:
+'Cell A11: 4\n=MID(B11,0,LEN(B11)): Function modified not replaced\n=MID(B11,FIND(",",B11)+2,LEN(B11))\nOR\n=MID(B11,FIND(",",B11)+2,LEN(B11)-FIND(",",B11)+2)\nOR\n=MID(B11,FIND(" ",B11)+1,LEN(B11))\nOR\n=MID(B11,FIND(" ",B11)+1,LEN(B11)-FIND(" ",B11))\nOR\n=RIGHT(B11,LEN(B11)-FIND(" ",B11))\nOR\n=RIGHT(B11,LEN(B11)-FIND(",",B11)-1)\n• Function: FIND  1\n• Find "," OR " "  1\n• Within cell: B11  1\n• Correct initials without space'
+
+--- idx29 id=f46835a6-d4d5-427c-ad32-ddd04f85b697 marks=4 ---
+ANSWER:
+'Cell H10: 4\n=IF(G10="Yes",SUM(E10:F10)*1.05,SUM(E10:F10))\nOR\n=IF(G10="Yes",SUM(E10:F10)*5%+SUM(E10:F10),\nSUM(E10:F10))\nOR\n=IF(G10="Yes",(E10+F10)*1.05,E10+F10)\nOR\n=IF(G10="Yes",(E10+F10)*5%+E10+F10, E10+F10)\nConcepts:\n• Determine if extras are "Yes"\n• If TRUE:\n• Determine total price and interest\n• With a 5% added to the total\n• If FALSE:\n• Determine total price and interest\n• Function: IF  1\n• Criteria: G10="Yes"  1\n• Output if true: SUM(E10+F10)*1.05  1\nOR (E10+F10)*5%+E10+F10\n• Output if false: SUM(E10:F10)  OR E10+F10 1\n\n(Note to marker: Building blocks)\nDBE Stamp\nEXAMINATION\nNUMBER\nChart worksheet'
+
+--- idx30 id=eec73035-1440-4b48-a1bd-9c334b652301 marks=6 ---
+ANSWER:
+'Chart/Graph 6\n• Data selected: Audi ticked \n• Y-Axis options: Display units: Thousands  1\n• Column Shape: Cylinder  1\n• Data Series: Fill: Vary colors by point  1\n• Legend added at the bottom  1\n• Major vertical gridlines added  1\nTotal for QUESTION 4 [23]\nDBE Stamp\nEXAMINATION\nNUMBER'
+
+--- idx31 id=fb4eb4d4-ce16-404a-86d2-9a4c3af909a1 marks=1 ---
+ANSWER:
+'Field: Name 1\n• Required: Yes'
+
+--- idx32 id=fe5f4cb6-9c7e-426e-82f5-f353f59e82d6 marks=2 ---
+ANSWER:
+'Field: StartDate 2\n• Data type: Date/Time  1\n• Format: Medium date OR dd-mmm-yy'
+
+--- idx33 id=8f90e918-7589-4839-b3b4-02692221efe9 marks=4 ---
+ANSWER:
+'Input Mask: Field: LicenceNo 4\n000000>LLL9 OR >000000LLL9\n• 000000  1\n• >  1\n• LLL  1\n• 9'
+
+--- idx34 id=a492f874-5d5a-400f-afe7-2a39e5e084e4 marks=2 ---
+ANSWER:
+'Field: Rating 2\n• Default value: Blank/Empty  1\n• Validation rule: Between 1 And 5  1\nOR >=1 And <=5\nOR 1 or 2 or 3 or 4 or'
+
+--- idx35 id=d86ef5e1-2671-45c3-a2be-781dcd518567 marks=4 ---
+ANSWER:
+'Field: LicenceCard 4\n• New field: LicenceCard inserted  1\n• Position: Between Car and LicenceNo  1\n• Data Type: OLE Object  (Attachment/Hyperlink) 1\n• 5Card added in Datasheet View \nForm: frm5_2'
+
+--- idx36 id=468802f8-db48-4359-b5c7-c20e018fe82c marks=5 ---
+ANSWER:
+'Logo 5\n• Inserted 5Bus  1\n• As a logo  in the header 1\nField: Reason\n• Change to Combo box  1\n• Row Source: "Business";"Personal"  1\n• Row Source Type: Value list  1\nDBE Stamp\nEXAMINATION\nNUMBER\nQuery: qry5_3'
+
+--- idx37 id=684e193f-51bc-49b1-836b-736986a6d2af marks=5 ---
+ANSWER:
+'• Only Name, Surname and ContactNo displays  1 5\n• Reason criteria: "Business"  1\nKMTravel criteria: >30  1\n• KMTravel criteria: <=10  OR <11 1\n• AND (Business AND >30)/\nOR (>30 OR <=10) logic correct \n(Expected records: 19)\nQuery: qry5_4'
+
+--- idx38 id=3f6e5ace-7010-4afd-b245-34eb756ff21d marks=3 ---
+ANSWER:
+'Field: DepartDate 3\n• Between #2023/12/01# AND #2023/12/31#\nOR\n>=#2023/12/01# AND <= #2023/12/31#\nOR\n>#2023/11/30# AND <#2024/01/01#\nOR\nLike "2023/12/*" OR Like */12/*\nOR\n>=#2023/12/01# OR >#2023/11/30#\nOR\nMonth([DepartDate])=12\n• Date range correct  1\n• Between/AND/Like/*/Month/Single criterion  1\n• Operators correct  1\n(Expected records: 9)\nQuery: qry5_5'
+
+--- idx39 id=d81381ca-ab90-4d74-96e5-b8d7662fea0d marks=4 ---
+ANSWER:
+'New field: 4\nTotal: [KMTravel]*2*6.25\nOR\nTotal: [KMTravel]*6.25*2\n• Calculated field:\n• Total field inserted \n• [KMTravel]  1\n• *2  1\n• *6.25  1\nDBE Stamp\nEXAMINATION\nNUMBER\nReport: rpt5_6'
+
+--- idx40 id=38fb1425-67fb-45aa-9541-8604ea91f23c marks=5 ---
+ANSWER:
+'• Group footer: Function inserted  1 5\n• Function: =COUNT(*)  OR any other field name 1\n• Page orientation: Landscape  1\n• Report exported as .pdf  1\n• File name: 5Pre-bookings  1\nTotal for QUESTION 5 [35]\nDBE Stamp\nEXAMINATION\nNUMBER'
+
+--- idx41 id=0c69a935-9c3c-46a0-a100-7372efccc284 marks=0 ---
+ANSWER:
+''
+
+--- idx42 id=09cef623-76f8-4a3e-b1ad-0960e9cdb018 marks=2 ---
+ANSWER:
+'Background colour 2\n\n• Attribute: bgcolor inserted \n• Colour: "Lightblue"'
+
+--- idx43 id=4ce4deb2-4bac-4868-a2a6-c5a5eb6269b9 marks=2 ---
+ANSWER:
+'Image 2\n<img src="6_1Rover.png" height="100" width="140"\nalign="left">\n• Attribute: Height="100"  1\n• Attribute: Align="Left"'
+
+--- idx44 id=8871d1dc-5682-40db-a383-b2eaf688be4f marks=1 ---
+ANSWER:
+'Table: Cell 1\nHome\n•  tag added with attribute: width="25%"'
+
+--- idx45 id=ffccb2e0-4815-4bb0-a7a9-514604e65ba2 marks=2 ---
+ANSWER:
+'Link 2\nT\'s and\nC\'s\n• Anchor tags inserted:  …   1\n• Attribute: href="6_1Win.html"'
+
+--- idx46 id=52068c6b-fba3-499e-b669-1628ee1414a4 marks=2 ---
+ANSWER:
+'Ordered list 2\n\n•  change to   (opening and closing tags) 1\n• Attribute: Type="a"  1\nDBE Stamp\nEXAMINATION\nNUMBER\n6_2Opening'
+
+--- idx47 id=b5937401-d560-4ee0-9f7a-80bea5d95755 marks=5 ---
+ANSWER:
+'…  5\n\nNew branch opening\nsoon \n\n \n…\n  \n\n… \n\n Font type:\n• Attribute: face  1\n Horizontal line:\n• Moved to appear below the heading  1\nTable:\n • Attribute: border  1\n • Border size: "5"  (accept size between 2 – 6) 1\n Image:\n• .gif changed to .jpg  1\nClosing tag(s) or triangular brackets and nesting 1\ncorrectly used.  .......... 1\nTotal for QUESTION 6 [15]\nDBE Stamp\nEXAMINATION\nNUMBER'
+
+--- idx48 id=4e787dba-cf27-4285-b416-281a7a1d1d79 marks=5 ---
+ANSWER:
+"Image manipulation 5\n• WordArt inserted: 'n time' \n• Shuttle Image: Text wrapping changed  1\n• Images and text moved in correct positions  1\n• Grouped: Image moves as one object  1\n• Saved as 7NewLogo image  1\n7Bookings"
+
+--- idx49 id=4b77de4e-4cb0-4b93-b2cc-db0c88f332ab marks=0 ---
+ANSWER:
+''
+
+--- idx50 id=e1485dd3-b46b-4d13-9c52-b93f475244b6 marks=5 ---
+ANSWER:
+'Cell D8: 5\n=C8-TIME(1,30,0)\nOR\n=TIME(HOUR(C8)-1,MINUTE(C8)-30,SECOND(C8))\nOR\n=TIME(HOUR(C8),MINUTE(C8)-90,SECOND(C8)\nOR\n=TIME(HOUR(C8),MINUTE(C8),SECOND(C8))-\nTIME(1,30,0)\n• Function: TIME  1\n• HOUR(C8)  1\n• MINUTE(C8)  1\n• SECOND(C8)  1\n• Subtracted: 1 hour and 30 minutes'
+
+--- idx51 id=ca6e870e-1542-492b-946f-7115bd91f2bb marks=3 ---
+ANSWER:
+'Column G: 3\n=F4-E4\nOR\n=Days(F4,E4)\nOR\n=Days360(E4,F4)\n• F4-E4 \n• Data type: Number  OR General\n• Copied down'
+
+--- idx52 id=00eb6fb6-1422-488b-8a28-e2b864baf3f0 marks=2 ---
+ANSWER:
+'Page setup 2\n• Scaling: Adjust to: 70% - 85% \n• Headings: Print: Row and column headings  1\nTOTAL for QUESTION 7 [15]\nTOTAL 150\nDBE Stamp'

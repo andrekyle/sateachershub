@@ -1,0 +1,164 @@
+{% extends "base.html" %}
+
+{% block title %}Application Submitted - South African Teachers Hub{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gray-50 py-16">
+    <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-8 text-center">
+            <!-- Success Icon -->
+            <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-check text-3xl text-green-600"></i>
+            </div>
+            
+            <!-- Success Message -->
+            <h1 class="text-3xl font-bold text-gray-900 mb-4">Application Submitted Successfully!</h1>
+            
+            <p class="text-lg text-gray-600 mb-6">
+                Thank you for your interest in becoming a South African Teachers Hub vendor. Your application has been received and is being reviewed by our team.
+            </p>
+
+            <!-- Application Details -->
+            <div class="bg-blue-50 border border-blue-200 rounded-md p-6 mb-8">
+                <h2 class="text-lg font-semibold text-blue-700 mb-3">Application Details</h2>
+                <div class="text-left space-y-2">
+                    <p class="text-sm"><strong>Business Name:</strong> {{ vendor.business_name }}</p>
+                    <p class="text-sm"><strong>Contact Email:</strong> {{ vendor.contact_email }}</p>
+                    <p class="text-sm"><strong>Application Status:</strong> 
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
+                            Pending Review
+                        </span>
+                    </p>
+                    <p class="text-sm"><strong>Submitted:</strong> {{ vendor.created_at.strftime('%B %d, %Y at %I:%M %p') }}</p>
+                </div>
+            </div>
+
+            <!-- What's Next Section -->
+            <div class="text-left mb-8">
+                <h2 class="text-xl font-semibold text-gray-900 mb-4">What happens next?</h2>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center mr-3">
+                                <span class="font-semibold text-sm">1</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Application Review</h3>
+                            <p class="text-sm text-gray-600">Our team will review your application and submitted documents. This typically takes 3-5 business days.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center mr-3">
+                                <span class="font-semibold text-sm">2</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Verification Process</h3>
+                            <p class="text-sm text-gray-600">We'll verify your business documents and may contact you for additional information if needed.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start">
+                        <div class="flex-shrink-0">
+                            <div class="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center mr-3">
+                                <span class="font-semibold text-sm">3</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="font-semibold text-gray-900">Account Activation</h3>
+                            <p class="text-sm text-gray-600">Once approved, you'll receive login credentials and access to your vendor dashboard.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Important Information -->
+            <div class="bg-amber-50 border border-amber-200 rounded-md p-4 mb-8">
+                <div class="flex">
+                    <div class="flex-shrink-0">
+                        <i class="fas fa-exclamation-triangle text-amber-400"></i>
+                    </div>
+                    <div class="ml-3 text-left">
+                        <h3 class="text-sm font-medium text-amber-800">Important Information</h3>
+                        <div class="mt-2 text-sm text-amber-700">
+                            <ul class="list-disc list-inside space-y-1">
+                                <li>Please check your email regularly for updates on your application status</li>
+                                <li>Ensure all submitted documents are clear and legible</li>
+                                <li>If additional documentation is required, we'll contact you via email</li>
+                                <li>Application review times may vary during peak periods</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact Information -->
+            <div class="border-t border-gray-200 pt-6">
+                <h2 class="text-lg font-semibold text-gray-900 mb-3">Need Help?</h2>
+                <p class="text-sm text-gray-600 mb-4">
+                    If you have any questions about your application or the vendor onboarding process, please don't hesitate to contact us.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="mailto:vendors@brandcartel.co.za" 
+                       class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        <i class="fas fa-envelope mr-2"></i>
+                        vendors@brandcartel.co.za
+                    </a>
+                    
+                    <a href="tel:+27116391000" 
+                       class="inline-flex items-center px-4 py-2 border border-gray-300 rounded-md shadow-sm text-sm font-medium text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                        <i class="fas fa-phone mr-2"></i>
+                        +27 11 639 1000
+                    </a>
+                </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8">
+                <a href="{{ url_for('index') }}" 
+                   class="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2">
+                    Return to Homepage
+                </a>
+                
+                <a href="{{ url_for('contact') }}" 
+                   class="bg-gray-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-gray-700 transition duration-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2">
+                    Contact Support
+                </a>
+            </div>
+        </div>
+        
+        <!-- Additional Resources -->
+        <div class="mt-8 bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+            <h2 class="text-lg font-semibold text-gray-900 mb-4">While You Wait...</h2>
+            
+            <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Prepare Your Products</h3>
+                    <p class="text-sm text-gray-600 mb-3">Start preparing high-quality product images and detailed descriptions for when your account is approved.</p>
+                    <ul class="text-xs text-gray-500 space-y-1">
+                        <li>• High-resolution product photos (minimum 1000x1000px)</li>
+                        <li>• Detailed product descriptions</li>
+                        <li>• Competitive pricing research</li>
+                        <li>• Inventory counts and SKU numbers</li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h3 class="font-semibold text-gray-900 mb-2">Review Seller Policies</h3>
+                    <p class="text-sm text-gray-600 mb-3">Familiarize yourself with our seller guidelines and best practices.</p>
+                    <div class="space-y-2">
+                        <a href="{{ url_for('terms_and_conditions') }}" class="block text-xs text-blue-600 hover:text-blue-500">• Terms and Conditions</a>
+                        <a href="{{ url_for('returns_policy') }}" class="block text-xs text-blue-600 hover:text-blue-500">• Returns Policy</a>
+                        <a href="{{ url_for('shipping_policy') }}" class="block text-xs text-blue-600 hover:text-blue-500">• Shipping Guidelines</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

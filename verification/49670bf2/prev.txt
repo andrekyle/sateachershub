@@ -1,0 +1,1024 @@
+﻿
+
+CAT P2 Nov 2022 
+
+CAT P2 Nov 2022
+
+Print / Save as PDF 
+
+Edit 
+
+Close 
+
+Past Paper Template
+
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+
+COMPUTER APPLICATIONS TECHNOLOGY P2
+
+NOVEMBER 2022
+
+MARKS: 150
+
+TIME: 3 Hours
+
+This question paper consists of 5 pages.
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+2 
+DBE/November 2022 
+
+INSTRUCTIONS AND INFORMATION
+
+This question paper consists of: 
+
+SECTION A (25)
+
+SECTION B (75)
+
+SECTION C (50)
+
+Answer ALL the questions. 
+
+Number the answers correctly according to the numbering system used in this question paper. 
+
+Start EACH question on a NEW page. 
+
+Do NOT write in the right-hand margin of the ANSWER BOOK. 
+
+Leave a line after EACH subquestion. 
+
+Generally, one mark is allocated per fact; therefore, a 2-mark question would require TWO facts, etc. 
+
+Read the questions carefully. DO NOT give more answers than the question requires as it will NOT be marked. 
+
+All answers MUST be related to Computer Applications Technology. 
+
+Unless otherwise specified, answers such as cheaper , slower / faster , etc. will NOT be accepted. 
+
+Do NOT use brand names in your answers, unless specifically required. 
+
+Write neatly and legibly. 
+
+Copyright reserved Please turn over 
+
+Computer Applications Technology/P2 
+3 
+DBE/November 2022 
+
+SECTION A
+
+QUESTION 1: MULTIPLE-CHOICE QUESTIONS
+
+Various options are given as possible answers to the following questions. Choose the answer and write only the letter (A–D) next to the question numbers (1.1 to 1.10) in the ANSWER BOOK, e.g. 1.11 D. 
+
+1.1
+
+The process during which your ISP slows down your internet connection is known as … A data cap. B shaping. C throttling. D bandwidth. 
+
+(1)
+
+1.2
+
+Which ONE of the following processes would you use to protect your data? A Archiving B Compression C Error checking D Firewall 
+
+(1)
+
+1.3
+
+Plug-and-play technology is used to … A play games on a gaming console. B access the content of a CD. C install an operating system. D detect and configure new devices. 
+
+(1)
+
+1.4
+
+A fraudulent process which tries to obtain sensitive information is called … A pharming. B spamming. C phishing. D hoaxing. 
+
+(1)
+
+1.5
+
+Which ONE of the following is an example of a question that you should NOT include in a questionnaire in a PAT? A Why has the price of computers gone up? B What is your favourite processor brand? C Which operating system do you use? D How many years have you been using computers? 
+
+(1)
+
+1.6
+
+The … is used by the operating system to communicate with hardware devices. A Device Manager B Device Driver C Audio Manager D Disk Defragmenter 
+
+(1)
+
+1.7
+
+Which ONE of the following is NOT a task generally performed during the processing phase of the information processing cycle? A Send to storage B Search and sort C Compare and decide D Perform calculations 
+
+(1)
+
+1.8
+
+Which ONE of the following database objects is a user-friendly interface for capturing data? A Table B Query C Report D Form 
+
+(1)
+
+1.9
+
+Which validation rule for a DateOfBirth field will allow ONLY dates of people born in the years 2003 to 2013? A =2003 OR =2013 B =#01/01/2003# OR =#31/12/2013# C =2003 AND =2013 D =#01/01/2003# AND =#31/12/2013# 
+
+(1)
+
+1.10
+
+The following TWO spreadsheet functions are used on the same cell range A1:A8: =COUNTA(A1:A8) which returns a value of 6 =COUNT(A1:A8) which returns a value of 3 Which ONE of the following options is TRUE, based on the results above in the cell range A1:A8? A There is only one empty or blank cell. B There are three numeric and three text values. C There are six cells with numeric values. D There are eight cells that contain any values. 
+
+(10)
+
+[19]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+4 
+DBE/November 2022 
+
+QUESTION 2: MATCHING ITEMS
+
+Choose a term/concept from COLUMN B that matches the description in COLUMN A. Write only the letter (A–T) next to the question numbers (2.1 to 2.10) in the ANSWER BOOK, e.g. 2.11 U. 
+
+COLUMN A
+
+COLUMN B
+
+2.1
+
+Raw numbers or facts that are unorganised
+
+A
+
+VoIP
+
+2.2
+
+A device used on a network to manage and share resources
+
+B
+
+information
+
+2.3
+
+An internet technology that enables people from various countries to communicate in real time
+
+C
+
+BIOS
+
+2.4
+
+This user generally requires a good quality graphics card
+
+D
+
+#NAME?
+
+2.5
+
+Firmware containing instructions for the start-up of a computer
+
+E
+
+data
+
+2.6
+
+An example of HTML code used to open a picture in a new browser window
+
+F
+
+ISP
+
+2.7
+
+A technology that uses a person s unique physical characteristics to control access
+
+G
+
+gamer
+
+2.8
+
+A reason why certain documents display unreadable content when you open it on your computer, even though you have an appropriate application
+
+H
+
+password
+
+2.9
+
+An arrangement for employees to work from home using ICTs
+
+I
+
+operating system
+
+2.10
+
+A spreadsheet error message that will appear if you enter the following function: =AVG(B1:B20)
+
+J
+
+ROM
+
+K
+
+telecommuting
+
+L
+
+img src= bird.jpg 
+
+M
+
+biometrics
+
+N
+
+data capturer
+
+O
+
+server
+
+P
+
+a href= bird.jpg 
+
+Q
+
+SOHO
+
+R
+
+hub
+
+S
+
+software version
+
+T
+
+#VALUE!
+
+(10 x 1) [10]
+
+[10]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+5 
+DBE/November 2022 
+
+QUESTION 3: TRUE/FALSE ITEMS
+
+Indicate whether the following statements are TRUE or FALSE. Write ‘true’ or ‘false’ next to the question numbers (3.1 to 3.5) in the ANSWER BOOK. Correct the statement if it is FALSE by changing the underlined word(s) to make the statement TRUE. (Do NOT simply use the word ‘NOT’ to change the statement.) 
+
+NO mark will be awarded if only FALSE is written.
+
+EXAMPLES:
+
+QUESTION
+
+ANSWER
+
+A stylus can be used for more accurate input on some touch screens.
+
+True
+
+A sound card has slots for hardware components, such as the CPU.
+
+False, motherboard
+
+3.1
+
+An ATM is an example of a dedicated device. 
+
+(1)
+
+3.2
+
+Green computing refers to old computing devices that people throw away and that end up in landfill sites. 
+
+(1)
+
+3.3
+
+A monitor converts electronic data into a hard copy. 
+
+(1)
+
+3.4
+
+The function of a router is to transmit data between computer networks. 
+
+(1)
+
+3.5
+
+is used in HTML to create a horizontal line. 
+
+(1)
+
+[5]
+
+TOTAL SECTION A: [34]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+6 
+DBE/November 2022 
+
+SECTION B
+
+QUESTION 4: SYSTEM TECHNOLOGIES
+
+4.1
+
+Explain what an office suite is. 
+
+(2)
+
+4.2
+
+You should consider the resolution when buying input devices such as scanners or cameras. 
+
+4.2.1
+
+What unit of measurement is used to describe resolution? 
+
+(1)
+
+4.2.2
+
+Give ONE disadvantage of capturing an image with poor resolution. 
+
+(1)
+
+4.3
+
+Software bugs are unintended errors in software. 
+
+4.3.1
+
+Explain ONE method software developers use to avoid software bugs in their software, before distributing the final version of the software. 
+
+(1)
+
+4.3.2
+
+Recommend ONE way in which a user can get rid of a software bug, other than keeping software updated. 
+
+(1)
+
+4.4
+
+Name the utility program that you can use to close an unresponsive application. 
+
+(1)
+
+4.5
+
+Give TWO examples of metadata that you can use as criteria when you search for a file, other than using the file name. 
+
+(2)
+
+4.6
+
+You use a USB cable to connect a smartphone to your computer. Although the cable is connected properly, the devices do not communicate with each other. Suggest TWO ways to solve this problem. 
+
+(2)
+
+4.7
+
+Explain TWO ways to check the actual size of a hard drive on a Windows PC, using the graphical user interface. 
+
+(2)
+
+4.8
+
+Disabled people may need special hardware devices to enable them to use ICTs. 
+
+4.8.1
+
+Name ONE input device specifically designed for disabled users. 
+
+(1)
+
+4.8.2
+
+Name ONE output device specifically designed for disabled users. 
+
+(1)
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+7 
+DBE/November 2022 
+
+4.9
+
+You downloaded a video licensed under the Creative Commons (CC) agreement. Explain what a Creative Commons (CC) licence generally is. 
+
+(2)
+
+4.10
+
+The owner of a restaurant saw the advertisement below for a point of sale (POS) device. 15 ALL-IN-1 TOUCH PC FOR POINT OF SALE 15 All-in-1 Touch Screen Computer CPU (2.0 GHz) Quad Core Processor 4 GB RAM 64 GB SSD 6 x USB LAN Port 1 x VGA Win10 Pro 64 bit 
+
+4.10.1
+
+Why would it be advisable for a restaurant owner to buy an All-in-1 POS device? 
+
+(1)
+
+4.10.2
+
+Why would the 64 GB SSD have a suitable capacity for a restaurant POS device? 
+
+(1)
+
+4.10.3
+
+Give TWO disadvantages of using touch screens. 
+
+(2)
+
+4.11
+
+Give TWO reasons why you would zip/compress a file. 
+
+(2)
+
+4.12
+
+You wish to store files, but do not have enough storage space on your device. 
+
+4.12.1
+
+Which optical media would you recommend to store some files? 
+
+(1)
+
+4.12.2
+
+Discuss ONE disadvantage of using a flash drive to store some files. 
+
+(1)
+
+[25]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+8 
+DBE/November 2022 
+
+QUESTION 5: INTERNET AND NETWORK TECHNOLOGIES
+
+5.1
+
+What type of network can a company use to connect their offices across the country? 
+
+(1)
+
+5.2
+
+Give TWO reasons why a teacher would require learners to log in on the computer centre s network. 
+
+(2)
+
+5.3
+
+Explain TWO reasons why you could get a Page not found error when you try to open a bookmarked website. 
+
+(2)
+
+5.4
+
+Suggest TWO criteria you should consider when choosing an ISP. 
+
+(2)
+
+5.5
+
+Recommend TWO netiquette rules for a WhatsApp study group chat. 
+
+(2)
+
+5.6
+
+Explain EACH of the following concepts: 
+
+(2)
+
+5.6.1
+
+Search engine 
+
+(1)
+
+5.6.2
+
+Web browser 
+
+(1)
+
+5.7
+
+Give a reason why users experience buffering when streaming videos. 
+
+(1)
+
+5.8
+
+Give TWO uses of IoT in a home environment. 
+
+(2)
+
+5.9
+
+Name the system that a research company can use to address the need for more computer processing power, without having to buy new hardware. 
+
+(1)
+
+[17]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+9 
+DBE/November 2022 
+
+QUESTION 6: INFORMATION MANAGEMENT
+
+6.1
+
+Discuss TWO reasons why the following focus question is poorly formulated: How has cybersecurity affected your life and how did you resolve it? 
+
+(2)
+
+6.2
+
+Explain TWO disadvantages of using closed questions in a questionnaire. 
+
+(2)
+
+6.3
+
+Define EACH of the following word processing features without referring to their position in a document: Citation Bibliography 
+
+(2)
+
+6.4
+
+Explain TWO advantages of using electronic data rather than using data in a hard copy format. 
+
+(2)
+
+6.5
+
+Give TWO database options/features in a query that you can use to analyse data. 
+
+(2)
+
+[10]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+10 
+DBE/November 2022 
+
+QUESTION 7: SOCIAL IMPLICATIONS
+
+7.1
+
+What is the difference between a bot and a zombie? 
+
+(2)
+
+7.2
+
+Explain why users may not realise when they are victims of a spoofing attack. 
+
+(1)
+
+7.3
+
+Give TWO reasons why DDoS attacks are harmful. 
+
+(2)
+
+7.4
+
+Discuss the risk of posting videos that you made on social media platforms (such as TikTok or Instagram). 
+
+(1)
+
+7.5
+
+Give TWO ways to reduce the risk of your computer getting infected by a virus, other than installing an antivirus program or keeping software up to date. 
+
+(2)
+
+7.6
+
+Give TWO examples of how artificial intelligence (AI) can be useful in a school environment. 
+
+(2)
+
+[10]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+11 
+DBE/November 2022 
+
+QUESTION 8: SOLUTION DEVELOPMENT
+
+8.1
+
+The screenshot of the spreadsheet below shows the earnings by Sam, a sales representative. 
+
+8.1.1
+
+What kind of formatting has been used in row 1, other than font changes? 
+
+(1)
+
+8.1.2
+
+Which data in the spreadsheet does not have consistent formatting? 
+
+(1)
+
+8.1.3
+
+The formula used to determine the bonus commission in cell G4 is: =F4*$G$2. What does the $ symbol indicate AND what is its purpose? 
+
+(2)
+
+8.1.4
+
+How can you correct the error displayed in cell F9? 
+
+(1)
+
+8.1.5
+
+The SUM function used in cell E9 returns an incorrect result. Give ONE reason why this result is incorrect. 
+
+(1)
+
+8.2
+
+A company created a database to keep a record of their customers. The screenshot below shows the fields in their database table. 
+
+8.2.1
+
+Identify TWO fields where unsuitable data types were used. 
+
+(2)
+
+8.2.2
+
+Which field would be more appropriate for a primary key? Motivate your answer. 
+
+(2)
+
+8.2.3
+
+Why would you recommend an input mask for the ContactNumber field? 
+
+(1)
+
+8.3
+
+The following menu displays in a web browser: 
+
+8.3.1
+
+State THREE changes which you could make to the HTML code to improve the design and layout of the menu in the web page. 
+
+(3)
+
+8.3.2
+
+Give ONE advantage of web pages being based on text files. 
+
+(1)
+
+[15]
+
+TOTAL SECTION B: [77]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+12 
+DBE/November 2022 
+
+SECTION C
+
+QUESTION 9: INTEGRATED SCENARIO
+
+9.1
+
+The chairperson of the book club keeps a record of the members and the books read by each member. 
+
+9.1.1
+
+Recommend TWO changes you can make to the electronic form below to ensure that data capturing is more accurate. 
+
+(2)
+
+9.1.2
+
+Which application can you use offline to create an electronic form? 
+
+(1)
+
+9.2
+
+The Ubuntu project distributes free books in PDF and other digital formats. One of the aims of the school book club is to encourage learners to read these books on their computing devices. 
+
+9.2.1
+
+Give TWO reasons why a laptop is NOT a suitable device to use only for reading books in digital format. 
+
+(2)
+
+9.2.2
+
+Which TWO software settings on a device can be used to make books in PDF format accessible to visually impaired users? 
+
+(2)
+
+9.2.3
+
+Suggest TWO ways to extend the battery life of a device used for reading. 
+
+(2)
+
+9.2.4
+
+Name the concept used when learners use their own devices, instead of the school s devices, to download these PDF books. 
+
+(1)
+
+9.2.5
+
+Name TWO technologies that learners can use to share these PDF books in electronic format without using the internet or the school s network. 
+
+(2)
+
+9.3
+
+The club created a spreadsheet to capture lesser known words that learners came across during their reading. 
+
+9.3.1
+
+Which word processing feature can be used on a particular word to display more words with the same meaning? 
+
+(1)
+
+9.3.2
+
+The chairperson would like to know how many words appear for each specific book. Suggest ONE spreadsheet feature that can be used to display this information. 
+
+(1)
+
+9.3.3
+
+Some of these words will be used to create a crossword puzzle. Name the function that was used in cells D90:D95 to determine the number of characters in each word. 
+
+(1)
+
+9.3.4
+
+Give TWO ways to determine if words appear more than once in the spreadsheet. 
+
+(2)
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+13 
+DBE/November 2022 
+
+9.4
+
+Learners are encouraged to maintain a blog where they can write reviews on the books they have read. 
+
+9.4.1
+
+Give TWO advantages of using a blog rather than a website to share a book review. 
+
+(2)
+
+9.4.2
+
+Learners are required to reference the book they are reviewing in their blog. Other than the title, give TWO fields that should be included in the source to reference the book. 
+
+(2)
+
+9.5
+
+The chairperson of the book club keeps track of the frequency of the attendance and the number of books read by each member. 
+
+9.5.1
+
+Suggest the most suitable application to store the details of the members attendance and reading progress. 
+
+(1)
+
+9.5.2
+
+A certificate will be issued for each member who attends more than 80% of the meetings. Name the word processing feature that can be used to generate multiple certificates using one data source. 
+
+(1)
+
+9.5.3
+
+Give TWO possible reasons why the printer stopped working halfway through printing the certificates. 
+
+(2)
+
+[25]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+14 
+DBE/November 2022 
+
+QUESTION 10
+
+10.1
+
+Mrs Khumalo has five computers in the administration area. 
+
+10.1.1
+
+Give TWO reasons why you would recommend a wireless network for this day-care centre. 
+
+(2)
+
+10.1.2
+
+What hardware does the day-care centre need to be able to connect a desktop computer to an existing wireless network? 
+
+(1)
+
+10.1.3
+
+Give TWO disadvantages of using a network. 
+
+(2)
+
+10.1.4
+
+Give TWO reasons why you would advise Mrs Khumalo NOT to set up a public hotspot at the day-care centre. 
+
+(2)
+
+10.2
+
+Some parents donated old computers which the day-care centre can use to teach the children computer literacy and to access online educational software. 
+
+10.2.1
+
+Suggest TWO reasons why you would recommend that the day-care centre uses open-source software (OSS) to teach computer literacy. 
+
+(2)
+
+10.2.2
+
+Which measure can teachers take to prevent children from being exposed to sensitive content on the internet? 
+
+(1)
+
+10.3
+
+You advise Mrs Khumalo to make regular backups either locally or in the cloud. 
+
+10.3.1
+
+Give ONE reason why it is important to make regular backups. 
+
+(1)
+
+10.3.2
+
+Explain TWO benefits of using cloud-based storage instead of using the device on which you are working to backup data. 
+
+(2)
+
+10.4
+
+Mrs Khumalo received the following message on her computer: 
+
+10.4.1
+
+Name the type of malware found in the example above. 
+
+(1)
+
+10.4.2
+
+Give TWO reasons why the person who sent this message prefers payment in cryptocurrency. 
+
+(2)
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+15 
+DBE/November 2022 
+
+10.4.3
+
+Cryptocurrencies use blockchain technology. Explain what blockchain technology is. 
+
+(2)
+
+10.5
+
+You advised Mrs Khumalo to include a QR code on her business card. 
+
+10.5.1
+
+Give TWO reasons why QR codes can be used to promote her business. 
+
+(2)
+
+10.5.2
+
+How can she ensure that the QR code will always automatically appear in the newly created word processing documents? 
+
+(1)
+
+10.6
+
+A parent donated a 3D printer to the day-care centre. 
+
+10.6.1
+
+State TWO ways in which Mrs Khumalo can use the 3D printer at the day-care centre to promote the education of young children. 
+
+(2)
+
+10.6.2
+
+Discuss TWO reasons why Mrs Khumalo should NOT use the 3D printer in the presence of children. 
+
+(2)
+
+[25]
+
+TOTAL SECTION C: [50]
+
+GRAND TOTAL: 150
+
+Copyright reserved

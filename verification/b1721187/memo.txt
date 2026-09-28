@@ -1,0 +1,1252 @@
+﻿
+
+CAT P2 May-June 2024 – Marking Guidelines 
+
+CAT P2 May-June 2024 — MARKING GUIDELINES
+
+Print / Save as PDF 
+
+Edit 
+
+Close 
+
+Past Paper Template
+
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+
+COMPUTER APPLICATIONS TECHNOLOGY P2
+
+JUNE 2024
+
+MARKING GUIDELINES
+
+MARKS: 150
+
+These marking guidelines consist of 5 pages.
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+2 
+DBE/June 2024 
+
+SUGGESTIONS AND RECOMMENDATIONS TO MARKERS
+
+Revisit the questions and the marking guidelines frequently during the marking session.
+
+It is advisable to read (and re-read) the question frequently together with the candidate s response to check that it correlates, so that you are not misled by the candidate s statements/answers.
+
+Be careful not to focus on keywords or general statements, but rather read the entire answer. If in doubt, read the entire answer and then the question paper and the marking guidelines.
+
+Ask yourself or your senior marker if the response could fit into the marking guidelines before allocating the correct marks to the candidate.
+
+Accept correct answers that are expressed differently, e.g. the marking guidelines state slow and the candidate responds with not fast .
+
+Beware of overlapping answers to a specific question. In general, ONE mark is awarded per fact.
+
+Do not choose answers on the candidate s behalf. Where a question requires a candidate to LIST or NAME : mark the first number of answers/facts required, e.g. the first TWO facts if the candidate presents a list of FIVE facts and only TWO facts were required, even if presented in paragraph format.
+
+Questions requiring longer answers must be regarded as a single unit. Marks can be awarded if correct statements are found anywhere in the paragraph.
+
+SECTION A
+
+QUESTION 2: MATCHING ITEMS
+
+2.1
+
+F Hardcopy ✓ 
+
+1
+
+2.2
+
+H Information ✓ 
+
+1
+
+2.3
+
+A Firewall ✓ 
+
+1
+
+2.4
+
+T CAPTCHA ✓ 
+
+1
+
+2.5
+
+G HDMI ✓ 
+
+1
+
+2.6
+
+P Vibrating panel ✓ 
+
+1
+
+2.7
+
+C ul … /ul ✓ 
+
+1
+
+2.8
+
+S Required ✓ 
+
+1
+
+2.9
+
+K Section break ✓ 
+
+1
+
+2.10
+
+N Text Form Field ✓ 
+
+1
+
+Total: [10]
+
+QUESTION 3: TRUE/FALSE ITEMS
+
+(Note to marker:
+
+3.1
+
+False – Adware 
+
+1
+
+3.2
+
+False – legend 
+
+1
+
+3.3
+
+False – bug 
+
+1
+
+3.4
+
+True 
+
+1
+
+3.5
+
+False – check box 
+
+1
+
+Total: [5]
+
+Copyright reserved Please turn over 
+
+Computer Applications Technology/P2 
+3 
+DBE/June 2024 
+
+QUESTION 1: MULTIPLE-CHOICE QUESTIONS
+
+(Note to marker:
+
+1.1
+
+B ✓
+
+1
+
+1.2
+
+B ✓
+
+1
+
+1.3
+
+A ✓
+
+1
+
+1.4
+
+D/C ✓
+
+1
+
+1.5
+
+C ✓
+
+1
+
+1.6
+
+A ✓
+
+1
+
+1.7
+
+C ✓
+
+1
+
+1.8
+
+A ✓
+
+1
+
+1.9
+
+D ✓
+
+1
+
+1.10
+
+C ✓
+
+1
+
+[10]
+
+TOTAL SECTION A: [25]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+4 
+DBE/June 2024 
+
+SECTION B
+
+QUESTION 4: SYSTEM TECHNOLOGIES
+
+4.1.1
+
+Application suite in
+
+Office 365 
+
+(Any one) 
+
+1
+
+9
+
+4.1.2
+
+Two reasons an operating system is required
+
+(1) To manage software/programs 
+(2) To manage hardware (input and output devices) and resources 
+(3) Provide a user interface for interacting with the program and hardware 
+(4) Security (usernames and passwords) 
+(5) File management/Housekeeping tasks 
+(6) Communication between devices etc. 
+
+(Any two) 
+
+2
+
+4.1.3
+
+Suggest AND motivate an alternative operating system
+
+Linux (Ubuntu etc.) – free/open source
+MacOS – good with graphics
+ChromeOs – free/open source etc.
+
+(Any one) 
+(Appropriate reason)
+
+2
+
+4.1.4
+
+HD Input device
+
+Webcam 
+
+1
+
+4.1.5
+
+ONE advantage of SSDs over HDD
+
+(1) Better power consumption/Energy efficiency 
+(2) Lighter weight 
+(3) Less noisy 
+(4) More durable 
+(5) No moving parts 
+(6) Faster data transfer/Runs at a faster rate 
+(7) No need for defragmentation 
+(Any one) 
+
+1
+
+4.1.6
+
+TWO reasons for Laptop B
+
+(1) Latest operating system - Windows 11 
+(2) More RAM compared to Laptop A - 16 GB RAM 
+(3) Better Webcam – 720p vs 1024p 
+(4) Bluetooth 5.2 
+(5) Wi-Fi 6 
+(6) Micro SD media card reader 
+(7) Antivirus - Kaspersky 12 months 
+
+(Any two) 
+
+2
+
+4.2
+
+Definition of resolution Resolution refers to image quality: ✓ the number of pixels an
+
+image is made of 
+
+2
+
+4.3
+
+Process for housekeeping tasks
+
+File management 
+
+1
+
+4.4
+
+Two locations to create shortcuts
+
+(1) Desktop 
+(2) Taskbar 
+(3) Start menu 
+(4) Quick access in File Explorer 
+(5) Within another folder 
+
+(Any two) 
+
+2
+
+4.5
+
+TWO disadvantages of online storage
+
+(1) Dependent on having an internet connection 
+(2) Additional cost for uploading and downloading files 
+(3) Security and privacy concerns with some service providers 
+(4) Fee for additional storage space 
+(5) Service providers may close down and your data may be lost 
+
+(Any two) 
+
+2
+
+4.6
+
+ONE example of multitasking
+
+(1) Auto spellcheck while typing 
+(2) Listen to music while working 
+(3) Printing while continuing typing, etc. 
+(Any one) 
+(Note to marker: Accept any valid answer where two or more
+tasks are done simultaneously on a device)
+
+1
+
+4.7
+
+TWO ways to safeguard data
+
+(1) Make regular/automatic backups/archive 
+(2) Store backups in offsite locations 
+(3) Add restricted access rights to the data (password/encrypt, etc.) 
+(4) Make files read-only 
+(5) Three generations of data are kept on backups 
+
+(Any two) 
+
+2
+
+4.8
+
+Purpose of drivers Drivers allow communication ✓ between hardware/device and
+
+the operating system 
+
+2
+
+4.9
+
+TWO advantages of web-based applications
+
+(1) Can access from anywhere/any time/any device 
+(2) Updated automatically/regularly/access to new features 
+(3) Allows for sharing/collaboration amongst users 
+(4) Make use of the service provider’s processing power 
+(5) Provide security 
+(6) No need to install/buy software/Save space on the local device 
+(7) No compatibility issues 
+
+(Any two) 
+
+2
+
+4.10
+
+TWO examples of utility programs
+
+(1) Disc Cleanup 
+(2) Antivirus 
+(3) Backup/Recovery 
+(4) Defragment/System optimise 
+(5) Error checking/Scan disc/System config 
+(6) File/Device Management 
+(7) Compression tools 
+(8) Task scheduler 
+(9) Recycle bin 
+
+(Any two) 
+
+2
+
+[25]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+5 
+DBE/June 2024 
+
+QUESTION 5: INTERNET AND NETWORK TECHNOLOGIES
+
+5.1
+
+TWO reasons why video buffers while streaming
+
+(1) Not enough bandwidth/High resolution video 
+(2) Bad/Slow connection 
+(3) Too much traffic on the network 
+(4) Throttling/Shaping 
+(5) Limited processing power/outdated hardware 
+(6) Background applications running using processing power 
+
+(Any two) 
+
+2
+
+5.2
+
+TWO reasons to use a server in a school network
+
+(1) Sharing of hardware resources 
+(2) Sharing of software resources 
+(3) Improved security/Control user access 
+(4) Network administration 
+(5) Centralised storage/Access files from any workstation 
+(6) Provide specialised functions (i.e. intranet) 
+
+(Any two) 
+
+2
+
+5.3.1
+
+Definition of a blog
+
+(1) Websites that are updated often with the most recent entry at the top 
+(2) A website that posts short informal/formal stories about any topic that is updated regularly 
+(3) A website that contains information like diary or journal entries 
+(Any one) 
+
+1
+
+3
+
+5.3.2
+
+TWO advantages of podcasts
+
+(1) Ways to directly communicate with audience (stream or downloaded) 
+(2) Allows users to listen at recorded material after broadcast 
+(3) Wide range of topics 
+(4) Can listen to it through various mediums – smartphones, etc. 
+(5) Save on traveling cost/distributing and production cost 
+(6) Accessible for people with disabilities – visually impaired people 
+(7) Can listen any time and place – during your commute, doing house chores, etc. 
+
+(Any two) 
+
+2
+
+5.4
+
+TWO factors that impact internet data usage
+
+(1) The time you spend online 
+(2) What you do on the internet e.g. shopping, gaming, content creator 
+(3) Quality/resolution of streaming/downloading 
+(4) Size of uploading/downloading files 
+(5) CAP limits influence the user’s habits 
+(6) Line speed (bits per second)/Throttling 
+(7) Proxy server 
+(8) Number of devices connected to the internet 
+(9) Background services/processes running on the device (e.g. automatic updates/synchronisation/cloud backups) 
+
+(Any two) 
+
+2
+
+5.5
+
+TWO uses for grid computing
+
+(1) Weather forecasting 
+(2) Earthquake simulation 
+(3) Complex calculations performed in science experiments 
+(4) Scientific/Genetic and cancer research 
+(5) Financial analysis 
+(6) Engineering and design 
+(7) Gaming and entertainment (Note to marker: Accept any other relevant answer) 
+
+(Any two) 
+
+2
+
+5.6
+
+TWO guidelines for communicating with teacher on social media
+
+(1) Use good language and sentence construction 
+(2) Keep content relevant/clear and concise 
+(3) Do not use all uppercase 
+(4) Message in acceptable hours 
+(5) Be polite and respectful 
+
+(Any two) 
+
+2
+
+5.7
+
+TWO reasons why ISP block certain e-mails
+
+(1) Attachment seen/marked as malicious 
+(2) Attachment seen/marked as spam 
+(3) Attachment is too large 
+(4) Flagged file extensions used e.g. .exe 
+(5) Unrecognised file extensions used 
+
+(Any two) 
+
+2
+
+[15]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+6 
+DBE/June 2024 
+
+QUESTION 6: INFORMATION MANAGEMENT
+
+6.1
+
+Recommend data collection tool Example
+
+(1) Electronic form (e.g. Google, Microsoft, etc.) 
+(Any one) 
+Reason
+(1) Easy to share/obtain/distributed 
+(2) Quicker feedback/turnaround time/collection time 
+(3) Data is already captured 
+(4) More likely to up to date 
+(5) Easier to correlate/analyse/find data, etc 
+(Any one) 
+
+2
+
+6.2
+
+Definition of sifting information
+
+(1) The finding of relevant information 
+(2) To sort out what is useful or valuable information to solve a certain problem 
+(Any one) 
+
+1
+
+6.3.1
+
+Table of Figures
+
+Captions 
+
+1
+
+3
+
+6.3.2
+
+Source recognition feature
+
+(1) Citation 
+(2) Bibliography 
+(3) Footnote/Endnotes 
+(4) Caption 
+
+(Any two) 
+
+2
+
+6.4
+
+TWO ways spreadsheet charts can enhance a PAT
+
+(1) Visual representation of data 
+(2) Easy to read and understand/Simple to interpret 
+(3) Easy to see what happens at specific intervals/View trend analysis 
+(4) Supports the findings, etc. 
+
+(Any two) 
+
+2
+
+6.5
+
+TWO requirements when setting research questions
+
+(1) Type of questions (facts, exploring, informative, predictive)/ Level of the questions – level 1, 2, 3 etc. 
+(2) Variety/number of different (level) questions 
+(3) Relevant to a specific topic/issue 
+
+(Any two) 
+
+2
+
+[10]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+7 
+DBE/June 2024 
+
+QUESTION 7: SOCIAL IMPLICATIONS
+
+7.1
+
+TWO advantages of ICT s on the society
+
+(1) Global communication 
+(2) E-learning/M-learning 
+(3) Extended business opportunities 
+(4) Health care 
+(5) Comfortable living 
+(6) Increase productivity 
+(7) Ease of travel arrangements, etc. (Note to marker: Accept any valid answer) 
+
+(Any two) 
+
+2
+
+7.2
+
+TWO effects of a bot/zombie computer
+
+(1) Spreading spam/phishing e-mail 
+(2) Launching DDoS attacks/slow system performance 
+(3) Bots can steal sensitive information 
+(4) Sell information to competitors 
+(5) Gather personal information/Collect information 
+(6) Spread viruses and malware/may lead to loss of data 
+
+(Any two) 
+
+2
+
+7.3.1
+
+Definition of information overload
+
+(1) Overwhelming content 
+(2) Too much information to process 
+(Any one) 
+
+1
+
+3
+
+7.3.2
+
+TWO impacts of information overload
+
+(1) Unable to cope with volume/difficulty focusing 
+(2) Can cause stress/anxiety/health related issues 
+(3) Lead to limiting social interactions 
+(4) Feelings of helplessness 
+(5) Leads to unproductivity 
+(6) Impact job satisfaction 
+(7) Affects decision making 
+
+(Any two) 
+
+2
+
+7.4.1
+
+Describe Identity theft
+
+(1) Illegally obtain/Stealing personal information 
+(2) Impersonating a person 
+(Any one) 
+
+1
+
+3
+
+7.4.2
+
+TWO ways to prevent identity theft
+
+(1) Don’t give out your personal information 
+(2) Protect personal documents like e-mail 
+(3) Use good security like firewalls/user names/passwords 
+(4) Antivirus/Antispyware 
+(5) Secure browser/Select secure websites 
+
+(Any two) 
+
+2
+
+[10]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+8 
+DBE/June 2024 
+
+QUESTION 8: SOLUTION DEVELOPMENT
+
+8.1.1
+
+Use COUNTA function
+
+(1) Count all cells containing data/any value 
+(2) Count all non-empty cells 
+(Any one) 
+
+1
+
+5
+
+8.1.2
+
+SUMIFS function Used when adding is based on multiple criteria ✓ in the same or
+
+different ranges 
+
+2
+
+8.1.3
+
+#REF! error message
+
+(1) Function refers to deleted/moved rows/columns 
+(2) Function copied and pasted/refers to a non-existing cell 
+(Any one) 
+
+1
+
+8.1.4
+
+Sorting data in spreadsheet
+
+(1) Font colour 
+(2) Cell colour 
+(3) Cell icon 
+(4) Conditional formatting icon 
+(Any one) 
+
+1
+
+8.2
+
+THREE corrections in HTML
+
+(1) Line 3 – Title text SAM s dealership is missing 
+(2) Line 10 – Remove width attribute/width= 100% 
+(3) Line 9/11 – Header larger/smaller 
+(4) Line 11 – Missing the break tag (Note to marker: Accept examples of alignment) 
+
+(Any three) 
+
+3
+
+8.3.1
+
+TWO reasons why no values appear in combo box
+
+(1) Row source type was not linked to value list 
+(2) No values were entered into the row source/cells of the wizard 
+(3) No values in the field of the Table/Query 
+
+(Any two) 
+
+2
+
+7
+
+8.3.2
+
+TWO examples of functions
+
+(1) Sum 
+(2) Average (AVG) 
+(3) Max 
+(4) Min 
+(5) Count 
+(6) Date/Now 
+
+(Any two) 
+
+2
+
+8.3.3
+
+Difference between queries Query 1 Query 2 Mark Shows all the fields Shows Amount and DOB fields ✓ OR Does not show NumberOfNights field
+
+(NumberOfNights ((NumberOfNights =5)
+=5) AND (Amount 800)
+AND (Amount 800 AND (DOB is Null))
+OR Amount 2000) OR
+AND (DOB is Null) (Amount 2000)
+No sorting Sorting on Amount field 
+
+Query 1 displays all records where Amount less than 800 or
+greater than 2000 and the NumberOfNights is less and equal to
+5 and DOB is empty
+Query 2 show all records where: 
+• Amount more than 2000 whether DOB is empty or not and ignores NumberOfNights; or
+• Amount less than 800 where the NumberOfNights is less and equal to 5 and DOB is empty.
+
+3
+
+[15]
+
+TOTAL SECTION B: [75]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+9 
+DBE/June 2024 
+
+SECTION C
+
+QUESTION 9: INTEGRATED SCENARIO
+
+9.1.1
+
+THREE hardware specifications for basic computer
+
+(1) Processor capabilities – CPU 
+(2) Storage type/capacity – HDD/SSD 
+(3) Amount of RAM 
+(4) Connectivity options (WIFI; Bluetooth; NFC, USB; etc.) 
+
+(Any three) 
+
+3
+
+11
+
+9.1.2
+
+TWO factors for selecting an operating system
+
+(1) Compatibility to hardware/system requirements 
+(2) Ease of use/familiarity 
+(3) (Cost) Free-/Open-source 
+
+(Any two) 
+
+2
+
+9.1.3
+
+TWO reasons to use wireless network
+
+(1) Mobility 
+(2) No need for cables/No clutter of cables 
+(3) Ease of connection when in range of any wireless connection 
+(4) Easy to add devices, etc. 
+
+(Any two) 
+
+2
+
+9.1.4
+
+TWO other criteria for printer selection (besides colour and costs)
+
+(1) Resolution/DPI/Quality of the printouts 
+(2) Printer speed/PPM 
+(3) Connectivity options, e.g., wireless, USB, etc. 
+(4) Duty cycle 
+(5) Multifunction ability, e.g., copying, scanning, etc. 
+(6) Paper size/Borderless printing 
+(7) User interface options 
+(8) Duplex/Two-sided printing option 
+(9) Type of printer 
+(10) Printing technology, i.e., size and number of ink tanks, toner, etc. 
+(11) Printer capacity (industrial level)/Paper tray capacity 
+(12) Amount of RAM 
+(13) OCR Software 
+(14) Warranty, etc. 
+
+(Any two) 
+
+2
+
+9.1.5
+
+Explain the duty cycle of a printer Maximum amount of print outs per month ✓ without the printer
+
+getting damaged or failing 
+
+2
+
+9.2.1
+
+Optical storage media
+
+CD/DVD/Blue-Ray 
+
+1
+
+4
+
+9.2.2
+
+Primary Key field
+
+(1) Unique data in field/No duplicate values 
+(2) No empty records/No Null data 
+(Any one) 
+
+1
+
+9.2.3
+
+Use of input mask
+
+(1) To prevent mistakes 
+(2) Consistent format 
+(3) Correct data format 
+(Any one) 
+
+1
+
+9.2.4
+
+Method to capture dates
+
+Use the Date picker 
+
+1
+
+9.3.1
+
+Type of website to host information and motivation
+
+Website Motivation
+Wiki site More formal and better layout
+Social networking site Easily accessible
+Personal/School More formal and professional
+website layout
+
+(Any one) 
+(Any one)
+(Note to marker: Do NOT accept specific examples of websites
+like Facebook, TikTok etc.)
+
+2
+
+7
+
+9.3.2
+
+TWO reasons why Add-ons are needed
+
+(1) Enhance functionality 
+(2) Allows for multi-media effects 
+(3) Easier for users to customise 
+(4) Might provide support or installation assistance 
+
+(Any two) 
+
+2
+
+9.3.3
+
+TWO alternative ways to display a URL
+
+(1) URL shortening 
+(2) QR code 
+(3) Hyperlink 
+(4) Make use of the IP address etc. 
+
+(Any two) 
+
+2
+
+9.3.4
+
+Spreadsheet feature
+
+(1) Sorting 
+(2) Filtering 
+(3) Conditional formatting 
+(Any one) 
+
+1
+
+9.4.1
+
+Definition of an interactive whiteboard Combination of input and output technologies ✓
+
+(Note to marker: Accept valid description) 
+
+1
+
+3
+
+9.4.2
+
+TWO disadvantages of an interactive whiteboard
+
+(1) Specialised software/equipment is required 
+(2) Needs additional training 
+(3) Susceptible to outside input (cloths/dust, etc.) 
+(4) Expensive to maintain 
+(5) Technical glitches: Needs to be calibrated/connectivity issues/software malfunctions 
+(6) Health issues (e.g. eye strain) 
+
+(Any two) 
+
+2
+
+[25]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+10 
+DBE/June 2024 
+
+QUESTION 10
+
+10.1.1
+
+TWO safety measures using mobile device at a hotel or airport
+
+(1) Do not access private content in a public area 
+(2) Be aware of criminals 
+(3) Make sure the connection to the hotspot is secure/Look for a secure network/lock icon 
+(4) Activate VPN 
+
+(Any two) 
+
+2
+
+6
+
+10.1.2
+
+Reason to remove metadata from public photos
+
+(1) Location can be tracked 
+(2) Prevent stalking 
+(3) Model and make of equipment are listed, etc. 
+(Any one) 
+
+1
+
+10.1.3
+
+Financial fundraising from volunteers
+
+Crowd funding 
+
+1
+
+10.1.4
+
+TWO advantages of video conferencing
+
+(1) Able to connect people, in one meeting/session, from different locations all over the world 
+(2) Real-time connection with family and friends at home 
+(3) Have conversations where they can all see each other while they are in different locations 
+(4) Save on travelling and accommodation cost 
+
+(Any two) 
+
+2
+
+10.2.1
+
+TWO devices needed to experience Virtual Reality
+
+(1) Head gear/Helmet with screen/VR Goggles 
+(2) Headphones 
+(3) Gaming console 
+(4) Smartphones/Mobile device 
+(5) Gloves/Body suit with sensors/controllers 
+(6) Box/Room/Simulation environment (moving floor/treadmill, etc.) 
+
+(Any two) 
+
+2
+
+7
+
+10.2.2
+
+Negative effect of Virtual Reality
+
+(1) Motion sickness/Cyber sickness 
+(2) Blurred vision/Eye strain 
+(3) Headache 
+(4) Muscle fatigue 
+(5) Injuries (Neck/Back strain, etc.) 
+(6) Unable to distinguish between reality and fiction 
+
+(Any two) 
+
+2
+
+10.2.3
+
+Use of Augmented Reality Takes physical world and adds/overlays objects/graphics ✓ on a digital interface within the real world ✓
+
+(Note to marker: Also accept an example with an explanation) 
+
+2
+
+10.2.4
+
+4IR technology excluding IoT
+
+(1) AI 
+(2) 3D-printing 
+(3) Genetic engineering 
+(4) Quantum computing, etc. (Note to marker: Accept any relevant example) 
+(Any one) 
+
+1
+
+10.3
+
+Criteria of strong password
+
+(1) Uppercase and lowercase letters 
+(2) Includes numbers 
+(3) Special characters 
+(4) Eight of more characters 
+
+(Any three) 
+
+3
+
+10.4.1
+
+TWO advantages of using crypto currency
+
+(1) Able to send and receive worldwide 
+(2) Minimal or no banking charges 
+(3) Accepted worldwide 
+(4) Inflation protection 
+(5) Secure method of banking/transactions 
+
+(Any two) 
+
+2
+
+4
+
+10.4.2
+
+Explanation of blockchain Sequence of blocks/groups/records of transactions ✓
+
+Cannot be removed or altered 
+
+2
+
+10.5.1
+
+Reasons for not using self-driving bus
+
+(1) No control/Possible accidents 
+(2) Vulnerable to possible hacking 
+(3) Possible electronic malfunction 
+(4) Possible machine errors 
+(5) Trust issues 
+
+(Any two) 
+
+2
+
+5
+
+10.5.2
+
+Definition of Big data It is very large (structured and unstructured) data sets ✓ that are
+
+analysed using computers 
+to reveal trends and associations 
+
+3
+
+[25]
+
+TOTAL SECTION C: [50]
+
+GRAND TOTAL: 150
+
+Copyright reserved

@@ -1,0 +1,758 @@
+﻿{% extends "teacher/_layout.html" %}
+{% block extra_css %}
+<style>
+  body { background: #0b0b0d !important; padding-top: 0 !important; }
+  main { padding: 0 !important; }
+  .t-shell { padding-top: 30px !important; }
+  .t-shell .t-head { margin-top: 0 !important; padding-top: 0 !important; }
+  .sath-nav { background: transparent !important; border-bottom: none !important; }
+</style>
+{% endblock %}
+{% block t_title %}{% if read_only %}View question{% elif item %}Edit question{% else %}New question{% endif %}{% endblock %}
+{% block t_sub %}{% if read_only %}Read-only — you can view this question but only its owner can edit or delete it.{% else %}Write the question and an ideal answer/memo. You can reuse it in any generated paper.{% endif %}{% endblock %}
+
+{% block t_body %}
+
+<style>
+/* ---- Dark mode override (matches papers.html / bank.html) ---- */
+body { background: #0b0b0d !important; }
+.t-shell {
+  background: #0b0b0d !important;
+  color: #f5f5f7 !important;
+  padding-top: 30px !important;
+}
+.t-shell .t-head { margin-top: 0 !important; padding-top: 0 !important; }
+.t-shell,
+.t-shell *:not(.navbar):not(.navbar *) { color: #f5f5f7 !important; }
+.t-shell .t-eyebrow, .t-shell .t-eyebrow * { color: #9a9aa3 !important; }
+.t-shell .t-sub,     .t-shell .t-sub *     { color: #d6d6da !important; }
+.t-shell, .t-shell * {
+  --az-bg: #0b0b0d !important;
+  --az-surface: #1a1a1d !important;
+  --az-border: #2a2a2f !important;
+  --az-border-2: #3a3a40 !important;
+  --az-text: #f5f5f7 !important;
+  --az-text-2: #d6d6da !important;
+  --az-text-3: #9a9aa3 !important;
+    --az-blue-bg: rgba(255,255,255,0.12) !important;
+  --bg: #0b0b0d !important;
+  --bg-elevated: #1a1a1d !important;
+  --bg-card: #1a1a1d !important;
+  --bg-input: #1a1a1d !important;
+  --text: #f5f5f7 !important;
+  --text-secondary: #d6d6da !important;
+  --text-tertiary: #9a9aa3 !important;
+  --separator: #2a2a2f !important;
+  --separator-light: #2a2a2f !important;
+  --fill: #1a1a1d !important;
+    --blue: #f5f5f7 !important;
+}
+.t-shell .t-head { border-bottom-color: #2a2a2f !important; }
+
+/* Cards */
+.t-shell .t-card {
+    background: rgba(20,20,20,0.52) !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    border-radius: 12px !important;
+  color: #f5f5f7 !important;
+}
+
+/* Defeat layout's blue banner on first-child card headings */
+.t-shell.t-shell .t-card > h2:first-child,
+.t-shell.t-shell .t-card > h2:first-child *,
+.t-shell.t-shell .t-card > h3:first-child,
+.t-shell.t-shell .t-card > h3:first-child *,
+.t-shell.t-shell .t-card > h4:first-child,
+.t-shell.t-shell .t-card > h4:first-child * {
+  background: transparent !important;
+  color: #f5f5f7 !important;
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  text-align: left !important;
+  font-size: 18px !important;
+}
+
+/* Form fields */
+.t-shell .t-field label,
+.t-shell label {
+    color: #d6d6da !important;
+    font-size: 13px;
+    font-weight: 600;
+  text-transform: none; letter-spacing: 0;
+}
+.t-shell input[type="text"], .t-shell input[type="search"],
+.t-shell input[type="email"], .t-shell input[type="number"],
+.t-shell input[type="date"], .t-shell input[type="file"],
+.t-shell select, .t-shell textarea,
+.t-shell .t-input, .t-shell .t-select,
+.t-shell .t-field input, .t-shell .t-field textarea, .t-shell .t-field select {
+  background: #141414 !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  color: #f5f5f7 !important;
+    border-radius: 12px !important;
+    padding: 10px 16px !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+    min-height: 40px;
+  color-scheme: dark;
+}
+.t-shell input:hover, .t-shell select:hover, .t-shell textarea:hover { border-color: rgba(255,255,255,0.16) !important; background: #1A1A1A !important; }
+.t-shell input:focus, .t-shell select:focus, .t-shell textarea:focus {
+  outline: none !important; border-color: rgba(255,255,255,0.30) !important; background: #1A1A1A !important;
+}
+.t-shell input::placeholder, .t-shell textarea::placeholder { color: #6b6b73 !important; }
+.t-shell select option { background: #1A1A1A !important; color: #f5f5f7 !important; }
+.t-shell input[type="file"] { padding: 6px 10px !important; }
+.t-shell input[type="file"]::file-selector-button,
+.t-shell input[type="file"]::-webkit-file-upload-button {
+  background: #1f1f24; color: #f5f5f7;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 300;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.t-shell input[type="file"]::file-selector-button:hover,
+.t-shell input[type="file"]::-webkit-file-upload-button:hover { background: #26262c; }
+
+/* Custom dropdown (fdd) — planner-spec dark */
+.t-shell .fdd { color: #f5f5f7 !important; }
+.t-shell .fdd-toggle {
+  background: #141414 !important; color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+    border-radius: 12px !important;
+    padding: 8px 14px !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+    min-height: 40px;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100%;
+}
+.t-shell .fdd-toggle:hover { background: #1A1A1A !important; border-color: rgba(255,255,255,0.18) !important; }
+.t-shell .fdd-toggle:focus, .t-shell .fdd-toggle.is-open { border-color: rgba(255,255,255,0.30) !important; outline: none !important; box-shadow: none !important; }
+.t-shell .fdd-label { color: #ffffff !important; font-weight: 300 !important; }
+.t-shell .fdd-toggle .caret { color: rgba(255,255,255,0.45) !important; }
+.t-shell .fdd-panel {
+  background: #1A1A1A !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.55) !important;
+  padding: 4px !important;
+  margin-top: 4px !important;
+  min-width: 100% !important;
+}
+.t-shell .fdd-item {
+  color: rgba(255,255,255,0.88) !important;
+  background: transparent !important;
+  padding: 7px 12px !important;
+  border-radius: 6px !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  white-space: nowrap;
+}
+.t-shell .fdd-item:hover { background: rgba(255,255,255,0.06) !important; color: #fff !important; }
+.t-shell .fdd-item.selected,
+.t-shell .fdd-item.is-selected,
+.t-shell .fdd-item[aria-selected="true"] {
+  background: rgba(255,255,255,0.08) !important;
+  color: #ffffff !important;
+}
+
+/* Buttons */
+.t-shell .t-btn {
+    background: transparent !important;
+    color: #f5f5f7 !important;
+    border: 1px solid rgba(255,255,255,0.10) !important;
+}
+.t-shell .t-btn:hover { background: #1A1A1A !important; border-color: rgba(255,255,255,0.18) !important; }
+.t-shell .t-btn.primary {
+    background: #1A1A1A !important;
+    color: #ffffff !important;
+    border-color: rgba(255,255,255,0.18) !important;
+    font-weight: 500 !important;
+}
+.t-shell .t-btn.primary:hover {
+    background: #232428 !important;
+    border-color: rgba(255,255,255,0.28) !important;
+}
+
+/* Small / muted helper text */
+.t-shell small { color: #9a9aa3 !important; }
+
+/* Image preview wrapper */
+#bankImagePreviewWrap { border-color: #2a2a2f !important; background: #0f0f12 !important; }
+
+/* Autofill */
+.t-shell input:-webkit-autofill,
+.t-shell input:-webkit-autofill:hover,
+.t-shell input:-webkit-autofill:focus,
+.t-shell select:-webkit-autofill {
+  -webkit-text-fill-color: #f5f5f7 !important;
+  -webkit-box-shadow: 0 0 0 1000px #0f0f12 inset !important;
+  caret-color: #f5f5f7;
+  transition: background-color 9999s ease-in-out 0s;
+}
+
+.t-shell .t-title {
+    font-size: clamp(36px, 4.2vw, 56px) !important;
+    font-weight: 700 !important;
+    letter-spacing: -1px !important;
+    line-height: 1.05 !important;
+}
+
+/* Visibility checkbox: keep it visible on dark */
+.t-card input[type="checkbox"] {
+    color-scheme: dark;
+    accent-color: #f5f5f7;
+    width: 14px;
+    height: 14px;
+    margin: 0;
+    outline: none;
+    box-shadow: none;
+}
+.t-card input[type="checkbox"]:focus,
+.t-card input[type="checkbox"]:focus-visible {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Insert-tick helper inside a textarea field */
+.ta-with-tick { position: relative; width: 100%; }
+.ta-with-tick textarea {
+    width: 100% !important;
+    box-sizing: border-box !important;
+    display: block !important;
+    min-height: 140px;
+    padding-right: 92px !important;
+    resize: vertical;
+}
+.ta-tick-btn {
+    position: absolute; top: 8px; right: 8px;
+    background: #1f1f24; color: #f5f5f7;
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 6px;
+    padding: 4px 10px;
+    font-size: 12px; font-weight: 400; line-height: 1;
+    cursor: pointer;
+    z-index: 2;
+}
+.ta-tick-btn:hover { background: #26262c; border-color: rgba(255,255,255,0.18); color: #ffffff; }
+.ta-tick-btn:active {
+    background: #2a2b30;
+    border-color: rgba(255,255,255,0.28);
+    color: #ffffff;
+}
+</style>
+
+<form method="post" enctype="multipart/form-data" class="t-card"{% if read_only %} data-read-only="1"{% endif %}>
+    {% set _next = request.args.get('next', '') %}
+    {% if _next %}<input type="hidden" name="next" value="{{ _next }}">{% endif %}
+    <div class="t-form-grid">
+        <div class="t-field span-2">
+            <label>Subject</label>
+            <div class="fdd" data-fdd="single">
+                <button type="button" class="fdd-toggle">
+                    <span class="fdd-label">{{ selected_subject }}</span>
+                    <span class="caret">▾</span>
+                </button>
+                <input type="hidden" name="subject" value="{{ selected_subject }}">
+                <div class="fdd-panel">
+                    {% for subject_name in subject_choices %}
+                    <div class="fdd-item" data-value="{{ subject_name }}">{{ subject_name }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+            <small style="color:var(--text-tertiary); font-size:11.5px;">Questions only appear in papers for this subject.</small>
+        </div>
+        <div class="t-field">
+            <label>Grade</label>
+            <div class="fdd" data-fdd="single">
+                <button type="button" class="fdd-toggle">
+                    {% set cur_g = (item.grade if item else 12) %}
+                    <span class="fdd-label">Grade {{ cur_g }}</span>
+                    <span class="caret">▾</span>
+                </button>
+                <input type="hidden" name="grade" value="{{ cur_g }}">
+                <div class="fdd-panel">
+                    {% for g in [10,11,12] %}
+                        <div class="fdd-item" data-value="{{ g }}">Grade {{ g }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="t-field">
+            <label>Marks</label>
+            <input name="marks" type="number" min="0" max="100" value="{{ item.marks if item else 1 }}">
+            <small style="color:var(--text-tertiary); font-size:11.5px;">Use 0 for a scenario stem (intro text with no marks).</small>
+        </div>
+        <div class="t-field">
+            <label>Topic</label>
+            <input name="topic" value="{{ item.topic if item else '' }}" placeholder="e.g. Networks">
+        </div>
+        <div class="t-field">
+            <label>Subtopic</label>
+            <input name="subtopic" value="{{ item.subtopic if item else '' }}" placeholder="e.g. Topologies">
+        </div>
+        <div class="t-field">
+            <label>Difficulty</label>
+            <div class="fdd" data-fdd="single">
+                <button type="button" class="fdd-toggle">
+                    {% set cur_d = (item.difficulty if item else 'easy') %}
+                    <span class="fdd-label">{{ cur_d|title }}</span>
+                    <span class="caret">▾</span>
+                </button>
+                <input type="hidden" name="difficulty" value="{{ cur_d }}">
+                <div class="fdd-panel">
+                    {% for d in ['easy','medium','hard'] %}
+                        <div class="fdd-item" data-value="{{ d }}">{{ d|title }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="t-field">
+            <label>Type</label>
+            {% set type_opts = [
+                ('short_answer','Short answer'),
+                ('one_word','One-word answer'),
+                ('fill_in_blank','Fill in the blank'),
+                ('definition','Definition / give the term'),
+                ('true_false','True/False'),
+                ('true_false_correct','True/False (with correction)'),
+                ('mcq','Multiple choice'),
+                ('matching','Matching (Column A with Column B)'),
+                ('ordering','Ordering / sequencing'),
+                ('list','List / name / identify'),
+                ('explain','Explain / describe'),
+                ('discuss','Discuss / motivate'),
+                ('compare','Compare / contrast'),
+                ('advantages_disadvantages','Advantages & disadvantages'),
+                ('paragraph','Paragraph / essay'),
+                ('calculation','Calculation'),
+                ('diagram_label','Label a diagram'),
+                ('diagram_draw','Draw / sketch a diagram'),
+                ('interpretation','Source / data interpretation'),
+                ('case_study','Case study / scenario'),
+                ('code_reading','Code reading / trace output'),
+                ('code_writing','Code writing / programming'),
+                ('spreadsheet','Practical: Spreadsheet (Excel)'),
+                ('word_processing','Practical: Word processing'),
+                ('database','Practical: Database (Access)'),
+                ('html_web','Practical: HTML / web'),
+                ('structured','Structured (multi-part)'),
+                ('practical','Practical (general)'),
+                ('other','Other')
+            ] %}
+            {% set cur_t = (item.question_type if item else 'short_answer') %}
+            {# Legacy data: many matching questions are stored as 'mcq' but their
+               question_text starts with "Match the following…". Normalize for the
+               dropdown so the teacher sees the correct type. #}
+            {% if item and cur_t in ['mcq','multiple_choice'] and (item.question_text or '').lstrip().lower().startswith('match') %}
+                {% set cur_t = 'matching' %}
+            {% elif cur_t == 'match_columns' %}
+                {% set cur_t = 'matching' %}
+            {% elif cur_t == 'multiple_choice' %}
+                {% set cur_t = 'mcq' %}
+            {% elif cur_t == 'fill_blank' or cur_t == 'fill_in_the_blank' %}
+                {% set cur_t = 'fill_in_blank' %}
+            {% endif %}
+            {% set cur_t_label = (type_opts | selectattr(0, 'equalto', cur_t) | first)[1] if (type_opts | selectattr(0, 'equalto', cur_t) | list) else 'Short answer' %}
+            <div class="fdd" data-fdd="single">
+                <button type="button" class="fdd-toggle">
+                    <span class="fdd-label">{{ cur_t_label }}</span>
+                    <span class="caret">▾</span>
+                </button>
+                <input type="hidden" name="question_type" value="{{ cur_t }}">
+                <div class="fdd-panel">
+                    {% for k,v in type_opts %}
+                        <div class="fdd-item" data-value="{{ k }}">{{ v }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="t-field span-2">
+            <label>Question text *
+                {% set _imp = item and 'imported' in (item.tags or '') %}
+                {% if _imp %}
+                <small style="color:#9a9aa3; font-weight:400; margin-left:8px;">
+                    (imported from past paper — shown in monospaced layout to preserve column alignment)
+                </small>
+                {% endif %}
+            </label>
+            <div class="ta-with-tick">
+                <textarea name="question_text" data-tick-target required
+                    {% if _imp %}class="ta-mono"{% endif %}
+                    {% if _imp %}style="font-family: 'Cascadia Mono','Consolas','SF Mono','Menlo',monospace; font-size:13px; line-height:1.45; white-space:pre; min-height:520px; tab-size:4;" wrap="off"{% endif %}>{{ item.question_text if item else '' }}</textarea>
+                <button type="button" class="ta-tick-btn" data-tick-for="question_text" title="Insert tick (✓) at cursor">Insert ✓</button>
+            </div>
+        </div>
+        <div class="t-field span-2">
+            <label>Answer / memo</label>
+            <div class="ta-with-tick">
+                <textarea name="answer_text" data-tick-target>{{ item.answer_text if item else '' }}</textarea>
+                <button type="button" class="ta-tick-btn" data-tick-for="answer_text" title="Insert tick (✓) at cursor">Insert ✓</button>
+            </div>
+            <small style="color:var(--text-tertiary); font-size:11.5px;">Tip: place the cursor where you want the tick and click <strong>Insert ✓</strong> (or press <kbd>Ctrl</kbd>+<kbd>.</kbd>). Each ✓ renders as a bold mark in the printed memo.</small>
+        </div>
+        <div class="t-field span-2">
+            <label>Figure / diagram (optional)</label>
+            <small style="color:var(--text-tertiary); font-size:11.5px; display:block; margin-bottom:6px;">
+                Attach a picture (PNG, JPG, SVG, WEBP) for diagram-based questions — it will appear under the question text on the printed paper.
+            </small>
+            {% if item and item.image_path %}
+                <div id="bankImagePreviewWrap" style="display:flex; align-items:flex-start; gap:12px; padding:8px; border:1px solid rgba(127,127,127,0.25); border-radius:6px; margin-bottom:8px;">
+                    <img id="bankImagePreview" src="{{ url_for('static', filename=item.image_path) }}" alt="Current figure" style="max-width:200px; max-height:160px; border:1px solid rgba(127,127,127,0.25); border-radius:4px; background:#fff;">
+                    <small id="bankImagePreviewLabel" style="color:var(--text-tertiary); font-size:11.5px;">Current figure</small>
+                </div>
+            {% else %}
+                <div id="bankImagePreviewWrap" style="display:none; align-items:flex-start; gap:12px; padding:8px; border:1px solid rgba(127,127,127,0.25); border-radius:6px; margin-bottom:8px;">
+                    <img id="bankImagePreview" src="" alt="New figure preview" style="max-width:200px; max-height:160px; border:1px solid rgba(127,127,127,0.25); border-radius:4px; background:#fff;">
+                    <small id="bankImagePreviewLabel" style="color:var(--text-tertiary); font-size:11.5px;">New figure</small>
+                </div>
+            {% endif %}
+            <input name="image" type="file" id="bankImageInput" accept="image/png,image/jpeg,image/svg+xml,image/webp">
+        </div>
+        <div class="t-field">
+            <label>Tags</label>
+            <div class="tag-editor">
+                <input name="tags" id="tagsInput" value="{{ item.tags if item else '' }}" placeholder="Type a tag and press Enter to add your own…">
+                <div id="tagChips" class="tag-chips-wrap"></div>
+                {% set _suggested = [
+                    'Bloom: Remember','Bloom: Understand','Bloom: Apply','Bloom: Analyse','Bloom: Evaluate','Bloom: Create',
+                    'Easy','Medium','Hard',
+                    'Theory','Practical','Scenario','Case study',
+                    'Word processing','Spreadsheet','Database','HTML','Networks','Hardware','Software','Internet','Social implications',
+                    'Term 1','Term 2','Term 3','Term 4',
+                    'Exam','Test','Homework','Revision'
+                ] %}
+                <div class="tag-section">
+                    <span class="tag-section-title">Suggested</span>
+                    <div id="suggestedTags" class="tag-grid">
+                        {% for t in _suggested %}
+                        <button type="button" class="tag-suggest" data-tag="{{ t }}">{{ t }}</button>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% if existing_tags %}
+                <div class="tag-section">
+                    <span class="tag-section-title">From your bank</span>
+                    <div id="existingTags" class="tag-grid">
+                        {% for t in existing_tags %}
+                        <button type="button" class="tag-suggest" data-tag="{{ t }}">{{ t }}</button>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+                <small class="tag-help">Click any tag to add or remove it. Type your own and press <kbd>Enter</kbd> or <kbd>,</kbd>.</small>
+            </div>
+        </div>
+        <div class="t-field">
+            <label>Visibility</label>
+            {% set _scope = (item.share_scope if item and item.share_scope else 'private') %}
+            {% set _scope_labels = {
+                'private': 'Private — only me',
+                'school':  'My school / team' ~ (' — ' ~ current_user.school_name if current_user.school_name else ''),
+                'public':  'Public — all teachers'
+            } %}
+            <div class="fdd" data-fdd="single">
+                <button type="button" class="fdd-toggle">
+                    <span class="fdd-label">{{ _scope_labels[_scope] }}</span>
+                    <span class="caret">▾</span>
+                </button>
+                <input type="hidden" name="share_scope" value="{{ _scope }}">
+                <div class="fdd-panel">
+                    <div class="fdd-item" data-value="private">Private — only me</div>
+                    <div class="fdd-item" data-value="school">My school / team{% if current_user.school_name %} — {{ current_user.school_name }}{% endif %}</div>
+                    <div class="fdd-item" data-value="public">Public — all teachers</div>
+                </div>
+            </div>
+            <small style="color:var(--text-tertiary); font-size:11.5px;">Choose who can see this question in their bank. You can change this any time.</small>
+        </div>
+    </div>
+    <div style="margin-top:18px; display:flex; gap:10px;">
+        {% if not read_only %}
+        <button class="t-btn primary"><img src="{{ url_for('static', filename='images/save.png') }}" alt="" width="14" height="14" style="vertical-align:-2px; filter: brightness(0) invert(1);"> Save</button>
+        {% endif %}
+        <a class="t-btn" href="{{ _next if _next else url_for('teacher_bank') }}">{% if read_only %}Back{% else %}Cancel{% endif %}</a>
+    </div>
+</form>
+<script>
+(function(){
+    // Insert U+2713 (✓) at the current caret position in the linked textarea.
+    function insertTickInto(ta){
+        if (!ta || ta.disabled || ta.readOnly) return;
+        var start = ta.selectionStart, end = ta.selectionEnd;
+        var v = ta.value;
+        ta.value = v.slice(0, start) + '\u2713' + v.slice(end);
+        var pos = start + 1;
+        ta.setSelectionRange(pos, pos);
+        ta.focus();
+        // Notify any listeners (autosave, change tracking, etc.)
+        ta.dispatchEvent(new Event('input',  { bubbles: true }));
+        ta.dispatchEvent(new Event('change', { bubbles: true }));
+    }
+    document.querySelectorAll('.ta-tick-btn').forEach(function(btn){
+        btn.addEventListener('click', function(e){
+            e.preventDefault();
+            var name = btn.getAttribute('data-tick-for');
+            var ta = document.querySelector('textarea[name="' + name + '"]');
+            insertTickInto(ta);
+        });
+    });
+    // Keyboard shortcut: Ctrl/Cmd + . inserts a tick in the focused textarea.
+    document.addEventListener('keydown', function(e){
+        if ((e.ctrlKey || e.metaKey) && e.key === '.') {
+            var ta = document.activeElement;
+            if (ta && ta.tagName === 'TEXTAREA' && ta.hasAttribute('data-tick-target')) {
+                e.preventDefault();
+                insertTickInto(ta);
+            }
+        }
+    });
+})();
+</script>
+<style>
+/* ----- Tag editor (dark theme) ---------------------------------------- */
+.tag-editor {
+    margin-top: 4px;
+    padding: 12px;
+    background: #0c0c0c;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px;
+}
+.tag-editor input#tagsInput {
+    width: 100%;
+    background: #141414 !important;
+    color: #f5f5f7 !important;
+    border: 1px solid rgba(255,255,255,0.10) !important;
+    border-radius: 8px !important;
+    padding: 9px 12px !important;
+    font-size: 13px !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+.tag-editor input#tagsInput::placeholder { color: rgba(255,255,255,0.35); }
+.tag-editor input#tagsInput:focus {
+    border-color: rgba(255,255,255,0.30) !important;
+}
+.tag-editor .tag-section {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+.tag-editor .tag-section-title {
+    display: block;
+    margin-bottom: 8px;
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    font-weight: 500;
+}
+.tag-editor .tag-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+
+/* Selected tags shown as chips inside a soft inset row */
+.tag-chips-wrap {
+    margin-top: 10px;
+    min-height: 36px;
+    padding: 6px 8px;
+    display: flex; flex-wrap: wrap; gap: 6px; align-items: center;
+    background: #141414;
+    border: 1px dashed rgba(255,255,255,0.10);
+    border-radius: 8px;
+}
+.tag-chips-wrap:empty::before {
+    content: "No tags yet — pick from the lists below or type your own.";
+    color: rgba(255,255,255,0.35);
+    font-size: 11.5px;
+    padding: 4px 2px;
+}
+.tag-chip {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 3px 6px 3px 10px;
+    border-radius: 999px;
+    background: #1A1A1A;
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.18);
+    font-size: 12px; line-height: 1.6;
+}
+.tag-chip button {
+    all: unset;
+    cursor: pointer;
+    width: 18px; height: 18px;
+    display: inline-flex; align-items: center; justify-content: center;
+    border-radius: 50%;
+    color: rgba(255,255,255,0.55);
+    font-size: 13px; line-height: 1;
+}
+.tag-chip button:hover { background: rgba(255,255,255,0.10); color: #fff; }
+
+/* Suggestion chips */
+.tag-suggest {
+    cursor: pointer;
+    padding: 4px 11px;
+    border-radius: 999px;
+    background: #141414;
+    color: rgba(255,255,255,0.78);
+    border: 1px solid rgba(255,255,255,0.10);
+    font-size: 12px;
+    line-height: 1.6;
+    transition: background 120ms ease, border-color 120ms ease, color 120ms ease;
+}
+.tag-suggest:hover {
+    background: #1A1A1A;
+    border-color: rgba(255,255,255,0.22);
+    color: #ffffff;
+}
+.tag-suggest.selected {
+    background: rgba(255,255,255,0.10);
+    border-color: rgba(255,255,255,0.28);
+    color: #ffffff;
+    font-weight: 500;
+}
+.tag-suggest.selected:hover {
+    background: rgba(255,255,255,0.14);
+    border-color: rgba(255,255,255,0.38);
+}
+.tag-help {
+    margin-top: 8px;
+    display: block;
+    color: rgba(255,255,255,0.40);
+    font-size: 11px;
+}
+</style>
+<script>
+(function(){
+    var input = document.getElementById('tagsInput');
+    if (!input) return;
+    var chipsBox = document.getElementById('tagChips');
+    var groups = [document.getElementById('suggestedTags'), document.getElementById('existingTags')];
+
+    function readTags(){
+        return input.value.split(',')
+            .map(function(s){ return s.trim(); })
+            .filter(function(s){ return s.length > 0; });
+    }
+    function writeTags(list){
+        // Dedupe case-insensitively, preserve first-seen casing.
+        var seen = {}; var out = [];
+        list.forEach(function(t){
+            var k = t.toLowerCase();
+            if (!seen[k]) { seen[k] = 1; out.push(t); }
+        });
+        input.value = out.join(', ');
+        render();
+    }
+    function render(){
+        var tags = readTags();
+        chipsBox.innerHTML = '';
+        tags.forEach(function(t){
+            var chip = document.createElement('span');
+            chip.className = 'tag-chip';
+            chip.textContent = t;
+            var x = document.createElement('button');
+            x.type = 'button';
+            x.setAttribute('aria-label', 'Remove tag ' + t);
+            x.textContent = '\u00D7';
+            x.addEventListener('click', function(){
+                writeTags(readTags().filter(function(o){ return o.toLowerCase() !== t.toLowerCase(); }));
+            });
+            chip.appendChild(x);
+            chipsBox.appendChild(chip);
+        });
+        // Mark suggestions as selected if already in the input.
+        var lowerSet = {}; tags.forEach(function(t){ lowerSet[t.toLowerCase()] = 1; });
+        groups.forEach(function(g){
+            if (!g) return;
+            g.querySelectorAll('.tag-suggest').forEach(function(b){
+                var k = (b.getAttribute('data-tag') || '').toLowerCase();
+                b.classList.toggle('selected', !!lowerSet[k]);
+            });
+        });
+    }
+    function toggleTag(tag){
+        var tags = readTags();
+        var lower = tag.toLowerCase();
+        var idx = -1;
+        for (var i = 0; i < tags.length; i++) {
+            if (tags[i].toLowerCase() === lower) { idx = i; break; }
+        }
+        if (idx >= 0) tags.splice(idx, 1);
+        else tags.push(tag);
+        writeTags(tags);
+    }
+    groups.forEach(function(g){
+        if (!g) return;
+        g.querySelectorAll('.tag-suggest').forEach(function(b){
+            b.addEventListener('click', function(){
+                toggleTag(b.getAttribute('data-tag') || '');
+            });
+        });
+    });
+    // Allow free-form custom tags: Enter or comma adds the typed text as a chip.
+    input.addEventListener('keydown', function(e){
+        if (e.key === 'Enter' || e.key === ',') {
+            // Let the user finish typing one tag at a time.
+            var raw = input.value;
+            var lastComma = raw.lastIndexOf(',');
+            var newPart = raw.slice(lastComma + 1).trim();
+            if (newPart) {
+                e.preventDefault();
+                var existing = raw.slice(0, lastComma + 1).split(',')
+                    .map(function(s){ return s.trim(); }).filter(Boolean);
+                existing.push(newPart);
+                writeTags(existing);
+            }
+        }
+    });
+    input.addEventListener('blur', function(){ writeTags(readTags()); });
+    render();
+})();
+</script>
+<script>
+(function(){
+    // Lock all form controls when this is a read-only view (non-owner).
+    var form = document.querySelector('form.t-card[data-read-only="1"]');
+    if (form) {
+        form.querySelectorAll('input, textarea, select, button:not([type="button"])').forEach(function(el){
+            if (el.tagName === 'BUTTON') { el.disabled = true; return; }
+            el.setAttribute('readonly', 'readonly');
+            el.setAttribute('disabled', 'disabled');
+            el.style.opacity = '0.85';
+            el.style.cursor  = 'not-allowed';
+        });
+        // Disable fdd dropdowns
+        form.querySelectorAll('.fdd .fdd-toggle').forEach(function(b){
+            b.disabled = true; b.style.cursor = 'not-allowed'; b.style.opacity = '0.85';
+        });
+    }
+})();
+</script>
+<script>
+(function(){
+    var input = document.getElementById('bankImageInput');
+    var img   = document.getElementById('bankImagePreview');
+    var wrap  = document.getElementById('bankImagePreviewWrap');
+    var label = document.getElementById('bankImagePreviewLabel');
+    if (!input || !img || !wrap) return;
+    input.addEventListener('change', function(){
+        var f = input.files && input.files[0];
+        if (!f) return;
+        var url = URL.createObjectURL(f);
+        img.src = url;
+        wrap.style.display = 'flex';
+        if (label) label.textContent = 'New figure (will replace existing on save)';
+    });
+})();
+</script>
+{% endblock %}

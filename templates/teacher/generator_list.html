@@ -1,0 +1,990 @@
+﻿{% extends "teacher/_layout.html" %}
+{% block extra_css %}
+<style>
+  body { background: #0b0b0d !important; padding-top: 0 !important; }
+  main { padding: 0 !important; }
+  .t-shell { padding-top: 30px !important; }
+  .t-shell .t-head { margin-top: 0 !important; padding-top: 0 !important; }
+  .sath-nav { background: transparent !important; border-bottom: none !important; }
+
+  /* Slightly thinner bold text & icons across this page */
+  .t-shell b,
+  .t-shell strong,
+  .t-shell th,
+  .t-shell .t-btn,
+  .t-shell .t-thin-btn,
+  .t-shell h1, .t-shell h2, .t-shell h3, .t-shell h4, .t-shell h5, .t-shell h6 {
+    font-weight: 500 !important;
+  }
+  .t-shell .t-title { font-weight: 600 !important; letter-spacing: -0.5px !important; }
+  /* Keep FA Free glyphs rendering: solid=900, regular=400, brands=400.
+     Just ensure no extra stroke/shadow makes them look heavier. */
+  .t-shell .fa, .t-shell .fas, .t-shell .fa-solid,
+  .t-shell .far, .t-shell .fa-regular,
+  .t-shell .fab, .t-shell .fa-brands {
+    -webkit-text-stroke: 0 !important;
+    text-shadow: none !important;
+    opacity: 0.92;
+  }
+  .t-shell .gl-act svg { stroke-width: 1.1 !important; }
+  .t-shell .gl-act .gl-key,
+  .t-shell .gl-act .gl-edit { opacity: 0.92; }
+    .t-shell .gl-new-paper-btn {
+        padding: 5px 10px !important;
+        min-height: 30px !important;
+        font-size: 12px !important;
+        line-height: 1 !important;
+        border-radius: 8px !important;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+    }
+    .t-shell .gl-new-paper-btn i {
+        font-size: 12px !important;
+    }
+</style>
+{% endblock %}
+{% block t_title %}Generated papers{% endblock %}
+{% block t_sub %}Build, preview and print examination papers with memos.{% endblock %}
+{% block t_action %}
+        <a class="t-btn primary gl-new-paper-btn" href="{{ url_for('teacher_paper_edit', subject=selected_subject) }}"><i class="fas fa-plus"></i> New {{ selected_subject }} paper</a>
+{% endblock %}
+
+{% block t_body %}
+<style>
+/* ---- Dark mode override (matches papers.html / bank.html) ---- */
+body { background: #0b0b0d !important; }
+.t-shell {
+  background: #0b0b0d !important;
+  color: #f5f5f7 !important;
+  padding-top: 30px !important;
+}
+.t-shell .t-head { margin-top: 0 !important; padding-top: 0 !important; }
+.t-shell,
+.t-shell *:not(.navbar):not(.navbar *) { color: #f5f5f7 !important; }
+.t-shell .t-eyebrow, .t-shell .t-eyebrow * { color: #9a9aa3 !important; }
+.t-shell .t-sub,     .t-shell .t-sub *     { color: #d6d6da !important; }
+.t-shell .t-tabs a,  .t-shell .t-tabs a *  { color: #d6d6da !important; }
+.t-shell .t-tabs a.is-active,
+.t-shell .t-tabs a.is-active *              { color: #2997ff !important; }
+.t-shell, .t-shell * {
+  --az-bg: #0b0b0d !important;
+  --az-surface: #1a1a1d !important;
+  --az-border: #2a2a2f !important;
+  --az-border-2: #3a3a40 !important;
+  --az-text: #f5f5f7 !important;
+  --az-text-2: #d6d6da !important;
+  --az-text-3: #9a9aa3 !important;
+  --az-blue-bg: rgba(41,151,255,0.18) !important;
+  --bg: #0b0b0d !important;
+  --bg-elevated: #1a1a1d !important;
+  --bg-card: #1a1a1d !important;
+  --bg-input: #1a1a1d !important;
+  --text: #f5f5f7 !important;
+  --text-secondary: #d6d6da !important;
+  --text-tertiary: #9a9aa3 !important;
+  --separator: #2a2a2f !important;
+  --separator-light: #2a2a2f !important;
+  --fill: #1a1a1d !important;
+  --blue: #2997ff !important;
+}
+.t-shell .t-head { border-bottom-color: #2a2a2f !important; }
+.t-shell .t-tabs { border-bottom-color: #2a2a2f !important; }
+
+/* Cards / tables */
+.t-shell .t-card,
+.t-shell .t-section,
+.t-shell .t-box,
+.t-shell .t-panel {
+  background: #141414 !important;
+  border: 1px solid #2a2a2f !important;
+  border-radius: 8px !important;
+  color: #f5f5f7 !important;
+}
+.t-shell table,
+.t-shell .t-table { background: rgba(20,20,20,0.52) !important; color: #f5f5f7 !important; }
+.t-shell.t-shell .t-table thead th,
+.t-shell.t-shell .t-table thead th *,
+.t-shell.t-shell table.t-table > thead > tr > th,
+.t-shell.t-shell table.t-table > thead > tr > th *,
+.t-shell.t-shell .t-card table thead th,
+.t-shell.t-shell .t-card table thead th *,
+.t-shell.t-shell table thead th,
+.t-shell.t-shell table thead th * {
+    background: rgba(20,20,20,0.55) !important;
+  color: #b8b8c0 !important;
+    border-color: rgba(255,255,255,0.06) !important;
+}
+.t-shell .t-table th { border-bottom: 1px solid rgba(255,255,255,0.06) !important; }
+.t-shell .t-table td {
+        border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+  color: #f5f5f7 !important;
+  background: transparent !important;
+  font-weight: 300 !important;
+}
+.t-shell .t-table tbody tr:last-child td {
+    border-bottom: none !important;
+}
+.t-shell .t-table th,
+.t-shell .t-table td {
+    border-right: 1px solid rgba(255,255,255,0.04) !important;
+}
+.t-shell .t-table th:last-child,
+.t-shell .t-table td:last-child {
+    border-right: none !important;
+}
+/* Thin the paper title (rendered inside <strong>) to match the light UI. */
+.t-shell .t-table td strong { font-weight: 300 !important; }
+.t-shell .t-table tbody tr { cursor: pointer; }
+.t-shell .t-table tbody tr:nth-child(odd) td { background: rgba(255,255,255,0.008) !important; }
+.t-shell .t-table tbody tr:nth-child(even) td { background: rgba(255,255,255,0.016) !important; }
+.t-shell .t-table tbody tr:hover td { background: rgba(255,255,255,0.028) !important; }
+.t-shell .t-table tbody tr:hover td:first-child { border-top-left-radius: 6px; border-bottom-left-radius: 6px; }
+.t-shell .t-table tbody tr:hover td:last-child { border-top-right-radius: 6px; border-bottom-right-radius: 6px; }
+.t-shell.t-shell .t-card > h2:first-child,
+.t-shell.t-shell .t-card > h2:first-child *,
+.t-shell.t-shell .t-card > h3:first-child,
+.t-shell.t-shell .t-card > h3:first-child *,
+.t-shell.t-shell .t-card > h4:first-child,
+.t-shell.t-shell .t-card > h4:first-child * {
+  background: transparent !important;
+  color: #f5f5f7 !important;
+  margin: 0 0 12px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  text-transform: none !important;
+  letter-spacing: 0 !important;
+  text-align: left !important;
+  font-size: 18px !important;
+}
+
+/* Buttons */
+.t-shell .t-btn,
+.t-shell .t-thin-btn {
+  background: transparent !important; color: #f5f5f7 !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+}
+.t-shell .t-btn:hover, .t-shell .t-thin-btn:hover { background: #1A1A1A !important; border-color: rgba(255,255,255,0.18) !important; }
+.t-shell .t-btn.primary {
+  background: transparent !important; color: #f5f5f7 !important; border-color: rgba(255,255,255,0.08) !important;
+}
+.t-shell .t-btn.primary:hover { background: #1A1A1A !important; border-color: rgba(255,255,255,0.18) !important; }
+.t-shell .t-empty { background: transparent !important; border-color: #2a2a2f !important; color: #9a9aa3 !important; }
+
+.t-shell .t-title {
+    font-size: clamp(36px, 4.2vw, 56px) !important;
+    font-weight: 700 !important;
+    letter-spacing: -1px !important;
+    line-height: 1.05 !important;
+}
+
+/* Borderless action icons in dark theme */
+.gl-act-cell {
+    padding-left: 8px !important;
+    padding-right: 12px !important;
+    text-align: left;
+    white-space: nowrap;
+}
+.gl-table-wrap .t-table > thead > tr > th:last-child {
+    padding-right: 12px !important;
+}
+.gl-actions-grid {
+    display: inline-flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 2px;
+    width: max-content;
+    margin: 0;
+}
+.gl-act-slot {
+    width: 22px;
+    height: 22px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.gl-act-slot form {
+    margin: 0;
+    padding: 0;
+    display: inline-flex;
+}
+
+.gl-act {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 22px; height: 22px;
+    padding: 0;
+    background: transparent;
+    border: none;
+    border-radius: 6px;
+    color: #d6d6da !important;
+    cursor: pointer;
+    text-decoration: none;
+    vertical-align: middle;
+    transition: color .15s ease, background .15s ease;
+}
+/* Key icon stays borderless per user request */
+.gl-act:has(> .gl-key) { border-color: transparent; }
+.gl-act svg { width: 15px; height: 15px; display: block; stroke-width: 1.1; }
+.gl-act .gl-key,
+.gl-act .gl-edit {
+    width: 15px; height: 15px; display: block;
+    background-color: currentColor;
+    flex-shrink: 0;
+}
+.gl-act .gl-key {
+    -webkit-mask: url("{{ url_for('static', filename='images/key.png') }}") center / contain no-repeat;
+            mask: url("{{ url_for('static', filename='images/key.png') }}") center / contain no-repeat;
+}
+.gl-act .gl-edit {
+    -webkit-mask: url("{{ url_for('static', filename='images/edit.png') }}") center / contain no-repeat;
+            mask: url("{{ url_for('static', filename='images/edit.png') }}") center / contain no-repeat;
+}
+.gl-act:hover { background: rgba(255,255,255,0.07); color: #ffffff !important; opacity: 1; border-color: transparent; }
+.gl-act:focus-visible { outline: 2px solid rgba(255,255,255,0.35); outline-offset: 1px; }
+.gl-act-danger { color: #ff8a80 !important; }
+.gl-act-danger svg { stroke: currentColor !important; }
+.gl-act-danger:hover { color: #ff6b5e !important; background: rgba(255,107,94,0.10); }
+
+/* Custom dropdown (fdd) — planner-spec dark, matches bank.html */
+.t-shell .fdd { color: #f5f5f7 !important; position: relative; }
+.t-shell .fdd-toggle {
+    width: 100%;
+    background: #141414 !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    color: #f5f5f7 !important;
+    border-radius: 8px !important;
+    padding: 4px 8px !important;
+    font-size: 12px !important;
+    font-weight: 300 !important;
+    line-height: 1.3 !important;
+    min-height: 30px;
+    display: flex; align-items: center; justify-content: space-between;
+    cursor: pointer;
+}
+.t-shell .fdd-toggle:hover { background: #1A1A1A !important; border-color: rgba(255,255,255,0.18) !important; }
+.t-shell .fdd-toggle:focus, .t-shell .fdd-toggle.is-open { border-color: rgba(255,255,255,0.30) !important; outline: none !important; box-shadow: none !important; }
+.t-shell .fdd-label { color: #ffffff !important; font-weight: 300 !important; }
+.t-shell .fdd-toggle .caret { color: rgba(255,255,255,0.45) !important; }
+.t-shell .fdd-panel {
+    position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+    background: #141414 !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    border-radius: 8px !important;
+    padding: 4px !important;
+    z-index: 50;
+    display: none;
+    min-width: 130px;
+}
+.t-shell .fdd.open .fdd-panel { display: block; }
+.t-shell .fdd-item {
+    display: flex; align-items: center;
+    padding: 6px 10px !important;
+    font-size: 14px;
+    font-weight: 300 !important;
+    border-radius: 5px !important;
+    cursor: pointer;
+    color: #f5f5f7;
+}
+.t-shell .fdd-item:hover { background: rgba(255,255,255,0.06) !important; color: #fff !important; }
+.t-shell .fdd-item input[type="radio"],
+.t-shell .fdd-item input[type="checkbox"] {
+    position: absolute; opacity: 0; width: 1px; height: 1px; margin: 0; pointer-events: none;
+}
+.t-shell .fdd-item > span { padding-left: 0 !important; color: inherit !important; font-weight: inherit !important; }
+.t-shell .fdd-item > span::before,
+.t-shell .fdd-item > span::after { content: none !important; display: none !important; }
+
+/* Added status chip for the new Status column */
+.gl-status {
+    display: inline-flex;
+    align-items: center;
+    padding: 3px 9px;
+    border-radius: 999px;
+    border: 1px solid rgba(255,255,255,0.14);
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: .02em;
+    line-height: 1;
+    white-space: nowrap;
+    text-transform: capitalize;
+}
+.gl-status.draft { color: #d6d6da; border-color: rgba(255,255,255,0.16); }
+.gl-status.flagged { color: #fbbf24; border-color: rgba(251,191,36,0.35); }
+.gl-status.signed_off { color: #e6e6ea; border-color: rgba(255,255,255,0.28); }
+.gl-status.rejected { color: #ff8a80; border-color: rgba(255,138,128,0.40); }
+
+.gl-row-num {
+    text-align: center;
+    color: #9a9aa3 !important;
+    font-size: 12px;
+    font-weight: 500 !important;
+}
+
+#glSelectAll,
+.gl-row-check {
+    -webkit-appearance: none;
+    appearance: none;
+    position: relative;
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    border-radius: 3px;
+    border: 1px solid rgba(255,255,255,0.34) !important;
+    background: rgba(255,255,255,0.03) !important;
+    display: inline-grid;
+    place-content: center;
+    cursor: pointer;
+    box-shadow: none !important;
+}
+
+#glSelectAll::before,
+.gl-row-check::before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 5px;
+    height: 9px;
+    border-right: 1.4px solid #f2f7ff;
+    border-bottom: 1.4px solid #f2f7ff;
+    transform: translate(-50%, -58%) rotate(45deg) scale(0);
+    transform-origin: center;
+    transition: transform 120ms ease-in-out;
+}
+
+#glSelectAll:checked,
+.gl-row-check:checked {
+    background: rgba(255,255,255,0.10) !important;
+    border-color: rgba(255,255,255,0.62) !important;
+}
+
+#glSelectAll:checked::before,
+.gl-row-check:checked::before {
+    transform: translate(-50%, -58%) rotate(45deg) scale(1);
+}
+
+#glSelectAll:focus,
+.gl-row-check:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+#glSelectAll:focus-visible,
+.gl-row-check:focus-visible {
+    outline: 1px solid rgba(255,255,255,0.55);
+    outline-offset: 1px;
+}
+
+.gl-status-cell {
+    white-space: nowrap;
+    min-width: 108px;
+}
+</style>
+
+<form method="get" id="genListFilter" style="display:flex; gap:12px; flex-wrap:wrap; align-items:flex-end; margin-bottom:14px;">
+    <div class="t-field" style="flex:0 0 260px; width:260px;">
+        <label style="font-size:13px; font-weight:600; color:#f5f5f7;">Subject</label>
+        <div class="fdd" data-fdd="single">
+            <button type="button" class="fdd-toggle">
+                <span class="fdd-label">{{ selected_subject }}</span>
+                <span class="caret">▾</span>
+            </button>
+            <div class="fdd-panel">
+                {% for subject_name in subject_choices %}
+                <label class="fdd-item"><input type="radio" name="subject" value="{{ subject_name }}" {% if selected_subject == subject_name %}checked{% endif %}><span>{{ subject_name }}</span></label>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="t-field" style="flex:0 0 130px; width:130px;">
+        <label style="font-size:13px; font-weight:600; color:#f5f5f7;">Show</label>
+        <div class="fdd" data-fdd="single">
+            <button type="button" class="fdd-toggle">
+                <span class="fdd-label">{% if owner_scope == 'mine' %}My papers only{% else %}All papers{% endif %}</span>
+                <span class="caret">▾</span>
+            </button>
+            <div class="fdd-panel">
+                <label class="fdd-item"><input type="radio" name="owner" value="all"  {% if owner_scope != 'mine' %}checked{% endif %}><span>All papers</span></label>
+                <label class="fdd-item"><input type="radio" name="owner" value="mine" {% if owner_scope == 'mine' %}checked{% endif %}><span>My papers only</span></label>
+            </div>
+        </div>
+    </div>
+    <noscript><button class="t-btn">Apply</button></noscript>
+</form>
+<script>
+(function(){
+    var form = document.getElementById('genListFilter');
+    if (!form) return;
+    // Open/close is handled by the global .fdd controller in _layout.html.
+    // Here we only need to auto-submit when the selection changes.
+    form.querySelectorAll('input[type="radio"]').forEach(function(r){
+        r.addEventListener('change', function(){
+            var dd = r.closest('.fdd');
+            if (dd) {
+                dd.classList.remove('open');
+                var lbl = dd.querySelector('.fdd-label');
+                var txt = r.parentNode.querySelector('span');
+                if (lbl && txt) lbl.textContent = txt.textContent.trim();
+            }
+            form.submit();
+        });
+    });
+    // Allow clicking anywhere on the .fdd-item row to select the radio
+    form.querySelectorAll('.fdd-item').forEach(function(item){
+        item.addEventListener('click', function(e){
+            var r = item.querySelector('input[type="radio"]');
+            if (r && e.target !== r) {
+                r.checked = true;
+                r.dispatchEvent(new Event('change', { bubbles: true }));
+            }
+        });
+    });
+})();
+</script>
+
+{% set _resume = none %}
+    {% for _p in papers if _p.owner_id == current_user.id and (_p.moderation_status or 'draft') in ('draft', 'rejected') %}
+        {% if not _resume %}{% set _resume = _p %}{% endif %}
+    {% endfor %}
+    {% if _resume %}
+    <div style="display:flex; align-items:center; gap:14px; padding:14px 16px; margin-bottom:14px;
+                background:transparent; border:1px solid rgba(255,255,255,0.08);
+                border-radius:10px;">
+        <div style="display:flex; align-items:center; justify-content:center;
+                    width:40px; height:40px; border-radius:10px;
+                    background:rgba(255,255,255,0.06); color:rgba(255,255,255,0.75); flex-shrink:0;">
+            <i class="fas fa-pen-to-square" style="font-size:16px;"></i>
+        </div>
+        <div style="flex:1; min-width:0;">
+            <div style="font-size:11px; font-weight:600; color:#9a9aa3; text-transform:uppercase; letter-spacing:1.2px; margin-bottom:2px;">
+                {% if (_resume.moderation_status or 'draft') == 'rejected' %}Returned by moderator{% else %}Continue where you left off{% endif %}
+            </div>
+            <div style="font-size:14px; font-weight:500; color:#f5f5f7; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">
+                {{ _resume.title or 'Untitled paper' }}
+                <span style="color:#9a9aa3; font-weight:400;">
+                    · Grade {{ _resume.grade }} · {{ _resume.total_marks }} marks
+                </span>
+            </div>
+        </div>
+        <a class="t-btn primary" href="{{ url_for('teacher_paper_edit', paper_id=_resume.id) }}" style="flex-shrink:0;">
+            <i class="fas fa-arrow-right"></i> Resume
+        </a>
+    </div>
+    {% endif %}
+    {% if last_edited %}
+    <div class="last-edited-card" id="lastEditedCard" data-paper-id="{{ last_edited.id }}">
+        <div class="le-meta">
+            <div class="le-eyebrow">Last edited</div>
+            <div class="le-title" data-le-title>{{ last_edited.title|replace('Nov ', 'November ') }}</div>
+            <div class="le-sub" data-le-sub>
+                {% if last_edited.exam_date %}{{ last_edited.exam_date.strftime('%d %b %Y') }} · {% endif %}Grade {{ last_edited.grade }} · {{ last_edited.total_marks }} marks
+            </div>
+        </div>
+        <div class="le-actions" data-le-actions>
+            <a class="le-btn paper" data-le-paper href="{{ url_for('teacher_paper_preview', paper_id=last_edited.id) }}" target="_blank">
+                <svg class="le-ico le-ico-grad" viewBox="0 0 24 24" fill="none" stroke="url(#leGrad)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/><line x1="8" y1="9" x2="10" y2="9"/></svg>
+                <span>Paper</span>
+            </a>
+            <a class="le-btn memo" data-le-memo href="{{ url_for('teacher_paper_memo', paper_id=last_edited.id) }}" target="_blank">
+                <span class="le-ico le-key-mask" aria-hidden="true"></span>
+                <span>Memo</span>
+            </a>
+            {% if last_edited_sources and last_edited_sources.paper_url %}
+            <a class="le-btn orig" href="{{ last_edited_sources.paper_url }}" target="_blank" title="View original DBE paper: {{ last_edited_sources.paper_name }}">
+                <svg class="le-ico" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3.5" width="18" height="17" rx="2.5" fill="#E2433B"/><text x="12" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="6.6" font-weight="700" fill="#fff">PDF</text></svg>
+                <span>Original Paper</span>
+            </a>
+            <a class="le-btn orig le-btn-icon" href="{{ last_edited_sources.paper_url }}" download title="Download original DBE paper">
+                <svg class="le-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+            {% endif %}
+            {% if last_edited_sources and last_edited_sources.memo_url %}
+            <a class="le-btn orig" href="{{ last_edited_sources.memo_url }}" target="_blank" title="View original DBE memo: {{ last_edited_sources.memo_name }}">
+                <svg class="le-ico" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3.5" width="18" height="17" rx="2.5" fill="#E2433B"/><text x="12" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="6.6" font-weight="700" fill="#fff">PDF</text></svg>
+                <span>Original Memo</span>
+            </a>
+            <a class="le-btn orig le-btn-icon" href="{{ last_edited_sources.memo_url }}" download title="Download original DBE memo">
+                <svg class="le-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+            {% endif %}
+        </div>
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+          <defs>
+            <linearGradient id="leGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ff6b9d"/>
+              <stop offset="50%" stop-color="#c084fc"/>
+              <stop offset="100%" stop-color="#60a5fa"/>
+            </linearGradient>
+          </defs>
+        </svg>
+    </div>
+    <style>
+      .last-edited-card {
+        display:flex; flex-direction:column; align-items:stretch; gap:8px;
+        padding:10px 14px; margin:14px 0 16px; border-radius:10px;
+        background:transparent;
+        border:1px solid rgba(255,255,255,0.08);
+      }
+      .last-edited-card .le-eyebrow { font-size:9px; font-weight:700; letter-spacing:0.08em;
+        text-transform:uppercase; color:var(--text-tertiary, #9a9aa3); margin-bottom:2px; }
+      .last-edited-card .le-title { font-size:13.5px; font-weight:600; color:var(--text-primary, #fff); }
+      .last-edited-card .le-sub { font-size:11px; color:var(--text-tertiary, #9a9aa3); margin-top:2px; }
+      .last-edited-card .le-actions { display:flex; gap:10px; flex-shrink:0; }
+      .last-edited-card .le-btn {
+        display:inline-flex; align-items:center; gap:6px;
+        padding:6px 11px; border-radius:8px; font-size:12px; font-weight:200;
+        text-decoration:none;
+        background:transparent;
+        color:#f5f5f7;
+        border:none;
+        line-height:1.3;
+        transition: background 120ms ease;
+      }
+      .last-edited-card .le-btn:hover {
+        background:rgba(255,255,255,0.06);
+        color:#ffffff;
+      }
+      .last-edited-card .le-btn i { color:rgba(255,255,255,0.55); }
+      .last-edited-card .le-btn .le-ico { flex:0 0 auto; color: rgba(255,255,255,0.75); }
+      .last-edited-card .le-btn .le-ico-grad { color: #c084fc; }
+      .last-edited-card .le-btn .le-key-mask {
+        display:inline-block; width:15px; height:15px;
+        background-color: currentColor;
+        -webkit-mask: url("{{ url_for('static', filename='images/key.png') }}") center / contain no-repeat;
+                mask: url("{{ url_for('static', filename='images/key.png') }}") center / contain no-repeat;
+      }
+      .last-edited-card .le-btn-icon { padding: 8px 10px; }
+      .last-edited-card .le-btn.paper,
+      .last-edited-card .le-btn.memo,
+      .last-edited-card .le-btn.orig { background:transparent; color:#f5f5f7; }
+      .last-edited-card .le-btn.paper:hover,
+      .last-edited-card .le-btn.memo:hover,
+      .last-edited-card .le-btn.orig:hover { background:rgba(255,255,255,0.06); }
+      .last-edited-card .le-btn.word { background:transparent; color:#f5f5f7; }
+      .last-edited-card .le-btn.word:hover { background:rgba(255,255,255,0.06); }
+      .last-edited-card .le-btn.word .le-ico { color:rgba(255,255,255,0.75); }
+      .last-edited-card .le-actions { flex-wrap:wrap; justify-content:flex-start; }
+      @keyframes leFlash {
+        0%   { border-color: rgba(255,255,255,0.35); }
+        100% { border-color: rgba(255,255,255,0.08); }
+      }
+      .last-edited-card.le-flash { animation: leFlash 0.85s ease-out; }
+    </style>
+    {% endif %}
+    {% if papers %}
+        <style>
+          .mod-badge { display:inline-block; padding:2px 8px; border-radius:999px;
+                       font-size:10px; font-weight:600; text-transform:uppercase;
+                       letter-spacing:.04em; margin-left:6px; vertical-align:middle; }
+          .mod-badge.draft      { background:#2a2a2f; color:#d6d6da; }
+          .mod-badge.flagged    { background:rgba(245,158,11,0.18); color:#fbbf24; }
+          .mod-badge.signed_off { background:rgba(255,255,255,0.10); color:#e6e6ea; }
+          .mod-badge.rejected   { background:rgba(239,68,68,0.18); color:#ff8a80; }
+          .mod-badge.accepted   { background:rgba(255,255,255,0.10); color:#e6e6ea; }
+          .ver-links { margin-top:6px; display:flex; flex-wrap:wrap; gap:6px; }
+          .ver-link  { display:inline-flex; align-items:center; gap:4px;
+                       padding:2px 8px; border-radius:6px; font-size:11px;
+                       background:rgba(255,255,255,0.06);
+                       border:1px solid rgba(255,255,255,0.10);
+                       color:#d6d6da; text-decoration:none; }
+          .ver-link:hover { background:rgba(255,255,255,0.10); color:#fff; }
+          .ver-link.original  { color:#fbbf24; }
+                    .ver-link.moderated {
+                        color:#d6d6da;
+                    }
+          .ver-link.final     { color:#d6d6da; }
+          .accept-form { display:inline; }
+          .accept-btn  { display:inline-flex; align-items:center; gap:6px;
+                         padding:6px 12px; border-radius:8px; font-size:12px;
+                         font-weight:300; background:transparent; color:#e6e6ea;
+                         border:1px solid rgba(255,255,255,0.25); cursor:pointer; }
+          .accept-btn:hover { background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.40); }
+          /* Bulk action bar */
+          .gl-bulk-bar {
+              display:flex; align-items:center; gap:8px; flex-wrap:wrap;
+              padding:7px 12px; margin-bottom:10px;
+              background:transparent; border:1px solid rgba(255,255,255,0.08); border-radius:8px;
+          }
+          .gl-bulk-bar .gl-bulk-count { color:#d6d6da; font-size:12px; margin-right:auto; }
+          .gl-bulk-bar button {
+              background:transparent; color:#f5f5f7; border:none;
+              border-radius:6px; padding:5px 10px; font-size:12px; font-weight:300;
+              cursor:pointer; display:inline-flex; align-items:center; gap:6px;
+          }
+          .gl-bulk-bar button:hover:not(:disabled) { background:#1A1A1A; }
+          .gl-bulk-bar button:disabled { opacity:0.45; cursor:not-allowed; }
+          .gl-bulk-bar button.danger { background:transparent; border:none; color:#ff6b5e; }
+          .gl-bulk-bar button.danger:hover:not(:disabled) { background:rgba(255,107,94,0.10); }
+          .gl-bulk-bar button.danger-all { background:transparent; color:#ff6b5e; border:none; }
+          .gl-bulk-bar button.danger-all:hover:not(:disabled) { background:rgba(255,107,94,0.10); }
+          .gl-bulk-bar .gl-bulk-ico { flex:0 0 auto; }
+          .gl-bulk-bar button .gl-bulk-ico { color: currentColor; }
+          .gl-table-wrap {
+              width: 100%;
+              margin-right: 0;
+              overflow-x: auto;
+              overflow-y: hidden;
+          }
+          .gl-table-wrap .t-table {
+              width: 100%;
+              min-width: 100%;
+              table-layout: auto;
+          }
+          .gl-col-date {
+              min-width: 128px;
+              white-space: nowrap;
+          }
+          .gl-paper-title {
+              display: block;
+              max-width: 100%;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
+          }
+        </style>
+        <form method="post" id="glBulkForm" action="{{ url_for('teacher_paper_bulk_remove') }}"
+              data-confirm="Delete the selected paper(s)? This cannot be undone."
+              data-confirm-ok="Delete" data-confirm-variant="danger" data-confirm-no-backdrop="1"></form>
+        <form method="post" id="glBulkFormAll" action="{{ url_for('teacher_paper_bulk_remove') }}"
+              data-confirm="Delete ALL of your papers? This cannot be undone."
+              data-confirm-ok="Delete all" data-confirm-variant="danger" data-confirm-no-backdrop="1">
+            <input type="hidden" name="scope" value="all">
+        </form>
+        <div class="gl-bulk-bar">
+            <span class="gl-bulk-count"><span id="glSelectedCount">0</span> selected</span>
+            <button type="submit" form="glBulkForm" id="glBulkDeleteBtn" class="danger" disabled>
+                <svg class="gl-bulk-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M4 7h16"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+                <span>Delete selected</span>
+            </button>
+            <button type="submit" form="glBulkFormAll" class="danger-all">
+                <svg class="gl-bulk-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><path d="M4 7h16"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+                <span>Delete all</span>
+            </button>
+        </div>
+        <div class="gl-table-wrap">
+        <table class="t-table">
+            <thead><tr>
+                <th style="width:36px; text-align:center;">
+                    <input type="checkbox" id="glSelectAll" form="glBulkForm" aria-label="Select all papers on this page">
+                </th>
+                <th>Title</th><th>Grade</th><th class="gl-col-date">Date</th><th>Marks</th><th>Duration</th><th>Paper</th><th style="width:108px;">Status</th><th style="text-align:left; white-space:nowrap;">View Downloads</th>
+            </tr></thead>
+            <tbody>
+            {% for p in papers %}
+                {% set _is_owner = (p.owner_id == current_user.id) %}
+                {% set _can_remove = ((_is_owner or current_user.is_admin) and not p.is_library) %}
+                <tr data-paper-id="{{ p.id }}">
+                    <td style="text-align:center; vertical-align:middle;">
+                        {% if _can_remove %}
+                        <input type="checkbox" class="gl-row-check" name="paper_ids" value="{{ p.id }}" form="glBulkForm" aria-label="Select paper {{ p.title }}">
+                        {% endif %}
+                    </td>
+                    <td>
+                        <strong class="gl-paper-title" title="{{ p.title|replace('Nov ', 'November ') }}">{{ p.title|replace('Nov ', 'November ') }}</strong>
+                        {% if p.school_name %}<div style="color:var(--text-tertiary); font-size:12px;">{{ p.school_name }}</div>{% endif %}
+                        {% if p.moderation_status == 'rejected' and p.moderator_notes %}
+                            <div style="color:#A4262C; font-size:12px; margin-top:4px;"><i class="fas fa-circle-exclamation"></i> {{ p.moderator_notes }}</div>
+                        {% endif %}
+                        {% set _is_owner = (p.owner_id == current_user.id) %}
+                        {% set _is_moderator = (p.moderator_id == current_user.id) %}
+                        {% if _is_owner or current_user.is_admin or _is_moderator %}
+                            {% set _has_orig = (p.sections_original or '').strip()|length > 0 %}
+                            {% set _has_mod  = (p.sections_moderated or '').strip()|length > 0 %}
+                            {% set _has_fin  = (p.sections_final or '').strip()|length > 0 %}
+                            {% if _has_orig or _has_mod or _has_fin %}
+                            <div style="font-size:10px;font-weight:600;color:#9a9aa3;margin-top:8px;margin-bottom:2px;letter-spacing:.05em;">QUESTION PAPER</div>
+                            <div class="ver-links">
+                                {% if _has_orig %}<a class="ver-link original" href="{{ url_for('teacher_paper_preview', paper_id=p.id, version='original') }}" target="_blank"><i class="fas fa-clock-rotate-left"></i> Original</a>{% endif %}
+                                {% if _has_mod %}<a class="ver-link moderated" href="{{ url_for('teacher_paper_preview', paper_id=p.id, version='moderated') }}" target="_blank"><i class="fas fa-user-check"></i> Moderated</a>{% endif %}
+                                {% if _has_fin %}<a class="ver-link final" href="{{ url_for('teacher_paper_preview', paper_id=p.id, version='final') }}" target="_blank"><i class="fas fa-flag-checkered"></i> Final</a>{% endif %}
+                            </div>
+                            <div style="font-size:10px;font-weight:600;color:#9a9aa3;margin-top:6px;margin-bottom:2px;letter-spacing:.05em;">MEMO</div>
+                            <div class="ver-links">
+                                {% if _has_orig %}<a class="ver-link original" href="{{ url_for('teacher_paper_memo', paper_id=p.id, version='original') }}" target="_blank"><i class="fas fa-clock-rotate-left"></i> Original</a>{% endif %}
+                                {% if _has_mod %}<a class="ver-link moderated" href="{{ url_for('teacher_paper_memo', paper_id=p.id, version='moderated') }}" target="_blank"><i class="fas fa-user-check"></i> Moderated</a>{% endif %}
+                                {% if _has_fin %}<a class="ver-link final" href="{{ url_for('teacher_paper_memo', paper_id=p.id, version='final') }}" target="_blank"><i class="fas fa-flag-checkered"></i> Final</a>{% endif %}
+                            </div>
+                            {% endif %}
+                        {% endif %}
+                    </td>
+                    <td>{{ p.grade }}</td>
+                    <td class="gl-col-date">{{ p.exam_date.strftime('%d %b %Y') if p.exam_date else '–' }}</td>
+                    <td>{{ p.total_marks }}</td>
+                    <td>{{ p.duration_minutes }} min</td>
+                    <td>
+                        {% if p.paper_number %}
+                            {% set _pn = (p.paper_number|string).strip() %}
+                            {{ _pn if _pn[:1]|upper == 'P' else 'P' ~ _pn }}
+                        {% else %}
+                            –
+                        {% endif %}
+                    </td>
+                    <td class="gl-status-cell">
+                        {% set _st = (p.moderation_status or 'draft') %}
+                        <span class="gl-status {{ _st|replace(' ','_') }}">{{ _st|replace('_',' ') }}</span>
+                    </td>
+                    <td class="gl-act-cell">
+                        {% set _is_owner = (p.owner_id == current_user.id) %}
+                        {% set _can_view_pack = (p.moderation_status == 'signed_off' or current_user.is_admin or _is_owner) %}
+                        {% set _can_flag = (p.moderation_status in ('draft', 'rejected') and not current_user.is_hod) %}
+                        {% set _can_modify = (p.owner_id == current_user.id or current_user.is_admin) %}
+                        {% set _can_delete = (_can_modify and not p.is_library) %}
+                        <div class="gl-actions-grid">
+                            <span class="gl-act-slot">
+                                {% if _can_view_pack %}
+                                <a class="gl-act" aria-label="Preview" href="{{ url_for('teacher_paper_preview', paper_id=p.id) }}" target="_blank">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7-11-7-11-7z"/><circle cx="12" cy="12" r="3"/></svg>
+                                </a>
+                                {% endif %}
+                            </span>
+                            <span class="gl-act-slot">
+                                {% if _can_view_pack %}
+                                <a class="gl-act" aria-label="Memo" href="{{ url_for('teacher_paper_memo', paper_id=p.id) }}" target="_blank">
+                                    <span class="gl-key" aria-hidden="true"></span>
+                                    <span class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Memo</span>
+                                </a>
+                                {% endif %}
+                            </span>
+                            <span class="gl-act-slot">
+                                <form method="post" action="{{ url_for('teacher_paper_clone', paper_id=p.id) }}" data-confirm="Clone this entire paper into your workspace as a new draft?" data-confirm-ok="Clone paper" data-confirm-variant="primary" data-confirm-no-backdrop="1">
+                                    <button type="submit" class="gl-act" aria-label="Clone whole paper" title="Clone whole paper">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                                    </button>
+                                </form>
+                            </span>
+                            <span class="gl-act-slot">
+                                {% if _can_modify %}
+                                <a class="gl-act" aria-label="Edit" title="Edit" href="{{ url_for('teacher_paper_edit', paper_id=p.id) }}">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"/><path d="M18.5 2.5a2.12 2.12 0 0 1 3 3L12 15l-4 1 1-4Z"/></svg>
+                                </a>
+                                {% endif %}
+                            </span>
+                            <span class="gl-act-slot">
+                                {% if _can_delete %}
+                                <form method="post" action="{{ url_for('teacher_paper_remove', paper_id=p.id) }}" data-confirm="Delete this paper? This cannot be undone." data-confirm-no-backdrop="1">
+                                    <button type="submit" class="gl-act gl-act-danger" aria-label="Delete">
+                                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16"/><path d="M10 11v6"/><path d="M14 11v6"/><path d="M6 7l1 12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-12"/><path d="M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2"/></svg>
+                                    </button>
+                                </form>
+                                {% endif %}
+                            </span>
+                            <span class="gl-act-slot">
+                                {% if _can_flag %}
+                                <form method="post" action="{{ url_for('teacher_paper_flag', paper_id=p.id) }}" data-confirm="Flag this paper for HOD moderation?" data-confirm-ok="Flag" data-confirm-variant="primary" data-confirm-no-backdrop="1">
+                                    <button type="submit" class="gl-act" aria-label="Flag for moderation" title="Flag for moderation">
+                                        <i class="fas fa-flag"></i>
+                                    </button>
+                                </form>
+                                {% endif %}
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        </div>
+        <script>
+        (function(){
+            var selectAll = document.getElementById('glSelectAll');
+            var rowChecks = document.querySelectorAll('.gl-row-check');
+            var countEl   = document.getElementById('glSelectedCount');
+            var btn       = document.getElementById('glBulkDeleteBtn');
+            if (!selectAll || !rowChecks.length || !countEl || !btn) return;
+            function refresh(){
+                var n = 0;
+                rowChecks.forEach(function(c){ if (c.checked) n++; });
+                countEl.textContent = n;
+                btn.disabled = (n === 0);
+                selectAll.checked       = (n > 0 && n === rowChecks.length);
+                selectAll.indeterminate = (n > 0 && n < rowChecks.length);
+            }
+            selectAll.addEventListener('change', function(){
+                rowChecks.forEach(function(c){ c.checked = selectAll.checked; });
+                refresh();
+            });
+            rowChecks.forEach(function(c){ c.addEventListener('change', refresh); });
+            refresh();
+        })();
+        </script>
+        <style>
+        /* Single-selection row highlight: brand-green text + icons, no bg. */
+        .t-shell .t-table tbody tr.is-selected td,
+        .t-shell .t-table tbody tr.is-selected td *,
+        .t-shell .t-table tbody tr.is-selected td .gl-act,
+        .t-shell .t-table tbody tr.is-selected td .gl-act * {
+            color: #22c55e !important;
+            background: transparent !important;
+        }
+        /* Mask icons (key, edit) follow currentColor, so they pick up green. */
+        .t-shell .t-table tbody tr.is-selected td .gl-act .gl-key,
+        .t-shell .t-table tbody tr.is-selected td .gl-act .gl-edit {
+            background-color: #22c55e !important;
+        }
+        /* Keep row checkboxes using the same blue palette as the top checkbox. */
+        .t-shell .t-table tbody tr.is-selected td .gl-row-check,
+        .t-shell .t-table tbody tr.is-selected td .gl-row-check:checked {
+            box-shadow: none !important;
+        }
+        </style>
+        <script>
+        (function(){
+            var tbody = document.querySelector('.t-shell .t-table tbody');
+            if (!tbody) return;
+            var STORAGE_KEY = 'eruditio.lastSelectedPaperId';
+            var SERVER_LAST_ID = {{ (last_edited.id if last_edited else '')|tojson }};
+            var PAPERS_DATA = {{ (papers_card_data or {})|tojson }};
+
+            function readStored(){
+                try { return localStorage.getItem(STORAGE_KEY) || ''; }
+                catch(_){ return ''; }
+            }
+            function writeStored(id){
+                try { localStorage.setItem(STORAGE_KEY, id || ''); }
+                catch(_){ /* ignore quota / disabled storage */ }
+            }
+            function applySelection(id){
+                if (!id) return false;
+                var row = tbody.querySelector('tr[data-paper-id="' + id.replace(/"/g, '\\"') + '"]');
+                if (!row) return false;
+                tbody.querySelectorAll('tr.is-selected').forEach(function(r){
+                    if (r !== row) r.classList.remove('is-selected');
+                });
+                row.classList.add('is-selected');
+                return true;
+            }
+
+            // ---- "Last edited" card swap --------------------------------
+            var card = document.getElementById('lastEditedCard');
+            function escapeHtml(s){
+                return String(s == null ? '' : s)
+                    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+                    .replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+            }
+            function rowDerivedData(id){
+                // Fallback when PAPERS_DATA lacks an entry: read the
+                // visible table row so the card title still follows clicks.
+                var row = tbody.querySelector('tr[data-paper-id="' + id.replace(/"/g, '\\"') + '"]');
+                if (!row) return null;
+                var cells = row.querySelectorAll('td');
+                function cellText(i){ return cells[i] ? (cells[i].textContent || '').trim() : ''; }
+                return {
+                    id: id,
+                    title: (row.querySelector('td strong') || {}).textContent || cellText(1),
+                    grade: cellText(2),
+                    date: cellText(3),
+                    total_marks: (cellText(4) || '').replace(/[^0-9]/g, '')
+                };
+            }
+            function revealCard(){
+                if (!card) return;
+                var r = card.getBoundingClientRect();
+                var vh = window.innerHeight || document.documentElement.clientHeight;
+                if (r.top < 0 || r.bottom > vh) {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+                card.classList.remove('le-flash');
+                void card.offsetWidth; // restart the animation
+                card.classList.add('le-flash');
+            }
+            function updateCard(id){
+                if (!card || !id) return;
+                var d = PAPERS_DATA[id] || rowDerivedData(id);
+                if (!d) return;
+                card.setAttribute('data-paper-id', id);
+                var titleEl = card.querySelector('[data-le-title]');
+                var subEl = card.querySelector('[data-le-sub]');
+                var paperBtn = card.querySelector('[data-le-paper]');
+                var memoBtn = card.querySelector('[data-le-memo]');
+                if (titleEl) titleEl.textContent = d.title || '';
+                if (subEl) {
+                    var bits = [];
+                    if (d.date) bits.push(d.date);
+                    bits.push('Grade ' + (d.grade == null ? '' : d.grade));
+                    bits.push((d.total_marks == null ? '' : d.total_marks) + ' marks');
+                    subEl.textContent = bits.join(' · ');
+                }
+                if (paperBtn) paperBtn.setAttribute('href', d.preview_url || '#');
+                if (memoBtn) memoBtn.setAttribute('href', d.memo_url || '#');
+
+                // Point the Word (paper + memo) download links at the newly
+                // selected paper. When PAPERS_DATA lacks the URL (row fallback)
+                // derive it from the link's existing href by swapping the id
+                // segment (/generator/<id>/download.docx).
+                var wordBtn = card.querySelector('[data-le-word]');
+                var wordMemoBtn = card.querySelector('[data-le-word-memo]');
+                function swapDocxId(href, newId){
+                    if (!href) return '#';
+                    return href.replace(/(\/generator\/)[^\/]+(\/(?:download|memo)\.docx)/,
+                                        '$1' + encodeURIComponent(newId) + '$2');
+                }
+                if (wordBtn) {
+                    wordBtn.setAttribute('href',
+                        d.word_url || swapDocxId(wordBtn.getAttribute('href'), id));
+                }
+                if (wordMemoBtn) {
+                    wordMemoBtn.setAttribute('href',
+                        d.word_memo_url || swapDocxId(wordMemoBtn.getAttribute('href'), id));
+                }
+
+                // Rebuild the original-PDF buttons (Paper + Memo) so they
+                // reflect the currently selected paper. We keep the first
+                // two action buttons (Paper, Memo) intact and replace the
+                // tail with the freshly built original buttons.
+                var actions = card.querySelector('[data-le-actions]');
+                if (actions) {
+                    // Remove any previously appended .orig buttons.
+                    actions.querySelectorAll('.le-btn.orig').forEach(function(n){ n.remove(); });
+                    var origHtml = '';
+                    var fileSvg = '<svg class="le-ico" viewBox="0 0 24 24" width="16" height="16" aria-hidden="true"><rect x="3" y="3.5" width="18" height="17" rx="2.5" fill="#E2433B"/><text x="12" y="16" text-anchor="middle" font-family="Arial, sans-serif" font-size="6.6" font-weight="700" fill="#fff">PDF</text></svg>';
+                    var dlSvg = '<svg class="le-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>';
+                    if (d.paper_url) {
+                        origHtml += '<a class="le-btn orig" href="' + escapeHtml(d.paper_url) + '" target="_blank" title="View original DBE paper: ' + escapeHtml(d.paper_name || '') + '">' + fileSvg + '<span>Original Paper</span></a>';
+                        origHtml += '<a class="le-btn orig le-btn-icon" href="' + escapeHtml(d.paper_url) + '" download title="Download original DBE paper">' + dlSvg + '</a>';
+                    }
+                    if (d.orig_memo_url) {
+                        origHtml += '<a class="le-btn orig" href="' + escapeHtml(d.orig_memo_url) + '" target="_blank" title="View original DBE memo: ' + escapeHtml(d.memo_name || '') + '">' + fileSvg + '<span>Original Memo</span></a>';
+                        origHtml += '<a class="le-btn orig le-btn-icon" href="' + escapeHtml(d.orig_memo_url) + '" download title="Download original DBE memo">' + dlSvg + '</a>';
+                    }
+                    if (origHtml) {
+                        // Insert before the inline <svg defs> if present, otherwise append.
+                        var defsSvg = card.querySelector('svg[width="0"]');
+                        actions.insertAdjacentHTML('beforeend', origHtml);
+                    }
+                }
+            }
+
+            // Restore the previous selection on page load. Prefer the
+            // user's last clicked paper (localStorage); fall back to the
+            // server's "last edited" pointer so a paper just saved in the
+            // editor stays highlighted when we land back on this page.
+            var initial = readStored();
+            if (applySelection(initial)) {
+                updateCard(initial);
+            } else if (SERVER_LAST_ID && applySelection(SERVER_LAST_ID)) {
+                writeStored(SERVER_LAST_ID);
+                // Card already reflects SERVER_LAST_ID server-side; no
+                // need to call updateCard here.
+            }
+
+            tbody.addEventListener('click', function(ev){
+                // Don't change selection when interacting with the bulk-select
+                // checkbox column or the version-link dropdown.
+                if (ev.target.closest('input, label, .ver-link')) return;
+                var tr = ev.target.closest('tr');
+                if (!tr || !tbody.contains(tr)) return;
+                tbody.querySelectorAll('tr.is-selected').forEach(function(r){
+                    if (r !== tr) r.classList.remove('is-selected');
+                });
+                tr.classList.add('is-selected');
+                var pid = tr.getAttribute('data-paper-id') || '';
+                writeStored(pid);
+                updateCard(pid);
+                revealCard();
+            });
+        })();
+        </script>
+{% else %}
+    <div class="t-empty"><i class="fas fa-file-alt"></i>No papers yet. Create your first paper.</div>
+{% endif %}
+{% endblock %}

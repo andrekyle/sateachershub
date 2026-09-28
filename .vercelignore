@@ -1,0 +1,52 @@
+# Local database files
+instance/
+*.db
+*.sqlite
+*.sqlite3
+
+# Virtual environments
+.venv/
+.venv-*/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Local env files (Vercel injects env vars from its dashboard)
+.env
+.env.local
+.env.development.local
+.env.production.local
+.env.test.local
+server.log
+server_output.log
+cookies.txt
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# IDE
+.vscode/
+.idea/
+
+# Build
+build/
+dist/
+*.egg-info/
+
+# Node
+node_modules/
+
+# Temp
+*.tmp
+*.temp

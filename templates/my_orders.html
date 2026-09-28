@@ -1,0 +1,106 @@
+{% extends "base.html" %}
+
+{% block title %}My Orders - South African Teachers Hub{% endblock %}
+
+{% block content %}
+<!-- Azure-style Page Header -->
+<div class="bg-white" style="border-bottom: 1px solid var(--gray-300);">
+    <div class="container mx-auto px-4 py-6">
+        <h1 class="text-2xl font-light text-black">My Orders</h1>
+        <p class="text-sm text-gray-500 font-light mt-1">View and track your order history</p>
+    </div>
+</div>
+
+<div class="bg-azure-grey min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        {% if orders %}
+        <div class="space-y-6">
+            {% for order in orders %}
+            <!-- Azure-style Order Card -->
+            <div class="azure-card overflow-hidden">
+                <!-- Order Header - Azure Blue Theme -->
+                <div class="px-6 py-4" style="background: linear-gradient(to right, #F0F9FF, #FFFFFF); border-bottom: 1px solid #E5E7EB;">
+                    <div class="flex flex-wrap items-center justify-between gap-4">
+                        <div class="flex-1 min-w-[200px]">
+                            <p class="text-xs font-light text-gray-500 mb-1">Order Number</p>
+                            <p class="font-medium text-sm" style="color: #0078D4;">#{{ order.order_number or order.id }}</p>
+                        </div>
+                        <div class="flex-1 min-w-[150px]">
+                            <p class="text-xs font-light text-gray-500 mb-1">Order Date</p>
+                            <p class="font-light text-black text-sm">{{ order.created_at.strftime('%B %d, %Y') }}</p>
+                        </div>
+                        <div class="flex-1 min-w-[120px]">
+                            <p class="text-xs font-light text-gray-500 mb-1">Total Amount</p>
+                            <p class="text-base font-medium text-black">R{{ "%.2f"|format(order.total_amount) }}</p>
+                        </div>
+                        <div class="flex-shrink-0">
+                            {% if order.status == 'pending' %}
+                            <span class="inline-flex items-center px-3 py-1.5 rounded text-xs font-normal" style="color: #92400E;">
+                                <i class="fas fa-clock text-xs mr-1.5"></i>Pending
+                            </span>
+                            {% elif order.status == 'processing' %}
+                            <span class="inline-flex items-center px-3 py-1.5 rounded text-xs font-normal" style="color: #2563eb;">
+                                <i class="fas fa-cog fa-spin text-xs mr-1.5"></i>Processing
+                            </span>
+                            {% elif order.status == 'shipped' %}
+                            <span class="inline-flex items-center px-3 py-1.5 rounded text-xs font-normal" style="color: #5B21B6;">
+                                <i class="fas fa-shipping-fast text-xs mr-1.5"></i>Shipped
+                            </span>
+                            {% elif order.status == 'delivered' %}
+                            <span class="inline-flex items-center px-3 py-1.5 rounded text-xs font-normal" style="color: #065F46;">
+                                <i class="fas fa-check-circle text-xs mr-1.5"></i>Delivered
+                            </span>
+                            {% elif order.status == 'cancelled' %}
+                            <span class="inline-flex items-center px-3 py-1.5 rounded text-xs font-normal" style="color: #991B1B;">
+                                <i class="fas fa-times-circle text-xs mr-1.5"></i>Cancelled
+                            </span>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Order Items -->
+                <div class="p-6">
+                    <div class="space-y-4">
+                        {% for item in order.items %}
+                        <div class="flex items-center gap-4 p-3 rounded hover:bg-gray-50 transition">
+                            <div class="w-16 h-16 rounded overflow-hidden bg-gray-100 flex-shrink-0">
+                                <img src="{{ item.product.image_url }}" alt="{{ item.product.name }}" class="w-full h-full object-cover">
+                            </div>
+                            <div class="flex-1 min-w-0">
+                                <h3 class="font-light text-sm text-black mb-1 truncate">{{ item.product.name }}</h3>
+                                <p class="text-xs font-light text-gray-500">Quantity: {{ item.quantity }}</p>
+                            </div>
+                            <p class="font-medium text-sm text-black flex-shrink-0">R{{ "%.2f"|format(item.price * item.quantity) }}</p>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <!-- View Details Button - Azure Style -->
+                    <div class="mt-5 pt-5 border-t border-gray-200">
+                        <a href="{{ url_for('order_detail', id=order.id) }}" class="btn-azure-primary inline-flex items-center justify-center">
+                            <i class="fas fa-receipt mr-2 text-xs"></i>View Order Details
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% else %}
+        <!-- Empty State - Azure Theme -->
+        <div class="azure-card">
+            <div class="text-center py-16 px-4">
+                <div class="inline-flex items-center justify-center w-24 h-24 rounded-full mb-6" style="background-color: #F0F9FF;">
+                    <i class="fas fa-box text-4xl" style="color: #0078D4;"></i>
+                </div>
+                <h2 class="text-xl font-light text-black mb-3">No orders yet</h2>
+                <p class="text-sm font-light mb-6 text-gray-600">Start shopping to place your first order</p>
+                <a href="{{ url_for('products') }}" class="btn-azure-primary inline-flex items-center justify-center">
+                    <i class="fas fa-shopping-bag mr-2 text-xs"></i>Browse Products
+                </a>
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

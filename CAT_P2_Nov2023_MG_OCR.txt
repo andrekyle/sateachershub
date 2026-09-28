@@ -1,0 +1,1173 @@
+
+===== PAGE 1 =====
+
+basic education
+Department:
+Basic Education
+REPUBLIC OF SOUTH AFRICA
+NATIONAL
+SENIOR CERTIFICATE
+GRADE 12
+COMPUTER APPLICATIONS TECHNOLOGY P2
+I7
+II
+NOVEMBER2023
+MARKING GUIDELINES
+RTMENTOFBASIC
+EDUCATION
+MARKS: 150
+PRVATE BAGX895,PRETORIA 0001
+2023 -11- 17
+APPROVED MARKING GUIDELINE
+PUBLIC EXAMINATION
+These marking guidelines consist of 22 pages.
+pproued
+Approved
+Internal moderators
+xternal moderator
+2023-11-17
+2023-11-17
+Copyright reserved
+Please turn over
+
+===== PAGE 2 =====
+
+Computer Applications Technology/P2
+2
+DBE/November 2023
+NSC - Marking Guidelines
+SUGGESTIONS AND RECOMMENDATIONS TO MARKERS
+Revisit the questions and the marking guidelines frequently during the marking session.
+It is advisable to read (and re-read) the question frequently together with the candidate's
+response to check that it correlates, so that you are not misled by the candidate's
+statements/answers.
+Be careful not to focus on keywords or general statements, but rather read the entire
+answer. If in doubt, read the entire answer and then the question paper and the marking
+guidelines.
+Ask yourself or your senior marker if the response could 'fit' into the marking
+guidelines before allocating the correct marks to the candidate.
+Accept correct answers that are expressed differently, e.g. the marking guidelines
+state 'slow' and the candidate responds with 'rot fast'.
+per fact.
+Do not choose answers on the candidate's behalf. Where a question requires a
+candidate to LIST or NAME: mark the first number of answers/facts required, e.g. the
+first TWO facts if the candidate presents a list oi FiVE facts and only TWO facts were
+required, even if presented in paragraph format.
+Questions requiring longer answers must be regarded as a single unit. Marks can be
+SECTION A
+QUESTION 1: MULTIPLE-CHOICE
+QUESTION 2: MATCHING ITEMS
+1.1
+C
+1
+2.1
+C
+√
+Broadband
+1
+1.2
+A.
+√
+1
+2.2
+H
+√
+Software
+1
+1.3
+D
+1
+2.3
+A/T
+√
+Switch/Hub
+1
+1.4
+B
+√
+1
+2.4
+N
+√
+Copyright
+1
+1.5
+A
+1
+2.5
+G
+√
+VPN
+1
+1.6
+D
+1
+2.6
+E
+AI
+1
+1.7
+A
+1
+2.7
+S
+√
+Cell padding
+1
+1.8
+B
+√
+1
+2.8
+J
+Patch
+1
+1.9
+B
+1
+2.9
+0
+√
+Digital footprint
+1
+1.10
+A
+1
+2.10
+B
+√
+Web page
+1
+Total: [10]
+Total: [10]
+EPARTMENTOFBASIO
+EOUCATION
+RIVATEBAGX895,PRETORIA0001
+2023 -11- 17
+Copyright reserved
+Please turn over
+APPROVED MARKING GUIDELINE
+PUSLIC EXAMINATION
+
+===== PAGE 3 =====
+
+ComputerApplicationsTechnology/P2
+3
+DBE/November 2023
+NSC-Marking Guidelines
+QUESTION3:TRUE/FALSE ITEMS
+(Note to marker:
+ In Question 3.1, 3.3 and 3.4, candidates need to provide the correct term, e.g.
+Motherboard,in order toget themark
+Award themarkif thecorrectanswerisgivenwithout thewordFALSE
+DoNOTaward themarkifonlythewordFALSEisgivenwithout thecorrect
+$
+answer)
+3.1
+False - Modem/Router/ADSL v
+1
+3.2
+True v
+1
+3.3
+False - Legend v
+1
+3.4
+False - Ergonomics V
+1
+3.5
+True v
+1
+[5]
+TOTAL SECTION A:
+25
+PRTMENT OFBASIC
+EOUCATION
+FRIVATEGAGX895,PRETORIA0B0
+2023 -11-17
+APPROVED MARKING GUIDELINE
+POLIOEXAMINATION
+Copyright reserved
+Please turn over
+
+===== PAGE 4 =====
+
+Computer Applications Technology/P2
+4
+DBE/November 2023
+NSC - Marking Guidelines
+SECTION B
+QUESTION 4: SYSTEMS TECHNOLOGIES
+4.1
+An example of an input and output device
+(1) (Multi) touchscreen/Smartphone/Smartwatch/Tablet .
+(2) Forcefeedbacksteeringwheel/joystick/headset
+(3) Multi-function scanner/printer
+(4) Interactive whiteboard
+(Any one)
+1
+4.2
+Describe Two ways in which communication in an
+information cycletakeplace
+(1) Send and receive information between different devices
+(transfer of files, downloading files, multimedia files)
+(2) Sharing information between different networks
+(3) Information can be accessed and updated
+(4) Sharing of information via channels such as email, instant
+messaging,video conferencing,etc
+(5) Transmission of feedback/error messages that requires
+response from user, etc.
+(6) Transmission of voice messages from a user to a
+device/system
+(7) Allows ICT devices to connect with each other
+<√
+(Any two)
+2
+4.3.1
+Definition of data and an example
+Data refers to raw facts V which as such does not have any
+meaning/unprocessed facts/not analysed v
+Example: a list of numbers or words v
+(Note to marker:Accept any other valid example)
+3
+4.3.2
+How to transform data into information
+(1) Arialyse the data
+(2) Interpret the data
+(3) Organise raw data
+V(Any two)
+(Note to the marker: Accept description of any TWO of the
+above processes)
+2
+5
+ARTMENTOFBASIC
+EDUCATION
+RVATEBAGX395,PRETORIA0001
+2023 -11- 17
+Copyright reserved
+Please turn over
+APPROVED MARKING GUIDELINE
+CUCLICEXAMINATION
+
+===== PAGE 5 =====
+
+Computer Applications Technology/P2
+5
+DBE/November 2023
+NSC - Marking Guidelines
+4.4
+TWO ways to determine if your computer has been infected
+bymalware
+(1) Drastic decrease in performance/Computer slows down
+(2) Pop-ups (ransomware message, etc) or error messages or
+anti-virus notification
+(3) Changes to your browser settings
+(4) High amounts of network traffic/Unexplained high data usage
+(5) Decrease storage space
+(6) Information/files/folders on the computer goes missing
+(7) Changes to your Windows settings/programs not working
+(8) Computer sending messages autonomously, etc.
+(Any two)
+2
+4.5
+TWO ways to utilise spooling in a network
+Documents sent to the printer can be:
+(1) Paused
+(2) Cancelled/Restarted
+(3) Given preference/prioritised
+(4) Placed in queue
+(Any two)
+2
+4.6
+TWO disadvantages of frequently defragmenting of a hard
+drive
+(1) Can increase the wear and tear of the hard drive, which can
+cause it to fail more quickly/decrease life span of the hard
+drive
+(2) Can be a time-consuming process
+(3) It slows down th< overall performance of the computer while
+it is running
+(4) Could result in corrupted files
+<<
+(Any two)
+2
+4.7
+User interface on a computer and popular example
+It is a way to interact with your operating system or programs 
+Example
+Mouse, touch screen, stylus or keyboard, any other input device
+(Any one)
+2
+4.8
+Adjusting resolution
+(1) Search bar: Type Resolution: System setting: Display
+(2) Right click on desktop: Display settings
+(3) Right click on Start: Settings/System: Display
+(4) Windows Key + i
+(Any one)
+1
+RTMENTOFBAO
+EDUCATION
+FRVATEBAGX895,PRETORIA000
+Copyrightreserved
+Please turn over
+2023 -11- 17
+APPROVED MARKING GUIDELINE
+JCEXAMINATION
+
+===== PAGE 6 =====
+
+ComputerApplicationsTechnology/P2
+6
+DBE/November 2023
+NSC-Marking Guidelines
+4.9
+TWO disadvantagesofconvergence
+(1) Functionality of many devices is lost if the device fails
+(2) Shorter battery life for mobile convergence devices
+(3) High hardware demand
+(4) Reduced specialization
+(5) Security and privacy risks
+(6) Mastering of additional skills/overload
+(7) Device is more expensive (because of greater functionality)
+(8) Difficult to upgrade one component of the device
+<√
+(Any two)
+2
+4.10
+Reasons to use grid computing
+(1) No need to buy powerful computing devices to perform
+complex processing
+(2) Complex calculations can be performed/increased computing
+power
+(3) Uninterrupted processing
+(4) Tasks are;performed in parallel thereby improving
+performance
+(5) Uses idle resources
+<<
+(Any two)
+2
+4.11
+TWO limitations ofafirewall
+(1) Unable to protect against the transfer of filesor
+software/sccial engineering
+(2) It does not prevent misuse of passwords from dialling in to or
+out of the internal network
+(3) Firewalls are not able to stcorusers from accessing data or
+informationfrommaliciouswebsites
+(4) Already infected systems cannot be secured by firewalls
+(5) Change settings to firewall can hamper network traffic
+<√
+(Any two)
+2
+4.12
+TWOpossiblesolutions toresolve bottlenecks in data flow
+in local storage
+(1) MakeuseofaSSD/fasterhard diskdrive
+(2) Use drives/peripherals with high cache capacities
+(3) Optimize/defragment the storage
+(4) Compressing data
+(5) Increase capacity
+<√
+(Any two)
+2
+[25]
+RTMENT OF BASIC
+EDUCATION
+PRVATE BAGX895,PRETORIA0001
+2023 -11- 17
+Copyright reserved
+Please turn over
+APPROVED MARKING GUIDELINE
+PICLO EXAMINATION
+
+===== PAGE 7 =====
+
+ComputerApplicationsTechnology/P2
+DBE/November2023
+NSC - Marking Guidelines
+QUESTION 5: INTERNET AND NETWORK TECHNOLOGIES
+5.1
+TWO reasons for using a wireless network
+(1) Easy to install
+(2) Less cables clutter/No wires
+(3) Easy to connect to
+(4) Added mobility/flexibility
+(5) Easy to expand
+<<
+(Any two)
+2
+5.2
+TWO guidelines/hints ofvideo conferencing
+(1) Formal etiquette protocols
+E.g. Dress appropriately, use formal language, no multi-
+tasking, fair participation, correct posture etc.
+(2)Equipment
+E.g. Good speakers, good microphone, good web camera,
+good internet connection, UPS (continuous power supply)
+(3) Environment
+E.g. Quiet environment, suitable lighting, appropriate location
+(4) Software
+E.g. Close unused application, record and transcribe
+(Any two)
+(Note to marker: Any TWO appropriate guidelines.)
+2
+5.3
+Function of a NIC
+The NlC is used to connect a device to a iietwork V cable
+(Note to marker: Only accept connection not communication)
+ATMENTOFBASIC
+EDUCATION
+RVATE BAGX895,PRETORIA0001
+2023 -11-17
+APPROVED MARKING GUIDELINE
+PUDLIO EXAMINATION
+Copyright reserved
+Please turn over
+
+===== PAGE 8 =====
+
+Computer ApplicationsTechnology/P2
+8
+DBE/November 2023
+NSC --Marking Guidelines
+5.4
+TWO technologies of 4IR
+(1) Artificial intelligence (A!)
+(2) Augmented reality (AR)
+(3) Virtual reality (VR)
+(4) 3D/4D printing
+(5) Cloud computing
+(6) loT
+(7) Robotics
+(8) Quantum computing
+(9) Block chain
+(10) Automation, self-driving cars, machine learning
+(11) Genetic engineering
+(12) Drone technology
+<<
+(Any two)
+(Note to marker: Accept any correct technology)
+2
+5.5
+TWO advantages of cloud computing in terms of storage
+.
+(1) Save storage space on local device
+(2) Storage can be accessed from anywhere
+(3) Storage can be accessed on any device
+(4) Faster access because of more powerful processors
+(5) It offers back-up and recovery functions
+(6) Latest updates, scalability and security are catered for
+<<
+(Any two)
+2
+5.6
+TWO factors to consider for installing wireless access
+points
+(1) Security it offers e.g. strong passwords
+(2) Distance/Area itcovers
+(3) Different WiFi standards: Differ in speed, transmission ranges
+and frequency
+(4) Number of clients connecting
+(5) Signal interference
+V√,(Any two)
+2
+5.7
+TWO disadvantages of a PAN
+(1) Limited range - only a few meters
+(2) Data transmission may be slow
+(3) Prone to interference
+(4) Limited number of devices can be connected/paired
+ (Any two)
+2
+RTMENT OF BASIC
+EDUCATION
+:VATEBAGXS95,PRETORIAG001
+2023 -11- 17
+Copyright reserved
+Please turn over
+APPROVED MARKING GUIDELINE
+SLIC EXAMINATION
+
+===== PAGE 9 =====
+
+ComputerApplicationsTechnology/P2
+9
+DBE/November2023
+NSC -Marking.Guidelines
+5.8
+Term and description of throttling/policing
+Throttling/policing V
+Occurs when the ISP slows down the internet speed due to
+excessive data downloads/Not adhering to FUP (Fair Use Policy)
+2
+[15]
+ASTMENTOFBASIC
+EOUCATION
+PVATESAGX895,PRETORIA 0001
+2023 -11- 17
+APPROVED MARKING GUIDELINE
+ISLC EXAMINATION
+Copyright reserved
+Please turn over
+
+===== PAGE 10 =====
+
+Computer Applications Technology/P2
+10
+DBE/November 2023
+NSC - Marking Guidelines :
+QUESTION 6: INFORMATION MANAGEMENT
+6.1
+Importance of report writing
+(1) Reader must have a clear understanding of the content
+(2) Displays a clear link between the original task/problem,
+research, discussion and conclusion
+(3) Share findings with the target audience
+(4) Gives a summary of your findings
+(Any one)
+6.2
+TWO considerations when formulating a task definition
+(1) Understand the current situation/describe the problem area
+(2) ldentify the information needed to solve the information
+problem
+(3) Determine the focus area/question
+(4) Determine the steps to complete the task
+(5) Determine the target audience
+<√
+(Any two)
+2
+6.3
+Spreadsheet feature to show increase/decrease over a
+period of time
+Trend line/Drop Linesv
+6.4
+TWO aspects to consider whenplanning a questionnaire
+(1) Identify research aims and the goal of the questionnaire
+(2) Target audience
+(3) Type of questionnaire - electronic, written etc.
+(4) Consider the type of questions (open/closed)/information
+needed
+(5) Design question sequence and overall layout
+<<
+(Any two)
+2
+6.5.1
+Evaluating a website
+(1) There are no guidelines for publishing on the web
+(2) Most information that is published on the web is not filtered
+and evaluated like books, journals, magazines, or
+newspapers
+(3) To ensure/assess quality/credibility/suitability of the website
+(4) Currency - is the information up to date?
+<<
+(Any two)
+2
+AATMENTOFBASIC
+EOUCATION
+ATEBAGX895,PRETORIA000T
+2023 -11- 17
+APPROVED MARKING GUIDELINE
+Copyright reserved
+Please turn over
+DIIO EXAMINATION
+
+===== PAGE 11 =====
+
+Computer Applications Technology/P2
+11
+DBE/November 2023
+NSC - Marking Guidelines
+6.5.2
+TWO criteria to evaluate website
+(1) Affiliation (e.g. who supports the web site?)
+(2) Audience (e.g. level at which it is written/who is it intended
+for?)
+(3) Authority (e.g. who is the author credentials?)
+(4) Coverage (e.g. organisation of content and working links)
+(5) Currency (e.g. is the information up-to-date?)
+(6) Objectivity (e.g. does it reflect any bias?)
+(7) Accuracy (e.g. does it correlate with other sources?)
+V(Any two)
+2
+[10]
+RTMENT OF BASIC
+EOUCATION
+R.VATE SAGX895,PRETORIA000
+2023 -11- 17
+APPROVEDMARKING GUIDELINE
+CEXAMINATION
+Copyright reserved
+Please turn over
+
+===== PAGE 12 =====
+
+Computer Applications Technology/P2
+12
+DBE/November 2023
+NSC - Marking Guidelines
+QUESTION 7: SOCIAL IMPLICATIONS
+7.1
+Positive global impact of ICT
+(1) Ease of global travel
+(2) Improved global communication
+(3) Important information or news can be shared
+(4) New learning opportunities and different ways of learning
+(5) New ways to do business/health care/etc.
+(6) Reduced impact on ecosystem - less driving, flying, printing,
+etc.
+(7) Telecommuting
+(8) Virtual communities
+(9) More economically viable
+<
+(Any two)
+2
+7.2
+TWO common internet attacks (excluding malware)
+(1) Denial-of-Service (DoS) attacks
+(2) Phishing
+(3) Spoofing
+(4) Cyberterrorism
+(5) Sniffer attacks
+(6) Code (SQL) injection attacks
+(7) Supply chain attacks
+(8) Insider threats
+(9) Zero-day exploit
+<<
+(Any two)
+2
+7.3
+Description of data protection AND method
+Description
+Data protection is about safeguarding your data/information
+from unauthorised access
+Method
+(1) Passwords
+(2) Firewalls
+(3) VPN
+(4) Encryption
+(5) Backup
+(6) Two factor authentication
+(Any one)
+2
+TTMENTOFBASIC
+EOUCATION
+VATE BAGX095,PRETORIA 0D01
+2023 -11-17
+APPROVED MARKING GUIDELINE
+Copyright reserved
+O EXAMINATION
+Please turn over
+
+===== PAGE 13 =====
+
+Computer Applications Technology/P2
+13
+DBE/November 2023
+NSC-Marking Guidelines
+7.4
+TWOresponsibilities of a network administrator
+(1) Keeprecords ofsoftware
+(2) Keeps records of hardware
+(3) Ensure that only approved software is installed/updated
+(4) Ensure privacy
+(5) Manage usernames and passwords
+(6) Putting security measures in place e.g.access
+rights/blocking accessofexternalstoragedevice
+(7) Develop an acceptable user policy (AUP)
+(8) Backup and recovery
+(Any two)
+2
+7.5
+Options toprevent data loss in case of unscheduied power
+failures
+(1) Use Autosave
+(2) Install a UPS
+(3) Install inverter
+(4) Make use of solar panels, battery bank etc.
+<√
+(Any two)
+2
+[10]
+ARTMENT OFBASIC
+EDUCATION
+VATEBAGX395,PRETORIA000
+2023 -11- 17
+APPROVED MARKING GUIDELINE
+PUSLC EXAMINATION
+Copyright reserved
+Please turn over
+
+===== PAGE 14 =====
+
+Computer Applications Technology/P2
+14
+DBE/November 2023
+NSC - Marking Guidelines
+QUESTION 8: SOLUTION DEVELOPMENT
+8.1
+TWO reasons to use headers and footers with an example
+(1) To repeat information at the top/bottom of every page
+(2) Provides a description of the document contents
+(3) Provide information about different sections of a multi-page
+document
+(4) Easy navigation
+<√
+(Any two)
+Example
+Document information, properties, fields, dates, page number,
+file name, etc.
+(Any one)
+(Note to marker: Accept any correct example)
+3
+8.2
+TWO reasons why formula returns zero
+(1) Incorrect cell range: B7:B13 instead of C7:C13
+(2) Incorrect function: CountA(B7:B13)
+(3) Column B is text/Cannot calculate text
+<√
+(Any two)
+2
+8.3
+TWo field properties to improve accurate data capturing
+(excluding validation rules)
+(1) Input masks
+(2) Field sizes
+(3) Default values
+(4) Lookup values like List Box, Combo Box, Check Box
+(5) Formatting e.g. Medium date
+v(Any two)
+2
+8.4
+Force certain text to the next column
+Column Break v
+1
+8.5
+Explanation of criteria
+The number entered is less than 0 (negative numbers)  or
+numbers 5 and above V / Numbers from 0 to 4 are excluded
+2
+8.6
+Criteria for Username field in database query
+Returns a Username with:
+(1) ?? -  Compulsory 2 start characters ; followed by
+(2) 'an' - The characters 'an' as the 3rd and 4th characters V;
+followed by;
+(3)
+*'  - A string of length O or more 
+3
+ARTMENT OF BASIO
+EDUCATION
+PRVATE DAG X39B,PRETORIA 000
+Copyright reserved
+2023 -11- 17
+Please turn over
+APPROVED MARKING GUIDELINE
+PUSLIO EXAMINATION
+
+===== PAGE 15 =====
+
+Computer Applications Technology/P2
+15
+DBE/November 2023
+NSC - Marking Guidelines
+8.7
+Effectof missing height attribute on image
+The image will resize  proportionally (maintain aspect ratio)
+8.8
+Reason to use button in Access table
+(1) Show/hide column totals
+(2) To display a summary of a field by using a total
+function/aggregate function
+(Any one)
+(Note to marker: Accept a specific example e.g. SUM, AVG,
+COUNT, MAX, MIN, etc.)
+[15]
+TOTAL SECTION B:
+75
+ARTMENTOF BASIC
+EDUCATION
+FRIVATES&GX89S,PRETORIA0O0!
+2023 -11-1 7
+APPROVED MARKING GUIDELINE
+PLS:O EXAMINATION
+Copyright reserved
+Please turn over
+
+===== PAGE 16 =====
+
+ComputerApplicationsTechnology/P2
+16
+DBE/November 2023
+NSC-Marking Guidelines
+SECTION C
+QUESTION 9: INTEGRATED SCENARIO
+9.1.1
+Type of computer user
+Power/Super user/(gamer) 
+9.1.2
+Howis the size ofmonitorsmeasured
+Monitors are measured diagonally 
+9.1.3
+TWO types ofutilitysoftware
+(1) Antivirus
+(2) Disk Clean-up
+(3) Disk defragment
+(4) Backup
+(5) File compressing
+(6) Task scheduler
+(7) File management, etc.
+<<
+(Any two)
+2
+9.1.4
+TWO additional hardware for this computer(excluding
+mouse,keyboard,joystick, steering wheel)
+(1) Blue Ray Rom/DVD Rom
+ATMENT OF BASK
+(2) VR glasses
+EDUCATIDN
+(3) Printer
+PRVATE BAGX695,PRETORIAO001
+(4) Scanner
+2023| -11-
+17
+(5) Screen/Big Screen
+(6) Speakers
+APPROVED MARKING GUIDELINE
+(7) Webcam
+LUELIO EXAMINATICN
+(8) Video capture card
+(9) Microphone, etc.
+<√
+(Any two)
+(Note to marker:Accept gaming hardware not listed in the
+specifications given on the paper)
+2
+6
+9.2.1
+Typeofcablemedia toconnectcomputers andmotivation
+UTP/STP (Twisted pair)
+CAT 5/6
+Ethernet/LAN cable
+(Any one)
+Motivation
+(1) Most cost-effective solution
+(2) Easy to set up than fibre optics
+(Any one)
+2
+Copyright reserved
+Please turn over
+
+===== PAGE 17 =====
+
+Computer Applications Technology/P2
+17
+DBE/November 2023
+NSC - Marking Guidelines
+9.2.2
+ONEreason why thisnetwork does not require a server
+(1) Each computer is managed on its own
+(2) No server is required on a gaming network
+(3) No need for centralised access to files
+(4) Games are often hosted on a local computer
+(Any one)
+9.2.3
+TWO factors to consider when buying a printer
+(1) Type of printer
+(2) Colour
+(3) Speed
+(4) Resolution (dpi)/Graphics capability/Photo printing
+(5) Paper type and size
+(6) System compatibility
+(7) Wireless capability
+(8) Cost per page
+(9) Budget available
+(10) Mobility r
+(11) Future needs
+(12) Affordability
+(13) Energy saving features
+(14) Print from storage device
+(Any two)
+2
+5
+9.3.1
+TWO physical safeguards to protect computers
+(1) Burglar bars
+(2) Security guard
+(3) Stee! doors
+(4) Mesh in the roof
+(5) Locks
+(6) Alarm system
+(7) Cameras
+V(Any two)
+2
+9.3.2
+Technology for tracking equipment
+(1) RFID
+(2) Barcode/QR codes/stickers
+(3) Bluetooth tracking devices
+(Any one)
+1
+3
+RTMENT OF BASIC
+EDUGATON
+VATEBAGX395,PRETORIA0001
+2023 -11- 17
+APPROVED MARKING GUIDELINE
+Copyright reserved
+PUDLIG EXAMINATION
+Please turn over
+
+===== PAGE 18 =====
+
+Computer Applications Technology/P2
+18
+DBE/November 2023
+NSC -Marking Guidelines
+9.4
+Name of security type and ONE disadvantage
+Biometric V security
+Disadvantages of fingerprint biometric security
+(1) Dirty fingerprint will not scan
+(2) Changes in fingerprint structure will not allow access
+(3) Cannot be shared, person must be present
+(4) If the surface of the biometric device is dirty, it will not scan
+the finger correctly
+(Any one)
+(Note to marker: accept any valid answer)
+2
+9.5.1
+Definition of Virtual Reality.
+The use of technology to create a simulation of a 3D
+environment √ that can be interacted with by a person
+in a seemingly real or physical way √
+2
+9.5.2
+TWO disadvantages of Virtual Reality
+(1) Physical effects: motion sickness, injuries etc.
+(2) Psychological: moral and ethical concerns, (inability to
+distinguish between what is real and what is virtual)
+(3) Limited availability to the special equipment like VR glasses,
+video cameras
+<√
+(Any two)
+2
+4
+9.6.1
+ONE features why the chairs are considered gaming chairs
+Any ergonomic related answer
+(1) Adjustable armrest
+(2) Adjustable height
+(3) Movable base
+(4) Breathable material
+(5) Gaming related enhancements, etc.
+(Any one)
+1
+9.6.2
+TWO ICT examples to advertise tournament
+(1) Social media (accept any TWO examples for TWO marks)
+(2) Website
+(3) e-mail
+(4) Radio and television broadcast
+<<
+(Any two)
+2
+5
+ATVENT OFBASIC
+EDUCATION
+VATEBAGX895.PRETORIA000T
+2023 -11- 17
+Copyright reserved
+Please turn over
+APPROVED MARKING GUIDELINE
+ELIC EXAMINATION
+
+===== PAGE 19 =====
+
+Computer Applications Technology/P2
+19
+DBE/November 2023
+NSC--Marking Guidelines
+9.6.3
+MS Office application to capture and store individual
+entries
+Accessv
+9.6.4
+Thankparticipantsin individual letters
+Mail merge 
+[25]
+RTMENTOFBASC
+EDLCATION
+RVATE BAGX895,PRETORIA 0001
+2023 -11- 17
+APPROVED MARKING GUIDELINE
+PUDLIC EXAMINATION
+Copyright reserved
+Please turn over
+
+===== PAGE 20 =====
+
+ComputerApplicationsTechnology/P2
+20
+DBE/November 2023
+NSC - Marking Guidelines
+QUESTION 10:INTEGRATED SCENARIO
+10.1.1
+THREE suggestions to improve the form layout for
+electronic use
+(1) Use text form fields
+(2) Makeuseof checkboxes
+(3) Make use of dropdown fields/combo box/list box
+(4) Use a template
+(Any three)
+3
+10.1.2
+Suggested closed questions
+(1) Number of drivers - 10 drivers
+(2) Car weight - Category >100 or <100
+(3) Teams names - Choice of names given in list
+(Question V and reason V)
+2
+5
+10.2.1
+Example of type of online form applications
+(1) Google form
+(2) Microsoft form
+(Any one)
+(Note to marker:Accept any other online form application
+example)
+1
+10.2.2
+TWO advantages of using online forms
+(1) More accurate/validation/few errors in data input
+(2) Easy to collect/short turnaround time
+(3) Easy management and analysis of data
+(4) Easy to share, etc.
+(5) Quick to complete/fill in
+(6) Eco friendly e.g. No use of paper/saves paper
+(7) Wideraudiencecanbereached
+(8) Online forms are freely available
+<<
+(Any two)
+2
+10.2.3
+Formatting inExcel
+Conditional formatting
+1
+4
+10.3
+Create a distinguishing feature for each car
+Number plate/badge/logo/emblem/hood ornament etc. v
+(Note to marker:Accept any design/accessories feature)
+RTMENT OF BASIC
+EDUCATION
+RVATEBAGX895,PRETORIA0001
+Copyright reserved
+2023 -11- 17
+Please turn over
+APPROVED MARKING GUIDELINE
+PUOLIC EXAMINATION
+
+===== PAGE 21 =====
+
+Computer Applications Technology/P2
+21
+DBE/November 2023
+NSC - Marking Guidelines
+10.4.1
+Explain data streaming
+Event/video will be watched live V without downloading v
+2
+10.4.2
+TWO ways to transfer information from drones to computer
+(1) Wi-Fi connection
+(2) Bluetooth connection
+(3) Cellular connection
+(4) Satellite
+(5) Microwave
+(6) WiMax
+(7) SD card
+(8) Use USB cable
+<<
+(Any two)
+2
+10.4.3
+Example of fast internet connection
+(1) LTE/4G/5G (cellular connection)
+(2) Fibre
+(3) Satelite
+(Any one)
+1
+5
+10.5.1
+Numbers represent in the Internet speed
+30 Download speed v
+5 Upload speed √
+2
+10.5.2
+Unit of measurement
+Bits per second v
+(Note to marker: also accept Megabits per second)
+1
+3
+10.6
+Standardised document
+Template v
+10.7.1
+Description of the photo
+Caption V
+10.7.2
+Table does not fit on page
+(1) Auto fit to contents
+(2) Auto fit to window
+(3) Change page orientation to landscape
+(Any one)
+1
+4
+RTMENT OF BASIO
+EOUCATION
+VAVEBAGX895,PRETORIA0001
+2023 -11- 17
+Copyright reserved
+Please turn over
+APPROVEDMARKING GUIDELINE
+UCEXAMINATION
+
+===== PAGE 22 =====
+
+ComputerApplicationsTechnology/P2
+22
+DBE/November 2023
+NSC-Marking Guidelines
+10.7.3
+Ways to give recognition to contributed photos and articles
+(1) Citation
+(2) Bibliography
+(3) Photo with caption
+(4) Footnote/Endnote
+(5) Acknowledgement
+V(Any two)
+2
+10.8
+Typesof information captured in the metadata ofphotos
+excluding geographical data
+(1) Type of camera used
+(2) Time when photo was taken
+(3) Author
+(4) Date
+(5) ISO, etc.
+V(Any two)
+2
+[25]
+TOTAL SECTION C:
+50
+GRAND TOTAL:
+150
+ARTMENTOFBAOIC
+EDUCATION
+PRIVATEBAGX39S,PRETORIAO00
+2023 -11-17
+APPROVED MARKING GUIDELINE
+SIC EXAMINATION
+Copyright reserved

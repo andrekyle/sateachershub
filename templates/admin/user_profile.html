@@ -1,0 +1,682 @@
+{% extends "lms_base.html" %}
+{% block extra_css %}
+<style>
+    body {
+        background: #0c0d0f !important;
+        padding-top: 56px !important;
+        color: #e6e7eb;
+    }
+    .sath-nav {
+        background: rgba(12, 13, 15, 0.78) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+        -webkit-backdrop-filter: saturate(160%) blur(14px);
+        backdrop-filter: saturate(160%) blur(14px);
+    }
+    .sath-brand,
+    .sath-links a,
+    .sath-links a.active,
+    .sath-links a.sath-admin,
+    .sath-links a:hover,
+    .sath-cta a:not(.sath-primary),
+    .sath-mobile-toggle { color: #e6e7eb !important; }
+    .sath-brand .sath-brand-accent { color: #e6e7eb !important; }
+    .sath-cta a.sath-primary { color: #0c0d0f !important; background:#e6e7eb !important; }
+</style>
+{% endblock %}
+{% block title %}{{ user.username }} — Admin{% endblock %}
+{% block body_class %}gridx-home{% endblock %}
+{% block content %}
+<style>
+    body { padding-top: 0 !important; }
+    main { padding: 0 !important; }
+    .up-shell {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 30px 24px 92px;
+    }
+
+    .up-back {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 13px;
+        color: #94969c;
+        text-decoration: none;
+        margin-bottom: 18px;
+        transition: color .12s;
+    }
+    .up-back:hover { color: #e6e7eb; }
+    .up-back i { font-size: 11px; }
+
+    .up-head {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 24px;
+        padding: 0 4px 22px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    .up-avatar {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: #1f2128;
+        border: 1px solid rgba(255,255,255,0.08);
+        color: #f5f5f6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        font-weight: 600;
+        flex-shrink: 0;
+        position: relative;
+        overflow: hidden;
+        background-size: cover;
+        background-position: center;
+    }
+    .up-avatar.editable { cursor: pointer; }
+    .up-avatar.editable:hover .up-avatar-overlay { opacity: 1; }
+    .up-avatar-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.55);
+        color: #f5f5f6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        opacity: 0;
+        transition: opacity .12s;
+    }
+    .up-avatar input[type=file] { display: none; }
+    .up-head-text { flex: 1; min-width: 0; }
+    .up-title {
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing: -0.3px;
+        color: #f5f5f6;
+        margin: 0 0 4px;
+    }
+    .up-sub {
+        font-size: 13px;
+        color: #94969c;
+        margin: 0;
+    }
+    .up-status-row {
+        display: inline-flex;
+        gap: 6px;
+        margin-top: 8px;
+        flex-wrap: wrap;
+    }
+    .up-chip {
+        display: inline-flex;
+        align-items: center;
+        padding: 2px 8px;
+        border-radius: 999px;
+        border: 1px solid rgba(255, 255, 255, 0.10);
+        background: rgba(255, 255, 255, 0.03);
+        font-size: 12px;
+        font-weight: 500;
+        color: #cecfd2;
+        line-height: 1.4;
+    }
+    .up-chip.warn { color: #f5f5f6; border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.06); }
+
+    .up-card {
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 14px;
+        margin-bottom: 16px;
+        /* overflow:hidden was clipping open dropdown panels; let them spill out. */
+        box-shadow: none;
+    }
+    .up-card-head {
+        padding: 20px 24px 16px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        background: transparent;
+        border-top-left-radius: 14px;
+        border-top-right-radius: 14px;
+    }
+    .up-card-title {
+        font-size: 15px;
+        font-weight: 600;
+        color: #f5f5f6;
+        margin: 0 0 4px;
+        letter-spacing: -0.005em;
+    }
+    .up-card-sub {
+        font-size: 13px;
+        color: #94969c;
+        margin: 0;
+        line-height: 1.45;
+    }
+    .up-card-body { padding: 22px 24px; }
+
+    .up-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 18px 20px;
+    }
+    @media (max-width: 640px) { .up-grid { grid-template-columns: 1fr; gap: 16px; } }
+
+    .up-field { display: flex; flex-direction: column; gap: 8px; }
+    .up-field.full { grid-column: 1 / -1; }
+    .up-label {
+        font-size: 12px;
+        font-weight: 500;
+        color: #cecfd2;
+        letter-spacing: 0.01em;
+    }
+    .up-input,
+    .up-select {
+        height: 36px;
+        min-height: 36px;
+        padding: 7px 12px;
+        background: #141414;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: -0.005em;
+        line-height: 1.3;
+        font-family: inherit;
+        outline: none;
+        transition: border-color .15s ease, background .15s ease;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .up-input:hover,
+    .up-select:hover {
+        background: #1A1A1A;
+        border-color: rgba(255, 255, 255, 0.18);
+    }
+    .up-input:focus,
+    .up-select:focus {
+        background: #1A1A1A;
+        border-color: rgba(255, 255, 255, 0.30);
+        box-shadow: none;
+    }
+    .up-input:disabled {
+        opacity: 0.55;
+        cursor: not-allowed;
+    }
+    .up-input::placeholder { color: rgba(255,255,255,0.35); }
+    /* Keep browser autofill on the app's dark theme instead of the pale
+       blue/yellow default (the inset shadow masks the native fill colour). */
+    .up-input:-webkit-autofill,
+    .up-input:-webkit-autofill:hover,
+    .up-input:-webkit-autofill:focus,
+    .up-select:-webkit-autofill {
+        -webkit-text-fill-color: #ffffff;
+        -webkit-box-shadow: 0 0 0 1000px #141414 inset;
+        box-shadow: 0 0 0 1000px #141414 inset;
+        caret-color: #ffffff;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    /* Grade select — match Past Papers planner-spec dropdown exactly */
+    .up-select {
+        appearance: none;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        height: 36px !important;
+        min-height: 36px !important;
+        padding: 7px 36px 7px 12px !important;
+        background-color: #141414 !important;
+        border: 1px solid rgba(255,255,255,0.08) !important;
+        border-radius: 8px !important;
+        color: #ffffff !important;
+        font-size: 14px !important;
+        font-weight: 300 !important;
+        letter-spacing: -0.005em !important;
+        line-height: 1.3 !important;
+        background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1.5L6 6.5L11 1.5' stroke='rgba(255,255,255,0.45)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>") !important;
+        background-repeat: no-repeat !important;
+        background-position: right 12px center !important;
+        cursor: pointer;
+    }
+    .up-select:hover {
+        background-color: #1A1A1A !important;
+        border-color: rgba(255,255,255,0.18) !important;
+    }
+    .up-select:focus {
+        background-color: #1A1A1A !important;
+        border-color: rgba(255,255,255,0.30) !important;
+        box-shadow: none !important;
+    }
+    .up-select option { background: #1A1A1A; color: #ffffff; font-weight: 300; }
+
+    .up-actions {
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+        margin-top: 16px;
+    }
+
+    .up-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        height: 36px;
+        padding: 0 14px;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 8px;
+        color: #cecfd2;
+        font-size: 13px;
+        font-weight: 500;
+        cursor: pointer;
+        text-decoration: none;
+        font-family: inherit;
+        transition: border-color .12s, background .12s, color .12s;
+    }
+    .up-btn:hover {
+        border-color: rgba(255, 255, 255, 0.22);
+        background: rgba(255, 255, 255, 0.04);
+        color: #f5f5f6;
+    }
+    .up-btn.primary {
+        background: #141414;
+        border-color: rgba(255, 255, 255, 0.08);
+        color: #f5f5f7;
+    }
+    .up-btn.primary:hover {
+        background: #1A1A1A;
+        border-color: rgba(255, 255, 255, 0.18);
+        color: #ffffff;
+    }
+    .up-btn i { font-size: 11px; }
+
+    .up-priv-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+    }
+    .up-priv-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 14px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .up-priv-row:last-child { border-bottom: 0; }
+    .up-priv-info { flex: 1; min-width: 0; }
+    .up-priv-name {
+        font-size: 14px;
+        font-weight: 500;
+        color: #f5f5f6;
+        margin: 0 0 2px;
+    }
+    .up-priv-desc {
+        font-size: 13px;
+        color: #94969c;
+        margin: 0;
+    }
+
+    .up-meta-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        padding: 10px 0;
+        font-size: 13px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .up-meta-row:last-child { border-bottom: 0; }
+    .up-meta-key { color: #94969c; }
+    .up-meta-val { color: #e6e7eb; font-variant-numeric: tabular-nums; }
+
+    /* Grade .fdd dropdown — match Past Papers planner spec */
+    .up-fdd { position: relative; width: 100%; }
+    .up-fdd .fdd-toggle {
+        display: flex; align-items: center; justify-content: space-between;
+        width: 100%; min-height: 36px; height: 36px;
+        padding: 7px 12px;
+        background: #141414;
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 8px;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 14px; font-weight: 300;
+        letter-spacing: -0.005em; line-height: 1.3;
+        text-align: left;
+        font-family: inherit;
+    }
+    .up-fdd .fdd-toggle:hover { background: #1A1A1A; border-color: rgba(255,255,255,0.18); }
+    .up-fdd .fdd-toggle:focus { outline: none; background: #1A1A1A; border-color: rgba(255,255,255,0.30); }
+    .up-fdd .fdd-toggle[disabled] { opacity: 0.55; cursor: not-allowed; }
+    .up-fdd .fdd-toggle .fdd-label {
+        min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+        flex: 1;
+    }
+    .up-fdd .fdd-toggle .caret {
+        margin-left: 8px; display: inline-flex; align-items: center;
+        flex-shrink: 0; transition: transform .15s ease;
+    }
+    .up-fdd.open .fdd-toggle .caret { transform: rotate(180deg); }
+    .up-fdd .fdd-panel {
+        position: absolute; top: calc(100% + 4px); left: 0; right: 0; z-index: 50;
+        max-height: 280px; overflow-y: auto;
+        background: #1A1A1A;
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 8px;
+        box-shadow: 0 12px 32px rgba(0,0,0,0.55);
+        padding: 4px;
+        display: none;
+    }
+    .up-fdd.open .fdd-panel { display: block; }
+    .up-fdd .fdd-item {
+        display: flex; align-items: center;
+        padding: 6px 10px;
+        cursor: pointer;
+        font-size: 14px; font-weight: 300;
+        letter-spacing: -0.005em;
+        color: #ffffff;
+        border-radius: 5px;
+    }
+    .up-fdd .fdd-item:hover { background: rgba(255,255,255,0.06); }
+    .up-fdd .fdd-item.selected { background: rgba(255,255,255,0.08); }
+</style>
+
+<div class="up-shell">
+
+    <a href="{{ url_for('admin_users') }}" class="up-back"><i class="fas fa-arrow-left"></i> All users</a>
+
+    <div class="up-head">
+        {% set _avatar_style = ('background-image:url(' ~ url_for('static', filename=user.profile_pic) ~ ');') if user.profile_pic else '' %}
+        {% if current_user.is_super_admin %}
+        <label class="up-avatar editable" for="up-avatar-input" title="Click to change profile picture" style="{{ _avatar_style }}">
+            {% if not user.profile_pic %}{{ (user.first_name or user.username)[0]|upper }}{% endif %}
+            <span class="up-avatar-overlay"><i class="fas fa-camera"></i></span>
+        </label>
+        <form id="up-avatar-form" method="POST"
+              action="{{ url_for('admin_user_avatar', user_id=user.id) }}"
+              enctype="multipart/form-data" style="display:none;">
+            <input id="up-avatar-input" type="file" name="avatar"
+                   accept="image/png,image/jpeg,image/gif,image/webp,image/svg+xml"
+                   onchange="document.getElementById('up-avatar-form').submit();">
+        </form>
+        {% else %}
+        <div class="up-avatar" style="{{ _avatar_style }}">
+            {% if not user.profile_pic %}{{ (user.first_name or user.username)[0]|upper }}{% endif %}
+        </div>
+        {% endif %}
+        <div class="up-head-text">
+            <h1 class="up-title">{{ user.full_name }}</h1>
+            <p class="up-sub">{{ user.email }}</p>
+            <div class="up-status-row">
+                {% if user.is_super_admin %}<span class="up-chip">Owner</span>
+                {% elif user.is_admin %}<span class="up-chip">Admin</span>
+                {% elif user.is_hod %}<span class="up-chip">HOD</span>
+                {% else %}<span class="up-chip">Teacher</span>{% endif %}
+                {% if user.is_hod and (user.is_admin or user.is_super_admin) %}<span class="up-chip">HOD</span>{% endif %}
+                {% if user.is_teacher and (user.is_super_admin or user.is_admin or user.is_hod) %}<span class="up-chip">Teacher</span>{% endif %}
+                {% if user.is_blocked %}<span class="up-chip warn">Blocked</span>{% endif %}
+            </div>
+        </div>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        <div style="margin-bottom:16px;">
+          {% for category, msg in messages %}
+            <div class="up-card" style="margin-bottom:8px;">
+              <div class="up-card-body" style="padding:12px 18px;font-size:13px;color:#e6e7eb;">{{ msg }}</div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    {% set is_self = (user.id == current_user.id) %}
+    {% set is_super = current_user.is_super_admin %}
+    {% set is_hod_owner = current_user.is_hod and (user.hod_id == current_user.id) %}
+    {% set is_admin_only = current_user.is_admin and not current_user.is_hod %}
+    {% set can_edit = is_super or is_self or is_hod_owner or is_admin_only %}
+
+    {% if not can_edit %}
+    <div class="up-card" style="margin-bottom:16px;">
+        <div class="up-card-body" style="padding:14px 18px;font-size:13px;color:#94969c;">
+            You are viewing this profile in read-only mode. Only the owner (super admin) can edit staff accounts.
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- Profile information -->
+    <form method="POST" action="{{ url_for('admin_user_update', user_id=user.id) }}" class="up-card">
+        <div class="up-card-head">
+            <h2 class="up-card-title">Profile information</h2>
+            <p class="up-card-sub">Update the user's personal details and account identifiers.</p>
+        </div>
+        <div class="up-card-body">
+            <div class="up-grid">
+                <div class="up-field">
+                    <label class="up-label" for="up-first">First name</label>
+                    <input id="up-first" class="up-input" type="text" name="first_name" value="{{ user.first_name or '' }}" {% if not can_edit %}disabled{% endif %}>
+                </div>
+                <div class="up-field">
+                    <label class="up-label" for="up-last">Last name</label>
+                    <input id="up-last" class="up-input" type="text" name="last_name" value="{{ user.last_name or '' }}" {% if not can_edit %}disabled{% endif %}>
+                </div>
+                <div class="up-field">
+                    <label class="up-label" for="up-username">Username</label>
+                    <input id="up-username" class="up-input" type="text" name="username" value="{{ user.username }}" required {% if not can_edit %}disabled{% endif %}>
+                </div>
+                <div class="up-field">
+                    <label class="up-label" for="up-email">Email</label>
+                    <input id="up-email" class="up-input" type="email" name="email" value="{{ user.email }}" required {% if not can_edit %}disabled{% endif %}>
+                </div>
+                <div class="up-field">
+                    <label class="up-label" for="up-grade">Grade</label>
+                    {% set _grade_label = 'Grade ' ~ user.grade if user.grade else '—' %}
+                    <div class="fdd up-fdd" data-fdd="single" {% if not can_edit %}data-disabled="1"{% endif %}>
+                        <button type="button" class="fdd-toggle" {% if not can_edit %}disabled{% endif %}>
+                            <span class="fdd-label">{{ _grade_label }}</span>
+                            <span class="caret" aria-hidden="true">
+                                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.5L6 6.5L11 1.5" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            </span>
+                        </button>
+                        <input type="hidden" name="grade" value="{{ user.grade or '' }}">
+                        <div class="fdd-panel">
+                            <div class="fdd-item" data-value="">—</div>
+                            <div class="fdd-item" data-value="10">Grade 10</div>
+                            <div class="fdd-item" data-value="11">Grade 11</div>
+                            <div class="fdd-item" data-value="12">Grade 12</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% if can_edit %}
+            <div class="up-actions">
+                <button type="submit" class="up-btn primary"><i class="fas fa-save"></i> Save profile changes</button>
+            </div>
+            {% endif %}
+        </div>
+    </form>
+
+    <!-- Privileges -->
+    <div class="up-card">
+        <div class="up-card-head">
+            <h2 class="up-card-title">Roles and access</h2>
+            <p class="up-card-sub">Grant or revoke privileges and account access.</p>
+        </div>
+        <div class="up-card-body">
+            <div class="up-priv-list">
+                <div class="up-priv-row">
+                    <div class="up-priv-info">
+                        <p class="up-priv-name">Teacher access</p>
+                        <p class="up-priv-desc">Allow this user to use the teacher workspace, paper builder and question bank.</p>
+                    </div>
+                    {% if can_edit %}
+                    <form method="POST" action="{{ url_for('admin_toggle_teacher', user_id=user.id) }}">
+                        <button type="submit" class="up-btn">
+                            {% if user.is_teacher %}Revoke teacher{% else %}Grant teacher{% endif %}
+                        </button>
+                    </form>
+                    {% else %}
+                    <span class="up-chip">{% if user.is_teacher %}Granted{% else %}Not granted{% endif %}</span>
+                    {% endif %}
+                </div>
+                <div class="up-priv-row">
+                    <div class="up-priv-info">
+                        <p class="up-priv-name">Head of Department</p>
+                        <p class="up-priv-desc">HODs can review staff and content but cannot modify accounts.</p>
+                    </div>
+                    {% if can_edit %}
+                    <form method="POST" action="{{ url_for('admin_toggle_hod', user_id=user.id) }}">
+                        <button type="submit" class="up-btn">
+                            {% if user.is_hod %}Revoke HOD{% else %}Grant HOD{% endif %}
+                        </button>
+                    </form>
+                    {% else %}
+                    <span class="up-chip">{% if user.is_hod %}Granted{% else %}Not granted{% endif %}</span>
+                    {% endif %}
+                </div>
+                <div class="up-priv-row">
+                    <div class="up-priv-info">
+                        <p class="up-priv-name">Administrator</p>
+                        <p class="up-priv-desc">Full control over users, content and platform settings.</p>
+                    </div>
+                    {% if user.is_super_admin %}
+                    <span class="up-chip">Owner — locked</span>
+                    {% elif can_edit %}
+                    <form method="POST" action="{{ url_for('admin_toggle_admin', user_id=user.id) }}">
+                        <button type="submit" class="up-btn">
+                            {% if user.is_admin %}Demote admin{% else %}Promote to admin{% endif %}
+                        </button>
+                    </form>
+                    {% else %}
+                    <span class="up-chip">{% if user.is_admin %}Granted{% else %}Not granted{% endif %}</span>
+                    {% endif %}
+                </div>
+                <div class="up-priv-row">
+                    <div class="up-priv-info">
+                        <p class="up-priv-name">Subscription</p>
+                        <p class="up-priv-desc">An active subscription is required before an HOD can add this teacher to their moderation team.</p>
+                    </div>
+                    {% if can_edit %}
+                    <form method="POST" action="{{ url_for('admin_toggle_subscription', user_id=user.id) }}">
+                        <button type="submit" class="up-btn">
+                            {% if user.subscription_active %}Deactivate subscription{% else %}Activate subscription{% endif %}
+                        </button>
+                    </form>
+                    {% else %}
+                    <span class="up-chip {% if not user.subscription_active %}warn{% endif %}">{% if user.subscription_active %}Active{% else %}Inactive{% endif %}</span>
+                    {% endif %}
+                </div>
+                <div class="up-priv-row">
+                    <div class="up-priv-info">
+                        <p class="up-priv-name">Account access</p>
+                        <p class="up-priv-desc">{% if user.is_blocked %}This account is currently blocked from signing in.{% else %}Block to immediately revoke sign-in for this account.{% endif %}</p>
+                    </div>
+                    {% if user.is_super_admin %}
+                    <span class="up-chip">Owner — locked</span>
+                    {% elif can_edit %}
+                    <form method="POST" action="{{ url_for('admin_toggle_block', user_id=user.id) }}">
+                        <button type="submit" class="up-btn" {% if user.id == current_user.id %}disabled style="opacity:.5;cursor:not-allowed;"{% endif %}>
+                            {% if user.is_blocked %}Unblock account{% else %}Block account{% endif %}
+                        </button>
+                    </form>
+                    {% else %}
+                    <span class="up-chip {% if user.is_blocked %}warn{% endif %}">{% if user.is_blocked %}Blocked{% else %}Active{% endif %}</span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Password -->
+    {% if can_edit %}
+    <form method="POST" action="{{ url_for('admin_user_password', user_id=user.id) }}" class="up-card">
+        <div class="up-card-head">
+            <h2 class="up-card-title">Reset password</h2>
+            <p class="up-card-sub">Set a new password for this user. They will need it to sign in next time.</p>
+        </div>
+        <div class="up-card-body">
+            <div class="up-grid">
+                <div class="up-field">
+                    <label class="up-label" for="up-pw">New password</label>
+                    <input id="up-pw" class="up-input" type="password" name="password" minlength="6" required autocomplete="new-password">
+                </div>
+                <div class="up-field">
+                    <label class="up-label" for="up-pw2">Confirm password</label>
+                    <input id="up-pw2" class="up-input" type="password" name="password_confirm" minlength="6" required autocomplete="new-password">
+                </div>
+            </div>
+            <div class="up-actions">
+                <button type="submit" class="up-btn primary"><i class="fas fa-key"></i> Update password</button>
+            </div>
+        </div>
+    </form>
+    {% endif %}
+
+    <!-- Account meta -->
+    <div class="up-card">
+        <div class="up-card-head">
+            <h2 class="up-card-title">Account details</h2>
+            <p class="up-card-sub">Read-only system information about this account.</p>
+        </div>
+        <div class="up-card-body">
+            <div class="up-meta-row"><span class="up-meta-key">User ID</span><span class="up-meta-val">{{ user.id }}</span></div>
+            <div class="up-meta-row"><span class="up-meta-key">Created</span><span class="up-meta-val">{{ user.created_at.strftime('%d %b %Y, %H:%M') if user.created_at else '—' }}</span></div>
+        </div>
+    </div>
+
+    {% if can_edit and not user.is_super_admin and user.id != current_user.id %}
+    <form method="POST" action="{{ url_for('admin_user_delete', user_id=user.id) }}" class="up-card"
+          onsubmit="return confirm('Permanently delete {{ user.username }}? This cannot be undone.');"
+          style="border-color: rgba(249,112,102,0.35);">
+        <div class="up-card-head">
+            <h2 class="up-card-title" style="color:#f97066;">Danger zone</h2>
+            <p class="up-card-sub">Permanently delete this user account. This cannot be undone. If the user has linked records (papers, orders, etc.) the deletion may fail — block the account instead.</p>
+        </div>
+        <div class="up-card-body">
+            <div class="up-field">
+                <label class="up-label" for="up-confirm-del">Type the username <strong style="color:#e6e7eb;">{{ user.username }}</strong> to confirm</label>
+                <input id="up-confirm-del" class="up-input" type="text" name="confirm_username" autocomplete="off" required>
+            </div>
+            <div class="up-actions">
+                <button type="submit" class="up-btn"
+                        style="background:#912018;border-color:#912018;color:#fff;">
+                    <i class="fas fa-trash"></i> Delete user permanently
+                </button>
+            </div>
+        </div>
+    </form>
+    {% endif %}
+
+</div>
+<script>
+(function(){
+    var dd = document.querySelector('.up-fdd');
+    if (!dd) return;
+    var toggle = dd.querySelector('.fdd-toggle');
+    var label  = dd.querySelector('.fdd-label');
+    var hidden = dd.querySelector('input[type="hidden"][name="grade"]');
+    var items  = dd.querySelectorAll('.fdd-item[data-value]');
+    var disabled = dd.dataset.disabled === '1';
+    if (toggle && !disabled) {
+        toggle.addEventListener('click', function(e){
+            e.stopPropagation();
+            dd.classList.toggle('open');
+        });
+    }
+    document.addEventListener('click', function(e){
+        if (!dd.contains(e.target)) dd.classList.remove('open');
+    });
+    items.forEach(function(it){
+        if (hidden && it.dataset.value === hidden.value) it.classList.add('selected');
+        it.addEventListener('click', function(){
+            if (disabled) return;
+            if (hidden) hidden.value = it.dataset.value;
+            if (label) label.textContent = it.textContent.trim();
+            items.forEach(function(o){ o.classList.remove('selected'); });
+            it.classList.add('selected');
+            dd.classList.remove('open');
+        });
+    });
+})();
+</script>
+{% endblock %}

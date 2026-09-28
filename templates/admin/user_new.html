@@ -1,0 +1,348 @@
+{% extends "lms_base.html" %}
+{% block title %}Add User - Admin{% endblock %}
+{% block body_class %}gridx-home{% endblock %}
+{% block extra_css %}
+<style>
+    body { background:#0b0b0d !important; color:#f5f5f7; padding-top:0 !important; }
+    main { padding:0 !important; }
+    .un-shell {
+        --un-surface: rgba(20,20,20,0.52);
+        --un-border: rgba(255,255,255,0.08);
+        --un-border-strong: rgba(255,255,255,0.14);
+        --un-text: #f5f5f7;
+        --un-text-soft: #d6d6da;
+        --un-muted: #9a9aa3;
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 30px 24px 92px;
+    }
+    .un-head {
+        display:flex; align-items:flex-end; justify-content:space-between; gap:18px;
+        flex-wrap:wrap; margin-bottom:24px; padding:0 4px 22px;
+        border-bottom:1px solid var(--un-border);
+    }
+    .un-eyebrow { font-size:12px; color:var(--un-muted); margin:0 0 4px; font-weight:500; }
+    .un-title { font-size:28px; font-weight:600; letter-spacing:-0.4px; line-height:1.2; margin:0; color:var(--un-text); }
+    .un-sub { color:var(--un-text-soft); margin:6px 0 0; font-size:14px; }
+    .un-back {
+        display:inline-flex; align-items:center; gap:6px;
+        color:var(--un-text-soft); text-decoration:none; font-size:14px;
+        padding:0; border:none;
+        border-radius:0; background:transparent;
+        line-height:1.2;
+    }
+    .un-back:hover {
+        color:#fff;
+        text-decoration:none;
+    }
+    .un-card {
+        background:var(--un-surface);
+        border:1px solid var(--un-border);
+        border-radius:12px;
+        padding:28px;
+    }
+    .un-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px 18px; }
+    .un-field { display:flex; flex-direction:column; gap:6px; }
+    .un-field.full { grid-column: 1 / -1; }
+    .un-field label { font-size:13px; color:var(--un-text-soft); font-weight:600; }
+    .un-field input {
+        background:#141414 !important;
+        color:var(--un-text);
+        border:1px solid var(--un-border) !important;
+        border-radius:12px;
+        padding:10px 16px;
+        font-size:14px;
+        font-weight:300;
+        outline:none;
+        transition:border-color .15s, background .15s;
+        color-scheme:dark;
+        box-shadow:none !important;
+    }
+    .un-field input:hover {
+        border-color:rgba(255,255,255,0.18) !important;
+    }
+    .un-field input:focus {
+        border-color:rgba(255,255,255,0.30) !important;
+        background:#1A1A1A !important;
+        box-shadow:none !important;
+    }
+    .un-field input:active {
+        background:#1A1A1A !important;
+        box-shadow:none !important;
+    }
+    .un-field input:-webkit-autofill,
+    .un-field input:-webkit-autofill:hover,
+    .un-field input:-webkit-autofill:focus,
+    .un-field input:-webkit-autofill:active {
+        -webkit-text-fill-color: var(--un-text) !important;
+        -webkit-box-shadow: 0 0 0 1000px #141414 inset !important;
+        box-shadow: 0 0 0 1000px #141414 inset !important;
+        border: 1px solid var(--un-border) !important;
+        caret-color: var(--un-text);
+        transition: background-color 9999s ease-in-out 0s;
+    }
+    .un-field input:-webkit-autofill:focus,
+    .un-field input:-webkit-autofill:active {
+        -webkit-box-shadow: 0 0 0 1000px #1A1A1A inset !important;
+        box-shadow: 0 0 0 1000px #1A1A1A inset !important;
+        border-color: rgba(255,255,255,0.30) !important;
+    }
+    .un-field input::placeholder { color:#7c7f87; }
+
+    .un-fdd {
+        position: relative;
+        width: 100%;
+    }
+    .un-fdd .fdd-toggle {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        min-height: 36px;
+        height: 36px;
+        padding: 7px 12px;
+        background: #141414;
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 8px;
+        color: #ffffff;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: -0.005em;
+        line-height: 1.3;
+        text-align: left;
+        font-family: inherit;
+    }
+    .un-fdd .fdd-toggle:hover {
+        background: #1A1A1A;
+        border-color: rgba(255,255,255,0.18);
+    }
+    .un-fdd .fdd-toggle:focus,
+    .un-fdd.open .fdd-toggle {
+        outline: none;
+        background: #1A1A1A;
+        border-color: rgba(255,255,255,0.30);
+    }
+    .un-fdd .fdd-toggle .fdd-label {
+        min-width: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        flex: 1;
+    }
+    .un-fdd .fdd-toggle .caret {
+        margin-left: 8px;
+        display: inline-flex;
+        align-items: center;
+        flex-shrink: 0;
+        transition: transform .15s ease;
+    }
+    .un-fdd.open .fdd-toggle .caret {
+        transform: rotate(180deg);
+    }
+    .un-fdd .fdd-panel {
+        position: absolute;
+        top: calc(100% + 4px);
+        left: 0;
+        right: 0;
+        z-index: 50;
+        max-height: 280px;
+        overflow-y: auto;
+        background: #1A1A1A;
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 8px;
+        box-shadow: 0 12px 32px rgba(0,0,0,0.55);
+        padding: 4px;
+        display: none;
+    }
+    .un-fdd.open .fdd-panel {
+        display: block;
+    }
+    .un-fdd .fdd-item {
+        display: flex;
+        align-items: center;
+        padding: 6px 10px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 300;
+        letter-spacing: -0.005em;
+        color: #ffffff;
+        border-radius: 5px;
+    }
+    .un-fdd .fdd-item:hover {
+        background: rgba(255,255,255,0.06);
+    }
+    .un-fdd .fdd-item.selected {
+        background: rgba(255,255,255,0.08);
+    }
+    .un-actions { margin-top:24px; display:flex; gap:10px; justify-content:flex-end; }
+    .un-btn {
+        padding:0; border-radius:0; font-size:14px; font-weight:400;
+        border:none; cursor:pointer;
+        text-decoration:none; display:inline-flex; align-items:center; gap:6px;
+        line-height:1.2;
+    }
+    .un-btn.cancel { background:transparent; color:var(--un-text-soft); }
+    .un-btn.cancel:hover,
+    .un-btn.primary:hover {
+        color:#fff;
+        text-decoration:underline;
+        text-underline-offset:2px;
+        background:transparent;
+    }
+    .un-btn.primary {
+        background:transparent;
+        color:var(--un-text);
+        font-weight:500;
+    }
+    .un-hint { font-size:12px; color:var(--un-muted); margin-top:4px; }
+    @media (max-width: 640px) { .un-grid { grid-template-columns:1fr; } }
+</style>
+{% endblock %}
+{% block content %}
+<div class="un-shell">
+    <div class="un-head">
+        <div>
+            <p class="un-eyebrow">Admin workspace</p>
+            <h1 class="un-title">Add user</h1>
+            <p class="un-sub">Create a new account directly. The user can change their password after sign-in.</p>
+        </div>
+        <a href="{{ url_for('admin_users') }}" class="un-back">&larr; Back to users</a>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {% for cat, msg in messages %}
+            <div style="margin-bottom:16px; padding:10px 14px; border-radius:8px;
+                        background:{% if cat == 'danger' %}rgba(239,68,68,0.12){% else %}rgba(34,197,94,0.12){% endif %};
+                        color:{% if cat == 'danger' %}#fca5a5{% else %}#86efac{% endif %};
+                        border:1px solid {% if cat == 'danger' %}rgba(239,68,68,0.3){% else %}rgba(34,197,94,0.3){% endif %};
+                        font-size:14px;">{{ msg }}</div>
+        {% endfor %}
+    {% endwith %}
+
+    <form method="POST" action="{{ url_for('admin_user_new') }}" class="un-card" autocomplete="off">
+        <div class="un-grid">
+            <div class="un-field">
+                <label for="first_name">First name</label>
+                <input id="first_name" name="first_name" type="text" value="{{ form.first_name or '' }}">
+            </div>
+            <div class="un-field">
+                <label for="last_name">Last name</label>
+                <input id="last_name" name="last_name" type="text" value="{{ form.last_name or '' }}">
+            </div>
+            <div class="un-field">
+                <label for="username">Username *</label>
+                <input id="username" name="username" type="text" required value="{{ form.username or '' }}">
+            </div>
+            <div class="un-field">
+                <label for="email">Email *</label>
+                <input id="email" name="email" type="email" required value="{{ form.email or '' }}">
+            </div>
+            <div class="un-field">
+                <label for="password">Password *</label>
+                <input id="password" name="password" type="text" required minlength="6" value="{{ form.password or '' }}">
+                <span class="un-hint">Minimum 6 characters. Share with the user securely.</span>
+            </div>
+            <div class="un-field">
+                <label for="role">Role *</label>
+                {% set _role_value = form.role if form.role else 'teacher' %}
+                {% set _role_label = 'Teacher' %}
+                {% if _role_value == 'hod' %}{% set _role_label = 'HOD' %}{% endif %}
+                {% if _role_value == 'admin' %}{% set _role_label = 'Admin' %}{% endif %}
+                {% if _role_value == 'super_admin' %}{% set _role_label = 'Super admin' %}{% endif %}
+                {% if _role_value == 'student' %}{% set _role_label = 'Student' %}{% endif %}
+                <div class="fdd un-fdd" data-fdd="single">
+                    <button type="button" class="fdd-toggle" aria-haspopup="listbox" aria-expanded="false">
+                        <span class="fdd-label">{{ _role_label }}</span>
+                        <span class="caret" aria-hidden="true">
+                            <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.5L6 6.5L11 1.5" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                        </span>
+                    </button>
+                    <input type="hidden" id="role" name="role" value="{{ _role_value }}">
+                    <div class="fdd-panel" role="listbox">
+                        <div class="fdd-item" data-value="teacher">Teacher</div>
+                        <div class="fdd-item" data-value="hod">HOD</div>
+                        <div class="fdd-item" data-value="admin">Admin</div>
+                        {% if current_user.is_super_admin %}
+                        <div class="fdd-item" data-value="super_admin">Super admin</div>
+                        {% endif %}
+                        <div class="fdd-item" data-value="student">Student</div>
+                    </div>
+                </div>
+            </div>
+            <div class="un-field">
+                <label for="grade">Grade (optional)</label>
+                <input id="grade" name="grade" type="text" placeholder="e.g. 10" value="{{ form.grade or '' }}">
+            </div>
+            <div class="un-field">
+                <label for="school_name">School (optional)</label>
+                <input id="school_name" name="school_name" type="text" value="{{ form.school_name or '' }}">
+            </div>
+            <div class="un-field full">
+                <label for="subjects">Subjects (optional, comma-separated)</label>
+                <input id="subjects" name="subjects" type="text" placeholder="CAT, IT" value="{{ form.subjects or '' }}">
+                <span class="un-hint">Tip: Select multiple via Ctrl/Cmd+click is not supported here — type comma-separated.</span>
+            </div>
+        </div>
+        <div class="un-actions">
+            <a href="{{ url_for('admin_users') }}" class="un-btn cancel">Cancel</a>
+            <button type="submit" class="un-btn primary">Create user</button>
+        </div>
+    </form>
+</div>
+<script>
+(function () {
+    var dd = document.querySelector('.un-fdd');
+    if (!dd) return;
+
+    var toggle = dd.querySelector('.fdd-toggle');
+    var label = dd.querySelector('.fdd-label');
+    var hidden = dd.querySelector('input[type="hidden"][name="role"]');
+    var items = dd.querySelectorAll('.fdd-item[data-value]');
+
+    function setOpen(open) {
+        dd.classList.toggle('open', open);
+        if (toggle) {
+            toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+    }
+
+    if (toggle) {
+        toggle.addEventListener('click', function (e) {
+            e.stopPropagation();
+            setOpen(!dd.classList.contains('open'));
+        });
+    }
+
+    document.addEventListener('click', function (e) {
+        if (!dd.contains(e.target)) {
+            setOpen(false);
+        }
+    });
+
+    document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape') {
+            setOpen(false);
+        }
+    });
+
+    items.forEach(function (item) {
+        if (hidden && item.dataset.value === hidden.value) {
+            item.classList.add('selected');
+        }
+
+        item.addEventListener('click', function () {
+            if (hidden) {
+                hidden.value = item.dataset.value;
+            }
+            if (label) {
+                label.textContent = item.textContent.trim();
+            }
+            items.forEach(function (opt) { opt.classList.remove('selected'); });
+            item.classList.add('selected');
+            setOpen(false);
+        });
+    });
+})();
+</script>
+{% endblock %}

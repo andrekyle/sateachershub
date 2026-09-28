@@ -1,0 +1,2007 @@
+﻿{% extends "teacher/_layout.html" %}
+{# All dark-mode overrides live in block head so they ship in <head>
+   and apply on first paint — no light-mode flash on tab navigation. #}
+{% block head %}
+<style>
+/* Instant dark background (before any body element paints) */
+html, body { background: #0A0A0A !important; }
+
+/* 1. Dark page + shell */
+.t-shell.t-shell            { background: #0A0A0A !important; }
+.t-head             { border-bottom-color: rgba(255,255,255,0.08) !important; }
+
+/* 2. Override forced-black text from _layout.html */
+.t-shell.t-shell,
+.t-shell.t-shell *:not(.navbar):not(.navbar *) { color: rgba(255,255,255,0.85) !important; }
+
+/* 3. Header text */
+.t-shell.t-shell .t-eyebrow { color: rgba(255,255,255,0.40) !important; letter-spacing: 2.4px !important; }
+.t-shell.t-shell .t-title   { color: #ffffff !important; }
+.t-shell.t-shell .t-sub     { color: rgba(255,255,255,0.50) !important; }
+
+/* 4. Nav tabs */
+.t-shell.t-shell .t-tabs                  { border-bottom-color: rgba(255,255,255,0.08) !important; }
+.t-shell.t-shell .t-tabs a                { color: rgba(255,255,255,0.50) !important; border-color: transparent !important; background: transparent !important; }
+.t-shell.t-shell .t-tabs a:hover          { color: rgba(255,255,255,0.85) !important; background: rgba(255,255,255,0.05) !important; }
+.t-shell.t-shell .t-tabs a.is-active,
+.t-shell.t-shell .t-tabs a.is-active *    { color: #f5f5f7 !important; border-bottom-color: rgba(255,255,255,0.35) !important; background: transparent !important; }
+
+/* 5. Generic teacher cards / form fields */
+.t-shell.t-shell .t-card,
+.t-shell.t-shell .t-thin-card { background: #161616 !important; border-color: rgba(255,255,255,0.08) !important; color: rgba(255,255,255,0.85) !important; }
+.t-shell.t-shell .t-field label {
+    color: rgba(255,255,255,0.45) !important;
+    font-size: 0.7rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+}
+.t-shell.t-shell .t-field input,
+.t-shell.t-shell .t-field select,
+.t-shell.t-shell .t-field textarea,
+.t-shell.t-shell select, .t-shell.t-shell input[type="text"], .t-shell.t-shell input[type="number"], .t-shell.t-shell input[type="search"], .t-shell.t-shell textarea {
+    background: #0F0F0F !important;
+    border-color: rgba(255,255,255,0.12) !important;
+    color: rgba(255,255,255,0.92) !important;
+}
+.t-shell.t-shell .t-thin-btn { background: #1E1E1E !important; border-color: rgba(255,255,255,0.14) !important; color: rgba(255,255,255,0.88) !important; }
+.t-shell.t-shell .t-thin-btn:hover { background: #262626 !important; border-color: rgba(255,255,255,0.26) !important; }
+
+/* 5b. Custom .fdd dropdowns (Grade / Year) */
+.t-shell.t-shell .fdd-toggle {
+    background: #141414 !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    border-radius: 10px !important;
+    color: #ffffff !important;
+    padding: 10px 14px !important;
+    min-height: 46px !important;
+    font-weight: 500 !important;
+    letter-spacing: -0.005em !important;
+    transition: background .15s ease, border-color .15s ease !important;
+}
+.t-shell.t-shell .fdd-toggle:hover {
+    background: #1A1A1A !important;
+    border-color: rgba(255,255,255,0.20) !important;
+}
+.t-shell.t-shell .fdd-toggle:focus,
+.t-shell.t-shell .fdd-toggle.is-open {
+    border-color: rgba(255,255,255,0.30) !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+.t-shell.t-shell .fdd-label { color: #ffffff !important; font-weight: 500 !important; }
+.t-shell.t-shell .fdd-toggle .caret { color: rgba(255,255,255,0.45) !important; }
+.t-shell.t-shell .fdd-panel {
+    background: #1A1A1A !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.55) !important;
+    padding: 6px !important;
+    margin-top: 6px !important;
+    min-width: max(100%, 210px) !important;
+    max-height: min(340px, calc(100vh - 180px)) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+}
+.t-shell.t-shell .fdd-panel::-webkit-scrollbar { width: 8px; }
+.t-shell.t-shell .fdd-panel::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.22);
+    border-radius: 999px;
+}
+.t-shell.t-shell .fdd-panel::-webkit-scrollbar-track { background: transparent; }
+.t-shell.t-shell .fdd-item {
+    color: rgba(255,255,255,0.88) !important;
+    padding: 10px 12px !important;
+    border-radius: 8px !important;
+    font-weight: 550 !important;
+    line-height: 1.35 !important;
+    font-variant-numeric: tabular-nums;
+}
+.t-shell.t-shell .fdd-item + .fdd-item { margin-top: 2px; }
+.t-shell.t-shell .fdd-item:hover { background: rgba(255,255,255,0.06) !important; color: #ffffff !important; }
+.t-shell.t-shell .fdd-item.selected {
+    background: rgba(255,255,255,0.12) !important;
+    color: #ffffff !important;
+    font-weight: 650 !important;
+}
+
+/* 6. Calendar wrapper + summary text */
+.t-shell.t-shell .ypcal-wrap {
+    background: #161616 !important;
+    border-color: rgba(255,255,255,0.08) !important;
+}
+.t-shell.t-shell .yp-summary { color: rgba(255,255,255,0.55) !important; }
+.t-shell.t-shell .ypcal-h h3 { color: #ffffff !important; }
+.t-shell.t-shell .ypcal-h .ypcal-legend { color: rgba(255,255,255,0.55) !important; }
+
+/* 7. Month cards */
+.t-shell.t-shell .ypcal-mcard {
+    background: #141414 !important;
+    border: 1px solid rgba(255,255,255,0.06) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.04) inset, 0 12px 32px rgba(0,0,0,0.45) !important;
+    overflow: hidden !important;
+}
+.t-shell.t-shell .ypcal-mcard-h,
+.t-shell.t-shell .ypcal-mcard-h h2,
+.t-shell.t-shell .ypcal-mcard-h h2 *,
+.t-shell.t-shell .ypcal-mcard-h h2 i,
+.t-shell.t-shell .ypcal-mcard-h h2 svg { color: #ffffff !important; fill: #ffffff !important; }
+/* Month-jump custom dropdown inside the header */
+.t-shell.t-shell .ypcal-mdd { position: relative; display: inline-block; }
+.t-shell.t-shell .ypcal-mdd-btn {
+    background: transparent !important;
+    color: #ffffff !important;
+    border: 1px solid transparent !important;
+    font: inherit !important;
+    font-size: 1.05rem !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.01em !important;
+    line-height: 1.2 !important;
+    padding: 4px 26px 4px 8px !important;
+    min-height: 32px !important;
+    cursor: pointer !important;
+    border-radius: 8px !important;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='6' viewBox='0 0 10 6'><path fill='rgba(255,255,255,0.55)' d='M0 0l5 6 5-6z'/></svg>") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 8px center !important;
+    background-size: 10px 6px !important;
+}
+.t-shell.t-shell .ypcal-mdd-btn:hover {
+    background-color: rgba(255,255,255,0.08) !important;
+    border-color: rgba(255,255,255,0.18) !important;
+}
+.t-shell.t-shell .ypcal-mdd.is-open .ypcal-mdd-btn,
+.t-shell.t-shell .ypcal-mdd-btn:focus {
+    background-color: rgba(255,255,255,0.10) !important;
+    border-color: rgba(255,255,255,0.24) !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+.t-shell.t-shell .ypcal-mdd-menu {
+    position: absolute !important;
+    top: calc(100% + 6px) !important;
+    left: 0 !important;
+    z-index: 1000 !important;
+    background: #1A1A1A !important;
+    border: 1px solid rgba(255,255,255,0.12) !important;
+    border-radius: 12px !important;
+    padding: 6px !important;
+    min-width: max(100%, 230px) !important;
+    max-height: min(340px, calc(100vh - 180px)) !important;
+    overflow-y: auto !important;
+    overflow-x: hidden !important;
+    box-shadow: 0 14px 36px rgba(0,0,0,0.55) !important;
+    overscroll-behavior: contain !important;
+    display: flex; flex-direction: column;
+}
+.t-shell.t-shell .ypcal-mdd-menu[hidden] { display: none !important; }
+.t-shell.t-shell .ypcal-mdd-menu::-webkit-scrollbar { width: 8px; }
+.t-shell.t-shell .ypcal-mdd-menu::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.22);
+    border-radius: 999px;
+}
+.t-shell.t-shell .ypcal-mdd-menu::-webkit-scrollbar-track { background: transparent; }
+.t-shell.t-shell .ypcal-mddi {
+    display: block !important;
+    width: 100% !important;
+    text-align: left !important;
+    background: transparent !important;
+    color: rgba(255,255,255,0.92) !important;
+    border: none !important;
+    padding: 10px 12px !important;
+    font: inherit !important;
+    font-size: 0.95rem !important;
+    font-weight: 550 !important;
+    line-height: 1.35 !important;
+    cursor: pointer !important;
+    border-radius: 8px !important;
+    white-space: nowrap !important;
+    font-variant-numeric: tabular-nums;
+}
+.t-shell.t-shell .ypcal-mddi + .ypcal-mddi { margin-top: 2px; }
+.t-shell.t-shell .ypcal-mddi:hover { background: rgba(255,255,255,0.07) !important; color: #ffffff !important; }
+.t-shell.t-shell .ypcal-mddi[aria-selected="true"] {
+    background: rgba(255,255,255,0.12) !important;
+    color: #ffffff !important;
+    font-weight: 650 !important;
+}
+
+/* 8. Day grid */
+.t-shell.t-shell .ypcal-dow {
+    color: rgba(255,255,255,0.55) !important;
+    background: rgba(255,255,255,0.03) !important;
+    border-bottom-color: rgba(255,255,255,0.08) !important;
+}
+.t-shell.t-shell .ypcal-grid { background: rgba(255,255,255,0.06) !important; }
+.t-shell.t-shell .ypcal-day  { background: #141414 !important; color: rgba(255,255,255,0.85) !important; }
+.t-shell.t-shell .ypcal-day.is-out      { background: #0E0E0E !important; color: rgba(255,255,255,0.25) !important; }
+.t-shell.t-shell .ypcal-day.is-in-term  { background: rgba(255,255,255,0.06) !important; }
+.t-shell.t-shell .ypcal-day-num         { color: rgba(255,255,255,0.55) !important; }
+.t-shell.t-shell .ypcal-day.is-today .ypcal-day-num { color: #ffffff !important; }
+.t-shell.t-shell .ypcal-chip-more { color: rgba(255,255,255,0.45) !important; }
+
+/* 9. Day-content text + edit star */
+.t-shell.t-shell .ypcal-day-content { color: rgba(255,255,255,0.85) !important; }
+.t-shell.t-shell .ypcal-day-content p,
+.t-shell.t-shell .ypcal-day-content li,
+.t-shell.t-shell .ypcal-day-content span,
+.t-shell.t-shell .ypcal-day-content div { color: inherit !important; }
+
+/* 10. Event card under each month */
+.t-shell.t-shell .ypcal-evcard {
+    background: #181818 !important;
+    border: 1px solid rgba(255,255,255,0.06) !important;
+    border-radius: 12px !important;
+    transition: background .18s ease, border-color .18s ease !important;
+}
+.t-shell.t-shell .ypcal-evcard:hover {
+    background: #1E1E1E !important;
+    border-color: rgba(255,255,255,0.12) !important;
+}
+.t-shell.t-shell .ypcal-evcard h3 {
+    color: #ffffff !important;
+    font-size: 0.88rem !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.01em !important;
+}
+.t-shell.t-shell .ypcal-evcard .ev-content {
+    color: rgba(255,255,255,0.65) !important;
+    font-size: 0.82rem !important;
+    line-height: 1.45 !important;
+}
+.t-shell.t-shell .ypcal-evempty {
+    background: #121212 !important;
+    border-color: rgba(255,255,255,0.10) !important;
+    color: rgba(255,255,255,0.45) !important;
+}
+.t-shell.t-shell .ypcal-evedit { color: rgba(255,255,255,0.55) !important; }
+.t-shell.t-shell .ypcal-evedit:hover { background: rgba(255,255,255,0.08) !important; color: #ffffff !important; }
+
+/* 11. Popups — dark mode */
+.ypcal-popup {
+    background: #161616 !important;
+    color: rgba(255,255,255,0.92) !important;
+    box-shadow: 0 24px 64px rgba(0,0,0,0.65), 0 1px 0 rgba(255,255,255,0.04) inset !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    border-radius: 16px !important;
+    padding: 1.5rem 1.5rem 1.25rem !important;
+}
+.ypcal-popup-h { padding-bottom: 14px; margin-bottom: 14px !important; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.ypcal-popup-title {
+    color: #ffffff !important;
+    font-size: 1.05rem !important;
+    font-weight: 600 !important;
+    letter-spacing: -0.01em !important;
+}
+.ypcal-popup-close {
+    color: rgba(255,255,255,0.45) !important;
+    width: 28px; height: 28px;
+    border-radius: 50% !important;
+    display: flex !important; align-items: center; justify-content: center;
+    transition: background .15s ease, color .15s ease;
+}
+.ypcal-popup-close:hover { color: #ffffff !important; background: rgba(255,255,255,0.08) !important; }
+.ypcal-hl-options {
+    background: #0F0F0F !important;
+    border-color: rgba(255,255,255,0.10) !important;
+}
+.ypcal-hl-label { color: rgba(255,255,255,0.65) !important; }
+.ypcal-hl-opt.selected { border-color: #ffffff !important; box-shadow: 0 0 0 2px rgba(168,197,255,0.4) !important; }
+.ypcal-hl-opt.none { background: #1A1A1A !important; border: 2px solid rgba(255,255,255,0.25) !important; }
+
+#ypcalEditorContainer, #ypcalEvEditorContainer {
+    background: #0F0F0F !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    border-radius: 10px !important;
+    overflow: hidden !important;
+}
+.ypcal-popup .ql-toolbar.ql-snow,
+.ypcal-popup .ql-container.ql-snow {
+    background: #0F0F0F !important;
+    border-color: transparent !important;
+}
+.ypcal-popup .ql-toolbar.ql-snow {
+    border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+    padding: 8px 10px !important;
+}
+.ypcal-popup .ql-toolbar.ql-snow .ql-stroke { stroke: rgba(255,255,255,0.75) !important; }
+.ypcal-popup .ql-toolbar.ql-snow .ql-fill   { fill: rgba(255,255,255,0.75) !important; }
+.ypcal-popup .ql-toolbar.ql-snow .ql-picker-label { color: rgba(255,255,255,0.75) !important; }
+.ypcal-popup .ql-toolbar.ql-snow button:hover .ql-stroke,
+.ypcal-popup .ql-toolbar.ql-snow button.ql-active .ql-stroke { stroke: #ffffff !important; }
+.ypcal-popup .ql-toolbar.ql-snow button:hover .ql-fill,
+.ypcal-popup .ql-toolbar.ql-snow button.ql-active .ql-fill { fill: #ffffff !important; }
+/* Color picker dropdown panel */
+.ypcal-popup .ql-toolbar.ql-snow .ql-color-picker .ql-picker-options,
+.ypcal-popup .ql-toolbar.ql-snow .ql-picker.ql-color .ql-picker-options {
+    background: #1A1A1A !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+    padding: 6px !important;
+    z-index: 10000 !important;
+}
+.ypcal-popup .ql-toolbar.ql-snow .ql-color-picker .ql-picker-item {
+    border: 1px solid rgba(255,255,255,0.25) !important;
+    width: 18px !important;
+    height: 18px !important;
+    margin: 2px !important;
+}
+.ypcal-popup .ql-toolbar.ql-snow .ql-color-picker .ql-picker-item:hover {
+    outline: 2px solid rgba(255,255,255,0.45) !important;
+}
+.ypcal-popup .ql-editor,
+.ypcal-popup .ql-editor p,
+.ypcal-popup .ql-editor li { color: rgba(255,255,255,0.92) !important; }
+.ypcal-popup .ql-editor.ql-blank::before { color: rgba(255,255,255,0.40) !important; }
+
+.ypcal-ev-input {
+    background: #0F0F0F !important;
+    border-color: rgba(255,255,255,0.12) !important;
+    color: rgba(255,255,255,0.92) !important;
+}
+.ypcal-ev-input::placeholder { color: rgba(255,255,255,0.40) !important; }
+
+/* 12. Month-grid weekday headers (.ypcal-wd) and day cells (.ypcal-cell) */
+.t-shell.t-shell .ypcal-wd {
+    background: transparent !important;
+    color: rgba(255,255,255,0.40) !important;
+    font-size: 0.68rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.12em !important;
+    text-transform: uppercase !important;
+    padding: 8px 0 6px !important;
+    border: none !important;
+}
+.t-shell.t-shell .ypcal-cell {
+    background: #181818 !important;
+    border: 1px solid rgba(255,255,255,0.05) !important;
+    border-radius: 10px !important;
+    color: rgba(255,255,255,0.88) !important;
+    transition: background-color .18s ease, border-color .18s ease, transform .18s ease, box-shadow .18s ease !important;
+}
+.t-shell.t-shell .ypcal-cell:hover {
+    background: #1E1E1E !important;
+    border-color: rgba(255,255,255,0.14) !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.45) !important;
+}
+.t-shell.t-shell .ypcal-cell.empty {
+    background: transparent !important;
+    border: 1px dashed rgba(255,255,255,0.05) !important;
+    opacity: 1 !important;
+}
+.t-shell.t-shell .ypcal-cell.is-today {
+    border-color: rgba(255,255,255,0.18) !important;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.08) inset !important;
+}
+.t-shell.t-shell .ypcal-cell.is-today .ypcal-dnum {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+}
+.t-shell.t-shell .ypcal-cell .ypcal-dnum     {
+    color: rgba(255,255,255,0.85) !important;
+    font-weight: 500 !important;
+    font-size: 0.95rem !important;
+    letter-spacing: -0.01em !important;
+}
+.t-shell.t-shell .ypcal-cell .ypcal-dcontent,
+.t-shell.t-shell .ypcal-cell .ypcal-dcontent p,
+.t-shell.t-shell .ypcal-cell .ypcal-dcontent li,
+.t-shell.t-shell .ypcal-cell .ypcal-dcontent span,
+.t-shell.t-shell .ypcal-cell .ypcal-dcontent div {
+    color: rgba(255,255,255,0.72) !important;
+    font-size: 0.78rem !important;
+    line-height: 1.35 !important;
+}
+/* Allow Quill inline color styles to win over the global dark-mode color */
+.t-shell.t-shell .ypcal-cell .ypcal-dcontent [style*="color"],
+.t-shell.t-shell .ypcal-evcard .ev-content [style*="color"] { /* color is forced inline with !important via JS */ }
+
+/* Highlighted day cells: keep the colour but darken so light text reads */
+.t-shell.t-shell .ypcal-cell[style*="background"] { color: #0D1726 !important; }
+.t-shell.t-shell .ypcal-cell[style*="background"] .ypcal-dnum,
+.t-shell.t-shell .ypcal-cell[style*="background"] .ypcal-dcontent { color: #0D1726 !important; }
+
+/* Today cell: thin blue border (matches hover) */
+.t-shell.t-shell .ypcal-cell.is-today {
+    border-color: rgba(255,255,255,0.35) !important;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.5) !important;
+}
+</style>
+{% endblock %}
+{% block t_title %}Year planner — Grade {{ grade }} · {{ year }}{% endblock %}
+{% block t_sub %}CAPS programme of assessment for Computer Applications Technology — aligned to the {{ year }} Johannesburg (inland) school calendar.{% endblock %}
+{% block t_action %}{% endblock %}
+
+{% block t_body %}
+
+{# â”€â”€â”€ CAPS programme of assessment (from CAT CAPS 2024 Update) â”€â”€â”€ #}
+{% set caps = {
+    10: {
+        'sba_split': '40% Term 1+2+3 SBA · 20% PAT · 40% End-of-year exams',
+        'pat': [
+            {'term': 1, 'phase': 'PAT introduced', 'note': 'Brief learners on the Practical Assessment Task.'},
+            {'term': 3, 'phase': 'PAT Phase 1', 'note': 'Information management — sources, questions, processing. Complete before end of Term 3.'},
+            {'term': 4, 'phase': 'PAT Phase 2', 'note': 'Final solution & presentation. Complete before end-of-year exams.'},
+        ],
+        'terms': {
+            1: [
+                {'task': 'Task 1', 'name': 'Theory Test', 'kind': 'test', 'marks': 50, 'time': '60 min', 'weight': '15%', 'note': 'Content per CAPS teaching plan, before end of Term 1.'},
+            ],
+            2: [
+                {'task': 'Task 2', 'name': 'Practical Test', 'kind': 'test', 'marks': 50, 'time': '60 min', 'weight': '15%', 'note': 'Practical test administered during the term.'},
+                {'task': 'Task 3', 'name': 'Mid-Year Practical Exam (P1)', 'kind': 'exam', 'marks': 100, 'time': '2.5 hours', 'weight': '20%', 'note': 'Mid-year examination — practical paper.'},
+                {'task': 'Task 3', 'name': 'Mid-Year Theory Exam (P2)', 'kind': 'exam', 'marks': 100, 'time': '2.5 hours', 'weight': '20%', 'note': 'Mid-year examination — theory paper.'},
+            ],
+            3: [
+                {'task': 'Task 4', 'name': 'Practical Test', 'kind': 'test', 'marks': 50, 'time': '60 min', 'weight': '15%', 'note': 'Practical test before end of Term 3.'},
+                {'task': 'Task 5', 'name': 'Alternative Task', 'kind': 'assignment', 'marks': 50, 'time': '60 min', 'weight': '15%', 'note': 'Open book test, case study or survey.'},
+            ],
+            4: [
+                {'task': 'Task 6', 'name': 'Year-End Practical Exam (P1)', 'kind': 'exam', 'marks': 120, 'time': '2.5 hours', 'weight': '—', 'note': 'End-of-year examination — practical paper.'},
+                {'task': 'Task 6', 'name': 'Year-End Theory Exam (P2)', 'kind': 'exam', 'marks': 120, 'time': '2.5 hours', 'weight': '—', 'note': 'End-of-year examination — theory paper.'},
+            ],
+        },
+    },
+    11: {
+        'sba_split': '40% Term 1+2+3 SBA · 20% PAT · 40% End-of-year exams',
+        'pat': [
+            {'term': 1, 'phase': 'PAT introduced', 'note': 'Brief learners on the Practical Assessment Task.'},
+            {'term': 2, 'phase': 'PAT Phase 1', 'note': 'Information management — define the task, plan and gather sources.'},
+            {'term': 3, 'phase': 'PAT Phase 2', 'note': 'Process and analyse information.'},
+            {'term': 4, 'phase': 'PAT Phase 3', 'note': 'Final solution & presentation. Complete before end-of-year exams.'},
+        ],
+        'terms': {
+            1: [
+                {'task': 'Task 1', 'name': 'Theory Test', 'kind': 'test', 'marks': 50, 'time': '60 min', 'weight': '15%', 'note': 'Content per CAPS teaching plan, before end of Term 1.'},
+            ],
+            2: [
+                {'task': 'Task 2', 'name': 'Practical Test', 'kind': 'test', 'marks': 50, 'time': '60 min', 'weight': '15%', 'note': 'Practical test administered during the term.'},
+                {'task': 'Task 3', 'name': 'Mid-Year Practical Exam (P1)', 'kind': 'exam', 'marks': 120, 'time': '2.5 hours', 'weight': '20%', 'note': 'Mid-year examination — practical paper.'},
+                {'task': 'Task 3', 'name': 'Mid-Year Theory Exam (P2)', 'kind': 'exam', 'marks': 120, 'time': '2.5 hours', 'weight': '20%', 'note': 'Mid-year examination — theory paper.'},
+            ],
+            3: [
+                {'task': 'Task 4', 'name': 'Practical Test', 'kind': 'test', 'marks': 50, 'time': '60 min', 'weight': '15%', 'note': 'Practical test before end of Term 3.'},
+                {'task': 'Task 5', 'name': 'Alternative Task', 'kind': 'assignment', 'marks': 50, 'time': '60 min', 'weight': '15%', 'note': 'Open book test, case study or survey.'},
+            ],
+            4: [
+                {'task': 'Task 6', 'name': 'Year-End Practical Exam (P1)', 'kind': 'exam', 'marks': 150, 'time': '3 hours', 'weight': '—', 'note': 'Final examination — practical paper.'},
+                {'task': 'Task 6', 'name': 'Year-End Theory Exam (P2)', 'kind': 'exam', 'marks': 150, 'time': '3 hours', 'weight': '—', 'note': 'Final examination — theory paper.'},
+            ],
+        },
+    },
+    12: {
+        'sba_split': '25% SBA · 25% PAT · 50% External exams (P1 25% + P2 25%)',
+        'pat': [
+            {'term': 1, 'phase': 'PAT Phase 1', 'note': 'Information management — define task, plan & gather. Complete before end of Term 1.'},
+            {'term': 2, 'phase': 'PAT Phase 2', 'note': 'Process & analyse information. Complete before end of Term 2.'},
+            {'term': 3, 'phase': 'PAT Phase 3', 'note': 'Final solution & presentation. Complete before prelim exams.'},
+        ],
+        'terms': {
+            1: [
+                {'task': 'Task 1', 'name': 'Theory Test', 'kind': 'test', 'marks': 50, 'time': '60 min', 'weight': '—', 'note': 'Content per CAPS teaching plan.'},
+                {'task': 'Task 2', 'name': 'Practical Test', 'kind': 'test', 'marks': 50, 'time': '60 min', 'weight': '—', 'note': 'Practical test during the term.'},
+                {'task': 'Task 3', 'name': 'Alternative Task', 'kind': 'assignment', 'marks': 50, 'time': '60 min', 'weight': '—', 'note': 'Open book test, case study, advert interpretation or survey.'},
+            ],
+            2: [
+                {'task': 'Task 4', 'name': 'Mid-Year Practical Exam (P1)', 'kind': 'exam', 'marks': 150, 'time': '3 hours', 'weight': '—', 'note': 'Mid-year examination — practical paper.'},
+                {'task': 'Task 4', 'name': 'Mid-Year Theory Exam (P2)', 'kind': 'exam', 'marks': 150, 'time': '3 hours', 'weight': '—', 'note': 'Mid-year examination — theory paper.'},
+            ],
+            3: [
+                {'task': 'Task 5', 'name': 'Prelim Practical Exam (P1)', 'kind': 'exam', 'marks': 150, 'time': '3 hours', 'weight': '—', 'note': 'Preliminary examination — practical paper.'},
+                {'task': 'Task 5', 'name': 'Prelim Theory Exam (P2)', 'kind': 'exam', 'marks': 150, 'time': '3 hours', 'weight': '—', 'note': 'Preliminary examination — theory paper.'},
+            ],
+            4: [
+                {'task': 'External', 'name': 'Year-End Practical Exam (P1)', 'kind': 'exam', 'marks': 150, 'time': '3 hours', 'weight': '25%', 'note': 'NSC external practical examination.'},
+                {'task': 'External', 'name': 'Year-End Theory Exam (P2)', 'kind': 'exam', 'marks': 150, 'time': '3 hours', 'weight': '25%', 'note': 'NSC external theory examination.'},
+            ],
+        },
+    },
+} %}
+{% set kind_meta = {
+    'test':       {'label': 'Test',       'color': '#3B82F6'},
+    'exam':       {'label': 'Exam',       'color': '#A855F7'},
+    'assignment': {'label': 'Assignment', 'color': '#F59E0B'},
+    'pat':        {'label': 'PAT',        'color': '#10B981'},
+    'lesson':     {'label': 'Lesson',     'color': '#9CA3AF'},
+    'event':      {'label': 'Event',      'color': '#64748B'},
+    'task':       {'label': 'Task',       'color': '#EC4899'},
+} %}
+{% set g = caps[grade] %}
+{# South African public-school calendar — inland cluster (Gauteng/Johannesburg, NW, MP, LP, FS). Source: DBE gov.za #}
+{% set term_dates_by_year = {
+    2022: {1: {'start':'Wed 12 Jan','end':'Thu 17 Mar','weeks':10}, 2: {'start':'Tue 5 Apr','end':'Fri 24 Jun','weeks':12}, 3: {'start':'Tue 19 Jul','end':'Fri 30 Sep','weeks':11}, 4: {'start':'Tue 11 Oct','end':'Wed 14 Dec','weeks':10}},
+    2023: {1: {'start':'Wed 11 Jan','end':'Fri 24 Mar','weeks':11}, 2: {'start':'Wed 12 Apr','end':'Fri 23 Jun','weeks':11}, 3: {'start':'Tue 18 Jul','end':'Fri 29 Sep','weeks':11}, 4: {'start':'Tue 10 Oct','end':'Wed 13 Dec','weeks':10}},
+    2024: {1: {'start':'Wed 17 Jan','end':'Wed 20 Mar','weeks':10}, 2: {'start':'Wed 3 Apr','end':'Fri 14 Jun','weeks':11},  3: {'start':'Tue 9 Jul','end':'Fri 20 Sep','weeks':11},  4: {'start':'Tue 1 Oct','end':'Wed 11 Dec','weeks':11}},
+    2025: {1: {'start':'Wed 15 Jan','end':'Fri 28 Mar','weeks':11}, 2: {'start':'Tue 8 Apr','end':'Fri 27 Jun','weeks':12},  3: {'start':'Tue 22 Jul','end':'Fri 3 Oct','weeks':11},  4: {'start':'Mon 13 Oct','end':'Wed 10 Dec','weeks':9}},
+    2026: {1: {'start':'Wed 14 Jan','end':'Fri 27 Mar','weeks':11}, 2: {'start':'Wed 8 Apr','end':'Fri 26 Jun','weeks':12},  3: {'start':'Tue 21 Jul','end':'Wed 23 Sep','weeks':10}, 4: {'start':'Tue 6 Oct','end':'Fri 11 Dec','weeks':10}},
+    2027: {1: {'start':'Wed 13 Jan','end':'Fri 19 Mar','weeks':10}, 2: {'start':'Tue 6 Apr','end':'Fri 25 Jun','weeks':12},  3: {'start':'Tue 20 Jul','end':'Fri 1 Oct','weeks':11},  4: {'start':'Mon 11 Oct','end':'Fri 10 Dec','weeks':9}},
+} %}
+{% set term_dates = term_dates_by_year.get(year, term_dates_by_year[2026]) %}
+
+<style>
+.t-shell .t-title {
+    font-size: clamp(36px, 4.2vw, 56px) !important;
+    font-weight: 700 !important;
+    letter-spacing: -1px !important;
+    line-height: 1.05 !important;
+}
+
+.yp-toolbar { display:flex; gap:14px; align-items:flex-end; margin-bottom:16px; flex-wrap:wrap; }
+.yp-summary { font-size:13px; color:var(--text-secondary); margin:0 0 18px; }
+.yp-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(360px,1fr));
+    grid-template-rows: auto auto auto auto auto;
+    gap: 16px;
+    align-items: stretch;
+}
+@media (max-width: 1540px){ .yp-grid { grid-template-columns:repeat(2, minmax(0,1fr)); } }
+@media (max-width: 780px){ .yp-grid { grid-template-columns:1fr; } }
+/* Keep section rows aligned across terms: header, summary, SBA, PAT, scheduled. */
+.yp-term {
+    background: #FFFFFF;
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 69, 120, 0.08);
+    padding: 0;
+    display: grid;
+    grid-template-rows: auto auto minmax(320px, auto) minmax(120px, auto) minmax(220px, auto);
+    grid-row: span 5;
+    min-width: 0;
+    height: 100%;
+    overflow: hidden;
+}
+@supports (grid-template-rows: subgrid) {
+    .yp-term {
+        grid-template-rows: subgrid;
+    }
+}
+.yp-term-h { padding:14px 16px 12px; border-bottom:1px solid rgba(255,255,255,0.16); display:flex; justify-content:space-between; align-items:baseline; min-width:0; }
+.yp-term-overview {
+    padding: 10px 14px 11px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #355D84;
+    border-bottom: 1px solid rgba(255,255,255,0.10);
+    background: rgba(255,255,255,0.04);
+}
+.yp-term-overview strong { color: #0D1726; font-weight: 700; }
+/* Each .yp-section is now a direct grid child of .yp-term */
+.yp-term > .yp-section { padding: 0 14px 12px; min-width:0; }
+.yp-term > .yp-section.is-empty { padding: 0; }
+.yp-term-num { font-size:11px; font-weight:600; letter-spacing:1.8px; text-transform:uppercase; color:rgba(255,255,255,0.88); }
+.yp-term-title { font-size:18px; font-weight:700; letter-spacing:-0.2px; color:#FFFFFF; margin:2px 0 0; }
+.yp-section { display:flex; flex-direction:column; }
+.yp-section-h {
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: none;
+    color: #1F446A;
+    margin: 14px 0 8px;
+    padding: 0 0 6px;
+    border: none;
+    border-bottom: 1px solid rgba(127,127,127,0.30);
+    background: transparent;
+}
+.yp-section-count {
+    color: #4F6D8C;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 0;
+}
+.yp-section-h:first-child { margin-top:0; }
+.yp-term-ysi .yp-section-h { margin-top:0; }
+
+/* SBA section: stronger contrast for better readability. */
+.yp-section-sba .yp-section-h {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0F2A43;
+    border-bottom-color: rgba(49, 66, 84, 0.42);
+}
+.yp-section-pat .yp-section-h {
+    font-size: 16px;
+    font-weight: 700;
+    color: #0F2A43;
+    border-bottom-color: rgba(49, 66, 84, 0.42);
+}
+.yp-section-pat .yp-task-facts {
+    font-size: 14px;
+    line-height: 1.45;
+}
+.yp-section-pat .yp-task-note {
+    font-size: 14px;
+    line-height: 1.55;
+}
+.yp-section-sba .yp-task-name {
+    color: #000000;
+    font-weight: 700;
+}
+.yp-section-sba .yp-task-meta,
+.yp-section-sba .yp-task-brief,
+.yp-section-sba .yp-task-facts {
+    color: #132E4A;
+}
+.yp-section-sba .yp-task-note {
+    color: #0A1E33;
+}
+.yp-section-sba .yp-note-label {
+    color: #000000;
+}
+.yp-section-sba .yp-sba-list {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+.yp-section-sba .yp-sba-list > .yp-task {
+    height: auto;
+    min-height: 110px;
+    margin: 0;
+    padding: 8px 0;
+    overflow: hidden;
+    border-bottom: 1px solid rgba(127,127,127,0.20);
+}
+.yp-section-sba .yp-sba-list > .yp-task:last-child {
+    border-bottom: none;
+}
+.yp-section-sba .yp-task-row1 {
+    min-height: auto;
+    flex-wrap: nowrap;
+    align-items: baseline;
+}
+.yp-section-sba .yp-task-name {
+    display: block;
+    flex: 1 1 auto;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.yp-section-sba .yp-task-meta {
+    font-size: 14px;
+    line-height: 1.4;
+    flex: 0 0 auto;
+    margin-left: 10px;
+}
+.yp-section-sba .yp-task-brief,
+.yp-section-sba .yp-task-facts {
+    font-size: 14px;
+    line-height: 1.45;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.yp-section-sba .yp-task-note {
+    font-size: 14px;
+    line-height: 1.55;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+.yp-task {
+    padding: 10px 0;
+    margin-bottom: 8px;
+    min-height: 106px;
+    border-bottom: 1px solid rgba(127,127,127,0.20);
+    background: transparent;
+}
+.yp-task:last-child { margin-bottom: 0; border-bottom: none; }
+.yp-task-row1 { display:flex; justify-content:space-between; align-items:flex-start; gap:8px; margin-bottom:4px; flex-wrap:wrap; }
+.yp-task-name { font-size:15px; font-weight:600; color:#0D1726; letter-spacing:-0.1px; line-height:1.35; }
+.yp-task-meta { font-size:12px; color:#2B4A6A; white-space:nowrap; font-variant-numeric:tabular-nums; font-weight:700; }
+.yp-task-brief { font-size:12px; color:#355D84; line-height:1.4; margin:0 0 4px; }
+.yp-task-facts { font-size:12px; color:#355D84; line-height:1.4; margin:0 0 6px; }
+.yp-task-note { font-size:13px; color:#172E45; line-height:1.5; margin:0 0 6px; }
+.yp-note-label { font-weight:700; color:#0D1726; margin-right:4px; }
+.yp-pat {
+    padding: 10px 0;
+    margin-bottom: 8px;
+    min-height: 86px;
+    border-bottom: 1px solid rgba(127,127,127,0.20);
+    background: transparent;
+}
+.yp-pat:last-child { margin-bottom: 0; border-bottom: none; }
+.yp-custom {
+    padding: 10px 0;
+    margin-bottom: 8px;
+    min-height: 98px;
+    border-bottom: 1px solid rgba(127,127,127,0.20);
+    background: transparent;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:nowrap;
+    justify-content:space-between;
+    align-items:center;
+    gap:10px;
+}
+.yp-custom:last-child { margin-bottom: 0; border-bottom: none; }
+.yp-custom > div:first-child { min-width:0; flex:1 1 auto; display:block; }
+.yp-custom .yp-task-name {
+    font-size: 16px;
+    line-height: 1.4;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+    flex: 0 1 auto;
+    min-width: 0;
+}
+.yp-custom .t-icon-btn {
+    width: 22px;
+    height: 22px;
+    border: none !important;
+    border-radius: 0;
+    background: transparent !important;
+    box-shadow: none !important;
+    margin-left: 0;
+    padding: 0;
+    color: #5A5A5A;
+}
+.yp-custom .t-icon-btn svg {
+    width: 14px;
+    height: 14px;
+    stroke-width: 1.3;
+}
+.yp-custom .t-icon-btn:hover {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #ffffff;
+}
+.yp-custom .t-icon-btn.danger {
+    border: none !important;
+    background: transparent !important;
+    color: #A4262C;
+}
+.yp-custom .t-icon-btn.danger:hover {
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    color: #C42B1C !important;
+}
+.yp-custom .t-icon-btn.danger:hover svg {
+    stroke: currentColor;
+}
+.yp-custom .t-icon-btn.danger:active {
+    border: none !important;
+    background: transparent !important;
+}
+.yp-custom-meta {
+    margin-top: 6px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #355D84;
+    flex: 1 1 auto;
+    min-width: 0;
+}
+.yp-meta-pill {
+    display: inline;
+    padding: 0;
+    border: none;
+    background: transparent;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.45;
+    letter-spacing: 0.02em;
+    color: #355D84;
+}
+.yp-meta-pill + .yp-meta-pill::before { content: ' · '; color: #8A9099; font-weight: 400; }
+.yp-meta-pill strong {
+    margin-right: 6px;
+    font-weight: 700;
+    color: #1F446A;
+}
+.yp-custom > div:last-child { flex:0 0 auto; display:flex; gap:4px; align-items:center; }
+.yp-empty { font-size:13px; color:#4F6D8C; padding:8px 2px; }
+
+/* Override shared banner styling for planner blocks to reduce visual heaviness. */
+.t-shell .yp-grid .yp-term-h {
+    margin: 0 !important;
+    padding: 14px 16px 12px !important;
+    background: linear-gradient(135deg, #1A1A1A 0%, #232428 100%) !important;
+    border-bottom: 1px solid rgba(255,255,255,0.18) !important;
+    box-shadow: inset 0 -1px 0 rgba(255,255,255,0.18);
+}
+.t-shell.t-shell .yp-grid .yp-term-h,
+.t-shell.t-shell .yp-grid .yp-term-h * { color: #FFFFFF !important; }
+
+.t-shell .yp-grid .yp-section-h {
+    margin: 14px 0 8px !important;
+    padding: 0 0 6px !important;
+    border: none !important;
+    border-bottom: 1px solid rgba(127,127,127,0.30) !important;
+    background: transparent !important;
+    text-align: left !important;
+}
+.t-shell.t-shell .yp-grid .yp-section-h,
+.t-shell.t-shell .yp-grid .yp-section-h * { color: #004578 !important; }
+
+/* Typography consistency: one font family and a stable type scale across planner sections. */
+.yp-grid,
+.cap-tables {
+    font-family: "Segoe UI", "Segoe UI Variable", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+
+.yp-term-overview,
+.yp-task-name,
+.yp-task-meta,
+.yp-task-brief,
+.yp-task-facts,
+.yp-task-note,
+.yp-custom .yp-task-name,
+.yp-custom-meta,
+.yp-meta-pill,
+.yp-empty,
+.cap-table,
+.cap-table td,
+.cap-table .cap-pct,
+.cap-table .cap-cat,
+.cap-table td p {
+    font-size: 14px !important;
+    line-height: 1.5 !important;
+}
+
+.yp-section-h,
+.yp-section-sba .yp-section-h,
+.yp-section-pat .yp-section-h,
+.cap-wrap h3.cap-heading-grade,
+.cap-table thead th {
+    font-size: 16px !important;
+    line-height: 1.35 !important;
+}
+
+/* ===== Force white body text on planner term cards (keep original layout) ===== */
+.t-shell .yp-grid .yp-term {
+    background: #000000 !important;
+    border-color: rgba(255,255,255,0.10) !important;
+}
+.t-shell .yp-grid .yp-term-overview {
+    background: #0A0A0A !important;
+    border-bottom-color: rgba(255,255,255,0.08) !important;
+}
+.t-shell .yp-grid .yp-term,
+.t-shell .yp-grid .yp-term * {
+    color: #FFFFFF !important;
+}
+/* Larger, more prominent "TERM N · NN WEEKS" label */
+.t-shell .yp-grid .yp-term-h { padding: 20px 22px 18px !important; }
+.t-shell .yp-grid .yp-term-num {
+    font-size: 18px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.14em !important;
+    line-height: 1.2 !important;
+}
+.t-shell .yp-grid .yp-term-title {
+    font-size: 22px !important;
+    margin-top: 6px !important;
+}
+/* Lighter blue for "SBA Tasks (N)" / "PAT Phases" / "Your Scheduled Items" headings */
+.t-shell.t-shell .yp-grid .yp-section-h,
+.t-shell.t-shell .yp-grid .yp-section-h *,
+.t-shell.t-shell .yp-grid .yp-section-sba .yp-section-h,
+.t-shell.t-shell .yp-grid .yp-section-pat .yp-section-h {
+    color: #f5f5f7 !important;
+}
+.t-shell.t-shell .yp-grid .yp-section-h {
+    border-bottom-color: rgba(255,255,255,0.25) !important;
+}
+.t-shell.t-shell .yp-grid .yp-section-count { color: #d6d6da !important; }
+.t-shell .yp-grid .yp-task-meta { color: #DCEBFF !important; }
+.t-shell .yp-grid .yp-task-brief,
+.t-shell .yp-grid .yp-task-facts,
+.t-shell .yp-grid .yp-section-sba .yp-task-brief,
+.t-shell .yp-grid .yp-section-sba .yp-task-facts { color: #E6EEF7 !important; }
+.t-shell .yp-grid .yp-empty { color: #C7D2DE !important; }
+</style>
+
+<form method="get" class="t-card yp-toolbar">
+    <div class="t-field" style="flex:0 0 160px;">
+        <label>Grade</label>
+        <div class="fdd" data-fdd="single" data-auto-submit="1">
+            <button type="button" class="fdd-toggle">
+                <span class="fdd-label">Grade {{ grade }}</span>
+                <span class="caret">▾</span>
+            </button>
+            <input type="hidden" name="grade" value="{{ grade }}">
+            <div class="fdd-panel">
+                {% for gv in [10,11,12] %}<div class="fdd-item" data-value="{{ gv }}">Grade {{ gv }}</div>{% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="t-field" style="flex:0 0 140px;">
+        <label>Year</label>
+        <div class="fdd" data-fdd="single" data-auto-submit="1">
+            <button type="button" class="fdd-toggle">
+                <span class="fdd-label">{{ year }}</span>
+                <span class="caret">▾</span>
+            </button>
+            <input type="hidden" name="year" value="{{ year }}">
+            <div class="fdd-panel">
+                {% for y in range(2035, 2025, -1) %}<div class="fdd-item" data-value="{{ y }}">{{ y }}</div>{% endfor %}
+            </div>
+        </div>
+    </div>
+</form>
+
+{# â”€â”€â”€ Big calendar year planner (Academic Calendar style) â”€â”€â”€ #}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+<style>
+.ypcal-wrap {
+    background: #f8f9fa;
+    border: 1px solid rgba(127,127,127,0.20);
+    border-radius: 14px;
+    padding: 18px;
+    margin: 18px 0 20px;
+}
+.ypcal-h {
+    display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap;
+    gap:12px; margin-bottom:14px;
+}
+.ypcal-h h3 { margin:0; font-size:18px; font-weight:700; color:#0F2A43; letter-spacing:-0.2px; }
+.ypcal-h .ypcal-legend { display:flex; gap:14px; flex-wrap:wrap; font-size:12px; color:#4F6D8C; }
+.ypcal-h .ypcal-legend .lg { display:inline-flex; align-items:center; gap:6px; }
+.ypcal-h .ypcal-legend .sw { width:10px; height:10px; border-radius:3px; display:inline-block; }
+
+/* Stacked month cards (one per row) like the reference design */
+.ypcal-stack { display:flex; flex-direction:column; gap:24px; }
+
+.ypcal-mcard {
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+.ypcal-mcard-h {
+    background: #1A1A1A;
+    color: #fff;
+    padding: 0.85rem 1.25rem;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.ypcal-mcard-h h2 {
+    margin: 0; font-size: 1.05rem; font-weight: 600;
+    letter-spacing: -0.01em;
+    color: #fff !important;
+    display: flex; align-items: center;
+}
+.ypcal-wrap .ypcal-stack .ypcal-mcard .ypcal-mcard-h,
+.ypcal-wrap .ypcal-stack .ypcal-mcard .ypcal-mcard-h h2,
+.ypcal-wrap .ypcal-stack .ypcal-mcard .ypcal-mcard-h h2 i,
+.ypcal-wrap .ypcal-stack .ypcal-mcard .ypcal-mcard-h h2 svg { color: #ffffff !important; fill: #ffffff !important; }
+.ypcal-mcard-h h2 i { margin-right: 8px; font-size: 0.9rem; color: rgba(255,255,255,0.55) !important; }
+.ypcal-mcard-body { padding: 16px; }
+
+.ypcal-cgrid {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 8px;
+}
+.ypcal-wd {
+    font-weight: 600;
+    text-align: center;
+    padding: 8px;
+    color: #000;
+    font-size: 0.9rem;
+    background: rgba(255,255,255,0.04);
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.ypcal-cell {
+    border: 1px solid #e0e0e0;
+    padding: 12px;
+    background: #fff;
+    border-radius: 8px;
+    position: relative;
+    min-height: 96px;
+    transition: all 0.2s ease;
+}
+.ypcal-cell:hover {
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transform: translateY(-2px);
+    border-color: rgba(255,255,255,0.24);
+}
+.ypcal-cell.empty {
+    background: #f8f9fa;
+    border: 1px dashed #dee2e6;
+    opacity: 0.7;
+}
+.ypcal-cell .ypcal-dnum {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: #ffffff;
+}
+.ypcal-cell .ypcal-dcontent {
+    font-size: 0.92rem;
+    color: rgba(255,255,255,0.9);
+    line-height: 1.4;
+    word-wrap: break-word;
+}
+.ypcal-cell .ypcal-dcontent .yp-srv-evt {
+    display: block;
+    margin-bottom: 2px;
+    padding-left: 8px;
+    border-left: 3px solid rgba(255,255,255,0.28);
+}
+.ypcal-editbtn {
+    position: absolute;
+    top: 10px;
+    right: 8px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 2px;
+    border-radius: 4px;
+    color: #ffeb3b !important;
+    width: 22px;
+    height: 22px;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 2;
+}
+.ypcal-editbtn:hover { background: none; color: rgba(255,255,255,0.95) !important; transform: scale(1.15); }
+.ypcal-editbtn i { font-size: 1rem; color: rgba(255,255,255,0.65) !important; }
+.ypcal-editbtn:hover i { color: #ffffff !important; }
+.ypcal-editbtn svg { display: block; stroke: rgba(255,255,255,0.22); fill: none; transition: stroke .15s ease, opacity .15s ease; opacity: 0.55; }
+.ypcal-cell:hover .ypcal-editbtn svg { stroke: rgba(255,255,255,0.65); opacity: 1; }
+.ypcal-editbtn:hover svg { stroke: #ffffff !important; opacity: 1 !important; }
+
+/* Events section per month */
+.ypcal-events {
+    margin-top: 1.5rem;
+    padding: 1rem 0 0;
+    border-top: 0.3px solid rgba(255,255,255,0.15);
+}
+.ypcal-events-title {
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 1rem;
+    color: #333;
+}
+.ypcal-events-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+}
+.ypcal-evcard {
+    background: #fff;
+    padding: 1.25rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: relative;
+    border: 1px solid #eee;
+}
+.ypcal-evcard h3 { color: #2c3e50; margin: 0 0 .75rem; font-size: 1.1rem; }
+.ypcal-evcard .ev-content { color: #555; line-height: 1.55; font-size: 0.92rem; }
+.ypcal-evedit {
+    position: absolute; top: 10px; right: 10px;
+    background: none; border: none; color: #666;
+    cursor: pointer; padding: 5px; border-radius: 4px;
+}
+.ypcal-evedit:hover { background: #f0f0f0; color: #333; }
+@media (max-width: 900px) {
+    .ypcal-events-row { grid-template-columns: 1fr; }
+}
+
+/* Edit popup */
+.ypcal-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.5); z-index: 1099;
+}
+.ypcal-overlay.active { display: block; }
+.ypcal-popup {
+    display: none; position: fixed; top: 50%; left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff; padding: 1.5rem;
+    border-radius: 15px;
+    box-shadow: 0 5px 30px rgba(0,0,0,0.15);
+    z-index: 1100; width: 90%; max-width: 600px;
+    max-height: 90vh; overflow-y: auto;
+}
+.ypcal-popup.active { display: block; }
+.ypcal-popup-h {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 12px;
+}
+.ypcal-popup-title { font-size: 1.1rem; font-weight: 600; color: #1a237e; }
+.ypcal-popup-close {
+    background: none; border: none; font-size: 1.5rem;
+    cursor: pointer; color: #666;
+}
+.ypcal-hl-options {
+    display: flex; flex-wrap: wrap; gap: 6px;
+    margin: 8px 0 12px; padding: 8px;
+    border: 1px solid #eee; border-radius: 6px; background: #f8f9fa;
+}
+.ypcal-hl-label { width: 100%; font-weight: 600; color: #666; font-size: 0.85rem; margin-bottom: 4px; }
+.ypcal-hl-opt {
+    width: 22px; height: 22px; border-radius: 3px; cursor: pointer;
+    border: 2px solid transparent; transition: all .2s;
+}
+.ypcal-hl-opt:hover { transform: scale(1.1); box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
+.ypcal-hl-opt.selected { border-color: #333; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+.ypcal-hl-opt.none { background: #fff; border: 2px solid #ddd; }
+.ypcal-hl-opt.yellow { background: #fff3cd; }
+.ypcal-hl-opt.green { background: #d4edda; }
+.ypcal-hl-opt.blue { background: #cce5ff; }
+.ypcal-hl-opt.orange { background: #ffe5d0; }
+.ypcal-hl-opt.pink { background: #ffd4e5; }
+.ypcal-hl-opt.purple { background: #e7d9ff; }
+.ypcal-hl-opt.mint { background: #d4f8e8; }
+.ypcal-hl-opt.coral { background: #ffd4cc; }
+.ypcal-hl-opt.lilac { background: #e8d4f8; }
+.ypcal-hl-opt.peach { background: #ffdab9; }
+.ypcal-hl-opt.sky { background: #d4f1f9; }
+.ypcal-hl-opt.lime { background: #e8ffd4; }
+.ypcal-hl-opt.rose { background: #ffb6c1; }
+.ypcal-hl-opt.lavender { background: #e6e6fa; }
+.ypcal-hl-opt.gold { background: #ffd700aa; }
+#ypcalEditorContainer, #ypcalEvEditorContainer { height: 180px; margin: 8px 0; background: #fff; }
+.ypcal-popup .ql-editor, .ypcal-popup .ql-editor p, .ypcal-popup .ql-editor li { color: #fff !important; }
+.ypcal-popup .ql-editor.ql-blank::before { color: rgba(255,255,255,0.45) !important; font-style: italic; }
+.ypcal-popup-footer {
+    display: flex; justify-content: flex-end; gap: 8px;
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+.ypcal-pbtn {
+    padding: 8px 18px; border-radius: 8px; border: 1px solid transparent;
+    cursor: pointer; font-size: 0.88rem; font-weight: 600;
+    letter-spacing: -0.005em;
+    transition: background .15s ease, border-color .15s ease, transform .08s ease;
+}
+.ypcal-pbtn:active { transform: scale(0.98); }
+.ypcal-popup .ypcal-pbtn.save { background: #ffffff !important; color: #0A0A0A !important; border-color: #ffffff !important; }
+.ypcal-popup .ypcal-pbtn.save:hover { background: #f0f0f0 !important; border-color: #f0f0f0 !important; }
+.ypcal-popup .ypcal-pbtn.cancel { background: transparent !important; color: rgba(255,255,255,0.85) !important; border-color: rgba(255,255,255,0.15) !important; }
+.ypcal-popup .ypcal-pbtn.cancel:hover { background: rgba(255,255,255,0.06) !important; border-color: rgba(255,255,255,0.30) !important; color: #ffffff !important; }
+
+.ypcal-ev-input {
+    width: 100%; padding: 8px 10px; border: 1px solid #ddd;
+    border-radius: 6px; margin-bottom: 8px; font-size: 0.95rem;
+}
+
+/* Hidden legacy grid (kept for any external CSS expectations) */
+.ypcal-grid { display: none; }
+</style>
+<style data-prune-old="ypcal-old" media="not all">
+.ypcal-month {
+    border:1px solid rgba(127,127,127,0.20);
+    border-radius:10px;
+    background: var(--surface, #fff);
+    overflow:hidden;
+    display:flex; flex-direction:column;
+}
+.ypcal-month-h {
+    padding:8px 10px;
+    font-size:12px; font-weight:700; letter-spacing:0.5px; text-transform:uppercase;
+    color:#FFFFFF;
+    background: linear-gradient(135deg, #0E365C, #0078D4);
+    display:flex; justify-content:space-between; align-items:center;
+}
+.ypcal-month-h .badge {
+    font-size:10px; font-weight:700; letter-spacing:0.4px; text-transform:uppercase;
+    padding:2px 7px; border-radius:999px; background: rgba(255,255,255,0.18);
+}
+.ypcal-dows {
+    display:grid; grid-template-columns: repeat(7, 1fr);
+    font-size:10px; font-weight:600; color:var(--text-secondary);
+    border-bottom:1px solid rgba(127,127,127,0.15);
+    background: rgba(0,120,212,0.04);
+}
+.ypcal-dows span { padding:4px 0; text-align:center; }
+.ypcal-days {
+    display:grid; grid-template-columns: repeat(7, 1fr);
+    grid-auto-rows: minmax(34px, auto);
+    gap:1px;
+    background: rgba(127,127,127,0.12);
+}
+.ypcal-day {
+    background: var(--surface, #fff);
+    padding:3px 4px 4px;
+    min-height:34px;
+    font-size:11px;
+    color: var(--text);
+    position:relative;
+    display:flex; flex-direction:column; gap:2px;
+    overflow:hidden;
+}
+.ypcal-day.is-out { color: rgba(127,127,127,0.45); background: rgba(0,0,0,0.015); }
+.ypcal-day.is-in-term { background: rgba(0,120,212,0.04); }
+.ypcal-day.is-today { outline: 2px solid #0078D4; outline-offset: -2px; }
+.ypcal-day-num { font-size:10px; font-weight:700; color:var(--text-secondary); line-height:1; }
+.ypcal-day.is-today .ypcal-day-num { color:#0078D4; }
+.ypcal-chip {
+    display:block;
+    font-size:9.5px; font-weight:600;
+    padding:1px 4px;
+    border-radius:3px;
+    color:#fff;
+    line-height:1.25;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    cursor: pointer;
+}
+.ypcal-chip-more { font-size:9px; color:var(--text-secondary); padding:0 4px; }
+
+.ypcal-term1 .ypcal-month-h { background: linear-gradient(135deg,#0E365C,#0078D4); }
+.ypcal-term2 .ypcal-month-h { background: linear-gradient(135deg,#1B5E20,#2E7D32); }
+.ypcal-term3 .ypcal-month-h { background: linear-gradient(135deg,#B25A00,#FB8C00); }
+.ypcal-term4 .ypcal-month-h { background: linear-gradient(135deg,#7B1FA2,#9C27B0); }
+.ypcal-termNone .ypcal-month-h { background: linear-gradient(135deg,#455A64,#607D8B); }
+
+[data-theme="dark"] .ypcal-day { background:#0F1A28; }
+[data-theme="dark"] .ypcal-day.is-out { background:#0A111B; }
+[data-theme="dark"] .ypcal-day.is-in-term { background: rgba(0,120,212,0.08); }
+[data-theme="dark"] .ypcal-dows { background: rgba(0,120,212,0.10); }
+</style>
+
+<style>
+/* View toggle (current month vs all months) */
+.ypcal-h { display:flex; align-items:center; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.t-shell.t-shell .ypcal-view-toggle {
+    display:inline-flex; background: rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.14); border-radius: 999px;
+    padding: 3px; gap: 2px;
+}
+.t-shell.t-shell .ypcal-view-toggle button,
+.t-shell.t-shell .ypcal-view-toggle button * {
+    background: transparent; border: 0; color: rgba(255,255,255,0.7) !important;
+    padding: 6px 14px; font-size: 13px; font-weight: 500;
+    border-radius: 999px; cursor: pointer; line-height: 1;
+}
+.t-shell.t-shell .ypcal-view-toggle button:hover,
+.t-shell.t-shell .ypcal-view-toggle button:hover * { color: #ffffff !important; }
+.t-shell.t-shell .ypcal-view-toggle button.is-active,
+.t-shell.t-shell .ypcal-view-toggle button.is-active * {
+    background: #ffffff !important;
+    color: #1A1A1A !important;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+/* Hide non-current month cards when in single-month view */
+.ypcal-stack.is-current-only .ypcal-mcard:not(.is-current-month) { display: none !important; }
+</style>
+<div class="ypcal-wrap">
+    <div class="ypcal-h">
+        <h3>{{ year }} year-at-a-glance</h3>
+        <div class="ypcal-view-toggle" id="ypcalViewToggle" role="tablist" aria-label="Calendar view">
+            <button type="button" data-view="current" class="is-active" role="tab" aria-selected="true">Current month</button>
+            <button type="button" data-view="all" role="tab" aria-selected="false">All months</button>
+        </div>
+    </div>
+    <div class="ypcal-stack" id="ypcalStack"></div>
+    <div class="ypcal-grid" id="ypcalGrid" hidden></div>
+</div>
+
+<!-- Day edit popup -->
+<div class="ypcal-overlay" id="ypcalOverlay" onclick="ypcalCloseEdit()"></div>
+<div class="ypcal-popup" id="ypcalPopup" role="dialog" aria-modal="true" aria-labelledby="ypcalPopupTitle">
+    <div class="ypcal-popup-h">
+        <div class="ypcal-popup-title" id="ypcalPopupTitle">Edit Day</div>
+        <button class="ypcal-popup-close" type="button" onclick="ypcalCloseEdit()" aria-label="Close">&times;</button>
+    </div>
+    <div id="ypcalEditorContainer"></div>
+    <div class="ypcal-popup-footer">
+        <button type="button" class="ypcal-pbtn save" onclick="ypcalSaveEdit()">Save</button>
+        <button type="button" class="ypcal-pbtn cancel" onclick="ypcalCloseEdit()">Cancel</button>
+    </div>
+</div>
+
+<!-- Event card edit popup -->
+<div class="ypcal-overlay" id="ypcalEvOverlay" onclick="ypcalCloseEvEdit()"></div>
+<div class="ypcal-popup" id="ypcalEvPopup" role="dialog" aria-modal="true" aria-labelledby="ypcalEvPopupTitle">
+    <div class="ypcal-popup-h">
+        <div class="ypcal-popup-title" id="ypcalEvPopupTitle">Edit Event</div>
+        <button class="ypcal-popup-close" type="button" onclick="ypcalCloseEvEdit()" aria-label="Close">&times;</button>
+    </div>
+    <input type="text" id="ypcalEvTitle" class="ypcal-ev-input" placeholder="Event title">
+    <div id="ypcalEvEditorContainer"></div>
+    <div class="ypcal-popup-footer">
+        <button type="button" class="ypcal-pbtn save" onclick="ypcalSaveEvEdit()">Save</button>
+        <button type="button" class="ypcal-pbtn cancel" onclick="ypcalCloseEvEdit()">Cancel</button>
+    </div>
+</div>
+
+<script id="ypcalEvents" type="application/json">
+[
+{%- for it in items -%}
+    {"id":"{{ it.id }}","title":{{ it.title|tojson }},"start":"{{ it.start_date.strftime('%Y-%m-%d') }}","end":"{{ (it.end_date or it.start_date).strftime('%Y-%m-%d') }}","kind":{{ (it.kind or 'task')|tojson }},"color":{{ (it.color or '#9CA3AF')|tojson }}}{{ "," if not loop.last else "" }}
+{%- endfor -%}
+]
+</script>
+
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script>
+(function(){
+    var year = {{ year|int }};
+    var stack = document.getElementById('ypcalStack');
+    if (!stack) return;
+
+    // Move popups + overlays to <body> so position:fixed centers in viewport
+    // (a transformed ancestor would otherwise make them anchor inside it).
+    ['ypcalOverlay','ypcalPopup','ypcalEvOverlay','ypcalEvPopup'].forEach(function(id){
+        var el = document.getElementById(id);
+        if (el && el.parentNode !== document.body) document.body.appendChild(el);
+    });
+
+    var MONTHS = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+
+    var serverEvents = [];
+    try { serverEvents = JSON.parse(document.getElementById('ypcalEvents').textContent || '[]'); } catch(e){}
+
+    // Index server events by "Month-day" (using year-local dates only)
+    var serverByKey = {};
+    serverEvents.forEach(function(e){
+        var s = new Date(e.start+'T00:00:00');
+        var f = new Date((e.end||e.start)+'T00:00:00');
+        for (var d = new Date(s); d <= f; d.setDate(d.getDate()+1)){
+            if (d.getFullYear() !== year) continue;
+            var key = MONTHS[d.getMonth()] + '-' + d.getDate();
+            (serverByKey[key] = serverByKey[key] || []).push(e);
+        }
+    });
+
+    // localStorage namespaced per-year
+    var STORAGE_KEY     = 'ypcalData_'    + year;
+    var STORAGE_HL_KEY  = 'ypcalHl_'      + year;
+    var STORAGE_EV_KEY  = 'ypcalEvents_'  + year;
+    var calendarData     = {};
+    var highlightedStates= {};
+    var eventsData       = {};
+    try { calendarData      = JSON.parse(localStorage.getItem(STORAGE_KEY)    || '{}'); } catch(e){}
+    try { highlightedStates = JSON.parse(localStorage.getItem(STORAGE_HL_KEY) || '{}'); } catch(e){}
+    try { eventsData        = JSON.parse(localStorage.getItem(STORAGE_EV_KEY) || '{}'); } catch(e){}
+
+    var COLORS = {
+        yellow:'#fff3cd', green:'#d4edda', blue:'#cce5ff', orange:'#ffe5d0',
+        pink:'#ffd4e5', purple:'#e7d9ff', mint:'#d4f8e8', coral:'#ffd4cc',
+        lilac:'#e8d4f8', peach:'#ffdab9', sky:'#d4f1f9', lime:'#e8ffd4',
+        rose:'#ffb6c1', lavender:'#e6e6fa', gold:'#ffd700aa'
+    };
+
+    function escapeHtml(s){
+        return String(s).replace(/[&<>"']/g, function(c){
+            return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c];
+        });
+    }
+
+    // Force Quill inline color/background styles to win over the global !important rules
+    function forceInlineColors(html){
+        if (!html) return html;
+        return html.replace(/style="([^"]*)"/gi, function(m, css){
+            var out = css
+                .replace(/(^|;)\s*color\s*:\s*([^;]+?)(\s*!important)?\s*(?=;|$)/gi, '$1color:$2 !important')
+                .replace(/(^|;)\s*background-color\s*:\s*([^;]+?)(\s*!important)?\s*(?=;|$)/gi, '$1background-color:$2 !important');
+            return 'style="'+out+'"';
+        });
+    }
+
+    function buildMonthCard(monthIdx){
+        var monthName = MONTHS[monthIdx];
+        var firstDow = new Date(year, monthIdx, 1).getDay(); // 0=Sun..6=Sat (week starts Sun)
+        var lastDay  = new Date(year, monthIdx+1, 0).getDate();
+        var leading = firstDow; // blanks before day 1
+
+        var cells = '';
+        for (var i=0;i<leading;i++){
+            cells += '<div class="ypcal-cell empty"></div>';
+        }
+        for (var d=1; d<=lastDay; d++){
+            var key = monthName + '-' + d;
+            var savedContent = forceInlineColors(calendarData[key] || '');
+            var srvHtml = '';
+            var bgStyle = highlightedStates[key] ? ' style="background:'+highlightedStates[key]+'"' : '';
+            cells += ''
+              + '<div class="ypcal-cell" data-day="'+d+'" data-month="'+monthName+'"'+bgStyle+'>'
+              +   '<button type="button" class="ypcal-editbtn" title="Edit" data-day="'+d+'" data-month="'+monthName+'"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"/><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>'
+              +   '<div class="ypcal-dnum">'+d+'</div>'
+              +   '<div class="ypcal-dcontent">'+srvHtml+savedContent+'</div>'
+              + '</div>';
+        }
+
+        // Default events for this month (placeholders)
+        var defaults = [
+            {title:'Important Announcements', body:'Click the pencil to add notes for this month.'},
+            {title:'Upcoming Activities',     body:'List upcoming activities for this month here.'},
+            {title:'Resources',               body:'Add resources, links and references here.'}
+        ];
+        var evHtml = defaults.map(function(def, i){
+            var id = i+1;
+            var saved = eventsData[monthName+'-'+id];
+            var title = saved ? saved.title : def.title;
+            var body  = forceInlineColors(saved ? saved.content : def.body);
+            return ''
+              + '<div class="ypcal-evcard" data-event-id="'+id+'" data-month="'+monthName+'">'
+              +   '<button type="button" class="ypcal-evedit" title="Edit Event" data-event-id="'+id+'" data-month="'+monthName+'"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"/><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg></button>'
+              +   '<h3>'+escapeHtml(title)+'</h3>'
+              +   '<div class="ev-content">'+body+'</div>'
+              + '</div>';
+        }).join('');
+
+        var monthOpts = MONTHS.map(function(name, i){
+            return '<button type="button" class="ypcal-mddi" role="option" data-month-idx="'+i+'"'+(i===monthIdx?' aria-selected="true"':'')+'>'+name+' '+year+'</button>';
+        }).join('');
+        var card = document.createElement('div');
+        card.className = 'ypcal-mcard';
+        card.setAttribute('data-month-idx', monthIdx);
+        card.innerHTML = ''
+          + '<div class="ypcal-mcard-h">'
+          +   '<h2><i class="fas fa-calendar-alt"></i>'
+          +     '<div class="ypcal-mdd" data-month-idx="'+monthIdx+'">'
+          +       '<button type="button" class="ypcal-mdd-btn" aria-haspopup="listbox" aria-expanded="false">'+monthName+' '+year+'</button>'
+          +       '<div class="ypcal-mdd-menu" role="listbox" hidden>'+monthOpts+'</div>'
+          +     '</div>'
+          +   '</h2>'
+          + '</div>'
+          + '<div class="ypcal-mcard-body">'
+          +   '<div class="ypcal-cgrid">'
+          +     '<div class="ypcal-wd">Sun</div><div class="ypcal-wd">Mon</div><div class="ypcal-wd">Tue</div><div class="ypcal-wd">Wed</div><div class="ypcal-wd">Thu</div><div class="ypcal-wd">Fri</div><div class="ypcal-wd">Sat</div>'
+          +     cells
+          +   '</div>'
+          +   '<div class="ypcal-events">'
+          +     '<div class="ypcal-events-title">EVENTS</div>'
+          +     '<div class="ypcal-events-row">'+evHtml+'</div>'
+          +   '</div>'
+          + '</div>';
+        return card;
+    }
+
+    for (var m=0; m<12; m++){ stack.appendChild(buildMonthCard(m)); }
+
+    // ---- View toggle: "Current month" vs "All months" ----
+    (function setupViewToggle(){
+        var toggle = document.getElementById('ypcalViewToggle');
+        if (!toggle) return;
+        var today = new Date();
+        var isCurrentYear = (today.getFullYear() === year);
+        // Mark the current month card so CSS can isolate it
+        if (isCurrentYear){
+            var curCard = stack.querySelector('.ypcal-mcard[data-month-idx="'+today.getMonth()+'"]');
+            if (curCard) curCard.classList.add('is-current-month');
+        }
+        var STORAGE_VIEW_KEY = 'ypcalView_' + year;
+        var stored = null;
+        try { stored = localStorage.getItem(STORAGE_VIEW_KEY); } catch(e){}
+        // Default: current month if viewing the current year, otherwise all
+        var view = stored || (isCurrentYear ? 'current' : 'all');
+        if (!isCurrentYear) view = 'all'; // can't isolate a "current" month in another year
+
+        function apply(v){
+            view = v;
+            stack.classList.toggle('is-current-only', v === 'current');
+            toggle.querySelectorAll('button').forEach(function(b){
+                var on = b.getAttribute('data-view') === v;
+                b.classList.toggle('is-active', on);
+                b.setAttribute('aria-selected', on ? 'true' : 'false');
+            });
+            try { localStorage.setItem(STORAGE_VIEW_KEY, v); } catch(e){}
+        }
+        toggle.addEventListener('click', function(ev){
+            var btn = ev.target.closest && ev.target.closest('button[data-view]');
+            if (!btn) return;
+            var v = btn.getAttribute('data-view');
+            if (v === 'current' && !isCurrentYear) return; // not applicable
+            apply(v);
+        });
+        // Disable the "Current month" tab if we're viewing a non-current year
+        if (!isCurrentYear){
+            var curBtn = toggle.querySelector('button[data-view="current"]');
+            if (curBtn){
+                curBtn.disabled = true;
+                curBtn.title = 'Only available when viewing the current year';
+                curBtn.style.opacity = '0.4';
+                curBtn.style.cursor = 'not-allowed';
+            }
+        }
+        apply(view);
+    })();
+
+    function ypcalCloseAllDD(except){
+        stack.querySelectorAll('.ypcal-mdd.is-open').forEach(function(dd){
+            if (dd === except) return;
+            dd.classList.remove('is-open');
+            var btn = dd.querySelector('.ypcal-mdd-btn');
+            var menu = dd.querySelector('.ypcal-mdd-menu');
+            if (btn) btn.setAttribute('aria-expanded','false');
+            if (menu) menu.hidden = true;
+        });
+    }
+
+    function ypcalScrollToMonthCard(target){
+        if (!target) return;
+        try {
+            // Works for both window scrolling and nested scroll containers.
+            target.scrollIntoView({ behavior: 'auto', block: 'start', inline: 'nearest' });
+            return;
+        } catch (e) {}
+        var top = target.getBoundingClientRect().top + (window.pageYOffset || document.documentElement.scrollTop || 0);
+        window.scrollTo(0, Math.max(0, top - 8));
+    }
+
+    // Month-jump custom dropdown handler
+    stack.addEventListener('click', function(ev){
+        var btn = ev.target.closest && ev.target.closest('.ypcal-mdd-btn');
+        if (btn){
+            ev.stopPropagation();
+            var dd = btn.closest('.ypcal-mdd');
+            var menu = dd.querySelector('.ypcal-mdd-menu');
+            var open = dd.classList.toggle('is-open');
+            ypcalCloseAllDD(dd);
+            btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+            menu.hidden = !open;
+            return;
+        }
+        var item = ev.target.closest && ev.target.closest('.ypcal-mddi');
+        if (item){
+            ev.stopPropagation();
+            var targetIdx = parseInt(item.getAttribute('data-month-idx'), 10);
+            var target = stack.querySelector('.ypcal-mcard[data-month-idx="'+targetIdx+'"]');
+            ypcalCloseAllDD(null);
+            if (!target) return;
+
+            // In single-month mode, selecting a month should switch the visible card.
+            if (stack.classList.contains('is-current-only')){
+                stack.querySelectorAll('.ypcal-mcard.is-current-month').forEach(function(card){
+                    card.classList.remove('is-current-month');
+                });
+                target.classList.add('is-current-month');
+            }
+
+            ypcalScrollToMonthCard(target);
+            return;
+        }
+    });
+    document.addEventListener('click', function(ev){
+        if (!ev.target.closest || !ev.target.closest('.ypcal-mdd')) ypcalCloseAllDD(null);
+    });
+
+    // Jump to current month and mark today's cell (instant, no animation)
+    (function jumpToToday(){
+        var today = new Date();
+        if (today.getFullYear() !== year) return;
+        var mIdx = today.getMonth();
+        var dNum = today.getDate();
+        var monthName = MONTHS[mIdx];
+        var target = stack.querySelector('.ypcal-mcard[data-month-idx="'+mIdx+'"]');
+        var todayCell = stack.querySelector('.ypcal-cell[data-day="'+dNum+'"][data-month="'+monthName+'"]');
+        if (todayCell) todayCell.classList.add('is-today');
+        if (target) {
+            ypcalScrollToMonthCard(target);
+        }
+    })();
+
+    // Event delegation: star (edit day) and pencil (edit event) buttons
+    stack.addEventListener('click', function(ev){
+        var starBtn = ev.target.closest && ev.target.closest('.ypcal-editbtn');
+        if (starBtn){
+            ev.preventDefault(); ev.stopPropagation();
+            var d = parseInt(starBtn.getAttribute('data-day'), 10);
+            var mo = starBtn.getAttribute('data-month');
+            window.ypcalEditDay(d, mo);
+            return;
+        }
+        var evBtn = ev.target.closest && ev.target.closest('.ypcal-evedit');
+        if (evBtn){
+            ev.preventDefault(); ev.stopPropagation();
+            var id = parseInt(evBtn.getAttribute('data-event-id'), 10);
+            var mo2 = evBtn.getAttribute('data-month');
+            window.ypcalEditEvent(id, mo2);
+            return;
+        }
+    });
+
+    // â”€â”€â”€ Quill editors and edit popups â”€â”€â”€
+    var quill = null, evQuill = null;
+    var currentDay = null, currentMonth = null, currentHl = 'none';
+    var currentEvId = null, currentEvMonth = null;
+
+    function ensureQuill(){
+        var COLOR_PALETTE = [
+            '#9CA3AF',
+            '#000000','#e60000','#ff9900','#ffff00','#008a00','#0066cc','#9933ff',
+            '#ffffff','#facccc','#ffebcc','#ffffcc','#cce8cc','#cce0f5','#ebd6ff',
+            '#bbbbbb','#f06666','#ffc266','#ffff66','#66b966','#66a3e0','#c285ff',
+            '#888888','#a10000','#b26b00','#b2b200','#006100','#0047b2','#6b24b2',
+            '#444444','#5c0000','#663d00','#666600','#003700','#002966','#3d1466'
+        ];
+        if (!quill && window.Quill) {
+            quill = new Quill('#ypcalEditorContainer', {
+                theme: 'snow',
+                placeholder: 'Enter event details...',
+                modules: { toolbar: [['bold','italic','underline'],[{color:COLOR_PALETTE}],[{list:'ordered'},{list:'bullet'}],['clean']] }
+            });
+        }
+        if (!evQuill && window.Quill) {
+            evQuill = new Quill('#ypcalEvEditorContainer', {
+                theme: 'snow',
+                placeholder: 'Enter event content...',
+                modules: { toolbar: [['bold','italic','underline'],[{color:COLOR_PALETTE}],[{list:'ordered'},{list:'bullet'}],['clean']] }
+            });
+        }
+    }
+
+    // Hookup highlight option clicks
+    document.querySelectorAll('#ypcalHlOptions .ypcal-hl-opt').forEach(function(opt){
+        opt.addEventListener('click', function(){
+            document.querySelectorAll('#ypcalHlOptions .ypcal-hl-opt').forEach(function(o){ o.classList.remove('selected'); });
+            opt.classList.add('selected');
+            currentHl = opt.getAttribute('data-color');
+        });
+    });
+
+    window.ypcalEditDay = function(day, month){
+        currentDay = day; currentMonth = month;
+        var key = month + '-' + day;
+        var content = calendarData[key] || '';
+        // Show popup first so Quill can measure dimensions correctly
+        document.getElementById('ypcalPopupTitle').textContent = 'Edit ' + month + ' ' + day;
+        document.getElementById('ypcalOverlay').classList.add('active');
+        document.getElementById('ypcalPopup').classList.add('active');
+        ensureQuill();
+        if (quill) quill.root.innerHTML = content;
+        // Reset highlight selector
+        currentHl = 'none';
+        document.querySelectorAll('#ypcalHlOptions .ypcal-hl-opt').forEach(function(o){ o.classList.remove('selected'); });
+        var savedHl = highlightedStates[key];
+        var matched = false;
+        if (savedHl){
+            Object.keys(COLORS).forEach(function(name){
+                if (COLORS[name] === savedHl){
+                    var el = document.querySelector('#ypcalHlOptions .ypcal-hl-opt.'+name);
+                    if (el){ el.classList.add('selected'); currentHl = name; matched = true; }
+                }
+            });
+        }
+        if (!matched){
+            var noneEl = document.querySelector('#ypcalHlOptions .ypcal-hl-opt.none');
+            if (noneEl) noneEl.classList.add('selected');
+        }
+    };
+
+    window.ypcalCloseEdit = function(){
+        document.getElementById('ypcalOverlay').classList.remove('active');
+        document.getElementById('ypcalPopup').classList.remove('active');
+    };
+
+    window.ypcalSaveEdit = function(){
+        if (!quill || currentDay==null || !currentMonth) return ypcalCloseEdit();
+        var content = quill.root.innerHTML;
+        var key = currentMonth + '-' + currentDay;
+        var cell = document.querySelector('.ypcal-cell[data-day="'+currentDay+'"][data-month="'+currentMonth+'"]');
+        if (cell){
+            var contentDiv = cell.querySelector('.ypcal-dcontent');
+            contentDiv.innerHTML = forceInlineColors(content);
+            if (currentHl === 'none' || !COLORS[currentHl]){
+                cell.style.background = '';
+                delete highlightedStates[key];
+            } else {
+                cell.style.background = COLORS[currentHl];
+                highlightedStates[key] = COLORS[currentHl];
+            }
+        }
+        if (content && content.replace(/<[^>]*>/g,'').trim()){
+            calendarData[key] = content;
+        } else {
+            delete calendarData[key];
+        }
+        try {
+            localStorage.setItem(STORAGE_KEY,    JSON.stringify(calendarData));
+            localStorage.setItem(STORAGE_HL_KEY, JSON.stringify(highlightedStates));
+        } catch(e){}
+        ypcalCloseEdit();
+    };
+
+    window.ypcalEditEvent = function(id, month){
+        currentEvId = id; currentEvMonth = month;
+        var card = document.querySelector('.ypcal-evcard[data-event-id="'+id+'"][data-month="'+month+'"]');
+        if (!card) return;
+        var titleEl = card.querySelector('h3');
+        var contentEl = card.querySelector('.ev-content');
+        document.getElementById('ypcalEvTitle').value = titleEl ? titleEl.textContent : '';
+        document.getElementById('ypcalEvPopupTitle').textContent = 'Edit Event — ' + month;
+        document.getElementById('ypcalEvOverlay').classList.add('active');
+        document.getElementById('ypcalEvPopup').classList.add('active');
+        ensureQuill();
+        if (evQuill) evQuill.root.innerHTML = contentEl ? contentEl.innerHTML : '';
+    };
+
+    window.ypcalCloseEvEdit = function(){
+        document.getElementById('ypcalEvOverlay').classList.remove('active');
+        document.getElementById('ypcalEvPopup').classList.remove('active');
+    };
+
+    window.ypcalSaveEvEdit = function(){
+        if (!evQuill || currentEvId==null || !currentEvMonth) return ypcalCloseEvEdit();
+        var title = document.getElementById('ypcalEvTitle').value || '';
+        var content = evQuill.root.innerHTML;
+        var card = document.querySelector('.ypcal-evcard[data-event-id="'+currentEvId+'"][data-month="'+currentEvMonth+'"]');
+        if (card){
+            var titleEl = card.querySelector('h3');
+            var contentEl = card.querySelector('.ev-content');
+            if (titleEl) titleEl.textContent = title;
+            if (contentEl) contentEl.innerHTML = forceInlineColors(content);
+        }
+        eventsData[currentEvMonth + '-' + currentEvId] = { title: title, content: content };
+        try { localStorage.setItem(STORAGE_EV_KEY, JSON.stringify(eventsData)); } catch(e){}
+        ypcalCloseEvEdit();
+    };
+})();
+</script>
+
+{# Term tiles removed — CAPS weighting tables remain below. #}
+
+{# â”€â”€â”€ Formal Assessment moved to its own tab (teacher_formal_assessment) â”€â”€â”€ #}
+
+{# â”€â”€â”€ Term side panel removed â”€â”€â”€ #}
+
+<style>
+.yp-term { cursor: pointer; transition: box-shadow .18s ease, transform .18s ease; }
+.yp-term:hover { box-shadow: 0 12px 32px rgba(0,0,0,0.45); transform: translateY(-2px); }
+.yp-term:focus-visible { outline: 2px solid rgba(255,255,255,0.35); outline-offset: 2px; }
+.yp-open-btn {
+    background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.28);
+    color: #fff; width: 28px; height: 28px; border-radius: 6px; padding: 0;
+    display: inline-flex; align-items: center; justify-content: center; cursor: pointer;
+    transition: background .15s ease;
+}
+.yp-open-btn:hover { background: rgba(255,255,255,0.28); }
+
+.yp-panel-backdrop {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.55);
+    z-index: 1099; opacity: 0; transition: opacity .22s ease; pointer-events: none;
+}
+.yp-panel-backdrop.is-open { opacity: 1; pointer-events: auto; }
+
+.yp-panel {
+    position: fixed; top: 0; right: 0; height: 100vh;
+    width: min(560px, 96vw);
+    background: #141414;
+    border-left: 1px solid rgba(255,255,255,0.10);
+    box-shadow: -16px 0 40px rgba(0,0,0,0.45);
+    z-index: 1100;
+    transform: translateX(100%); transition: transform .26s cubic-bezier(.2,.8,.2,1);
+    display: flex; flex-direction: column;
+    font-family: "Segoe UI","Segoe UI Variable",-apple-system,BlinkMacSystemFont,"Helvetica Neue",Arial,sans-serif;
+}
+.yp-panel.is-open { transform: translateX(0); }
+.yp-panel[hidden] { display: flex !important; }
+
+.yp-panel-h {
+    padding: 18px 22px 14px; background: linear-gradient(135deg,#1A1A1A 0%,#232428 100%);
+    color: #fff; display: flex; justify-content: space-between; align-items: flex-start; gap: 14px;
+}
+.yp-panel-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 1.8px; text-transform: uppercase; opacity: .9; }
+.yp-panel-title { font-size: 22px; font-weight: 700; letter-spacing: -0.2px; margin: 4px 0 4px; }
+.yp-panel-sub { font-size: 13px; opacity: .9; }
+.yp-panel-close {
+    background: rgba(255,255,255,0.16); border: 1px solid rgba(255,255,255,0.28);
+    color: #fff; width: 32px; height: 32px; border-radius: 8px; cursor: pointer;
+    display: inline-flex; align-items: center; justify-content: center; flex: 0 0 auto;
+}
+.yp-panel-close:hover { background: rgba(255,255,255,0.28); }
+
+.yp-panel-body { flex: 1 1 auto; overflow-y: auto; padding: 18px 22px 28px; }
+.yp-panel-cal { margin-bottom: 22px; }
+.yp-cal-month { margin-bottom: 16px; }
+.yp-cal-month:last-child { margin-bottom: 0; }
+.yp-cal-month-h {
+    font-size: 13px; font-weight: 700; color: #f5f5f7; text-transform: uppercase; letter-spacing: 0.06em;
+    margin: 0 0 6px;
+}
+.yp-cal-grid {
+    display: grid; grid-template-columns: repeat(7, 1fr); gap: 2px;
+    border: 1px solid rgba(255,255,255,0.10); border-radius: 8px; overflow: hidden;
+    background: rgba(255,255,255,0.05);
+}
+.yp-cal-dow {
+    font-size: 10px; font-weight: 700; color: rgba(255,255,255,0.55); text-align: center;
+    padding: 6px 0; background: #1A1A1A; text-transform: uppercase; letter-spacing: 0.04em;
+}
+.yp-cal-day {
+    aspect-ratio: 1 / 1; background: #141414; display: flex; flex-direction: column;
+    align-items: center; justify-content: flex-start; padding: 4px 2px 2px;
+    font-size: 12px; color: #f5f5f7; position: relative; min-height: 36px;
+}
+.yp-cal-day.is-out { background: #101010; color: rgba(255,255,255,0.35); }
+.yp-cal-day.is-in-term { background: #141414; }
+.yp-cal-day.is-out-of-term { background: repeating-linear-gradient(45deg,#141414 0 4px,#181818 4px 8px); color: rgba(255,255,255,0.45); }
+.yp-cal-day.is-today { box-shadow: inset 0 0 0 2px rgba(255,255,255,0.35); }
+.yp-cal-day-num { font-weight: 600; font-variant-numeric: tabular-nums; }
+.yp-cal-dots { display: flex; gap: 2px; margin-top: 2px; flex-wrap: wrap; justify-content: center; }
+.yp-cal-dot { width: 6px; height: 6px; border-radius: 50%; background: #EC4899; }
+.yp-cal-dot[data-kind="test"] { background: #3B82F6; }
+.yp-cal-dot[data-kind="exam"] { background: #A855F7; }
+.yp-cal-dot[data-kind="assignment"] { background: #F59E0B; }
+.yp-cal-dot[data-kind="pat"] { background: #10B981; }
+.yp-cal-dot[data-kind="lesson"] { background: #9CA3AF; }
+.yp-cal-dot[data-kind="event"] { background: #64748B; }
+
+.yp-panel-tasks h4 {
+    font-size: 14px; font-weight: 700; color: #f5f5f7; margin: 18px 0 8px;
+    padding-bottom: 6px; border-bottom: 1px solid rgba(127,127,127,0.30);
+}
+.yp-panel-tasks h4:first-child { margin-top: 0; }
+.yp-panel-tasks .yp-task,
+.yp-panel-tasks .yp-pat,
+.yp-panel-tasks .yp-custom { padding: 10px 0; }
+.yp-panel-tasks .yp-empty { font-size: 13px; color: #d6d6da; }
+
+@media (max-width: 600px) {
+    .yp-panel-h { padding: 14px 16px 12px; }
+    .yp-panel-body { padding: 14px 16px 24px; }
+    .yp-panel-title { font-size: 18px; }
+}
+</style>
+
+<script>
+(function(){
+    const panel    = document.getElementById('ypPanel');
+    const backdrop = document.getElementById('ypPanelBackdrop');
+    if (!panel || !backdrop) return;
+    const closeBtn = document.getElementById('ypPanelClose');
+    const elEyebrow= document.getElementById('ypPanelEyebrow');
+    const elTitle  = document.getElementById('ypPanelTitle');
+    const elSub    = document.getElementById('ypPanelSub');
+    const elCal    = document.getElementById('ypPanelCal');
+    const elTasks  = document.getElementById('ypPanelTasks');
+    const MONTHS_SHORT = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+    const MONTHS_LONG  = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+    const DOW = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+
+    function parseTermDate(str){
+        // expects "Wed 14 Jan 2026" -> Date
+        const m = str.match(/(\d{1,2})\s+([A-Za-z]{3,})\s+(\d{4})/);
+        if (!m) return null;
+        const day = parseInt(m[1],10);
+        const monIdx = MONTHS_SHORT.indexOf(m[2].slice(0,3));
+        const yr  = parseInt(m[3],10);
+        if (monIdx < 0) return null;
+        return new Date(yr, monIdx, day);
+    }
+    function ymd(d){ return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
+    function startOfMonth(y,m){ return new Date(y,m,1); }
+
+    function buildMonthGrid(year, monthIdx, termStart, termEnd, eventsByDate, today){
+        const wrap = document.createElement('div');
+        wrap.className = 'yp-cal-month';
+        const h = document.createElement('div');
+        h.className = 'yp-cal-month-h';
+        h.textContent = MONTHS_LONG[monthIdx] + ' ' + year;
+        wrap.appendChild(h);
+        const grid = document.createElement('div');
+        grid.className = 'yp-cal-grid';
+        DOW.forEach(d => { const el = document.createElement('div'); el.className='yp-cal-dow'; el.textContent=d; grid.appendChild(el); });
+        const first = startOfMonth(year, monthIdx);
+        // Mon=0..Sun=6
+        let leading = (first.getDay() + 6) % 7;
+        const lastDay = new Date(year, monthIdx+1, 0).getDate();
+        // previous month tail
+        const prevLast = new Date(year, monthIdx, 0).getDate();
+        for (let i = 0; i < leading; i++){
+            const cell = document.createElement('div');
+            cell.className = 'yp-cal-day is-out';
+            const n = document.createElement('span'); n.className='yp-cal-day-num'; n.textContent = prevLast - leading + 1 + i;
+            cell.appendChild(n);
+            grid.appendChild(cell);
+        }
+        for (let d = 1; d <= lastDay; d++){
+            const date = new Date(year, monthIdx, d);
+            const cell = document.createElement('div');
+            const inTerm = (date >= termStart && date <= termEnd);
+            cell.className = 'yp-cal-day ' + (inTerm ? 'is-in-term' : 'is-out-of-term');
+            if (today && date.getTime() === today.getTime()) cell.classList.add('is-today');
+            const n = document.createElement('span'); n.className='yp-cal-day-num'; n.textContent=d; cell.appendChild(n);
+            const key = ymd(date);
+            const ev = eventsByDate[key];
+            if (ev && ev.length){
+                const dots = document.createElement('div'); dots.className='yp-cal-dots';
+                ev.slice(0,4).forEach(e => { const dot=document.createElement('span'); dot.className='yp-cal-dot'; dot.dataset.kind=e.kind||'task'; dot.title = e.title; dots.appendChild(dot); });
+                cell.appendChild(dots);
+                cell.title = ev.map(e => e.title).join('\n');
+            }
+            grid.appendChild(cell);
+        }
+        // trailing
+        const total = leading + lastDay;
+        const trailing = (7 - (total % 7)) % 7;
+        for (let i=1; i<=trailing; i++){
+            const cell = document.createElement('div');
+            cell.className = 'yp-cal-day is-out';
+            const n = document.createElement('span'); n.className='yp-cal-day-num'; n.textContent=i;
+            cell.appendChild(n);
+            grid.appendChild(cell);
+        }
+        wrap.appendChild(grid);
+        return wrap;
+    }
+
+    function openPanel(termCard){
+        const num   = termCard.dataset.ypTerm;
+        const start = parseTermDate(termCard.dataset.ypStart);
+        const end   = parseTermDate(termCard.dataset.ypEnd);
+        const weeks = termCard.dataset.ypWeeks;
+        if (!start || !end) return;
+
+        elEyebrow.textContent = 'Term ' + num + ' · ' + weeks + ' weeks';
+        const fmt = (d) => DOW[(d.getDay()+6)%7] + ' ' + d.getDate() + ' ' + MONTHS_SHORT[d.getMonth()] + ' ' + d.getFullYear();
+        elTitle.textContent = 'Term ' + num;
+        elSub.textContent   = fmt(start) + '  â†’  ' + fmt(end);
+
+        // Gather scheduled events for this term
+        const events = Array.from(termCard.querySelectorAll('.yp-custom[data-date]')).map(el => ({
+            date: el.dataset.date,
+            endDate: el.dataset.endDate || null,
+            kind: el.dataset.kind || 'task',
+            title: el.dataset.title || ''
+        }));
+        const eventsByDate = {};
+        events.forEach(e => {
+            const s = new Date(e.date+'T00:00:00');
+            const f = e.endDate ? new Date(e.endDate+'T00:00:00') : s;
+            for (let d = new Date(s); d <= f; d.setDate(d.getDate()+1)){
+                const k = ymd(d);
+                (eventsByDate[k] = eventsByDate[k] || []).push(e);
+            }
+        });
+
+        // Build calendar months from start.month..end.month (handle year boundary)
+        elCal.innerHTML = '';
+        const today = new Date(); today.setHours(0,0,0,0);
+        let cy = start.getFullYear(), cm = start.getMonth();
+        const ey = end.getFullYear(),   em = end.getMonth();
+        while (cy < ey || (cy === ey && cm <= em)){
+            elCal.appendChild(buildMonthGrid(cy, cm, start, end, eventsByDate, today));
+            cm++; if (cm > 11){ cm = 0; cy++; }
+        }
+
+        // Build tasks list by cloning sections from the card
+        elTasks.innerHTML = '';
+        termCard.querySelectorAll('.yp-section').forEach(section => {
+            if (section.classList.contains('is-empty')) return;
+            const heading = section.querySelector('.yp-section-h');
+            const headingText = heading ? heading.textContent.trim() : '';
+            if (!headingText) return;
+            const h4 = document.createElement('h4');
+            h4.textContent = headingText;
+            elTasks.appendChild(h4);
+            // Clone each task/pat/custom row
+            const rows = section.querySelectorAll('.yp-task, .yp-pat, .yp-custom, .yp-empty');
+            if (!rows.length){
+                const empty = document.createElement('div'); empty.className='yp-empty'; empty.textContent='Nothing here.';
+                elTasks.appendChild(empty);
+            } else {
+                rows.forEach(r => elTasks.appendChild(r.cloneNode(true)));
+            }
+        });
+
+        panel.hidden = false; backdrop.hidden = false;
+        // force reflow then add open class for transition
+        void panel.offsetWidth;
+        panel.classList.add('is-open');
+        backdrop.classList.add('is-open');
+        panel.setAttribute('aria-hidden','false');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closePanel(){
+        panel.classList.remove('is-open');
+        backdrop.classList.remove('is-open');
+        panel.setAttribute('aria-hidden','true');
+        document.body.style.overflow = '';
+        setTimeout(() => { panel.hidden = true; backdrop.hidden = true; }, 260);
+    }
+
+    document.querySelectorAll('.yp-term[data-yp-term]').forEach(card => {
+        // Click-to-open side panel disabled.
+    });
+    closeBtn.addEventListener('click', closePanel);
+    backdrop.addEventListener('click', closePanel);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && panel.classList.contains('is-open')) closePanel(); });
+})();
+</script>
+{% endblock %}

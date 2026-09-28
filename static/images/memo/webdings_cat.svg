@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 110 130" fill="#000">
+  <!-- Sitting cat silhouette (side view, head turned slightly forward, ears up, tail curled to the left of the body) -->
+  <!-- Tail (curves to the left away from body) -->
+  <path d="M22 96 C8 96 0 86 2 76 C4 70 12 70 14 78 C16 86 20 92 26 96 Z"/>
+  <!-- Body + head as one filled silhouette -->
+  <path d="M70 14
+           L62 28
+           L58 18
+           L56 30
+           C46 34 40 44 40 56
+           C40 60 42 64 46 66
+           C40 70 36 78 36 88
+           C36 102 42 116 52 122
+           C52 124 50 126 54 126
+           L92 126
+           C96 126 94 124 92 122
+           C100 116 102 102 100 92
+           C98 84 94 78 90 74
+           C92 70 92 64 88 60
+           L88 50
+           C92 46 92 38 88 32
+           C84 26 78 24 76 24
+           L75 14
+           L72 22 Z"/>
+  <!-- White collar -->
+  <path d="M52 50 L88 50 L86 56 L54 56 Z" fill="#fff"/>
+  <circle cx="74" cy="56" r="2.4" fill="#fff"/>
+</svg>

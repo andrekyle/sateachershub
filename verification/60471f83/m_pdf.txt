@@ -1,0 +1,487 @@
+
+
+===== PDF PAGE 1 =====
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+COMPUTER APPLICATIONS TECHNOLOGY P1
+MAY/JUNE 2025
+MARKING GUIDELINES
+MARKS: 150
+CENTRE- FINAL MARK
+NUMBER
+EXAMINATION
+NUMBER
+QUESTION 1 2 3 4 5 6 7 TOTAL
+POSSIBLE MARK 27 18 16 24 35 15 15 150
+CANDIDATE'S
+MARK
+MARKER'S CODE/
+SIGNATURE
+MODERATED
+MARK
+These marking guidelines consists of 14 pages.
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 2 =====
+Computer Applications Technology/P1 2 DBE/May/June 2025
+SC/NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+Check the accuracy and skill required before awarding a mark throughout.
+QUESTION 1 File name: 1eSports Total Q1: 27
+Maximum Candidate
+No. Criteria
+Mark Mark
+1.1 File properties 1
+• Status: eSports  1
+1.2 Drop caps: e… 2
+• Position: Dropped  1
+• Lines to drop: 5  1
+1.3 Style: Win 3
+• Text effect: Preset: Glow: 8 point; Orange …  1
+• Font: Character spacing
+Scale: 150%  1
+o
+Spacing: Expanded  1
+o
+1.4 Find and Replace: games 3
+• Text: 'games' replaced  1
+• Format: Styles: Win Char  1
+• 11 occurrences (Match case & Whole words)  1
+1.5 Image: How eSports Competitions … 3
+• Picture Style: Rotated, White  1
+• Border colour: Light Blue  1
+• Artistic Effects: Paint Strokes  1
+1.6 Footnote/Endnote 2
+• Format: Footnote/Endnote symbol:  Webdings 1
+character code 185  (symbol changed in text and
+endnote/footnote)
+• Footnote converted to Endnote  1
+1.7 Bookmark: Sponsor 2
+• Bookmark: Organiser changed to Sponsor  1
+• Link to: Riot Games  1
+1.8 SmartArt 3
+• Layouts: Vertical arrow list  1
+• Shapes added after 2000s: Rise of …  1
+• All text is in correct shape  1
+1.9 Page layout: SmartArt page 2
+• Section breaks inserted  (last two pages only) 1
+• Orientation: Landscape  1
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 3 =====
+Computer Applications Technology/P1 3 DBE/May/June 2025
+SC/NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+1.10 Footer 2
+• Type: ViewMaster (Vertical)  1
+• Page number format: A, B, C, …  1
+1.11 Convert text to table 4
+• All text converted to appear in table  1
+• Second table merge with first table  1
+• AutoFit content  1
+• Last row: Formula: =SUM(ABOVE)  1
+Total for QUESTION 1 [27]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 4 =====
+Computer Applications Technology/P1 4 DBE/May/June 2025
+SC/NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+Check the accuracy and skill required before awarding a mark throughout.
+QUESTION 2 File name: 2Stats Total Q2: 18
+Maximum Candidate
+No. Criteria
+Mark Mark
+2.1 Cover page 2
+• Built-in: Slice (Dark)  1
+• Document Title: Statistics  1
+2.2 Columns: 'Viewer Demographics … and sponsorship 4
+opportunities.'
+• Converted to 2 columns  1
+• Spacing: 1.5 cm  1
+• Line between: selected/checked  1
+• Column break inserted before: 'The relationship
+between'  1
+2.3 Bullet list: below text 'The following list …' 1
+• Bullets (♦) applied to the complete list  1
+2.4 Image AND WordArt 3
+• Cropped to Star: 10 points  1
+• WordArt text appears on top of image  1
+• All text and image grouped  1
+2.5 Linked table 3
+• 2Team: Object (Data) inserted  1
+• Linked object  1
+• Displays contents of 2Team  1
+Alt+F9: { LINK Excel.Sheet.12 … }
+2.6 Page border 2
+• Any 3-line page border inserted  1
+• Position: Left and right side only  1
+2.7 Text Field 3
+• Field: NumWords inserted  1
+• Format: First, Second, Third, … 1
+• Text Direction feature: Horizontal  1
+Alt+F9: { NUMWORDS \* OrdText \* MERGEFORMAT }
+Total for QUESTION 2 [18]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 5 =====
+Computer Applications Technology/P1 5 DBE/May/June 2025
+SC/NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+QUESTION 3 File name: 3Rank Total Q3: 16
+• Mark the questions from the formulae and not the values/answers in the cell.
+• Check against candidate's actual work (Cell references may differ, depending on the
+candidate's response).
+• Candidates may use multiple formulae, cells or 'building blocks' to reach answers.
+• Named ranges can be used instead of cell references.
+• The answers must still be correct even if changes are made to the existing data.
+Maximum Candidate
+No. Criteria
+Mark Mark
+(Sheet 1) Medals worksheet
+3.1 Sheet 1: Rename 2
+• Renamed: Medals  1
+• Worksheet moved to be the last sheet  1
+Players worksheet
+3.2 Row 5: Format cells 2
+• Alignment: Text control: Wrap text selected  1
+• Alignment: Horizontal: Centre  1
+3.3 Cell D3: 2
+=LARGE(D6:D59,4)
+• Function: LARGE(D6:D59, …)  1
+• Number: 4  1
+3.4 Cell F6: 1
+=D6/E6
+• D6/E6  1
+Tournament worksheet
+3.5 Cell C3: 1
+=COUNTA(A7:A52) (Accept column A - G)
+OR
+=COUNT(B7:B52) (Accept column B, C, G)
+• Function: COUNTA(A7:A52)  1
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 6 =====
+Computer Applications Technology/P1 6 DBE/May/June 2025
+SC/NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+3.6 Cell C4: 4
+=SUMIF(D7:D52,"*Washington",G7:G52)
+• Function: SUMIF(…)  1
+• Criteria range: D7:D52  1
+• Criteria: *Washington  OR *Washington* 1
+• Sum range: G7:G52  1
+3.7 Cell F9: 4
+=VLOOKUP(E9,CountryCode!A3:E250,5,FALSE)
+• Lookup_Value: E9  1
+• Table_array: CountryCode!A3:E250  1
+• Col_Index_num: 5  1
+• Range_lookup: False  1
+Total for QUESTION 3 [16]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 7 =====
+Computer Applications Technology/P1 7 DBE/May/June 2025
+SC/NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+QUESTION 4 File name: 4Shop Total Q4: 24
+• Mark the questions from the formulae and not the values/answers in the cell.
+• Check against candidate's actual work (Cell references may differ, depending on the
+candidate's response).
+• Candidates may use multiple formulae, cells or 'building blocks' to reach answers.
+• Named ranges can be used instead of cell references.
+• The answers must still be correct even if changes are made to the existing data.
+Maximum Candidate
+No. Criteria
+Mark Mark
+September worksheet
+4.1.1 Cell D3: 1
+=COUNTBLANK(G6:G46)
+• Function: COUNTBLANK(G6:G46)  1
+4.1.2 Cell H10: 3
+=(F10+ G10)/24
+• (F10+ G10)  /24  3
+4.2 Column A: Conditional formatting 4
+• Applied to: =A6:A46  1
+• Formula: =D6  >=3  OR $D6:$D46>=3 OR >2 2
+(no absolute cell reference applied to row number)
+• Format: Fill colour: Green  1
+4.3 Cell I6: 5
+=IF(G6>0,"Notice","")
+OR
+=IF(G6="","","Notice")
+OR
+=IF(COUNT(G6)=1,"Notice","")
+OR
+=IF(COUNTBLANK(G6)=0,"Notice","")
+.
+1
+• Function: IF(…)  (correct syntax used)
+• Logical test:
+1
+Determine if the extra amount per month: G6 
+o
+OR H6
+o
+is more than 0: >0  OR "" 1
+• True output: "Notice"  1
+• False output: ""  1
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 8 =====
+Computer Applications Technology/P1 8 DBE/May/June 2025
+SC/NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+Games worksheet
+4.4 Cell C3: 5
+=COUNTIFS(E6:E19,">=60%",E6:E19,"<=75%")
+OR
+=COUNTIFS(E6:E19,"<=75%",E6:E19,">=60%")
+• Function: COUNTIFS(…)  1
+Criteria 1:
+• Criteria 1 range: E6:E19  count the cells if the 1
+criterion is 60% or more (>=60%)  OR >59 1
+AND
+Criteria 2:
+• Criteria 2 range: E6:E19  count the cells if the 1
+criterion is 75% or less (<=75%)  OR <76 1
+(Price) worksheet
+4.5 Chart/Graph: 6
+• Column graph created:
+Data range:
+=Games!$A$13:$A$19,Games!$D$13:$D$19  1
+OR =Games!A13:A19,Games!D13:D19
+• Chart area: Fill: 4Screen image  1
+• Gridlines: Primary Major Horizontal: removed  1
+• Data labels: Label position: Outside End  1
+• Trendline: Moving Average  1
+• Chart moved to a new sheet called: Price  1
+Total for QUESTION 4 [24]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 9 =====
+Computer Applications Technology/P1 9 DBE/May/June 2025
+SC/NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+QUESTION 5 File name: 5Games Total Q5: 35
+Maximum Candidate
+No Criteria
+Mark Mark
+Table: tbI5_1
+5.1.1 Field: Tournament 1
+• Field size: 15  1
+5.1.2 Field: Date 2
+• Format: Short date  OR yyyy/mm/dd 1
+• Show date picker: For dates  1
+5.1.3 Field: Location 3
+• Display control: Combo Box  1
+• Row Source: SELECT [tblCountry].[Country] FROM
+tblCountry  1
+• Sort: ORDER BY [Country]  1
+5.1.4 Field: Prize 2
+• Validation rule: >15000  1
+• Validation Text: Any appropriate text that refers to
+the rule  1
+Form: frm5_2
+5.2 Image: 5
+• Image moved to form header  (appears below 1
+heading)
+• Size mode: Clip  1
+Discount fee: =([Fee]*0.9,0)
+• ([Fee]-  ([Fee] *10/100)  OR ([Fee]*0.9) 2
+• Format: Currency  1
+Query: qry5_3
+5.3 • Query created:Game, Fee and GameDate fields  1 5
+• GameDate field criteria:
+Between #2025/01/01#  OR >=#2025/01/01# 1
+o
+OR >#2024/12/31#
+And  1
+o
+#2025/04/30#  OR <=#2025/04/30# OR 1
+o
+<#2025/05/01#
+• Sorted: Game field in ascending order  1
+(Expected records: 19)
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 10 =====
+Computer Applications Technology/P1 10 DBE/May/June 2025
+SC/NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+Query: qry5_4
+5.4 • Genre criteria: "Classic"  1 4
+• Genre criteria: NOT "Action" OR <> "Action"  1
+• Rating criteria: >8 OR >=9  1
+• <>"Action" AND >"8" OR "Classic" logic used  1
+(Expected records: 17)
+Query: qry5_5
+5.5 • Genre field: Group by  1 3
+• Rating field: AVG  1
+• Rating field: Format: Standard  OR Fixed 1
+Query: qry5_6
+5.6 New field: 4
+Code: Left([Game],3)&Month([GameDate])
+• New field: Code  1
+• Left([Game],3)
+Function: Left([Game], …)  1
+o
+Number of characters: 3  1
+o
+• Function: &  1
+Report: rpt5_7
+5.7 • Report rpt5_7 created with Genre, Rating, Game and 6
+Fee fields  1
+• Grouped according to Genre  then according to 1
+Rating  1
+• Function inserted in Genre group footer  1
+• Function: Min([Fee])  1
+• Label: Lowest Fee  1
+(Note to marker: Ignore currency)
+Total for QUESTION 5 [35]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 11 =====
+Computer Applications Technology/P1 11 DBE/May/June 2025
+SC/NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+QUESTION 6 File name: 6_1Tournament, 6_2Entry Total Q6: 15
+• This question should be marked from the HTML code.
+• Numerical attribute values and single words do not need to be in inverted commas.
+Maximum Candidate
+No Criteria
+Mark Mark
+6_1Tournament
+6.1.1 Alignment tag 1
+<body align="center">
+• Attribute: align="Center"  1
+6.1.2 Image 2
+<img src="6_1Logo.png" alt=" Logo" align="center"/>
+• File extension of the image: .png  1
+• Attribute: alt ="Logo"  1
+6.1.3 Heading 1
+<h2>Welcome to the Tournament!</h2>
+• <h2> …. </h2> tags inserted  1
+6.1.4 Table data 1
+<td>Date: 25 November 2025</td>
+• <td>…</td> tags inserted  1
+6.1.5 Horizontal line 3
+<hr width="50%" size="10%" color ="Gold"/>
+• <hr> tag inserted  1
+• Attribute: size="10%"  1
+• Attribute: color="Gold"  1
+6.1.6 Hyperlink 2
+<a href="Therisingsun.html">Register Now</a>
+• href inserted  1
+• <a> Closing tag moved to end of line  1
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 12 =====
+Computer Applications Technology/P1 12 DBE/May/June 2025
+SC/NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+6_2Entry
+….. 4
+<body bgcolor="lightyellow">
+<p> Please complete the form in full.</p>
+<table>
+<tr>
+<th colspan="2">ESports Event Entry</th>
+</tr>
+<table>
+
+<p><b> Please note standard rules and regulations
+apply.</b></p>
+</body>
+</html>
+ Attribute: bgcolor="lightyellow"  1
+ Table: border removed  OR border = "0" 1
+ Colspan="2"  1
+ Bold Tag: <b> …</b>  1
+Closing tag(s) or triangular brackets and nesting 1
+correctly used.  .......... 1
+Total for QUESTION 6 [15]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 13 =====
+Computer Applications Technology/P1 13 DBE/May/June 2025
+SC/NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+QUESTION 7 File names: 7Report, 7Staff, 7Export, 7Results Total Q7: 15
+Maximum Candidate
+No Criteria
+Mark Mark
+7Report
+7.1.1 Table of contents 3
+• Table of content inserted  1
+• Level 1: Gaming style  1
+• Level 2: Heading 3 style  1
+ALT+F9: { TOC \h \z \t "Heading 3,2,Gaming,1" }
+7.1.2 Hyperlink 2
+• Link added: On QR code to 7Results.html  1
+• ScreenTip: 'Viewing'  1
+7Staff
+7.2 Cell H5: 4
+=AND(B5<>"Yes",F5<>"Host",G5<>"Host")
+OR
+=AND(B5="No",F5<>"Host",G5<>"Host")
+• Operator: <>  1
+• B5<>"Yes"  OR B5="No" 1
+• F5<>"Host"  1
+• G5<>"Host"  1
+7Export
+7.3 Exporting: tblSA 3
+• Records exported: Player 1 – Player 20  1
+• Export data with formatting & layout  1
+• File name: 7Export.xlsx  1
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 14 =====
+Computer Applications Technology/P1 14 DBE/May/June 2025
+SC/NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+7Results
+7.4 …..  3
+<ol type = "I" >
+<img src="7Podium.png" alt="First Place Winner"
+ border ="3">
+<li><h2>Johan Sundstein</h2> </li>
+<p>Prize: R37 425.00</p>
+
+<li><h2>Kuro Takhasomi</h2></li>
+<p>Prize: R30 357.00</p>
+<li><h2>Saahil Arora</h2></li>
+<p>Prize: R21 257.00</p>
+</ol>
+ List: Attribute: type = 'I'  1
+ Image border: 3 pt  1
+ 2nd Place winner displays as list item: <li> …. </li>  1
+TOTAL FOR QUESTION 7 [15]
+TOTAL 150
+Copyright reserved

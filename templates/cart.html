@@ -1,0 +1,340 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Shopping Cart - South African Teachers Hub{% endblock %}
+
+{% block content %}
+<div class="container mx-auto px-4 py-8">
+    <h1 class="text-2xl font-light mb-6 text-black">Shopping Cart</h1>
+    
+    {% if items %}
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        <div class="lg:col-span-2">
+            <div class="azure-card overflow-hidden">
+                {% for item in items %}
+                <div class="flex items-center gap-3 md:gap-4 p-4 md:p-5 last:border-b-0" style="border-bottom: 1px solid var(--gray-300);">
+                    <div class="w-16 h-16 md:w-20 md:h-20 rounded overflow-hidden bg-gray-50 flex-shrink-0">
+                        <img src="{{ item.product.image_url }}" alt="{{ item.product.name }}" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <div class="flex-1 min-w-0">
+                        <h3 class="font-light text-sm text-black truncate">{{ item.product.name }}</h3>
+                        <p class="text-gray-500 text-xs font-light">{{ item.product.category.name }}</p>
+                        <p class="text-azure font-light mt-1 text-sm">R{{ "%.2f"|format(item.product.price) }}</p>
+                        <!-- Quantity controls for mobile -->
+                        <div class="flex items-center gap-2 mt-2 md:hidden">
+                            <button class="quantity-btn decrease-btn w-7 h-7 rounded border border-gray-300 hover:bg-gray-100 transition flex items-center justify-center" 
+                                    data-product-id="{{ item.product.id }}"
+                                    data-stock="{{ item.product.stock }}">
+                                <i class="fas fa-minus text-xs text-gray-600"></i>
+                            </button>
+                            <span class="quantity-display font-normal text-sm min-w-[2rem] text-center" data-product-id="{{ item.product.id }}">{{ item.quantity }}</span>
+                            <button class="quantity-btn increase-btn w-7 h-7 rounded border border-gray-300 hover:bg-gray-100 transition flex items-center justify-center"
+                                    data-product-id="{{ item.product.id }}"
+                                    data-stock="{{ item.product.stock }}">
+                                <i class="fas fa-plus text-xs text-gray-600"></i>
+                            </button>
+                            <span class="text-gray-500 text-xs font-light ml-1">Subtotal: <span class="subtotal-display text-black font-normal" data-product-id="{{ item.product.id }}">R{{ "%.2f"|format(item.subtotal) }}</span></span>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center hidden md:block">
+                        <p class="text-gray-500 text-xs mb-1 font-light">Quantity</p>
+                        <div class="flex items-center justify-center gap-2">
+                            <button class="quantity-btn decrease-btn w-7 h-7 rounded border border-gray-300 hover:bg-gray-100 transition flex items-center justify-center" 
+                                    data-product-id="{{ item.product.id }}"
+                                    data-stock="{{ item.product.stock }}">
+                                <i class="fas fa-minus text-xs text-gray-600"></i>
+                            </button>
+                            <span class="quantity-display font-normal text-sm min-w-[2rem] text-center" data-product-id="{{ item.product.id }}">{{ item.quantity }}</span>
+                            <button class="quantity-btn increase-btn w-7 h-7 rounded border border-gray-300 hover:bg-gray-100 transition flex items-center justify-center"
+                                    data-product-id="{{ item.product.id }}"
+                                    data-stock="{{ item.product.stock }}">
+                                <i class="fas fa-plus text-xs text-gray-600"></i>
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="text-right hidden md:block">
+                        <p class="text-gray-500 text-xs mb-1 font-light">Subtotal</p>
+                        <p class="subtotal-display font-light text-base text-black" data-product-id="{{ item.product.id }}">R{{ "%.2f"|format(item.subtotal) }}</p>
+                    </div>
+                    
+                    <button class="remove-cart-item text-gray-400 hover:text-gray-600 transition flex-shrink-0"
+                            data-product-id="{{ item.product.id }}"
+                            data-product-name="{{ item.product.name }}">
+                        <i class="fas fa-trash text-sm"></i>
+                    </button>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <div>
+            <div class="azure-card p-5 sticky top-24">
+                <h2 class="text-base font-normal mb-4 text-black">Order Summary</h2>
+                
+                <div class="space-y-2.5 mb-5">
+                    <div class="flex justify-between text-sm">
+                        <span class="text-black font-light">Subtotal (incl. VAT)</span>
+                        <span class="font-light text-black" id="cart-total">R{{ "%.2f"|format(total) }}</span>
+                    </div>
+                    <div class="flex justify-between text-sm">
+                        <span class="text-black font-light">Delivery</span>
+                        {% if total >= 500 %}
+                        <span class="font-light text-green-600" id="delivery-charge">Free</span>
+                        {% else %}
+                        <span class="font-light text-black" id="delivery-charge">R60.00</span>
+                        {% endif %}
+                    </div>
+                    <div id="free-delivery-notice">
+                    {% if total < 500 %}
+                    <div class="bg-blue-50 p-2 rounded text-xs font-light text-blue-700" style="border: 1px solid #BFDBFE;">
+                        <i class="fas fa-info-circle mr-1"></i>
+                        <span id="free-delivery-amount">Add R{{ "%.2f"|format(500 - total) }} more for free delivery</span>
+                    </div>
+                    {% endif %}
+                    </div>
+                    <div class="pt-2.5 flex justify-between" style="border-top: 1px solid var(--gray-300);">
+                        <span class="font-normal text-sm text-black">Total</span>
+                        <span class="font-light text-xl text-black" id="grand-total">R{{ "%.2f"|format(total if total >= 500 else total + 60) }}</span>
+                    </div>
+                </div>
+                
+                {% if current_user.is_authenticated %}
+                <a href="{{ url_for('checkout') }}" class="btn-azure-primary block text-center">
+                    Proceed to Checkout
+                </a>
+                {% else %}
+                <a href="{{ url_for('login', next=url_for('checkout')) }}" class="btn-azure-primary block text-center">
+                    Login to Checkout
+                </a>
+                {% endif %}
+                
+                <a href="{{ url_for('products') }}" class="block text-center mt-3 text-azure hover:underline text-sm font-light">
+                    Continue Shopping
+                </a>
+            </div>
+        </div>
+    </div>
+    {% else %}
+    <div class="text-center py-16">
+        <i class="fas fa-shopping-cart text-5xl text-gray-400 mb-4"></i>
+        <h2 class="text-xl font-light text-black mb-3">Your cart is empty</h2>
+        <p class="text-black text-sm font-light mb-6">Start shopping to add items to your cart</p>
+        <a href="{{ url_for('products') }}" class="btn-azure-primary inline-block">
+            Browse Products
+        </a>
+    </div>
+    {% endif %}
+</div>
+
+<script>
+    // Use event delegation for remove buttons
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add event listeners to all remove buttons
+        const removeButtons = document.querySelectorAll('.remove-cart-item');
+        removeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = this.dataset.productId;
+                const productName = this.dataset.productName;
+                removeFromCart(productId, productName);
+            });
+        });
+        
+        // Add event listeners for quantity buttons
+        const decreaseButtons = document.querySelectorAll('.decrease-btn');
+        const increaseButtons = document.querySelectorAll('.increase-btn');
+        
+        decreaseButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = this.dataset.productId;
+                const currentQty = parseInt(document.querySelector(`.quantity-display[data-product-id="${productId}"]`).textContent);
+                if (currentQty > 1) {
+                    updateQuantity(productId, currentQty - 1);
+                }
+            });
+        });
+        
+        increaseButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const productId = this.dataset.productId;
+                const stock = parseInt(this.dataset.stock);
+                const currentQty = parseInt(document.querySelector(`.quantity-display[data-product-id="${productId}"]`).textContent);
+                if (currentQty < stock) {
+                    updateQuantity(productId, currentQty + 1);
+                } else {
+                    showNotification(
+                        'Stock Limit Reached',
+                        `Only ${stock} items available in stock.`,
+                        'fa-exclamation-triangle',
+                        'text-yellow-500'
+                    );
+                }
+            });
+        });
+    });
+    
+    function updateQuantity(productId, newQuantity) {
+        // Disable all quantity buttons temporarily
+        const buttons = document.querySelectorAll('.quantity-btn');
+        buttons.forEach(btn => btn.disabled = true);
+        
+        fetch(`/update-cart-quantity/${productId}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ quantity: newQuantity })
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                // Update quantity display (all instances for this product)
+                const quantityDisplays = document.querySelectorAll(`.quantity-display[data-product-id="${productId}"]`);
+                quantityDisplays.forEach(display => {
+                    display.textContent = data.quantity;
+                });
+                
+                // Update subtotal (all instances for this product)
+                const subtotalDisplays = document.querySelectorAll(`.subtotal-display[data-product-id="${productId}"]`);
+                subtotalDisplays.forEach(display => {
+                    display.textContent = `R${data.subtotal.toFixed(2)}`;
+                });
+                
+                // Update cart total
+                document.getElementById('cart-total').textContent = `R${data.cart_total.toFixed(2)}`;
+                
+                // Update delivery charge
+                const deliveryEl = document.getElementById('delivery-charge');
+                if (data.delivery === 0) {
+                    deliveryEl.textContent = 'Free';
+                    deliveryEl.className = 'font-light text-green-600';
+                } else {
+                    deliveryEl.textContent = `R${data.delivery.toFixed(2)}`;
+                    deliveryEl.className = 'font-light text-black';
+                }
+                
+                // Update free delivery notice
+                const noticeContainer = document.getElementById('free-delivery-notice');
+                if (data.cart_total < 500) {
+                    const remaining = 500 - data.cart_total;
+                    noticeContainer.innerHTML = `
+                        <div class="bg-blue-50 p-2 rounded text-xs font-light text-blue-700" style="border: 1px solid #BFDBFE;">
+                            <i class="fas fa-info-circle mr-1"></i>
+                            <span>Add R${remaining.toFixed(2)} more for free delivery</span>
+                        </div>
+                    `;
+                } else {
+                    noticeContainer.innerHTML = '';
+                }
+                
+                // Update grand total
+                document.getElementById('grand-total').textContent = `R${data.grand_total.toFixed(2)}`;
+                
+                // Update cart badge
+                updateCartBadge();
+                
+            } else {
+                showNotification(
+                    'Update Failed',
+                    data.message || 'Failed to update quantity.',
+                    'fa-exclamation-circle',
+                    'text-red-500'
+                );
+            }
+        })
+        .catch(error => {
+            console.error('Error updating quantity:', error);
+            showNotification(
+                'Error',
+                'An error occurred while updating the quantity.',
+                'fa-exclamation-circle',
+                'text-red-500'
+            );
+        })
+        .finally(() => {
+            // Re-enable buttons
+            buttons.forEach(btn => btn.disabled = false);
+        });
+    }
+    
+    function removeFromCart(productId, productName) {
+        // Show confirmation in sidebar
+        showRemovalConfirmation(productId, productName);
+    }
+    
+    function showRemovalConfirmation(productId, productName) {
+        const panel = document.getElementById('notificationPanel');
+        const overlay = document.getElementById('cartOverlay');
+        const titleEl = document.getElementById('notificationTitle');
+        const iconEl = document.getElementById('notificationIcon');
+        const content = document.getElementById('notificationContent');
+        
+        // Escape product name for safe HTML display
+        const escapedName = productName.replace(/&/g, '&amp;')
+                                      .replace(/</g, '&lt;')
+                                      .replace(/>/g, '&gt;')
+                                      .replace(/"/g, '&quot;')
+                                      .replace(/'/g, '&#039;');
+        
+        // Update notification content with confirmation
+        titleEl.textContent = 'Confirm Removal';
+        iconEl.className = 'fas fa-exclamation-circle text-yellow-500 text-xl';
+        content.innerHTML = `
+            <div class="space-y-4">
+                <div class="p-4 bg-yellow-50 rounded border border-yellow-200">
+                    <p class="text-sm font-light text-black mb-2">Are you sure you want to remove this item from your cart?</p>
+                    <p class="text-sm font-normal text-black">${escapedName}</p>
+                </div>
+                <div class="flex gap-3">
+                    <button onclick="confirmRemoval('${productId}')" 
+                            class="flex-1 bg-gray-600 text-white py-2.5 rounded text-sm hover:bg-gray-700 transition font-light">
+                        Yes, Remove
+                    </button>
+                    <button onclick="closeNotificationPanel()"
+                            class="flex-1 border border-gray-300 text-black py-2.5 rounded text-sm hover:border-gray-400 transition font-light">
+                        Cancel
+                    </button>
+                </div>
+            </div>
+        `;
+        
+        // Show notification panel
+        panel.classList.add('active');
+        overlay.classList.add('active');
+    }
+    
+    function confirmRemoval(productId) {
+        console.log("Removing productId:", productId);
+        // Close confirmation panel
+        closeNotificationPanel();
+        
+        // Send request to remove item
+        fetch(`/remove-from-cart/${productId}`, {
+            method: 'GET'
+        })
+        .then(response => {
+            if (response.ok) {
+                // Show success notification
+                showNotification(
+                    'Item Removed from Cart',
+                    'The item has been removed from your cart.',
+                    'fa-check-circle',
+                    'text-green-500'
+                );
+                
+                // Reload page after a short delay
+                setTimeout(() => {
+                    window.location.reload();
+                }, 1500);
+            } else {
+                alert('Failed to remove item from cart.');
+            }
+        })
+        .catch(error => {
+            console.error('Error removing from cart:', error);
+            alert('Failed to remove item from cart.');
+        });
+    }
+</script>
+{% endblock %}

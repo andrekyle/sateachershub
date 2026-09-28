@@ -1,0 +1,4324 @@
+{% extends "lms_base.html" %}
+{% block title %}South African Teachers Hub — All High School subjects · DBE-aligned{% endblock %}
+{% block body_class %}apple-home{% endblock %}
+
+{% block extra_css %}
+<style>
+    /* Landing-page font override — Segoe UI everywhere on apple-home only */
+    body.apple-home,
+    body.apple-home *,
+    body.apple-home *::before,
+    body.apple-home *::after {
+        font-family: 'Segoe UI', 'Segoe UI Variable', 'Segoe UI Web (West European)',
+                     -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+    }
+</style>
+{% endblock %}
+
+{% block hero %}
+<style>
+    /* --------- Apple.com–style home --------- */
+    body.apple-home {
+        background: #fbfbfd;
+        color: #1d1d1f;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    /* Hide vertical scrollbar on home page (scrolling still works) */
+    body.apple-home { scrollbar-width: none; -ms-overflow-style: none; }
+    body.apple-home::-webkit-scrollbar { width: 0; height: 0; display: none; }
+    html:has(body.apple-home) { scrollbar-width: none; -ms-overflow-style: none; }
+    html:has(body.apple-home)::-webkit-scrollbar { width: 0; height: 0; display: none; }
+
+    /* Home-page nav: dark bar with light text */
+    body.apple-home .sath-nav {
+        background: #0a0a0a !important;
+        border-bottom: none !important;
+    }
+    body.apple-home .sath-brand,
+    body.apple-home .sath-links a,
+    body.apple-home .sath-links a.active,
+    body.apple-home .sath-links a.sath-admin,
+    body.apple-home .sath-links a:hover,
+    body.apple-home .sath-cta a:not(.sath-cta-primary),
+    body.apple-home .sath-mobile-toggle {
+        color: #f5f5f7 !important;
+    }
+    body.apple-home .sath-cta a.sath-primary {
+        color: #fff !important;
+        background: #0071e3 !important;
+        border-color: #0071e3 !important;
+    }
+    body.apple-home .sath-cta a.sath-primary:hover {
+        color: #fff !important;
+        background: #0077ed !important;
+        border-color: #0077ed !important;
+    }
+    body.apple-home .sath-cta .sath-userpill {
+        color: #f5f5f7 !important;
+        background: rgba(255,255,255,0.06) !important;
+        border-color: rgba(255,255,255,0.12) !important;
+    }
+    body.apple-home .sath-cta .sath-userpill:hover {
+        background: rgba(255,255,255,0.10) !important;
+        border-color: rgba(255,255,255,0.22) !important;
+    }
+    body.apple-home .sath-brand .sath-brand-accent {
+        color: #0071e3 !important;
+    }
+    body.apple-home main { min-height: 0 !important; padding: 0 !important; background: #fbfbfd; }
+    body.apple-home footer { margin-top: 0 !important; border-top: 0 !important; }
+    /* Hide the 60px spacer that lms_base injects after the nav */
+    body.apple-home nav.sath-nav + div[aria-hidden="true"] { display: none !important; }
+
+    /* Stage = full-bleed product tile, separated by 12px gutters */
+    .ap-stage {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        margin-bottom: 0;
+        text-align: center;
+        isolation: isolate;
+    }
+    .ap-stage:last-of-type { margin-bottom: 0; }
+    /* glossy top highlight + soft vignette on every stage */
+    .ap-stage::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background:
+            radial-gradient(120% 80% at 50% -10%, rgba(255,255,255,0.18), rgba(255,255,255,0) 55%),
+            radial-gradient(140% 100% at 50% 120%, rgba(0,0,0,0.18), rgba(0,0,0,0) 60%);
+        pointer-events: none;
+        z-index: 1;
+        mix-blend-mode: screen;
+        opacity: 0.55;
+    }
+    .ap-stage.is-light::before,
+    .ap-stage.is-white::before {
+        background:
+            radial-gradient(120% 80% at 50% -10%, rgba(255,255,255,0.9), rgba(255,255,255,0) 55%),
+            radial-gradient(140% 100% at 50% 120%, rgba(0,0,0,0.05), rgba(0,0,0,0) 60%);
+        mix-blend-mode: normal;
+        opacity: 0.9;
+    }
+
+    .ap-stage-inner {
+        max-width: 980px;
+        margin: 0 auto;
+        padding: 64px 22px 0;
+        position: relative;
+        z-index: 2;
+    }
+
+    /* Subtle text refinement: tighter optical kerning + soft glow on dark headlines */
+    .ap-headline.is-light {
+        text-shadow: 0 1px 0 rgba(255,255,255,0.04), 0 20px 60px rgba(255,255,255,0.04);
+    }
+
+    .ap-eyebrow {
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin: 0 0 14px;
+        color: #6e6e73;
+        display: inline-block;
+        position: relative;
+        padding-left: 18px;
+    }
+    .ap-eyebrow::before {
+        content: "";
+        position: absolute;
+        left: 0; top: 50%;
+        width: 12px; height: 1px;
+        background: currentColor;
+        opacity: 0.6;
+    }
+    .ap-eyebrow.is-light { color: rgba(255,255,255,0.65); }
+    .ap-eyebrow.is-accent { color: #0071e3; }
+
+    .ap-headline {
+        font-size: clamp(40px, 6vw, 80px);
+        font-weight: 600;
+        line-height: 1.05;
+        letter-spacing: -0.015em;
+        margin: 0 0 12px;
+        color: #1d1d1f;
+    }
+    .ap-headline.is-light { color: #f5f5f7; }
+    .ap-headline.ap-headline-sm { font-size: clamp(40px, 5.6vw, 76px); }
+
+    .ap-subhead {
+        font-size: clamp(19px, 1.6vw, 24px);
+        font-weight: 400;
+        line-height: 1.33;
+        letter-spacing: 0.004em;
+        max-width: 720px;
+        margin: 0 auto 18px;
+        color: #1d1d1f;
+    }
+    .ap-subhead.is-light { color: #f5f5f7; }
+    .ap-subhead.is-muted { color: #6e6e73; }
+
+    /* Inline blue chevron CTAs (Apple.com style) */
+    .ap-ctas {
+        display: inline-flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 22px 32px;
+        margin-top: 6px;
+    }
+    .ap-feature-list {
+        list-style: none;
+        padding: 0;
+        margin: 4px 0 22px;
+        display: inline-flex;
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
+    .ap-feature-list li {
+        font-size: 17px;
+        line-height: 1.45;
+        letter-spacing: 0.005em;
+        color: #1d1d1f;
+    }
+    .ap-feature-list.is-light li { color: rgba(255,255,255,0.92); }
+    .ap-feature-list .ap-feature-list-title {
+        font-weight: 600;
+        margin-right: 6px;
+        color: #1d1d1f;
+    }
+    .ap-feature-list.is-light .ap-feature-list-title { color: #fff; }
+
+    /* Premium feature tile (used inside dark hero stages) */
+    .ap-feature-tile {
+        margin: 28px auto 26px;
+        max-width: 560px;
+        padding: 22px 24px;
+        border-radius: 22px;
+        background: linear-gradient(180deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.04) 100%);
+        border: 1px solid rgba(255,255,255,0.10);
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.08),
+            0 30px 60px -30px rgba(0,0,0,0.6);
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+        text-align: left;
+    }
+    .ap-feature-tile-head {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-bottom: 14px;
+    }
+    .ap-feature-tile-ico {
+        flex: 0 0 auto;
+        width: 38px; height: 38px;
+        border-radius: 11px;
+        background: linear-gradient(180deg, #0071e3 0%, #0071e3 100%);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.35),
+            0 6px 14px -6px rgba(10,49,97,0.7);
+    }
+    .ap-feature-tile-ico svg { width: 20px; height: 20px; }
+    .ap-feature-tile-text { min-width: 0; }
+    .ap-feature-tile-title {
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: -0.005em;
+        color: #fff;
+        margin: 0 0 2px;
+    }
+    .ap-feature-tile-sub {
+        font-size: 14px;
+        color: rgba(255,255,255,0.65);
+        margin: 0;
+    }
+    .ap-chip-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+    .ap-chip {
+        display: inline-flex;
+        align-items: center;
+        height: 28px;
+        padding: 0 12px;
+        border-radius: 999px;
+        font-size: 12.5px;
+        font-weight: 500;
+        letter-spacing: 0.005em;
+        color: rgba(255,255,255,0.92);
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.14);
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+    }
+
+    /* --------- Stat strip (dark hero) --------- */
+    .ap-stats {
+        margin: 56px auto 0;
+        max-width: 1100px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        border-top: 1px solid rgba(255,255,255,0.10);
+        border-bottom: 1px solid rgba(255,255,255,0.10);
+    }
+    @media (max-width: 720px) { .ap-stats { grid-template-columns: repeat(2, 1fr); } }
+
+    .ap-stat {
+        padding: 32px 20px;
+        text-align: center;
+        border-right: 1px solid rgba(255,255,255,0.08);
+    }
+    .ap-stats > .ap-stat:last-child { border-right: 0; }
+    @media (max-width: 720px) {
+        .ap-stat:nth-child(2n) { border-right: 0; }
+        .ap-stat:nth-child(-n+2) { border-bottom: 1px solid rgba(255,255,255,0.08); }
+    }
+
+    .ap-stat-num {
+        margin: 0 0 8px;
+        font-size: clamp(32px, 3vw, 44px);
+        font-weight: 600;
+        letter-spacing: -0.025em;
+        color: #ffffff;
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+    }
+    .ap-stat-label {
+        margin: 0;
+        font-size: 11px;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: rgba(255,255,255,0.50);
+    }
+
+    /* --------- Bloom's filtering — mini app mockup --------- */
+    .ap-bloom {
+        position: relative;
+        margin: 40px auto 30px;
+        max-width: 720px;
+    }
+    .ap-bloom-glow {
+        position: absolute;
+        inset: -40px -20px;
+        background:
+            radial-gradient(60% 70% at 30% 0%, rgba(255,255,255,0.04), transparent 60%),
+            radial-gradient(50% 60% at 80% 30%, rgba(255,255,255,0.03), transparent 60%);
+        filter: blur(40px);
+        z-index: 0;
+        pointer-events: none;
+    }
+    .ap-bloom-card {
+        position: relative;
+        z-index: 1;
+        background: linear-gradient(180deg, #1d1d1f 0%, #0c0c0e 100%);
+        border: 1px solid rgba(255,255,255,0.06);
+        border-radius: 0;
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.06),
+            0 40px 80px -30px rgba(0,0,0,0.7);
+        overflow: hidden;
+        text-align: left;
+    }
+    .ap-bloom-toolbar {
+        display: flex; align-items: center; gap: 8px;
+        padding: 12px 16px;
+        background: rgba(255,255,255,0.03);
+        border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .ap-bloom-dot { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,0.15); }
+    .ap-bloom-dot.r { background: #ff5f57; }
+    .ap-bloom-dot.y { background: #febc2e; }
+    .ap-bloom-dot.g { background: #28c840; }
+    .ap-bloom-tab {
+        margin-left: 14px;
+        font-size: 11px;
+        color: rgba(255,255,255,0.55);
+        padding: 5px 12px;
+        border-radius: 0;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        font-weight: 600;
+    }
+    .ap-bloom-tab.is-active {
+        color: #fff;
+        background: rgba(255,255,255,0.06);
+        border: 1px solid rgba(255,255,255,0.14);
+    }
+    .ap-bloom-body {
+        display: grid;
+        grid-template-columns: 1.4fr 1fr;
+        gap: 0;
+    }
+    @media (max-width: 640px) { .ap-bloom-body { grid-template-columns: 1fr; } }
+
+    .ap-bloom-fields {
+        padding: 22px 22px 20px;
+        display: grid;
+        gap: 14px;
+        border-right: 1px solid rgba(255,255,255,0.06);
+    }
+    @media (max-width: 640px) { .ap-bloom-fields { border-right: 0; border-bottom: 1px solid rgba(255,255,255,0.06); } }
+
+    .ap-bloom-field {
+        display: grid;
+        grid-template-columns: 110px 1fr;
+        align-items: center;
+        gap: 12px;
+    }
+    .ap-bloom-label {
+        font-size: 10px;
+        color: rgba(255,255,255,0.45);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+    }
+    .ap-bloom-select {
+        display: inline-flex; align-items: center; justify-content: space-between;
+        padding: 10px 14px;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 0;
+        font-size: 13px;
+        color: #fff;
+    }
+    .ap-bloom-select em {
+        font-style: normal;
+        margin-left: 10px;
+        color: rgba(255,255,255,0.5);
+    }
+    .ap-bloom-segs {
+        display: inline-flex;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 0;
+        padding: 2px;
+    }
+    .ap-bloom-seg {
+        flex: 1;
+        text-align: center;
+        font-size: 12px;
+        padding: 7px 14px;
+        border-radius: 0;
+        color: rgba(255,255,255,0.65);
+    }
+    .ap-bloom-seg.is-on {
+        background: #ffffff;
+        color: #0A0A0A;
+        font-weight: 600;
+        box-shadow: none;
+    }
+    .ap-bloom-range {
+        display: flex; align-items: center; gap: 12px;
+        padding: 8px 14px;
+        background: rgba(255,255,255,0.03);
+        border: 1px solid rgba(255,255,255,0.10);
+        border-radius: 0;
+    }
+    .ap-bloom-range-track {
+        flex: 1;
+        height: 4px;
+        background: rgba(255,255,255,0.10);
+        border-radius: 999px;
+        position: relative;
+    }
+    .ap-bloom-range-fill {
+        position: absolute;
+        left: 8%; right: 60%;
+        top: 0; bottom: 0;
+        background: #ffffff;
+        border-radius: 999px;
+    }
+    .ap-bloom-range-val {
+        font-size: 12px;
+        color: #fff;
+        font-variant-numeric: tabular-nums;
+        min-width: 48px;
+        text-align: right;
+    }
+
+    .ap-bloom-result {
+        padding: 22px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 18px;
+        background: transparent;
+    }
+    .ap-bloom-count {
+        text-align: center;
+    }
+    .ap-bloom-count strong {
+        display: block;
+        font-size: 64px;
+        font-weight: 600;
+        line-height: 1;
+        color: #ffffff;
+        letter-spacing: -0.03em;
+        font-variant-numeric: tabular-nums;
+    }
+    .ap-bloom-count span {
+        display: block;
+        margin-top: 8px;
+        font-size: 11px;
+        color: rgba(255,255,255,0.50);
+        text-transform: uppercase;
+        letter-spacing: 0.16em;
+        font-weight: 600;
+    }
+    .ap-bloom-actions {
+        display: flex; flex-direction: column; gap: 8px;
+    }
+    .ap-bloom-btn {
+        display: inline-flex; align-items: center; justify-content: center;
+        height: 40px;
+        padding: 0 16px;
+        border-radius: 0;
+        font-size: 13px;
+        font-weight: 500;
+        color: rgba(255,255,255,0.85);
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.14);
+        letter-spacing: -0.005em;
+    }
+    .ap-bloom-btn.is-primary {
+        color: #0A0A0A;
+        background: #ffffff;
+        border-color: #ffffff;
+        font-weight: 600;
+        box-shadow: none;
+    }
+    .ap-bloom-caption {
+        position: relative; z-index: 1;
+        text-align: center;
+        margin: 18px 0 0;
+        font-size: 14px;
+        color: rgba(255,255,255,0.55);
+    }
+
+    /* --------- Live preview demo (animated, mimics real generator) --------- */
+    .ap-prev {
+        margin: 48px auto 0;
+        max-width: 1320px;
+        display: grid;
+        grid-template-columns: 0.8fr 1.2fr;
+        gap: 22px;
+        text-align: left;
+    }
+    @media (max-width: 820px) { .ap-prev { grid-template-columns: 1fr; } }
+
+    .ap-prev-pane {
+        background: #fff;
+        border: none;
+        border-radius: 14px;
+        box-shadow: 0 30px 60px -28px rgba(0,0,0,0.20);
+        overflow: hidden;
+        display: flex; flex-direction: column;
+    }
+    .ap-prev-bar {
+        display: flex; align-items: center; gap: 6px;
+        padding: 9px 14px;
+        background: #f5f5f7;
+        border-bottom: 1px solid #e5e5ea;
+        flex: 0 0 auto;
+    }
+    .ap-prev-dot { width: 9px; height: 9px; border-radius: 50%; background: #d1d1d6; }
+    .ap-prev-dot.r { background: #ff5f57; }
+    .ap-prev-dot.y { background: #febc2e; }
+    .ap-prev-dot.g { background: #28c840; }
+    .ap-prev-tab {
+        margin-left: 10px;
+        font-size: 11.5px;
+        color: #6e6e73;
+        font-weight: 500;
+        letter-spacing: 0.02em;
+    }
+    .ap-prev-caret {
+        display: inline-block;
+        width: 1.5px; height: 14px;
+        background: #0078D4;
+        margin-left: 1px;
+        animation: ap-blink 1s steps(2) infinite;
+        vertical-align: -2px;
+    }
+    @keyframes ap-blink { 50% { opacity: 0; } }
+
+    /* -- EDITOR (mimics generator_edit.html: gen-h, t-form-grid, gen-section) -- */
+    .ap-prev-edit {
+        padding: 100px 18px 22px;
+        font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    .ap-gen-h {
+        font-size: 13px;
+        font-weight: 600;
+        color: #0078D4;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        margin: 0 0 10px;
+    }
+    .ap-gen-h-sub { margin-top: 22px; }
+    .ap-gen-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px 12px;
+    }
+    .ap-gen-field { display: flex; flex-direction: column; gap: 4px; min-width: 0; }
+    .ap-gen-field.span-2 { grid-column: 1 / -1; }
+    .ap-gen-field label {
+        font-size: 11.5px;
+        color: #323130;
+        font-weight: 600;
+    }
+    .ap-gen-input {
+        position: relative;
+        display: inline-flex; align-items: center;
+        min-height: 32px;
+        padding: 6px 10px;
+        background: #fff;
+        border: 1px solid #c8c6c4;
+        border-radius: 2px;
+        font-size: 13px;
+        color: #201F1E;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .ap-gen-input.ap-gen-placeholder { color: #a19f9d; }
+    .ap-gen-input.ap-gen-select { justify-content: space-between; }
+    .ap-gen-input.is-focus { border-color: #0078D4; box-shadow: inset 0 0 0 1px #0078D4; }
+    .ap-gen-input .ap-prev-caret { display: none; }
+    .ap-gen-input.is-focus .ap-prev-caret { display: inline-block; }
+    .ap-gen-caret { color: #605e5c; font-size: 11px; margin-left: 6px; }
+    .ap-gen-selectwrap { position: relative; }
+    .ap-gen-selectwrap .ap-gen-input { display: flex; width: 100%; }
+    .ap-gen-options {
+        position: absolute;
+        top: calc(100% + 2px);
+        left: 0; right: 0;
+        margin: 0; padding: 4px 0;
+        list-style: none;
+        background: #fff;
+        border: 1px solid #c8c6c4;
+        border-radius: 2px;
+        box-shadow: 0 6.4px 14.4px rgba(0,0,0,0.13), 0 1.2px 3.6px rgba(0,0,0,0.1);
+        font-size: 13px;
+        color: #201F1E;
+        z-index: 5;
+        opacity: 0;
+        transform: translateY(-4px);
+        pointer-events: none;
+        transition: opacity 0.12s ease, transform 0.12s ease;
+    }
+    .ap-gen-options.is-open { opacity: 1; transform: translateY(0); }
+    .ap-gen-options li {
+        padding: 6px 10px;
+        cursor: default;
+    }
+    .ap-gen-options li.is-hover { background: #edebe9; }
+    .ap-gen-options li.is-selected { background: #deecf9; color: #0078D4; }
+
+    /* file picker (matches the screenshot) */
+    .ap-gen-file {
+        position: relative;
+        display: flex; align-items: center; gap: 10px;
+        min-height: 38px;
+        padding: 6px 10px;
+        background: #fff;
+        border: 1px solid #c8c6c4;
+        border-radius: 2px;
+        font-size: 13px;
+        color: #201F1E;
+    }
+    .ap-gen-filebtn {
+        background: #6e6e73;
+        color: #fff;
+        border: 1px solid #6e6e73;
+        padding: 4px 12px;
+        font-size: 13px;
+        border-radius: 2px;
+        cursor: default;
+    }
+    .ap-gen-filename { color: #a19f9d; flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .ap-gen-fileprog {
+        position: absolute;
+        left: 0; right: 0; bottom: -1px;
+        height: 2px;
+        background: transparent;
+        overflow: hidden;
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+    .ap-gen-fileprog.is-active { opacity: 1; }
+    .ap-gen-fileprog-bar {
+        display: block;
+        height: 100%;
+        width: 0;
+        background: #0078D4;
+        transition: width 0.18s linear;
+    }
+    .ap-gen-filethumb {
+        max-height: 28px; max-width: 36px;
+        object-fit: contain;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    .ap-gen-filethumb.is-shown { opacity: 1; }
+    .ap-gen-section {
+        background: #fafafa;
+        border: 1px solid #edebe9;
+        border-radius: 4px;
+        overflow: hidden;
+    }
+    .ap-gen-section-bar {
+        display: flex; align-items: center; gap: 10px;
+        padding: 8px 12px;
+        background: #f3f2f1;
+        border-bottom: 1px solid #edebe9;
+        font-size: 13px;
+        color: #201F1E;
+    }
+    .ap-gen-section-tag {
+        display: inline-block;
+        padding: 2px 8px;
+        background: #0078D4;
+        color: #fff;
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        border-radius: 2px;
+    }
+    .ap-gen-section-name { font-weight: 600; }
+    .ap-gen-qcard {
+        margin: 10px 12px 12px;
+        background: #fff;
+        border: 1px solid #edebe9;
+        border-radius: 4px;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+    .ap-gen-qhead {
+        display: flex; align-items: center; gap: 10px;
+        padding: 8px 12px;
+        border-bottom: 1px solid #f3f2f1;
+        font-size: 12px;
+        color: #605e5c;
+    }
+    .ap-gen-qbadge {
+        background: #eff6fc;
+        color: #0078D4;
+        padding: 2px 8px;
+        border-radius: 2px;
+        font-weight: 600;
+        font-size: 11.5px;
+    }
+    .ap-gen-qtype { color: #323130; font-weight: 500; }
+    .ap-gen-qmarks { margin-left: auto; }
+    .ap-gen-qmarks strong { color: #201F1E; font-weight: 600; }
+    .ap-gen-qbody {
+        padding: 12px;
+        font-size: 13px;
+        color: #201F1E;
+        min-height: 44px;
+        line-height: 1.45;
+    }
+    .ap-gen-qtext { white-space: pre-wrap; }
+
+    /* -- PAPER OUTPUT (mimics paper_print.html DBE A4 layout) -- */
+    .ap-prev-paper {
+        background: transparent;
+        border: none;
+        border-radius: 0;
+        box-shadow: none;
+        overflow: visible;
+    }
+    .ap-paper-toolbar {
+        display: flex; align-items: center; gap: 14px;
+        padding: 10px 16px;
+        background: #fff;
+        border-bottom: 1px solid #edebe9;
+        font-size: 12px;
+        color: #323130;
+        font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+        flex: 0 0 auto;
+    }
+    .ap-paper-tool-title {
+        font-weight: 600;
+        letter-spacing: 0.06em;
+        color: #201F1E;
+        font-size: 12px;
+    }
+    .ap-paper-tool-status { margin-left: auto; color: #605e5c; }
+    .ap-paper-tool-btn {
+        padding: 4px 10px;
+        border: 1px solid #c8c6c4;
+        border-radius: 2px;
+        background: #fff;
+        font-size: 12px;
+        color: #201F1E;
+    }
+    .ap-paper-tool-icon { color: #605e5c; font-size: 13px; }
+    .ap-paper-sheet {
+        flex: 1;
+        margin: 0;
+        background: #fff;
+        border: 1px solid #e5e5ea;
+        padding: 60px 64px 64px;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        color: #000;
+        box-shadow: 0 30px 60px -28px rgba(0,0,0,0.20);
+        border-radius: 2px;
+        text-align: center;
+        min-height: 640px;
+    }
+    .ap-paper-school {
+        font-size: 30px;
+        font-weight: 800;
+        color: #0b1b3a;
+        letter-spacing: 0.02em;
+        margin: 18px 0 32px;
+    }
+    .ap-paper-logo {
+        display: block;
+        margin: 8px auto 18px;
+        max-height: 110px;
+        max-width: 200px;
+        object-fit: contain;
+        opacity: 0;
+        transition: opacity 0.35s ease;
+    }
+    .ap-paper-logo.is-shown { opacity: 1; }
+    .ap-paper-cert {
+        font-size: 13px;
+        font-weight: bold;
+        color: #000;
+        letter-spacing: 0.06em;
+        line-height: 1.8;
+        margin-bottom: 36px;
+    }
+    .ap-paper-titlebox {
+        border: 1px solid #c8c6c4;
+        background: #fff;
+        padding: 22px 24px;
+        margin: 0 auto 30px;
+        max-width: 480px;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        line-height: 2;
+    }
+    .ap-paper-month { color: #000; }
+    .ap-paper-marks-line, .ap-paper-time-line {
+        font-size: 13px;
+        letter-spacing: 0.06em;
+        font-weight: bold;
+        color: #000;
+        margin-top: 10px;
+        text-align: right;
+    }
+    .ap-paper-marks-line strong { font-weight: bold; color: #000; }
+    .ap-paper-meta-line {
+        font-size: 12.5px;
+        letter-spacing: 0.04em;
+        color: #6e6e73;
+        margin-top: 28px;
+    }
+    .ap-paper-sign-line {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 13px;
+        letter-spacing: 0.04em;
+        color: #000;
+        font-weight: bold;
+        margin-top: 60px;
+    }
+    .ap-paper-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 80px;
+        padding-top: 14px;
+        font-size: 12px;
+        color: #000;
+        text-align: left;
+    }
+
+    /* Pulse on mirror update */
+    [data-mirror].is-pulse {
+        animation: ap-pulse 0.5s ease;
+        border-radius: 2px;
+    }
+    @keyframes ap-pulse {
+        0%   { background: rgba(0,120,212,0.22); box-shadow: 0 0 0 4px rgba(0,120,212,0.18); }
+        100% { background: transparent; box-shadow: 0 0 0 0 rgba(0,120,212,0); }
+    }
+
+    /* --------- Question builder simulation (Stage 3) --------- */
+    .ap-qb {
+        margin: 48px auto 0;
+        max-width: 1320px;
+        display: grid;
+        grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+        gap: 22px;
+        text-align: left;
+        align-items: start;
+    }
+    @media (max-width: 820px) { .ap-qb { grid-template-columns: 1fr; } }
+    .ap-qb-pane {
+        display: flex; flex-direction: column;
+        min-width: 0;
+        min-height: 980px;
+    }
+    .ap-qb-paper { box-shadow: none; background: transparent; }
+    .ap-qb-edit {
+        padding: 36px 22px 28px;
+        font-family: -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    .ap-qb-toolbar {
+        display: flex; align-items: center;
+        margin-bottom: 12px;
+    }
+    .ap-qb-tools { margin-left: auto; display: flex; gap: 6px; }
+    .ap-qb-tool {
+        width: 30px; height: 28px;
+        display: inline-flex; align-items: center; justify-content: center;
+        background: #fff;
+        border: 1px solid #c8c6c4;
+        border-radius: 2px;
+        font-size: 14px; color: #323130;
+    }
+
+    .ap-qb-section {
+        border: 1.5px dashed #0071e3;
+        border-radius: 10px;
+        padding: 14px;
+        background: #fff;
+    }
+    .ap-qb-active {
+        display: inline-block;
+        background: #fff;
+        color: #0078D4;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        padding: 3px 10px;
+        border: 1px solid #0071e3;
+        border-radius: 999px;
+        margin: -22px 0 12px;
+    }
+    .ap-qb-secrow {
+        display: flex; align-items: center; gap: 10px;
+        background: #fff;
+        border: 1px solid #c8c6c4;
+        border-radius: 2px;
+        padding: 10px 12px;
+        margin-bottom: 10px;
+    }
+    .ap-qb-sectitle { font-size: 14px; font-weight: 600; color: #201F1E; }
+    .ap-qb-secmeta { margin-left: auto; font-size: 12px; color: #605e5c; }
+    .ap-qb-trash {
+        width: 28px; height: 28px;
+        display: inline-flex; align-items: center; justify-content: center;
+        border: 1px solid #c8c6c4;
+        border-radius: 2px;
+        font-size: 13px;
+        color: #605e5c;
+    }
+    .ap-qb-instr {
+        min-height: 70px;
+        background: #fff;
+        border: 1px solid #c8c6c4;
+        border-radius: 2px;
+        padding: 10px 12px;
+        font-size: 13px;
+        color: #201F1E;
+        margin-bottom: 12px;
+        line-height: 1.5;
+    }
+    .ap-qb-instr.is-focus { border-color: #0078D4; box-shadow: inset 0 0 0 1px #0078D4; }
+    .ap-qb-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+    .ap-qb-btn {
+        display: inline-flex; align-items: center; gap: 6px;
+        padding: 6px 12px;
+        background: #fff;
+        border: 1px solid #c8c6c4;
+        border-radius: 2px;
+        font-size: 12.5px;
+        color: #201F1E;
+        transition: background 0.15s ease;
+    }
+    .ap-qb-btn-add.is-press {
+        background: #0078D4;
+        color: #fff;
+        border-color: #0078D4;
+    }
+    .ap-qb-qhead {
+        display: flex; align-items: center; gap: 12px;
+        font-size: 13px;
+        font-weight: 700;
+        color: #201F1E;
+        margin: 8px 0 10px;
+        letter-spacing: 0.04em;
+    }
+    .ap-qb-qtype {
+        flex: 1;
+        font-weight: 500;
+        font-size: 12.5px;
+        color: #201F1E;
+        background: #fff;
+        border: 1px solid #c8c6c4;
+        border-radius: 2px;
+        padding: 6px 10px;
+        display: inline-flex; align-items: center; justify-content: space-between;
+        letter-spacing: 0.04em;
+    }
+    .ap-qb-qlist { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+    .ap-qb-qitem {
+        display: flex; align-items: center; gap: 10px;
+        padding: 8px 12px;
+        background: #fff;
+        border: 1px solid #c8c6c4;
+        border-radius: 2px;
+        font-size: 12.5px;
+        color: #201F1E;
+        opacity: 0;
+        transform: translateY(-4px);
+        transition: opacity 0.25s ease, transform 0.25s ease, background 0.25s ease;
+    }
+    .ap-qb-qitem.is-shown { opacity: 1; transform: none; }
+    .ap-qb-qitem.is-just-added { background: #deecf9; }
+    .ap-qb-qitem.is-dragging {
+        background: #fff;
+        border-color: #0078D4;
+        box-shadow: 0 8px 24px rgba(0,120,212,0.25), inset 0 0 0 1px #0078D4;
+        z-index: 5;
+        position: relative;
+        cursor: grabbing;
+        transition: transform 0.55s cubic-bezier(.4, .2, .2, 1), box-shadow 0.2s ease;
+    }
+    .ap-qb-qitem.is-slide {
+        transition: transform 0.55s cubic-bezier(.4, .2, .2, 1);
+    }
+    .ap-qb-qitem.is-dragging .ap-qb-qitem-handle { color: #0078D4; }
+    .ap-qb-qitem-handle { color: #a19f9d; font-size: 11px; }
+    .ap-qb-qitem-num    { font-weight: 700; color: #201F1E; }
+    .ap-qb-qitem-text   { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #201F1E; }
+    .ap-qb-qitem-marks  { color: #605e5c; font-weight: 600; }
+    .ap-qb-qitem-actions { color: #605e5c; font-size: 12px; letter-spacing: 4px; }
+
+    /* paper sheet (right) — matches .ap-paper-sheet (Stage 2) styling */
+    .ap-qb-sheet {
+        text-align: left;
+        padding: 36px 40px 44px;
+        font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+        color: #1d1d1f;
+        min-height: 640px;
+    }
+    .ap-qb-runhead {
+        display: flex; justify-content: space-between; align-items: center;
+        font-style: italic;
+        font-size: 13px;
+        color: #1d1d1f;
+        padding-bottom: 10px;
+        margin-bottom: 28px;
+    }
+    .ap-qb-secbanner {
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        margin-bottom: 16px;
+        color: #1d1d1f;
+    }
+    .ap-qb-qsubhead {
+        font-size: 14px;
+        font-weight: 800;
+        letter-spacing: 0.04em;
+        margin-bottom: 14px;
+        color: #1d1d1f;
+    }
+    .ap-qb-stem {
+        font-size: 13.5px;
+        line-height: 1.7;
+        margin: 0 0 18px;
+        color: #1d1d1f;
+    }
+    .ap-qb-paperlist { list-style: none; margin: 0; padding: 0; }
+    .ap-qb-pq {
+        display: grid;
+        grid-template-columns: 40px 1fr 40px;
+        gap: 12px;
+        margin-bottom: 16px;
+        font-size: 13.5px;
+        line-height: 1.6;
+        opacity: 0;
+        transform: translateY(6px);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .ap-qb-pq.is-shown { opacity: 1; transform: none; }
+    .ap-qb-pq[hidden] { display: none !important; }
+    .ap-qb-pq, .ap-qb-pq > div { color: #000; font-weight: normal; }
+    .ap-qb-pq-num { font-weight: bold; color: #000; }
+    .ap-qb-pq-marks { text-align: right; font-weight: bold; color: #000; }
+    .ap-qb-pq-options li { color: #000; font-weight: normal; }
+    .ap-qb-pq-options { margin: 6px 0 0 18px; padding: 0; list-style: none; }
+    .ap-qb-pq-options li { padding: 2px 0; }
+
+    /* multi-line "textarea" look using span */
+    .ap-gen-input.ap-gen-textarea {
+        display: block;
+        width: 100%;
+        min-height: 78px;
+        white-space: normal;
+        overflow: hidden;
+        text-overflow: clip;
+        line-height: 1.5;
+        padding: 10px 12px;
+        align-items: flex-start;
+    }
+
+    /* "QUESTIONS" sub-header meta row */
+    .ap-qb-meta {
+        display: flex; align-items: center; gap: 10px;
+        margin: 0 0 12px;
+    }
+    .ap-qb-active-pill {
+        display: inline-block;
+        background: #fff;
+        color: #0078D4;
+        font-size: 10.5px;
+        font-weight: 700;
+        letter-spacing: 0.06em;
+        padding: 2px 8px;
+        border: 1px solid #0071e3;
+        border-radius: 999px;
+    }
+    .ap-qb-meta-text { font-size: 12px; color: #605e5c; }
+
+    /* --------- Memo simulation (Stage 4) --------- */
+    .ap-mm-row {
+        display: flex; align-items: flex-end; gap: 14px;
+        margin-top: 4px;
+    }
+    .ap-mm-num {
+        font-weight: 700;
+        font-size: 14px;
+        color: #201F1E;
+        min-width: 32px;
+    }
+    .ap-mm-choices {
+        display: flex; gap: 6px;
+    }
+    .ap-mm-choice {
+        width: 36px; height: 32px;
+        display: inline-flex; align-items: center; justify-content: center;
+        background: #fff;
+        border: 1px solid #c8c6c4;
+        border-radius: 2px;
+        font-size: 13px;
+        font-weight: 600;
+        color: #201F1E;
+        transition: background 0.15s ease, border-color 0.15s ease, color 0.15s ease, transform 0.15s ease;
+    }
+    .ap-mm-choice.is-hover { background: #f3f2f1; border-color: #a19f9d; }
+    .ap-mm-choice.is-selected {
+        background: #0078D4;
+        color: #fff;
+        border-color: #0078D4;
+    }
+    .ap-mm-choice.is-press { transform: scale(0.92); }
+
+    .ap-mm-marks {
+        margin-left: auto;
+        display: flex; flex-direction: column; align-items: flex-start; gap: 4px;
+    }
+    .ap-mm-marks label {
+        font-size: 11.5px;
+        color: #323130;
+        font-weight: 600;
+    }
+    .ap-mm-marksbox { width: 60px; justify-content: center; padding: 6px 8px; }
+
+    .ap-mm-btn-save.is-press {
+        background: #107c10;
+        color: #fff;
+        border-color: #107c10;
+    }
+
+    /* memo paper sheet additions */
+    .ap-qb.ap-mm { max-width: 1750px; grid-template-columns: minmax(0, 0.77fr) minmax(0, 1.23fr); align-items: start; }
+    .ap-qb.ap-mm .ap-prev-edit { padding-top: 0; }
+    .ap-qb.ap-mm .ap-qb-active { margin-top: -14px; }
+    .ap-mm-sheet { padding: 36px 40px 40px; }
+    .ap-mm-runhead {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-style: italic;
+        font-size: 12.5px;
+        line-height: 1.25;
+        margin-bottom: 26px;
+        white-space: nowrap;
+    }
+    .ap-mm-secbanner {
+        font-size: 13px;
+        font-weight: 800;
+        margin-bottom: 10px;
+        letter-spacing: 0.06em;
+    }
+    .ap-mm-grid {
+        display: grid;
+        grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+        gap: 18px;
+        align-items: start;
+    }
+    .ap-mm-col { min-width: 0; }
+    .ap-mm-col-q2 { overflow-x: visible; }
+    .ap-mm-qhead {
+        font-size: 13px;
+        font-weight: 800;
+        letter-spacing: 0.03em;
+        margin: 0 0 8px;
+        min-height: 2.9em;
+        display: flex;
+        align-items: flex-end;
+    }
+    .ap-mm-table {
+        width: 100%;
+        border-collapse: collapse;
+        table-layout: fixed;
+        font-size: 13px;
+        line-height: 1.45;
+    }
+    .ap-mm-table td {
+        border: 1px solid #8a8a8a;
+        padding: 6px 10px;
+        vertical-align: middle;
+    }
+    .ap-mm-table tr.is-pending td { opacity: 0; transition: opacity 0.25s ease; }
+    .ap-mm-table tr.is-shown td { opacity: 1; }
+    .ap-mm-table tbody tr:hover,
+    .ap-mm-table tbody tr:hover td { background: rgba(0,0,0,0.015) !important; }
+
+    .ap-mm-table-q1 .ap-mm-pq-num { width: 30%; }
+    .ap-mm-table-q1 .ap-mm-pq-ans { width: 28%; }
+    .ap-mm-table-q1 .ap-mm-pq-tick { width: 20%; text-align: center; }
+    .ap-mm-table-q1 .ap-mm-pq-marks { width: 22%; text-align: center; }
+
+    .ap-mm-table-q2 {
+        min-width: 0;
+        width: 100%;
+    }
+    .ap-mm-table-q2 .ap-mm-pq-num {
+        width: 60px;
+        min-width: 60px;
+        text-align: center;
+        white-space: nowrap;
+    }
+    .ap-mm-table-q2 .ap-mm-pq-ans {
+        width: 36px;
+        min-width: 36px;
+        text-align: center;
+        white-space: nowrap;
+    }
+    .ap-mm-table-q2 .ap-mm-pq-tick {
+        width: 44px;
+        min-width: 44px;
+        text-align: center;
+        white-space: nowrap;
+    }
+    .ap-mm-table-q2 .ap-mm-pq-text {
+        width: 100px;
+        min-width: 100px;
+        white-space: normal;
+        overflow: visible;
+        word-break: normal;
+        overflow-wrap: break-word;
+    }
+    .ap-mm-table-q2 .ap-mm-pq-marks {
+        width: 32px;
+        min-width: 32px;
+        text-align: center;
+        white-space: nowrap;
+    }
+
+    .ap-mm-totalrow td {
+        border: 1px solid #8a8a8a;
+        padding: 10px 12px;
+    }
+    .ap-mm-total-label {
+        text-align: right;
+        font-weight: 700;
+    }
+
+    @media (max-width: 1200px) {
+        .ap-mm-grid { grid-template-columns: 1fr; gap: 16px; }
+        .ap-mm-runhead { font-size: 12px; margin-bottom: 20px; }
+        .ap-mm-secbanner { font-size: 13px; }
+        .ap-mm-qhead { font-size: 13px; }
+        .ap-mm-table { font-size: 12.5px; }
+    }
+    .ap-link {
+        font-size: 19px;
+        font-weight: 400;
+        line-height: 1.2;
+        letter-spacing: 0.012em;
+        color: #0071e3;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 4px;
+    }
+    .ap-link:hover { text-decoration: none; opacity: 0.85; }
+    .ap-link::after {
+        content: "›";
+        font-size: 22px;
+        line-height: 1;
+        margin-left: 2px;
+        transform: translateY(-1px);
+    }
+
+    /* Pill button (Apple "Buy" style) — glossy */
+    .ap-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 11px 22px;
+        font-size: 17px;
+        font-weight: 400;
+        line-height: 1.2;
+        border-radius: 980px;
+        background: linear-gradient(180deg, #0071e3 0%, #0071e3 50%, #0071e3 100%);
+        color: #fff !important;
+        text-decoration: none;
+        border: 1px solid rgba(255,255,255,0.08);
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.35),
+            inset 0 -1px 0 rgba(0,0,0,0.15),
+            0 1px 2px rgba(0, 50, 120, 0.25),
+            0 8px 22px -8px rgba(0, 90, 200, 0.45);
+        transition: filter .2s, transform .15s, box-shadow .2s;
+    }
+    .ap-btn:hover {
+        filter: brightness(1.06);
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.4),
+            inset 0 -1px 0 rgba(0,0,0,0.18),
+            0 2px 4px rgba(0, 50, 120, 0.3),
+            0 12px 28px -8px rgba(0, 90, 200, 0.55);
+    }
+    .ap-btn:active { transform: translateY(1px); filter: brightness(0.97); }
+
+    /* Stage background variants — premium gradient washes */
+    .ap-stage.is-light    { background: linear-gradient(180deg, #ffffff 0%, #f5f5f7 60%, #efeff2 100%); }
+    .ap-stage.is-white    { background: linear-gradient(180deg, #ffffff 0%, #fafafc 100%); }
+    .ap-stage.is-dark     { background: linear-gradient(180deg, #0a0a0a 0%, #000 55%, #050505 100%); }
+    .ap-stage.is-charcoal { background: linear-gradient(180deg, #2a2a2c 0%, #1d1d1f 60%, #141416 100%); }
+    .ap-stage.is-gradient {
+        background:
+            radial-gradient(70% 60% at 50% -10%, rgba(255,255,255,0.10), rgba(255,255,255,0) 60%),
+            radial-gradient(ellipse at top, #1d1d1f 0%, #000 70%);
+    }
+    .ap-stage.is-tall .ap-stage-inner { padding-bottom: 64px; }
+
+    /* Subtle inner edge sheen on dark stages */
+    .ap-stage.is-dark::after,
+    .ap-stage.is-charcoal::after,
+    .ap-stage.is-gradient::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        z-index: 1;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.06), inset 0 -1px 0 rgba(0,0,0,0.5);
+    }
+
+    /* --------- Two-up tile row --------- */
+    .ap-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+    @media (max-width: 734px) { .ap-row { grid-template-columns: 1fr; } }
+    .ap-row .ap-stage { margin-bottom: 0; }
+    .ap-row .ap-stage-inner { padding: 56px 22px; }
+    .ap-row .ap-headline { font-size: clamp(32px, 3.4vw, 48px); }
+    .ap-row .ap-subhead  { font-size: 19px; }
+
+    /* --------- Three-up small tile row --------- */
+    .ap-row3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+    @media (max-width: 980px) { .ap-row3 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 640px) { .ap-row3 { grid-template-columns: 1fr; } }
+    .ap-row3 .ap-stage { margin-bottom: 0; }
+    .ap-row3 .ap-stage-inner { padding: 48px 22px; }
+    .ap-row3 .ap-headline { font-size: clamp(26px, 2.4vw, 32px); }
+    .ap-row3 .ap-subhead { font-size: 16px; max-width: 380px; }
+    .ap-feat-ico {
+        width: 56px; height: 56px;
+        margin: 0 auto 18px;
+        color: #0071e3;
+    }
+    .ap-feat-ico svg {
+        width: 100%; height: 100%;
+        stroke: currentColor; fill: none;
+        stroke-width: 1.4;
+        stroke-linecap: round; stroke-linejoin: round;
+    }
+    .ap-row3 .ap-stage.is-dark .ap-feat-ico,
+    .ap-row3 .ap-stage.is-charcoal .ap-feat-ico { color: #0071e3; }
+
+    /* --------- Hero (top) --------- */
+    .ap-hero {
+        background: linear-gradient(180deg, #0a0a0a 0%, #000 55%, #050505 100%);
+        padding: 96px 22px 88px;
+        margin-bottom: 12px;
+        color: #f5f5f7;
+    }
+    .ap-hero-grid {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr);
+        gap: 56px;
+        align-items: center;
+    }
+    .ap-hero-text { text-align: left; }
+    .ap-hero-text .ap-ctas { justify-content: flex-start; }
+    .ap-hero-media {
+        position: relative;
+        border-radius: 0;
+        overflow: hidden;
+        box-shadow: none;
+        background: #000;
+        aspect-ratio: 4 / 3;
+        /* Extend the right edge of the video to the right border of the
+           hero section, regardless of the centred 1200px max-width grid.
+           At viewports < 1244px (where the grid hits its container) this
+           collapses to -22px (the hero's right padding); on wider screens
+           it pulls further right so the video lines up with the hero edge.
+           min(0px, …) clamps to a non-positive value so we never push the
+           video to the right when the hero stacks. */
+        margin-right: min(0px, calc(-50vw + 600px - 22px));
+    }
+    .ap-hero-media video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+    @media (max-width: 900px) {
+        .ap-hero { padding: 72px 18px 64px; }
+        .ap-hero-grid {
+            grid-template-columns: 1fr;
+            gap: 36px;
+            text-align: center;
+        }
+        .ap-hero-text { text-align: center; }
+        .ap-hero-text .ap-ctas { justify-content: center; }
+        .ap-hero-media { aspect-ratio: 16 / 10; margin-right: 0; }
+    }
+    .ap-hero .ap-headline {
+        font-size: clamp(34px, 4.4vw, 56px);
+        font-weight: 600;
+        letter-spacing: -0.02em;
+        margin-bottom: 10px;
+        color: #f5f5f7;
+    }
+    .ap-hero .ap-subhead {
+        font-size: clamp(16px, 1.3vw, 19px);
+        font-weight: 400;
+        max-width: 560px;
+        color: #a1a1a6;
+        margin-bottom: 24px;
+        line-height: 1.45;
+    }
+    .ap-hero .ap-hero-eyebrow-tag { color: #a1a1a6; }
+    .ap-hero .ap-hero-eyebrow-sep { background: #3a3a3c; }
+    .ap-hero .ap-hero-eyebrow-mark { color: #0071e3; }
+    .ap-hero .ap-link { color: #0071e3; }
+
+    /* Hero CTA buttons styled to match the moderator "Approve & sign" / "Request changes" pair. */
+    .ap-hero .ap-btn,
+    .ap-hero .ap-link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px 22px;
+        min-width: 140px;
+        box-sizing: border-box;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 1.2;
+        border-radius: 980px;
+        text-decoration: none !important;
+        transition: filter .15s, background .15s, border-color .15s;
+        box-shadow: none;
+        border: 1px solid transparent;
+        background: none;
+        filter: none;
+    }
+    .ap-hero .ap-btn {
+        background: #007AFF !important;
+        color: #fff !important;
+        border-color: #007AFF !important;
+    }
+    .ap-hero .ap-btn:hover { filter: brightness(1.05); background: #0071e3 !important; border-color: #0071e3 !important; box-shadow: none; }
+    .ap-hero .ap-btn:active { transform: none; filter: brightness(0.95); }
+    .ap-hero .ap-link {
+        background: #fff !important;
+        color: #1d1d1f !important;
+        border-color: #d2d2d7 !important;
+    }
+    .ap-hero .ap-link:hover { background: #f5f5f7 !important; opacity: 1; border-color: #c7c7cc !important; }
+    .ap-hero .ap-link::after { content: none !important; }
+
+    /* --------- Hero eyebrow (text-only, no pill) --------- */
+    .ap-hero-eyebrow {
+        display: inline-flex;
+        align-items: center;
+        gap: 14px;
+        margin: 0 0 26px;
+        font-size: 13px;
+        line-height: 1;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+        font-weight: 500;
+    }
+    .ap-hero-eyebrow-mark {
+        color: #0071e3;
+        font-weight: 600;
+        letter-spacing: 0.16em;
+    }
+    .ap-hero-eyebrow-sep {
+        width: 28px;
+        height: 1px;
+        background: #c7c7cc;
+    }
+    .ap-hero-eyebrow-tag {
+        color: #6e6e73;
+        font-weight: 500;
+    }
+
+    /* --------- Hero kicker (premium pill) --------- */
+    .ap-kicker {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 6px 14px 6px 6px;
+        margin: 0 0 22px;
+        border-radius: 999px;
+        background: rgba(255,255,255,0.6);
+        border: 1px solid rgba(0,0,0,0.06);
+        backdrop-filter: saturate(180%) blur(12px);
+        -webkit-backdrop-filter: saturate(180%) blur(12px);
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.9),
+            0 1px 2px rgba(0,0,0,0.04),
+            0 8px 24px -10px rgba(0,0,0,0.08);
+        font-size: 13px;
+        line-height: 1;
+    }
+    .ap-kicker-brand {
+        background: linear-gradient(180deg, #0071e3 0%, #0071e3 100%);
+        color: #fff;
+        font-weight: 600;
+        letter-spacing: 0.02em;
+        padding: 6px 12px;
+        border-radius: 999px;
+        text-transform: uppercase;
+        font-size: 11px;
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.3),
+            0 4px 10px -3px rgba(0, 90, 200, 0.45);
+    }
+    .ap-kicker-sep {
+        width: 4px; height: 4px;
+        background: #c7c7cc;
+        border-radius: 50%;
+    }
+    .ap-kicker-tag {
+        color: #1d1d1f;
+        font-weight: 500;
+        letter-spacing: -0.01em;
+        font-size: 13px;
+    }
+
+    /* Decorative app mockup inside dark stages */
+    .ap-mock {
+        margin: 36px auto 0;
+        max-width: 760px;
+        background: #fff;
+        border-radius: 18px;
+        box-shadow: 0 30px 60px -20px rgba(0,0,0,0.5);
+        overflow: hidden;
+        text-align: left;
+        color: #1d1d1f;
+    }
+    .ap-mock-bar {
+        display: flex; align-items: center; gap: 6px;
+        padding: 12px 16px;
+        background: #f5f5f7;
+        border-bottom: 1px solid #e5e5ea;
+    }
+    .ap-mock-dot { width: 11px; height: 11px; border-radius: 50%; background: #ddd; }
+    .ap-mock-dot.r { background: #ff5f57; }
+    .ap-mock-dot.y { background: #febc2e; }
+    .ap-mock-dot.g { background: #28c840; }
+    .ap-mock-url {
+        margin-left: 12px;
+        font-size: 12px;
+        color: #6e6e73;
+        background: #fff;
+        border-radius: 6px;
+        padding: 4px 10px;
+        flex: 1;
+        max-width: 320px;
+    }
+    .ap-mock-body { padding: 22px; font-size: 13px; line-height: 1.55; }
+    .ap-mock-body h4 { margin: 0 0 10px; font-size: 15px; font-weight: 600; }
+    .ap-mock-body .row {
+        display: flex; justify-content: space-between;
+        padding: 8px 0;
+        border-bottom: 1px solid #f0f0f2;
+    }
+    .ap-mock-body .row:last-child { border: 0; }
+    .ap-mock-body .row .marks { color: #0071e3; font-weight: 500; font-variant-numeric: tabular-nums; }
+
+    /* --------- Cognitive Levels — feature-card grid (light/dark alternating) --------- */
+    .ap-cog-grid {
+        margin: 56px auto 0;
+        max-width: 1280px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px;
+    }
+    @media (max-width: 1100px) { .ap-cog-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px)  { .ap-cog-grid { grid-template-columns: 1fr; } }
+
+    .ap-cog-card {
+        position: relative;
+        background: linear-gradient(180deg, #ffffff 0%, #fafafc 100%);
+        border: 1px solid rgba(0,0,0,0.04);
+        border-radius: 0;
+        padding: 28px 24px;
+        aspect-ratio: 1 / 1;
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        color: #1d1d1f;
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.9),
+            0 1px 2px rgba(0,0,0,0.03),
+            0 18px 40px -20px rgba(0,0,0,0.14);
+        transition: transform .25s, box-shadow .25s;
+        overflow: hidden;
+    }
+    .ap-cog-card:hover {
+        transform: translateY(-3px);
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.9),
+            0 2px 4px rgba(0,0,0,0.04),
+            0 26px 50px -18px rgba(0,0,0,0.22);
+    }
+    /* Alternate dark cards (2nd & 4th) */
+    .ap-cog-grid > .ap-cog-card:nth-child(even) {
+        background: linear-gradient(180deg, #1d1d1f 0%, #0c0c0e 100%);
+        border-color: rgba(255,255,255,0.06);
+        color: #f5f5f7;
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.06),
+            0 1px 2px rgba(0,0,0,0.4),
+            0 24px 50px -20px rgba(0,0,0,0.55);
+    }
+    .ap-cog-grid > .ap-cog-card:nth-child(even):hover {
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.06),
+            0 2px 4px rgba(0,0,0,0.5),
+            0 32px 60px -18px rgba(0,0,0,0.7);
+    }
+
+    .ap-cog-card .ap-cog-eyebrow {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: rgba(0,0,0,0.45);
+        margin: 0 0 12px;
+    }
+    .ap-cog-grid > .ap-cog-card:nth-child(even) .ap-cog-eyebrow { color: rgba(255,255,255,0.45); }
+
+    .ap-cog-card .ap-cog-num {
+        font-size: clamp(40px, 3.6vw, 56px);
+        font-weight: 600;
+        line-height: 1;
+        letter-spacing: -0.035em;
+        color: #1d1d1f;
+        margin: 0 0 10px;
+        font-variant-numeric: tabular-nums;
+    }
+    .ap-cog-grid > .ap-cog-card:nth-child(even) .ap-cog-num { color: #f5f5f7; }
+
+    .ap-cog-card .ap-cog-title {
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        color: #1d1d1f;
+        margin: 0 0 8px;
+    }
+    .ap-cog-grid > .ap-cog-card:nth-child(even) .ap-cog-title { color: #f5f5f7; }
+
+    .ap-cog-card .ap-cog-desc {
+        font-size: 13px;
+        line-height: 1.5;
+        color: rgba(0,0,0,0.55);
+        margin: 0 0 16px;
+        flex: 1;
+    }
+    .ap-cog-grid > .ap-cog-card:nth-child(even) .ap-cog-desc { color: rgba(255,255,255,0.62); }
+
+    .ap-cog-card .ap-cog-foot {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 14px;
+        border-top: 1px solid rgba(0,0,0,0.06);
+    }
+    .ap-cog-grid > .ap-cog-card:nth-child(even) .ap-cog-foot { border-top-color: rgba(255,255,255,0.08); }
+
+    .ap-cog-card .ap-cog-tag {
+        font-size: 10px;
+        font-weight: 600;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: rgba(0,0,0,0.55);
+    }
+    .ap-cog-grid > .ap-cog-card:nth-child(even) .ap-cog-tag { color: rgba(255,255,255,0.65); }
+
+    .ap-cog-card .ap-cog-wt {
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        color: #0071e3;
+        font-variant-numeric: tabular-nums;
+    }
+    .ap-cog-grid > .ap-cog-card:nth-child(even) .ap-cog-wt { color: #0071e3; }
+
+    /* --------- Unified Features section --------- */
+    .ap-features {
+        background: linear-gradient(180deg, #f5f5f7 0%, #ececf0 100%);
+        padding: 96px 22px;
+        margin-bottom: 12px;
+        position: relative;
+    }
+    .ap-features-inner { max-width: 1080px; margin: 0 auto; }
+    .ap-features-head { text-align: center; margin-bottom: 56px; }
+    .ap-features-head .ap-eyebrow { margin-left: auto; margin-right: auto; }
+    .ap-features-title {
+        font-size: clamp(36px, 4.6vw, 56px);
+        font-weight: 600;
+        line-height: 1.05;
+        letter-spacing: -0.015em;
+        color: #1d1d1f;
+        margin: 0;
+    }
+    .ap-features-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+    @media (max-width: 900px) { .ap-features-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .ap-features-grid { grid-template-columns: 1fr; } }
+
+    .ap-fcard {
+        background: linear-gradient(180deg, #ffffff 0%, #fafafc 100%);
+        border-radius: 0;
+        padding: 36px 32px;
+        aspect-ratio: 1 / 1;
+        border: 1px solid rgba(0,0,0,0.04);
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.9),
+            0 1px 2px rgba(0,0,0,0.03),
+            0 18px 40px -20px rgba(0,0,0,0.14);
+        display: flex; flex-direction: column;
+        text-align: left;
+        transition: transform .25s, box-shadow .25s;
+    }
+    .ap-fcard:hover {
+        transform: translateY(-3px);
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.9),
+            0 2px 4px rgba(0,0,0,0.04),
+            0 26px 50px -18px rgba(0,0,0,0.22);
+    }
+    /* Alternating dark tiles */
+    .ap-fcard.is-dark,
+    .ap-features-grid > .ap-fcard:nth-child(even) {
+        background: linear-gradient(180deg, #1d1d1f 0%, #0c0c0e 100%);
+        border-color: rgba(255,255,255,0.06);
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.06),
+            0 1px 2px rgba(0,0,0,0.4),
+            0 24px 50px -20px rgba(0,0,0,0.55);
+    }
+    .ap-fcard.is-dark:hover,
+    .ap-features-grid > .ap-fcard:nth-child(even):hover {
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.06),
+            0 2px 4px rgba(0,0,0,0.5),
+            0 32px 60px -18px rgba(0,0,0,0.7);
+    }
+    .ap-fcard.is-dark h3,
+    .ap-features-grid > .ap-fcard:nth-child(even) h3 { color: #f5f5f7; }
+    .ap-fcard.is-dark p,
+    .ap-features-grid > .ap-fcard:nth-child(even) p { color: rgba(255,255,255,0.65); }
+    .ap-fcard.is-dark .ap-fcard-ico,
+    .ap-features-grid > .ap-fcard:nth-child(even) .ap-fcard-ico { color: #0071e3; }
+
+    .ap-fcard-ico {
+        width: 48px; height: 48px;
+        margin-bottom: 26px;
+        color: #0071e3;
+    }
+    .ap-fcard-ico svg {
+        width: 100%; height: 100%;
+        stroke: currentColor; fill: none;
+        stroke-width: 1;
+        stroke-linecap: round; stroke-linejoin: round;
+    }
+    .ap-fcard h3 {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.15;
+        letter-spacing: -0.015em;
+        color: #1d1d1f;
+        margin: 0 0 10px;
+    }
+    .ap-fcard p {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #6e6e73;
+        margin: 0;
+    }
+
+    /* --------- Final CTA (teacher) --------- */
+    .ap-cta {
+        background: #f5f5f7;
+        padding: 96px 22px;
+        border-top: 1px solid rgba(0,0,0,0.06);
+    }
+    .ap-cta-inner {
+        max-width: 1180px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 56px;
+        align-items: center;
+    }
+    @media (max-width: 880px) {
+        .ap-cta-inner { grid-template-columns: 1fr; gap: 32px; text-align: center; }
+        .ap-cta-art { order: -1; max-width: 420px; margin: 0 auto; }
+    }
+    .ap-cta h2 {
+        font-size: clamp(32px, 4.4vw, 52px);
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        color: #1d1d1f;
+        line-height: 1.08;
+        margin: 0 0 18px;
+    }
+    .ap-cta h2 em { font-style: normal; color: #0071e3; }
+    .ap-cta p {
+        font-size: 18px;
+        line-height: 1.5;
+        color: #515154;
+        margin: 0 0 28px;
+        max-width: 520px;
+    }
+    @media (max-width: 880px) { .ap-cta p { margin-left: auto; margin-right: auto; } }
+    .ap-cta-actions { display: flex; gap: 12px; flex-wrap: wrap; }
+    @media (max-width: 880px) { .ap-cta-actions { justify-content: center; } }
+    .ap-cta-btn {
+        display: inline-flex; align-items: center; gap: 8px;
+        height: 50px; padding: 0 26px;
+        border-radius: 999px;
+        font-size: 16px; font-weight: 500;
+        text-decoration: none;
+        transition: transform 120ms ease, background 120ms ease, color 120ms ease;
+    }
+    .ap-cta-btn.is-primary { background: #0071e3; color: #fff; }
+    .ap-cta-btn.is-primary:hover { background: #0077ed; transform: translateY(-1px); }
+    .ap-cta-btn.is-ghost { background: transparent; color: #1d1d1f; border: 1px solid rgba(0,0,0,0.18); }
+    .ap-cta-btn.is-ghost:hover { background: rgba(0,0,0,0.04); }
+    .ap-cta-art { width: 100%; height: auto; display: block; }
+
+    /* CTA design used as top hero (sits right under the dark fixed nav) */
+    .ap-cta-hero { padding-top: 120px; padding-bottom: 80px; background: #fbfbfd; border-top: 0; }
+    .ap-cta-hero h1 {
+        font-size: clamp(40px, 5.4vw, 68px);
+        font-weight: 600;
+        letter-spacing: -0.018em;
+        color: #1d1d1f;
+        line-height: 1.05;
+        margin: 0 0 22px;
+    }
+    .ap-cta-hero h1 em { font-style: normal; color: #0071e3; }
+    @media (max-width: 880px) { .ap-cta-hero { padding-top: 96px; padding-bottom: 56px; } }
+
+    /* --------- Pricing (Apple style) --------- */
+    .ap-pricing { background: #fbfbfd; padding: 96px 22px; }
+    .ap-pricing-inner { max-width: 1080px; margin: 0 auto; }
+    .ap-pricing h2 {
+        text-align: center;
+        font-size: clamp(36px, 4.8vw, 56px);
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        color: #1d1d1f;
+        margin: 0 0 12px;
+    }
+    .ap-pricing-sub {
+        text-align: center;
+        font-size: 21px;
+        color: #6e6e73;
+        margin: 0 0 56px;
+        font-weight: 400;
+    }
+    .ap-plans {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    @media (max-width: 980px) {
+        .ap-plans { grid-template-columns: 1fr; max-width: 480px; margin: 0 auto; }
+    }
+
+    .ap-plan {
+        background: linear-gradient(180deg, #ffffff 0%, #fafafc 100%);
+        border-radius: 22px;
+        padding: 36px 30px;
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.9),
+            0 1px 2px rgba(0,0,0,0.04),
+            0 18px 40px -18px rgba(0,0,0,0.18),
+            0 30px 60px -30px rgba(0,0,0,0.12);
+        border: 1px solid rgba(0,0,0,0.04);
+        display: flex; flex-direction: column;
+        position: relative;
+        transition: transform .25s, box-shadow .25s;
+    }
+    .ap-plan:hover {
+        transform: translateY(-2px);
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.9),
+            0 2px 4px rgba(0,0,0,0.05),
+            0 24px 50px -18px rgba(0,0,0,0.22),
+            0 40px 80px -30px rgba(0,0,0,0.16);
+    }
+    .ap-plan.is-popular {
+        background: linear-gradient(180deg, #2a2a2c 0%, #1d1d1f 55%, #141416 100%);
+        color: #f5f5f7;
+        border-color: rgba(255,255,255,0.06);
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.08),
+            0 2px 6px rgba(0,0,0,0.4),
+            0 24px 60px -18px rgba(0,0,0,0.55),
+            0 50px 100px -40px rgba(0,0,0,0.5);
+    }
+    .ap-plan-tag {
+        position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+        background: linear-gradient(180deg, #0071e3, #0071e3);
+        color: #fff;
+        font-size: 12px; font-weight: 600; letter-spacing: 0.04em;
+        padding: 6px 14px; border-radius: 999px;
+        text-transform: uppercase;
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.3),
+            0 6px 14px -4px rgba(0, 90, 200, 0.5);
+    }
+    .ap-plan h3 { font-size: 24px; font-weight: 600; margin: 0 0 6px; letter-spacing: -0.01em; }
+    .ap-plan-sub {
+        font-size: 15px; color: #6e6e73;
+        margin: 0 0 22px; line-height: 1.45;
+        min-height: 44px;
+    }
+    .ap-plan.is-popular .ap-plan-sub { color: #a1a1a6; }
+    .ap-plan-price {
+        display: flex; align-items: baseline; gap: 6px;
+        margin: 0 0 22px;
+    }
+    .ap-plan-price .amt {
+        font-size: 48px; font-weight: 600;
+        letter-spacing: -0.02em; line-height: 1;
+    }
+    .ap-plan-price .amt.word { font-size: 36px; }
+    .ap-plan-price .per { font-size: 15px; color: #6e6e73; }
+    .ap-plan.is-popular .ap-plan-price .per { color: #a1a1a6; }
+    .ap-plan-feat {
+        list-style: none; padding: 0; margin: 0 0 26px;
+        display: flex; flex-direction: column; gap: 12px;
+        flex: 1;
+    }
+    .ap-plan-feat li {
+        display: flex; align-items: flex-start; gap: 10px;
+        font-size: 15px; line-height: 1.4;
+    }
+    .ap-plan-feat li::before {
+        content: "";
+        width: 18px; height: 18px;
+        border-radius: 50%;
+        background: #0071e3 url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path fill='none' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M3.5 8.5l3 3 6-6'/></svg>") center/14px no-repeat;
+        flex-shrink: 0;
+        margin-top: 1px;
+    }
+    .ap-plan-cta {
+        display: block; text-align: center;
+        padding: 12px 22px;
+        border-radius: 980px;
+        background: #0071e3;
+        color: #fff !important;
+        text-decoration: none;
+        font-size: 16px; font-weight: 400;
+        border: 0;
+        box-shadow: none;
+        transition: filter .2s;
+    }
+    .ap-plan-cta:hover { filter: brightness(1.08); }
+    .ap-plan-cta:active { filter: brightness(0.95); }
+    .ap-plan.is-popular .ap-plan-cta {
+        background: #ffffff;
+        color: #1d1d1f !important;
+        box-shadow: none;
+    }
+    .ap-plan.is-popular .ap-plan-cta:hover { filter: brightness(0.97); }
+</style>
+
+<!-- --------- HERO --------- -->
+<section class="ap-cta ap-cta-hero" aria-labelledby="ap-hero-headline">
+    <div class="ap-cta-inner">
+        <div>
+            <h1 id="ap-hero-headline">Less <em style="color:#0071e3; font-style: normal;">paperwork</em>.<br>More teaching.</h1>
+            <p>South African Teachers Hub is the platform where teachers build, collate and store CAPS-aligned question papers and memos — and run the full moderation process — across all 25 NSC subjects.</p>
+            <div class="ap-cta-actions">
+                {% if current_user.is_authenticated and (current_user.is_teacher or current_user.is_admin) %}
+                    <a href="{{ url_for('teacher_dashboard') }}" class="ap-cta-btn is-primary">Open workspace</a>
+                    <a href="{{ url_for('our_mission') }}" class="ap-cta-btn is-ghost">Our mission</a>
+                {% elif current_user.is_authenticated %}
+                    <a href="{{ url_for('our_mission') }}" class="ap-cta-btn is-ghost">Our mission</a>
+                {% else %}
+                    <a href="{{ url_for('register') }}" class="ap-cta-btn is-primary">Start free trial</a>
+                    <a href="{{ url_for('login') }}" class="ap-cta-btn is-ghost">Sign in</a>
+                {% endif %}
+            </div>
+        </div>
+        <svg class="ap-cta-art" viewBox="0 0 520 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Teacher saving time on admin tasks">
+            <defs>
+                <linearGradient id="apHeroSky" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#eaf3ff"/>
+                    <stop offset="1" stop-color="#f5f5f7"/>
+                </linearGradient>
+                <linearGradient id="apHeroPaperA" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#ffffff"/>
+                    <stop offset="1" stop-color="#f1f5fb"/>
+                </linearGradient>
+                <linearGradient id="apHeroPaperB" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#0071e3"/>
+                    <stop offset="1" stop-color="#3a8dff"/>
+                </linearGradient>
+                <filter id="apHeroShadow" x="-10%" y="-10%" width="120%" height="120%">
+                    <feDropShadow dx="0" dy="6" stdDeviation="8" flood-color="#0a2540" flood-opacity="0.12"/>
+                </filter>
+            </defs>
+            <rect x="0" y="0" width="520" height="380" fill="url(#apHeroSky)" rx="22"/>
+            <g fill="#ffffff" opacity="0.85">
+                <ellipse cx="80" cy="80" rx="36" ry="14"/>
+                <ellipse cx="100" cy="90" rx="22" ry="10"/>
+                <ellipse cx="430" cy="60" rx="40" ry="14"/>
+                <ellipse cx="455" cy="72" rx="22" ry="10"/>
+                <ellipse cx="60" cy="310" rx="34" ry="12"/>
+            </g>
+            <g filter="url(#apHeroShadow)" transform="rotate(-8 130 200)">
+                <rect x="60" y="140" width="150" height="190" rx="10" fill="url(#apHeroPaperA)" stroke="#dde6f0"/>
+                <rect x="78" y="160" width="80" height="8" rx="3" fill="#0071e3" opacity="0.85"/>
+                <rect x="78" y="180" width="114" height="5" rx="2" fill="#cbd5e0"/>
+                <rect x="78" y="194" width="100" height="5" rx="2" fill="#cbd5e0"/>
+                <rect x="78" y="208" width="118" height="5" rx="2" fill="#cbd5e0"/>
+                <rect x="78" y="232" width="60" height="5" rx="2" fill="#cbd5e0"/>
+                <rect x="78" y="246" width="90" height="5" rx="2" fill="#cbd5e0"/>
+                <rect x="78" y="260" width="74" height="5" rx="2" fill="#cbd5e0"/>
+            </g>
+            <g filter="url(#apHeroShadow)" transform="rotate(6 290 210)">
+                <rect x="210" y="120" width="170" height="220" rx="12" fill="#ffffff" stroke="#dde6f0"/>
+                <rect x="228" y="138" width="100" height="10" rx="3" fill="#1d1d1f"/>
+                <g>
+                    <circle cx="238" cy="178" r="8" fill="#0071e3"/>
+                    <path d="M234 178 l3 3 l6 -6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="254" y="174" width="100" height="6" rx="2" fill="#1d1d1f" opacity="0.85"/>
+                </g>
+                <g>
+                    <circle cx="238" cy="208" r="8" fill="#0071e3"/>
+                    <path d="M234 208 l3 3 l6 -6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="254" y="204" width="84" height="6" rx="2" fill="#1d1d1f" opacity="0.85"/>
+                </g>
+                <g>
+                    <circle cx="238" cy="238" r="8" fill="#0071e3"/>
+                    <path d="M234 238 l3 3 l6 -6" stroke="#fff" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                    <rect x="254" y="234" width="92" height="6" rx="2" fill="#1d1d1f" opacity="0.85"/>
+                </g>
+                <g>
+                    <circle cx="238" cy="268" r="8" fill="#e3edf7"/>
+                    <rect x="254" y="264" width="78" height="6" rx="2" fill="#cbd5e0"/>
+                </g>
+                <g>
+                    <circle cx="238" cy="298" r="8" fill="#e3edf7"/>
+                    <rect x="254" y="294" width="64" height="6" rx="2" fill="#cbd5e0"/>
+                </g>
+            </g>
+            <g transform="translate(380 180)" filter="url(#apHeroShadow)">
+                <circle cx="0" cy="0" r="46" fill="url(#apHeroPaperB)"/>
+                <circle cx="0" cy="0" r="36" fill="#fff"/>
+                <line x1="0" y1="0" x2="0" y2="-22" stroke="#0071e3" stroke-width="3" stroke-linecap="round"/>
+                <line x1="0" y1="0" x2="16" y2="6" stroke="#0071e3" stroke-width="3" stroke-linecap="round"/>
+                <circle cx="0" cy="0" r="3" fill="#0071e3"/>
+            </g>
+            <g fill="#0071e3" opacity="0.8">
+                <circle cx="40" cy="190" r="4"/>
+                <circle cx="500" cy="280" r="5"/>
+                <circle cx="170" cy="60" r="3"/>
+            </g>
+        </svg>
+    </div>
+</section>
+
+<!-- --------- PRICING (mirrored under hero) --------- -->
+<section class="ap-pricing">
+    <div class="ap-pricing-inner">
+        <h2>Pick a plan that fits.</h2>
+        <p class="ap-pricing-sub">Start free. Upgrade when your classroom grows.</p>
+        <div class="ap-plans">
+            <div class="ap-plan">
+                <h3>Professional for Teachers</h3>
+                <p class="ap-plan-sub">Full classroom tooling for individual teachers — paper generator, memos and a complete question bank, across 4 High School subject.</p>
+                <div class="ap-plan-price"><span class="amt">R299</span><span class="per">/ month</span></div>
+                <ul class="ap-plan-feat">
+                    <li>Access to past papers</li>
+                    <li>Full question bank</li>
+                    <li>Paper &amp; memo generator</li>
+                    <li>CAPS year planner</li>
+                    <li>Rubric &amp; assessment tools</li>
+                    <li>Email support</li>
+                </ul>
+                <a href="{{ url_for('register') if not current_user.is_authenticated else url_for('teacher_dashboard') }}" class="ap-plan-cta">Choose Professional</a>
+            </div>
+
+            <div class="ap-plan is-popular">
+                <span class="ap-plan-tag">Most Popular</span>
+                <h3>Moderation</h3>
+                <p class="ap-plan-sub">Built for HODs and moderators — review papers line-by-line, request changes and sign off without leaving the platform.</p>
+                <div class="ap-plan-price"><span class="amt">R399</span><span class="per">/ month</span></div>
+                <ul class="ap-plan-feat">
+                    <li>Everything in Professional for Teachers</li>
+                    <li>HOD moderation queue</li>
+                    <li>Line-by-line review &amp; comments</li>
+                    <li>Approve, request changes, sign off</li>
+                    <li>Colour-coded edit tracking</li>
+                    <li>Full audit log of approvals</li>
+                    <li>Priority support</li>
+                </ul>
+                <a href="{{ url_for('register') if not current_user.is_authenticated else url_for('teacher_dashboard') }}" class="ap-plan-cta">Choose Moderation</a>
+            </div>
+
+            <div class="ap-plan">
+                <h3>School</h3>
+                <p class="ap-plan-sub">Tailored licensing for schools and departments.</p>
+                <div class="ap-plan-price"><span class="amt word">Custom</span><span class="per">/ quote</span></div>
+                <ul class="ap-plan-feat">
+                    <li>Multi-teacher seats</li>
+                    <li>Department reporting</li>
+                    <li>Onboarding &amp; training</li>
+                    <li>Dedicated support</li>
+                </ul>
+                <a href="mailto:hello@sacodeinstitute.co.za" class="ap-plan-cta">Contact us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- --------- STAGE 1 — Question paper generator (dark hero tile) --------- -->
+<section class="ap-stage is-dark is-tall" id="features">
+    <div class="ap-stage-inner">
+        <p class="ap-eyebrow is-light">Bloom's Taxonomy &amp; CAPS Filtering</p>
+        <h2 class="ap-headline is-light">Question paper generator.</h2>
+        <p class="ap-subhead is-light">
+            A full CAPS-aligned paper, balanced across topics and cognitive levels, in minutes.
+        </p>
+
+        <div class="ap-stats" aria-label="Question paper generator stats">
+            <div class="ap-stat">
+                <p class="ap-stat-num">12,000+</p>
+                <p class="ap-stat-label">Vetted questions</p>
+            </div>
+            <div class="ap-stat">
+                <p class="ap-stat-num">25</p>
+                <p class="ap-stat-label">Available subjects</p>
+            </div>
+            <div class="ap-stat">
+                <p class="ap-stat-num">3 min</p>
+                <p class="ap-stat-label">Average build time</p>
+            </div>
+            <div class="ap-stat">
+                <p class="ap-stat-num">100%</p>
+                <p class="ap-stat-label">CAPS-aligned</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- --------- STAGE 2 — Live preview (light) --------- -->
+<section class="ap-stage is-light is-tall">
+    <div class="ap-stage-inner">
+        <p class="ap-eyebrow is-accent">Live preview</p>
+        <h2 class="ap-headline ap-headline-sm">Edit on the left.<br>See the paper on the right.</h2>
+        <p class="ap-subhead is-muted">
+            Every question, mark allocation and section header updates instantly — exactly as your learners will see it.
+        </p>
+
+        <!-- Live preview demo: editor (left) animates ? paper (right) updates -->
+        <div class="ap-prev">
+            <!-- LEFT: editor mockup (mimics teacher/generator_edit.html) -->
+            <div class="ap-prev-pane ap-prev-editor" aria-hidden="true">
+                <div class="ap-prev-edit">
+                    <div class="ap-qb-section">
+                        <div class="ap-qb-active">? ACTIVE — COVER PAGE FIELDS</div>
+                        <div class="ap-gen-h">PAPER HEADER</div>
+                        <div class="ap-gen-grid">
+                        <div class="ap-gen-field span-2">
+                            <label>PAPER TITLE *</label>
+                            <span class="ap-gen-input"><span data-anim="title"></span><span class="ap-prev-caret"></span></span>
+                        </div>
+                        <div class="ap-gen-field">
+                            <label>SCHOOL</label>
+                            <span class="ap-gen-input"><span data-anim="school"></span><span class="ap-prev-caret"></span></span>
+                        </div>
+                        <div class="ap-gen-field">
+                            <label>SUBJECT</label>
+                            <span class="ap-gen-input"><span data-anim="subject"></span><span class="ap-prev-caret"></span></span>
+                        </div>
+                        <div class="ap-gen-field">
+                            <label>GRADE</label>
+                            <div class="ap-gen-selectwrap">
+                                <span class="ap-gen-input ap-gen-select"><span data-anim="grade"></span><span class="ap-gen-caret">?</span></span>
+                                <ul class="ap-gen-options" aria-hidden="true">
+                                    <li data-grade="Grade 8">Grade 8</li>
+                                    <li data-grade="Grade 9">Grade 9</li>
+                                    <li data-grade="Grade 10">Grade 10</li>
+                                    <li data-grade="Grade 11">Grade 11</li>
+                                    <li data-grade="Grade 12">Grade 12</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="ap-gen-field">
+                            <label>EXAM DATE</label>
+                            <span class="ap-gen-input"><span data-anim="date"></span><span class="ap-prev-caret"></span></span>
+                        </div>
+                        <div class="ap-gen-field">
+                            <label>DURATION (MINUTES)</label>
+                            <span class="ap-gen-input"><span data-anim="duration"></span><span class="ap-prev-caret"></span></span>
+                        </div>
+                        <div class="ap-gen-field">
+                            <label>TOTAL MARKS</label>
+                            <span class="ap-gen-input"><span data-anim="marks"></span><span class="ap-prev-caret"></span></span>
+                        </div>
+                        <div class="ap-gen-field">
+                            <label>EXAMINER</label>
+                            <span class="ap-gen-input"><span data-anim="examiner"></span><span class="ap-prev-caret"></span></span>
+                        </div>
+                        <div class="ap-gen-field">
+                            <label>MODERATOR</label>
+                            <span class="ap-gen-input"><span data-anim="moderator"></span><span class="ap-prev-caret"></span></span>
+                        </div>
+                        <div class="ap-gen-field span-2">
+                            <label>SCHOOL LOGO (OPTIONAL)</label>
+                            <div class="ap-gen-file">
+                                <button type="button" class="ap-gen-filebtn">Choose File</button>
+                                <span class="ap-gen-filename" data-anim-file>No file chosen</span>
+                                <span class="ap-gen-fileprog"><span class="ap-gen-fileprog-bar"></span></span>
+                                <img class="ap-gen-filethumb" alt="" src="">
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: paper output (mimics paper_print.html) -->
+            <div class="ap-prev-pane ap-prev-paper" aria-hidden="true">
+                <div class="ap-paper-sheet">
+                    <img class="ap-paper-logo" data-mirror-logo alt="" src="">
+                    <div class="ap-paper-school" data-mirror="school">SANDTON HIGH SCHOOL</div>
+                    <div class="ap-paper-cert">
+                        Senior Certificate Examinations/<br>
+                        National Senior Certificate Examinations
+                    </div>
+                    <div class="ap-paper-titlebox">
+                        <div data-mirror="title">MATHEMATICS P1</div>
+                        <div class="ap-paper-month"><span data-mirror="date">MONTH 20XX</span></div>
+                    </div>
+                    <div class="ap-paper-marks-line">
+                        MARKS: <strong data-mirror="marks">150</strong>
+                    </div>
+                    <div class="ap-paper-time-line">
+                        TIME: <span data-mirror="duration">180</span> minutes
+                    </div>
+                    <div class="ap-paper-sign-line">
+                        <span>Examiner: <span data-mirror="examiner">Mrs L Carter</span></span>
+                        <span>Moderator: <span data-mirror="moderator">Mr J Pillay</span></span>
+                    </div>
+                    <div class="ap-paper-footer">
+                        <span>Copyright reserved</span>
+                        <span>Please turn over</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- --------- STAGE 3 — Question builder simulation --------- -->
+<section class="ap-stage is-light is-tall">
+    <div class="ap-stage-inner">
+        <p class="ap-eyebrow is-accent">Add questions</p>
+        <h2 class="ap-headline ap-headline-sm">Build sections.<br>Watch the paper grow.</h2>
+        <p class="ap-subhead is-muted">
+            Type a section header, drop in questions, and the printed paper takes shape in real time.
+        </p>
+
+        <div class="ap-qb">
+            <!-- LEFT: editor mockup -->
+            <div class="ap-qb-pane ap-qb-editor" aria-hidden="true">
+                <div class="ap-prev-edit">
+                    <div class="ap-qb-section">
+                        <div class="ap-qb-active">? ACTIVE — NEW QUESTIONS LAND HERE</div>
+                        <div class="ap-gen-h">SECTION DETAILS</div>
+
+                    <div class="ap-gen-grid">
+                        <div class="ap-gen-field">
+                            <label>SECTION TITLE *</label>
+                            <span class="ap-gen-input">Section A</span>
+                        </div>
+                        <div class="ap-gen-field">
+                            <label>QUESTION TYPE</label>
+                            <div class="ap-gen-selectwrap">
+                                <span class="ap-gen-input ap-gen-select">MULTIPLE-CHOICE QUESTIONS<span class="ap-gen-caret">?</span></span>
+                            </div>
+                        </div>
+                        <div class="ap-gen-field span-2">
+                            <label>INSTRUCTIONS</label>
+                            <span class="ap-gen-input ap-gen-textarea">
+                                <span data-qb-anim="instr"></span><span class="ap-prev-caret"></span>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="ap-gen-h ap-gen-h-sub">QUESTIONS</div>
+                    <div class="ap-qb-meta">
+                        <span class="ap-qb-active-pill">? ACTIVE</span>
+                        <span class="ap-qb-meta-text"><span data-qb-count>0</span> question(s) · <span data-qb-marks>0</span> marks</span>
+                    </div>
+
+                    <div class="ap-qb-actions">
+                        <span class="ap-qb-btn">? Auto-detect</span>
+                        <span class="ap-qb-btn ap-qb-btn-add">+ Add question</span>
+                        <span class="ap-qb-btn">+ New (split)</span>
+                    </div>
+
+                    <ul class="ap-qb-qlist" data-qb-qlist></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: paper output -->
+            <div class="ap-qb-pane ap-qb-paper" aria-hidden="true">
+                <div class="ap-paper-sheet ap-qb-sheet">
+                    <div class="ap-qb-runhead">
+                        <span data-qb-mirror="subject">Mathematics/P2</span>
+                        <span>2</span>
+                        <span data-qb-mirror="exam">DBE/November 2026</span>
+                    </div>
+                    <div class="ap-qb-secbanner">SECTION A</div>
+                    <div class="ap-qb-qsubhead">QUESTION 1: MULTIPLE-CHOICE QUESTIONS</div>
+                    <p class="ap-qb-stem"><span data-qb-mirror="instr"></span></p>
+                    <ol class="ap-qb-paperlist" data-qb-paperlist></ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- --------- STAGE 4 — Memorandum simulation --------- -->
+<section class="ap-stage is-light is-tall">
+    <div class="ap-stage-inner">
+        <p class="ap-eyebrow is-accent">Memo, created automatically</p>
+        <h2 class="ap-headline ap-headline-sm">The memo writes itself.<br>You stay in control.</h2>
+        <p class="ap-subhead is-muted">
+            As you build the paper, the memo is created automatically — and you're free to step in, pick A–D, list accepted alternatives, and adjust the marks any time.
+        </p>
+
+        <div class="ap-qb ap-mm">
+            <!-- LEFT: memo editor -->
+            <div class="ap-qb-pane ap-qb-editor" aria-hidden="true">
+                <div class="ap-prev-edit">
+                    <div class="ap-qb-section">
+                        <div class="ap-qb-active">? ACTIVE — MARKING THE ANSWERS</div>
+                        <div class="ap-gen-h">MEMO DETAILS</div>
+
+                        <div class="ap-gen-grid">
+                            <div class="ap-gen-field">
+                                <label>SECTION</label>
+                                <span class="ap-gen-input">Section A · MCQ</span>
+                            </div>
+                            <div class="ap-gen-field">
+                                <label>QUESTION</label>
+                                <div class="ap-gen-selectwrap">
+                                    <span class="ap-gen-input ap-gen-select"><span data-mm-anim="qsel">QUESTION 1</span><span class="ap-gen-caret">?</span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ap-gen-h ap-gen-h-sub">PER-ANSWER ENTRY</div>
+
+                        <div class="ap-mm-row">
+                            <span class="ap-mm-num" data-mm-cur-num>1.1</span>
+                            <div class="ap-mm-choices" data-mm-choices>
+                                <span class="ap-mm-choice" data-letter="A">A</span>
+                                <span class="ap-mm-choice" data-letter="B">B</span>
+                                <span class="ap-mm-choice" data-letter="C">C</span>
+                                <span class="ap-mm-choice" data-letter="D">D</span>
+                            </div>
+                            <span class="ap-mm-marks">
+                                <label>MARKS</label>
+                                <span class="ap-gen-input ap-mm-marksbox">1</span>
+                            </span>
+                        </div>
+
+                        <div class="ap-gen-field span-2" style="margin-top:14px">
+                            <label>ACCEPTED ALTERNATIVES (OPTIONAL)</label>
+                            <span class="ap-gen-input ap-gen-textarea">
+                                <span data-mm-anim="alt"></span><span class="ap-prev-caret"></span>
+                            </span>
+                        </div>
+
+                        <div class="ap-qb-meta" style="margin-top:14px">
+                            <span class="ap-qb-active-pill">? ACTIVE</span>
+                            <span class="ap-qb-meta-text"><span data-mm-count>0</span> answer(s) marked · <span data-mm-marks>0</span> marks</span>
+                        </div>
+
+                        <div class="ap-qb-actions">
+                            <span class="ap-qb-btn ap-mm-btn-save">? Save answer</span>
+                            <span class="ap-qb-btn">? Next question</span>
+                            <span class="ap-qb-btn">? Auto-fill from key</span>
+                        </div>
+
+                        <ul class="ap-qb-qlist" data-mm-qlist></ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: memorandum paper -->
+            <div class="ap-qb-pane ap-qb-paper" aria-hidden="true">
+                <div class="ap-paper-sheet ap-qb-sheet ap-mm-sheet">
+                    <div class="ap-mm-runhead">
+                        <span>Mathematics/P1</span>
+                        <span>3</span>
+                        <span>DBE/March 2026</span>
+                    </div>
+                    <div class="ap-qb-secbanner ap-mm-secbanner">SECTION A</div>
+
+                    <div class="ap-mm-grid">
+                        <div class="ap-mm-col">
+                            <div class="ap-mm-qhead">QUESTION 1: MULTIPLE-CHOICE QUESTIONS</div>
+                            <table class="ap-mm-table ap-mm-table-q1">
+                                <tbody data-mm-paperlist-q1></tbody>
+                                <tfoot>
+                                    <tr class="ap-mm-totalrow" data-mm-total-row-q1 hidden>
+                                        <td colspan="3" class="ap-mm-total-label">Total: [<span data-mm-total-marks-q1>0</span>]</td>
+                                        <td></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+
+                        <div class="ap-mm-col ap-mm-col-q2">
+                            <div class="ap-mm-qhead">QUESTION 2: MATCHING ITEMS</div>
+                            <table class="ap-mm-table ap-mm-table-q2">
+                                <tbody data-mm-paperlist-q2></tbody>
+                                <tfoot>
+                                    <tr class="ap-mm-totalrow" data-mm-total-row-q2 hidden>
+                                        <td colspan="4" class="ap-mm-total-label">Total: [<span data-mm-total-marks-q2>0</span>]</td>
+                                        <td></td>
+                                    </tr>
+                                </tfoot>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- --------- STAGE 5 — HOD review heading --------- -->
+<section class="ap-stage is-dark is-tall">
+    <div class="ap-stage-inner">
+        <p class="ap-eyebrow" style="color:#30d158;">Moderation</p>
+        <h2 class="ap-headline ap-headline-sm" style="color:#30d158;">HOD review.<br>Built right in.</h2>
+        <p class="ap-subhead" style="color:#7be495;">
+            Submit a paper for moderation and your Head of Department reviews it line-by-line — approve, request changes, or sign off without leaving the platform.
+        </p>
+    </div>
+</section>
+
+<!-- --------- STAGE 6 — Moderator edit simulation (light mode) --------- -->
+<section class="ap-stage is-light is-tall">
+    <div class="ap-stage-inner ap-me-inner">
+        <p class="ap-eyebrow is-accent">Moderator edits</p>
+        <h2 class="ap-headline ap-headline-sm">Edit live.<br>Highlight changes.</h2>
+        <p class="ap-subhead is-muted">
+            HODs can adjust the paper directly. Every edit is colour-coded for the original author — old values strike through, new values appear in green.
+        </p>
+
+        <div class="ap-me-stage">
+            <!-- LEFT: editor form -->
+            <div class="ap-me-pane ap-me-editor" aria-hidden="true">
+                <div class="ap-me-banner">
+                    Moderator mode — your changes will be highlighted in <span>green</span> for the paper owner.
+                </div>
+                <div class="ap-me-section-h">PAPER HEADER</div>
+
+                <div class="ap-me-field ap-me-field-full">
+                    <label>Paper title *</label>
+                    <div class="ap-me-input">Computer Applications Technology</div>
+                </div>
+
+                <div class="ap-me-grid">
+                    <div class="ap-me-field">
+                        <label>School</label>
+                        <div class="ap-me-input">Sandton High School</div>
+                    </div>
+                    <div class="ap-me-field">
+                        <label>Subject</label>
+                        <div class="ap-me-input">Computer Applications Technology</div>
+                    </div>
+                </div>
+
+                <div class="ap-me-grid">
+                    <div class="ap-me-field">
+                        <label>Grade</label>
+                        <div class="ap-me-input">Grade 12</div>
+                    </div>
+                    <div class="ap-me-field">
+                        <label>Exam date</label>
+                        <div class="ap-me-input ap-me-input-with-icon" id="apMeExamDate">22/05/2026</div>
+                    </div>
+                </div>
+
+                <div class="ap-me-grid">
+                    <div class="ap-me-field">
+                        <label>Duration (minutes)</label>
+                        <div class="ap-me-input">180</div>
+                    </div>
+                    <div class="ap-me-field">
+                        <label>Total marks</label>
+                        <div class="ap-me-input" id="apMeMarks">150</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: live preview paper -->
+            <div class="ap-me-pane ap-me-preview" aria-hidden="true">
+                <div class="ap-me-preview-bar">
+                    <span class="ap-me-preview-label">LIVE PREVIEW</span>
+                    <span class="ap-me-preview-status" id="apMePreviewStatus">Up to date</span>
+                </div>
+                <div class="ap-me-paper">
+                    <div class="ap-me-paper-cert">
+                        Senior Certificate Examinations/<br>
+                        National Senior Certificate Examinations
+                    </div>
+                    <div class="ap-me-paper-title-box">
+                        <div class="ap-me-paper-title">COMPUTER APPLICATIONS TECHNOLOGY P1</div>
+                        <div class="ap-me-paper-month" id="apMePreviewDate">
+                            <span class="ap-me-old">22 MAY 2026</span>
+                        </div>
+                    </div>
+                    <div class="ap-me-paper-marks-line">
+                        MARKS: <strong id="apMePreviewMarks">150</strong>
+                    </div>
+                    <div class="ap-me-paper-time-line">
+                        TIME: <span>3 Hours</span>
+                    </div>
+                    <div class="ap-me-paper-footer">
+                        <span>Copyright reserved</span>
+                        <span>Please turn over</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* --------- Moderator-edit simulation (light) --------- */
+.ap-stage-inner.ap-me-inner { max-width: 1320px; }
+.ap-me-stage {
+    margin: 56px auto 0;
+    max-width: 1320px;
+    display: grid;
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 22px;
+    align-items: stretch;
+    text-align: left;
+}
+@media (max-width: 980px) {
+    .ap-me-stage { grid-template-columns: 1fr; }
+}
+.ap-me-pane {
+    background: #ffffff;
+    border: 1px solid #e5e5ea;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+.ap-me-editor { padding: 0; }
+.ap-me-banner {
+    background: #f1fbf3;
+    color: #1a6e34;
+    font-size: 12.5px;
+    padding: 12px 18px;
+    border-bottom: 1px solid #d2ebda;
+    line-height: 1.4;
+}
+.ap-me-banner span { font-weight: 600; color: #1a6e34; }
+.ap-me-banner.ap-me-banner-teacher {
+    background: #eef5ff;
+    color: #0a4ea6;
+    border-bottom: 1px solid #cfe0f7;
+}
+.ap-me-banner.ap-me-banner-teacher span { color: #0a4ea6; }
+.ap-me-section-h {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    color: #0a4ea2;
+    padding: 18px 22px 10px;
+    text-transform: uppercase;
+}
+.ap-me-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    padding: 0 22px;
+    margin-bottom: 14px;
+}
+.ap-me-field { display: flex; flex-direction: column; gap: 6px; }
+.ap-me-field-full { padding: 0 22px; margin-bottom: 14px; }
+.ap-me-field label {
+    font-size: 11.5px;
+    font-weight: 500;
+    color: #6e6e73;
+}
+.ap-me-input {
+    background: #fafafc;
+    border: 1px solid #e0e0e3;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 13px;
+    color: #1d1d1f;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    transition: background 0.3s ease, border-color 0.3s ease;
+    position: relative;
+}
+.ap-me-input.is-editing {
+    background: #eaf3ff;
+    border-color: #0071e3;
+    box-shadow: 0 0 0 3px rgba(10,49,97,0.18);
+}
+.ap-me-input.is-changed {
+    background: #ecfaf0;
+    border-color: #28a745;
+    color: #1a6e34;
+    font-weight: 500;
+}
+.ap-me-input-with-icon::after {
+    content: "??";
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px;
+    opacity: 0.55;
+}
+.ap-me-input.is-editing::before {
+    content: "";
+    width: 1px;
+    height: 14px;
+    background: #0071e3;
+    margin-left: 2px;
+    animation: ap-me-caret 0.9s steps(2) infinite;
+}
+@keyframes ap-me-caret { 50% { opacity: 0; } }
+
+/* Right preview pane */
+.ap-me-preview { background: #f5f5f7; }
+.ap-me-preview-bar {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 12px 18px;
+    border-bottom: 1px solid #e5e5ea;
+    background: #ffffff;
+}
+.ap-me-preview-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.14em;
+    color: #0a4ea2;
+}
+.ap-me-preview-status {
+    font-size: 11.5px; color: #6e6e73;
+    transition: color 0.3s ease;
+}
+.ap-me-preview-status.is-saving { color: #b8860b; }
+.ap-me-preview-status.is-saved  { color: #1a6e34; }
+
+.ap-me-paper {
+    background: #ffffff;
+    margin: 22px;
+    border: 1px solid #e0e0e3;
+    border-radius: 8px;
+    padding: 28px 26px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+    flex: 1;
+    font-family: "Times New Roman", Times, serif;
+    color: #1d1d1f;
+}
+.ap-me-paper-cert {
+    text-align: center;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+.ap-me-paper-title-box {
+    border: 1.5px solid #b3b3b5;
+    background: #f0f0f3;
+    padding: 14px;
+    text-align: center;
+    margin-bottom: 16px;
+}
+.ap-me-paper-title { font-size: 13px; font-weight: 700; letter-spacing: 0.04em; }
+.ap-me-paper-month { margin-top: 6px; font-size: 12px; }
+.ap-me-old { text-decoration: line-through; color: #8a8a8e; }
+.ap-me-new { color: #1a6e34; font-weight: 700; margin-left: 6px; }
+.ap-me-paper-marks-line, .ap-me-paper-time-line {
+    text-align: right;
+    font-size: 12px;
+    margin-top: 6px;
+}
+.ap-me-paper-marks-line strong { font-weight: 700; }
+.ap-me-paper-marks-line .ap-me-old { font-weight: 400; }
+.ap-me-paper-footer {
+    display: flex; justify-content: space-between;
+    margin-top: 60px;
+    font-size: 11px;
+    color: #424245;
+}
+
+/* Pulse on the preview when a change lands */
+.ap-me-paper.is-pulse {
+    animation: ap-me-pulse 0.6s ease;
+}
+@keyframes ap-me-pulse {
+    0%   { box-shadow: 0 0 0 0 rgba(40,167,69,0.45); }
+    50%  { box-shadow: 0 0 0 8px rgba(40,167,69,0); }
+    100% { box-shadow: 0 0 0 0 rgba(40,167,69,0); }
+}
+</style>
+
+<script>
+(function(){
+    var stage = document.querySelector('.ap-me-stage');
+    if (!stage) return;
+
+    var dateField    = document.getElementById('apMeExamDate');
+    var marksField   = document.getElementById('apMeMarks');
+    var paper        = stage.querySelector('.ap-me-paper');
+    var previewDate  = document.getElementById('apMePreviewDate');
+    var previewMarks = document.getElementById('apMePreviewMarks');
+    var status       = document.getElementById('apMePreviewStatus');
+
+    var ORIG_DATE_FIELD  = '22/05/2026';
+    var NEW_DATE_FIELD   = '06/08/2026';
+    var ORIG_DATE_PAPER  = '22 MAY 2026';
+    var NEW_DATE_PAPER   = 'AUGUST 2026';
+    var ORIG_MARKS = '150';
+    var NEW_MARKS  = '200';
+
+    function setStatus(text, cls) {
+        status.className = 'ap-me-preview-status' + (cls ? ' ' + cls : '');
+        status.textContent = text;
+    }
+
+    function pulse() {
+        paper.classList.remove('is-pulse');
+        // force reflow
+        void paper.offsetWidth;
+        paper.classList.add('is-pulse');
+    }
+
+    function reset() {
+        dateField.classList.remove('is-editing','is-changed');
+        marksField.classList.remove('is-editing','is-changed');
+        dateField.textContent = ORIG_DATE_FIELD;
+        marksField.textContent = ORIG_MARKS;
+        previewDate.innerHTML = '<span class="ap-me-old">' + ORIG_DATE_PAPER + '</span>';
+        previewMarks.innerHTML = ORIG_MARKS;
+        setStatus('Up to date');
+    }
+
+    function editField(field, newVal, paperUpdate, delay) {
+        return new Promise(function(resolve){
+            setTimeout(function(){
+                field.classList.add('is-editing');
+                setStatus('Editing…', 'is-saving');
+                setTimeout(function(){
+                    field.classList.remove('is-editing');
+                    field.classList.add('is-changed');
+                    field.textContent = newVal;
+                    paperUpdate();
+                    pulse();
+                    setTimeout(function(){
+                        setStatus('Up to date', 'is-saved');
+                        resolve();
+                    }, 400);
+                }, 1100);
+            }, delay);
+        });
+    }
+
+    function run() {
+        reset();
+        editField(dateField, NEW_DATE_FIELD, function(){
+            previewDate.innerHTML =
+                '<span class="ap-me-old">' + ORIG_DATE_PAPER + '</span>' +
+                '<span class="ap-me-new">' + NEW_DATE_PAPER + '</span>';
+        }, 800).then(function(){
+            return editField(marksField, NEW_MARKS, function(){
+                previewMarks.innerHTML =
+                    '<span class="ap-me-old">' + ORIG_MARKS + '</span>' +
+                    '<span class="ap-me-new">' + NEW_MARKS + '</span>';
+            }, 1200);
+        }).then(function(){
+            setTimeout(run, 4500);
+        });
+    }
+
+    if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function(entries){
+            entries.forEach(function(e){ if (e.isIntersecting) { run(); io.disconnect(); } });
+        }, { threshold: 0.25 });
+        io.observe(stage);
+    } else {
+        run();
+    }
+})();
+</script>
+
+<!-- --------- STAGE 7 — Moderate questions simulation (light mode) --------- -->
+<section class="ap-stage is-light is-tall">
+    <div class="ap-stage-inner">
+        <p class="ap-eyebrow is-accent">Moderate questions</p>
+        <h2 class="ap-headline ap-headline-sm">Refine wording.<br>Adjust marks.</h2>
+        <p class="ap-subhead is-muted">
+            Moderators can rewrite a stem, change the marks, or fix an option — every edit is colour-coded so the original author can see exactly what changed.
+        </p>
+
+        <div class="ap-qb">
+            <!-- LEFT: editor mockup (matches Stage 3 styling) -->
+            <div class="ap-qb-pane ap-qb-editor" aria-hidden="true">
+                <div class="ap-prev-edit">
+                    <div class="ap-qb-section">
+                        <div class="ap-qb-active">? ACTIVE — MODERATING QUESTION 1.1</div>
+                        <div class="ap-gen-h">SECTION DETAILS</div>
+
+                        <div class="ap-gen-grid">
+                            <div class="ap-gen-field">
+                                <label>SECTION TITLE *</label>
+                                <span class="ap-gen-input">Section A</span>
+                            </div>
+                            <div class="ap-gen-field">
+                                <label>QUESTION TYPE</label>
+                                <div class="ap-gen-selectwrap">
+                                    <span class="ap-gen-input ap-gen-select">MULTIPLE-CHOICE QUESTIONS<span class="ap-gen-caret">?</span></span>
+                                </div>
+                            </div>
+                            <div class="ap-gen-field span-2">
+                                <label>QUESTION 1.1 — STEM</label>
+                                <span class="ap-gen-input ap-gen-textarea ap-mq-edit" id="apMqStem">Which type of chart is recommended to illustrate a trend over a period of time?</span>
+                            </div>
+                            <div class="ap-gen-field span-2" style="display:grid; grid-template-columns: 90px 1fr; gap:12px;">
+                                <div class="ap-gen-field">
+                                    <label>MARKS</label>
+                                    <span class="ap-gen-input ap-mq-edit" id="apMqMarks">1</span>
+                                </div>
+                                <div class="ap-gen-field">
+                                    <label>CORRECT ANSWER</label>
+                                    <span class="ap-gen-input ap-mq-edit" id="apMqAnswer" style="width:100%;">B — Line chart</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="ap-gen-h ap-gen-h-sub">QUESTIONS</div>
+                        <div class="ap-qb-meta">
+                            <span class="ap-qb-active-pill">? ACTIVE</span>
+                            <span class="ap-qb-meta-text">5 question(s) · 5 marks</span>
+                        </div>
+
+                        <div class="ap-qb-actions">
+                            <span class="ap-qb-btn">? Auto-detect</span>
+                            <span class="ap-qb-btn ap-qb-btn-add">+ Add question</span>
+                            <span class="ap-qb-btn">+ New (split)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: paper output (matches Stage 3 styling) -->
+            <div class="ap-qb-pane ap-qb-paper" aria-hidden="true">
+                <div class="ap-paper-sheet ap-qb-sheet">
+                    <div class="ap-qb-runhead">
+                        <span>Computer Applications Technology/P2</span>
+                        <span>3</span>
+                        <span>DBE/May–June 2024</span>
+                    </div>
+                    <div class="ap-qb-secbanner">SECTION A</div>
+                    <div class="ap-qb-qsubhead">QUESTION 1: MULTIPLE-CHOICE QUESTIONS</div>
+                    <p class="ap-qb-stem">Various options are given as possible answers to the following questions. Choose the answer and write only the letter (A–D) next to the question numbers (1.1 to 1.10) in the ANSWER BOOK, e.g. 1.11 D.</p>
+                    <ol class="ap-qb-paperlist">
+                        <li class="ap-qb-pq is-shown">
+                            <span class="ap-qb-pq-num">1.1</span>
+                            <div>
+                                <div id="apMqPreviewStem">Which type of chart is recommended to illustrate a trend over a period of time?</div>
+                                <ol class="ap-qb-pq-options">
+                                    <li>A) Bar chart</li>
+                                    <li>B) Line chart</li>
+                                    <li>C) Pie chart</li>
+                                    <li>D) Bubble chart</li>
+                                </ol>
+                            </div>
+                            <span class="ap-qb-pq-marks" id="apMqPreviewMarks">(1)</span>
+                        </li>
+                        <li class="ap-qb-pq is-shown">
+                            <span class="ap-qb-pq-num">1.2</span>
+                            <div>
+                                <div>Combining multiple technologies into a single device is known as …</div>
+                                <ol class="ap-qb-pq-options">
+                                    <li>A) point of sales.</li>
+                                    <li>B) convergence.</li>
+                                    <li>C) annexure.</li>
+                                    <li>D) peripheral.</li>
+                                </ol>
+                            </div>
+                            <span class="ap-qb-pq-marks">(1)</span>
+                        </li>
+                        <li class="ap-qb-pq is-shown">
+                            <span class="ap-qb-pq-num">1.3</span>
+                            <div>
+                                <div>A printer that can copy and scan is an example of a(n) … device.</div>
+                                <ol class="ap-qb-pq-options">
+                                    <li>A) multifunctional</li>
+                                    <li>B) multitasking</li>
+                                    <li>C) multiprocessing</li>
+                                    <li>D) input</li>
+                                </ol>
+                            </div>
+                            <span class="ap-qb-pq-marks">(1)</span>
+                        </li>
+                        <li class="ap-qb-pq is-shown">
+                            <span class="ap-qb-pq-num">1.4</span>
+                            <div>
+                                <div>This step of the information cycle can only take place after the data and instructions are in the RAM of the device:</div>
+                                <ol class="ap-qb-pq-options">
+                                    <li>A) Input</li>
+                                    <li>B) Save</li>
+                                    <li>C) Output</li>
+                                    <li>D) Processing</li>
+                                </ol>
+                            </div>
+                            <span class="ap-qb-pq-marks">(1)</span>
+                        </li>
+                        <li class="ap-qb-pq is-shown">
+                            <span class="ap-qb-pq-num">1.5</span>
+                            <div>
+                                <div>NFC cannot be used for …</div>
+                                <ol class="ap-qb-pq-options">
+                                    <li>A) unlocking your car doors.</li>
+                                    <li>B) pairing accessories.</li>
+                                    <li>C) connecting to a hotspot.</li>
+                                    <li>D) paying for your groceries.</li>
+                                </ol>
+                            </div>
+                            <span class="ap-qb-pq-marks">(1)</span>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* Moderator edit highlight on the question-builder editor */
+.ap-mq-edit { transition: background 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease; }
+.ap-mq-edit.is-editing {
+    background: #eaf3ff !important;
+    border-color: #0071e3 !important;
+    box-shadow: 0 0 0 3px rgba(10,49,97,0.18);
+}
+.ap-mq-edit.is-changed {
+    background: #ecfaf0 !important;
+    border-color: #28a745 !important;
+    color: #1a6e34 !important;
+}
+</style>
+
+<script>
+(function(){
+    var stem      = document.getElementById('apMqStem');
+    var marks     = document.getElementById('apMqMarks');
+    var answer    = document.getElementById('apMqAnswer');
+    if (!stem) return;
+
+    var pStem     = document.getElementById('apMqPreviewStem');
+    var pMarks    = document.getElementById('apMqPreviewMarks');
+    var stage     = stem.closest('.ap-stage');
+
+    var ORIG_STEM   = 'Which type of chart is recommended to illustrate a trend over a period of time?';
+    var NEW_STEM    = 'Which type of chart is best suited to show a trend in sales over a 12-month period?';
+    var ORIG_MARKS  = '1';
+    var NEW_MARKS   = '2';
+    var ORIG_ANSWER = 'B — Line chart';
+    var NEW_ANSWER  = 'B — Line chart ? verified';
+
+    function reset() {
+        [stem, marks, answer].forEach(function(el){ el.classList.remove('is-editing','is-changed'); });
+        stem.textContent   = ORIG_STEM;
+        marks.textContent  = ORIG_MARKS;
+        answer.textContent = ORIG_ANSWER;
+        pStem.innerHTML    = ORIG_STEM;
+        pMarks.innerHTML   = '(' + ORIG_MARKS + ')';
+    }
+
+    function editField(field, newVal, paperUpdate, delay, dwell) {
+        return new Promise(function(resolve){
+            setTimeout(function(){
+                field.classList.add('is-editing');
+                setTimeout(function(){
+                    field.classList.remove('is-editing');
+                    field.classList.add('is-changed');
+                    field.textContent = newVal;
+                    if (paperUpdate) paperUpdate();
+                    setTimeout(resolve, 400);
+                }, dwell || 1100);
+            }, delay);
+        });
+    }
+
+    function run() {
+        reset();
+        editField(stem, NEW_STEM, function(){
+            pStem.innerHTML =
+                '<span class="ap-me-old">' + ORIG_STEM + '</span>' +
+                '<span class="ap-me-new" style="display:block; margin-top:4px;">' + NEW_STEM + '</span>';
+        }, 800, 1300).then(function(){
+            return editField(marks, NEW_MARKS, function(){
+                pMarks.innerHTML =
+                    '(<span class="ap-me-old">' + ORIG_MARKS + '</span>' +
+                    '<span class="ap-me-new">' + NEW_MARKS + '</span>)';
+            }, 1100, 900);
+        }).then(function(){
+            return editField(answer, NEW_ANSWER, null, 1100, 900);
+        }).then(function(){
+            setTimeout(run, 5200);
+        });
+    }
+
+    if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function(entries){
+            entries.forEach(function(e){ if (e.isIntersecting) { run(); io.disconnect(); } });
+        }, { threshold: 0.25 });
+        io.observe(stage);
+    } else {
+        run();
+    }
+})();
+</script>
+
+<!-- --------- STAGE 8 — Move questions / page breaks (light mode) --------- -->
+<section class="ap-stage is-light is-tall" id="apPbStage">
+    <div class="ap-stage-inner">
+        <p class="ap-eyebrow is-accent">Lay out the printed paper</p>
+        <h2 class="ap-headline ap-headline-sm">Move questions.<br>Set page breaks.</h2>
+        <p class="ap-subhead is-muted">
+            Hover any question in the preview and use <strong>?</strong>, <strong>¶ break</strong> or <strong>?</strong> to nudge it onto the previous page, force a new page, or push it down — what you see is exactly what prints.
+        </p>
+
+        <div class="ap-qb">
+            <!-- LEFT: editor / preview with hover controls -->
+            <div class="ap-qb-pane ap-qb-editor" aria-hidden="true">
+                <div class="ap-prev-edit">
+                    <div class="ap-qb-section">
+                        <div class="ap-qb-active">? HOVER A QUESTION TO REVEAL THE PAGE-BREAK CONTROLS</div>
+
+                        <div class="ap-pb-mini-paper">
+                            <div class="ap-pb-runhead">
+                                <span>Computer Applications Technology/P2</span>
+                                <span>9</span>
+                                <span>DBE/May–June 2024</span>
+                            </div>
+                            <ul class="ap-pb-list">
+                                <li class="ap-pb-item"><span class="ap-pb-num">4.7</span><span class="ap-pb-txt">State TWO limitations of a 3D printer.</span><span class="ap-pb-marks">(2)</span></li>
+                                <li class="ap-pb-item"><span class="ap-pb-num">4.8</span><span class="ap-pb-txt">Explain multitasking in an operating system.</span><span class="ap-pb-marks">(1)</span></li>
+                                <li class="ap-pb-item"><span class="ap-pb-num">4.9</span><span class="ap-pb-txt">Explain what is meant by a dedicated device.</span><span class="ap-pb-marks">(1)</span></li>
+                                <li class="ap-pb-item is-hovered" id="apPbItemHover">
+                                    <span class="ap-pb-num">4.10</span>
+                                    <span class="ap-pb-txt">Companies use QR codes to allow customers to link to their websites.</span>
+                                    <span class="ap-pb-marks">(2)</span>
+                                    <span class="ap-pb-ctrls" id="apPbCtrls">
+                                        <span class="ap-pb-btn ap-pb-up" id="apPbBtnUp" title="Move to previous page">?</span>
+                                        <span class="ap-pb-btn ap-pb-toggle">¶ break</span>
+                                        <span class="ap-pb-btn ap-pb-down">?</span>
+                                    </span>
+                                </li>
+                            </ul>
+                            <span class="ap-pb-cursor" id="apPbCursor" aria-hidden="true"><svg viewBox="0 0 24 24" width="22" height="22"><path d="M5 3 L5 19 L9.5 14.8 L12 21 L14.5 20 L12 13.8 L18 13.8 Z" fill="#ffffff" stroke="#1d1d1f" stroke-width="1.4" stroke-linejoin="round"/></svg></span>
+                        </div>
+
+                        <div class="ap-qb-meta" style="margin-top:18px">
+                            <span class="ap-qb-active-pill" id="apPbStatus">? ORPHAN — 4.10 ALONE ON NEXT PAGE</span>
+                            <span class="ap-qb-meta-text">Click <strong>?</strong> on 4.10 to pin it to the previous page.</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- RIGHT: printed-PDF mini preview (two A4 sheets) -->
+            <div class="ap-qb-pane ap-qb-paper" aria-hidden="true">
+                <div class="ap-pb-sheets">
+                    <div class="ap-paper-sheet ap-pb-sheet" id="apPbSheet1">
+                        <div class="ap-qb-runhead">
+                            <span>Computer Applications Technology/P2</span>
+                            <span>9</span>
+                            <span>DBE/May–June 2024</span>
+                        </div>
+                        <ol class="ap-qb-paperlist ap-pb-paperlist">
+                            <li class="ap-qb-pq is-shown"><span class="ap-qb-pq-num">4.7</span><div>State TWO limitations of a 3D printer.</div><span class="ap-qb-pq-marks">(2)</span></li>
+                            <li class="ap-qb-pq is-shown"><span class="ap-qb-pq-num">4.8</span><div>Explain multitasking in an operating system.</div><span class="ap-qb-pq-marks">(1)</span></li>
+                            <li class="ap-qb-pq is-shown"><span class="ap-qb-pq-num">4.9</span><div>Explain what is meant by a dedicated device.</div><span class="ap-qb-pq-marks">(1)</span></li>
+                            <li class="ap-qb-pq is-shown ap-pb-pq-moved" id="apPbPq410Page1" hidden><span class="ap-qb-pq-num">4.10</span><div>Companies use QR codes to allow customers to link to their websites.</div><span class="ap-qb-pq-marks">(2)</span></li>
+                        </ol>
+                        <div class="ap-pb-foot"><span>Copyright reserved</span><span>Please turn over</span></div>
+                    </div>
+
+                    <div class="ap-paper-sheet ap-pb-sheet" id="apPbSheet2">
+                        <div class="ap-qb-runhead">
+                            <span>Computer Applications Technology/P2</span>
+                            <span>10</span>
+                            <span>DBE/May–June 2024</span>
+                        </div>
+                        <ol class="ap-qb-paperlist ap-pb-paperlist">
+                            <li class="ap-qb-pq is-shown" id="apPbPq410Page2"><span class="ap-qb-pq-num">4.10</span><div>Companies use QR codes to allow customers to link to their websites.</div><span class="ap-qb-pq-marks">(2)</span></li>
+                        </ol>
+                        <div class="ap-pb-foot"><span>Copyright reserved</span><span>Please turn over</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+/* --------- STAGE 8 — Move questions / page breaks --------- */
+#apPbStage .ap-prev-edit { padding-top: 0; }
+#apPbStage .ap-qb-pane { min-height: 0; }
+#apPbStage .ap-qb { margin-top: 32px; }
+#apPbStage.is-tall .ap-stage-inner { padding-bottom: 40px; }
+#apPbStage .ap-qb-pq > div { text-align: left; color: #000; font-weight: normal; }
+#apPbStage .ap-qb-pq-num { text-align: left; }
+#apPbStage .ap-qb-runhead, #apPbStage .ap-pb-foot, #apPbStage .ap-pb-runhead { color: #000; }
+.ap-pb-mini-paper {
+    position: relative;
+    background: #fff;
+    border: 1px solid #d2d2d7;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-top: 14px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
+.ap-pb-runhead {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    font: italic 9.5pt Arial, Helvetica, sans-serif;
+    color: #1d1d1f;
+    border-bottom: 1px solid #e5e5ea;
+    padding-bottom: 6px;
+    margin-bottom: 10px;
+}
+.ap-pb-runhead > :nth-child(3) { text-align: right; }
+.ap-pb-list { list-style: none; padding: 0; margin: 0; }
+.ap-pb-item {
+    position: relative;
+    display: grid;
+    grid-template-columns: 42px 1fr auto;
+    gap: 10px;
+    align-items: start;
+    padding: 6px 0;
+    font: 10pt Arial, Helvetica, sans-serif;
+    color: #000;
+}
+.ap-pb-num   { font-weight: bold; text-align: left; }
+.ap-pb-txt   { line-height: 1.35; text-align: left; font-weight: normal; }
+.ap-pb-marks { color: #000; font-variant-numeric: tabular-nums; text-align: right; font-weight: bold; }
+.ap-pb-ctrls {
+    position: absolute;
+    top: -4px; right: 0;
+    display: flex; gap: 4px;
+    opacity: 0;
+    transform: translateY(-4px);
+    transition: opacity 0.35s ease, transform 0.35s ease;
+}
+.ap-pb-item.is-hovered .ap-pb-ctrls { opacity: 1; transform: translateY(0); }
+.ap-pb-btn {
+    background: #f5f5f7;
+    border: 1px solid #d2d2d7;
+    color: #1d1d1f;
+    border-radius: 4px;
+    padding: 2px 7px;
+    font: 600 9pt Arial, Helvetica, sans-serif;
+    line-height: 1;
+}
+.ap-pb-btn.ap-pb-up.is-clicked,
+.ap-pb-btn.ap-pb-up.is-pinned {
+    background: #fde68a;
+    border-color: #d97706;
+    color: #92400e;
+}
+.ap-pb-cursor {
+    position: absolute;
+    top: 0; left: 0;
+    width: 22px; height: 22px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.4s ease, transform 0.9s cubic-bezier(.22,.61,.36,1);
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.25));
+    line-height: 0;
+}
+.ap-pb-cursor svg { display: block; }
+.ap-pb-cursor.is-on { opacity: 1; }
+
+/* Printed-PDF mini preview */
+.ap-pb-sheets {
+    display: flex; flex-direction: column; gap: 14px;
+    transform: scale(0.92);
+    transform-origin: top center;
+}
+.ap-pb-sheet {
+    padding: 18px 20px 14px;
+    min-height: 280px;
+    display: flex; flex-direction: column;
+}
+#apPbSheet2 { min-height: 180px; }
+.ap-pb-sheet .ap-qb-runhead {
+    border-bottom: 1px solid #e5e5ea;
+    padding-bottom: 6px;
+    margin-bottom: 12px;
+}
+.ap-pb-paperlist { flex: 1; }
+.ap-pb-foot {
+    display: flex; justify-content: space-between;
+    margin-top: auto; padding-top: 8px;
+    font: italic 9pt Arial, Helvetica, sans-serif; color: #515154;
+    border-top: 1px solid #f0f0f3;
+}
+.ap-pb-pq-moved {
+    /* No entrance animation — the flying ghost handles the visual arrival,
+       and pq1 simply takes its place on the same frame the ghost leaves. */
+}
+#apPbSheet2 { transition: opacity 0.45s ease, transform 0.45s ease, max-height 0.55s ease, min-height 0.55s ease, margin-top 0.55s ease, padding 0.55s ease; overflow: hidden; max-height: 600px; }
+#apPbSheet2.is-empty {
+    opacity: 0;
+    transform: translateY(-12px) scale(0.96);
+    max-height: 0;
+    min-height: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top: -14px;  /* collapse the .ap-pb-sheets gap */
+    pointer-events: none;
+}
+/* Flying ghost element used during the move-up animation */
+.ap-pb-ghost {
+    position: fixed;
+    z-index: 50;
+    display: grid;
+    grid-template-columns: 42px 1fr auto;
+    gap: 10px;
+    align-items: start;
+    padding: 6px 12px;
+    background: #ecfaf0;
+    border: 1px solid #28a745;
+    border-radius: 6px;
+    box-shadow: 0 8px 22px rgba(40,167,69,0.28);
+    font: 10pt Arial, Helvetica, sans-serif;
+    color: #1d1d1f;
+    pointer-events: none;
+    transition: transform 0.85s cubic-bezier(.22,.61,.36,1), opacity 0.4s ease;
+}
+.ap-pb-ghost .ap-qb-pq-num { font-weight: 600; }
+</style>
+
+<script>
+(function(){
+    var stage  = document.getElementById('apPbStage');
+    if (!stage) return;
+    var cursor   = document.getElementById('apPbCursor');
+    var btnUp    = document.getElementById('apPbBtnUp');
+    var item     = document.getElementById('apPbItemHover');
+    var pq1      = document.getElementById('apPbPq410Page1');
+    var pq2      = document.getElementById('apPbPq410Page2');
+    var sheet2   = document.getElementById('apPbSheet2');
+    var status   = document.getElementById('apPbStatus');
+
+    function reset() {
+        pq1.hidden = true;
+        pq2.hidden = false;
+        pq2.style.visibility = '';
+        sheet2.classList.remove('is-empty');
+        btnUp.classList.remove('is-clicked', 'is-pinned');
+        cursor.classList.remove('is-on');
+        cursor.style.transform = 'translate(0px, 0px)';
+        status.textContent = '? ORPHAN — 4.10 ALONE ON NEXT PAGE';
+    }
+
+    function moveCursorTo(el, delay) {
+        return new Promise(function(resolve){
+            setTimeout(function(){
+                var paperRect = item.closest('.ap-pb-mini-paper').getBoundingClientRect();
+                var tgt       = el.getBoundingClientRect();
+                // Anchor the arrow TIP (top-left of the SVG) on the button centre.
+                var x = tgt.left - paperRect.left + (tgt.width / 2) - 4;
+                var y = tgt.top  - paperRect.top  + (tgt.height / 2) - 3;
+                cursor.classList.add('is-on');
+                cursor.style.transform = 'translate(' + x + 'px, ' + y + 'px)';
+                setTimeout(resolve, 950);
+            }, delay);
+        });
+    }
+
+    function flyUp() {
+        return new Promise(function(resolve){
+            // Snapshot source (pq2) and destination (placeholder pq1) rects.
+            var srcRect = pq2.getBoundingClientRect();
+            // Temporarily make pq1 visible (but invisible) to measure its rect.
+            var prevVis = pq1.style.visibility;
+            pq1.hidden = false;
+            pq1.style.visibility = 'hidden';
+            var dstRect = pq1.getBoundingClientRect();
+            pq1.hidden = true;
+            pq1.style.visibility = prevVis;
+
+            // Use the WIDER of the two so the ghost never collapses to a
+            // narrow vertical column (which causes the text to "swoop" sideways).
+            var ghostWidth = Math.max(srcRect.width, dstRect.width);
+            // Anchor x to the destination so the flight is purely vertical
+            // (both items live in the same column anyway, but this guarantees it).
+            var ghostLeft  = dstRect.left;
+
+            // Create a flying ghost positioned exactly over pq2.
+            var ghost = document.createElement('div');
+            ghost.className = 'ap-pb-ghost';
+            ghost.style.left = ghostLeft + 'px';
+            ghost.style.top  = srcRect.top  + 'px';
+            ghost.style.width = ghostWidth + 'px';
+            ghost.innerHTML =
+                '<span class="ap-qb-pq-num">4.10</span>' +
+                '<div>Companies use QR codes to allow customers to link to their websites.</div>' +
+                '<span>(2)</span>';
+            document.body.appendChild(ghost);
+
+            // Hide the real pq2 immediately so it looks like the ghost IS the item.
+            pq2.style.visibility = 'hidden';
+
+            // Next frame: translate ghost vertically to destination only.
+            requestAnimationFrame(function(){
+                // dx is forced to 0 because we anchored ghost.left to dst.left.
+                var dy = dstRect.top - srcRect.top;
+                ghost.style.transform = 'translate(0px, ' + dy + 'px)';
+            });
+
+            // When the flight finishes, swap the ghost for the real pq1
+            // in the same frame so there is no double-render and no gap.
+            setTimeout(function(){
+                // Reveal pq1 first (already styled is-shown so it shows fully).
+                pq1.hidden = false;
+                // Remove the ghost on the next tick so pq1 has rendered.
+                setTimeout(function(){
+                    ghost.remove();
+                    // Now collapse page 2 entirely (4.10 disappears from there).
+                    pq2.hidden = true;
+                    pq2.style.visibility = '';
+                    sheet2.classList.add('is-empty');
+                    resolve();
+                }, 40);
+            }, 900);
+        });
+    }
+
+    function clickUp() {
+        return new Promise(function(resolve){
+            btnUp.classList.add('is-clicked');
+            setTimeout(function(){
+                flyUp().then(function(){
+                    btnUp.classList.add('is-pinned');
+                    status.textContent = '? PINNED — 4.10 NOW ON PREVIOUS PAGE';
+                    setTimeout(resolve, 800);
+                });
+            }, 350);
+        });
+    }
+
+    function run() {
+        stage.dataset.apPbStarted = '1';
+        reset();
+        // Initial pause so viewer sees the orphan state, then animate.
+        setTimeout(function(){
+            moveCursorTo(btnUp, 600).then(clickUp);
+            // No loop — animation plays once and the final state is held.
+        }, 700);
+    }
+
+    if ('IntersectionObserver' in window) {
+        var io = new IntersectionObserver(function(entries){
+            entries.forEach(function(e){ if (e.isIntersecting) { run(); io.disconnect(); } });
+        }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+        io.observe(stage);
+        // Safety net: if for any reason IO never fires (page loaded with the
+        // stage already in view, slow load, etc.) kick the animation off
+        // shortly after the user is likely to have seen the section.
+        setTimeout(function(){
+            if (!stage.dataset.apPbStarted) { run(); }
+        }, 1800);
+    } else {
+        run();
+    }
+})();
+</script>
+
+<!-- --------- Cognitive Levels (CAPS) tile --------- -->
+<section class="ap-stage is-light is-tall">
+    <div class="ap-stage-inner">
+        <p class="ap-eyebrow is-accent">CAPS framework</p>
+        <h2 class="ap-headline ap-headline-sm">Cognitive levels,<br>balanced for you.</h2>
+        <p class="ap-subhead is-muted">
+            Every paper you build is automatically weighted to the CAPS demand profile — from recall through to synthesis.
+        </p>
+
+        <div class="ap-cog-grid" aria-label="CAPS cognitive levels">
+            <article class="ap-cog-card">
+                <p class="ap-cog-eyebrow">Level 01</p>
+                <h3 class="ap-cog-num">01</h3>
+                <h4 class="ap-cog-title">Remembering</h4>
+                <p class="ap-cog-desc">Recalling facts, definitions and simple procedures from memory.</p>
+                <div class="ap-cog-foot">
+                    <span class="ap-cog-tag">Lower order</span>
+                    <span class="ap-cog-wt">~30%</span>
+                </div>
+            </article>
+            <article class="ap-cog-card">
+                <p class="ap-cog-eyebrow">Level 02</p>
+                <h3 class="ap-cog-num">02</h3>
+                <h4 class="ap-cog-title">Understanding</h4>
+                <p class="ap-cog-desc">Explaining concepts, interpreting and applying knowledge in context.</p>
+                <div class="ap-cog-foot">
+                    <span class="ap-cog-tag">Lower / middle</span>
+                    <span class="ap-cog-wt">~40%</span>
+                </div>
+            </article>
+            <article class="ap-cog-card">
+                <p class="ap-cog-eyebrow">Level 03</p>
+                <h3 class="ap-cog-num">03</h3>
+                <h4 class="ap-cog-title">Analysing</h4>
+                <p class="ap-cog-desc">Breaking down information, making comparisons and justifying decisions.</p>
+                <div class="ap-cog-foot">
+                    <span class="ap-cog-tag">Higher order</span>
+                    <span class="ap-cog-wt">~20–30%</span>
+                </div>
+            </article>
+            <article class="ap-cog-card">
+                <p class="ap-cog-eyebrow">Level 04</p>
+                <h3 class="ap-cog-num">04</h3>
+                <h4 class="ap-cog-title">Creating</h4>
+                <p class="ap-cog-desc">Constructing new ideas, planning or complex problem-solving.</p>
+                <div class="ap-cog-foot">
+                    <span class="ap-cog-tag">Higher order</span>
+                    <span class="ap-cog-wt">~10%</span>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- --------- EVERYTHING YOU NEED — unified feature grid --------- -->
+<section class="ap-features">
+    <div class="ap-features-inner">
+        <header class="ap-features-head">
+            <p class="ap-eyebrow is-accent">Workspace overview</p>
+            <h2 class="ap-features-title">Everything you need.<br>In one place.</h2>
+        </header>
+        <div class="ap-features-grid">
+            <article class="ap-fcard">
+                <div class="ap-fcard-ico"><svg viewBox="0 0 24 24"><path d="M22 10 12 4 2 10l10 6 10-6Z"/><path d="M6 12v5c0 1 3 3 6 3s6-2 6-3v-5"/><path d="M22 10v6"/></svg></div>
+                <h3>Question bank</h3>
+                <p>CAPS-aligned, pre-vetted questions mapped to topics, cognitive levels and assessment standards across Grades 10–12.</p>
+            </article>
+            <article class="ap-fcard">
+                <div class="ap-fcard-ico"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="m9 13 2 2 4-4"/></svg></div>
+                <h3>Memorandum</h3>
+                <p>Marking guidelines generated automatically. Every paper ships with a CAPS-standard memo.</p>
+            </article>
+            <article class="ap-fcard">
+                <div class="ap-fcard-ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+                <h3>Bloom's filtering</h3>
+                <p>Filter by topic, cognitive level, difficulty and marks. Build the exact paper you need, instantly.</p>
+            </article>
+            <article class="ap-fcard">
+                <div class="ap-fcard-ico"><svg viewBox="0 0 24 24"><path d="M12 4v16"/><path d="M7 20h10"/><circle cx="12" cy="4" r="1"/><path d="M4 8h16"/><path d="M6 8 3 14h6L6 8Z"/><path d="M18 8l-3 6h6l-3-6Z"/></svg></div>
+                <h3>Cognitive distribution</h3>
+                <p>Auto-balanced to CAPS demand: 30% Knowledge · 40% Routine · 25% Complex · 5% Non-routine.</p>
+            </article>
+            <article class="ap-fcard">
+                <div class="ap-fcard-ico"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg></div>
+                <h3>DBE-ready exports</h3>
+                <p>Print-ready PDFs with proper headers, instructions and mark allocations. Ready to hand out.</p>
+            </article>
+            <article class="ap-fcard">
+                <div class="ap-fcard-ico"><svg viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/><path d="m3 18 9 5 9-5"/></svg></div>
+                <h3>Subject &amp; grade</h3>
+                <p>Organise papers by grade, subject, term and assessment type. Track curriculum coverage all year.</p>
+            </article>
+            <article class="ap-fcard">
+                <div class="ap-fcard-ico"><svg viewBox="0 0 24 24"><path d="M3 7h18"/><path d="M3 12h18"/><path d="M3 17h18"/><circle cx="6" cy="7" r="1"/><circle cx="9" cy="12" r="1"/><circle cx="6" cy="17" r="1"/></svg></div>
+                <h3>Past papers</h3>
+                <p>Searchable archive of past papers and memos across High School subjects — by year, grade and term.</p>
+            </article>
+            <article class="ap-fcard">
+                <div class="ap-fcard-ico"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18"/><path d="M8 3v4"/><path d="M16 3v4"/></svg></div>
+                <h3>CAPS year planner</h3>
+                <p>Term-by-term schedule aligned to the CAPS framework. Drag, edit, print.</p>
+            </article>
+            <article class="ap-fcard">
+                <div class="ap-fcard-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18"/><path d="M8 14h2"/><path d="M14 14h2"/><path d="M8 17h8"/></svg></div>
+                <h3>Rubric tools</h3>
+                <p>Build, share and reuse marking rubrics aligned to CAPS assessment criteria.</p>
+            </article>
+            <article class="ap-fcard">
+                <div class="ap-fcard-ico"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                <h3>Multi-teacher seats</h3>
+                <p>Department-wide accounts with role-based access and shared question banks.</p>
+            </article>
+            <article class="ap-fcard">
+                <div class="ap-fcard-ico"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="m7 14 4-4 3 3 5-6"/></svg></div>
+                <h3>Coverage analytics</h3>
+                <p>See exactly which CAPS topics and cognitive levels you've assessed across the term.</p>
+            </article>
+            <article class="ap-fcard">
+                <div class="ap-fcard-ico"><svg viewBox="0 0 24 24"><path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+                <h3>Audit &amp; security</h3>
+                <p>Complete audit log of paper edits, exports and approvals — peace of mind for HoDs and moderators.</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- --------- PRICING --------- -->
+<section class="ap-pricing">
+    <div class="ap-pricing-inner">
+        <h2>Pick a plan that fits.</h2>
+        <p class="ap-pricing-sub">Start free. Upgrade when your classroom grows.</p>
+        <div class="ap-plans">
+            <div class="ap-plan">
+                <h3>Professional for Teachers</h3>
+                <p class="ap-plan-sub">Full classroom tooling for individual teachers — paper generator, memos and a complete question bank, across 4 High School subject.</p>
+                <div class="ap-plan-price"><span class="amt">R299</span><span class="per">/ month</span></div>
+                <ul class="ap-plan-feat">
+                    <li>Access to past papers</li>
+                    <li>Full question bank</li>
+                    <li>Paper &amp; memo generator</li>
+                    <li>CAPS year planner</li>
+                    <li>Rubric &amp; assessment tools</li>
+                    <li>Email support</li>
+                </ul>
+                <a href="{{ url_for('register') if not current_user.is_authenticated else url_for('teacher_dashboard') }}" class="ap-plan-cta">Choose Professional</a>
+            </div>
+
+            <div class="ap-plan is-popular">
+                <span class="ap-plan-tag">Most Popular</span>
+                <h3>Moderation</h3>
+                <p class="ap-plan-sub">Built for HODs and moderators — review papers line-by-line, request changes and sign off without leaving the platform.</p>
+                <div class="ap-plan-price"><span class="amt">R399</span><span class="per">/ month</span></div>
+                <ul class="ap-plan-feat">
+                    <li>Everything in Professional for Teachers</li>
+                    <li>HOD moderation queue</li>
+                    <li>Line-by-line review &amp; comments</li>
+                    <li>Approve, request changes, sign off</li>
+                    <li>Colour-coded edit tracking</li>
+                    <li>Full audit log of approvals</li>
+                    <li>Priority support</li>
+                </ul>
+                <a href="{{ url_for('register') if not current_user.is_authenticated else url_for('teacher_dashboard') }}" class="ap-plan-cta">Choose Moderation</a>
+            </div>
+
+            <div class="ap-plan">
+                <h3>School</h3>
+                <p class="ap-plan-sub">Tailored licensing for schools and departments.</p>
+                <div class="ap-plan-price"><span class="amt word">Custom</span><span class="per">/ quote</span></div>
+                <ul class="ap-plan-feat">
+                    <li>Multi-teacher seats</li>
+                    <li>Department reporting</li>
+                    <li>Onboarding &amp; training</li>
+                    <li>Dedicated support</li>
+                </ul>
+                <a href="mailto:hello@sacodeinstitute.co.za" class="ap-plan-cta">Contact us</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+(function () {
+    var root = document.querySelector('.ap-prev');
+    if (!root) return;
+
+    var fields = ['title', 'school', 'subject', 'grade', 'date', 'duration', 'marks', 'examiner', 'moderator'];
+    var LOGO_BASE = '{{ url_for("static", filename="logo4/") }}';
+    var dataset = [
+        {
+            title:    'MATHEMATICS P1',
+            school:   'Sandton High School',
+            logo:     'Sandton-School-Logo-FINAL-1980x1420.png',
+            subject:  'Mathematics',
+            grade:    'Grade 12',
+            date:     '14 November 2026',
+            duration: '180',
+            marks:    '150',
+            examiner: 'Mrs L Carter',
+            moderator:'Mr J Pillay'
+        },
+        {
+            title:    'INFORMATION TECHNOLOGY P2',
+            school:   'Pretoria Boys High',
+            logo:     'Pretoria Boys High.png',
+            subject:  'Information Technology',
+            grade:    'Grade 11',
+            date:     '02 October 2026',
+            duration: '180',
+            marks:    '150',
+            examiner: 'Ms K Naidoo',
+            moderator:'Mr P van Wyk'
+        },
+        {
+            title:    'MATHEMATICS PAPER 1',
+            school:   'Rustenburg Girls College',
+            logo:     'RustenBurgGirlsHigh.jpg',
+            subject:  'Mathematics',
+            grade:    'Grade 12',
+            date:     '05 November 2026',
+            duration: '180',
+            marks:    '150',
+            examiner: 'Mr T Mokoena',
+            moderator:'Mrs L Cole'
+        },
+        {
+            title:    'PHYSICAL SCIENCES P1',
+            school:   'King Edward VII School',
+            logo:     'King_Edward_VII_School_Crest (1).png',
+            subject:  'Physical Sciences',
+            grade:    'Grade 11',
+            date:     '22 September 2026',
+            duration: '180',
+            marks:    '200',
+            examiner: 'Dr R Patel',
+            moderator:'Mr S Khumalo'
+        }
+    ];
+
+    var typed   = root.querySelectorAll('[data-anim]');
+    var caret   = root.querySelector('.ap-prev-finput .ap-prev-caret'); // ignored
+    var mirrors = {};
+    root.querySelectorAll('[data-mirror]').forEach(function (el) {
+        mirrors[el.getAttribute('data-mirror')] = el;
+    });
+    var inputs = {};
+    typed.forEach(function (el) { inputs[el.getAttribute('data-anim')] = el; });
+
+    function sleep (ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+
+    function flash (key) {
+        var m = mirrors[key];
+        if (!m) return;
+        m.classList.remove('is-pulse');
+        // force reflow
+        void m.offsetWidth;
+        m.classList.add('is-pulse');
+    }
+
+    async function typeField (key, value, speed) {
+        var input = inputs[key];
+        var mirror = mirrors[key];
+        if (!input || !mirror) return;
+        // focus highlight on parent input wrapper
+        var wrap = input.closest('.ap-gen-input');
+        if (wrap) wrap.classList.add('is-focus');
+        input.textContent = '';
+        mirror.textContent = '';
+        for (var i = 0; i < value.length; i++) {
+            input.textContent = value.slice(0, i + 1);
+            mirror.textContent = value.slice(0, i + 1);
+            await sleep(speed);
+        }
+        flash(key);
+        if (wrap) wrap.classList.remove('is-focus');
+    }
+
+    async function clearAll () {
+        // hide the logo on the paper + clear filename/thumb/progress
+        resetLogo();
+        // clear every animated field at once
+        var keys = Object.keys(inputs);
+        await Promise.all(keys.map(function (k) {
+            var inp = inputs[k];
+            var mir = mirrors[k];
+            return new Promise(function (resolve) {
+                var current = inp.textContent;
+                var i = current.length;
+                function step () {
+                    if (i < 0) return resolve();
+                    inp.textContent = current.slice(0, i);
+                    if (mir) mir.textContent = current.slice(0, i) || '\u00a0';
+                    i--;
+                    setTimeout(step, 8);
+                }
+                step();
+            });
+        }));
+    }
+
+    async function selectGrade (value) {
+        var input = inputs['grade'];
+        var mirror = mirrors['grade'];
+        if (!input) return;
+        var wrap = input.closest('.ap-gen-input');
+        var menu = root.querySelector('.ap-gen-options');
+        if (wrap) wrap.classList.add('is-focus');
+        // open menu
+        if (menu) menu.classList.add('is-open');
+        await sleep(450);
+        // hover-walk through options to the target
+        if (menu) {
+            var items = menu.querySelectorAll('li');
+            var targetIdx = -1;
+            items.forEach(function (li, i) {
+                if (li.getAttribute('data-grade') === value) targetIdx = i;
+            });
+            for (var i = 0; i < items.length; i++) {
+                items.forEach(function (l) { l.classList.remove('is-hover'); });
+                items[i].classList.add('is-hover');
+                await sleep(180);
+                if (i === targetIdx) break;
+            }
+            // select
+            await sleep(220);
+            items.forEach(function (l) { l.classList.remove('is-hover', 'is-selected'); });
+            if (targetIdx >= 0) items[targetIdx].classList.add('is-selected');
+        }
+        input.textContent = value;
+        if (mirror) mirror.textContent = value;
+        flash('grade');
+        await sleep(280);
+        if (menu) menu.classList.remove('is-open');
+        if (wrap) wrap.classList.remove('is-focus');
+    }
+
+    async function uploadLogo (data) {
+        var fileNameEl = root.querySelector('[data-anim-file]');
+        var thumbEl    = root.querySelector('.ap-gen-filethumb');
+        var progWrap   = root.querySelector('.ap-gen-fileprog');
+        var progBar    = root.querySelector('.ap-gen-fileprog-bar');
+        var btn        = root.querySelector('.ap-gen-filebtn');
+        var logoEl     = root.querySelector('[data-mirror-logo]');
+        if (!fileNameEl || !data.logo) return;
+
+        var url = LOGO_BASE + encodeURIComponent(data.logo);
+
+        // "click" choose file
+        if (btn) { btn.style.background = '#323130'; }
+        await sleep(450);
+        if (btn) { btn.style.background = '#6e6e73'; }
+
+        // filename appears
+        fileNameEl.textContent = data.logo;
+        fileNameEl.style.color = '#201F1E';
+
+        // upload progress
+        if (progWrap && progBar) {
+            progBar.style.width = '0%';
+            progWrap.classList.add('is-active');
+            await sleep(60);
+            progBar.style.width = '40%';
+            await sleep(280);
+            progBar.style.width = '78%';
+            await sleep(280);
+            progBar.style.width = '100%';
+            await sleep(360);
+            progWrap.classList.remove('is-active');
+        }
+
+        // show thumbnail in the field
+        if (thumbEl) {
+            thumbEl.src = url;
+            thumbEl.classList.add('is-shown');
+        }
+
+        // reveal logo on the paper
+        if (logoEl) {
+            logoEl.style.visibility = 'visible';
+            logoEl.src = url;
+            logoEl.classList.add('is-shown');
+        }
+        await sleep(280);
+    }
+
+    function resetLogo () {
+        var fileNameEl = root.querySelector('[data-anim-file]');
+        var thumbEl    = root.querySelector('.ap-gen-filethumb');
+        var progBar    = root.querySelector('.ap-gen-fileprog-bar');
+        var progWrap   = root.querySelector('.ap-gen-fileprog');
+        var logoEl     = root.querySelector('[data-mirror-logo]');
+        if (fileNameEl) { fileNameEl.textContent = 'No file chosen'; fileNameEl.style.color = '#a19f9d'; }
+        if (thumbEl) { thumbEl.classList.remove('is-shown'); thumbEl.removeAttribute('src'); }
+        if (progBar) { progBar.style.width = '0%'; }
+        if (progWrap) { progWrap.classList.remove('is-active'); }
+        if (logoEl) {
+            logoEl.classList.remove('is-shown');
+            logoEl.style.visibility = 'hidden';
+            logoEl.removeAttribute('src');
+        }
+    }
+
+    async function loop () {
+        var idx = 0;
+        await sleep(600);
+        while (true) {
+            var data = dataset[idx % dataset.length];
+            // clear logo + filename + thumb at the start of each new school
+            resetLogo();
+            for (var f = 0; f < fields.length; f++) {
+                var key = fields[f];
+                var val = data[key] || '';
+                if (key === 'grade') {
+                    await selectGrade(val);
+                } else {
+                    var speed = val.length > 30 ? 45 : (val.length > 12 ? 60 : 90);
+                    await typeField(key, val, speed);
+                }
+                await sleep(260);
+            }
+            // simulate logo upload last
+            await uploadLogo(data);
+            await sleep(2600);
+            await clearAll();
+            await sleep(500);
+            idx++;
+        }
+    }
+
+    // Start when scrolled into view
+    var started = false;
+    function maybeStart () {
+        if (started) return;
+        var rect = root.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            started = true;
+            loop();
+        }
+    }
+    maybeStart();
+    window.addEventListener('scroll', maybeStart, { passive: true });
+})();
+
+/* --------- STAGE 3 — Question builder simulation --------- */
+(function () {
+    var root = document.querySelector('.ap-qb');
+    if (!root) return;
+
+    var qlist      = root.querySelector('[data-qb-qlist]');
+    var paperlist  = root.querySelector('[data-qb-paperlist]');
+    var instrInput = root.querySelector('[data-qb-anim="instr"]');
+    var instrCaret = instrInput ? instrInput.parentElement.querySelector('.ap-prev-caret') : null;
+    var instrBox   = root.querySelector('.ap-gen-textarea');
+    var instrMir   = root.querySelector('[data-qb-mirror="instr"]');
+    var subjMir    = root.querySelector('[data-qb-mirror="subject"]');
+    var examMir    = root.querySelector('[data-qb-mirror="exam"]');
+    var countEl    = root.querySelector('[data-qb-count]');
+    var marksEl    = root.querySelector('[data-qb-marks]');
+    var addBtn     = root.querySelector('.ap-qb-btn-add');
+
+    var datasets = [
+        {
+            subject: 'Mathematics/P2',
+            exam:    'DBE/November 2026',
+            instr:   'Various options are provided as possible answers to the following questions. Choose the answer and write only the letter (A–D) next to the question number in the ANSWER BOOK.',
+            qs: [
+                { text: 'Which component provides start-up instructions when the computer is switched on?',
+                  options: ['CPU', 'RAM', 'Read-Only Memory (ROM)', 'SSD'], marks: 1 },
+                { text: 'Which ONE of the following file extensions is used when storing database files?',
+                  options: ['.docx', '.accdb', '.xlsx', '.html'], marks: 1 },
+                { text: 'A type of network connection between a smartwatch and a smartphone:',
+                  options: ['LAN', 'WAN', 'Bluetooth', 'VPN'], marks: 1 },
+                { text: 'Which ONE of the following is an example of cloud storage?',
+                  options: ['Google Drive', 'External hard drive', 'Flash disk', 'DVD-RW'], marks: 1 },
+                { text: 'The function of a UPS (Uninterruptible Power Supply) is to:',
+                  options: ['Increase internet speed', 'Provide backup power during outages', 'Cool the CPU', 'Store extra files'], marks: 1 }
+            ]
+        },
+        {
+            subject: 'Information Technology/P1',
+            exam:    'DBE/November 2026',
+            instr:   'Choose the answer and write only the letter (A–D) next to the question number in the ANSWER BOOK.',
+            qs: [
+                { text: 'Which data structure follows the LIFO principle?',
+                  options: ['Queue', 'Stack', 'Array', 'Tree'], marks: 1 },
+                { text: 'A loop that repeats while a condition is TRUE is called a:',
+                  options: ['for loop', 'while loop', 'do-until loop', 'switch loop'], marks: 1 },
+                { text: 'Which protocol is used for secure web traffic?',
+                  options: ['HTTP', 'FTP', 'HTTPS', 'SMTP'], marks: 1 },
+                { text: 'Which ONE of the following is NOT a primitive data type in most programming languages?',
+                  options: ['Integer', 'Boolean', 'Array', 'Character'], marks: 1 },
+                { text: 'The Big-O notation for a binary search on a sorted array is:',
+                  options: ['O(1)', 'O(log n)', 'O(n)', 'O(n²)'], marks: 1 }
+            ]
+        }
+    ];
+
+    function sleep (ms) { return new Promise(function (r) { setTimeout(r, ms); }); }
+
+    async function typeInto (el, mir, value, speed) {
+        if (!el) return;
+        if (instrBox) instrBox.classList.add('is-focus');
+        el.textContent = '';
+        if (mir) mir.textContent = '';
+        for (var i = 0; i < value.length; i++) {
+            el.textContent = value.slice(0, i + 1);
+            if (mir) mir.textContent = value.slice(0, i + 1);
+            await sleep(speed);
+        }
+        if (instrBox) instrBox.classList.remove('is-focus');
+    }
+
+    function makeEditorItem (num, text, marks) {
+        var li = document.createElement('li');
+        li.className = 'ap-qb-qitem';
+        li.innerHTML =
+            '<span class="ap-qb-qitem-handle">?</span>' +
+            '<span class="ap-qb-qitem-num">' + num + '</span>' +
+            '<span class="ap-qb-qitem-text">' + text + '</span>' +
+            '<span class="ap-qb-qitem-marks">' + marks + '</span>' +
+            '<span class="ap-qb-qitem-actions">?</span>';
+        return li;
+    }
+
+    function makePaperItem (num, text, options, marks) {
+        var li = document.createElement('li');
+        li.className = 'ap-qb-pq';
+        var optsHtml = options.map(function (o, i) {
+            return '<li>' + String.fromCharCode(65 + i) + ') ' + o + '</li>';
+        }).join('');
+        li.innerHTML =
+            '<span class="ap-qb-pq-num">' + num + '</span>' +
+            '<div>' +
+                '<div>' + text + '</div>' +
+                '<ul class="ap-qb-pq-options">' + optsHtml + '</ul>' +
+            '</div>' +
+            '<span class="ap-qb-pq-marks">(' + marks + ')</span>';
+        return li;
+    }
+
+    async function pressAdd () {
+        if (!addBtn) return;
+        addBtn.classList.add('is-press');
+        await sleep(220);
+        addBtn.classList.remove('is-press');
+    }
+
+    function updateMeta (count, marks) {
+        if (countEl) countEl.textContent = count;
+        if (marksEl) marksEl.textContent = marks;
+    }
+
+    function clearQuestions () {
+        if (qlist) qlist.innerHTML = '';
+        if (paperlist) paperlist.innerHTML = '';
+        updateMeta(0, 0);
+    }
+
+    function renumberRows () {
+        var eItems = qlist ? qlist.querySelectorAll('.ap-qb-qitem') : [];
+        var pItems = paperlist ? paperlist.querySelectorAll('.ap-qb-pq') : [];
+        for (var i = 0; i < eItems.length; i++) {
+            var nm = eItems[i].querySelector('.ap-qb-qitem-num');
+            if (nm) nm.textContent = '1.' + (i + 1);
+        }
+        for (var j = 0; j < pItems.length; j++) {
+            var pn = pItems[j].querySelector('.ap-qb-pq-num');
+            if (pn) pn.textContent = '1.' + (j + 1);
+        }
+    }
+
+    async function simulateDrag (fromIdx, toIdx) {
+        if (!qlist) return;
+        var items = qlist.querySelectorAll('.ap-qb-qitem');
+        if (fromIdx >= items.length || toIdx >= items.length || fromIdx === toIdx) return;
+
+        var rowH = items[0].getBoundingClientRect().height + 6; // gap = 6px
+        var dragged = items[fromIdx];
+        var distance = (toIdx - fromIdx) * rowH;
+
+        // 1. Lift the dragged row
+        dragged.classList.add('is-dragging');
+        dragged.style.transform = 'translateY(0) scale(1.02)';
+        await sleep(350);
+
+        // 2. Slide the dragged row + push the rows in between
+        dragged.style.transform = 'translateY(' + distance + 'px) scale(1.02)';
+
+        var lo = Math.min(fromIdx, toIdx);
+        var hi = Math.max(fromIdx, toIdx);
+        var dir = fromIdx < toIdx ? -1 : 1;
+        for (var k = lo; k <= hi; k++) {
+            if (k === fromIdx) continue;
+            items[k].classList.add('is-slide');
+            items[k].style.transform = 'translateY(' + (dir * rowH) + 'px)';
+        }
+        await sleep(700);
+
+        // 3. Commit: reorder DOM, clear inline transforms
+        if (fromIdx < toIdx) {
+            qlist.insertBefore(dragged, items[toIdx].nextSibling);
+        } else {
+            qlist.insertBefore(dragged, items[toIdx]);
+        }
+        // mirror on the paper side too
+        var pItems = paperlist.querySelectorAll('.ap-qb-pq');
+        var pDragged = pItems[fromIdx];
+        if (pDragged) {
+            if (fromIdx < toIdx) {
+                paperlist.insertBefore(pDragged, pItems[toIdx].nextSibling);
+            } else {
+                paperlist.insertBefore(pDragged, pItems[toIdx]);
+            }
+        }
+
+        // reset styles
+        for (var m = 0; m < items.length; m++) {
+            items[m].classList.remove('is-dragging', 'is-slide');
+            items[m].style.transform = '';
+        }
+        renumberRows();
+
+        // brief highlight on landing spot
+        var moved = qlist.querySelectorAll('.ap-qb-qitem')[toIdx];
+        if (moved) {
+            moved.classList.add('is-just-added');
+            setTimeout(function () { moved.classList.remove('is-just-added'); }, 900);
+        }
+        await sleep(450);
+    }
+
+    async function runDataset (data) {
+        if (subjMir) subjMir.textContent = data.subject;
+        if (examMir) examMir.textContent = data.exam;
+        clearQuestions();
+
+        // type instructions (mirrors live to paper stem)
+        await sleep(400);
+        await typeInto(instrInput, instrMir, data.instr, 14);
+        await sleep(450);
+
+        var totalMarks = 0;
+        for (var i = 0; i < data.qs.length; i++) {
+            var q = data.qs[i];
+            var num = '1.' + (i + 1);
+            await pressAdd();
+            await sleep(120);
+
+            // editor list item slides in (highlighted)
+            var li = makeEditorItem(num, q.text, q.marks);
+            qlist.appendChild(li);
+            requestAnimationFrame(function (li) {
+                return function () { li.classList.add('is-shown', 'is-just-added'); };
+            }(li));
+            setTimeout((function (li) {
+                return function () { li.classList.remove('is-just-added'); };
+            })(li), 900);
+
+            // paper list item fades in
+            var pli = makePaperItem(num, q.text, q.options, q.marks);
+            paperlist.appendChild(pli);
+            requestAnimationFrame(function (pli) {
+                return function () { pli.classList.add('is-shown'); };
+            }(pli));
+
+            totalMarks += q.marks;
+            updateMeta(i + 1, totalMarks);
+            await sleep(950);
+        }
+
+        // Demonstrate drag-to-reorder: move the last question up to position 2,
+        // then move what's now the last question up to position 3.
+        await sleep(1400);
+        await simulateDrag(data.qs.length - 1, 1);
+        await sleep(900);
+        await simulateDrag(data.qs.length - 1, 2);
+
+        await sleep(2800);
+    }
+
+    async function loop () {
+        var idx = 0;
+        await sleep(500);
+        while (true) {
+            await runDataset(datasets[idx % datasets.length]);
+            // wipe instructions
+            if (instrInput) instrInput.textContent = '';
+            if (instrMir)   instrMir.textContent = '';
+            await sleep(400);
+            idx++;
+        }
+    }
+
+    var started = false;
+    function maybeStart () {
+        if (started) return;
+        var rect = root.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            started = true;
+            loop();
+        }
+    }
+    maybeStart();
+    window.addEventListener('scroll', maybeStart, { passive: true });
+})();
+
+/* --------- STAGE 4 — Memorandum simulation --------- */
+(function () {
+    var root = document.querySelector('.ap-mm');
+    if (!root) return;
+
+    var altInput   = root.querySelector('[data-mm-anim="alt"]');
+    var altBox     = root.querySelector('.ap-gen-textarea');
+    var qsel       = root.querySelector('[data-mm-anim="qsel"]');
+    var curNum     = root.querySelector('[data-mm-cur-num]');
+    var marksBox   = root.querySelector('.ap-mm-marksbox');
+    var choices    = root.querySelectorAll('.ap-mm-choice');
+    var saveBtn    = root.querySelector('.ap-mm-btn-save');
+    var qlist      = root.querySelector('[data-mm-qlist]');
+    var paperlistQ1 = root.querySelector('[data-mm-paperlist-q1]');
+    var paperlistQ2 = root.querySelector('[data-mm-paperlist-q2]');
+    var countEl    = root.querySelector('[data-mm-count]');
+    var marksEl    = root.querySelector('[data-mm-marks]');
+    var totalRowQ1 = root.querySelector('[data-mm-total-row-q1]');
+    var totalMarksQ1 = root.querySelector('[data-mm-total-marks-q1]');
+    var totalRowQ2 = root.querySelector('[data-mm-total-row-q2]');
+    var totalMarksQ2 = root.querySelector('[data-mm-total-marks-q2]');
+
+    var answers = [
+        { num: '1.1',  letter: 'C', alt: 'ROM',                          marks: 1 },
+        { num: '1.2',  letter: 'B', alt: '',                              marks: 1 },
+        { num: '1.3',  letter: 'C', alt: 'PAN / Personal Area Network',   marks: 1 },
+        { num: '1.4',  letter: 'B', alt: 'OneDrive / Dropbox',            marks: 1 },
+        { num: '1.5',  letter: 'C', alt: '',                              marks: 1 },
+        { num: '1.6',  letter: 'B', alt: '',                              marks: 1 },
+        { num: '1.7',  letter: 'D', alt: '',                              marks: 1 },
+        { num: '1.8',  letter: 'B', alt: '',                              marks: 1 },
+        { num: '1.9',  letter: 'D', alt: '',                              marks: 1 },
+        { num: '1.10', letter: 'B', alt: '',                              marks: 1 }
+    ];
+
+    var matchingAnswers = [
+        { num: '2.1', letter: 'P', text: 'ADSL', marks: 1 },
+        { num: '2.2', letter: 'H', text: 'Router', marks: 1 },
+        { num: '2.3', letter: 'C', text: 'Section break', marks: 1 },
+        { num: '2.4', letter: 'D', text: 'Drone', marks: 1 },
+        { num: '2.5', letter: 'F', text: 'CAPTCHA', marks: 1 },
+        { num: '2.6', letter: 'M', text: 'OR', marks: 1 },
+        { num: '2.7', letter: 'Q', text: 'Service pack', marks: 1 },
+        { num: '2.8', letter: 'B', text: 'Information overload', marks: 1 },
+        { num: '2.9', letter: 'R', text: 'Keylogging', marks: 1 },
+        { num: '2.10', letter: 'K', text: 'Accuracy', marks: 1 }
+    ];
+
+    function clearChoices () {
+        for (var i = 0; i < choices.length; i++) {
+            choices[i].classList.remove('is-selected', 'is-hover', 'is-press');
+        }
+    }
+    function selectChoiceInstant (letter) {
+        for (var i = 0; i < choices.length; i++) {
+            choices[i].classList.remove('is-selected');
+            if (choices[i].getAttribute('data-letter') === letter) {
+                choices[i].classList.add('is-selected');
+            }
+        }
+    }
+
+    function makeEditorRow (a) {
+        var li = document.createElement('li');
+        li.className = 'ap-qb-qitem';
+        var altHtml = a.alt ? ' <span style="color:#6e6e73;font-style:italic">(' + a.alt + ')</span>' : '';
+        li.innerHTML =
+            '<span class="ap-qb-qitem-handle">?</span>' +
+            '<span class="ap-qb-qitem-num">' + a.num + '</span>' +
+            '<span class="ap-qb-qitem-text"><strong style="color:#0078D4">' + a.letter + ' ?</strong>' + altHtml + '</span>' +
+            '<span class="ap-qb-qitem-marks">' + a.marks + '</span>' +
+            '<span class="ap-qb-qitem-actions">?</span>';
+        return li;
+    }
+
+    function makePaperRow (a) {
+        var tr = document.createElement('tr');
+        tr.className = 'is-pending';
+        tr.innerHTML =
+            '<td class="ap-mm-pq-num">' + a.num + '</td>' +
+            '<td class="ap-mm-pq-ans">' + a.letter + '</td>' +
+            '<td class="ap-mm-pq-tick">\u2713</td>' +
+            '<td class="ap-mm-pq-marks">' + a.marks + '</td>';
+        return tr;
+    }
+
+    function makeMatchingPaperRow (a) {
+        var tr = document.createElement('tr');
+        tr.className = 'is-pending';
+        tr.innerHTML =
+            '<td class="ap-mm-pq-num">' + a.num + '</td>' +
+            '<td class="ap-mm-pq-ans">' + a.letter + '</td>' +
+            '<td class="ap-mm-pq-tick">\u2713</td>' +
+            '<td class="ap-mm-pq-text">' + a.text + '</td>' +
+            '<td class="ap-mm-pq-marks">' + a.marks + '</td>';
+        return tr;
+    }
+
+    function clearAll () {
+        if (qlist) qlist.innerHTML = '';
+        if (paperlistQ1) paperlistQ1.innerHTML = '';
+        if (paperlistQ2) paperlistQ2.innerHTML = '';
+        if (countEl) countEl.textContent = '0';
+        if (marksEl) marksEl.textContent = '0';
+        if (totalMarksQ1) totalMarksQ1.textContent = '0';
+        if (totalMarksQ2) totalMarksQ2.textContent = '0';
+        if (totalRowQ1) totalRowQ1.hidden = true;
+        if (totalRowQ2) totalRowQ2.hidden = true;
+        if (altInput) altInput.textContent = '';
+        clearChoices();
+    }
+
+    function renderInstant () {
+        clearAll();
+        var totalQ1 = 0;
+        var totalQ2 = 0;
+        for (var i = 0; i < answers.length; i++) {
+            var a = answers[i];
+            var m = matchingAnswers[i];
+
+            if (curNum) curNum.textContent = a.num;
+            if (qsel)   qsel.textContent = 'QUESTION 1 ? ' + a.num;
+            selectChoiceInstant(a.letter);
+            if (altInput) altInput.textContent = a.alt || '';
+
+            var li  = makeEditorRow(a);
+            var pliQ1 = makePaperRow(a);
+            var pliQ2 = makeMatchingPaperRow(m);
+            qlist.appendChild(li);
+            paperlistQ1.appendChild(pliQ1);
+            paperlistQ2.appendChild(pliQ2);
+            li.classList.add('is-shown');
+            pliQ1.classList.remove('is-pending');
+            pliQ1.classList.add('is-shown');
+            pliQ2.classList.remove('is-pending');
+            pliQ2.classList.add('is-shown');
+
+            totalQ1 += a.marks;
+            totalQ2 += m.marks;
+            if (countEl) countEl.textContent = (i + 1);
+            if (marksEl) marksEl.textContent = totalQ1;
+        }
+
+        if (totalRowQ1) totalRowQ1.hidden = false;
+        if (totalMarksQ1) totalMarksQ1.textContent = totalQ1;
+        if (totalRowQ2) totalRowQ2.hidden = false;
+        if (totalMarksQ2) totalMarksQ2.textContent = totalQ2;
+        if (saveBtn) {
+            saveBtn.classList.add('is-press');
+            setTimeout(function () { saveBtn.classList.remove('is-press'); }, 180);
+        }
+        if (altBox) altBox.classList.remove('is-focus');
+    }
+
+    var started = false;
+    var rendered = false;
+
+    function startMemoNow () {
+        if (rendered) return;
+        rendered = true;
+        renderInstant();
+    }
+
+    function maybeStart () {
+        if (started) return;
+        var rect = root.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            started = true;
+            startMemoNow();
+        }
+    }
+
+    root.addEventListener('click', startMemoNow, { passive: true });
+    maybeStart();
+    window.addEventListener('scroll', maybeStart, { passive: true });
+})();
+</script>
+
+{% endblock %}
+
+{% block content %}{% endblock %}

@@ -1,0 +1,148 @@
+﻿{% extends "lms_base.html" %}
+
+{% block title %}Privacy Policy — South African Teachers Hub{% endblock %}
+
+{% block body_class %}apple-home{% endblock %}
+
+{% block head %}
+<script>document.documentElement.setAttribute('data-theme','light');</script>
+{% endblock %}
+
+{% block theme_init %}
+document.documentElement.setAttribute('data-theme','light');
+{% endblock %}
+
+{% block content %}
+<style>
+    html, body, main { background: #fff !important; color: #1d1d1f !important; font-weight: 400 !important; }
+    .navbar { background: rgba(255,255,255,0.9) !important; }
+    /* Force black nav text on this light page (overrides white-on-dark defaults) */
+    .sath-nav { background: #fff !important; border-bottom: 1px solid rgba(0,0,0,0.08) !important; }
+    .sath-brand { color: #000 !important; }
+    .sath-brand .sath-brand-accent { color: #06c !important; }
+    .sath-links a,
+    .sath-cta .sath-ghost { color: #000 !important; opacity: 1 !important; font-weight: 500 !important; }
+    .sath-links a:hover,
+    .sath-cta .sath-ghost:hover { color: #000 !important; background: rgba(0,0,0,0.05) !important; }
+    .sath-links a.active { color: #000 !important; }
+    .sath-links a.sath-admin { color: #000 !important; }
+    .sath-mobile-toggle { color: #000 !important; }
+    .pp-wrap { max-width: 720px; margin: 0 auto; padding: 60px 24px 80px; }
+    .pp-wrap h1 { font-size: 2.4rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 6px; color: #1d1d1f; }
+    .pp-wrap .pp-sub { font-size: 1rem; color: #1d1d1f; margin-bottom: 6px; }
+    .pp-wrap .pp-date { font-size: 0.85rem; color: #1d1d1f; margin-bottom: 48px; }
+    .pp-wrap h2 { font-size: 1.1rem; font-weight: 700; color: #1d1d1f; margin: 36px 0 8px; }
+    .pp-wrap p { font-size: 0.95rem; color: #1d1d1f; line-height: 1.75; margin-bottom: 10px; }
+    .pp-wrap ol { padding-left: 1.4rem; margin: 8px 0 12px; }
+    .pp-wrap ol li { font-size: 0.95rem; color: #1d1d1f; line-height: 1.75; margin-bottom: 6px; }
+    .pp-wrap a { color: #2997ff; text-decoration: none; }
+    .pp-wrap a:hover { text-decoration: underline; }
+    .pp-wrap hr { border: none; border-top: 1px solid #e5e5e5; margin: 40px 0; }
+    .pp-wrap strong { color: #1d1d1f; }
+</style>
+
+<div class="pp-wrap">
+    <h1>Privacy Policy</h1>
+    <p class="pp-sub">South African Teachers Hub is committed to protecting the privacy of our users — especially educators and learners.</p>
+    <p class="pp-date">Last updated: May 2026</p>
+
+    <h2>1. Who We Are</h2>
+    <p>South African Teachers Hub ("we", "us", "our") is an online platform built for South African teachers. We provide tools to create exam papers, manage lesson content, deliver LMS courses, and support professional development — all aligned to the CAPS curriculum.</p>
+
+    <h2>2. Information We Collect</h2>
+    <p>We collect only what is necessary to provide our service:</p>
+    <ol>
+        <li><strong>Account information</strong> — name, email address, and password (stored as a secure hash)</li>
+        <li><strong>Profile data</strong> — school name, subject, grade level (optional)</li>
+        <li><strong>Content you create</strong> — question banks, generated papers, lesson notes, quiz attempts</li>
+        <li><strong>Usage data</strong> — pages visited, features used, session duration (anonymous analytics)</li>
+        <li><strong>Device information</strong> — browser type, operating system, IP address</li>
+    </ol>
+    <p>We do <strong>not</strong> collect payment card details directly. Any payments are processed by PCI-compliant third-party providers.</p>
+
+    <h2>3. How We Use Your Information</h2>
+    <ol>
+        <li>To create and manage your account</li>
+        <li>To deliver the platform's features (paper generation, quizzes, LMS)</li>
+        <li>To save and sync your work across sessions</li>
+        <li>To send you important account notifications</li>
+        <li>To improve the platform and fix bugs</li>
+        <li>To comply with South African law</li>
+    </ol>
+    <p>We do <strong>not</strong> sell or rent your personal information to any third party.</p>
+
+    <h2>4. Legal Basis for Processing</h2>
+    <ol>
+        <li><strong>Consent</strong> — You agree to this policy when you register. You may withdraw consent by deleting your account.</li>
+        <li><strong>Contract</strong> — Processing is necessary to provide the service you signed up for.</li>
+        <li><strong>Legitimate Interest</strong> — We process usage data to improve the platform and prevent fraud.</li>
+        <li><strong>Legal Obligation</strong> — We may process data to comply with South African law, including the POPI Act.</li>
+    </ol>
+
+    <h2>5. Cookies</h2>
+    <p>We use a minimal set of cookies:</p>
+    <ol>
+        <li><strong>Session cookies</strong> — to keep you logged in during your visit (essential)</li>
+        <li><strong>Preference cookies</strong> — to remember your dark/light mode setting</li>
+        <li><strong>Analytics cookies</strong> — anonymised usage statistics to improve the platform</li>
+    </ol>
+    <p>You can disable non-essential cookies in your browser settings. Disabling session cookies will prevent you from logging in.</p>
+
+    <h2>6. Data Sharing</h2>
+    <p>We share data only in these limited circumstances:</p>
+    <ol>
+        <li><strong>Hosting provider</strong> — our platform is hosted on <strong>Amazon Web Services (AWS)</strong>. AWS is certified under multiple international security and privacy frameworks. Data may be stored in AWS regions including Cape Town (af-south-1) or EU regions. AWS's privacy practices are described at <a href="https://aws.amazon.com/privacy/" target="_blank" rel="noopener">aws.amazon.com/privacy</a></li>
+        <li><strong>Email delivery</strong> — transactional emails (e.g. password resets) are sent via a trusted mail service</li>
+        <li><strong>Legal requirements</strong> — we will disclose information if required by a valid court order or South African law</li>
+    </ol>
+
+    <h2>7. Data Security</h2>
+    <ol>
+        <li>All data is transmitted over HTTPS (TLS 1.2+)</li>
+        <li>Passwords are hashed using industry-standard algorithms (Werkzeug/bcrypt)</li>
+        <li>Access to the database is restricted to authorised personnel only</li>
+        <li>Regular backups are encrypted and stored securely</li>
+    </ol>
+    <p>No system is 100% secure. If you discover a security vulnerability, please report it to <a href="mailto:privacy@sateachershub.co.za">privacy@sateachershub.co.za</a> and we will respond within 48 hours.</p>
+
+    <h2>8. Your Rights (POPI Act)</h2>
+    <p>Under the Protection of Personal Information Act 4 of 2013 (POPI Act), you have the right to:</p>
+    <ol>
+        <li><strong>Access</strong> — Request a copy of all personal information we hold about you.</li>
+        <li><strong>Correction</strong> — Ask us to correct inaccurate or incomplete information.</li>
+        <li><strong>Deletion</strong> — Request deletion of your account and associated data.</li>
+        <li><strong>Objection</strong> — Object to processing of your personal information for direct marketing.</li>
+    </ol>
+    <p>To exercise any of these rights, email <a href="mailto:privacy@sateachershub.co.za">privacy@sateachershub.co.za</a>. We will respond within 30 days.</p>
+
+    <h2>9. Minors</h2>
+    <p>South African Teachers Hub is intended for use by educators and adults (18+). If a teacher creates accounts for learners as part of a school arrangement, the school takes responsibility for obtaining appropriate consent from parents or guardians as required by POPIA and the Children's Act.</p>
+
+    <h2>10. Data Retention</h2>
+    <ol>
+        <li><strong>Active accounts</strong> — data is retained for as long as your account is active</li>
+        <li><strong>Deleted accounts</strong> — personally identifiable information is purged within 30 days; anonymised usage data may be retained for analytics</li>
+        <li><strong>Legal records</strong> — certain records may be retained for up to 5 years to comply with South African tax and company law</li>
+    </ol>
+
+    <h2>11. Changes to This Policy</h2>
+    <p>We may update this policy to reflect changes in the law or our services. We will notify you by email or an in-app notice at least 14 days before material changes take effect. Continued use after that date constitutes acceptance.</p>
+
+    <h2>12. Filing a Complaint</h2>
+    <p>If you believe we have not handled your personal information correctly, please contact us first at <a href="mailto:privacy@sateachershub.co.za">privacy@sateachershub.co.za</a>. If we cannot resolve your concern, you may contact the Information Regulator of South Africa:</p>
+    <ol>
+        <li><strong>Address:</strong> JD House, 27 Stiemens Street, Braamfontein, Johannesburg, 2001</li>
+        <li><strong>Email:</strong> <a href="mailto:inforeg@justice.gov.za">inforeg@justice.gov.za</a></li>
+        <li><strong>Phone:</strong> 012 406 4818</li>
+        <li><strong>Website:</strong> <a href="https://www.justice.gov.za/inforeg/" target="_blank" rel="noopener">www.justice.gov.za/inforeg</a></li>
+    </ol>
+
+    <h2>13. Contact Us</h2>
+    <p><strong>South African Teachers Hub — Information Officer</strong><br>
+    Email: <a href="mailto:privacy@sateachershub.co.za">privacy@sateachershub.co.za</a><br>
+    We aim to respond to all privacy enquiries within 5 business days.</p>
+
+    <hr>
+    <p style="font-size:0.8rem; color:#1d1d1f; text-align:center;">This policy is compliant with the Protection of Personal Information Act 4 of 2013 (POPI Act).</p>
+</div>
+{% endblock %}

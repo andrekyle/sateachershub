@@ -1,0 +1,489 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Products - South African Teachers Hub{% endblock %}
+
+{% block content %}
+<style>
+/* Fix for price range inputs */
+.price-input-container {
+    position: relative;
+}
+.price-input-container .currency-symbol {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--gray-500);
+    font-size: 0.875rem;
+    font-weight: 300;
+    pointer-events: none;
+    z-index: 10;
+}
+.price-input-container .azure-input {
+    padding-left: 2rem !important;
+}
+
+/* Fix for search bar */
+.search-container {
+    position: relative;
+    flex: 1;
+}
+.search-container .search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9CA3AF;
+    font-size: 0.875rem;
+    pointer-events: none;
+    z-index: 10;
+}
+.search-container .azure-input {
+    padding-left: 3rem !important;
+    padding-right: 1rem !important;
+    height: 48px;
+    display: flex;
+    align-items: center;
+}
+.search-button {
+    white-space: nowrap;
+    min-width: 120px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+</style>
+
+<!-- Hero Section - Untitled UI Premium Header -->
+<div class="bg-white" style="border-bottom: 1px solid var(--gray-200);">
+    <div class="container mx-auto px-4 py-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <h1 class="text-5xl font-light text-black mb-4 tracking-tight" style="letter-spacing: -0.02em;">Discover exceptional products</h1>
+            <p class="text-xl font-light leading-relaxed" style="color: var(--gray-600); max-width: 42rem; margin: 0 auto;">Browse through our curated selection of premium products, carefully chosen for quality and value.</p>
+        </div>
+    </div>
+</div>
+
+<div class="bg-gray-50 min-h-screen">
+    <div class="container mx-auto px-4 py-12">
+        <div class="flex flex-col lg:flex-row gap-10">
+            <!-- Sidebar - Untitled UI Premium Filters -->
+            <div class="w-full lg:w-80 flex-shrink-0">
+                <div class="azure-card p-7 sticky top-24" style="border-radius: 12px;">
+                    <!-- Categories -->
+                    <div class="mb-8">
+                        <h3 class="font-medium text-sm mb-5 text-black uppercase tracking-wider" style="color: var(--gray-900); letter-spacing: 0.05em;">Categories</h3>
+                        <div class="space-y-1">
+                            <a href="{{ url_for('products') }}" class="category-link group flex items-center justify-between py-3 px-4 text-sm rounded-lg hover:bg-gray-50 transition font-light text-black {% if not selected_category %}category-active{% endif %}">
+                                <span class="group-hover:text-azure transition">All Products</span>
+                                <span class="category-badge text-xs px-2 py-0.5 rounded-full {% if not selected_category %}badge-active{% else %}badge-inactive{% endif %}">{{ products|length }}</span>
+                            </a>
+                            {% for category in categories %}
+                            <a href="{{ url_for('products', category=category.id) }}" class="category-link group flex items-center justify-between py-3 px-4 text-sm rounded-lg hover:bg-gray-50 transition font-light text-black {% if selected_category and selected_category == category.id|string %}category-active{% endif %}">
+                                <span class="group-hover:text-azure transition">{{ category.name }}</span>
+                                <span class="category-badge text-xs px-2 py-0.5 rounded-full {% if selected_category and selected_category == category.id|string %}badge-active{% else %}badge-inactive{% endif %}">{{ category.products|length }}</span>
+                            </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+                    
+                    <!-- Divider -->
+                    <div class="border-t mb-8" style="border-color: var(--gray-200);"></div>
+                    
+                    <!-- Quick Filters -->
+                    <div>
+                        <h3 class="font-medium text-sm mb-5 text-black uppercase tracking-wider" style="color: var(--gray-900); letter-spacing: 0.05em;">Filters</h3>
+                        <div class="space-y-3">
+                            <label class="flex items-center cursor-pointer group">
+                                <input type="checkbox" class="w-4 h-4 rounded border-gray-300 filter-checkbox" 
+                                       style="color: var(--azure-blue);" 
+                                       name="featured" 
+                                       {% if filter_state.featured %}checked{% endif %}>
+                                <span class="ml-3 text-sm font-light text-black group-hover:text-azure transition">Featured Products</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer group">
+                                <input type="checkbox" class="w-4 h-4 rounded border-gray-300 filter-checkbox" 
+                                       style="color: var(--azure-blue);" 
+                                       name="in_stock"
+                                       {% if filter_state.in_stock %}checked{% endif %}>
+                                <span class="ml-3 text-sm font-light text-black group-hover:text-azure transition">In Stock Only</span>
+                            </label>
+                            <label class="flex items-center cursor-pointer group">
+                                <input type="checkbox" class="w-4 h-4 rounded border-gray-300 filter-checkbox" 
+                                       style="color: var(--azure-blue);" 
+                                       name="on_sale"
+                                       {% if filter_state.on_sale %}checked{% endif %}>
+                                <span class="ml-3 text-sm font-light text-black group-hover:text-azure transition">On Sale</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Divider -->
+                    <div class="border-t my-8" style="border-color: var(--gray-200);"></div>
+                    
+                    <!-- Price Range -->
+                    <div>
+                        <h3 class="font-medium text-sm mb-5 text-black uppercase tracking-wider" style="color: var(--gray-900); letter-spacing: 0.05em;">Price Range</h3>
+                        <div class="space-y-4">
+                            <div>
+                                <label class="block text-xs font-light mb-2" style="color: var(--gray-600);">Minimum</label>
+                                <div class="price-input-container">
+                                    <span class="currency-symbol">R</span>
+                                    <input type="number" placeholder="0" class="azure-input w-full text-sm font-light" 
+                                           id="min-price" name="min_price" 
+                                           value="{{ filter_state.min_price or '' }}">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-light mb-2" style="color: var(--gray-600);">Maximum</label>
+                                <div class="price-input-container">
+                                    <span class="currency-symbol">R</span>
+                                    <input type="number" placeholder="10000" class="azure-input w-full text-sm font-light" 
+                                           id="max-price" name="max_price" 
+                                           value="{{ filter_state.max_price or '' }}">
+                                </div>
+                            </div>
+                            <button type="button" id="apply-price-filter" class="btn-azure-primary w-full mt-3 text-sm">
+                                Apply Price Range
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <!-- Clear Filters Button -->
+                    <div class="border-t pt-8" style="border-color: var(--gray-200);">
+                        <button type="button" id="clear-filters" class="btn-azure-secondary w-full text-sm">
+                            <i class="fas fa-times mr-2"></i>Clear All Filters
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Products Grid - Untitled UI Premium Layout -->
+            <div class="flex-1">
+                <!-- Search & Sort Bar -->
+                <div class="flex flex-col sm:flex-row gap-4 mb-10">
+                    <form method="GET" class="flex-1 flex gap-3">
+                        <div class="search-container">
+                            <i class="fas fa-search search-icon"></i>
+                            <input type="text" name="search" placeholder="Search for products..." 
+                                   class="azure-input w-full text-sm font-light"
+                                   value="{{ request.args.get('search', '') }}">
+                        </div>
+                        <button type="submit" class="btn-azure-primary search-button">
+                            <i class="fas fa-search mr-2"></i>Search
+                        </button>
+                    </form>
+                </div>
+                
+                <!-- Results Info -->
+                <div class="flex items-center justify-between mb-8 pb-6" style="border-bottom: 1px solid var(--gray-200);">
+                    <div>
+                        <p class="text-sm font-light" style="color: var(--gray-600);">
+                            Showing <span class="font-medium text-black">{{ products|length }}</span> result{{ 's' if products|length != 1 else '' }}
+                        </p>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <span class="text-sm font-light" style="color: var(--gray-600);">Sort by</span>
+                        <select id="sort-dropdown" class="azure-input text-sm font-light" style="cursor: pointer; appearance: none; background-image: url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27 fill=%27none%27 stroke=%27currentColor%27 stroke-width=%272%27 stroke-linecap=%27round%27 stroke-linejoin=%27round%27%3e%3cpolyline points=%276 9 12 15 18 9%27%3e%3c/polyline%3e%3c/svg%3e'); background-repeat: no-repeat; background-position: right 0.5rem center; background-size: 1.25em; padding-right: 2rem;">
+                            <option value="newest" {% if filter_state.sort == 'newest' %}selected{% endif %}>Newest First</option>
+                            <option value="price_asc" {% if filter_state.sort == 'price_asc' %}selected{% endif %}>Price: Low to High</option>
+                            <option value="price_desc" {% if filter_state.sort == 'price_desc' %}selected{% endif %}>Price: High to Low</option>
+                            <option value="name_asc" {% if filter_state.sort == 'name_asc' %}selected{% endif %}>Name: A to Z</option>
+                            <option value="popular" {% if filter_state.sort == 'popular' %}selected{% endif %}>Most Popular</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <!-- Premium Product Grid -->
+                <div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-7">
+                    {% for product in products %}
+                    <div class="product-card azure-card overflow-hidden group cursor-pointer transition-all duration-300 flex flex-col" style="border-radius: 12px;">
+                        <a href="{{ url_for('product_detail', id=product.id) }}" class="block">
+                            <div class="aspect-square overflow-hidden bg-gray-100 relative" style="border-radius: 12px 12px 0 0;">
+                                <img src="{{ product.image_url or url_for('static', filename='images/online-fashion-shopping-collage.jpg') }}" 
+                                     alt="{{ product.name }}" 
+                                     class="product-image w-full h-full object-cover transition duration-700 ease-out" 
+                                     data-fallback="{{ url_for('static', filename='images/online-fashion-shopping-collage.jpg') }}">
+                                {% if product.featured %}
+                                <div class="absolute top-4 left-4">
+                                    <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium text-white backdrop-blur-sm" style="background-color: rgba(0, 120, 212, 0.9); box-shadow: 0 4px 12px rgba(0, 120, 212, 0.3);">
+                                        <i class="fas fa-star text-xs mr-1.5"></i>Featured
+                                    </span>
+                                </div>
+                                {% endif %}
+                                {% if product.stock < 10 %}
+                                <div class="absolute top-4 right-4">
+                                    <span class="inline-flex items-center px-3 py-1.5 rounded-full text-xs font-medium backdrop-blur-sm" style="background-color: rgba(254, 243, 199, 0.95); color: #92400E; box-shadow: 0 4px 12px rgba(146, 64, 14, 0.2);">
+                                        <div class="w-1.5 h-1.5 rounded-full bg-yellow-600 mr-1.5"></div>
+                                        {{ product.stock }} left
+                                    </span>
+                                </div>
+                                {% endif %}
+                            </div>
+                        </a>
+                        
+                        <div class="p-6 flex flex-col flex-grow">
+                            <div class="mb-4 flex-grow">
+                                <span class="text-xs font-medium uppercase tracking-wider" style="color: var(--azure-blue);">{{ product.category.name }}</span>
+                                <h3 class="font-normal text-lg text-black mt-2 group-hover:text-azure transition leading-snug">
+                                    <a href="{{ url_for('product_detail', id=product.id) }}">{{ product.name }}</a>
+                                </h3>
+                                <p class="text-sm font-light mt-2 line-clamp-2 leading-relaxed" style="color: var(--gray-600);">{{ product.description }}</p>
+                            </div>
+                            
+                            <div class="flex items-center justify-between mb-5 pb-5" style="border-bottom: 1px solid var(--gray-200);">
+                                <div>
+                                    <span class="text-2xl font-normal text-black">R{{ "%.2f"|format(product.price) }}</span>
+                                </div>
+                                
+                                <!-- Single Star Rating with Partial Fill -->
+                                <div class="flex items-center gap-2">
+                                    <div class="relative inline-flex items-center" style="width: 16px; height: 16px;">
+                                        <!-- Background (empty) star -->
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M8 0L9.79611 5.52786H15.6085L10.9062 8.94427L12.7023 14.4721L8 11.0557L3.29772 14.4721L5.09383 8.94427L0.391548 5.52786H6.20389L8 0Z" fill="#E0E0E0"/>
+                                        </svg>
+                                        <!-- Foreground (filled) star with 96% width (4.8 out of 5) -->
+                                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" style="position: absolute; top: 0; left: 0; clip-path: inset(0 4% 0 0);">
+                                            <path d="M8 0L9.79611 5.52786H15.6085L10.9062 8.94427L12.7023 14.4721L8 11.0557L3.29772 14.4721L5.09383 8.94427L0.391548 5.52786H6.20389L8 0Z" fill="#FF9800"/>
+                                        </svg>
+                                    </div>
+                                    <span class="text-sm font-normal text-black">4.8</span>
+                                    <span class="text-xs font-light" style="color: var(--gray-500);">(24)</span>
+                                </div>
+                            </div>
+                            
+                            <button class="add-to-cart-btn btn-azure-primary w-full inline-flex items-center justify-center"
+                                    data-product-id="{{ product.id }}"
+                                    data-product-name="{{ product.name }}"
+                                    data-product-price="{{ '%.2f'|format(product.price) }}"
+                                    data-product-image="{{ product.image_url }}"
+                                    data-product-category="{{ product.category.name }}">
+                                <i class="fas fa-shopping-bag mr-2"></i>Add to Cart
+                            </button>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            
+            {% if not products %}
+            <div class="text-center py-20">
+                <div class="inline-flex items-center justify-center w-20 h-20 rounded-full mb-6" style="background-color: var(--gray-100);">
+                    <i class="fas fa-box-open text-3xl" style="color: var(--gray-400);"></i>
+                </div>
+                <h3 class="text-xl font-normal text-black mb-2">No products found</h3>
+                <p class="text-sm font-light mb-8" style="color: var(--gray-600); max-width: 24rem; margin-left: auto; margin-right: auto;">We couldn't find any products matching your criteria. Try adjusting your filters or search terms.</p>
+                <a href="{{ url_for('products') }}" class="btn-azure-primary inline-flex items-center">
+                    <i class="fas fa-redo mr-2"></i>Clear Filters
+                </a>
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+<style>
+/* Category Link Styles */
+.category-link {
+    border-radius: 8px;
+}
+
+.category-active {
+    color: var(--azure-blue) !important;
+    background-color: #F0F9FF;
+}
+
+.badge-active {
+    color: var(--azure-blue);
+    background-color: #DBEAFE;
+}
+
+.badge-inactive {
+    color: var(--gray-500);
+    background-color: var(--gray-100);
+}
+
+/* Product Card Hover Effects */
+.product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(0,0,0,0.1);
+}
+
+.product-image:hover {
+    transform: scale(1.08);
+}
+
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Filter functionality
+    function buildFilterUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // Get current search term
+        const searchInput = document.querySelector('input[name="search"]');
+        if (searchInput && searchInput.value) {
+            urlParams.set('search', searchInput.value);
+        } else {
+            urlParams.delete('search');
+        }
+        
+        // Get current category (preserve existing category filter)
+        const currentCategory = urlParams.get('category');
+        if (currentCategory) {
+            urlParams.set('category', currentCategory);
+        }
+        
+        // Get quick filter checkboxes
+        const featuredCheckbox = document.querySelector('input[name="featured"]');
+        const inStockCheckbox = document.querySelector('input[name="in_stock"]');
+        const onSaleCheckbox = document.querySelector('input[name="on_sale"]');
+        
+        if (featuredCheckbox && featuredCheckbox.checked) {
+            urlParams.set('featured', 'true');
+        } else {
+            urlParams.delete('featured');
+        }
+        
+        if (inStockCheckbox && inStockCheckbox.checked) {
+            urlParams.set('in_stock', 'true');
+        } else {
+            urlParams.delete('in_stock');
+        }
+        
+        if (onSaleCheckbox && onSaleCheckbox.checked) {
+            urlParams.set('on_sale', 'true');
+        } else {
+            urlParams.delete('on_sale');
+        }
+        
+        // Get price range inputs
+        const minPriceInput = document.getElementById('min-price');
+        const maxPriceInput = document.getElementById('max-price');
+        
+        if (minPriceInput && minPriceInput.value) {
+            urlParams.set('min_price', minPriceInput.value);
+        } else {
+            urlParams.delete('min_price');
+        }
+        
+        if (maxPriceInput && maxPriceInput.value) {
+            urlParams.set('max_price', maxPriceInput.value);
+        } else {
+            urlParams.delete('max_price');
+        }
+        
+        // Get sort dropdown
+        const sortDropdown = document.getElementById('sort-dropdown');
+        if (sortDropdown && sortDropdown.value !== 'newest') {
+            urlParams.set('sort', sortDropdown.value);
+        } else {
+            urlParams.delete('sort');
+        }
+        
+        return urlParams.toString();
+    }
+    
+    function applyFilters() {
+        const queryString = buildFilterUrl();
+        const newUrl = window.location.pathname + (queryString ? '?' + queryString : '');
+        window.location.href = newUrl;
+    }
+    
+    // Add event listeners to filter checkboxes
+    const filterCheckboxes = document.querySelectorAll('.filter-checkbox');
+    filterCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', applyFilters);
+    });
+    
+    // Add event listener to sort dropdown
+    const sortDropdown = document.getElementById('sort-dropdown');
+    if (sortDropdown) {
+        sortDropdown.addEventListener('change', applyFilters);
+    }
+    
+    // Add event listener to price filter button
+    const applyPriceButton = document.getElementById('apply-price-filter');
+    if (applyPriceButton) {
+        applyPriceButton.addEventListener('click', applyFilters);
+    }
+    
+    // Allow Enter key to apply price filters
+    const priceInputs = document.querySelectorAll('#min-price, #max-price');
+    priceInputs.forEach(input => {
+        input.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                applyFilters();
+            }
+        });
+    });
+    
+    // Add clear filters functionality
+    function clearAllFilters() {
+        const urlParams = new URLSearchParams();
+        
+        // Preserve search and category if they exist
+        const currentSearch = document.querySelector('input[name="search"]');
+        if (currentSearch && currentSearch.value) {
+            urlParams.set('search', currentSearch.value);
+        }
+        
+        const currentUrlParams = new URLSearchParams(window.location.search);
+        const currentCategory = currentUrlParams.get('category');
+        if (currentCategory) {
+            urlParams.set('category', currentCategory);
+        }
+        
+        const queryString = urlParams.toString();
+        const newUrl = window.location.pathname + (queryString ? '?' + queryString : '');
+        window.location.href = newUrl;
+    }
+    
+    // Add clear filters button if it doesn't exist
+    const filtersSection = document.querySelector('.space-y-3').parentElement;
+    if (filtersSection && !document.getElementById('clear-filters')) {
+        const clearButton = document.createElement('button');
+        clearButton.id = 'clear-filters';
+        clearButton.type = 'button';
+        clearButton.className = 'text-sm text-azure hover:text-azure-dark transition mt-4 underline';
+        clearButton.textContent = 'Clear All Filters';
+        clearButton.addEventListener('click', clearAllFilters);
+        filtersSection.appendChild(clearButton);
+    }
+
+    // Add event listeners to all add to cart buttons
+    const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+    addToCartButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const productId = this.dataset.productId;
+            const productName = this.dataset.productName;
+            const productPrice = this.dataset.productPrice;
+            const productImage = this.dataset.productImage;
+            const productCategory = this.dataset.productCategory;
+            
+            // Call the addToCart function from base.html
+            addToCart(productId, productName, productPrice, productImage, productCategory);
+        });
+    });
+    
+    // Handle image error events with fallback
+    const productImages = document.querySelectorAll('.product-image');
+    productImages.forEach(img => {
+        img.addEventListener('error', function() {
+            if (this.dataset.fallback && this.src !== this.dataset.fallback) {
+                this.src = this.dataset.fallback;
+            }
+        });
+    });
+});
+</script>
+{% endblock %}

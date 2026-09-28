@@ -1,0 +1,497 @@
+
+
+===== PDF PAGE 1 =====
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+COMPUTER APPLICATIONS TECHNOLOGY P2
+2021
+MARKS: 150
+TIME: 3 hours
+This question paper consists of 17 pages.
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 2 =====
+Computer Applications Technology/P2 2 DBE/2021
+SC/NSC
+INSTRUCTIONS AND INFORMATION
+1. This question paper consists of:
+SECTION A (25)
+SECTION B (75)
+SECTION C (50)
+2. Answer ALL the questions.
+3. Number the answers correctly according to the numbering system used in this
+question paper.
+4. Start EACH question on a NEW page.
+5. Do NOT write in the right-hand margin of the ANSWER BOOK.
+6. Leave a line after EACH subquestion.
+7. Generally, one mark is allocated per fact; therefore, a 2-mark question would
+require TWO facts, etc.
+8. Read the questions carefully. DO NOT give more than the question requires
+as this will NOT be marked.
+9. All answers MUST be related to Computer Applications Technology.
+10. Answers such as 'cheaper', 'slower'/'faster' and 'easier' will ONLY be
+accepted if it is used together with a reason or an explanation.
+11. Do NOT use brand names in your answers, unless specifically required.
+12. Write neatly and legibly.
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 3 =====
+Computer Applications Technology/P2 3 DBE/2021
+SC/NSC
+SECTION A
+QUESTION 1: MULTIPLE-CHOICE QUESTIONS
+Various options are given as possible answers to the following questions. Choose the
+answer and write only the letter (A–D) next to the question numbers (1.1 to 1.10) in the
+ANSWER BOOK, e.g. 1.11 D.
+1.1 A file ... specifies the unique location of a file or folder in a file system.
+A name
+B path
+C attribute
+D extension (1)
+1.2 Which ONE of the following properties does NOT refer to the metadata of a
+word processing document?
+A Author
+B Size
+C Format
+D Created (1)
+1.3 … is an acronym for the term used to describe human errors and its influence
+on computer output.
+A FOSS
+B SOHO
+C DIMM
+D GIGO (1)
+1.4 On older computers the … will slow down the transfer of data when compared
+to newer computers.
+A file size
+B lag/delay
+C hardware
+D images (1)
+1.5 The … will determine the type of language and graphics used in a presentation
+program.
+A layout
+B conclusion
+C audience
+D animation (1)
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 4 =====
+Computer Applications Technology/P2 4 DBE/2021
+SC/NSC
+1.6 A touch screen is the most effective input device when a user is required to …
+A choose between limited options.
+B capture large amounts of text.
+C select from a long list of unsorted options.
+D enter a large series of numbers. (1)
+1.7 A … is an audio file usually delivered over the internet.
+A wiki
+B portal
+C vlog
+D podcast (1)
+1.8 A … is a malicious program that is used to initiate a DDoS attack.
+A virus
+B bot
+C keylogger
+D worm (1)
+1.9 Which ONE of the following calculated fields will determine value-added tax of
+15% in a database query correctly?
+A VAT:[Price]*0.15
+B VAT=(!Price)*0.15
+C VAT=["Price"]*0.15
+D VAT:(Price)*0.15 (1)
+1.10 Faking an e-mail header to hide the actual origin of the e-mail is known as …
+A pharming.
+B spoofing.
+C piracy.
+D copyright. (1)
+[10]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 5 =====
+Computer Applications Technology/P2 5 DBE/2021
+SC/NSC
+QUESTION 2: MATCHING ITEMS
+Choose a term/concept from COLUMN B that matches a description in COLUMN A.
+Write only the letter (A–T) next to the question numbers (2.1 to 2.10) in the
+ANSWER BOOK, e.g. 2.11 U.
+COLUMN A COLUMN B
+2.1 A feature that refers to whether a A blogs
+printer can be used with a particular
+operating system B ADSL
+2.2 One way of solving the problem of an C defragmenter
+application that has stopped
+responding D NOW
+2.3 A specification that measures the E hacking
+quality of pictures taken by a camera
+F graphics card
+2.4 A technology that can be used to
+establish a wireless connection G Wi-Fi functionality
+between two devices by bringing them
+close together H MP
+2.5 An attempt to access personal I click-jacking
+information by tricking a user into
+clicking on a link in an e-mail J network card
+2.6 Websites that read like a personal K NFC
+journal and are often updated with
+news and events L update
+2.7 A spreadsheet function that returns M phishing
+both the date and time
+N DPI
+2.8 A system utility that reorganises parts
+of files O restart
+2.9 The term given to the practice of P compatibility
+accessing a network without permission
+Q identity theft
+2.10 A hardware component that can be
+added to a computer to improve video R TODAY
+editing performance
+S Disk Cleanup
+T wikis
+(10 x 1) [10]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 6 =====
+Computer Applications Technology/P2 6 DBE/2021
+SC/NSC
+QUESTION 3: TRUE/FALSE ITEMS
+Indicate whether the following statements are TRUE or FALSE. Choose the
+answer and write 'true' or 'false' next to the question numbers (3.1 to 3.5) in the
+ANSWER BOOK. Correct the statement if it is FALSE. Change the underlined word(s)
+to make the statement TRUE. (Do NOT simply use the word 'NOT' to change the
+statement.)
+NO mark will be awarded if only FALSE is written.
+EXAMPLES:
+QUESTION ANSWER
+The initial start-up instructions are stored in
+True
+the ROM.
+Wi-Fi can only connect devices to each
+False – Bluetooth
+other up to 10 metres.
+3.1 The wild card character can be used in the Find and Replace feature of a
+word processor. (1)
+3.2 Instant messaging platforms often use encryption to protect user data. (1)
+3.3 An e-mail program may reject an attachment based on the date of the file. (1)
+3.4 The HDMI port on a computer carries both audio and video signals. (1)
+3.5 Ad-blocking programs identify and remove malware. (1)
+[5]
+TOTAL SECTION A: 25
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 7 =====
+Computer Applications Technology/P2 7 DBE/2021
+SC/NSC
+SECTION B
+QUESTION 4: SYSTEMS TECHNOLOGIES
+4.1 A SOHO computer user must choose computer hardware and software for his
+auditing business.
+Study the table below to help him make the correct buying decisions.
+SPECIFICATIONS TO
+CHOICE REASON
+CHOOSE BETWEEN
+e.g.
+e.g. e.g. e.g.
+Physically
+19" 4:3 monitor 24" 16:9 monitor 24" 16:9 monitor
+larger
+Cheaper per GB
+SSD HDD 4.1.1
+of storage space
+2 GB RAM 16 GB RAM 16 GB RAM 4.1.2
+Windows 7 Windows 10
+Professional Professional 4.1.3 4.1.4
+Edition Edition
+Complete the table above by writing down only the answers next to the
+question numbers (4.1.1 to 4.1.4) in your ANSWER BOOK. (4 x 1) (4)
+4.2 Why would an entry-level CPU be a good choice for a computer in a SOHO
+office? (2)
+4.3 Which software or hardware device could be added to a computer network to
+prevent unauthorised access to the network? (1)
+4.4 A hard disk analysis shows that the drive is almost full.
+Explain TWO problems that may occur when the hard disk drive is
+4.4.1
+full. (2)
+4.4.2 Name ONE system utility program that can remove unwanted files. (1)
+4.4.3 How can one free up some space on the hard drive, other than
+removing files? (1)
+4.5 Give TWO ways in which to solve the problem of a computer that switches on
+but does not load the operating system at all. (2)
+4.6 Explain ONE disadvantage of convergence. (1)
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 8 =====
+Computer Applications Technology/P2 8 DBE/2021
+SC/NSC
+4.7 Why would you recommend using note-taking software? Give TWO reasons. (2)
+4.8 Give TWO functions of a web browser, other than the ability to view web
+pages. (2)
+4.9 Software should be updated regularly.
+4.9.1 Discuss TWO challenges that a user may experience when
+updating software. (2)
+4.9.2 Give ONE way to ensure that the computer does not update while it
+is being used. (1)
+4.10 A user tries to save a word processing document on the Desktop by
+performing the action as shown in the screenshot below.
+Give the reason why the user is NOT successful AND give a solution to this
+problem. (2)
+4.11 You find that your voice recognition software does not always correctly
+understand what you are saying.
+Give TWO possible solutions to this problem. (2)
+[25]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 9 =====
+Computer Applications Technology/P2 9 DBE/2021
+SC/NSC
+QUESTION 5: INTERNET AND NETWORK TECHNOLOGIES
+5.1 State TWO advantages of grid computing. (2)
+5.2 Consider the diagram of a network below and answer the questions that
+follow.
+Network D
+5.2.1 Identify devices A, B and C in the network diagram. (3)
+5.2.2 What type of network is Network D? (1)
+5.3 Give TWO reasons why it is better to turn off a Bluetooth connection on a
+tablet or smartphone when the connectivity is not required. (2)
+5.4 Suggest TWO changes that would make the following password more secure,
+without changing the length of the password:
+1b00f70e (2)
+5.5 When you make an online payment, some service providers will send a one-
+time password ('OTP') to your smartphone.
+Why is it necessary to enter this OTP if you have already signed in with your
+username and password? (1)
+5.6 Why would you use the Bcc feature of an e-mail program when sending an
+e-mail? (1)
+5.7 What type of communication medium is used in long-distance undersea
+cables, such as SEACOM, that connect Africa to other continents for internet
+access? (1)
+5.8 Give TWO disadvantages of FTP technology for the transfer of larger files on
+the internet. (2)
+[15]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 10 =====
+Computer Applications Technology/P2 10 DBE/2021
+SC/NSC
+QUESTION 6: INFORMATION MANAGEMENT
+6.1 Explain TWO ways in which a teacher can find out whether learners are guilty
+of plagiarism in their PATs. (2)
+6.2 State TWO ways in which a chart/graph can be made easier to interpret when
+it is included in a report, such as the PAT. (2)
+6.3 A Tourism learner created an electronic survey which included the question:
+'How long was your stay at the hotel?'
+Respondents could choose from the following options in a dropdown list:
+ One day
+ Two days
+ Three days or more
+ Longer than five days
+6.3.1 Give TWO advantages of using drop-down form fields in an
+electronic questionnaire. (2)
+6.3.2 Which ONE of the options in the example above should be
+removed? Motivate your answer. (2)
+6.4 Explain TWO ways in which to ensure the logical grouping and flow of
+information in a formal report. (2)
+[10]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 11 =====
+Computer Applications Technology/P2 11 DBE/2021
+SC/NSC
+QUESTION 7: SOCIAL IMPLICATIONS
+7.1 Define the concept of social engineering. (2)
+7.2 Discuss TWO negative implications for a company when employees do
+private tasks on company computers during working hours. (2)
+7.3 Suggest ONE software technology that can be used with internet-connected
+cameras to identify potential criminal activity. (1)
+7.4 State TWO strategies that learners could use to discourage cyberbullying. (2)
+7.5 Give ONE reason why some people might unknowingly trust a program that
+potentially contains a Trojan. (1)
+7.6 Study the advertisement below and answer the questions that follow.
+R1 500
+7.6.1 Give the general term used to describe the design of furniture and
+other devices that improves the working environment. (1)
+7.6.2 Why will the advertised chair be beneficial for a computer user? (1)
+[10]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 12 =====
+Computer Applications Technology/P2 12 DBE/2021
+SC/NSC
+QUESTION 8: SOLUTION DEVELOPMENT
+8.1 Give TWO different methods to set the indents in a word processing
+document. (2)
+8.2 The Restrict Editing feature on the Developer tab will allow you to control the
+number of changes that others can make to your electronic form.
+Give ONE example of how the editing is limited using this feature. (1)
+8.3 You try to open a particular word processing file, which you know you
+definitely saved on your computer.
+Explain why this file does not appear in the list, when you browse for the file. (1)
+8.4 What is the purpose of the small square in the bottom right-hand corner of
+cell C1, indicated by the arrow in the screenshot below?
+(1)
+8.5 Why should the table range in a VLOOKUP function have an absolute cell
+reference? (1)
+8.6 Explain how the data in the 'original data' table below was processed to give
+the data shown in the 'processed data' table.
+Original data
+Processed data
+(2)
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 13 =====
+Computer Applications Technology/P2 13 DBE/2021
+SC/NSC
+8.7 A school wishes to send out letters to the parents of the Grade 12 learners,
+using the mail merge feature of the word processor. The details of the
+Grade 12 parents are captured in a spreadsheet.
+8.7.1 Give ONE reason why the Insert Merge Field option is not available. (1)
+8.7.2 Assume that the problem in QUESTION 8.7.1 has been resolved
+and the merge fields were inserted correctly.
+Give a reason why some of the expected records do NOT display in
+the preview of the mail merge. (1)
+8.8 Database queries are used to analyse data.
+8.8.1 On which database objects can a query be based? (1)
+8.8.2 How can you determine the name of the object on which a query is
+based? (1)
+8.9 Draw a diagram to show what will be displayed in a web browser when this
+HTML code is run:
+<table border="1">
+<tr>
+<td colspan="2">DESCRIPTION</td>
+</tr>
+<tr>
+<td>Item 2</td>
+<td>Item 1</td>
+</tr>
+</table>
+(3)
+[15]
+TOTAL SECTION B: 75
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 14 =====
+Computer Applications Technology/P2 14 DBE/2021
+SC/NSC
+SECTION C: INTEGRATED SCENARIO
+QUESTION 9
+The Covid-19 pandemic necessitated health screening at the entrances to all public
+facilities, such as schools, libraries and clinics, to limit the spread of the coronavirus.
+9.1 Give TWO reasons for using ICTs, instead of a pen and paper, to record and
+manage the health screening data of learners and teachers at a school. (2)
+9.2 The principal suggests that they buy an electronic tablet to record the health
+screening data of people entering the school.
+9.2.1 Give TWO reasons why you agree with the principal that a tablet
+would be better than a laptop computer for this purpose. (2)
+9.2.2 Give TWO specifications/features of a tablet that you would look for
+when buying a tablet for this purpose. (2)
+9.3 The new tablet needs to be connected to the school network so that the
+captured data can be sent to the school server which is located on the third
+floor.
+9.3.1 How will the tablet communicate with the server at the school? (1)
+9.3.2 The tablet does not always connect to the network at the school
+entrance.
+Suggest TWO ways to correct this problem. (2)
+9.4 The screenshot of part of a spreadsheet below shows some health screening
+data of the learners:
+9.4.1 Which spreadsheet feature can be used to get rid of the
+unnecessary spaces in the headings in row 2? (1)
+9.4.2 Which spreadsheet feature would you use in column D to
+automatically highlight a value if a temperature above 38 degrees is
+entered? (1)
+9.4.3 Give the spreadsheet function that you would use to determine how
+many learners have a cough, based on the data in column E. (1)
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 15 =====
+Computer Applications Technology/P2 15 DBE/2021
+SC/NSC
+9.5 Below is the Design View of a database table with learner information and
+the field properties sheet of the Date of birth field.
+9.5.1 Suggest THREE improvements that could be made to the Date of
+birth field to ensure the entry of valid data. (3)
+9.5.2 Why is it good practice to complete the Description options for each
+field in the design of the table? (1)
+9.6 Give TWO reasons for making a cloud backup of the data. (2)
+9.7 State TWO ways in which the school could share the learners' health
+information electronically with the district office. (2)
+9.8 Learners must have accurate information about Covid-19 to protect
+themselves from possibly contracting the virus.
+9.8.1 The Life Orientation teacher gives the learners a long website
+address that links to factual information.
+What service would you use to make it easy to enter or remember
+this website address? You may use specific examples. (1)
+9.8.2 Explain TWO ways in which the creators of fake information make
+the information seem real or believable. (2)
+9.8.3 State TWO ways in which learners can avoid being fooled into
+believing fake information. (2)
+[25]
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 16 =====
+Computer Applications Technology/P2 16 DBE/2021
+SC/NSC
+QUESTION 10
+The various Covid-19 protocols that were imposed by the government to restrict the
+spread of the virus impacted on school attendance.
+10.1 ICTs allow for teaching and learning to continue when learners are not at
+school
+10.1.1 Define the concept of mobile learning (m-learning). (3)
+10.1.2 Name TWO kinds of electronic resources that teachers can share
+with learners. (2)
+10.1.3 Give TWO examples of how virtual reality (VR) can enhance the
+learning experiences of learners. (2)
+10.1.4 Name TWO word processing features that teachers can use to give
+the learners feedback on their work. (2)
+10.2 Give the generally accepted term that describes a lack of access to ICTs. (1)
+10.3 The ICT administrator designed a website to keep the parents informed of the
+e-learning/m-learning strategies at the school.
+10.3.1 State TWO advantages of using an ISP for hosting the website. (2)
+10.3.2 Give TWO reasons why an image does not display in a web
+browser, even though the correct HTML code was used. (2)
+10.3.3 Explain why some parents who view the website on their
+smartphones may not see the same website layout as one would
+see on a computer. (1)
+10.4 Teachers and learners will have to upload and download learning material.
+10.4.1 Why is it ideal to have a broadband connection for e-learning? (1)
+10.4.2 What is the advantage of having an unshaped line when
+downloading learning material? (1)
+10.4.3 How can one avoid information overload? (1)
+Copyright reserved Please-turn-over
+
+
+===== PDF PAGE 17 =====
+Computer Applications Technology/P2 17 DBE/2021
+SC/NSC
+10.5 The school received a donation of computing devices to assist the learners.
+Give TWO criteria to determine if the donated devices can be used for
+learning purposes. (2)
+10.6 Name TWO technologies that can assist in controlling the stock of the
+devices. (2)
+10.7 The school uses a database to keep track of the sponsors and the donated
+devices.
+10.7.1 Give ONE reason why a database is more suitable than a
+spreadsheet to store information of donated items. (1)
+10.7.2 A spreadsheet graph will be used to indicate the value of the
+devices donated by each sponsor.
+How would you create this graph without having to retype the data
+from the database into the spreadsheet? (1)
+10.7.3 This graph must be inserted into a word processing document.
+How would you ensure that the graph updates when the data in the
+spreadsheet changes? (1)
+[25]
+TOTAL SECTION C: 50
+GRAND TOTAL: 150
+Copyright reserved

@@ -1,0 +1,4 @@
+paper_id=5aa63de3-e491-49f5-a533-8d365dce205b
+title=CAT P1 Nov 2022
+q_pdf=Computer Applications Technology P1 Nov 2022 Eng.pdf
+m_pdf=Computer Applications Technology P1 Nov 2022 MG Eng.pdf

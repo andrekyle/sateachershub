@@ -1,0 +1,878 @@
+{% extends "base.html" %}
+
+{% block title %}Become a Vendor - South African Teachers Hub{% endblock %}
+
+{% block head %}
+<script src="https://unpkg.com/feather-icons"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700&display=swap');
+    
+    /* Azure Design System Colors */
+    :root {
+        --azure-blue: #0078D4;
+        --azure-blue-dark: #005A9E;
+        --azure-blue-light: #50E6FF;
+        --azure-teal: #008272;
+        --azure-purple: #5C2D91;
+        --white: #FFFFFF;
+        --black: #000000;
+        --gray-50: #FAFAFA;
+        --gray-100: #F8F8F8;
+        --gray-200: #F3F2F1;
+        --gray-300: #EDEBE9;
+        --gray-400: #D2D0CE;
+        --gray-500: #A19F9D;
+        --gray-600: #8A8886;
+        --gray-700: #605E5C;
+        --gray-800: #323130;
+        --gray-900: #201F1E;
+        --success-green: #107C10;
+        --warning-yellow: #F7B500;
+        --error-red: #D13438;
+    }
+    
+    body {
+        font-family: 'Roboto', 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+        font-weight: 300;
+        background-color: var(--gray-50);
+    }
+    
+    h1, h2, h3, h4, h5, h6 {
+        font-weight: 300;
+        letter-spacing: -0.02em;
+        color: var(--gray-900);
+    }
+    
+    /* Azure Card Style */
+    .azure-card {
+        background: white;
+        border-radius: 4px;
+        border: 0.5px solid var(--gray-300);
+        box-shadow: 0 1.6px 3.6px 0 rgba(0,0,0,0.132), 0 0.3px 0.9px 0 rgba(0,0,0,0.108);
+    }
+    
+    /* Azure Input Fields */
+    .azure-input {
+        border: 0.5px solid var(--gray-400);
+        border-radius: 2px;
+        padding: 0.5rem 0.75rem;
+        padding-left: 5px;
+        font-size: 0.875rem;
+        font-weight: 300;
+        transition: all 0.1s ease;
+        background: white;
+    }
+    
+    .azure-input:focus {
+        outline: none;
+        border-color: var(--azure-blue);
+        box-shadow: 0 0 0 0.5px var(--azure-blue);
+    }
+    
+    .azure-checkbox {
+        accent-color: var(--azure-blue);
+    }
+    
+    .section-header {
+        color: var(--gray-700);
+        font-weight: 300;
+        font-size: 0.875rem;
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.75rem;
+    }
+    
+    .form-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 1.5rem;
+    }
+    
+    .page-header {
+        background: white;
+        border-bottom: 1px solid var(--gray-300);
+        padding: 2rem 0;
+        margin-bottom: 2rem;
+    }
+    
+    .btn-primary {
+        background: var(--azure-blue);
+        color: white;
+        border: none;
+        border-radius: 2px;
+        transition: all 0.1s ease;
+        font-weight: 400;
+        font-size: 0.875rem;
+        padding: 0.5rem 1.25rem;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .btn-primary:hover {
+        background: var(--azure-blue-dark);
+    }
+    
+    .btn-secondary {
+        background: white;
+        color: var(--gray-800);
+        border: 0.5px solid var(--gray-400);
+        border-radius: 2px;
+        transition: all 0.1s ease;
+        font-weight: 400;
+        font-size: 0.875rem;
+        padding: 0.5rem 1.25rem;
+        cursor: pointer;
+    }
+    
+    .btn-secondary:hover {
+        background: var(--gray-100);
+        border-color: var(--gray-500);
+    }
+    
+    .info-box {
+        background: #EFF6FF;
+        border: 1px solid #DBEAFE;
+        border-radius: 4px;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* Upload Area Styles */
+    .upload-section {
+        position: relative;
+    }
+    
+    .upload-area {
+        border: 2px dashed #D1D5DB;
+        border-radius: 8px;
+        padding: 1.5rem 1rem;
+        text-align: center;
+        cursor: pointer;
+        transition: all 0.2s ease;
+        background: #FAFAFA;
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .upload-area:hover {
+        border-color: var(--azure-blue);
+        background: #F8FAFF;
+    }
+    
+    .upload-area.has-file {
+        border-color: var(--success-green);
+        background: #F0FDF4;
+    }
+    
+    .upload-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.25rem;
+    }
+    
+    .upload-icon {
+        color: #9CA3AF;
+        margin-bottom: 0.25rem;
+    }
+    
+    .upload-area:hover .upload-icon {
+        color: var(--azure-blue);
+    }
+    
+    .upload-area.has-file .upload-icon {
+        color: var(--success-green);
+    }
+    
+    .upload-text {
+        font-size: 0.8rem;
+        font-weight: 500;
+        color: #374151;
+        margin-bottom: 0.125rem;
+    }
+    
+    .upload-formats {
+        font-size: 0.7rem;
+        color: #6B7280;
+    }
+    
+    .upload-input {
+        position: absolute;
+        opacity: 0;
+        pointer-events: none;
+        width: 0;
+        height: 0;
+    }
+    
+    .uploaded-file {
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+        background: #F0FDF4;
+        border: 1px solid #BBF7D0;
+        border-radius: 4px;
+        font-size: 0.75rem;
+        color: #166534;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    
+    .uploaded-file::before {
+        content: "?";
+        color: var(--success-green);
+        font-weight: bold;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <div class="form-container">
+        <div>
+            <h1 class="text-xl font-light text-gray-900">Become a South African Teachers Hub Vendor</h1>
+            <p class="text-xs font-light text-gray-500 mt-1">Complete your vendor application to start selling</p>
+        </div>
+    </div>
+</div>
+
+<div class="form-container">
+    <form method="POST" enctype="multipart/form-data" id="vendorForm">
+        <!-- Business Information Section -->
+        <div class="azure-card p-6 mb-6">
+            <div class="mb-6">
+                <h4 class="section-header">
+                    <i data-feather="briefcase" class="w-4 h-4 mr-2" style="color: #0078D4;"></i>
+                    Business Information
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Business Name <span class="text-red-500">*</span></label>
+                        <input type="text" id="business_name" name="business_name" required
+                               class="azure-input w-full" placeholder="Enter your registered business name">
+                        <p class="text-xs font-light text-gray-500 mt-1">Your official registered business name</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Trading Name</label>
+                        <input type="text" id="trading_name" name="trading_name"
+                               class="azure-input w-full" placeholder="Trading name (if different from business name)">
+                        <p class="text-xs font-light text-gray-500 mt-1">Trading name if different from registered name</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Business Type <span class="text-red-500">*</span></label>
+                        <select id="business_type" name="business_type" required class="azure-input w-full">
+                            <option value="">Select Business Type</option>
+                            <option value="Private Company">Private Company (Pty Ltd)</option>
+                            <option value="Public Company">Public Company (Ltd)</option>
+                            <option value="Close Corporation">Close Corporation (CC)</option>
+                            <option value="Trust">Trust</option>
+                            <option value="Sole Proprietor">Sole Proprietor</option>
+                            <option value="Partnership">Partnership</option>
+                            <option value="NPO">Non-Profit Organization</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">CIPC Registration Number</label>
+                        <input type="text" id="registration_number" name="registration_number"
+                               class="azure-input w-full" placeholder="e.g., 2023/123456/07">
+                        <p class="text-xs font-light text-gray-500 mt-1">Company/Trust/CC registration number</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">VAT Number</label>
+                        <input type="text" id="vat_number" name="vat_number"
+                               class="azure-input w-full" placeholder="e.g., 4123456789" maxlength="20">
+                        <p class="text-xs font-light text-gray-500 mt-1">10-digit SARS VAT number</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Income Tax Number</label>
+                        <input type="text" id="tax_number" name="tax_number"
+                               class="azure-input w-full" placeholder="e.g., 9123456789" maxlength="20">
+                        <p class="text-xs font-light text-gray-500 mt-1">Income tax reference number</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Information Section -->
+        <div class="azure-card p-6 mb-6">
+            <div class="mb-6">
+                <h4 class="section-header">
+                    <i data-feather="user" class="w-4 h-4 mr-2" style="color: #0078D4;"></i>
+                    Contact Information
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Contact Person <span class="text-red-500">*</span></label>
+                        <input type="text" id="contact_person" name="contact_person" required
+                               class="azure-input w-full" placeholder="Primary contact person name">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Email Address <span class="text-red-500">*</span></label>
+                        <input type="email" id="contact_email" name="contact_email" required
+                               class="azure-input w-full" placeholder="business@example.com">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Phone Number <span class="text-red-500">*</span></label>
+                        <input type="tel" id="contact_phone" name="contact_phone" required
+                               class="azure-input w-full" placeholder="+27 11 123 4567">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Alternative Phone</label>
+                        <input type="tel" id="alternative_phone" name="alternative_phone"
+                               class="azure-input w-full" placeholder="Alternative contact number">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Business Address Section -->
+        <div class="azure-card p-6 mb-6">
+            <div class="mb-6">
+                <h4 class="section-header">
+                    <i data-feather="map-pin" class="w-4 h-4 mr-2" style="color: #0078D4;"></i>
+                    Business Address
+                </h4>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Physical Address <span class="text-red-500">*</span></label>
+                        <textarea id="physical_address" name="physical_address" rows="3" required
+                                  class="azure-input w-full" placeholder="Enter your complete business address"></textarea>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Postal Address</label>
+                        <textarea id="postal_address" name="postal_address" rows="3"
+                                  class="azure-input w-full" placeholder="Postal address (if different from physical address)"></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-sm font-light text-gray-700 mb-2">City <span class="text-red-500">*</span></label>
+                            <input type="text" id="city" name="city" required
+                                   class="azure-input w-full" placeholder="City name">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-light text-gray-700 mb-2">Province <span class="text-red-500">*</span></label>
+                            <select id="province" name="province" required class="azure-input w-full">
+                                <option value="">Select Province</option>
+                                <option value="eastern-cape">Eastern Cape</option>
+                                <option value="free-state">Free State</option>
+                                <option value="gauteng">Gauteng</option>
+                                <option value="kwazulu-natal">KwaZulu-Natal</option>
+                                <option value="limpopo">Limpopo</option>
+                                <option value="mpumalanga">Mpumalanga</option>
+                                <option value="northern-cape">Northern Cape</option>
+                                <option value="north-west">North West</option>
+                                <option value="western-cape">Western Cape</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-light text-gray-700 mb-2">Postal Code <span class="text-red-500">*</span></label>
+                            <input type="text" id="postal_code" name="postal_code" required
+                                   class="azure-input w-full" placeholder="Postal code">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Banking Information Section -->
+        <div class="azure-card p-6 mb-6">
+            <div class="mb-6">
+                <h4 class="section-header">
+                    <i data-feather="credit-card" class="w-4 h-4 mr-2" style="color: #0078D4;"></i>
+                    Banking Information
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Bank Name <span class="text-red-500">*</span></label>
+                        <select id="bank_name" name="bank_name" required class="azure-input w-full">
+                            <option value="">Select Bank</option>
+                            <option value="ABSA Bank">ABSA Bank</option>
+                            <option value="Standard Bank">Standard Bank</option>
+                            <option value="First National Bank">First National Bank (FNB)</option>
+                            <option value="Nedbank">Nedbank</option>
+                            <option value="Capitec Bank">Capitec Bank</option>
+                            <option value="Discovery Bank">Discovery Bank</option>
+                            <option value="African Bank">African Bank</option>
+                            <option value="Investec">Investec</option>
+                            <option value="Tyme Bank">Tyme Bank</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Account Holder Name <span class="text-red-500">*</span></label>
+                        <input type="text" id="account_holder" name="account_holder" required
+                               class="azure-input w-full" placeholder="Account holder full name">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Account Number <span class="text-red-500">*</span></label>
+                        <input type="text" id="account_number" name="account_number" required
+                               class="azure-input w-full" placeholder="Bank account number">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Branch Code <span class="text-red-500">*</span></label>
+                        <input type="text" id="branch_code" name="branch_code" required
+                               class="azure-input w-full" placeholder="Bank branch code">
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-light text-gray-700 mb-2">Account Type <span class="text-red-500">*</span></label>
+                        <select id="account_type" name="account_type" required class="azure-input w-full">
+                            <option value="">Select Account Type</option>
+                            <option value="Current">Current Account</option>
+                            <option value="Savings">Savings Account</option>
+                            <option value="Transmission">Transmission Account</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Business Details Section -->
+        <div class="azure-card p-6 mb-6">
+            <div class="mb-6">
+                <h4 class="section-header">
+                    <i data-feather="file-text" class="w-4 h-4 mr-2" style="color: #0078D4;"></i>
+                    Business Details
+                </h4>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Business Description <span class="text-red-500">*</span></label>
+                        <textarea id="business_description" name="business_description" rows="4" required
+                                  class="azure-input w-full" placeholder="Describe your business, products, and what makes you unique..."></textarea>
+                        <p class="text-xs font-light text-gray-500 mt-1">Clear description for tax records</p>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">Product Categories <span class="text-red-500">*</span></label>
+                        <div class="azure-card p-4">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-3">
+                                {% if categories %}
+                                    {% for category in categories %}
+                                    <div class="flex items-center">
+                                        <input type="checkbox" id="category_{{ category.id }}" name="product_categories" value="{{ category.id }}"
+                                               class="azure-checkbox">
+                                        <label for="category_{{ category.id }}" class="ml-2 text-sm font-light text-gray-700">{{ category.name }}</label>
+                                    </div>
+                                    {% endfor %}
+                                {% else %}
+                                    <div class="col-span-3">
+                                        <p class="text-sm text-gray-500">No categories available. Please contact admin.</p>
+                                        <input type="hidden" name="product_categories" value="general">
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div>
+                            <label class="block text-sm font-light text-gray-700 mb-2">Website URL</label>
+                            <input type="url" id="website_url" name="website_url"
+                                   class="azure-input w-full" placeholder="https://www.yourwebsite.com">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-light text-gray-700 mb-2">Years in Business</label>
+                            <input type="number" id="years_in_business" name="years_in_business" min="0" max="100"
+                                   class="azure-input w-full" placeholder="Years">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-light text-gray-700 mb-2">Number of Employees</label>
+                            <select id="number_of_employees" name="number_of_employees" class="azure-input w-full">
+                                <option value="">Select Range</option>
+                                <option value="1-10">1-10 employees</option>
+                                <option value="11-50">11-50 employees</option>
+                                <option value="51-200">51-200 employees</option>
+                                <option value="200+">200+ employees</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- B-BBEE Information Section -->
+        <div class="azure-card p-6 mb-6">
+            <div class="mb-6">
+                <h4 class="section-header">
+                    <i data-feather="shield" class="w-4 h-4 mr-2" style="color: #0078D4;"></i>
+                    B-BBEE Information (Optional)
+                </h4>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">B-BBEE Level</label>
+                        <select id="bee_level" name="bee_level" class="azure-input w-full">
+                            <option value="">Select B-BBEE Level</option>
+                            <option value="Level 1">Level 1</option>
+                            <option value="Level 2">Level 2</option>
+                            <option value="Level 3">Level 3</option>
+                            <option value="Level 4">Level 4</option>
+                            <option value="Level 5">Level 5</option>
+                            <option value="Level 6">Level 6</option>
+                            <option value="Level 7">Level 7</option>
+                            <option value="Level 8">Level 8</option>
+                            <option value="Non-compliant">Non-compliant</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-light text-gray-700 mb-2">B-BBEE Certificate Expiry Date</label>
+                        <input type="date" id="bee_certificate_expiry" name="bee_certificate_expiry" class="azure-input w-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Document Upload Section -->
+        <div class="azure-card p-6 mb-6">
+            <div class="mb-6">
+                <h4 class="section-header">
+                    <i data-feather="file-plus" class="w-4 h-4 mr-2" style="color: #0078D4;"></i>
+                    Document Upload
+                </h4>
+                <div class="info-box">
+                    <div class="flex items-start gap-3">
+                        <i data-feather="info" class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" style="stroke-width: 1.5;"></i>
+                        <div class="text-xs font-light text-blue-700">
+                            <strong>Requirements:</strong> Upload clear, legible copies of the following documents. Accepted formats: PDF, JPG, PNG (Max 10MB each)
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- CIPC Certificate Upload -->
+                    <div class="upload-section">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">CIPC Certificate of Incorporation <span class="text-red-500">*</span></label>
+                        <div class="upload-area" onclick="triggerFileInput('cipc_certificate')">
+                            <div class="upload-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17,8 12,3 7,8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <div class="upload-text">Click to upload certificate</div>
+                                <div class="upload-formats">PDF, JPG, PNG (max 10MB)</div>
+                            </div>
+                            <input type="file" id="cipc_certificate" name="cipc_certificate" accept=".pdf,.jpg,.jpeg,.png" class="upload-input" onchange="updateFileName(this)">
+                        </div>
+                        <div class="uploaded-file" id="cipc_certificate_file" style="display: none;"></div>
+                    </div>
+
+                    <!-- Bank Confirmation Upload -->
+                    <div class="upload-section">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Bank Account Confirmation Letter <span class="text-red-500">*</span></label>
+                        <div class="upload-area" onclick="triggerFileInput('bank_confirmation')">
+                            <div class="upload-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17,8 12,3 7,8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <div class="upload-text">Click to upload bank letter</div>
+                                <div class="upload-formats">PDF, JPG, PNG (max 10MB)</div>
+                            </div>
+                            <input type="file" id="bank_confirmation" name="bank_confirmation" accept=".pdf,.jpg,.jpeg,.png" class="upload-input" onchange="updateFileName(this)">
+                        </div>
+                        <div class="uploaded-file" id="bank_confirmation_file" style="display: none;"></div>
+                    </div>
+
+                    <!-- ID Copy Upload -->
+                    <div class="upload-section">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">ID Copy (Director/Owner) <span class="text-red-500">*</span></label>
+                        <div class="upload-area" onclick="triggerFileInput('id_copy')">
+                            <div class="upload-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17,8 12,3 7,8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <div class="upload-text">Click to upload ID copy</div>
+                                <div class="upload-formats">PDF, JPG, PNG (max 10MB)</div>
+                            </div>
+                            <input type="file" id="id_copy" name="id_copy" accept=".pdf,.jpg,.jpeg,.png" class="upload-input" onchange="updateFileName(this)">
+                        </div>
+                        <div class="uploaded-file" id="id_copy_file" style="display: none;"></div>
+                    </div>
+
+                    <!-- VAT Certificate Upload -->
+                    <div class="upload-section">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">VAT Registration Certificate</label>
+                        <div class="upload-area" onclick="triggerFileInput('vat_certificate')">
+                            <div class="upload-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17,8 12,3 7,8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <div class="upload-text">Click to upload VAT certificate</div>
+                                <div class="upload-formats">PDF, JPG, PNG (max 10MB)</div>
+                            </div>
+                            <input type="file" id="vat_certificate" name="vat_certificate" accept=".pdf,.jpg,.jpeg,.png" class="upload-input" onchange="updateFileName(this)">
+                        </div>
+                        <div class="uploaded-file" id="vat_certificate_file" style="display: none;"></div>
+                    </div>
+
+                    <!-- B-BBEE Certificate Upload -->
+                    <div class="upload-section">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">B-BBEE Certificate</label>
+                        <div class="upload-area" onclick="triggerFileInput('bee_certificate')">
+                            <div class="upload-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17,8 12,3 7,8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <div class="upload-text">Click to upload B-BBEE certificate</div>
+                                <div class="upload-formats">PDF, JPG, PNG (max 10MB)</div>
+                            </div>
+                            <input type="file" id="bee_certificate" name="bee_certificate" accept=".pdf,.jpg,.jpeg,.png" class="upload-input" onchange="updateFileName(this)">
+                        </div>
+                        <div class="uploaded-file" id="bee_certificate_file" style="display: none;"></div>
+                    </div>
+
+                    <!-- Tax Clearance Upload -->
+                    <div class="upload-section">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Tax Clearance Certificate</label>
+                        <div class="upload-area" onclick="triggerFileInput('tax_clearance')">
+                            <div class="upload-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17,8 12,3 7,8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <div class="upload-text">Click to upload tax clearance</div>
+                                <div class="upload-formats">PDF, JPG, PNG (max 10MB)</div>
+                            </div>
+                            <input type="file" id="tax_clearance" name="tax_clearance" accept=".pdf,.jpg,.jpeg,.png" class="upload-input" onchange="updateFileName(this)">
+                        </div>
+                        <div class="uploaded-file" id="tax_clearance_file" style="display: none;"></div>
+                    </div>
+
+                    <!-- Proof of Address Upload -->
+                    <div class="upload-section">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Proof of Business Address <span class="text-red-500">*</span></label>
+                        <div class="upload-area" onclick="triggerFileInput('proof_of_address')">
+                            <div class="upload-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17,8 12,3 7,8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <div class="upload-text">Click to upload proof of address</div>
+                                <div class="upload-formats">PDF, JPG, PNG (max 10MB)</div>
+                            </div>
+                            <input type="file" id="proof_of_address" name="proof_of_address" accept=".pdf,.jpg,.jpeg,.png" class="upload-input" onchange="updateFileName(this)">
+                        </div>
+                        <div class="uploaded-file" id="proof_of_address_file" style="display: none;"></div>
+                    </div>
+
+                    <!-- Other Documents Upload -->
+                    <div class="upload-section">
+                        <label class="block text-sm font-medium text-gray-700 mb-3">Other Supporting Documents</label>
+                        <div class="upload-area" onclick="triggerFileInput('other_documents')">
+                            <div class="upload-content">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="upload-icon">
+                                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                                    <polyline points="17,8 12,3 7,8"></polyline>
+                                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                                </svg>
+                                <div class="upload-text">Click to upload documents</div>
+                                <div class="upload-formats">PDF, JPG, PNG (max 10MB)</div>
+                            </div>
+                            <input type="file" id="other_documents" name="other_documents" accept=".pdf,.jpg,.jpeg,.png" class="upload-input" onchange="updateFileName(this)">
+                        </div>
+                        <div class="uploaded-file" id="other_documents_file" style="display: none;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terms and Agreements Section -->
+        <div class="azure-card p-6 mb-6">
+            <div class="mb-6">
+                <h4 class="section-header">
+                    <i data-feather="check-square" class="w-4 h-4 mr-2" style="color: #0078D4;"></i>
+                    Terms and Agreements
+                </h4>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <input id="terms_accepted" name="terms_accepted" type="checkbox" required
+                               class="azure-checkbox mt-1">
+                        <div>
+                            <label for="terms_accepted" class="text-sm font-light text-gray-700">
+                                I accept the <a href="{{ url_for('terms_and_conditions') }}" target="_blank" 
+                                class="text-blue-600 hover:text-blue-600 underline">Terms and Conditions</a> 
+                                <span class="text-red-500">*</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <input id="privacy_accepted" name="privacy_accepted" type="checkbox" required
+                               class="azure-checkbox mt-1">
+                        <div>
+                            <label for="privacy_accepted" class="text-sm font-light text-gray-700">
+                                I accept the <a href="{{ url_for('privacy_policy') }}" target="_blank" 
+                                class="text-blue-600 hover:text-blue-600 underline">Privacy Policy</a> 
+                                <span class="text-red-500">*</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start gap-3">
+                        <input id="marketplace_agreement_accepted" name="marketplace_agreement_accepted" type="checkbox" required
+                               class="azure-checkbox mt-1">
+                        <div>
+                            <label for="marketplace_agreement_accepted" class="text-sm font-light text-gray-700">
+                                I accept the South African Teachers Hub Marketplace Agreement <span class="text-red-500">*</span>
+                            </label>
+                            <p class="text-xs font-light text-gray-500 mt-1">
+                                By accepting, you agree to our seller policies, commission structure, and payment terms.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="flex justify-end space-x-3 mt-6 pt-4 border-t border-gray-200">
+            <button type="button" onclick="window.history.back()" class="btn-secondary">Cancel</button>
+            <button type="submit" class="btn-primary" id="submitBtn">
+                <i data-feather="save" class="w-4 h-4" style="stroke-width: 1.5;"></i>
+                <span>Submit Vendor Application</span>
+            </button>
+        </div>
+    </form>
+</div>
+
+<script>
+// Upload area functions
+function triggerFileInput(inputId) {
+    document.getElementById(inputId).click();
+}
+
+function updateFileName(input) {
+    const file = input.files[0];
+    const uploadArea = input.parentElement;
+    const fileDisplay = document.getElementById(input.id + '_file');
+    
+    if (file) {
+        // Update the upload area visual state
+        uploadArea.classList.add('has-file');
+        
+        // Show the uploaded file name
+        fileDisplay.style.display = 'block';
+        fileDisplay.textContent = file.name;
+        
+        // Update the upload text
+        const uploadText = uploadArea.querySelector('.upload-text');
+        uploadText.textContent = 'File selected: ' + file.name;
+        
+        // Size validation (10MB)
+        if (file.size > 10 * 1024 * 1024) {
+            alert('File size must be less than 10MB. Please compress your file and try again.');
+            input.value = '';
+            uploadArea.classList.remove('has-file');
+            fileDisplay.style.display = 'none';
+            uploadText.textContent = uploadText.textContent.replace('File selected: ' + file.name, 'Click to upload');
+            return;
+        }
+        
+        // File type validation
+        const allowedTypes = ['.pdf', '.jpg', '.jpeg', '.png'];
+        const fileExtension = '.' + file.name.split('.').pop().toLowerCase();
+        if (!allowedTypes.includes(fileExtension)) {
+            alert('Only PDF, JPG, and PNG files are allowed.');
+            input.value = '';
+            uploadArea.classList.remove('has-file');
+            fileDisplay.style.display = 'none';
+            uploadText.textContent = uploadText.textContent.replace('File selected: ' + file.name, 'Click to upload');
+            return;
+        }
+    } else {
+        // Reset the visual state
+        uploadArea.classList.remove('has-file');
+        fileDisplay.style.display = 'none';
+        const uploadText = uploadArea.querySelector('.upload-text');
+        uploadText.textContent = uploadText.textContent.replace(/File selected: .*/, 'Click to upload');
+    }
+}
+
+// Initialize Feather icons
+document.addEventListener('DOMContentLoaded', function() {
+    feather.replace();
+    
+    // Auto-populate postal address
+    const physicalAddress = document.getElementById('physical_address');
+    const postalAddress = document.getElementById('postal_address');
+    
+    physicalAddress.addEventListener('blur', function() {
+        if (!postalAddress.value.trim()) {
+            postalAddress.value = physicalAddress.value;
+        }
+    });
+    
+    // File upload validation
+    const fileInputs = document.querySelectorAll('input[type="file"]');
+    fileInputs.forEach(input => {
+        input.addEventListener('change', function() {
+            const file = this.files[0];
+            if (file) {
+                // Size validation (10MB)
+                if (file.size > 10 * 1024 * 1024) {
+                    alert('File size must be less than 10MB. Please compress your file and try again.');
+                    this.value = '';
+                    return;
+                }
+                
+                // Type validation
+                const allowedTypes = ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png'];
+                if (!allowedTypes.includes(file.type)) {
+                    alert('Please upload a PDF, JPG, or PNG file only.');
+                    this.value = '';
+                    return;
+                }
+            }
+        });
+    });
+    
+    // Form submission
+    const form = document.getElementById('vendorForm');
+    const submitBtn = document.getElementById('submitBtn');
+    
+    form.addEventListener('submit', function(e) {
+        submitBtn.innerHTML = '<i data-feather="loader" class="w-4 h-4 animate-spin" style="stroke-width: 1.5;"></i><span>Processing Application...</span>';
+        submitBtn.disabled = true;
+        feather.replace();
+        
+        setTimeout(() => {
+            if (!form.checkValidity()) {
+                submitBtn.innerHTML = '<i data-feather="save" class="w-4 h-4" style="stroke-width: 1.5;"></i><span>Submit Vendor Application</span>';
+                submitBtn.disabled = false;
+                feather.replace();
+            }
+        }, 100);
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,593 @@
+{% extends "lms_base.html" %}
+{% block title %}Dashboard — CAPS Studio{% endblock %}
+
+{# Hide the site-wide top navbar — sidebar replaces it #}
+{% block navbar %}{% endblock %}
+{% block hero %}{% endblock %}
+{% block footer %}{% endblock %}
+
+{% block main %}
+<style>
+/* ============================================================
+   CAPS Studio — Sidebar Dashboard Layout
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; background: #0b0b0d; }
+
+.cs-app {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Helvetica, Arial, sans-serif;
+}
+
+/* ---- SIDEBAR ---- */
+.cs-sidebar {
+    width: 198px;
+    min-width: 198px;
+    background: #141414;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    position: relative;
+    z-index: 10;
+    overflow: hidden;
+}
+.cs-app.sidebar-collapsed .cs-sidebar {
+    display: none;
+}
+/* Sidebar close button (inside logo row) */
+.cs-sidebar-close {
+    margin-left: auto;
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    color: rgba(255,255,255,0.35);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    transition: background .15s, color .15s;
+}
+.cs-sidebar-close:hover { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.85); }
+/* Sidebar open button (in topbar, shown only when sidebar is collapsed) */
+.cs-sidebar-open {
+    display: none;
+    width: 34px; height: 34px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: #141414;
+    color: rgba(255,255,255,0.65);
+    cursor: pointer;
+    align-items: center; justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+    transition: background .15s, color .15s;
+    margin-right: 4px;
+}
+.cs-sidebar-open:hover { background: #2a2d35; color: #fff; }
+.cs-app.sidebar-collapsed .cs-sidebar-open { display: flex; }
+
+.cs-logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 16px 16px 12px;
+    text-decoration: none;
+}
+.cs-logo-icon {
+    width: 28px; height: 28px;
+    background: #2a2d35;
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.cs-logo-icon i { color: #fff; font-size: 14px; }
+.cs-logo-text {
+    font-size: 14px;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.3px;
+}
+
+.cs-nav {
+    flex: 1;
+    padding: 6px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+    overflow-y: auto;
+}
+.cs-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 6px 10px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 300;
+    color: rgba(255,255,255,0.58);
+    transition: background 0.15s, color 0.15s;
+}
+.cs-nav-item i {
+    font-size: 13px;
+    width: 16px;
+    text-align: center;
+    flex-shrink: 0;
+    color: inherit;
+}
+.cs-nav-item svg {
+    width: 15px;
+    height: 15px;
+    flex-shrink: 0;
+    stroke: currentColor;
+}
+.cs-nav-item:hover {
+    background: rgba(255,255,255,0.07);
+    color: rgba(255,255,255,0.90);
+}
+.cs-nav-item.active {
+    background: rgba(255,255,255,0.13);
+    color: #ffffff;
+    font-weight: 400;
+}
+.cs-nav-item.mod-link { color: rgba(74,222,128,0.75); }
+.cs-nav-item.mod-link:hover, .cs-nav-item.mod-link.active { color: #4ADE80; }
+
+/* Sidebar footer */
+.cs-sidebar-footer {
+    padding: 16px 12px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+}
+.cs-user-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    margin-bottom: 2px;
+    text-decoration: none;
+    transition: background 0.15s;
+}
+.cs-user-row:hover { background: rgba(255,255,255,0.06); }
+.cs-avatar {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: #3a3f4b;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    overflow: hidden;
+    font-size: 13px;
+    font-weight: 600;
+    color: #fff;
+}
+.cs-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.cs-user-name {
+    font-size: 13px;
+    font-weight: 500;
+    color: #ffffff;
+    line-height: 1.2;
+}
+.cs-user-sub {
+    font-size: 11px;
+    color: rgba(255,255,255,0.45);
+}
+.cs-signout {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 10px;
+    border-radius: 8px;
+    color: rgba(255,255,255,0.50);
+    font-size: 13px;
+    text-decoration: none;
+    transition: color 0.15s, background 0.15s;
+}
+.cs-signout:hover { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.80); }
+.cs-signout i { font-size: 14px; }
+
+/* ---- MAIN CONTENT ---- */
+.cs-main {
+    flex: 1;
+    background: #0b0b0d;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 44px 56px;
+    min-height: 100vh;
+}
+
+.cs-topbar {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 32px;
+    flex-wrap: wrap;
+}
+.cs-welcome-title {
+    font-size: 38px;
+    font-weight: 700;
+    color: #F1F2F4;
+    letter-spacing: -0.9px;
+    line-height: 1.1;
+    margin: 0 0 6px;
+}
+.cs-welcome-sub {
+    font-size: 14px;
+    color: #8B919E;
+    margin: 0;
+}
+.cs-welcome-sub a { color: #8B919E; text-decoration: underline; }
+.cs-new-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 11px;
+    background: transparent;
+    color: #f5f5f7 !important;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 400;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background 120ms ease, border-color 120ms ease;
+    flex-shrink: 0;
+    margin-top: 4px;
+    line-height: 1.3;
+}
+.cs-new-btn i,
+.cs-new-btn .cs-new-icon {
+    flex: 0 0 auto;
+    color: #c084fc;
+}
+.cs-new-btn:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.18); }
+
+/* Stat cards */
+.cs-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 20px;
+}
+.cs-stat {
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.05);
+    border-radius: 14px;
+    padding: 32px 28px 30px;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    box-shadow: none;
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+}
+.cs-stat:hover {
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.08);
+    box-shadow: none;
+}
+.cs-stat-icon {
+    width: 48px; height: 48px;
+    color: #2997ff;
+    flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+}
+.cs-stat-icon svg {
+    width: 100%; height: 100%;
+    stroke: currentColor; fill: none;
+    stroke-width: 1;
+    stroke-linecap: round; stroke-linejoin: round;
+}
+.cs-stat-num {
+    font-size: 40px;
+    font-weight: 700;
+    color: #f5f5f7;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+.cs-stat-label { font-size: 15px; color: rgba(255,255,255,0.65); }
+
+/* Get started card */
+.cs-card {
+    background: transparent;
+    border: 0;
+    border-radius: 0;
+    padding: 0;
+    box-shadow: none;
+}
+.cs-card-title {
+    font-size: 17px;
+    font-weight: 600;
+    color: #F1F2F4;
+    margin: 0 0 16px;
+}
+ol.cs-steps {
+    list-style: none;
+    counter-reset: step;
+    padding: 0; margin: 0 0 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 18px;
+}
+.cs-steps li {
+    counter-increment: step;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 32px 28px 30px;
+    border-radius: 14px;
+    background: rgba(255,255,255,0.025);
+    border: 1px solid rgba(255,255,255,0.05);
+    color: rgba(255,255,255,0.65);
+    font-size: 14px;
+    line-height: 1.55;
+    box-shadow: none;
+    transition: transform 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+    text-align: left;
+}
+.cs-steps li:hover {
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.04);
+    border-color: rgba(255,255,255,0.08);
+    box-shadow: none;
+}
+.cs-steps li::before {
+    content: "";
+    display: block;
+    width: 48px; height: 48px;
+    color: #2997ff;
+    background-color: currentColor;
+    -webkit-mask-position: center; mask-position: center;
+    -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat;
+    -webkit-mask-size: 48px 48px; mask-size: 48px 48px;
+}
+.cs-steps li:nth-child(1)::before {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='8' r='4'/><path d='M4 21v-1a8 8 0 0 1 16 0v1'/></svg>");
+            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><circle cx='12' cy='8' r='4'/><path d='M4 21v-1a8 8 0 0 1 16 0v1'/></svg>");
+}
+.cs-steps li:nth-child(2)::before {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='5' rx='1'/><rect x='4' y='11' width='16' height='5' rx='1'/><rect x='4' y='18' width='10' height='3' rx='1'/></svg>");
+            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><rect x='4' y='4' width='16' height='5' rx='1'/><rect x='4' y='11' width='16' height='5' rx='1'/><rect x='4' y='18' width='10' height='3' rx='1'/></svg>");
+}
+.cs-steps li:nth-child(3)::before {
+    -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z'/><path d='M14 3v5h5'/><path d='M9 13h6'/><path d='M9 17h6'/></svg>");
+            mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1' stroke-linecap='round' stroke-linejoin='round'><path d='M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z'/><path d='M14 3v5h5'/><path d='M9 13h6'/><path d='M9 17h6'/></svg>");
+}
+.cs-steps a, .cs-steps strong { font-weight: 600; color: #f5f5f7; text-decoration: none; }
+.cs-steps a:hover { color: #2997ff; }
+.cs-card-note {
+    font-size: 12.5px;
+    color: #555B68;
+    border-top: 0;
+    padding-top: 14px;
+    margin: 0;
+}
+
+/* Flash messages inside the sidebar layout */
+.cs-flash-stack {
+    position: fixed;
+    bottom: 24px; right: 24px;
+    z-index: 9999;
+    display: flex; flex-direction: column; gap: 8px;
+}
+.cs-flash {
+    padding: 12px 18px;
+    border-radius: 10px;
+    font-size: 13px;
+    color: #fff;
+    background: #111827;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.20);
+    max-width: 340px;
+}
+.cs-flash.success { background: #16a34a; }
+.cs-flash.danger  { background: #dc2626; }
+.cs-flash.warning { background: #d97706; }
+
+/* Kill the global lms_base tr:hover white flash */
+.cs-app tbody tr:hover { background: transparent !important; }
+
+@media (max-width: 880px) {
+    .cs-stats { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 640px) {
+    .cs-sidebar { display: none; }
+    .cs-main { padding: 24px 20px 40px; }
+    .cs-welcome-title { font-size: 26px; }
+    .cs-stats { grid-template-columns: 1fr; }
+}
+</style>
+
+<div class="cs-app" id="csApp">
+
+    {# ======== SIDEBAR ======== #}
+    <aside class="cs-sidebar">
+        <a href="{{ url_for('teacher_dashboard') }}" class="cs-logo">
+            <div class="cs-logo-icon">
+                <i class="fas fa-graduation-cap"></i>
+            </div>
+            <span class="cs-logo-text">CAPS Studio</span>
+            <button class="cs-sidebar-close" id="sidebarClose" title="Close sidebar" aria-label="Close sidebar">&#8249;</button>
+        </a>
+
+        <nav class="cs-nav">
+            <a href="{{ url_for('teacher_dashboard') }}" class="cs-nav-item active">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg>
+                <span>Dashboard</span>
+            </a>
+            <a href="{{ url_for('teacher_bank') }}" class="cs-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                <span>Question Bank</span>
+            </a>
+            <a href="{{ url_for('teacher_papers_generated') }}" class="cs-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg>
+                <span>Paper Generator</span>
+            </a>
+            <a href="{{ url_for('teacher_moderation_queue') }}" class="cs-nav-item mod-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <span>Moderation</span>
+            </a>
+            <a href="{{ url_for('teacher_papers') }}" class="cs-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14l1.45-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.55 6A2 2 0 0 1 18.45 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H18a2 2 0 0 1 2 2v2"/></svg>
+                <span>Past Papers</span>
+            </a>
+            <a href="{{ url_for('teacher_formal_assessment') }}" class="cs-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg>
+                <span>Formal Assessment</span>
+            </a>
+            <a href="{{ url_for('teacher_planner') }}" class="cs-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                <span>Year Planner</span>
+            </a>
+            <a href="{{ url_for('teacher_team') }}" class="cs-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                <span>Team</span>
+            </a>
+            {% if current_user.is_authenticated and current_user.is_admin %}
+            <a href="{{ url_for('admin_users') }}" class="cs-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M16 11l2 2 4-4"/></svg>
+                <span>Users</span>
+            </a>
+            {% endif %}
+            <a href="{{ url_for('teacher_instruction_templates_list') }}" class="cs-nav-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+                <span>Templates</span>
+            </a>
+        </nav>
+
+        <div class="cs-sidebar-footer">
+            <a href="{{ url_for('teacher_profile') }}" class="cs-user-row">
+                <div class="cs-avatar">
+                    {% if current_user.profile_pic %}
+                        <img src="{{ url_for('static', filename=current_user.profile_pic) }}" alt="">
+                    {% else %}
+                        {{ (current_user.first_name[:1] if current_user.first_name else current_user.username[:1])|upper }}
+                    {% endif %}
+                </div>
+                <div>
+                    <div class="cs-user-name">{{ current_user.full_name }}</div>
+                    <div class="cs-user-sub">{% if current_user.school_name %}{{ current_user.school_name }}{% else %}Set school{% endif %}</div>
+                </div>
+            </a>
+            <a href="{{ url_for('logout') }}" class="cs-signout">
+                <i class="fas fa-arrow-right-from-bracket"></i>
+                <span>Sign out</span>
+            </a>
+        </div>
+    </aside>
+
+    {# ======== MAIN CONTENT ======== #}
+    <main class="cs-main">
+        <div class="cs-topbar">
+            <div style="display:flex;align-items:center;gap:8px;">
+                <button class="cs-sidebar-open" id="sidebarOpen" title="Open sidebar" aria-label="Open sidebar"><i class="fas fa-bars"></i></button>
+                <div>
+                    <h1 class="cs-welcome-title">Welcome back, {{ current_user.first_name or current_user.username }}.</h1>
+                    <p class="cs-welcome-sub">
+                        Teacher dashboard
+                        {%- if not current_user.school_name %} · <a href="{{ url_for('teacher_profile') }}">Set your school in profile</a>{% endif %}
+                    </p>
+                </div>
+            </div>
+            <a href="{{ url_for('teacher_paper_edit') }}" class="cs-new-btn">
+                <svg class="cs-new-icon" viewBox="0 0 24 24" fill="none" stroke="url(#csNewGrad)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 5v14"/><path d="M5 12h14"/></svg>
+                <span>New paper</span>
+            </a>
+            <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+              <defs>
+                <linearGradient id="csNewGrad" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#ff6b9d"/>
+                  <stop offset="50%" stop-color="#c084fc"/>
+                  <stop offset="100%" stop-color="#60a5fa"/>
+                </linearGradient>
+              </defs>
+            </svg>
+        </div>
+
+        {# ---- Stat cards ---- #}
+        <div class="cs-stats">
+            <div class="cs-stat">
+                <div class="cs-stat-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V10"/><path d="M10 20V4"/><path d="M16 20v-8"/><path d="M22 20H2"/></svg>
+                </div>
+                <div>
+                    <div class="cs-stat-num">{{ bank_count }}</div>
+                    <div class="cs-stat-label">My questions</div>
+                </div>
+            </div>
+            <div class="cs-stat">
+                <div class="cs-stat-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/><path d="M9 13h6"/><path d="M9 17h6"/></svg>
+                </div>
+                <div>
+                    <div class="cs-stat-num">{{ paper_count }}</div>
+                    <div class="cs-stat-label">My papers</div>
+                </div>
+            </div>
+            <div class="cs-stat">
+                <div class="cs-stat-icon">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2 4 5v6c0 5 3.5 9.5 8 11 4.5-1.5 8-6 8-11V5l-8-3Z"/></svg>
+                </div>
+                <div>
+                    <div class="cs-stat-num">{{ mod_count }}</div>
+                    <div class="cs-stat-label">Awaiting moderation</div>
+                </div>
+            </div>
+        </div>
+
+        {# ---- Get started ---- #}
+        <div class="cs-card">
+            <h2 class="cs-card-title">Get started</h2>
+            <ol class="cs-steps">
+                <li><strong><a href="{{ url_for('teacher_profile') }}">Complete your profile</a></strong> — add your school, district and subjects.</li>
+                <li>Add your first questions to the <strong><a href="{{ url_for('teacher_bank') }}">Question Bank</a></strong>.</li>
+                <li>Compose your first paper in the <strong><a href="{{ url_for('teacher_paper_edit') }}">Paper Generator</a></strong>.</li>
+            </ol>
+            <p class="cs-card-note">More modules unlock in upcoming releases: Question Bank · Paper Generator · Moderation · Past Papers · Year Planner.</p>
+        </div>
+
+        {# Flash messages #}
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        <div class="cs-flash-stack">
+            {% for cat, msg in messages %}
+            <div class="cs-flash {{ cat }}">{{ msg }}</div>
+            {% endfor %}
+        </div>
+        <script>
+            setTimeout(function(){
+                document.querySelectorAll('.cs-flash').forEach(function(el){ el.style.opacity='0'; el.style.transition='opacity .3s'; setTimeout(function(){ el.remove(); }, 350); });
+            }, 4000);
+        </script>
+        {% endif %}
+        {% endwith %}
+    </main>
+
+</div>
+
+<script>
+(function(){
+    var app = document.getElementById('csApp');
+    var closeBtn = document.getElementById('sidebarClose');
+    var openBtn  = document.getElementById('sidebarOpen');
+    var KEY = 'sath-sidebar-collapsed';
+    if (localStorage.getItem(KEY) === '1') {
+        app.classList.add('sidebar-collapsed');
+    }
+    function toggle() {
+        var collapsed = app.classList.toggle('sidebar-collapsed');
+        localStorage.setItem(KEY, collapsed ? '1' : '0');
+    }
+    if (closeBtn) closeBtn.addEventListener('click', function(e){ e.preventDefault(); toggle(); });
+    if (openBtn)  openBtn.addEventListener('click', toggle);
+})();
+</script>
+{% endblock %}

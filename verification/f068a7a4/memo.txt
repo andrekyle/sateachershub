@@ -1,0 +1,1325 @@
+﻿
+
+CAT P2 Nov 2021 – Marking Guidelines 
+
+CAT P2 Nov 2021 — MARKING GUIDELINES
+
+Print / Save as PDF 
+
+Edit 
+
+Close 
+
+Sandton High School
+
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+
+COMPUTER APPLICATIONS TECHNOLOGY P2
+
+NOVEMBER 2021
+
+MARKING GUIDELINES
+
+MARKS: 150
+
+These marking guidelines consist of 5 pages.
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+2 
+DBE/November 2021 
+
+SUGGESTIONS AND RECOMMENDATIONS TO MARKERS
+
+Revisit the questions and the marking guidelines frequently during the marking session.
+
+It is advisable to read (and re-read) the question frequently together with the candidate s response to check that it correlates, so that you are not misled by the candidate s statements/answers.
+
+Be careful not to focus on keywords or general statements, but rather read the entire answer. If in doubt, read the entire answer and then the question paper and the marking guidelines.
+
+Ask yourself or your senior marker if the response could fit into the marking guidelines before allocating the correct marks to the candidate.
+
+Accept correct answers that are expressed differently, e.g. the marking guidelines state slow and the candidate responds with not fast .
+
+Beware of overlapping answers to a specific question. In general, ONE mark is awarded per fact.
+
+Do not choose answers on the candidate s behalf. Where a question requires a candidate to LIST or NAME : mark the first number of answers/facts required, e.g. the first TWO facts if the candidate presents a list of FIVE facts and only TWO facts were required, even if presented in paragraph format.
+
+Questions requiring longer answers must be regarded as a single unit. Marks can be awarded if correct statements are found anywhere in the paragraph.
+
+SECTION A
+
+QUESTION 2: MATCHING ITEMS
+
+2.1
+
+J 
+
+1
+
+2.2
+
+K 
+
+1
+
+2.3
+
+N 
+
+1
+
+2.4
+
+A 
+
+1
+
+2.5
+
+G / L 
+
+1
+
+2.6
+
+B 
+
+1
+
+2.7
+
+T 
+
+1
+
+2.8
+
+H 
+
+1
+
+2.9
+
+C 
+
+1
+
+2.10
+
+D 
+
+1
+
+Total: [10]
+
+QUESTION 3: TRUE/FALSE ITEMS
+
+(Note to marker:
+
+3.1
+
+False, HTTP / HTTPS
+
+1
+
+3.2
+
+True /False, Chatrooms/Forums
+
+1
+
+3.3
+
+False, Shaping /Network tuning
+
+1
+
+3.4
+
+False, Minimise
+
+1
+
+3.5
+
+True
+
+1
+
+Total: [5]
+
+Copyright reserved Please turn over 
+
+Computer Applications Technology/P2 
+3 
+DBE/November 2021 
+
+QUESTION 1: MULTIPLE-CHOICE QUESTIONS
+
+(Note to marker:
+
+1.1
+
+B
+
+1
+
+1.2
+
+A / D
+
+1
+
+1.3
+
+C
+
+1
+
+1.4
+
+D
+
+1
+
+1.5
+
+B
+
+1
+
+1.6
+
+D
+
+1
+
+1.7
+
+A
+
+1
+
+1.8
+
+B
+
+1
+
+1.9
+
+D
+
+1
+
+1.10
+
+C
+
+1
+
+[10]
+
+TOTAL SECTION A: [25]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+4 
+DBE/November 2021 
+
+SECTION B
+
+QUESTION 4: SYSTEM TECHNOLOGIES
+
+4.1
+
+Purpose of a product key
+
+(1) To be able to use/access the software 
+(2) Register/Activate the software for legal use/Prevent piracy/To ensure that only legal copies of the software are installed/obtained/bought 
+(3) Required to complete the installation of software/The program will most likely not open past the product key page, or it might run but have only limited functionality 
+(4) Can regulate the number of installations done under a licence 
+(Any one) 
+
+1
+
+4.2
+
+TWO differences between a laptop and smartphone user interface
+
+(1) Interface options: Smartphone user interface usually offers fewer options/Smaller screen size means fewer interface options 
+(Accept more than one specific example of interface options, e.g.
+smartphone has no taskbar, hamburger menus vs stacked menus,
+etc.)
+(2) Orientation: Smartphones commonly used in portrait mode/Laptops commonly used in landscape mode/Smartphone can easily change between portrait and landscape orientation 
+(3) User interaction: Only touch screen available on smartphones/Touch screen and mouse pointer navigation/keyboard on laptop 
+
+(Any two) 
+
+2
+
+4.3
+
+TWO ways to repair a flash drive
+
+(1) Format the flash drive 
+
+(2) Click Yes when automatically prompted to repair a flash drive 
+/Use a repair utility, e.g. ScanDisk, etc. 
+
+2
+
+4.4.1
+
+Function of a driver
+
+Software/Program 
+that allows the operating system to control/
+communicate with hardware 
+
+2
+
+3
+
+4.4.2
+
+The process of how Plug-and-Play works
+
+The operating system installs/configures a driver automatically 
+/The
+plug-and-play device starts working as soon as it is plugged in.
+
+1
+
+4.5
+
+Device to transfer photos without connecting camera to computer
+
+Card Reader 
+/Card slot
+
+1
+
+4.6
+
+Outputs given by health trackers
+
+(1) Step counter 
+(2) Where and when you exercise 
+(3) Distance covered during sporting activities 
+(4) How much sleep you get 
+(5) Heart rate 
+(6) Calories burnt 
+(7) Oxygen (saturation) level 
+(8) History of activities 
+(9) Blood pressure, etc. 
+
+(Any two) 
+(Note to marker: Accept any valid response concerning outputs)
+
+2
+
+4.7.1
+
+TWO reasons the document displays differently on friend s PC
+
+(1) The same application as the one in which the document was created is not installed on the receiver s computer/Used a different application 
+(2) It is not opened in the same version in which it was created/Did not use compatibility options 
+(3) The friend s PC does not have the same font set as that of the sender 
+(4) No default printer is set on the friend s PC 
+
+(Any two) 
+
+2
+
+3
+
+4.7.2
+
+ONE way to ensure a document will display as created
+
+1) Save the document as a pdf 
+2) Save the document in a picture format 
+(Any one) 
+
+1
+
+4.8
+
+TWO reasons why using online applications/software is popular
+
+(1) Sharing and collaboration made easier/possible 
+(2) No need to have the software installed 
+(3) Can be used on any computer with a browser and internet connection 
+(4) Latest software/features are available without upgrading the software 
+(5) Less storage/processing requirements for local computer 
+(6) No need to update constantly 
+
+(Any two) 
+
+2
+
+4.9
+
+TWO reasons why smartphone cameras have not made dedicated cameras obsolete
+
+(1) Generally, less optical zoom available on a smartphone 
+(2) Dedicated camera produces better picture quality 
+(3) Image sensors/ISO better on dedicated cameras 
+(4) External flashes can be added to a dedicated camera 
+(5) Option to change lenses, e.g. Wide angle/Better lens quality 
+
+(Any two) 
+
+2
+
+4.10
+
+TWO reasons to use voice recognition software
+
+(1) Assist people with special needs/visual impairments to use a computer 
+(2) Speech to text software can make for easier/convenient data capturing 
+(3) Can be used for security purposes to identify people/Biometric purposes 
+(4) Enables hands-free operation of the device 
+
+(Any two) 
+
+2
+
+4.11
+
+TWO problems associated with 3D printing
+
+(1) Printing process is slow 
+(2) Unhealthy odours/smells given off 
+(3) Not all objects may have the strength/quality of their counterparts made in a factory 
+(4) Can be more expensive to manufacture compared to bulk manufacturing 
+(5) Companies may lose sales for certain items/parts 
+(6) Dangerous weapons can be easily made by anyone 
+(7) Filament running out/break during a print could affect quality 
+
+(Any two) 
+(Note to marker: Accept any valid response, e.g. noisy, etc.)
+
+2
+
+4.12.1
+
+TWO disadvantages of pop-ups, other than being distracted
+
+(1) May slow downloading of a website 
+(2) Uses bandwidth/data 
+(3) May contain malware/redirect to a malicious website 
+(4) May contain scamming links/adverts 
+(5) Certain features of websites may not work correctly 
+(6) Sometimes difficult/impossible to close a pop-up on a mobile device 
+
+(Any two) 
+(Note to marker: Accept references to adware.)
+
+2
+
+3
+
+4.12.2
+
+Reason for pop-up blocker not blocking all pop-ups automatically
+
+1) Some pop-ups are needed for the functioning of the website 
+2) User has allowed certain pop-ups 
+(Any one) 
+
+1
+
+[25]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+5 
+DBE/November 2021 
+
+QUESTION 5: INTERNET AND NETWORK TECHNOLOGIES
+
+5.1
+
+TWO advantages of grid computing
+
+(1) Large processing tasks are shared over many computers/Enormous processing power 
+(2) The failure of one computer will not affect processing tasks 
+(3) Scaling of processing power is easy 
+(4) Uses idle resources (cost effective) 
+(5) Not necessary to invest in expensive equipment for tasks requiring large processing power 
+
+(Any two) 
+
+2
+
+5.2
+
+Give TWO similarities between VoIP and streaming.
+
+2
+
+5.3.1
+
+Technology represented by the image
+
+IoT 
+/Internet of Things
+
+1
+
+3
+
+5.3.2
+
+Representation of arrows in IoT image
+
+Communication/data flow 
+between the devices and the cloud/internet
+/Connection to the internet
+
+1
+
+5.3.3
+
+ONE concern regarding IoT
+
+(1) Can be hacked/Loss of privacy/Security issues 
+(2) IoT technology is dependent on reliable connectivity/cloud services 
+(Any one) 
+
+1
+
+5.4
+
+Purpose of a browser add-on To add extra functionality that is not ordinarily available in the browser
+
+(Note to marker: Accept specific examples, e.g. blocks ads, enables faster
+navigation, etc.) 
+
+1
+
+5.5
+
+ONE reason to adjust the home page settings in a browser
+
+Have a certain website load automatically when opening the browser /
+Default page to load 
+
+1
+
+5.6
+
+TWO disadvantages of deleting browser history and cache (end-user perspective)
+
+(1) Pages (you visit frequently) take longer to load 
+(2) Additional bandwidth/data is used to download resources again 
+(3) You may not remember the sites you visited in the last week/month/year 
+(4) Unable to track browser activity of a user 
+
+(Any two) 
+
+2
+
+5.7
+
+Concept of cap 
+
+Limit placed on the amount of data 
+a user may use over a certain
+period , e.g. a calendar month 
+
+2
+
+5.8
+
+TWO benefits of synchronising the calendar in an e-mail client
+
+(1) The calendar will be updated/can be edited on other devices 
+(2) Online meeting invites from e-mail appear automatically in the calendar 
+(3) Calendar can push/notify you of important activities 
+
+(Any two) 
+
+2
+
+[15]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+6 
+DBE/November 2021 
+
+QUESTION 6: INFORMATION MANAGEMENT
+
+6.1
+
+Reason to use current information for research purposes
+
+Older sources may contain information that is no longer relevant/
+accurate/valid/credible 
+
+1
+
+6.2
+
+TWO negative effects as a result of information based on fake news
+
+(1) Can create misunderstandings on important social issues 
+(2) May lead to wrong decision-making 
+(3) Can negatively affect the health of those who base medical decisions on fake information 
+(4) Can harm the reputation of an individual or a company 
+(5) Can negatively affect the emotional well-being/mental health of people, as they become fearful/mistrusting/depressed, etc. 
+
+(Any two) 
+(Note to marker: Accept valid examples, e.g. vaccination resistance, job
+losses, riots, etc.)
+
+2
+
+6.3
+
+TWO reasons NOT to use blogs for academic research
+
+(1) Blogs may contain unsubstantiated opinions of people 
+(2) Bloggers are not necessarily experts in a field of study 
+(3) Could be biased and contain inaccuracies 
+(4) Blogs may not have been peer reviewed 
+(5) Comments made by other people on the blog may not be academically sound 
+
+(Any two) 
+
+2
+
+6.4.1
+
+ONE reason to use a survey instead of the internet for research
+
+Unique information is only available from a group of people 
+/Surveys
+are used to gather information that cannot be found elsewhere/Get the
+opinions of people/community
+
+1
+
+3
+
+6.4.2
+
+TWO ways to conduct a survey without both parties being present
+
+(1) Over the phone/VoIP 
+(2) Video calls 
+(3) Instant messaging/WhatsApp 
+(4) E-mail 
+(5) Social media platforms, e.g. Facebook, etc. 
+(6) Links to online platforms e.g. Survey Monkey, Google Forms, Microsoft Forms 
+(7) Postal service 
+
+(Any two) 
+
+2
+
+6.5
+
+TWO considerations for designing a user-friendly website
+
+Readability: 
+(1) Content should be well/logically organised 
+(2) Choice of colours should be pleasing/Contrast should not obscure the content 
+(3) Font size/font style/font type 
+(4) Language suited target audience/Correct spelling and grammar 
+Layout: 
+(5) Images should be meaningful and well sized 
+(6) White space between content 
+(7) Typography 
+(8) Layout should be easy to read/consistent in terms of font and colour themes, etc. 
+Navigation: 
+(9) Easy/Consistent navigation between pages/Working links 
+Accessibility: 
+(10) Alt text 
+
+(Any two) 
+(Note to marker: Accept the categories as valid answers AND other valid
+answers linked to the categories.)
+
+2
+
+[10]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+7 
+DBE/November 2021 
+
+QUESTION 7: SOCIAL IMPLICATIONS
+
+7.1
+
+Malware that encrypts a computer system until a payment is made
+
+Ransomware 
+
+1
+
+7.2
+
+ONE reason job seekers social media accounts are checked
+
+(1) To check a jobseeker s work or study history/track record 
+(2) To confirm evidence of claims made on the job-seeker s CVs 
+(3) To do a background check on the type of character and social activity of the job-seeker 
+(Any one) 
+
+1
+
+7.3
+
+ONE reason why some free apps are not really free
+
+(1) The apps generate an income through advertising 
+(2) The apps sometimes ask users to pay to activate additional features/In-app purchases 
+(3) Could be for a trial period after which payment is expected 
+(Any one) 
+
+1
+
+7.4
+
+Ways to apply UCD to an electronic form for the partially-sighted
+
+(1) Text should be larger 
+(2) Images or illustrations should be large enough and clear 
+(3) Layout and structure of the form should be well spaced and user friendly 
+(4) Consistent use of styles and sequence of objects for a text reader 
+(5) Add alternative text to explain the content of images 
+(6) Use a high display contrast between foreground and background colours 
+(7) Add custom sounds/voice prompts (Note to marker: Do NOT accept references to text-to-speech which is not part of the design process) 
+
+(Any two) 
+
+2
+
+7.5
+
+TWO measures to prevent hackers from accessing a PC
+
+(1) Use a firewall/antivirus 
+(2) Use (strong) passwords/Use a password manager 
+(3) Never share passwords/personal details with others 
+(4) Use biometric security 
+(5) Run regular updates to fix software vulnerabilities 
+
+(Any two) 
+
+2
+
+7.6.1
+
+The purpose of the social diagram
+
+The social mind map/diagram shows relationships 
+/connections/likes/
+preferences/associations
+
+1
+
+3
+
+7.6.2
+
+Product most likely to be advertised to this social group
+
+Product: 
+PC games 
+/Software development programs/Music/Hardware devices
+for gaming, etc.
+Motivation: 
+Advertisements will be based on what people like
+(Note to marker: Accept specific valid examples of products.) 
+
+2
+
+[10]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+8 
+DBE/November 2021 
+
+QUESTION 8: SOLUTION DEVELOPMENT
+
+8.1
+
+TWO reasons for using the hyphenation feature in word processing
+
+(1) Creates more uniform spacing between words/Creates a more consistent line length 
+(2) Allows long words to be broken over two lines 
+(3) Could reduce the length of a document/Saves paper 
+
+(Any two) 
+
+2
+
+8.2
+
+Move a diagram containing multiple shapes as one object
+
+(1) Use the Group feature/Group objects/Join the objects together before moving them 
+(2) Use the Snipping Tool/Print Screen to make it a picture/screenshot 
+(3) Use the Drawing Canvas feature 
+(4) Select all objects and drag/move as a diagram 
+(Any one) 
+
+1
+
+8.3
+
+Way to insert text into an existing document without using copy and
+
+paste method
+Insert text from file, select object and then text from file 
+
+1
+
+8.4.1
+
+Purpose of the Then by option in the Filter and Sort dialog
+
+It allows for a second or third level of sorting 
+
+1
+
+3
+
+8.4.2
+
+How to exclude records without deselecting check boxes
+
+Filter Records 
+with any VALUE condition that is greater than 29.99 
+
+2
+
+8.5
+
+TWO ways to view the whole function
+
+(1) Click on the drop down arrow at the end of the formula bar 
+(2) Click on fx to the left of the formula bar 
+(3) Expand the formula bar by dragging down the bottom edge 
+(4) Use Ctrl ~ to reveal the function (and expand the column) 
+(5) Insert an apostrophe before the formula and increase the column size, if necessary 
+(6) Press F2 or double click cell K1 
+
+(Any two) 
+
+2
+
+8.6
+
+Name of the function used in column D VALUE
+
+(Note to marker: Accept TRUNC/TEXT/INT) 
+
+1
+
+8.7
+
+Data type for image in a database field
+
+OLE (Object) 
+/Attachment
+
+1
+
+8.8
+
+Data validation technique to enter a valid number in a number range
+
+Validation rule 
+
+1
+
+8.9
+
+Describe output of the HTML code Browser will display a picture/image with a square shape
+
+(Note to marker: Accept 250 (high) x 250 (wide) instead of square) 
+
+2
+
+8.10
+
+Purpose of horizontal rule/line in HTML
+
+To divide/separate/accent sections in a web page 
+
+1
+
+[15]
+
+TOTAL SECTION B: [75]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+9 
+DBE/November 2021 
+
+SECTION C
+
+QUESTION 9: INTEGRATED SCENARIO
+
+9.1.1
+
+How to install software on a computer without a CD/DVD drive
+
+(1) Install from software downloaded from the internet 
+(2) Install from a CD/DVD using an external CD/DVD drive 
+(3) Install from a flash drive/SD Card 
+(4) Install from an external HDD 
+(5) Install from a ghosted computer 
+(6) Install from a shared folder on a network/from the cloud 
+
+(Any two) 
+
+2
+
+7
+
+9.1.2
+
+ONE hardware specification to limit access to a laptop
+
+(1) Fingerprint reader 
+(2) Webcam 
+(3) Biometric device 
+(4) Microphone 
+(Any one) 
+
+1
+
+9.1.3
+
+The concept of mobile learning Mobile learning is a form of education conducted and delivered on mobile (handheld) computing devices via the internet Reason to include mobile learning in the intervention programme
+
+(1) Can be done on any (handheld) device with internet access 
+(2) Can be done anywhere/No need to attend school for classes 
+(3) Can be done anytime 
+(4) Enhances the learning experience 
+(Any one) 
+
+2
+
+9.1.4
+
+ONE reason why data projector cannot connect to a laptop
+
+(1) Data projector and laptop ports are not compatible 
+(2) Faulty cable 
+(3) The wireless connection is switched off/Devices are not paired 
+(Any one) 
+Solution
+(1) Use an adaptor/ Use a wireless connection 
+(2) Replace the cable 
+(3) Switch on wireless connection/Pair devices 
+(Any one) 
+(Note to marker: The solution must match the reason.)
+
+2
+
+9.2.1
+
+Online system for teachers to automatically receive attendance details submitted by learners in a spreadsheet Google/Microsoft Forms
+
+(Note to marker: Accept any valid online electronic platform, e.g. D6
+Communicator, etc.) 
+
+1
+
+3
+
+9.2.2
+
+ONE spreadsheet feature to indicate a pattern
+
+(1) Graphs/charts 
+(2) Conditional formatting (for learners who do not attend regularly) 
+(3) Sorting/Filtering 
+(Any one) 
+
+1
+
+9.2.3
+
+ONE spreadsheet function to determine number of learners absent
+
+on a particular date
+COUNTIF 
+
+1
+
+9.3
+
+TWO reasons for setting up a network in a computer centre
+
+(1) Enable communication between computers in the network 
+(2) Sharing of devices such as printers 
+(3) Sharing of files/software/data 
+(4) Access to each computer can be controlled and monitored/Classroom management software can be used 
+(5) Internet connection can be shared 
+(6) Centralised data management system 
+(7) Sharing updates 
+(8) Improves security 
+
+(Any two) 
+
+2
+
+9.4.1
+
+TWO reasons to use a fibre connection for internet access
+
+(1) Fibre offers high speed for streaming and downloading files 
+(2) Large bandwidth to accommodate many users accessing the internet simultaneously 
+(3) More reliable/stable internet connection 
+(4) Cheaper per GB for uncapped options/Cost effective 
+(5) The signal is not easily affected by surrounding electrical noise 
+(6) Not affected by lightning strikes 
+
+(Any two) 
+
+2
+
+4
+
+9.4.2
+
+TWO ways to ensure learners do not abuse the internet access
+
+(1) Block certain sites and services that use high bandwidth/ questionable content, e.g. YouTube, BitTorrent, etc./Set parental controls 
+(2) Limit the time learners can spend on the internet 
+(3) Limit the amount of data each learner can use through the server/Issue access tokens 
+(4) Do not allow learners to access the internet via their smartphones/Block devices on Wi-Fi 
+(5) Use internet monitoring software, e.g. Classroom Spy 
+(6) Use proxy software 
+
+(Any two) 
+
+2
+
+9.5.1
+
+TWO hardware requirements for video conferencing on each PC
+
+(1) Webcam/Camera 
+(2) Speakers/Headphones/Earbuds/Airpods 
+(3) Microphone 
+
+(Any two) 
+
+2
+
+5
+
+9.5.2
+
+TWO examples of video conferencing software
+
+(1) Zoom 
+(2) Microsoft Teams 
+(3) Google Meet 
+(4) Skype, etc. 
+
+(Any two) 
+
+2
+
+9.5.3
+
+ONE way to reduce data usage during a video conference
+
+Switch off their video when the teacher is presenting 
+/Reduce the
+resolution/quality of the video
+
+1
+
+9.6.1
+
+TWO reasons a spreadsheet is less suitable for a text document
+
+1) Cannot set the paragraph and line spacing 
+2) Cannot use referencing features such a footnotes, cross-referencing, TOC or bibliography, etc. 
+3) Challenging to set printing for this type of document in a spreadsheet 
+4) Cumbersome to type text in rows and use the merge feature to create space for that text 
+5) A spreadsheet is used to store, manipulate/calculate and analyse data 
+
+(Any two) 
+
+2
+
+4
+
+9.6.2
+
+View option in a word processor that allows for quick movement to
+
+the position of a heading in a document
+The Navigation Pane 
+/Find (Ctrl+F)
+
+1
+
+9.6.3
+
+Word processing feature used to acknowledge sources
+
+Bibliography 
+/Citations
+
+1
+
+[25]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+10 
+DBE/November 2021 
+
+QUESTION 10
+
+10.1.1
+
+Reason for displaying the message to change the default browser
+
+(1) There is another bowser installed as the default 
+(2) To encourage the user to use Microsoft Edge 
+(Any one) 
+
+1
+
+5
+
+10.1.2
+
+Operating system associated with the Edge browser
+
+(Microsoft) Windows 
+
+1
+
+10.1.3
+
+Two ways to evaluate information on a website
+
+(1) Check that the information is current/up to date/relevant 
+(2) Check the reputation/authority of the author 
+(3) Check that the information is free of bias/objective 
+(4) Check that the same information appears elsewhere 
+
+(Any two) 
+
+2
+
+10.1.4
+
+Browser feature to access recently visited websites quickly
+
+Favourites 
+/Bookmarks/History/Add to Home Screen/Create a shortcut
+
+1
+
+10.2.1
+
+TWO functions of a UPS
+
+(1) Provide backup power 
+(2) Prevents damage to devices as a result of electrical surges/Equalises under or over electrical current 
+(3) Will alert the user to shut down safely/save work 
+(4) Can shut down/restart the equipment automatically 
+
+(Any two) 
+
+2
+
+5
+
+10.2.2
+
+Purpose of a 2-step authentication
+
+(1) To prevent fraud/theft 
+(2) To ensure that the owner of the credit card/bank account is the one who is transacting/To ensure that it is not a bot transacting 
+(Any one) 
+
+1
+
+10.2.3
+
+Example of a notification during a 2-step authentication PIN/OTP/code that was sent by SMS/e-mail
+
+(Note to marker: Accept the CAPTCHA prompt.) 
+
+1
+
+10.2.4
+
+Device to be connected to the UPS to ensure internet connectivity
+
+Router 
+/Modem
+
+1
+
+10.3.1
+
+Wireless technology using towers with battery backup
+
+Cellular 
+technology, e.g. 3G/4G/LTE/5G
+
+1
+
+3
+
+10.3.2
+
+TWO ways to verify network connection via towers with battery backup
+
+(1) Check a network coverage map 
+
+(2) Test the internet connectivity 
+(Note to marker: Accept any valid answers related to 10.3.1 even if 10.3.1 is incorrect.) 
+
+2
+
+10.4.1
+
+Reason for row 63 appearing directly after row 7
+
+(1) The rows (between row 7 and row 63) are hidden 
+(2) Freeze panes (set on row 8 and the user scrolled down to row 63) was used 
+(Any one) 
+
+1
+
+3
+
+10.4.2
+
+Reason why cell B65 displays incorrectly even if function is correct
+
+Cell B65 is not formatted as Date 
+/Is formatted as General/Number
+
+1
+
+10.4.3
+
+Spreadsheet feature to format multiple cells simultaneously
+
+Conditional formatting 
+
+1
+
+10.5.1
+
+Source of apps on a smartphone
+
+(1) (Apple/Samsung/Amazon) App store 
+(2) (Google/Android) Play (Store) 
+(3) (Huawei) App gallery, etc. 
+(Any one) 
+
+1
+
+4
+
+10.5.2
+
+Technology used to give load shedding schedule for your area
+
+Push technology 
+/GPS
+
+1
+
+10.5.3
+
+TWO ways teachers can avoid wasting teaching and learning time during load shedding
+
+(1) Do not plan lessons that use ICTs/electrical equipment during load shedding times 
+(2) Swop periods with other teachers that will not require ICTs if their lessons fall outside of load shedding times 
+(3) Teachers and learners could use laptops that are fully charged to enable them to work for a few hours 
+(4) Use backup/generator/battery/solar power 
+
+(Any two) 
+
+2
+
+10.6
+
+Ways to reduce electricity used by ICTs
+
+(NOTE: Allocate only ONE mark per aspect)
+Hardware: 
+Buy energy efficient hardware, e.g. low power CPU, etc.
+Software: 
+Enable Sleep Mode when PC is not active for a period of time, etc.
+User Behaviour: 
+End user should shut down PC when not in use, etc. 
+
+3
+
+10.7
+
+Utility to ensure certain tasks do not run during load shedding times
+
+(Task) Scheduler 
+
+1
+
+10.8
+
+Malware that tricks users to click on an item with a hidden link
+
+Clickjacking 
+
+1
+
+[25]
+
+TOTAL SECTION C: [50]
+
+GRAND TOTAL: 150
+
+Copyright reserved

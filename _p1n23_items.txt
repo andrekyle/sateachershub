@@ -1,0 +1,158 @@
+--- idx 0 <<< Q-START (split idx 1) | id=59e524c5-441f-4c60-8cbb-405f3499b318 | marks=3 | type=short_answer | topic='Practical' | img=''
+    Q: "Insert the Retrospect cover page as follows:\n\n              •  Document title: 'Popular Cars'\n              •  Remove the subtitle control."
+
+--- idx 1 | id=15020803-6418-41c4-a867-48704d252342 | marks=2 | type=short_answer | topic='Practical' | img=''
+    Q: "Find the heading that starts with 'These were South …' and use font\n              formatting to display the heading as shown below."
+
+--- idx 2 | id=1f74eec6-1b31-4604-bc82-1b063272ab5e | marks=2 | type=short_answer | topic='Practical' | img=''
+    Q: "Find the text 'Question/Vraag 1.3' and replace it with the image 1Toyota.\n\n              Apply a 'Soft-Edge Rectangle' picture style to the image."
+
+--- idx 3 | id=7c55b5b6-57d5-4623-912a-207b79438def | marks=3 | type=short_answer | topic='Practical' | img=''
+    Q: "Find and replace all occurrences of the word 'Hilux' so that it appears\n              expanded by 1 pt with a scale of 150%."
+
+--- idx 4 | id=a47f18fc-5c2c-4be7-bee9-1c2a5b41cf9b | marks=5 | type=short_answer | topic='Practical' | img=''
+    Q: "Find the table below the heading that starts with 'South Africa's 10 …' and\n              modify it to appear as the example below.\n\n              NOTE: The data for Volkswagen is moved into the table."
+
+--- idx 5 | id=6465e9ce-26dd-4f41-ae03-85a78c37d6de | marks=2 | type=short_answer | topic='Practical' | img=''
+    Q: "Find the chart/graph below the text that starts with 'The graph below …' and\n              insert the caption to display as 'Graph 2: Bestsellers'."
+
+--- idx 6 | id=404507f8-9315-4e0e-8565-ccf77fbbbbe2 | marks=4 | type=short_answer | topic='Practical' | img=''
+    Q: "Find the letter 'D' below the heading 'Expectations for new …' and format the\n\n              letter as displayed in the example below.\n\n              NOTE: The background colour of the letter D should display in a green\n                    shading."
+
+--- idx 7 | id=2430d2fb-9fa5-41fc-82b1-12ff5fed4e23 | marks=1 | type=short_answer | topic='Practical' | img=''
+    Q: "Find the heading that starts with 'The top 10 …' and the table below the\n              heading.\n\n              Change the settings to make sure that the heading and the table will always\n              remain together."
+
+--- idx 8 | id=5abd750a-151b-4145-aa28-900fd896b209 | marks=2 | type=short_answer | topic='Practical' | img=''
+    Q: 'Insert the file path in the header of the last page only.   (2)\n\n       Save and close the 1Top10 document.'
+
+--- idx 9 <<< Q-START (split idx 2) | id=c7be1122-6e42-4c5d-87d6-b76e020ef36f | marks=1 | type=short_answer | topic='Practical' | img=''
+    Q: 'Change the margins of the document to narrow margins.'
+
+--- idx 10 | id=0f57521c-2696-45ed-8760-234ed1533ce2 | marks=3 | type=short_answer | topic='Practical' | img=''
+    Q: 'Add a 3 pt border on the left and right side of the first page only.'
+
+--- idx 11 | id=95f70912-6138-4c89-a7f5-eae24dfd9f3c | marks=3 | type=short_answer | topic='Practical' | img=''
+    Q: "Create a link as follows:\n\n              •  Find the text 'Contact form' and create a bookmark called 'Contact'.\n              •  Insert a link on the text 'choosing' in the first paragraph to the 'Contact'\n                 bookmark."
+
+--- idx 12 | id=2cf9bb60-02ea-48f7-b958-7448a645b996 | marks=2 | type=short_answer | topic='Practical' | img=''
+    Q: "Find the text that starts with '1. A new vehicle …' and ends with '… start the\n              research:'.\n\n                                                                     \n              Change the numbered list to a bulleted list with the symbol\n              (Webdings: Character code: 142)."
+
+--- idx 13 | id=f6ef7908-b81b-44d0-ac09-4b5f3826e32e | marks=0 | type=short_answer | topic='Practical' | img=''
+    Q: "Edit the form controls below the heading 'Contact form' as follows:"
+
+--- idx 14 [SUBITEM] | id=0de714a0-8800-461e-ad77-d531829a0cfa | marks=1 | type=word_processing | topic='Practical' | img=''
+    Q: "Find the text form field next to the text 'Surname' and apply a word\n                      processing feature to the text form field so that it appears as the\n                      rest of the form fields."
+
+--- idx 15 [SUBITEM] | id=a6c598c3-ee98-421d-8078-2d636ca23f57 | marks=1 | type=short_answer | topic='Practical' | img=''
+    Q: "Change the text form field next to the text 'Name' to display the\n                      data in capital letters."
+
+--- idx 16 [SUBITEM] | id=c192fb09-7650-4b95-b8cb-81fb8c4463e7 | marks=1 | type=short_answer | topic='Practical' | img=''
+    Q: "Edit the text form field next to the 'Contact number' so that\n                      it can only accept the correct number of digits.\n\n                      Examples: 0825893654 or 0359586321"
+
+--- idx 17 [SUBITEM] | id=5fad7dee-743a-4004-bd9c-cb461012663b | marks=2 | type=short_answer | topic='Practical' | img=''
+    Q: "Edit the text form field next to the text 'Preferred time to call' so that\n                      a user can insert a specific time of day in the format: h:mm am/pm"
+
+--- idx 18 | id=27a77e91-b629-4093-a7d5-2c92115bf92b | marks=3 | type=short_answer | topic='Practical' | img=''
+    Q: 'Insert a shape to appear as in the example below.'
+
+--- idx 19 | id=34f5000c-6fc0-4545-87ae-63b42d37644c | marks=4 | type=short_answer | topic='Practical' | img=''
+    Q: "Find the SmartArt on the last page and format the SmartArt to appear as\n              shown in the example below.\n\n              NOTE: A '3D Cartoon' style was applied.                     (4)\n\n       Save and close the 2Tips document."
+
+--- idx 20 <<< Q-START (split idx 3) | id=f07fd9d6-80ca-469c-a959-56b783a8f59b | marks=3 | type=short_answer | topic='Practical' | img=''
+    Q: "Edit the heading in row 1 as follows:\n\n              •  Merge and centre cells A1:J1.\n              •  Apply a 'Distributed (Indent)' horizontal text alignment with an indent\n                 of 13."
+
+--- idx 21 | id=467026f1-8a22-4b5d-923b-f17259ef79fa | marks=2 | type=short_answer | topic='Practical' | img=''
+    Q: 'The total number of cars sold by each salesperson for the period 2022/2023 is\n              stored in row 7.\n\n              Insert a function in cell E3 to determine the second lowest total number of\n              cars sold by a salesperson for the period 2022/2023.'
+
+--- idx 22 | id=f4114c76-b1b8-49fd-98cc-c6c079f48609 | marks=2 | type=short_answer | topic='Practical' | img=''
+    Q: 'Insert a function in cell E4 to determine the number of months in which the\n              total monthly sales of cars were fewer than 15.'
+
+--- idx 23 | id=0ff952fd-ba10-42cb-b900-54bfe5626172 | marks=4 | type=spreadsheet | topic='Practical' | img=''
+    Q: 'Apply a spreadsheet feature to cells C9:I20 to display the percentage values\n              of 0 to 50 in a two-colour scale format style. Change the colour of the\n              minimum value to blue.'
+
+--- idx 24 | id=1da8aacc-72f1-4913-a9d7-2c613710bf4e | marks=6 | type=spreadsheet | topic='Practical' | img=''
+    Q: 'Insert a lookup function in cell F23 to display the name of the salesperson\n              who sold the most cars for the period 2022/2023.            (6)\n\n       Save and close the 3CarSales spreadsheet.'
+
+--- idx 25 <<< Q-START (split idx 4) | id=dd539160-bc91-4204-884a-1a5209ff4e4d | marks=2 | type=short_answer | topic='Practical' | img=''
+    Q: 'Change the format in column H to an appropriate data type and make sure\n              that all the information in the column is visible.'
+
+--- idx 26 | id=0fd760bd-f47e-4d5d-a335-e8baeda687ee | marks=1 | type=spreadsheet | topic='Practical' | img=''
+    Q: 'The function in cell C3 was an attempt to determine if the total interest\n              (cell E3) is 8% of the total car prices (column E).\n\n              However, the function displays an incorrect result.\n\n              Correct the formula in cell C3 to display the correct result.'
+
+--- idx 27 | id=0967fc3b-fc0f-42ab-b611-c04a3359682c | marks=6 | type=calculation | topic='Practical' | img=''
+    Q: 'Insert a function in cell C5 to calculate the total price (column E) for all the\n              Hyundai i-models.'
+
+--- idx 28 | id=e79538b5-c7af-475c-93bc-f38d59cb65c8 | marks=4 | type=short_answer | topic='Practical' | img=''
+    Q: 'Modify the function in cell A11 to only display the initial(s) of the customer\n              (column B).'
+
+--- idx 29 | id=f46835a6-d4d5-427c-ad32-ddd04f85b697 | marks=4 | type=calculation | topic='Practical' | img=''
+    Q: 'The total cost for a car is calculated by adding the price and the interest.\n              However, if a buyer wants extra accessories (column G), an additional 5% is\n              added to the total cost.\n\n              Insert a formula/function in cell H10 to calculate the final total cost for\n              Basson.                                                     (4)\n\n       Work in the Chart worksheet.'
+
+--- idx 30 | id=eec73035-1440-4b48-a1bd-9c334b652301 | marks=6 | type=spreadsheet | topic='Practical' | img=''
+    Q: 'Modify the chart to appear as the example below.\n\n              NOTE: The column colours have been set to vary by point.    (6)\n\n       Save and close the 4Sales spreadsheet.'
+
+--- idx 31 <<< Q-START (split idx 5) | id=fb4eb4d4-ce16-404a-86d2-9a4c3af909a1 | marks=1 | type=short_answer | topic='Practical' | img=''
+    Q: 'Change the properties of the Name field to make sure that a name\n                      is always entered.'
+
+--- idx 32 [SUBITEM] | id=fe5f4cb6-9c7e-426e-82f5-f353f59e82d6 | marks=2 | type=short_answer | topic='Practical' | img=''
+    Q: 'Edit the properties of the StartDate field to display in the format:\n\n                      dd-mmm-yy'
+
+--- idx 33 [SUBITEM] | id=8f90e918-7589-4839-b3b4-02692221efe9 | marks=4 | type=short_answer | topic='Practical' | img=''
+    Q: "A driver's licence number must be entered in a specific format.\n\n                      Change the properties of the LicenceNo field so that a user will\n                      enter data as follows:\n\n                      • SIX compulsory numbers; followed by\n                      • THREE capital letters; followed by\n                      • ONE optional number\n\n                      Examples: 435698XKJ8 or 963214PJH"
+
+--- idx 34 [SUBITEM] | id=a492f874-5d5a-400f-afe7-2a39e5e084e4 | marks=2 | type=short_answer | topic='Practical' | img=''
+    Q: 'Change the properties of the Rating field to ONLY accept ratings\n                      from 1 to 5. No default value should appear in this field.'
+
+--- idx 35 [SUBITEM] | id=d86ef5e1-2671-45c3-a2be-781dcd518567 | marks=4 | type=short_answer | topic='Practical' | img=''
+    Q: 'Insert a new field called LicenceCard above the LicenceNo field.\n\n                      Insert the 5Card image, in Datasheet View, for the driver Mark Lopez. (4)\n\n              Save and close the tbl5_1 table.'
+
+--- idx 36 | id=468802f8-db48-4359-b5c7-c20e018fe82c | marks=5 | type=short_answer | topic='Practical' | img=''
+    Q: "Open the frm5_2 form, based on the Pre-bookings table, in Design View\n              and edit as follows:\n\n              •  Insert the 5Bus image in the form header as a logo.\n              •  Change the properties of the Reason field to a combo box to display the\n\n                 options 'Business' and 'Personal'.\n\n              Save and close the frm5_2 form."
+
+--- idx 37 | id=684e193f-51bc-49b1-836b-736986a6d2af | marks=5 | type=database | topic='Practical' | img=''
+    Q: 'Create a query called qry5_3 based on the Pre-bookings table as follows:\n\n              Display only the name, surname and contact number of the following clients:\n\n              •  Business clients who travel more than 30 km\n              •  Any clients who travel 10 km or less\n\n              Save and close the qry5_3 query.'
+
+--- idx 38 | id=3f6e5ace-7010-4afd-b245-34eb756ff21d | marks=3 | type=database | topic='Practical' | img=''
+    Q: 'Open the qry5_4 query, based on the Pre-bookings table, in Design View.\n\n              Modify the query to display the clients who will use the shuttle services to\n              depart in December.\n\n              Save and close the qry5_4 query.'
+
+--- idx 39 | id=d81381ca-ab90-4d74-96e5-b8d7662fea0d | marks=4 | type=calculation | topic='Practical' | img=''
+    Q: 'Open the qry5_5 query, based on the Pre-bookings table, in Design View.\n\n              Insert a new field Total to calculate the total travel cost for a client for a return\n              trip. The client is charged R6,25 per kilometre travelled.\n\n              Save and close the qry5_5 query.'
+
+--- idx 40 | id=38fb1425-67fb-45aa-9541-8604ea91f23c | marks=5 | type=database | topic='Practical' | img=''
+    Q: 'Open the rpt5_6 report, based on the Pre-bookings table, in Design View\n\n              and modify as follows:\n\n              •  Insert a function in the group footer to indicate the total clients per\n                 Reason.\n              •  Change the page orientation to landscape.\n              •  Export the report as a PDF document called 5Pre-bookings to your data\n                 folder.\n\n              Save and close the rpt5_6 report.                           (5)\n\n       Save and close the 5Shuttle database.'
+
+--- idx 41 <<< Q-START (split idx 6) | id=0c69a935-9c3c-46a0-a100-7372efccc284 | marks=0 | type=html_web | topic='Practical' | img=''
+    Q: 'Open the incomplete 6_1Win file in a web browser and also in a text/HTML\n              editor.\n\n              Your final web page should look like the example below.\n\n              NOTE:\n              •  Use the example above as a guide when answering this question.\n\n              •  Question numbers appear as comments in the coding to indicate where\n                 you should insert the answer(s). DO NOT delete these comments.'
+
+--- idx 42 [SUBITEM] | id=09cef623-76f8-4a3e-b1ad-0960e9cdb018 | marks=2 | type=short_answer | topic='Practical' | img=''
+    Q: 'Insert an attribute to the body tag so that the web page colour\n                      displays light blue.'
+
+--- idx 43 [SUBITEM] | id=4ce4deb2-4bac-4868-a2a6-c5a5eb6269b9 | marks=2 | type=short_answer | topic='Practical' | img=''
+    Q: 'Modify the image tag attributes so that the images appear as\n                      shown in the example on the previous page.'
+
+--- idx 44 [SUBITEM] | id=8871d1dc-5682-40db-a383-b2eaf688be4f | marks=1 | type=html_web | topic='Practical' | img=''
+    Q: "Change the HTML code so that the 'Home' text displays in the\n                      table as shown in the example on the previous page."
+
+--- idx 45 [SUBITEM] | id=ffccb2e0-4815-4bb0-a7a9-514604e65ba2 | marks=2 | type=short_answer | topic='Practical' | img=''
+    Q: "Insert a tag to the table heading 'Ts and Cs' so that it will link to the\n                      6_1Win web page."
+
+--- idx 46 [SUBITEM] | id=52068c6b-fba3-499e-b669-1628ee1414a4 | marks=2 | type=html_web | topic='Practical' | img=''
+    Q: 'Modify the HTML code to display the list as shown in the example\n                      on the previous page.                               (2)\n\n              Save and close the 6_1Win file.'
+
+--- idx 47 | id=b5937401-d560-4ee0-9f7a-80bea5d95755 | marks=5 | type=html_web | topic='Practical' | img=''
+    Q: 'Open the incomplete 6_2Opening web page in a web browser and also in a\n              text/HTML editor.\n\n              Complete the web page to resemble the example below.\n\n              Save and close the 6_2Opening file.                         (5)\n\n              ONE mark will be allocated for closing tags and correct nesting in both the\n              files.                                                      (1)'
+
+--- idx 48 <<< Q-START (split idx 7) | id=4e787dba-cf27-4285-b416-281a7a1d1d79 | marks=5 | type=short_answer | topic='Practical' | img=''
+    Q: 'The shuttle company is upgrading their logo. Use WordArt and the images in\n              the file to create a new logo, as shown below.\n\n              NOTE:\n\n              •  The final logo should be one image.\n\n              •  Save the final logo as an image called 7NewLogo.         (5)\n\n       Save and close the 7New document.'
+
+--- idx 49 | id=4b77de4e-4cb0-4b93-b2cc-db0c88f332ab | marks=0 | type=spreadsheet | topic='Practical' | img=''
+    Q: 'Open the 7Bookings spreadsheet.'
+
+--- idx 50 [SUBITEM] | id=e1485dd3-b46b-4d13-9c52-b93f475244b6 | marks=5 | type=calculation | topic='Practical' | img=''
+    Q: "Shuttle drivers need to be notified one and a half hours before a\n                      client's departure time.\n\n                      Insert a function in cell D8 to calculate the time a driver should be\n                      notified."
+
+--- idx 51 [SUBITEM] | id=ca6e870e-1542-492b-946f-7115bd91f2bb | marks=3 | type=calculation | topic='Practical' | img=''
+    Q: 'Insert a formula in column G to calculate the number of days\n                      between the departure and return dates for all clients.'
+
+--- idx 52 [SUBITEM] | id=00eb6fb6-1422-488b-8a28-e2b864baf3f0 | marks=2 | type=html_web | topic='Practical' | img=''
+    Q: 'Edit the worksheet as follows:\n\n                      • Change the settings to make sure that when the entire\n                        worksheet is printed, the information in columns A to G will\n                        appear on the first page.\n                      • Edit the print options to include the row and column headings. (2)\n\n       Save and close the 7Bookings spreadsheet.                          [15]\n\n                                                                 TOTAL:   150\n\n                                 HTML TAG SHEET\n\n     Basic Tags                            Formatting Tags continued\n     Tag             Description           Tag              Description\n                     Defines the body of the web            Inserted before each list item,\n     \n                     page                                   and adds a number or symbol\n                                           \n     <body           Sets the background colour of          depending on the type of list\n     bgcolor="pink"> the web page                           selected\n      Sets the colour of the body text  Adds an image\n                     Contains information about the <img src="name" Aligns an image: can be "right",\n     \n                     web page              align="left">    "bottom", "top"\n                     Creates an HTML document – <img Aligns an image in the "center",\n     \n                     starts and ends a web page src="name"> can also be "middle"\n                                           <img src="name"  Sets the size of the border\n      Defines a title for the web page\n                                           border="1">      around an image\n                Inserts a line break  <img src="name"\n                                                            Sets the height and width of an\n                                           width="200" height\n             Comment                                image\n                                           ="200">\n     Text Tags                                              Displays alternative text when\n     Tag             Description           <img src="name"  the mouse hovers over the\n                                           alt="alternative text"> image or when the image is not\n            Creates the largest heading\n                                                            found\n            Creates the smallest heading      Inserts a horizontal line\n              Creates bold text        Sets size (height) of a line\n              Creates italic text\n                                                            Sets the width of a line, in\n              Creates underlined text \n                                                            percentage or absolute value\n      Sets size of font, from "1" to "7"\n     \n                     Sets font colour       Sets the colour of the line\n     \n     <font face="Times New                 Table Tags\n                     Sets font type\n     Roman">                        Tag              Description\n     Links Tags                              Creates a table\n     Tag             Description                   Creates a row in a table\n      Creates a hyperlink        Creates a cell in a table\n     <img\n                     Creates an image link\n     src="name">                                        Creates a table header (a cell\n                                           \n                     Creates a target location in the       with bold, centred text)\n     \n                     document\n                     Links to a target location\n      created somewhere else in the  Sets the width of the table\n                     document\n     <a href=                                               Sets the width of the border\n                     Links to an e-mail address \n     "mailto:#NAME">                                    around the table cells\n                                                            Sets the space between the\n     Formatting Tags                       \n                                                            table cells\n                                                            Sets the space between a cell\n     Tag             Description           \n                                                            border and its contents\n              Creates a new paragraph                Sets the alignment for cell(s)\n                                            ("left", can also be "center" or\n                     Aligns a paragraph to the "left"\n                                                            "right")\n      (default), can also be "right" or\n                     "center"\n                                                            Sets the vertical alignment for\n      Centre text, a table of an image\n                                            cell(s) ("top", can also be\n                     horizontally\n                                                            "middle" or "bottom")\n            Creates a numbered list\n     <ol type="A","a", Defines the type of numbering\n                                                            Sets the number of columns a\n     "I","i","1"> used                \n                                                            cell should span\n            Creates a bulleted list\n     <ul type="disc",                                       Sets the number of rows a cell\n                     Defines the type of bullets used \n     "square","circle">                                should span\n\n                          INPUT MASK CHARACTER  SHEET\n\n        CHARACTER                          DESCRIPTION\n\n             0       Digit (0 to 9, entry required, plus [+] and minus [–] signs not allowed)\n                     Digit or space (entry not required, plus [+] and minus [–] signs not\n                     allowed)\n                     Digit or space (entry not required; spaces are displayed as blanks while\n             #       in E'

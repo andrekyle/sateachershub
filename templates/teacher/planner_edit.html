@@ -1,0 +1,118 @@
+﻿{% extends "teacher/_layout.html" %}
+{% block t_title %}{% if item %}Edit planner item{% else %}New planner item{% endif %}{% endblock %}
+
+{% block t_body %}
+<style>
+.t-shell .t-title {
+    font-size: clamp(36px, 4.2vw, 56px) !important;
+    font-weight: 700 !important;
+    letter-spacing: -1px !important;
+    line-height: 1.05 !important;
+}
+/* User-friendly date picker — make whole field clickable, hide native icon, show our own */
+.t-field input[type="date"] {
+    cursor: pointer;
+    padding-right: 42px;
+    color-scheme: light;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' viewBox='0 0 24 24' fill='none' stroke='%230078D4' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><rect x='3' y='4' width='18' height='18' rx='2'/><path d='M16 2v4'/><path d='M8 2v4'/><path d='M3 10h18'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+}
+.t-field input[type="date"]::-webkit-calendar-picker-indicator {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.t-field input[type="date"] { position: relative; }
+</style>
+
+<form method="post" class="t-card">
+    <div class="t-form-grid">
+        <div class="t-field span-2">
+            <label>Title *</label>
+            <input name="title" required value="{{ item.title if item else '' }}">
+        </div>
+        <div class="t-field span-2">
+            <label>Description</label>
+            <textarea name="description">{{ item.description if item else '' }}</textarea>
+        </div>
+        <div class="t-field">
+            <label>Kind</label>
+            <div class="fdd" data-fdd="single">
+                <button type="button" class="fdd-toggle">
+                    <span class="fdd-label">{{ (item.kind if item else 'lesson')|title }}</span>
+                    <span class="caret">▾</span>
+                </button>
+                <input type="hidden" name="kind" value="{{ item.kind if item else 'lesson' }}">
+                <div class="fdd-panel">
+                    {% for k in ['lesson','quiz','exam','event','task'] %}
+                        <div class="fdd-item" data-value="{{ k }}">{{ k|title }}</div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="t-field">
+            <label>Grade</label>
+            <div class="fdd" data-fdd="single">
+                <button type="button" class="fdd-toggle">
+                    <span class="fdd-label" data-empty="—">{% if item and item.grade %}Grade {{ item.grade }}{% else %}—{% endif %}</span>
+                    <span class="caret">▾</span>
+                </button>
+                <input type="hidden" name="grade" value="{{ item.grade if item and item.grade else '' }}">
+                <div class="fdd-panel">
+                    <div class="fdd-item" data-value="">—</div>
+                    {% for g in [10,11,12] %}<div class="fdd-item" data-value="{{ g }}">Grade {{ g }}</div>{% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="t-field">
+            <label>Start date *</label>
+            <input name="start_date" type="date" required value="{{ item.start_date.strftime('%Y-%m-%d') if item and item.start_date else '' }}">
+        </div>
+        <div class="t-field">
+            <label>End date</label>
+            <input name="end_date" type="date" value="{{ item.end_date.strftime('%Y-%m-%d') if item and item.end_date else '' }}">
+        </div>
+        <div class="t-field">
+            <label>Term</label>
+            <div class="fdd" data-fdd="single">
+                <button type="button" class="fdd-toggle">
+                    <span class="fdd-label" data-empty="—">{% if item and item.term %}Term {{ item.term }}{% else %}—{% endif %}</span>
+                    <span class="caret">▾</span>
+                </button>
+                <input type="hidden" name="term" value="{{ item.term if item and item.term else '' }}">
+                <div class="fdd-panel">
+                    <div class="fdd-item" data-value="">—</div>
+                    {% for t in [1,2,3,4] %}<div class="fdd-item" data-value="{{ t }}">Term {{ t }}</div>{% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="t-field">
+            <label>Colour</label>
+            <input name="color" type="color" value="{{ item.color if item else '#0078D4' }}">
+        </div>
+    </div>
+    <div style="margin-top:18px; display:flex; gap:10px;">
+        <button class="t-thin-btn"><img src="{{ url_for('static', filename='images/save.png') }}" alt="" width="14" height="14" style="vertical-align:-2px;"> Save</button>
+        <a class="t-thin-btn" href="{{ url_for('teacher_planner') }}">Cancel</a>
+    </div>
+</form>
+
+<script>
+(function () {
+    document.querySelectorAll('input[type="date"]').forEach(function (inp) {
+        var open = function () {
+            try {
+                if (typeof inp.showPicker === 'function') { inp.showPicker(); return; }
+            } catch (e) { /* fall through */ }
+            inp.focus();
+        };
+        inp.addEventListener('click', open);
+        inp.addEventListener('focus', open);
+    });
+})();
+</script>
+{% endblock %}

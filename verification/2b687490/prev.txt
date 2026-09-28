@@ -1,0 +1,636 @@
+﻿
+
+CAT P1 Nov 2021 
+
+CAT P1 Nov 2021
+
+Print / Save as PDF 
+
+Edit 
+
+Close 
+
+Past Paper Template
+
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+
+COMPUTER APPLICATIONS TECHNOLOGY P1
+
+NOVEMBER 2021
+
+MARKS: 180
+
+TIME: 3 Hours
+
+This question paper consists of 3 pages.
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+2 
+DBE/November 2021 
+
+INSTRUCTIONS AND INFORMATION
+
+Owing to the nature of this practical examination, it is important to note that, even if you complete the examination early, you will NOT be permitted to leave the examination room until all the administrative tasks associated with the examination have been finalised. During the examination, the standard examination rules regarding leaving the examination room apply. 
+
+If you are working on the network, or the data files have been preloaded on your system, you must follow the instructions provided by the invigilator/teacher. 
+
+At the end of the examination, you must make sure that ALL your answer files are saved on the network/computer as explained to you by the invigilator/teacher. 
+
+Make absolutely sure that all files can be read. Do NOT save unnecessary files/folders and do NOT hand in duplicate answer files/folders. Do NOT delete any original files that you did not work on. 
+
+The information sheet that has been provided with the question paper MUST BE COMPLETED AFTER THE THREE-HOUR EXAMINATION SESSION. Hand it to the invigilator at the end of the examination. 
+
+A copy of the master files will be available from the invigilator. Should there be any problems with a file, you may request another copy from the invigilator. 
+
+This question paper consists of SEVEN questions. Answer ALL the questions. 
+
+Read through each question before answering or solving the problem. Do NOT do more than is required by the question. 
+
+Ensure that you save each document using the file name given in the question paper. Save your work regularly as a precaution against possible power failures. 
+
+You may NOT use any resource material. 
+
+Accuracy will be taken into account. 
+
+Ensure that the regional settings are set to South Africa and date and time settings, number settings and currency settings are correctly set. 
+
+In all questions involving word processing, you should set the language to English (South Africa). The paper size is assumed to be A4 Portrait, unless instructed otherwise. Use centimetres as the unit of measurement. 
+
+Ensure that the Developer tab and Ruler are activated. 
+
+Ensure that the decimal symbol is set as a full stop ( . ) and the list separator is set as a comma ( , ). 
+
+Formulae and/or functions must be used for ALL calculations in questions involving spreadsheets. Use absolute cell references only where necessary to ensure that formulae are correct when you copy them to other cells in a spreadsheet. 
+
+NOTE: All formulae and/or functions should be inserted in such a manner that the correct results will still be obtained even if changes are made to the existing data.
+
+You may NOT use a word processing program such as Word to answer the HTML question. 
+
+Borders around images or screenshots in this question paper are intended for clarity. Do NOT insert borders unless you are instructed to do so. 
+
+Copyright reserved Please turn over 
+
+Computer Applications Technology/P1 
+3 
+DBE/November 2021 
+
+Use the correct settings or features in an application as required by a question. 
+
+The data files that you need to complete this question paper have been provided to you on the disk/CD/DVD/flash disk or on the disk space allocated to you. 
+
+Do the following:
+
+Verify the contents of the folder by opening one or more files. 
+
+Rename the folder with your examination number. 
+
+The list of files in the folder will be available on the next page.
+
+Copyright reserved Please turn over 
+
+Computer Applications Technology/P1 
+4 
+DBE/November 2021 
+
+SECTION A
+
+QUESTION 1: PRACTICAL
+
+1.1
+
+Change the page size of the document to A4. 
+
+(1)
+
+1.2
+
+Change the line spacing of the paragraph starting with The following is … and ending with … by air pollution. to be the same as the line spacing of the first paragraph. 
+
+(1)
+
+1.3
+
+Replace all the occurrences of the exact text ozone to appear in Arial Narrow, bold and italic. 
+
+(3)
+
+1.4
+
+Insert a 9 cm high by 8 cm wide text box and move the text that begins with Nitrogen dioxide … and ends with … from heart disease. into the text box. The text box must display as shown below. The top position of the text box is relative to the word air and the bottom of the text box is relative to the word Ground . 
+
+(4)
+
+1.5
+
+Find the text that begins with the heading DOES IT MAKE A DIFFERENCE WHERE I LIVE? and ends with … fuels and vehicles. . Change the layout of the text to appear in two columns. Set the width of the first column to 8 cm. Set the space between the columns to 1 cm. 
+
+(3)
+
+1.6
+
+Find the text that begins with the heading On the road and ends with … keeping windows closed. . Apply multilevel list numbering to the text to display as shown below. 
+
+(7)
+
+1.7
+
+Change the UK Health Department source to a website source with the URL http://www.airquality.co.uk. 
+
+(2)
+
+1.8
+
+Add an automatic bibliography below the heading Bibliography at the end of the document. 
+
+(1)
+
+1.9
+
+Insert the picture 1Clean as a watermark to the document. Scale the watermark image to 150%. 
+
+(2)
+
+1.10
+
+(1) Inspect the document for issues and remove all hidden text from the document. Save and close the 1Health document. 
+
+(1)
+
+[25]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+5 
+DBE/November 2021 
+
+QUESTION 2: PRACTICAL
+
+2.1
+
+Change the font of the document title UNESCO: Marine Pollution to Small caps. 
+
+(1)
+
+2.2
+
+Format the headings of the document so that you can insert a table of contents below the heading TABLE OF CONTENTS to appear as shown below. 
+
+(3)
+
+2.3
+
+Remove the automatic hyphenation from the document. 
+
+(1)
+
+2.4
+
+Insert a caption to the picture under the heading What is polluting our Oceans? . The caption text can be found in the picture s alternative text. 
+
+(2)
+
+2.5
+
+Remove the hyperlink on the picture by Chris Deacutis. 
+
+(1)
+
+2.6
+
+Restore the picture below the heading What can I do? to its original colour. 
+
+(1)
+
+2.7
+
+Find the text Question 2.6 below the heading What is IOC UNESCO doing? . Replace the text Question 2.6 with a cross-reference to the IOC UNESCO picture and only display the page number. 
+
+(2)
+
+2.8
+
+Insert a footnote on the text UNEP , found on the last page of the document, as follows: Set the footnote numbering format to A, B, C, … Set the footnote numbering to restart on every page. Add the footnote text Environment Programme . 
+
+(4)
+
+2.9
+
+Insert a field below the text INSERT HERE to display the number of words in the document. 
+
+(1)
+
+2.10
+
+Insert automatic page numbering in the footer of the document as follows: Use the Tildes format. Ensure that numbering does not appear on the cover page and Table of Contents page. Ensure that the number, ~1~, appears on the page after the Table of Contents. (4) Ensure that the page numbering continues on all the pages that follow. Save and close the 2Marine document. 
+
+(4)
+
+[20]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+6 
+DBE/November 2021 
+
+QUESTION 3: PRACTICAL
+
+3.1
+
+Insert the 3Logo picture, found in your examination folder, in cell A1 so that it covers the entire cell. 
+
+(2)
+
+3.2
+
+Fill cell A3 to appear the same as cell A2. 
+
+(1)
+
+3.3
+
+Rename the worksheet Sheet1 to Missions. 
+
+(1)
+
+3.4
+
+Use a COUNTIF function in cell F3 to determine how many projects have a budget greater than R 55 000.00 (column F). 
+
+(2)
+
+3.5
+
+The data in column G incorrectly displays values for recycling air pollution. Apply a spreadsheet feature to column G to fill the cells with a colour of your choice whenever the targeted pollution (column C) is indicated as air pollution. 
+
+(5)
+
+3.6
+
+A project is categorised as small, medium or large depending on the number of participants (column D) involved in the project. Insert a suitable LOOKUP function in cell J6 to determine the project category for the first project, based on the number of participants (column D) and the list in the Categories worksheet. 
+
+(4)
+
+3.7
+
+The project coordinator will send notifications to prospective participants for projects that will start within the next 60 days (column E), inclusive of the current date. Use a nested IF function/formula in cell K6 to display the following messages: Notify if a project will start within 60 days from the current date, OR * if the project starts after 60 days from the current date, OR Complete if the project has been completed. (6) Apply the function/formula to the rest of column K. Save and close the 3Projects spreadsheet. 
+
+(21)
+
+[36]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+7 
+DBE/November 2021 
+
+QUESTION 4: PRACTICAL
+
+4.1
+
+Insert a function in cell D3 to determine the second smallest air quality index (AQI) count per year (column E). 
+
+(3)
+
+4.2
+
+Add the option Urban to the existing data validation rule in cell B7 using the list in cells J7:J8. 
+
+(1)
+
+4.3
+
+The measuring station is given a risk rating (column G) depending on the AQI level in column F, e.g. an AQI level of L1 would display a risk rating of one exclamation mark (!). Insert a combination of text functions in cell G7 to display the number of exclamation marks (!) using the AQI level in column F and the data in cell D4. 
+
+(4)
+
+4.4
+
+(1) Set the print area to cells A6:H40. Work in the Graph worksheet. 
+
+(1)
+
+4.5
+
+Use a SUMIFS function in cell H2 and the data in the Quality worksheet to determine the total number of health incidents of all the measuring stations in the Eastern Cape in 2018. 
+
+(5)
+
+4.6
+
+Create a graph/chart to appear as follows: (5) Save and close the 4Air spreadsheet. 
+
+(5)
+
+[19]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+8 
+DBE/November 2021 
+
+QUESTION 5: PRACTICAL
+
+5.1
+
+Open the tbl5_1 table in Design View and edit as follows: 
+
+5.1.1
+
+Change the field size of the Coverage field to Decimal. 
+
+(1)
+
+5.1.2
+
+Insert a combo box for the PollutionType field with the values Air, Land and Water. 
+
+(2)
+
+5.1.3
+
+Values entered for the Level field must range from 100 to 1 000. Insert a suitable validation rule to ensure that the data entered is valid. 
+
+(3)
+
+5.1.4
+
+(2) Insert a field called Evidence with a suitable data type so that documents/files with proof of actions can be included in this field. Save and close the tbl5_1 table. 
+
+(2)
+
+5.2
+
+Modify the form called frm5_2, based on the tblData table, in Design View as follows: Change the heading in the form header to Survey . Insert a date control in the form footer, so that only the date displays. Apply the Ion theme to the form. Change the format of the YearBorn field to Medium Date. Save and close the frm5_2 form. (5 ) 
+
+(1)
+
+5.3
+
+Open the query called qry5_3, based on the tbl_Data table, in Design View. Display the average number of drop-offs for each type of recycling activity. Ensure that the average will display an integer value. Save and close the qry5_3 query. 
+
+(3)
+
+5.4
+
+Modify the qry5_4 query, based on the tbl_Data table, in Design View. Display only the fields Name, Surname, YearBorn, Knowledge, RecyclingActivity and DropOff. Sort the query alphabetically by Surname. Display only the records where residents indicated that they have knowledge of recycling OR where the RecyclingActivity field has a value of Very active AND a DropOff number of 15. Save and close the qry5_4 query. 
+
+(7)
+
+5.5
+
+Open the qry5_5 query, based on the tbl_Data table, in Design View. Display only the records of people born after 1990. Insert a calculated field called NewDrop to calculate an increase of 10% in the number of times recyclables were dropped off (DropOff). Save and close the qry5_5 query. 
+
+(5)
+
+5.6
+
+Open the rpt5_6 report, based on the qry5_4 query, in Design View and change it to display as shown below. Use any background colour for the report header. (7) Save and close the rpt5_6 report. Save and close the 5Save database. 
+
+(7)
+
+[31]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+9 
+DBE/November 2021 
+
+QUESTION 6: PRACTICAL
+
+6.1
+
+Open the incomplete 6_1Clean file in a web browser and also in a text/HTML editor. NOTE: Use the example on the previous page as a guide when answering this question. Question numbers appear as comments in the coding to indicate where you should insert the answer(s). DO NOT delete these comments. 
+
+6.1.1
+
+Insert your examination number so that it displays in the tab of the browser. 
+
+(2)
+
+6.1.2
+
+Change the font colour of the heading The Global Crisis of Plastic Pollution to red. 
+
+(1)
+
+6.1.3
+
+Modify the code so that the image displays. (2 ) 
+
+(1)
+
+6.1.4
+
+(3) Modify the table so that it displays as shown in the image of the web page on the previous page. Save and close the 6_1Clean file. 
+
+(3)
+
+6.2
+
+Open the incomplete 6_2Pollute web file in a web browser and also in a text/HTML editor. Complete the web page to look exactly like the example below. (6) Save and close the 6_2Pollute file. ONE mark will be allocated for correctly closing tags and correctly nesting in both the files. 
+
+(6)
+
+[13]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+10 
+DBE/November 2021 
+
+QUESTION 7: PRACTICAL
+
+7.1
+
+After monitoring the pollution in a specific area, a letter must be prepared for the companies with a concerning pollution history. Open the 7Letter document to be used for a mail merge. 
+
+7.1.1
+
+Change the form controls in the letter as follows: Change the form field control below the text Date: to display the current date. Add the option 14 in the drop-down form field control next to the text Reply required within: . Save the 7Letter document, but do NOT close it. 
+
+(2)
+
+7.1.2
+
+Prepare the mail merge as follows: Link the 7Letter document with the data source, the 7Company spreadsheet. Select only the companies that have a high and very high level. Replace the text and to display the company and level from the 7Company spreadsheet. Save the 7Letter document, but do NOT close it. (6) Complete the mail merge and save the merged document as 7Merge. Close the 7Letter document. The Pollution Control Board will give certificates to companies with a consistently low level of pollution. The certificates will be presented in the month corresponding with the monitor date. Open the 7Date spreadsheet. Work in the Monthly worksheet. 
+
+(1)
+
+7.2
+
+Complete the function/formula in cell D3 to display the name of the companies (3) that have a low level (column B) of pollution and where the monitor date (column C) was in November. Work in the 7.3 worksheet. 
+
+(3)
+
+7.3
+
+(3) Display an alphabetical list of names of all the companies with a Very high level of pollution and where the monitor date was in 2021. Save and close the 7Date spreadsheet. 
+
+(3)
+
+7.4
+
+Extract the image file from the password-protected folder called 7Picture using the password November . (1) [15] TOTAL: 150 HTML TAG SHEET Basic Tags Formatting Tags continued Tag Description Tag Description Defines the body of the web Inserted before each list item, page and adds a number or symbol body Sets the background colour of depending on the type of list bgcolor= pink the web page selected Sets the colour of the body text Adds an image Contains information about the img src= name Aligns an image: can be right , web page align= left bottom , top Creates an HTML document – img Aligns an image in the center , starts and ends a web page src= name can also be middle img src= name Sets the size of the border Defines a title for the web page border= 1 around an image Inserts a line break img src= name Sets the height and width of an width= 200 height Comment image = 200 Text Tags Displays alternative text when Tag Description img src= name the mouse hovers over the alt= alternative text image or when the image is not Creates the largest heading found Creates the smallest heading Inserts a horizontal line Creates bold text Sets size (height) of a line Creates italic text Sets the width of a line, in Creates underlined text percentage or absolute value Sets size of font, from 1 to 7 Sets font colour Sets the colour of the line font face= Times New Table Tags Sets font type Roman Tag Description Links Tags Creates a table Tag Description Creates a row in a table Creates a hyperlink Creates a cell in a table img Creates an image link src= name Creates a table header (a cell Creates a target location in the with bold, centred text) document Links to a target location created somewhere else in the Sets the width of the table document a href= Sets the width of the border Links to an e-mail address mailto:#NAME around the table cells Sets the space between the Formatting Tags table cells Sets the space between a cell Tag Description border and its contents Creates a new paragraph Sets the alignment for cell(s) ( left , can also be center or Aligns a paragraph to the left right ) (default), can also be right or center Sets the vertical alignment for Creates a numbered list cell(s) ( top , can also be ol type= A , a , Defines the type of numbering middle or bottom ) I , i , 1 used Sets the number of columns a Creates a bulleted list cell should span ul type= disc , Sets the number of rows a cell Defines the type of bullets used square , circle should span INPUT MASK CHARACTER SHEET CHARACTER DESCRIPTION 0 Digit (0 to 9, entry required, plus [+] and minus [–] signs not allowed) Digit or space (entry not required, plus [+] and minus [–] signs not allowed) Digit or space (entry not required; spaces are displayed as blanks while # in Edit mode, but blanks are removed when data is saved; plus [+] and minus [–] signs allowed) L Letter (A to Z, entry required) ? Letter (A to Z, entry optional) A Letter or digit (entry required) a Letter or digit (entry optional) & Any character or a space (entry required) 
+
+(1)
+
+[10]
+
+TOTAL SECTION A: [154]
+
+GRAND TOTAL: 180
+
+Copyright reserved 
+
+Computer Applications Technology/P1 
+11 
+DBE/November 2021 
+
+Computer Applications Technology 
+DBE/May/June 2025 
+
+SC/NSC Confidential
+
+Examination sticker
+
+172
+
+COMPUTER APPLICATIONS TECHNOLOGY P1 – MAY/JUNE 2025
+
+INFORMATION SHEET (to be completed by the candidate AFTER the 3-hour session) 
+
+CENTRE NUMBER 
+
+EXAMINATION NUMBER 
+
+WORK STATION NUMBER 
+
+SUITE USED (Mark appropriate box with a cross (X)) 
+
+Microsoft Office 2016
+
+Microsoft Office 2019
+
+Microsoft Office 2021
+
+Office 365
+
+WEB BROWSER USED (Mark appropriate box with a cross (X)) 
+
+Mozilla Firefox
+
+Google Chrome
+
+Internet Explorer
+
+Microsoft Edge
+
+Other (Specify)
+
+FOLDER NAME 
+
+Candidate must enter the file name(s) used for each answer. Tick if saved and/or attempted.
+
+Question
+Number
+
+File name
+
+Saved
+(✓)
+
+Attempted
+(✓)
+
+Maximum
+Mark
+
+Mark
+Achieved
+
+Marker
+Initial/
+Code
+
+1
+
+1eSports
+
+27
+
+2
+
+2Stats
+
+20
+
+3
+
+3Rank
+
+36
+
+4
+
+4Shop
+
+24
+
+5
+
+5Games
+
+35
+
+6
+
+6_1Tournament
+
+15
+
+6_2Entry
+
+7
+
+7Report
+
+15
+
+7Staff
+
+7Export
+
+7Results
+
+TOTAL
+
+172
+
+Comment: (for office/marker use only) 
+
+Copyright reserved
+
+Copyright reserved

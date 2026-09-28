@@ -1,0 +1,4145 @@
+﻿
+
+ 
+ 
+ 
+ 
+ CAT P1 Nov 2025 
+
+ 
+ 
+
+ 
+ CAT P1 Nov 2025
+
+ 
+ Download PDF 
+ 
+ Edit 
+ 
+ 
+ 
+ Close 
+ 
+
+ 
+ Confidential
+
+ 
+
+ 
+ NATIONAL
+SENIOR CERTIFICATE
+GRADE 12
+
+ 
+ COMPUTER APPLICATIONS TECHNOLOGY P1
+
+ NOVEMBER 2025
+
+ 
+ 
+
+ 
+ 
+ MARKS:  150
+
+ 
+ 
+ 
+ 
+ 
+ 
+ TIME:  3 Hours
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+
+ 
+ Copyright reserved 
+ 
+ Please turn over 
+ 
+
+ 
+ 
+ Computer Applications Technology/P1 
+ 2 
+ DBE/November 2025 
+ 
+
+ 
+ 
+
+ 
+
+ 
+ INSTRUCTIONS AND INFORMATION
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Owing to the nature of this practical examination, it is important to note that, even if you complete the examination early, you will NOT be permitted to leave the examination room until all the administrative tasks associated with the examination have been finalised. During the examination, the standard examination rules regarding leaving the examination room apply. 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ If you are working on the network, or the data files have been preloaded on your system, you must follow the instructions provided by the invigilator/teacher. 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ At the end of the examination, you must make sure that ALL your answer files are saved on the network/computer as explained to you by the invigilator/teacher. 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ Make absolutely sure that all files can be read. Do NOT save unnecessary files/folders and do NOT hand in duplicate answer files/folders. Do NOT delete any original files that you did not work on. 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ The information sheet that has been provided with the question paper MUST BE COMPLETED AFTER THE THREE-HOUR EXAMINATION SESSION. Hand it to the invigilator at the end of the examination. 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ A copy of the master files will be available from the invigilator. Should there be any problems with a file, you may request another copy from the invigilator. 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ This question paper consists of SEVEN questions. Answer ALL the questions. 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ Read through each question before answering or solving the problem. Do NOT do more than is required by the question. 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ Ensure that you save each document using the file name given in the question paper. Save your work regularly as a precaution against possible power failures. 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ You may NOT use any resource material. 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ Accuracy will be taken into account. 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ Ensure that the regional settings are set to South Africa and date and time settings, number settings and currency settings are correctly set. 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ In all questions involving word processing, you should set the language to English (South Africa). The paper size is assumed to be A4 Portrait, unless instructed otherwise. Use centimetres as the unit of measurement. 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ Ensure that the Developer tab and Ruler are activated. 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ Copyright reserved Please turn over 
+ 
+
+ 
+ 
+ Computer Applications Technology/P1 
+ 3 
+ DBE/November 2025 
+ 
+
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ Ensure that the decimal symbol is set as a full stop ('.') and the list separator is set as a comma (','). 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ Formulae and/or functions must be used for ALL calculations in questions involving spreadsheets. Use absolute cell references only where necessary to ensure that formulae are correct when you copy them to other cells in a spreadsheet. 
+ 
+ 
+ 
+ NOTE: All formulae and/or functions should be inserted in such a manner that the correct results will still be obtained even if changes are made to the existing data.
+
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ You may NOT use a word processing program such as Word to answer the HTML question. 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ Borders around images or screenshots in this question paper are intended for clarity. Do NOT insert borders unless you are instructed to do so. 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ Use the correct settings or features in an application as required by a question. 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ The data files that you need to complete this question paper have been provided to you on the disk/CD/DVD/flash disk or on the disk space allocated to you. The files are provided in the form of a password-protected executable file. 
+ 
+ 
+ 
+ Do the following:
+
+ 
+ 
+ 
+ 
+ Double-click on the password-protected executable file: <b>CAT P1 Nov 2025 DATA.exe</b> 
+ Click on the 'Extract' button. 
+ Click the 'Show Password' check box. 
+ Enter the following password: <b>TG25#</b> 
+ Once extracted, verify the contents of the folder by opening one or more files. 
+ Delete the .exe file. 
+ Once the contents of the files have been verified, rename the folder <b>CAT P1 Nov 2025 DATA</b> with your examination number. 
+
+ 
+ 
+ 
+ 
+ The following list of files will be available in the folder:
+
+ 
+ 
+ 
+ 
+ <b>1App</b> Image 
+ <b>1Courses</b> Word processing file 
+ <b>2Brochure</b> Word processing file 
+ <b>3Lecturers</b> Spreadsheet 
+ <b>4Students</b> Spreadsheet 
+ <b>5Records</b> Database 
+ <b>6_1Head</b> Image 
+ <b>6_1Home</b> HTML file 
+ <b>6_1Tech</b> Image 
+ <b>6_2Course</b> Image 
+ <b>6_2Popular</b> HTML file 
+ <b>7Letter</b> Word processing file 
+ <b>7NewStudents</b> Spreadsheet 
+ <b>7Stats</b> Spreadsheet 
+
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ 
+
+ 
+ Copyright reserved Please turn over 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ Computer Applications Technology/P1 
+ 4 
+ DBE/November 2025 
+ 
+
+ 
+ 
+
+ 
+
+ 
+ 
+ SCENARIO
+ <b>TechnoGeek</b> is a tertiary institution that specialises in computer-related courses. They have designed a few documents to promote the institution and need your assistance with modifying the files.
+
+ 
+ 
+ ↑ ¶ break ↓ 
+QUESTION 1: WORD PROCESSING
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ↑ ¶ break ↓ 
+ Open the 1Courses word processing document that contains information about the different types of courses that TechnoGeek offers. Insert your examination number in the header of the document. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 1.1
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Set the proofing language of the whole document to English (South Africa). 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (1)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 1.2
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Modify the cover page as follows: Remove the black background from the image at the top of the page. Move the alt text from the image with the caption 'Figure 1: Company logo' to the Address control. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (2)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 1.3
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Find the heading 'Our journey' and apply a new style to the heading as follows: Name the new style 'Tech'. Add a 3 pt paragraph border to the style. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (3)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 1.4
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Format the paragraphs that starts with 'TechnoGeek started in …' and ends with '… in South Africa.' to display as shown in the example below. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (3)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 1.5
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Find and replace the exact word 'Course' to display as follows: Info Use the symbol (Webdings, character code 209). 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (4)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 1.6
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Find the citation below the subheading 'What is Data Science?'. Make the necessary changes so that the citation appears as follows: (Sarker, 2024, p. 22). 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (2)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ Copyright reserved 
+ 
+ Please turn over 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ Computer Applications Technology/P1 
+ 5 
+ DBE/November 2025 
+ 
+
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 1.7
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Edit the paragraph below the heading 'Mobile App Development' to display as shown in the example below. NOTES: Use the 1App image found in your examination folder. Change the size of the image to the same size as the other images in the document. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (4)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 1.8
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Find the word 'business' below the heading 'Networking Fundamentals' and mark ALL the occurrences of this word as an index entry. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (1)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 1.9
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Insert an automatic index below the heading 'Index' to appear in the modern format. Save and close the 1Courses document. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (2)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ [22]
+
+ 
+ 
+
+ 
+
+ 
+ Copyright reserved 
+ 
+ Please turn over 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ Computer Applications Technology/P1 
+ 6 
+ DBE/November 2025 
+ 
+
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ ↑ ¶ break ↓ 
+QUESTION 2: WORD PROCESSING
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ↑ ¶ break ↓ 
+ Open the 2Brochure word processing document that contains information about the history and courses of the TechnoGeek institution. Insert your examination number in the header of the document. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 2.1
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Add a Follow Path Arch Down transformation effect on the WordArt of the heading 'Prospectus'. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (1)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 2.2
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Change the page border to only appear on the first page. Make sure that the border is measured from the edge of the page. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (2)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 2.3
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Change the line spacing of the first paragraph that starts with 'TechnoGeek is a …' to multiple at 1.4 pt. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (1)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 2.4
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Change the 'T' in the first paragraph to display as shown in the example below. NOTE: Change the font to Corbel Light. Set the distance from text to 0.2 cm. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (4)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 2.5
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Add a line between the columns on the second page. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (1)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 2.6
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Modify the table below the heading 'Course prices' to display as shown in the example below. NOTE: Use a formula to calculate the 10% administration fee on the cost that appears in column D. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (6)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 2.7
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Find the SmartArt below the heading 'Slogan' and modify the SmartArt to display as shown in the example below. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (4)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 2.8
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Make sure that the page numbering in the footer appears on all the pages. Set the page number format of the last page to 'i', 'ii', 'iii', etc. and make sure that the number starts at 'i'. Save and close the 2Brochure document. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (4)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ [23]
+
+ 
+ 
+
+ 
+
+ 
+ Copyright reserved 
+ 
+ Please turn over 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ Computer Applications Technology/P1 
+ 7 
+ DBE/November 2025 
+ 
+
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ ↑ ¶ break ↓ 
+QUESTION 3: SPREADSHEET
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ↑ ¶ break ↓ 
+ NOTE: Use formulae and/or functions for ALL calculations in the spreadsheet. Use absolute cell references ONLY where necessary to ensure that formulae are correct when you copy it to other cells in a spreadsheet. Insert formulae and/or functions in such a manner that the correct results will still be obtained even if values are changed in the existing data. Should you need to use building blocks, use the space allocated for this in the spreadsheet data file. Open the 3Lecturers spreadsheet that contains information about the lecturers that teach at the different campuses of the TechnoGeek institution. Work in the Lecturers worksheet. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 3.1
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Centre the contents of the worksheet horizontally and vertically. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (1)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 3.2
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Insert a function in cell D3 to determine the total number of lecturers. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (1)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 3.3
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Insert a SUMIFS function in cell D5 to determine the total monthly salary paid to South African lecturers who work full-time. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (5)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 3.4
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Insert a formula in cell D7 to calculate the difference between the highest monthly salary and the second highest monthly salary. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (4)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 3.5
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Modify the function in cell C15 to extract the first name of the lecturer. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (5)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 3.6
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ The full-time lecturers who are paid a monthly salary from R25 000 to R40 000 will receive a once-off bonus of R5 000. Calculate the bonus in cell I14 that a lecturer will receive. If a lecturer will not receive a bonus, the cell must be left blank. Save and close the 3Lecturers spreadsheet. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (6)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ [22]
+
+ 
+ 
+
+ 
+
+ 
+ Copyright reserved 
+ 
+ Please turn over 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ Computer Applications Technology/P1 
+ 8 
+ DBE/November 2025 
+ 
+
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ ↑ ¶ break ↓ 
+QUESTION 4: SPREADSHEET
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ↑ ¶ break ↓ 
+ NOTE: Use formulae and/or functions for ALL calculations in the spreadsheet. Use absolute cell references ONLY where necessary to ensure that formulae are correct when you copy it to other cells in a spreadsheet. Insert formulae and/or functions in such a manner that the correct results will still be obtained even if values are changed in the existing data. Should you need to use building blocks, use the space allocated for this in the spreadsheet data file. Open the 4Students spreadsheet that contains information about courses which part-time students will take during 2026. Work in the Students worksheet. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 4.1
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Change the tab colour to any orange colour. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (1)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 4.2
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Use a spreadsheet feature that will allow the headings in row 3 to remain on top when scrolling down. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (1)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 4.3
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Students can pay for the course on a monthly basis for a year, or pay the full course cost at once. Insert a formula in cell F5 to calculate the monthly cost for the course. Make sure that the amount is displayed with TWO decimal places. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (3)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 4.4
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Modify the conditional formatting in column E as follows: Display a red cross icon if students attend training in the second half of the year; Otherwise, display a green check icon if students attend training in the first half of the year. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (4)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 4.5
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Use a LOOKUP function in cell G8 to display the cost of the course for WP Mthembu. Use the information in the Courses worksheet. Work in the Graph worksheet. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (5)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 4.6
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Modify the chart/graph to display as shown in the example below. NOTE: The 'Term 4'-line series is a smoothed line. Save and close the 4Students spreadsheet. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (4)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ [18]
+
+ 
+ 
+
+ 
+
+ 
+ Copyright reserved 
+ 
+ Please turn over 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ Computer Applications Technology/P1 
+ 9 
+ DBE/November 2025 
+ 
+
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ ↑ ¶ break ↓ 
+QUESTION 5: DATABASE
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ↑ ¶ break ↓ 
+ The database contains details of lecturers and students at the TechnoGeek institution. Open the 5Records database. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 5.1
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Open the tbl5_1 table in Datasheet View and edit the table as follows: 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 5.1.1
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Make the following changes to the rows: Change the row height to 20 pt. Fill every alternative row with any blue colour. Switch to Design View. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (2)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 5.1.2
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Edit the ContactNo field as follows: Change the properties to make this field compulsory. Add an input mask to accept a contact number in the format 082 569 2547. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (2)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 5.1.3
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Insert a new field called Photo below the Qualification field. Make sure that if an image is inserted, it will be embedded in the database. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (3)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 5.1.4
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Set the properties of the LeaveDate field to only accept dates from 1 September 2025 to 31 January 2026. Add a descriptive message that would display if the incorrect date is entered. Save and close the tbl5_1 table. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (4)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 5.2
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Modify the frm5_2 form, based on the tblStudents table, to display as shown in the example below. Save and close the frm5_2 form. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (3)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 5.3
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Create a query called qry5_3, based on the tblStudents table, to display as shown in the example below. Save and close the qry5_3 query. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (2)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 5.4
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Open the qry5_4 query based on the tblStudents table in Design View. Display a list of all the students whose progress is unknown and who still owe an amount of R3 500 or more. The outstanding amount should be displayed from the largest to the smallest. Save and close the qry5_4 query. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (3)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 5.5
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Open the qry5_5 query based on the tblStudents table in Design View. Display only the Name, Surname, FeesOutstanding and EnrolmentType fields of all full-time students who either graduated or are still active, as well as any part-time student. Save and close the qry5_5 query. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (5)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ Copyright reserved 
+ 
+ Please turn over 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ Computer Applications Technology/P1 
+ 10 
+ DBE/November 2025 
+ 
+
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 5.6
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Open the qry5_6 query based on the tblStudents table in Design View. Create a new field called 'Age' to calculate the age of the students. Make sure that the age displays when the query is switched to Datasheet View. Save and close the qry5_6 query. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (5)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 5.7
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Open the rpt5_7 report based on the tblStudents table in Design View and do the following: Insert your examination number in the report header. Change the page orientation to landscape. Change the properties of the Surname field so that the surname is visible when you view the report. Group the report according to the EnrolmentType field. Make sure that the enrolment type displays once per group. Insert a function in the group footer to display the total number of students per enrolment type. Save and close the rpt5_7 report. Save and close the 5Records database. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (6)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ [35]
+
+ 
+ 
+
+ 
+
+ 
+ Copyright reserved 
+ 
+ Please turn over 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ Computer Applications Technology/P1 
+ 11 
+ DBE/November 2025 
+ 
+
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ ↑ ¶ break ↓ 
+QUESTION 6: WEB DESIGN (HTML)
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ↑ ¶ break ↓ 
+ NOTE: You may NOT use a word processing program such as Word to answer the HTML questions. An HTML tag sheet has been attached for reference. All files needed to complete this question can be found in the examination folder. A web page was created for the Home page of the TechnoGeek institution. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 6.1
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Open the incomplete 6_1Home file in a web browser and also in a text/HTML editor (NOT a word processing program such as Word). Your final web page should look like the example below. NOTE: Use the example on the previous page as a guideline when answering this question. Question numbers appear as comments in the coding to indicate where you should insert the answer(s). Do NOT delete these comments. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 6.1.1
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Insert the text 'TechnoGeek' to appear in the web browser tab. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (1)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 6.1.2
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Set the background colour of the web page to '#ADB9CA'. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (1)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 6.1.3
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Format the main heading 'TechnoGeek' and the image to appear horizontally in the middle of the page. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (1)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 6.1.4
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ The text 'Icons' should display if the 6_1Head image is not visible. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (1)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 6.1.5
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Modify the HTML code to display the horizontal line as shown in the example on the previous page. Make sure that the thickness of the line is 5 pt. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (2)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 6.1.6
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Insert a hyperlink on the text 'www.technogeek.org' at the end of the web page so that it links to the website: www.technogeek.org. Save and close the 6_1Home file. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (3)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 6.2
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Open the incomplete 6_2Popular file in a web browser and also in a text/HTML editor (NOT a word processing program such as Word). Your final web page should look like the example below. Save and close the 6_2Popular file. ONE mark will be allocated for closing tags and correct nesting in both web pages. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (5)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ [15]
+
+ 
+ 
+
+ 
+
+ 
+ Copyright reserved 
+ 
+ Please turn over 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ Computer Applications Technology/P1 
+ 12 
+ DBE/November 2025 
+ 
+
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ ↑ ¶ break ↓ 
+QUESTION 7: GENERAL
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ ↑ ¶ break ↓ 
+ Open the 7Letter document that contains an acceptance letter for new students. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 7.1
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Prepare a mail merge document as follows: Link the 7Letter document with the 7NewStudents spreadsheet. Select only students who enrolled for the 'Web Design' or the 'Game Development' courses. Add the First name_Voornaam merge field to the letter. Do NOT complete the mail merge. Save and close the 7Letter document. Open the 7Stats spreadsheet. Work in the TotalCost worksheet. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (5)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 7.2
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ TechnoGeek's head office wants to calculate the total income percentage in cell C5 per course (cell B5). Use the steps below to calculate the total income percentage for a specific course, as displayed in the example below. Step 1: Use a formula in cell E8 to determine the total income for Web Design. Step 2: Create a data validation drop-down list in cell B5 and use the list in the Courses worksheet. Step 3: Modify the function in cell C5 so that the total income percentage per course is automatically calculated based on the type of course selected in cell B5. Work in the Time worksheet. 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (5)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+
+ 
+ Copyright reserved 
+ 
+ Please turn over 
+ 
+
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ Computer Applications Technology/P1 
+ 13 
+ DBE/November 2025 
+ 
+
+ 
+ 
+
+ 
+
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 7.3
+
+ ↑ ¶ break ↓ 
+
+ 
+ 
+ 
+ 
+ Students who completed a course will collect their certificates in an allocated time slot on a specific day as follows: Times will be between 07:00 and 10:00 (inclusive). Time slots are in intervals of 15 minutes. There will be 12 intervals. 07:00 07:15 07:30 07:45 08:00 08:15 08:30 08:45 09:00 09:15 09:30 09:45 10:00 0 1 2 3 4 5 6 7 8 9 10 11 12 Modify the function in cell D3 to randomly generate a time slot for each student. NOTE: Ignore if students have the same time slot. Save and close the 7Stats spreadsheet. [15] TOTAL: 150 HTML TAG SHEET Basic Tags Formatting Tags continued Tag Description Tag Description Defines the body of the web Inserted before each list item, page and adds a number or symbol <body Sets the background colour of depending on the type of list bgcolor="pink"> the web page selected Sets the colour of the body text Adds an image Contains information about the <img src="name" Aligns an image: can be web page align="left"/> "right", "bottom", "top" Creates an HTML document – <img Aligns an image in the starts and ends a web page src="name"/> "center", can also be "middle" <img src="name" Sets the size of the border Defines a title for the web page border="1"/> around an image Inserts a line break <img src="name" Sets the height and width of width="200" height Comment an image ="200"/> Text Tags Displays alternative text when Tag Description <img src="name" the mouse hovers over the alt="alternative text"/> image or when the image is Creates the largest heading not found Creates the smallest heading Inserts a horizontal line Creates bold text Sets size (height) of a line Creates italic text Sets the width of a line, in Creates underlined text percentage or absolute value Sets size of font, from "1" to "7" Sets font colour Sets the colour of the line <font face="Times New Table Tags Sets font type Roman"> Tag Description Links Tags Creates a table Tag Description Creates a row in a table Creates a hyperlink Creates a cell in a table <img Creates an image link src="name"> Creates a table header (a cell Creates a target location in the with bold, centred text) document Links to a target location created somewhere else in the Sets the width of the table document <a href= Sets the width of the border Links to an e-mail address "mailto:#NAME"> around the table cells Formatting Tags Sets the space between the Tag Description table cells Sets the space between a cell Creates a new paragraph border and its contents Aligns a paragraph to the "left" Sets the alignment for cell(s) (default), can also be "right" or ("left", can also be "center" or "center" "right") Horizontally centres text, a section, table or an image Sets the vertical alignment for cell(s) ("top", can also be Creates a numbered list "middle" or "bottom") <ol type="A","a", Defines the type of numbering Sets the number of columns a "I","i","1"> used cell should span Creates a bulleted list Sets the number of rows a cell should span "square","circle"> used INPUT MASK CHARACTER SHEET CHARACTER DESCRIPTION 0 Digit (0 to 9, entry required, plus [+] 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ (5)
+
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ [15]
+
+ 
+ 
+
+ 
+ TOTAL:  150
+
+ 
+
+ 
+ Copyright reserved 
+ 
+ 
+ 
+
+ 
+
+ 
+
+ 
+ 
+ 
+ Computer Applications Technology/P1 
+ 14 
+ DBE/November 2025 
+ 
+
+ 
+
+ 
+ 
+ 
+ Examination sticker
+
+ 150
+
+ 
+
+ COMPUTER APPLICATIONS TECHNOLOGY P1 – NOVEMBER 2025
+
+ INFORMATION SHEET (to be completed by the candidate AFTER the 3-hour session) 
+
+ CENTRE NUMBER 
+
+ EXAMINATION NUMBER 
+
+ WORK STATION NUMBER 
+
+ 
+ 
+ SUITE USED (Mark appropriate box with a cross (X)) 
+ 
+ Microsoft Office 2016 
+ 
+ Microsoft Office 2019 
+ 
+ Microsoft Office 2021 
+ 
+ Office 365 
+ 
+ 
+
+ 
+ WEB BROWSER USED (Mark appropriate box with a cross (X)) 
+ Mozilla Firefox 
+ Google Chrome 
+ Internet Explorer 
+ Microsoft Edge 
+ Other (Specify) 
+ 
+
+ 
+ FOLDER NAME 
+
+ Candidate must enter the file name(s) used for each answer. Tick if saved and/or attempted.
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ Question
+Number 
+ File name 
+ Saved
+(✓) 
+ Attempted
+(✓) 
+ Maximum
+Mark 
+ Mark
+Achieved 
+ Marker
+Initial/
+Code 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 1 
+ 1Courses 
+ 
+ 
+ 22 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 2 
+ 2Brochure 
+ 
+ 
+ 23 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 3 
+ 3Lecturers 
+ 
+ 
+ 22 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 4 
+ 4Students 
+ 
+ 
+ 18 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 5 
+ 5Records 
+ 
+ 
+ 35 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 6 
+ 6_1Home 
+ 
+ 
+ 15 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 6_2Popular 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+ 7 
+ 7Letter 
+ 
+ 
+ 15 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 7Stats 
+ 
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ TOTAL 
+ 150 
+ 
+ 
+ 
+
+ 
+ 
+ Comment: (for office/marker use only) 
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+ Copyright reserved

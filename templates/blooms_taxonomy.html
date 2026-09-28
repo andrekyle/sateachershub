@@ -1,0 +1,844 @@
+{% extends "lms_base.html" %}
+
+{% block title %}Bloom's Taxonomy Guide — South African Teachers Hub{% endblock %}
+
+{% block body_class %}apple-home{% endblock %}
+
+{% block head %}
+<script>document.documentElement.setAttribute('data-theme','light');</script>
+{% endblock %}
+
+{% block theme_init %}
+document.documentElement.setAttribute('data-theme','light');
+{% endblock %}
+
+{% block content %}
+<style>
+    html, body, main { background: #fbfbfd !important; color: #1d1d1f !important; font-weight: 400 !important; }
+    body.apple-home {
+        background: #fbfbfd;
+        color: #1d1d1f;
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    /* Home-page nav style */
+    body.apple-home .sath-nav { background: transparent !important; border-bottom: none !important; }
+    body.apple-home .sath-brand,
+    body.apple-home .sath-links a,
+    body.apple-home .sath-links a.active,
+    body.apple-home .sath-links a.sath-admin,
+    body.apple-home .sath-links a:hover,
+    body.apple-home .sath-cta a:not(.sath-primary),
+    body.apple-home .sath-mobile-toggle {
+        color: #1d1d1f !important;
+    }
+    body.apple-home .sath-cta a.sath-primary { color: #fff !important; background: #0071e3 !important; border-color: #0071e3 !important; }
+    body.apple-home .sath-cta a.sath-primary:hover { background: #0077ed !important; border-color: #0077ed !important; }
+    body.apple-home .sath-brand .sath-brand-accent { color: #2997ff !important; }
+
+    .bt-wrap { max-width: 980px; margin: 0 auto; padding: 60px 24px 100px; }
+    .bt-eyebrow { font-size: 12px; font-weight: 600; color: #06c; letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 14px; }
+    .bt-wrap h1 { font-size: 2.6rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 10px; color: #1d1d1f; line-height: 1.1; }
+    .bt-sub { font-size: 1.1rem; color: #424245; margin-bottom: 6px; max-width: 720px; line-height: 1.5; }
+    .bt-hero-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 16px 0 22px;
+    }
+    .bt-date { font-size: 0.85rem; color: #6e6e73; margin-bottom: 48px; }
+
+    .bt-toc { background: #f5f5f7; border-radius: 14px; padding: 22px 26px; margin: 28px 0 50px; }
+    .bt-toc h3 { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6e6e73; margin-bottom: 12px; }
+    .bt-toc ul { list-style: none; padding: 0; margin: 0; columns: 2; column-gap: 28px; }
+    .bt-toc li { margin-bottom: 6px; break-inside: avoid; }
+    .bt-toc a { color: #06c; font-size: 0.95rem; text-decoration: none; }
+    .bt-toc a:hover { text-decoration: underline; }
+
+    .bt-wrap h2 { font-size: 1.7rem; font-weight: 700; color: #1d1d1f; margin: 56px 0 14px; letter-spacing: -0.02em; scroll-margin-top: 80px; }
+    .bt-wrap h3 { font-size: 1.15rem; font-weight: 600; color: #1d1d1f; margin: 28px 0 8px; }
+    .bt-wrap p { font-size: 1rem; color: #1d1d1f; line-height: 1.7; margin-bottom: 12px; }
+    .bt-wrap ul, .bt-wrap ol { padding-left: 1.4rem; margin: 6px 0 14px; }
+    .bt-wrap li { font-size: 1rem; color: #1d1d1f; line-height: 1.7; margin-bottom: 4px; }
+    .bt-wrap strong { color: #1d1d1f; font-weight: 600; }
+    .bt-wrap a { color: #06c; text-decoration: none; }
+    .bt-wrap a:hover { text-decoration: underline; }
+
+    /* Pyramid */
+    .bt-pyramid { display: flex; flex-direction: column; align-items: center; gap: 6px; margin: 30px 0 40px; }
+    .bt-level {
+        color: #fff; font-weight: 600; font-size: 0.95rem;
+        padding: 14px 18px; text-align: center; border-radius: 6px;
+        letter-spacing: -0.01em;
+        box-shadow: 0 1px 0 rgba(0,0,0,0.08);
+    }
+    .bt-level small { display: block; font-size: 0.78rem; font-weight: 400; opacity: 0.92; margin-top: 2px; }
+    .bt-l1 { width: 96%; background: #b00020; }
+    .bt-l2 { width: 84%; background: #d3641a; }
+    .bt-l3 { width: 72%; background: #c9a227; }
+    .bt-l4 { width: 60%; background: #2e8b57; }
+    .bt-l5 { width: 48%; background: #1e6091; }
+    .bt-l6 { width: 36%; background: #4b3a8c; }
+
+    /* Level cards */
+    .bt-card {
+        background: #fff;
+        border: 1px solid #e5e5e7;
+        border-radius: 16px;
+        padding: 28px 30px;
+        margin: 24px 0;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.04);
+    }
+    .bt-card-head { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+    .bt-badge {
+        flex-shrink: 0;
+        width: 38px; height: 38px; border-radius: 10px;
+        display: inline-flex; align-items: center; justify-content: center;
+        color: #fff; font-weight: 700; font-size: 0.95rem;
+    }
+    .bt-card h3 { margin: 0; font-size: 1.3rem; font-weight: 700; letter-spacing: -0.01em; }
+    .bt-card .bt-tag { font-size: 0.75rem; font-weight: 600; color: #6e6e73; text-transform: uppercase; letter-spacing: 0.08em; margin-top: 2px; }
+    .bt-card p.bt-def { font-size: 1rem; color: #424245; margin: 6px 0 14px; }
+    .bt-grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 14px; }
+    .bt-grid2 > div h4 { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: #6e6e73; margin-bottom: 8px; }
+    .bt-verbs { display: flex; flex-wrap: wrap; gap: 6px; }
+    .bt-verbs span {
+        background: #f5f5f7; color: #1d1d1f;
+        font-size: 0.82rem; padding: 4px 10px; border-radius: 980px;
+        font-weight: 500;
+    }
+    .bt-stems { background: #fbfbfd; border-left: none; padding: 12px 16px; border-radius: 4px; }
+    .bt-stems p { font-size: 0.92rem; margin-bottom: 6px; color: #424245; font-style: italic; }
+    .bt-stems p:last-child { margin-bottom: 0; }
+
+    /* Section 4 redesign */
+    .bt-levels-collection { display: grid; gap: 18px; margin-top: 18px; }
+    .bt-levels-collection .bt-card {
+        --bt-level: #1d1d1f;
+        background: #fff;
+        border: 1px solid #dfe3ea;
+        border-radius: 18px;
+        padding: 22px 24px;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 190px 1fr;
+        column-gap: 24px;
+        row-gap: 10px;
+        position: relative;
+        box-shadow: 0 10px 30px rgba(20, 20, 30, 0.05);
+        overflow: hidden;
+    }
+    .bt-levels-collection .bt-card::before {
+        content: none;
+    }
+    .bt-levels-collection .bt-card-head {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        margin: 0;
+        padding-right: 8px;
+    }
+    .bt-levels-collection .bt-badge {
+        width: auto;
+        height: auto;
+        border-radius: 0;
+        background: transparent !important;
+        color: #1d1d1f;
+        font-size: 1.15rem;
+        box-shadow: none;
+        padding: 0;
+        display: inline;
+    }
+    .bt-levels-collection .bt-card h3 { margin: 0; font-size: 1.45rem; }
+    .bt-levels-collection .bt-card .bt-tag {
+        margin: 0;
+        font-size: 0.72rem;
+        color: #4a4a4f;
+        background: #fff;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        padding: 4px 8px;
+        border-radius: 999px;
+    }
+    .bt-levels-collection .bt-card p.bt-def {
+        grid-column: 2;
+        margin: 0;
+        font-size: 1rem;
+        line-height: 1.65;
+        color: #2f3034;
+    }
+    .bt-levels-collection .bt-grid2 { grid-column: 2; margin-top: 6px; gap: 16px; }
+    .bt-levels-collection .bt-grid2 > div {
+        background: #fff;
+        border: 1px solid #e7e8ec;
+        border-radius: 12px;
+        padding: 14px;
+    }
+    .bt-levels-collection .bt-grid2 > div h4 { margin-bottom: 10px; color: #55585f; }
+    .bt-levels-collection .bt-verbs { gap: 8px; }
+    .bt-levels-collection .bt-verbs span {
+        background: #fff;
+        border: 1px solid #d0d3da;
+        color: #1d1d1f;
+        font-size: 0.8rem;
+        padding: 4px 9px;
+        font-weight: 600;
+    }
+    .bt-levels-collection .bt-stems {
+        background: #fff;
+        border: 1px solid #e3e4e8;
+        border-radius: 10px;
+        padding: 12px;
+        counter-reset: bt-stem;
+    }
+    .bt-levels-collection .bt-stems p {
+        color: #2f3034;
+        font-style: normal;
+        padding-left: 22px;
+        position: relative;
+    }
+    .bt-levels-collection .bt-stems p::before {
+        counter-increment: bt-stem;
+        content: counter(bt-stem) ".";
+        position: absolute;
+        left: 0;
+        top: 0;
+        color: #6e6e73;
+        font-weight: 600;
+    }
+
+    /* Subject section */
+    .bt-subject {
+        background: #fbfbfd;
+        border: 1px solid #e5e5e7;
+        border-radius: 14px;
+        padding: 22px 26px;
+        margin: 18px 0;
+    }
+    .bt-subject h3 {
+        margin: 0 0 8px;
+        display: flex; align-items: center; gap: 10px;
+        font-size: 1.15rem;
+    }
+    .bt-subject h3 i { display: none; }
+    .bt-subject .bt-blueprint {
+        display: grid; grid-template-columns: 60px 1fr; gap: 6px 14px;
+        font-size: 0.92rem; margin: 12px 0 4px;
+    }
+    .bt-subject .bt-blueprint b { font-weight: 600; color: #1d1d1f; text-align: right; }
+    .bt-subject .bt-blueprint span { color: #424245; }
+
+    /* Tables */
+    .bt-table-wrap { overflow-x: auto; margin: 20px 0; border-radius: 12px; border: 1px solid #e5e5e7; }
+    table.bt-tbl { width: 100%; border-collapse: collapse; font-size: 0.92rem; background: #fff; }
+    table.bt-tbl th, table.bt-tbl td { padding: 11px 14px; text-align: left; border-bottom: 1px solid #e5e5e7; vertical-align: top; }
+    table.bt-tbl th { background: #f5f5f7; font-weight: 600; color: #1d1d1f; font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.06em; }
+    table.bt-tbl tr:last-child td { border-bottom: 0; }
+
+    /* Callouts */
+    .bt-callout { border-left: none; background: #f0f7ff; padding: 16px 20px; border-radius: 6px; margin: 20px 0; }
+    .bt-callout p { margin-bottom: 6px; }
+    .bt-callout p:last-child { margin-bottom: 0; }
+    .bt-callout strong { color: #003a7a; }
+
+    .bt-warn { border-left: none; background: #eef6ff; padding: 16px 20px; border-radius: 6px; margin: 20px 0; }
+    .bt-warn strong { color: #0053a6; }
+
+    /* Color helpers used by JS-free badges */
+    .bt-c-1 { background: #b00020; color: #b00020; }
+    .bt-c-2 { background: #d3641a; color: #d3641a; }
+    .bt-c-3 { background: #c9a227; color: #c9a227; }
+    .bt-c-4 { background: #2e8b57; color: #2e8b57; }
+    .bt-c-5 { background: #1e6091; color: #1e6091; }
+    .bt-c-6 { background: #4b3a8c; color: #4b3a8c; }
+    .bt-card .bt-stems { color: inherit; } /* keep original border color set inline */
+
+    @media (max-width: 720px) {
+        .bt-toc ul { columns: 1; }
+        .bt-grid2 { grid-template-columns: 1fr; }
+        .bt-wrap h1 { font-size: 2rem; }
+        .bt-levels-collection .bt-card {
+            grid-template-columns: 1fr;
+            row-gap: 12px;
+            padding: 20px;
+            background: #fff;
+        }
+        .bt-levels-collection .bt-card-head {
+            grid-column: 1;
+            grid-row: auto;
+            padding-right: 0;
+        }
+        .bt-levels-collection .bt-card p.bt-def,
+        .bt-levels-collection .bt-grid2 { grid-column: 1; }
+    }
+</style>
+
+<div class="bt-wrap">
+    <p class="bt-eyebrow">Teaching Resource</p>
+    <h1>Bloom's Taxonomy Guide</h1>
+    <p class="bt-sub">A practical, CAPS-aligned reference for setting questions, planning lessons, and writing assessments across every South African school subject.</p>
+    <p class="bt-date">Last updated: May 2026 (reviewed against 2024-2026 DBE publications)</p>
+
+    <!-- Table of Contents -->
+    <div class="bt-toc">
+        <h3>Contents</h3>
+        <ul>
+            <li><a href="#intro">1. What is Bloom's Taxonomy?</a></li>
+            <li><a href="#history">2. Original vs. Revised (2001)</a></li>
+            <li><a href="#pyramid">3. The Six Cognitive Levels</a></li>
+            <li><a href="#levels">4. Levels in Detail</a></li>
+            <li><a href="#knowledge-types">5. Knowledge Dimension</a></li>
+            <li><a href="#caps">6. CAPS Cognitive Levels</a></li>
+            <li><a href="#blueprint">7. Question Paper Blueprint</a></li>
+            <li><a href="#subjects">8. Subject-by-Subject Guide</a></li>
+            <li><a href="#stems">9. Question Stems by Level</a></li>
+            <li><a href="#mistakes">10. Common Mistakes</a></li>
+            <li><a href="#checklist">11. Setter's Checklist</a></li>
+        </ul>
+    </div>
+
+    <!-- 1. Intro -->
+    <h2 id="intro">1. What is Bloom's Taxonomy?</h2>
+    <p>Bloom's Taxonomy is a classification of the different levels of thinking that learners use when they engage with content. It was first published in 1956 by a committee of educators chaired by American educational psychologist <strong>Benjamin Bloom</strong>, and it has since become the world's most widely used framework for designing learning outcomes, lesson activities, questions, and assessments.</p>
+    <img class="bt-hero-image" src="{{ url_for('static', filename='images/blooms.png') }}" alt="Bloom's Taxonomy diagram" loading="lazy">
+    <p>In South Africa, the <strong>Curriculum and Assessment Policy Statement (CAPS)</strong> uses an adapted Bloom's framework to specify the cognitive demand of every assessment task — from a Grade 4 Natural Sciences worksheet to a Grade 12 NSC examination. Setting a balanced paper means hitting the right percentage of marks at each cognitive level.</p>
+
+    <div class="bt-callout">
+        <p><strong>Why it matters for SA teachers:</strong> The DBE moderates papers against Bloom's levels. A Grade 12 Mathematics paper that has 80% recall and 20% problem-solving will be rejected, even if every question is mathematically correct. Cognitive balance is non-negotiable.</p>
+    </div>
+
+    <!-- 2. Original vs Revised -->
+    <h2 id="history">2. Original (1956) vs. Revised (2001)</h2>
+    <p>In 2001, Lorin Anderson and David Krathwohl (one of Bloom's original collaborators) published a revised version. The two key changes:</p>
+    <ol>
+        <li><strong>Nouns became verbs.</strong> "Knowledge" → "Remember", "Comprehension" → "Understand", and so on. This emphasises that learning is something a learner <em>does</em>, not has.</li>
+        <li><strong>The top two levels swapped.</strong> "Synthesis" became "Create" and was placed at the top, above "Evaluate".</li>
+    </ol>
+
+    <div class="bt-table-wrap">
+        <table class="bt-tbl">
+            <thead><tr><th>Original (1956)</th><th>Revised (2001)</th><th>Short description</th></tr></thead>
+            <tbody>
+                <tr><td>Knowledge</td><td>Remember</td><td>Recall facts and basic concepts</td></tr>
+                <tr><td>Comprehension</td><td>Understand</td><td>Explain ideas or concepts</td></tr>
+                <tr><td>Application</td><td>Apply</td><td>Use information in new situations</td></tr>
+                <tr><td>Analysis</td><td>Analyse</td><td>Draw connections among ideas</td></tr>
+                <tr><td>Synthesis</td><td>Evaluate</td><td>Justify a stand or decision</td></tr>
+                <tr><td>Evaluation</td><td>Create</td><td>Produce new or original work</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>This guide uses the <strong>revised 2001 version</strong>, which is the version aligned with current CAPS and DBE assessment frameworks.</p>
+    <div class="bt-callout">
+        <p><strong>Currency note:</strong> The dates 1956 and 2001 are historical publication dates for the taxonomy itself. The practical guidance in this page is checked against <strong>2024-2026</strong> DBE sources (CAPS updates, NSC reports, and current policy pages).</p>
+    </div>
+
+    <!-- 3. Pyramid -->
+    <h2 id="pyramid">3. The Six Cognitive Levels (at a glance)</h2>
+    <p>The taxonomy is hierarchical: each level builds on the ones below. A learner cannot truly <em>analyse</em> a poem if they cannot first <em>remember</em> its content and <em>understand</em> what it says.</p>
+
+    <div class="bt-pyramid" aria-label="Bloom's pyramid">
+        <div class="bt-level bt-l6">Create<small>Higher-order thinking</small></div>
+        <div class="bt-level bt-l5">Evaluate</div>
+        <div class="bt-level bt-l4">Analyse</div>
+        <div class="bt-level bt-l3">Apply</div>
+        <div class="bt-level bt-l2">Understand</div>
+        <div class="bt-level bt-l1">Remember<small>Lower-order thinking</small></div>
+    </div>
+
+    <p><strong>Lower-order thinking skills (LOTS):</strong> Remember, Understand, Apply.<br>
+    <strong>Higher-order thinking skills (HOTS):</strong> Analyse, Evaluate, Create.</p>
+    <p>Recent NSC reporting (2024 onward) continues to emphasize balanced cognitive demand. The exact LOTS/HOTS split is <strong>subject-specific</strong> and should always be checked against the latest DBE subject guidance and reports.</p>
+
+    <!-- 4. Levels in Detail -->
+    <h2 id="levels">4. The Six Levels in Detail</h2>
+    <div class="bt-levels-collection">
+
+    <!-- Remember -->
+    <div class="bt-card">
+        <div class="bt-card-head">
+            <span class="bt-badge">Level 1</span>
+            <div>
+                <h3>Remember</h3>
+                <div class="bt-tag">Lower-order · Recall</div>
+            </div>
+        </div>
+        <p class="bt-def">Retrieve relevant knowledge from long-term memory. The learner reproduces a fact, term, definition, formula or procedure exactly as it was taught.</p>
+        <div class="bt-grid2">
+            <div>
+                <h4>Action verbs</h4>
+                <div class="bt-verbs">
+                    <span>Define</span><span>List</span><span>Name</span><span>State</span><span>Identify</span><span>Recall</span><span>Label</span><span>Match</span><span>Recognise</span><span>Recite</span><span>Select</span><span>Quote</span>
+                </div>
+            </div>
+            <div>
+                <h4>Question stems</h4>
+                <div class="bt-stems">
+                    <p>"List the three branches of the South African government."</p>
+                    <p>"Define the term photosynthesis."</p>
+                    <p>"Name two characters in the prescribed novel."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Understand -->
+    <div class="bt-card">
+        <div class="bt-card-head">
+            <span class="bt-badge">Level 2</span>
+            <div>
+                <h3>Understand</h3>
+                <div class="bt-tag">Lower-order · Comprehension</div>
+            </div>
+        </div>
+        <p class="bt-def">Construct meaning from instructional messages — explain in own words, summarise, classify, infer, compare and exemplify.</p>
+        <div class="bt-grid2">
+            <div>
+                <h4>Action verbs</h4>
+                <div class="bt-verbs">
+                    <span>Explain</span><span>Describe</span><span>Summarise</span><span>Paraphrase</span><span>Classify</span><span>Compare</span><span>Convert</span><span>Illustrate</span><span>Interpret</span><span>Discuss</span><span>Outline</span><span>Translate</span>
+                </div>
+            </div>
+            <div>
+                <h4>Question stems</h4>
+                <div class="bt-stems">
+                    <p>"Explain in your own words how a thunderstorm forms."</p>
+                    <p>"Summarise the main argument of paragraph 3."</p>
+                    <p>"Describe the difference between weather and climate."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Apply -->
+    <div class="bt-card">
+        <div class="bt-card-head">
+            <span class="bt-badge">Level 3</span>
+            <div>
+                <h3>Apply</h3>
+                <div class="bt-tag">Lower-order · Routine procedures</div>
+            </div>
+        </div>
+        <p class="bt-def">Carry out or use a procedure in a given situation. The context may be new, but the method itself was taught.</p>
+        <div class="bt-grid2">
+            <div>
+                <h4>Action verbs</h4>
+                <div class="bt-verbs">
+                    <span>Calculate</span><span>Solve</span><span>Demonstrate</span><span>Use</span><span>Apply</span><span>Compute</span><span>Construct</span><span>Modify</span><span>Operate</span><span>Predict</span><span>Show</span><span>Implement</span>
+                </div>
+            </div>
+            <div>
+                <h4>Question stems</h4>
+                <div class="bt-stems">
+                    <p>"Calculate the gradient of the line passing through (2,3) and (5,11)."</p>
+                    <p>"Apply the law of conservation of momentum to this collision."</p>
+                    <p>"Use the COUNTIF function to count the cells greater than 50."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Analyse -->
+    <div class="bt-card">
+        <div class="bt-card-head">
+            <span class="bt-badge">Level 4</span>
+            <div>
+                <h3>Analyse</h3>
+                <div class="bt-tag">Higher-order · Break down</div>
+            </div>
+        </div>
+        <p class="bt-def">Break material into parts and detect how the parts relate to one another and to an overall structure or purpose. Differentiate, organise, attribute.</p>
+        <div class="bt-grid2">
+            <div>
+                <h4>Action verbs</h4>
+                <div class="bt-verbs">
+                    <span>Analyse</span><span>Compare</span><span>Contrast</span><span>Differentiate</span><span>Distinguish</span><span>Examine</span><span>Categorise</span><span>Investigate</span><span>Deduce</span><span>Infer</span><span>Test</span><span>Relate</span>
+                </div>
+            </div>
+            <div>
+                <h4>Question stems</h4>
+                <div class="bt-stems">
+                    <p>"Analyse the poet's use of imagery in the second stanza."</p>
+                    <p>"Distinguish between fixed and variable costs in this scenario."</p>
+                    <p>"Examine how soil type affects crop yield in the data shown."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Evaluate -->
+    <div class="bt-card">
+        <div class="bt-card-head">
+            <span class="bt-badge">Level 5</span>
+            <div>
+                <h3>Evaluate</h3>
+                <div class="bt-tag">Higher-order · Judge</div>
+            </div>
+        </div>
+        <p class="bt-def">Make judgements based on criteria and standards. Critique, justify, defend, recommend — backed by evidence.</p>
+        <div class="bt-grid2">
+            <div>
+                <h4>Action verbs</h4>
+                <div class="bt-verbs">
+                    <span>Evaluate</span><span>Assess</span><span>Justify</span><span>Critique</span><span>Defend</span><span>Recommend</span><span>Argue</span><span>Judge</span><span>Rank</span><span>Validate</span><span>Support</span><span>Prioritise</span>
+                </div>
+            </div>
+            <div>
+                <h4>Question stems</h4>
+                <div class="bt-stems">
+                    <p>"Evaluate the effectiveness of the government's load-shedding policy."</p>
+                    <p>"Justify your choice of marketing strategy with reference to the case study."</p>
+                    <p>"Critically discuss whether the experiment was a fair test."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Create -->
+    <div class="bt-card">
+        <div class="bt-card-head">
+            <span class="bt-badge">Level 6</span>
+            <div>
+                <h3>Create</h3>
+                <div class="bt-tag">Higher-order · Produce</div>
+            </div>
+        </div>
+        <p class="bt-def">Put elements together to form a coherent or functional whole; reorganise elements into a new pattern, structure or product.</p>
+        <div class="bt-grid2">
+            <div>
+                <h4>Action verbs</h4>
+                <div class="bt-verbs">
+                    <span>Create</span><span>Design</span><span>Compose</span><span>Construct</span><span>Develop</span><span>Formulate</span><span>Plan</span><span>Produce</span><span>Generate</span><span>Invent</span><span>Propose</span><span>Hypothesise</span>
+                </div>
+            </div>
+            <div>
+                <h4>Question stems</h4>
+                <div class="bt-stems">
+                    <p>"Design a database to track learners' attendance for a school of 800 pupils."</p>
+                    <p>"Write a 250-word speech persuading Grade 9s to choose Mathematics."</p>
+                    <p>"Propose a research question and outline a method to investigate it."</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- 5. Knowledge Dimension -->
+    <h2 id="knowledge-types">5. The Knowledge Dimension</h2>
+    <p>The 2001 revision added a second axis: <strong>what kind of knowledge</strong> the learner is working with. A good question paper covers all four types, not just facts.</p>
+    <div class="bt-table-wrap">
+        <table class="bt-tbl">
+            <thead><tr><th>Type</th><th>What it is</th><th>Example</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Factual</strong></td><td>Discrete pieces of information — terminology, specific details</td><td>"In which year was the Union of South Africa formed?"</td></tr>
+                <tr><td><strong>Conceptual</strong></td><td>Relationships among basic elements — categories, principles, models</td><td>"Explain how supply and demand interact to set a market price."</td></tr>
+                <tr><td><strong>Procedural</strong></td><td>How to do something — methods, techniques, algorithms</td><td>"Solve for x using the quadratic formula."</td></tr>
+                <tr><td><strong>Metacognitive</strong></td><td>Knowledge about cognition — strategies, self-awareness</td><td>"Reflect on which study method worked best for you and explain why."</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 6. CAPS Cognitive Levels -->
+    <h2 id="caps">6. How Bloom's Maps to CAPS Cognitive Levels</h2>
+    <p>CAPS does not use the six Bloom's labels directly. Instead, the DBE collapses them into <strong>four cognitive levels</strong>, each with a recommended weighting per question paper. The exact weighting differs by subject, but the framework below is standard.</p>
+    <div class="bt-table-wrap">
+        <table class="bt-tbl">
+            <thead><tr><th>CAPS level</th><th>Bloom's equivalent</th><th>Typical % of marks</th><th>Description</th></tr></thead>
+            <tbody>
+                <tr><td><strong>Level 1 — Knowledge</strong></td><td>Remember</td><td>20–30%</td><td>Direct recall of facts, terminology, formulae</td></tr>
+                <tr><td><strong>Level 2 — Routine procedures</strong></td><td>Understand + Apply</td><td>30–40%</td><td>Familiar examples, single-step procedures</td></tr>
+                <tr><td><strong>Level 3 — Complex procedures</strong></td><td>Analyse</td><td>20–30%</td><td>Multi-step problems, unfamiliar contexts</td></tr>
+                <tr><td><strong>Level 4 — Problem-solving</strong></td><td>Evaluate + Create</td><td>10–20%</td><td>Non-routine, justification, design, original response</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 7. Blueprint -->
+    <h2 id="blueprint">7. A Worked Question Paper Blueprint</h2>
+    <p>Suppose you are setting a 100-mark Grade 12 Geography paper. A CAPS-compliant Bloom's distribution looks like this:</p>
+    <div class="bt-table-wrap">
+        <table class="bt-tbl">
+            <thead><tr><th>Level</th><th>Marks</th><th>Question type examples</th></tr></thead>
+            <tbody>
+                <tr><td>Remember (L1)</td><td>25</td><td>MCQs, term definitions, labelling a diagram</td></tr>
+                <tr><td>Understand + Apply (L2)</td><td>35</td><td>Explain a process, interpret a graph, calculate gradient on a topographic map</td></tr>
+                <tr><td>Analyse (L3)</td><td>25</td><td>Compare two climate regions, deduce cause from data</td></tr>
+                <tr><td>Evaluate + Create (L4)</td><td>15</td><td>Recommend a sustainable land-use plan with justification</td></tr>
+            </tbody>
+        </table>
+    </div>
+    <p>When you finish setting your paper, total the marks for each level and check the percentages — that's your <strong>cognitive analysis grid</strong>, which moderators will want to see.</p>
+
+    <!-- 8. Subjects -->
+    <h2 id="subjects">8. Subject-by-Subject Application</h2>
+    <p>Below are CAPS-aligned cognitive blueprints and worked examples for the major South African subjects. Use these as starting points; each School Based Assessment (SBA) and final exam may adjust slightly.</p>
+    <p><strong>HOTS</strong> means <strong>Higher-Order Thinking Skills</strong>: questions that require learners to analyse, evaluate, or create, rather than only recall facts.</p>
+
+    <!-- Mathematics -->
+    <div class="bt-subject">
+        <h3><i class="fas fa-square-root-variable"></i> Mathematics (Grade 12)</h3>
+        <div class="bt-blueprint">
+            <b>L1:</b><span>20% — Recall definitions, identify formulas (e.g. "State the cosine rule")</span>
+            <b>L2:</b><span>35% — Routine calculations (factorise, solve linear equation, basic differentiation)</span>
+            <b>L3:</b><span>30% — Multi-step problems (optimise volume, prove a trig identity, related rates)</span>
+            <b>L4:</b><span>15% — Unfamiliar contexts, proofs, modelling real-world data</span>
+        </div>
+        <p><strong>Example HOTS question:</strong> "A farmer has 200 m of fencing to enclose a rectangular grazing area against a river (no fencing required on the river side). Determine the dimensions that maximise the enclosed area, and justify why your answer is a maximum."</p>
+    </div>
+
+    <!-- Mathematical Literacy -->
+    <div class="bt-subject">
+        <h3><i class="fas fa-calculator"></i> Mathematical Literacy</h3>
+        <div class="bt-blueprint">
+            <b>L1:</b><span>30% — Read directly from a table, identify a unit of measurement</span>
+            <b>L2:</b><span>30% — Apply a known formula to a familiar context (calculate VAT, perimeter)</span>
+            <b>L3:</b><span>20% — Interpret data sets, compare two tariffs</span>
+            <b>L4:</b><span>20% — Reason and reflect on real-life decisions (best cell-phone contract, financial planning)</span>
+        </div>
+        <p><strong>Example HOTS question:</strong> "Compare the two electricity tariff structures (prepaid vs. post-paid) for a household using 450 kWh per month. Recommend the better option and justify with calculations."</p>
+    </div>
+
+    <!-- Physical Sciences -->
+    <div class="bt-subject">
+        <h3><i class="fas fa-atom"></i> Physical Sciences</h3>
+        <div class="bt-blueprint">
+            <b>L1:</b><span>15% — Recall definitions, laws (Newton's three laws, Ohm's law)</span>
+            <b>L2:</b><span>35% — Substitution into formulae, balance equations, name compounds</span>
+            <b>L3:</b><span>35% — Analyse circuits, multi-step stoichiometry, projectile motion</span>
+            <b>L4:</b><span>15% — Design an experiment, evaluate data validity, predict outcomes</span>
+        </div>
+        <p><strong>Example HOTS question:</strong> "A learner claims that the rate of reaction depends only on temperature. Design an experiment to test this claim, identify the dependent and independent variables, and explain how you would control bias."</p>
+    </div>
+
+    <!-- Life Sciences -->
+    <div class="bt-subject">
+        <h3><i class="fas fa-dna"></i> Life Sciences</h3>
+        <div class="bt-blueprint">
+            <b>L1:</b><span>40% — Knowledge of structures, terms, processes (mitosis stages)</span>
+            <b>L2:</b><span>25% — Comprehension and application (predict offspring genotype)</span>
+            <b>L3:</b><span>20% — Analyse, evaluate (interpret graphs, ecosystems data)</span>
+            <b>L4:</b><span>15% — Synthesis (propose conservation strategy)</span>
+        </div>
+        <p><strong>Example HOTS question:</strong> "A population of impala in a reserve has dropped by 35% over five years. Analyse the data table provided, identify the most likely cause, and propose two intervention strategies. Justify each."</p>
+    </div>
+
+    <!-- Accounting -->
+    <div class="bt-subject">
+        <h3><i class="fas fa-coins"></i> Accounting</h3>
+        <div class="bt-blueprint">
+            <b>L1:</b><span>10% — Recall accounting equation, ledger conventions</span>
+            <b>L2:</b><span>40% — Routine recording (journals, posting, balancing)</span>
+            <b>L3:</b><span>30% — Prepare financial statements with adjustments</span>
+            <b>L4:</b><span>20% — Interpret ratios, advise management, ethics scenarios</span>
+        </div>
+        <p><strong>Example HOTS question:</strong> "The current ratio dropped from 2.1 to 1.2 in one year. Identify three possible causes, evaluate the implications for the business, and recommend remedial action."</p>
+    </div>
+
+    <!-- Business Studies -->
+    <div class="bt-subject">
+        <h3><i class="fas fa-briefcase"></i> Business Studies</h3>
+        <div class="bt-blueprint">
+            <b>L1:</b><span>30% — Define terms, list factors of production</span>
+            <b>L2:</b><span>30% — Explain concepts, describe types of businesses</span>
+            <b>L3:</b><span>25% — Apply theory to case studies, analyse business challenges</span>
+            <b>L4:</b><span>15% — Evaluate strategies, recommend with justification</span>
+        </div>
+        <p><strong>Example HOTS question:</strong> "Read the case study on XYZ Manufacturing. Evaluate management's response to the strike action, and recommend an alternative approach using two strategies from the prescribed content."</p>
+    </div>
+
+    <!-- Economics -->
+    <div class="bt-subject">
+        <h3><i class="fas fa-chart-line"></i> Economics</h3>
+        <div class="bt-blueprint">
+            <b>L1:</b><span>30% — Define elasticity, GDP, inflation</span>
+            <b>L2:</b><span>30% — Explain market mechanisms, draw a demand curve</span>
+            <b>L3:</b><span>25% — Analyse trade data, examine policy effects</span>
+            <b>L4:</b><span>15% — Evaluate the SARB's interest rate decision and motivate a counter-proposal</span>
+        </div>
+    </div>
+
+    <!-- Geography -->
+    <div class="bt-subject">
+        <h3><i class="fas fa-earth-africa"></i> Geography</h3>
+        <div class="bt-blueprint">
+            <b>L1:</b><span>25% — Identify features, define terms (e.g. "What is a cold front?")</span>
+            <b>L2:</b><span>30% — Map work calculations, climate explanations</span>
+            <b>L3:</b><span>30% — Analyse synoptic charts, compare urban patterns</span>
+            <b>L4:</b><span>15% — Suggest sustainable solutions, evaluate land-use conflict</span>
+        </div>
+    </div>
+
+    <!-- History -->
+    <div class="bt-subject">
+        <h3><i class="fas fa-landmark"></i> History</h3>
+        <div class="bt-blueprint">
+            <b>L1:</b><span>20% — Recall dates, names, events (Sharpeville, 1960)</span>
+            <b>L2:</b><span>30% — Explain causes and consequences in own words</span>
+            <b>L3:</b><span>30% — Source-based analysis: reliability, bias, context</span>
+            <b>L4:</b><span>20% — Extended writing: take a position and defend with evidence</span>
+        </div>
+        <p><strong>Example HOTS question:</strong> "Using sources A, B and C, evaluate the extent to which international pressure ended apartheid. Support your answer with evidence from the sources and your own knowledge. (10 marks)"</p>
+    </div>
+
+    <!-- English HL & FAL -->
+    <div class="bt-subject">
+        <h3><i class="fas fa-book-open"></i> English HL &amp; FAL (Languages)</h3>
+        <div class="bt-blueprint">
+            <b>L1 (Literal):</b><span>10% — Find information directly stated in the text</span>
+            <b>L2 (Reorganisation):</b><span>15% — Summarise, paraphrase</span>
+            <b>L3 (Inference):</b><span>30% — Read between the lines, deduce meaning</span>
+            <b>L4 (Evaluation):</b><span>25% — Critically judge effectiveness, language use</span>
+            <b>L5 (Appreciation):</b><span>20% — Personal response, emotional/aesthetic engagement</span>
+        </div>
+        <p><strong>Note:</strong> CAPS for Languages uses a 5-level "Barrett's Taxonomy" variant rather than the standard Bloom's 4. Levels 3–5 collectively count as higher-order.</p>
+        <p><strong>Example HOTS question:</strong> "Evaluate the poet's use of contrast in stanzas 2 and 4. To what extent does this contrast strengthen the central theme of loss? Refer closely to the text."</p>
+    </div>
+
+    <!-- Afrikaans -->
+    <div class="bt-subject">
+        <h3><i class="fas fa-language"></i> Afrikaans HT &amp; EAT</h3>
+        <div class="bt-blueprint">
+            <b>L1–L2:</b><span>25% — Letterlike begrip; herorganisering en opsomming</span>
+            <b>L3:</b><span>30% — Afleiding (lees tussen die reëls)</span>
+            <b>L4:</b><span>25% — Evaluering van taalgebruik en standpunt</span>
+            <b>L5:</b><span>20% — Waardering en persoonlike reaksie</span>
+        </div>
+    </div>
+
+    <!-- Computer Applications Technology -->
+    <div class="bt-subject">
+        <h3><i class="fas fa-desktop"></i> Computer Applications Technology (CAT)</h3>
+        <div class="bt-blueprint">
+            <b>L1:</b><span>30% — Recall hardware/software terms, identify icons</span>
+            <b>L2:</b><span>25% — Apply skills (apply formatting, write a formula)</span>
+            <b>L3:</b><span>25% — Combine multiple skills (mail merge with conditional fields)</span>
+            <b>L4:</b><span>20% — Solve unfamiliar problems, evaluate the best approach</span>
+        </div>
+        <p><strong>Example HOTS question:</strong> "A school wants to track which Grade 12 learners have completed their PAT. Design a spreadsheet solution using at least three different functions, and explain why you chose each."</p>
+    </div>
+
+    <!-- Information Technology -->
+    <div class="bt-subject">
+        <h3><i class="fas fa-code"></i> Information Technology (IT)</h3>
+        <div class="bt-blueprint">
+            <b>L1:</b><span>20% — Define syntax, recall data types</span>
+            <b>L2:</b><span>30% — Trace code, predict output</span>
+            <b>L3:</b><span>30% — Debug a program, modify existing code</span>
+            <b>L4:</b><span>20% — Design an algorithm or data structure for a new problem</span>
+        </div>
+        <p><strong>Example HOTS question:</strong> "Design and code a Delphi method that, given an array of learner marks, returns both the median and the standard deviation. Justify your choice of data structure."</p>
+    </div>
+
+    <!-- Engineering Graphics & Design -->
+    <div class="bt-subject">
+        <h3><i class="fas fa-drafting-compass"></i> Engineering Graphics &amp; Design (EGD)</h3>
+        <div class="bt-blueprint">
+            <b>L1:</b><span>15% — Identify drawing conventions, line types</span>
+            <b>L2:</b><span>40% — Apply drawing rules to produce orthographic views</span>
+            <b>L3:</b><span>30% — Convert between 2D and 3D, sectional views</span>
+            <b>L4:</b><span>15% — Design a component to satisfy given constraints</span>
+        </div>
+    </div>
+
+    <!-- Tourism -->
+    <div class="bt-subject">
+        <h3><i class="fas fa-suitcase-rolling"></i> Tourism</h3>
+        <div class="bt-blueprint">
+            <b>L1:</b><span>30% — Recall destinations, attractions, terminology</span>
+            <b>L2:</b><span>30% — Calculate currency conversions, time zones</span>
+            <b>L3:</b><span>25% — Analyse case studies on tourism trends</span>
+            <b>L4:</b><span>15% — Plan an itinerary, evaluate sustainable tourism practices</span>
+        </div>
+    </div>
+
+    <!-- Consumer Studies -->
+    <div class="bt-subject">
+        <h3><i class="fas fa-cart-shopping"></i> Consumer Studies</h3>
+        <div class="bt-blueprint">
+            <b>L1:</b><span>25% — Define consumer rights, list nutrients</span>
+            <b>L2:</b><span>30% — Explain the function of fibre, describe budgeting steps</span>
+            <b>L3:</b><span>25% — Analyse advertising techniques, compare product labels</span>
+            <b>L4:</b><span>20% — Recommend a balanced meal for a specific health condition; justify</span>
+        </div>
+    </div>
+
+    <!-- Visual & Performing Arts -->
+    <div class="bt-subject">
+        <h3><i class="fas fa-palette"></i> Visual Arts, Music, Dramatic &amp; Dance Studies</h3>
+        <div class="bt-blueprint">
+            <b>L1:</b><span>15% — Identify artists, periods, techniques</span>
+            <b>L2:</b><span>20% — Describe a work or performance</span>
+            <b>L3:</b><span>30% — Analyse style, technique, influences</span>
+            <b>L4:</b><span>35% — Critically evaluate; produce / perform an original work</span>
+        </div>
+        <p>The arts naturally weight HOTS heavily because production and critique <em>are</em> the discipline.</p>
+    </div>
+
+    <!-- Religion & Life Orientation -->
+    <div class="bt-subject">
+        <h3><i class="fas fa-people-group"></i> Life Orientation &amp; Religion Studies</h3>
+        <div class="bt-blueprint">
+            <b>L1:</b><span>25% — Recall human rights articles, religious texts</span>
+            <b>L2:</b><span>30% — Explain concepts (citizenship, ubuntu)</span>
+            <b>L3:</b><span>25% — Analyse social issues from multiple perspectives</span>
+            <b>L4:</b><span>20% — Take a reasoned ethical position on a contemporary dilemma</span>
+        </div>
+    </div>
+
+    <!-- 9. Stems library -->
+    <h2 id="stems">9. Question-Stem Library</h2>
+    <p>Cut and paste these stems straight into your worksheets — they automatically signal the cognitive level you are aiming for.</p>
+    <div class="bt-table-wrap">
+        <table class="bt-tbl">
+            <thead><tr><th>Level</th><th>Sentence starters</th></tr></thead>
+            <tbody>
+                <tr><td>Remember</td><td>"List…", "Define…", "Name the…", "Identify…", "What is the term for…?"</td></tr>
+                <tr><td>Understand</td><td>"Explain in your own words…", "Summarise…", "Describe how…", "What is the main idea of…?"</td></tr>
+                <tr><td>Apply</td><td>"Calculate…", "Use the formula to…", "Show how…", "What would happen if…?"</td></tr>
+                <tr><td>Analyse</td><td>"Distinguish between…", "Compare and contrast…", "What evidence supports…?", "Why did…?"</td></tr>
+                <tr><td>Evaluate</td><td>"Critically discuss…", "Justify…", "Was X effective? Motivate…", "Which is more…? Why?"</td></tr>
+                <tr><td>Create</td><td>"Design a…", "Plan a method to…", "Propose a solution to…", "Write your own…"</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 10. Mistakes -->
+    <h2 id="mistakes">10. Common Mistakes Teachers Make</h2>
+    <div class="bt-warn">
+        <p><strong>1. Confusing the verb with the cognitive demand.</strong> "Discuss the causes of WW1" sounds like Analyse, but if learners simply repeat their notes, it's actually Remember.</p>
+        <p><strong>2. Using "describe" everywhere.</strong> "Describe" is Level 2 (Understand). If your whole paper says "describe", you have no Level 3 or 4.</p>
+        <p><strong>3. Treating multiple-choice as automatically Level 1.</strong> A well-designed MCQ can test analysis or evaluation — it depends on the cognitive work needed to choose.</p>
+        <p><strong>4. Setting a "Create" question with no marks for design quality.</strong> If the rubric only rewards correct facts, learners default to Remember.</p>
+        <p><strong>5. Forgetting the knowledge dimension.</strong> All your "Apply" questions might still be procedural recall if you never demand conceptual reasoning.</p>
+    </div>
+
+    <!-- 11. Checklist -->
+    <h2 id="checklist">11. Setter's Quick-Check Checklist</h2>
+    <ol>
+        <li>Does my paper hit the CAPS-recommended L1/L2/L3/L4 percentages (within ±5%)?</li>
+        <li>Have I used <strong>different verbs</strong> across the paper, not just "explain" and "describe"?</li>
+        <li>Are my higher-order questions genuinely <strong>unfamiliar</strong> to the learners (i.e. not seen in the textbook examples)?</li>
+        <li>Does my marking memorandum allocate marks <strong>per cognitive demand</strong>, not just per correct fact?</li>
+        <li>If I used a case study, have I tested all four levels against the same source?</li>
+        <li>Did I include at least one Level 4 question that asks learners to <strong>justify or design</strong>?</li>
+        <li>Have I prepared a <strong>cognitive-analysis grid</strong> to submit with the paper for moderation?</li>
+    </ol>
+
+    <div class="bt-callout">
+        <p><strong>Final thought:</strong> Bloom's Taxonomy is not a checklist — it's a lens. Use it to ask: "<em>What kind of thinking do I want my learners to do today?</em>" When you answer that question honestly, your lessons, your questions and your assessments line up automatically.</p>
+    </div>
+
+    <hr style="margin:60px 0; border:none; border-top:1px solid #e5e5e5;">
+    <h3 style="margin-top:0;">References (2024+)</h3>
+    <ul style="font-size:0.9rem; color:#6e6e73; margin-bottom:0;">
+        <li>Department of Basic Education (DBE). <a href="https://www.education.gov.za/Curriculum/CurriculumAssessmentPolicyStatements(CAPS).aspx" target="_blank" rel="noopener">Curriculum Assessment Policy Statements (CAPS)</a> page (includes 2024 CAPS amendments, e.g. CAT and IT Section 3 updates).</li>
+        <li>DBE. <a href="https://www.education.gov.za/Resources/Reports.aspx" target="_blank" rel="noopener">Reports</a> page: NSC Examinations 2024 Diagnostic Reports (Books 1-3), 2024 Examination Report, 2024 School Subject Report, and 2024 School Performance Report.</li>
+        <li>DBE. <a href="https://www.education.gov.za/Curriculum/NationalSeniorCertificate(NSC)Examinations/NSCPastExaminationpapers.aspx" target="_blank" rel="noopener">NSC Past Examination Papers and SBA Resources</a> (latest exam-cycle alignment checks).</li>
+        <li>DBE. Annual Performance Plan 2024-2025 and Annual Performance Plan 2025-2026 (available via the DBE Reports page).</li>
+    </ul>
+</div>
+{% endblock %}

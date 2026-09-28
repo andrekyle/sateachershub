@@ -1,0 +1,193 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Search Results for "{{ query }}" - {{ global_settings.store_name }}{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gray-50 py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Search Header -->
+        <div class="mb-8">
+            <div class="flex items-center justify-between">
+                <div>
+                    <h1 class="text-3xl font-bold text-gray-900">Search Results</h1>
+                    <p class="mt-2 text-lg text-gray-600">
+                        {% if results.total_count > 0 %}
+                            Found {{ results.total_count }} result{{ 's' if results.total_count != 1 else '' }} for "<span class="font-semibold text-azure-blue">{{ query }}</span>"
+                        {% else %}
+                            No results found for "<span class="font-semibold text-azure-blue">{{ query }}</span>"
+                        {% endif %}
+                    </p>
+                </div>
+                
+                <!-- Search Again -->
+                <div class="flex-shrink-0">
+                    <form method="GET" action="{{ url_for('search') }}" class="flex">
+                        <input type="text" name="q" value="{{ query }}" 
+                               class="px-4 py-2 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-azure-blue focus:border-transparent"
+                               placeholder="Search products, pages...">
+                        <button type="submit" class="px-6 py-2 bg-azure-blue text-white rounded-r-lg hover:bg-azure-blue-dark transition-colors">
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        {% if results.total_count > 0 %}
+            <!-- Filter Tabs -->
+            <div class="mb-6">
+                <nav class="flex space-x-8" aria-label="Tabs">
+                    <a href="{{ url_for('search', q=query, type='all') }}" 
+                       class="{% if search_type == 'all' %}border-azure-blue text-azure-blue{% else %}border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300{% endif %} whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm">
+                        All Results ({{ results.total_count }})
+                    </a>
+                    {% if results.products %}
+                    <a href="{{ url_for('search', q=query, type='products') }}" 
+                       class="{% if search_type == 'products' %}border-azure-blue text-azure-blue{% else %}border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300{% endif %} whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm">
+                        Products ({{ results.products|length }})
+                    </a>
+                    {% endif %}
+                    {% if results.pages %}
+                    <a href="{{ url_for('search', q=query, type='pages') }}" 
+                       class="{% if search_type == 'pages' %}border-azure-blue text-azure-blue{% else %}border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300{% endif %} whitespace-nowrap py-2 px-1 border-b-2 font-medium text-sm">
+                        Pages ({{ results.pages|length }})
+                    </a>
+                    {% endif %}
+                </nav>
+            </div>
+
+            <!-- Results Content -->
+            {% if search_type in ['all', 'products'] and results.products %}
+                <!-- Products Section -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Products</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                        {% for product in results.products %}
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                            <div class="aspect-w-1 aspect-h-1">
+                                {% if product.image_url %}
+                                    <img src="{{ product.image_url }}" alt="{{ product.name }}" 
+                                         class="w-full h-48 object-cover">
+                                {% else %}
+                                    <div class="w-full h-48 bg-gray-200 flex items-center justify-center">
+                                        <i class="fas fa-image text-gray-400 text-4xl"></i>
+                                    </div>
+                                {% endif %}
+                            </div>
+                            
+                            <div class="p-4">
+                                <h3 class="text-lg font-semibold text-gray-900 mb-2">
+                                    <a href="{{ url_for('product_detail', id=product.id) }}" 
+                                       class="hover:text-azure-blue transition-colors">
+                                        {{ product.name }}
+                                    </a>
+                                </h3>
+                                
+                                {% if product.description %}
+                                <p class="text-gray-600 text-sm mb-3 line-clamp-2">
+                                    {{ product.description[:100] }}{% if product.description|length > 100 %}...{% endif %}
+                                </p>
+                                {% endif %}
+                                
+                                <div class="flex items-center justify-between">
+                                    <span class="text-2xl font-bold text-azure-blue">
+                                        ${{ "%.2f"|format(product.price) }}
+                                    </span>
+                                    
+                                    {% if product.stock > 0 %}
+                                        <span class="text-sm text-green-600 font-medium">In Stock</span>
+                                    {% else %}
+                                        <span class="text-sm text-red-600 font-medium">Out of Stock</span>
+                                    {% endif %}
+                                </div>
+                                
+                                <div class="mt-4">
+                                    <a href="{{ url_for('product_detail', id=product.id) }}" 
+                                       class="w-full bg-azure-blue text-white py-2 px-4 rounded-lg text-center hover:bg-azure-blue-dark transition-colors inline-block">
+                                        View Details
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+
+            {% if search_type in ['all', 'pages'] and results.pages %}
+                <!-- Pages Section -->
+                <div class="mb-12">
+                    <h2 class="text-2xl font-bold text-gray-900 mb-6">Pages & Information</h2>
+                    <div class="space-y-4">
+                        {% for page in results.pages %}
+                        <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <div class="w-12 h-12 bg-azure-blue rounded-lg flex items-center justify-center">
+                                        <i class="fas fa-file-alt text-white text-lg"></i>
+                                    </div>
+                                </div>
+                                
+                                <div class="ml-4 flex-1">
+                                    <h3 class="text-xl font-semibold text-gray-900 mb-2">
+                                        <a href="{{ page.url }}" class="hover:text-azure-blue transition-colors">
+                                            {{ page.title }}
+                                        </a>
+                                    </h3>
+                                    
+                                    <p class="text-gray-600 mb-3">{{ page.description }}</p>
+                                    
+                                    <a href="{{ page.url }}" 
+                                       class="inline-flex items-center text-azure-blue hover:text-azure-blue-dark font-medium">
+                                        View Page
+                                        <i class="fas fa-arrow-right ml-2"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+
+        {% else %}
+            <!-- No Results -->
+            <div class="text-center py-12">
+                <div class="max-w-md mx-auto">
+                    <div class="w-24 h-24 bg-gray-200 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-search text-gray-400 text-3xl"></i>
+                    </div>
+                    
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">No results found</h3>
+                    <p class="text-gray-600 mb-6">
+                        We couldn't find anything matching your search. Try adjusting your search terms or browse our categories.
+                    </p>
+                    
+                    <div class="space-y-3">
+                        <a href="{{ url_for('products') }}" 
+                           class="inline-block bg-azure-blue text-white px-6 py-3 rounded-lg hover:bg-azure-blue-dark transition-colors">
+                            Browse All Products
+                        </a>
+                        
+                        <div>
+                            <a href="{{ url_for('index') }}" 
+                               class="inline-block text-azure-blue hover:text-azure-blue-dark font-medium">
+                                Back to Home
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+<style>
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+</style>
+{% endblock %}

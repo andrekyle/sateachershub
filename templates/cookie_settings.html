@@ -1,0 +1,233 @@
+{% extends "lms_base.html" %}
+
+{% block title %}Cookie Settings — South African Teachers Hub{% endblock %}
+
+{% block body_class %}apple-home{% endblock %}
+
+{% block head %}
+<script>document.documentElement.setAttribute('data-theme','light');</script>
+{% endblock %}
+
+{% block theme_init %}
+document.documentElement.setAttribute('data-theme','light');
+{% endblock %}
+
+{% block content %}
+<style>
+    html, body, main { background: #fff !important; color: #1d1d1f !important; font-weight: 400 !important; }
+    .navbar { background: rgba(255,255,255,0.9) !important; }
+    /* Force black nav text on this light page (overrides white-on-dark defaults) */
+    .sath-nav { background: #fff !important; border-bottom: 1px solid rgba(0,0,0,0.08) !important; }
+    .sath-brand { color: #000 !important; }
+    .sath-brand .sath-brand-accent { color: #06c !important; }
+    .sath-links a,
+    .sath-cta .sath-ghost { color: #000 !important; opacity: 1 !important; font-weight: 500 !important; }
+    .sath-links a:hover,
+    .sath-cta .sath-ghost:hover { color: #000 !important; background: rgba(0,0,0,0.05) !important; }
+    .sath-links a.active { color: #000 !important; }
+    .sath-links a.sath-admin { color: #000 !important; }
+    .sath-mobile-toggle { color: #000 !important; }
+
+    .cs-wrap { max-width: 720px; margin: 0 auto; padding: 60px 24px 80px; }
+    .cs-wrap h1 { font-size: 2.4rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 6px; color: #1d1d1f; }
+    .cs-wrap .cs-sub { font-size: 1rem; color: #1d1d1f; margin-bottom: 6px; }
+    .cs-wrap .cs-date { font-size: 0.85rem; color: #1d1d1f; margin-bottom: 48px; }
+    .cs-wrap h2 { font-size: 1.1rem; font-weight: 700; color: #1d1d1f; margin: 36px 0 8px; }
+    .cs-wrap p { font-size: 0.95rem; color: #1d1d1f; line-height: 1.75; margin-bottom: 10px; }
+    .cs-wrap ol { padding-left: 1.4rem; margin: 8px 0 12px; }
+    .cs-wrap ol li { font-size: 0.95rem; color: #1d1d1f; line-height: 1.75; margin-bottom: 6px; }
+    .cs-wrap a { color: #2997ff; text-decoration: none; }
+    .cs-wrap a:hover { text-decoration: underline; }
+    .cs-wrap hr { border: none; border-top: 1px solid #e5e5e5; margin: 40px 0; }
+    .cs-wrap strong { color: #1d1d1f; font-weight: 600; }
+
+    /* Toggle cards */
+    .cookie-card {
+        border: 1px solid #e5e5e5;
+        border-radius: 14px;
+        padding: 20px 24px;
+        margin: 16px 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 24px;
+    }
+    .cookie-card-info { flex: 1; }
+    .cookie-card-info h3 { font-size: 0.95rem; font-weight: 600; color: #1d1d1f; margin: 0 0 4px; }
+    .cookie-card-info p { font-size: 0.875rem; color: #1d1d1f; line-height: 1.6; margin: 0; }
+
+    /* Toggle switch */
+    .cs-toggle { flex-shrink: 0; margin-top: 2px; }
+    .cs-toggle input[type="checkbox"] { display: none; }
+    .cs-toggle label {
+        display: inline-block;
+        width: 44px; height: 26px;
+        background: #d1d1d6;
+        border-radius: 999px;
+        position: relative;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    .cs-toggle label::after {
+        content: '';
+        position: absolute;
+        top: 3px; left: 3px;
+        width: 20px; height: 20px;
+        background: #fff;
+        border-radius: 50%;
+        transition: transform 0.2s;
+        box-shadow: 0 1px 3px rgba(0,0,0,0.18);
+    }
+    .cs-toggle input:checked + label { background: #34c759; }
+    .cs-toggle input:checked + label::after { transform: translateX(18px); }
+    .cs-toggle input:disabled + label { cursor: not-allowed; opacity: 0.6; }
+
+    .cs-save-bar {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        margin-top: 36px;
+    }
+    .cs-btn-save {
+        background: #0071e3;
+        color: #fff;
+        border: none;
+        border-radius: 980px;
+        padding: 10px 24px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: background 0.2s;
+    }
+    .cs-btn-save:hover { background: #0077ed; }
+    .cs-btn-decline {
+        background: transparent;
+        color: #1d1d1f;
+        border: 1px solid #d1d1d6;
+        border-radius: 980px;
+        padding: 10px 24px;
+        font-size: 0.9rem;
+        font-weight: 400;
+        cursor: pointer;
+        transition: border-color 0.2s;
+    }
+    .cs-btn-decline:hover { border-color: #86868b; }
+    .cs-saved-msg { font-size: 0.85rem; color: #34c759; font-weight: 500; display: none; }
+</style>
+
+<div class="cs-wrap">
+    <h1>Cookie Settings</h1>
+    <p class="cs-sub">Control which cookies South African Teachers Hub uses on your device.</p>
+    <p class="cs-date">Last updated: May 2026</p>
+
+    <h2>What Are Cookies?</h2>
+    <p>Cookies are small text files placed on your device when you visit a website. They allow the site to remember information about your visit — such as your login session or display preferences. Some cookies are strictly necessary for the site to function; others are optional and used to improve your experience or help us understand how the platform is used.</p>
+
+    <h2>Manage Your Preferences</h2>
+    <p>Toggle each category below. Changes are saved to your browser and take effect immediately. You can update your preferences at any time by returning to this page.</p>
+
+    <!-- Essential -->
+    <div class="cookie-card">
+        <div class="cookie-card-info">
+            <h3>Essential Cookies</h3>
+            <p>These cookies are strictly necessary for the platform to function and cannot be disabled. They enable core features such as user authentication, session management, and security protections. No personal data collected by these cookies is used for tracking or advertising.</p>
+            <br>
+            <p><strong>Examples:</strong> session ID, CSRF token, login state</p>
+        </div>
+        <div class="cs-toggle">
+            <input type="checkbox" id="toggle-essential" checked disabled>
+            <label for="toggle-essential"></label>
+        </div>
+    </div>
+
+    <!-- Preferences -->
+    <div class="cookie-card">
+        <div class="cookie-card-info">
+            <h3>Preference Cookies</h3>
+            <p>These cookies remember your display and personalisation choices so you don't have to reset them each visit — for example, your dark or light mode preference.</p>
+            <br>
+            <p><strong>Examples:</strong> theme setting (dark/light mode), language preference</p>
+        </div>
+        <div class="cs-toggle">
+            <input type="checkbox" id="toggle-prefs">
+            <label for="toggle-prefs"></label>
+        </div>
+    </div>
+
+    <!-- Analytics -->
+    <div class="cookie-card">
+        <div class="cookie-card-info">
+            <h3>Analytics Cookies</h3>
+            <p>These cookies help us understand how users interact with the platform so we can improve it. All data collected is anonymised and aggregated — we cannot identify you individually from analytics data.</p>
+            <br>
+            <p><strong>Examples:</strong> pages visited, features used, session duration</p>
+        </div>
+        <div class="cs-toggle">
+            <input type="checkbox" id="toggle-analytics">
+            <label for="toggle-analytics"></label>
+        </div>
+    </div>
+
+    <!-- Marketing — explicitly none -->
+    <div class="cookie-card">
+        <div class="cookie-card-info">
+            <h3>Marketing &amp; Advertising Cookies</h3>
+            <p>South African Teachers Hub does <strong>not</strong> use any marketing, retargeting, or advertising cookies. We do not track you across other websites and we do not share your data with advertising networks.</p>
+        </div>
+        <div class="cs-toggle">
+            <input type="checkbox" id="toggle-marketing" disabled>
+            <label for="toggle-marketing" style="background:#f0f0f0; cursor:not-allowed;"></label>
+        </div>
+    </div>
+
+    <div class="cs-save-bar">
+        <button class="cs-btn-save" onclick="saveCookiePrefs()">Save my preferences</button>
+        <button class="cs-btn-decline" onclick="declineAll()">Decline optional cookies</button>
+        <span class="cs-saved-msg" id="cs-saved-msg">&#10003; Preferences saved</span>
+    </div>
+
+    <h2>More Information</h2>
+    <ol>
+        <li>Cookie preferences are stored in your browser's <code>localStorage</code>. Clearing your browser data will reset them.</li>
+        <li>Disabling essential cookies is not possible and would prevent you from logging in.</li>
+        <li>You can also manage cookies directly in your browser settings — see your browser's help documentation for instructions.</li>
+        <li>For more information on how we use your personal information, see our <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a> and <a href="{{ url_for('popi_compliance') }}">POPIA Compliance</a> pages.</li>
+    </ol>
+
+    <h2>Contact</h2>
+    <p>If you have questions about our use of cookies, contact <a href="mailto:privacy@sateachershub.co.za">privacy@sateachershub.co.za</a>.</p>
+
+    <hr>
+    <p style="font-size:0.8rem; color:#1d1d1f; text-align:center;">Cookie preferences apply to this browser only. Update them any time from this page.</p>
+</div>
+
+<script>
+(function(){
+    // Load saved prefs on page load
+    var prefs = JSON.parse(localStorage.getItem('cookiePrefs') || '{}');
+    document.getElementById('toggle-prefs').checked    = prefs.prefs    !== false;
+    document.getElementById('toggle-analytics').checked = prefs.analytics !== false;
+})();
+
+function saveCookiePrefs(){
+    var prefs = {
+        prefs:     document.getElementById('toggle-prefs').checked,
+        analytics: document.getElementById('toggle-analytics').checked
+    };
+    localStorage.setItem('cookiePrefs', JSON.stringify(prefs));
+    // Apply theme pref immediately if preference cookies disabled
+    if(!prefs.prefs){
+        localStorage.removeItem('theme');
+    }
+    var msg = document.getElementById('cs-saved-msg');
+    msg.style.display = 'inline';
+    setTimeout(function(){ msg.style.display = 'none'; }, 3000);
+}
+
+function declineAll(){
+    document.getElementById('toggle-prefs').checked    = false;
+    document.getElementById('toggle-analytics').checked = false;
+    saveCookiePrefs();
+}
+</script>
+{% endblock %}

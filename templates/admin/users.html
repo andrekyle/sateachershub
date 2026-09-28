@@ -1,0 +1,334 @@
+﻿{% extends "teacher/_layout.html" %}
+{% block extra_css %}
+<style>
+  body { background: #0b0b0d !important; padding-top: 0 !important; }
+  main { padding: 0 !important; }
+  .t-shell { padding-top: 30px !important; }
+  .t-shell .t-head { margin-top: 0 !important; padding-top: 0 !important; }
+  .sath-nav { background: transparent !important; border-bottom: none !important; }
+</style>
+{% endblock %}
+{% block title %}Manage Users - Admin{% endblock %}
+{% block body_class %}gridx-home{% endblock %}
+{% block t_eyebrow %}Admin workspace{% endblock %}
+{% block t_title %}Users{% endblock %}
+{% block t_sub %}Super admin, admins, HODs and teachers.{% endblock %}
+{% block t_action %}
+<div style="display:flex; align-items:center; gap:12px; flex-wrap:wrap;">
+    <span class="users-meta-chip">{{ users|length }} member{{ 's' if users|length != 1 }}</span>
+    <a class="users-add-btn" href="{{ url_for('admin_user_new') }}"><i class="fas fa-plus"></i> Add user</a>
+</div>
+{% endblock %}
+{% block t_body %}
+<style>
+    .t-shell {
+        --users-bg: #0b0b0d;
+        --users-surface: #0f1012;
+        --users-surface-2: #121419;
+        --users-border: rgba(255, 255, 255, 0.08);
+        --users-border-strong: rgba(255, 255, 255, 0.14);
+        --users-text: #f5f5f7;
+        --users-muted: #9aa0ab;
+    }
+
+    .users-meta-chip {
+        display: inline-flex;
+        align-items: center;
+        height: 30px;
+        padding: 0 12px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid var(--users-border-strong);
+        color: var(--users-text);
+        font-size: 12.5px;
+        font-weight: 500;
+        letter-spacing: 0;
+    }
+
+    .users-add-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        height: auto;
+        padding: 0;
+        background: transparent !important;
+        border: none !important;
+        color: #d6d6da !important;
+        border-radius: 0;
+        font-weight: 400;
+        font-size: 14px;
+        text-decoration: none;
+        box-sizing: border-box;
+        line-height: 1;
+    }
+    .users-add-btn i {
+        color: currentColor !important;
+        font-size: 11px;
+    }
+    .users-add-btn:hover {
+        background: transparent !important;
+        border: none !important;
+        color: #ffffff !important;
+        text-decoration: none;
+    }
+
+    .users-card {
+        padding: 0;
+        overflow: hidden;
+        background: rgba(20, 20, 20, 0.52) !important;
+        border: 1px solid rgba(255, 255, 255, 0.08) !important;
+        border-radius: 12px;
+    }
+    .users-table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        background: transparent;
+    }
+    .users-table thead th {
+        background: rgba(20, 20, 20, 0.55) !important;
+        color: #b8b8c0 !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+        text-transform: uppercase !important;
+        letter-spacing: 0.08em !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+        padding: 14px 20px !important;
+        text-align: left;
+    }
+    .users-table th,
+    .users-table td {
+        border-right: 1px solid rgba(255, 255, 255, 0.04) !important;
+    }
+    .users-table td {
+        color: var(--users-text) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+        padding: 16px 20px;
+        vertical-align: middle;
+        background: transparent !important;
+        font-weight: 300 !important;
+    }
+    .users-table tbody tr:last-child td {
+        border-bottom: none !important;
+    }
+    .users-table th:last-child,
+    .users-table td:last-child {
+        border-right: none !important;
+        text-align: right;
+    }
+    .users-row {
+        cursor: pointer;
+    }
+    .users-table tbody tr:nth-child(odd) td {
+        background: rgba(255, 255, 255, 0.008) !important;
+    }
+    .users-table tbody tr:nth-child(even) td {
+        background: rgba(255, 255, 255, 0.016) !important;
+    }
+    .users-table tbody tr:hover td {
+        background: rgba(255, 255, 255, 0.028) !important;
+    }
+    .users-table tbody tr:hover td:first-child {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+    }
+    .users-table tbody tr:hover td:last-child {
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+    .users-user {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-width: 220px;
+    }
+    .users-avatar {
+        position: relative;
+        overflow: hidden;
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #1f2128;
+        border: 1px solid rgba(255,255,255,0.10);
+        color: #f5f5f7;
+        font-size: 13px;
+        font-weight: 600;
+    }
+    .users-avatar img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .users-name {
+        font-weight: 600;
+        color: #f5f5f7;
+        line-height: 1.2;
+    }
+    .users-sub {
+        margin-top: 2px;
+        color: var(--users-muted);
+        font-size: 12px;
+    }
+    .users-email {
+        color: #e2e5ea;
+        font-size: 14px;
+    }
+    .users-grade {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 34px;
+    }
+    .users-roles {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    .users-actions {
+        display: flex;
+        justify-content: flex-end;
+    }
+    .users-action-btn {
+        display: inline;
+        min-width: 0;
+        height: auto;
+        padding: 0;
+        background: transparent !important;
+        border: none !important;
+        color: #d6d6da;
+        border-radius: 0;
+        font-weight: 400;
+        font-size: 14px;
+        text-decoration: none;
+        box-sizing: border-box;
+        line-height: 1.2;
+    }
+    .users-action-btn:hover {
+        background: transparent !important;
+        border: none !important;
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    .users-pill {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        height: 26px;
+        padding: 0 11px;
+        background: rgba(255, 255, 255, 0.03) !important;
+        border: 1px solid var(--users-border-strong) !important;
+        color: #e6e8ec !important;
+        border-radius: 999px !important;
+        font-size: 12px !important;
+        font-weight: 500 !important;
+        line-height: 1;
+        white-space: nowrap;
+    }
+
+    .users-empty {
+        margin-top: 8px;
+        padding: 52px 20px;
+        border: 1px dashed var(--users-border-strong);
+        border-radius: 12px;
+        text-align: center;
+        color: var(--users-muted);
+        font-size: 14px;
+        background: var(--users-surface);
+    }
+
+    @media (max-width: 760px) {
+        .users-table th:nth-child(2),
+        .users-table td:nth-child(2) {
+            display: none;
+        }
+    }
+
+    @media (max-width: 620px) {
+        .users-table th:nth-child(3),
+        .users-table td:nth-child(3) {
+            display: none;
+        }
+    }
+</style>
+
+{% if users %}
+<div class="users-card">
+        <table class="users-table">
+            <thead>
+                <tr>
+                    <th>User</th>
+                    <th>Email</th>
+                    <th>Grade</th>
+                    <th>Role</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for user in users %}
+            <tr class="users-row" onclick="window.location.href='{{ url_for('admin_user_profile', user_id=user.id) }}'">
+                <td>
+                    <div class="users-user">
+                        <div class="users-avatar">
+                            {% if user.profile_pic %}
+                            <img
+                                src="{{ url_for('static', filename=user.profile_pic) }}"
+                                alt="{{ user.username }} profile photo"
+                                loading="lazy"
+                                onerror="this.remove();"
+                            >
+                            {% else %}
+                            <span>{{ (user.first_name or user.username)[0]|upper }}</span>
+                            {% endif %}
+                        </div>
+                        <div>
+                            <div class="users-name">{{ user.username }}</div>
+                            <div class="users-sub">{{ user.first_name }} {{ user.last_name }}</div>
+                        </div>
+                    </div>
+                </td>
+                <td class="users-email">{{ user.email }}</td>
+                <td>
+                    {% if user.grade %}
+                    <span class="users-pill users-grade">{{ user.grade }}</span>
+                    {% else %}
+                    <span class="users-sub">-</span>
+                    {% endif %}
+                </td>
+                <td>
+                    <div class="users-roles">
+                    {% if user.is_super_admin %}
+                    <span class="users-pill">Owner</span>
+                    {% endif %}
+                    {% if user.is_admin %}
+                    <span class="users-pill">Admin</span>
+                    {% endif %}
+                    {% if user.is_hod %}
+                    <span class="users-pill">HOD</span>
+                    {% endif %}
+                    {% if user.is_teacher or (not user.is_super_admin and not user.is_admin and not user.is_hod) %}
+                    <span class="users-pill">Teacher</span>
+                    {% endif %}
+                    </div>
+                </td>
+                <td onclick="event.stopPropagation();">
+                    <div class="users-actions">
+                        <a href="{{ url_for('admin_user_profile', user_id=user.id) }}" class="users-action-btn">
+                            {% if current_user.is_super_admin and not user.is_super_admin %}Manage{% else %}View{% endif %}
+                        </a>
+                    </div>
+                </td>
+            </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+</div>
+{% else %}
+<div class="users-empty">No users yet.</div>
+{% endif %}
+{% endblock %}

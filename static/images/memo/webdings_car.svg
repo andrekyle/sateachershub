@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 72" fill="#000">
+  <!-- Side-view sedan silhouette (Webdings character code 142) -->
+  <path d="M6 50
+           C4 50 2 48 2 45
+           L2 40
+           C2 37 4 35 7 34
+           L24 30
+           L38 17
+           C41 14 45 12 50 12
+           L84 12
+           C89 12 93 14 96 17
+           L108 30
+           L120 33
+           C124 34 126 37 126 41
+           L126 45
+           C126 48 124 50 121 50
+           L112 50
+           A14 14 0 0 0 84 50
+           L44 50
+           A14 14 0 0 0 16 50
+           Z"/>
+  <!-- Windows (cut-outs drawn in white) -->
+  <path fill="#fff" d="M50 17 L66 17 L66 29 L40 29 Z"/>
+  <path fill="#fff" d="M70 17 L83 17 C86 17 88 18 90 20 L98 29 L70 29 Z"/>
+  <!-- Front wheel -->
+  <circle cx="30" cy="52" r="10"/>
+  <circle cx="30" cy="52" r="4.5" fill="#fff"/>
+  <!-- Rear wheel -->
+  <circle cx="98" cy="52" r="10"/>
+  <circle cx="98" cy="52" r="4.5" fill="#fff"/>
+</svg>

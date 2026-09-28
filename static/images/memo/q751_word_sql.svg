@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 230" font-family="Segoe UI, Arial, sans-serif" font-size="12">
+  <rect x="0.5" y="0.5" width="639" height="229" fill="#fff" stroke="#9a9a9a" stroke-width="1"/>
+  <rect x="0.5" y="0.5" width="639" height="28" fill="#f3f3f3" stroke="#9a9a9a"/>
+  <text x="12" y="19" font-size="13" fill="#222">Microsoft Word</text>
+  <g transform="translate(608,8)" stroke="#444" stroke-width="1.4" fill="none">
+    <line x1="0" y1="0" x2="12" y2="12"/>
+    <line x1="12" y1="0" x2="0" y2="12"/>
+  </g>
+  <g transform="translate(24,58)">
+    <polygon points="14,0 28,26 0,26" fill="#f1f1f1" stroke="#8a8a8a" stroke-width="1.2" stroke-linejoin="round"/>
+    <text x="11" y="22" font-size="18" font-weight="bold" fill="#222">!</text>
+  </g>
+  <text x="70" y="68" fill="#222">Opening this document will run the following SQL command:</text>
+  <text x="70" y="92" fill="#222">SELECT * FROM `Info` WHERE `DateJoined` &gt; = #2000/01/01# And `DateJoined` &lt; = #2020/12/31#</text>
+  <text x="70" y="118" fill="#222">Data from your database will be placed in the document. Do you want to continue?</text>
+  <g transform="translate(24,140)">
+    <rect x="0" y="0" width="92" height="24" fill="#f1f1f1" stroke="#8a8a8a"/>
+    <text x="10" y="16" fill="#222">Show Help &gt;&gt;</text>
+  </g>
+  <line x1="0" y1="180" x2="640" y2="180" stroke="#d0d0d0"/>
+  <g transform="translate(436,194)">
+    <rect x="0" y="0" width="72" height="26" fill="#f1f1f1" stroke="#8a8a8a"/>
+    <text x="28" y="18" fill="#222">Yes</text>
+  </g>
+  <g transform="translate(520,194)">
+    <rect x="0" y="0" width="72" height="26" fill="#f1f1f1" stroke="#3a3a3a" stroke-width="1.4"/>
+    <text x="30" y="18" fill="#222">No</text>
+  </g>
+</svg>

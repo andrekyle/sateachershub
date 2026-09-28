@@ -1,0 +1,633 @@
+
+
+===== PDF PAGE 1 =====
+Confidential
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+COMPUTER APPLICATIONS TECHNOLOGY P1
+MAY/JUNE 2025
+MARKS: 150
+TIME: 3 hours
+This question paper consists of 19 pages, an HTML tag sheet,
+an input mask character sheet, two pages for planning and
+a separate information sheet.
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 2 =====
+Computer Applications Technology/P1 2 DBE/May/June 2025
+SC/NSC Confidential
+INSTRUCTIONS AND INFORMATION
+1. Owing to the nature of this practical examination, it is important to note that,
+even if you complete the examination early, you will NOT be permitted to leave
+the examination room until all the administrative tasks associated with the
+examination have been finalised. During the examination, the standard
+examination rules regarding leaving the examination room apply.
+2. If you are working on the network, or the data files have been preloaded on
+your system, you must follow the instructions provided by the invigilator/
+teacher.
+3. At the end of the examination, you must make sure that ALL your answer files
+are saved on the network/computer as explained to you by the invigilator/
+teacher.
+4. Make absolutely sure that all files can be read. Do NOT save unnecessary
+files/folders and do NOT hand in duplicate answer files/folders. Do NOT
+delete any original files that you did not work on.
+5. The information sheet that has been provided with the question paper MUST
+BE COMPLETED AFTER THE THREE-HOUR EXAMINATION SESSION.
+Hand it to the invigilator at the end of the examination.
+6. A copy of the master files will be available from the invigilator. Should there be
+any problems with a file, you may request another copy from the invigilator.
+7. This question paper consists of SEVEN questions. Answer ALL the questions.
+8. Read through each question before answering or solving the problem. Do NOT
+do more than is required by the question.
+9. Ensure that you save each document using the file name given in the question
+paper. Save your work regularly as a precaution against possible power
+failures.
+10. You may NOT use any resource material.
+11. Accuracy will be taken into account.
+12. Ensure that the regional settings are set to South Africa and date and time
+settings, number settings and currency settings are correctly set.
+13. In all questions involving word processing, you should set the language to
+English (South Africa). The paper size is assumed to be A4 Portrait, unless
+instructed otherwise. Use centimetres as the unit of measurement.
+14. Ensure that the Developer tab and Ruler are activated.
+2025
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 3 =====
+Computer Applications Technology/P1 3 DBE/May/June 2025
+SC/NSC Confidential
+15. Ensure that the decimal symbol is set as a full stop ('.') and the list separator is
+set as a comma (',').
+16. Formulae and/or functions must be used for ALL calculations in questions
+involving spreadsheets. Use absolute cell references only where necessary to
+ensure that formulae are correct when you copy them to other cells in a
+spreadsheet.
+NOTE: All formulae and/or functions should be inserted in such a manner that
+the correct results will still be obtained even if changes are made to the
+existing data.
+17. You may NOT use a word processing program such as Word to answer the
+HTML question.
+18. Borders around images or screenshots in this question paper are intended for
+clarity. Do NOT insert borders unless you are instructed to do so.
+19. Use the correct settings or features in an application as required by a question.
+20. The data files that you need to complete this question paper have been
+provided to you on the disk/CD/DVD/flash disk or on the disk space allocated
+to you. The files are provided in the form of a password-protected executable
+file.
+Do the following:
+• Double-click on the password-protected executable file:
+CAT P1 June 2025 DATA.exe
+• Click on the 'Extract' button.
+• Click the 'Show Password' check box.
+• Enter the following password: e@25
+• Once extracted, verify the contents of the folder by opening one or more
+files.
+• Delete the .exe file.
+• Once the contents of the files have been verified, rename the folder
+CAT P1 June 2025 DATA with your examination number.
+The list of files on the next page will be available in the folder.
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 4 =====
+Computer Applications Technology/P1 4 DBE/May/June 2025
+SC/NSC Confidential
+• 1eSports Word processing file
+• 2Stats Word processing file
+• 2Team Spreadsheet
+• 3Rank Spreadsheet
+• 4Screen Image
+• 4Shop Spreadsheet
+• 5Games Database
+• 6_1Line Image
+• 6_1Logo Image
+• 6_1Tournament HTML file
+• 6_2Entry HTML file
+• 7Podium Image
+• 7Report Word processing file
+• 7Results HTML file
+• 7SA Database
+• 7Staff Spreadsheet
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 5 =====
+Computer Applications Technology/P1 5 DBE/May/June 2025
+SC/NSC Confidential
+SCENARIO
+ESports is a sports competition using video games. There are various tournaments
+where individuals or teams can compete for prizes or money.
+QUESTION 1: WORD PROCESSING
+Open the 1eSports word processing document that contains information about eSports
+and some of the major players of this sport.
+Insert your examination number in the header of the document.
+1.1 Insert the text 'eSports' in the Status property of the document. (1)
+1.2 Change the drop cap applied to the text 'eSports' so that it is left-aligned with
+the rest of the text and dropped at five lines. (2)
+1.3 Modify the 'Win' style as follows:
+• Change the character spacing to a scale of 150% with an expanded spacing
+of 2 pt.
+• Add a preset orange glow text effect of 8 pt. (3)
+1.4 Find and replace all occurrences of the exact word 'games' with the 'Win Char'
+style. (3)
+1.5 Find the image next to the paragraph that starts with 'How eSports
+Competitions Work' and format the picture as follows:
+• Format the picture style to a white rotated border.
+• Change the border colour to light blue.
+• Add an artistic Paint Strokes effect. (3)
+1.6 Edit the footnote on the text 'DOTA 2' as follows:
+• Change the number format to a symbol:
+ (Webdings character code: 185)
+• Convert the footnote to an endnote. (2)
+1.7 Create a new bookmark called 'Sponsor' to replace the current bookmark
+'Organiser'. Make sure the new bookmark still moves to the same location. (2)
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 6 =====
+Computer Applications Technology/P1 6 DBE/May/June 2025
+SC/NSC Confidential
+1.8 Find the SmartArt below the heading 'The growth of eSports' and modify the
+SmartArt to appear as shown in the example below. Use the text below the
+SmartArt.
+NOTE: Ignore the font size.
+(3)
+1.9 Move the SmartArt with the heading so that it always appears at the top of a
+new page. Change the page orientation of only the last two pages to landscape. (2)
+1.10 Add a footer to the document as follows:
+• Insert the built-in ViewMaster (Vertical) footer.
+• Change the page numbers of the last two pages to continue in the format
+A, B, C, ... (2)
+1.11 Find the text below the heading 'Budget for 2026' and change the text into a
+table to appear as shown in the example below.
+(4)
+Save and close the 1eSports document. [27]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 7 =====
+Computer Applications Technology/P1 7 DBE/May/June 2025
+SC/NSC Confidential
+QUESTION 2: WORD PROCESSING
+Open the 2Stats word processing document that contains information about eSports
+statistics, tournaments, prizes and the highest-earning players.
+Insert your examination number in the header of the document.
+2.1 Insert the Slice (Dark) cover page and add the title 'Statistics' in the Title control. (2)
+2.2 Change the layout of the text that starts with 'Viewer Demographics' and ends
+with '… and sponsorship opportunities.' to appear in two columns with a space
+of 1.5 cm and a line between the columns.
+Make sure that the paragraph 'The relationship between …' appears at the top
+of the second column. (4)
+2.3 Find the list below the text 'The following list …' and apply the same bullet style
+and formatting to this list as the other lists in the document. (1)
+2.4 Change the text and the image below the text 'Question/Vraag 2.4' to appear
+as shown in the example below.
+NOTE: The image and the text should move as one object.
+(3)
+2.5 Find the text 'Question/Vraag 2.5' and insert the data from the 2Team
+spreadsheet found in your examination folder as a linked object. (3)
+2.6 Apply any 3-line page border to appear on each side of the document pages. (2)
+2.7 Find the text box at the end of the document and do the following:
+• Insert the total number of words as a field in the format: First, Second,
+Third, …
+• Change the direction of the text to horizontal. (3)
+Save and close the 2Stats document. [18]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 8 =====
+Computer Applications Technology/P1 8 DBE/May/June 2025
+SC/NSC Confidential
+QUESTION 3: SPREADSHEET
+NOTE:
+• Use formulae and/or functions for ALL calculations in the spreadsheet.
+• Use absolute cell references ONLY where necessary to ensure that formulae are
+correct when you copy it to other cells in a spreadsheet.
+• Insert formulae and/or functions in such a manner that the correct results will still be
+obtained even if changes are made to the existing data.
+• Should you need to use building blocks, use the space allocated for this in the
+spreadsheet data file.
+Open the 3Rank spreadsheet that contains information about tournaments and the
+winnings of the players.
+Work in the Sheet1 worksheet.
+3.1 Rename Sheet1 to Medals and move the worksheet to appear as the last
+worksheet in the workbook. (2)
+Work in the Players worksheet.
+3.2 Format the headings in row 5 to appear as shown in the example below.
+(2)
+3.3 Insert a function in cell D3 to determine the fourth highest total prize money
+won by a player for the current year. (2)
+3.4 Insert a formula in cell F6 to calculate what percentage Sven's total prize
+money is of his overall prize money. (1)
+Work in the Tournament worksheet.
+3.5 Insert a function in cell C3 to determine the number of all tournaments held. (1)
+3.6 Insert a function in cell C4 to calculate the total prize money for all tournaments
+held in Washington. (4)
+3.7 An attempt was made to find the three-letter abbreviation of each country from
+the CountryCode worksheet.
+Modify the function in cell F9 so the correct abbreviation will be shown. (4)
+Save and close the 3Rank spreadsheet. [16]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 9 =====
+Computer Applications Technology/P1 9 DBE/May/June 2025
+SC/NSC Confidential
+QUESTION 4: SPREADSHEET
+NOTE:
+• Use formulae and/or functions for ALL calculations in the spreadsheet.
+• Use absolute cell references ONLY where necessary to ensure that formulae are
+correct when you copy it to other cells in a spreadsheet.
+• Insert formulae and/or functions in such a manner that the correct results will still be
+obtained even if changes are made to the existing data.
+• Should you need to use building blocks, use the space allocated for this in the
+spreadsheet data file.
+Open the 4Shop spreadsheet that contains details of products sold during April at the
+Gamers Shop.
+Work in the April worksheet.
+4.1 The shop has a policy which allows a customer to pay off a product on a
+monthly basis over a 24-month period. The customer will pay an extra amount
+for the 24-month contract (column G).
+4.1.1 Insert a function in cell D3 to determine how many customers did not
+take a 24-month contract. (1)
+4.1.2 Insert a formula in cell H10 to determine how much money Jacob
+Msibi must pay each month for the 24-month contract. (3)
+4.2 Use a spreadsheet feature to display the customer name in any green fill colour
+if a customer bought three or more items. (4)
+4.3 The shop will send a notice to a customer with a 24-month contract.
+Insert a function in cell I6 to display the text 'Notice' if a customer has a
+24-month contract; otherwise the cell must be left blank. (5)
+Work in the Games worksheet.
+4.4 Insert a function in cell C3 to determine how many games have a discount
+percentage between 60 and 75 (inclusive). (5)
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 10 =====
+Computer Applications Technology/P1 10 DBE/May/June 2025
+SC/NSC Confidential
+4.5 Create a chart/graph to display as shown in the example below.
+NOTE:
+• Use the 4Screen image in your examination folder.
+• Move the chart to a new sheet called 'Price'.
+(6)
+Save and close the 4Shop spreadsheet. [24]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 11 =====
+Computer Applications Technology/P1 11 DBE/May/June 2025
+SC/NSC Confidential
+QUESTION 5: DATABASE
+A table was created with all the upcoming eSports tournament events.
+Open the 5Games database.
+5.1 Open the tbl5_1 table in Design View.
+5.1.1 Edit the properties of the Tournament field so that the text would not
+exceed 15 characters. (1)
+5.1.2 Change the Date field to display in the format yyyy/mm/dd. Make sure
+a user can choose a date. (2)
+5.1.3 Modify the properties of the Location field so that it displays as shown
+in the example below.
+NOTE:
+• Use the tblCountry table.
+• Select 'Yes' if a warning message appears.
+(3)
+5.1.4 Edit the Prize field so that it only accepts values above R15 000. Add
+any descriptive text that refers to the rule. (2)
+Save and close the tbl5_1 table.
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 12 =====
+Computer Applications Technology/P1 12 DBE/May/June 2025
+SC/NSC Confidential
+5.2 Modify the frm5_2 form to display as shown in the example below.
+NOTE:
+• 10% discount will be given on the registration fee for all the games listed.
+• Use the picture in the form footer.
+Save and close the frm5_2 form. (6 )
+5.3 Create a query named qry5_3, based on the tblGames table.
+Display the Game and Fee fields for ALL the games played from January 2025
+to April 2025. Sort the list in alphabetical order according to the Game field.
+Save and close the qry5_3 query. (4)
+5.4 Open the qry5_4 query based on the tblGames table in Design View.
+Modify the query to display the following:
+• All the classic games AND
+• All the non-action games with a rating higher than 8
+Save and close the qry5_4 query. (4)
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 13 =====
+Computer Applications Technology/P1 13 DBE/May/June 2025
+SC/NSC Confidential
+5.5 Modify the qry5_5 query based on the tblGames table in Design View to
+display as shown in the example below.
+(3)
+Save and close the qry5_5 query.
+5.6 Open the qry5_6 query based on the tblGames table in Design View.
+An incomplete attempt was made to create a code for each game.
+Rename the calculated field as Code and make sure that a combination of
+functions is used to create the code as follows:
+• The first three letters of the game (Game), followed by
+• The month of the GameDate field
+Save and close the qry5_6 query. (4)
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 14 =====
+Computer Applications Technology/P1 14 DBE/May/June 2025
+SC/NSC Confidential
+5.7 Create a report called rpt5_7 based on the tblGames table, as shown in the
+example below.
+NOTE: Ignore the format and border of the text box.
+(6)
+Save and close the rpt5_7 report.
+Save and close the 5Games database. [35]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 15 =====
+Computer Applications Technology/P1 15 DBE/May/June 2025
+SC/NSC Confidential
+QUESTION 6: WEB DESIGN (HTML)
+NOTE:
+• You may NOT use a word processing program such as Word to answer the
+HTML questions.
+• An HTML tag sheet has been attached for reference.
+• All files needed to complete this question can be found in the examination folder.
+Modify a web page about an eSports tournament The Rising Sun School will host.
+6.1 Open the incomplete 6_1Tournament web page in a web browser and also in
+a text/HTML editor (NOT a word processing program such as Word).
+Complete the web page to appear as shown in the example below.
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 16 =====
+Computer Applications Technology/P1 16 DBE/May/June 2025
+SC/NSC Confidential
+NOTE:
+• Use the example on the previous page as a guideline when answering this
+question.
+• Question numbers appear as comments in the coding to indicate where you
+should insert the answer(s). Do NOT delete these comments.
+6.1.1 Modify the body tag to align the text to display as shown in the
+example on the previous page. (1)
+6.1.2 Edit the tag so that the 6_1Logo image will display. Make sure the
+text 'Logo' will display if the image cannot display. (2)
+6.1.3 Format the heading 'Welcome to the Tournament!' to display as the
+second biggest heading. (1)
+6.1.4 Format the text below the heading 'Tournament Details' to display as
+shown in the example on the previous page. (1)
+6.1.5 Modify the HTML code to display a horizontal line above 'Registration'
+with a thickness of 10% and a gold colour. (3)
+6.1.6 Correct the HTML code at the end of the document so that the
+hyperlink will move to the web page. (2)
+Save and close the 6_1Tournament file.
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 17 =====
+Computer Applications Technology/P1 17 DBE/May/June 2025
+SC/NSC Confidential
+6.2 Open the incomplete 6_2Entry web page in a web browser and also in a text/
+HTML editor (NOT a word processing program such as Word).
+Complete the web page to appear as shown in the example below.
+NOTE: The background colour should be light yellow.
+(4)
+Save and close the 6_2Entry file.
+ONE mark will be allocated for closing tags and correct nesting in both web pages. (1)
+[15]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 18 =====
+Computer Applications Technology/P1 18 DBE/May/June 2025
+SC/NSC Confidential
+QUESTION 7: GENERAL
+7.1 Open the 7Report document.
+A general report was created to show the growth potential of eSports in South
+Africa.
+Edit the report as follows:
+7.1.1 Find the heading 'Table of contents' and create a table of contents
+with two levels, below this heading, as follows:
+• Use the 'Gaming' style for level 1, and
+• The 'Heading 3' style for level 2 (3)
+7.1.2 Find the QR code below the text 'Winners of the …' and do the
+following:
+• Link the QR code to the 7Results web page found in your
+examination folder.
+• Add a screen tip called 'Viewing'.
+Save and close the 7Report document. (2)
+7.2 Open the 7Staff spreadsheet.
+The staff members can only be part of the hosting team in the 2025 eSports
+Tournament if they were not a host in the last two years and if they are not
+Game Masters.
+Insert an AND function in cell H5 to determine if Visagie, Werner can be part
+of the hosting team in 2025.
+Save and close the 7Staff spreadsheet. (4)
+7.3 Open the 7SA database in Datasheet View.
+Export the first 20 players from the tblSA table, with ALL the formatting, to a
+new spreadsheet called 7Export in your examination folder.
+Save and close the 7SA database. (3)
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 19 =====
+Computer Applications Technology/P1 19 DBE/May/June 2025
+SC/NSC Confidential
+7.4 Open the incomplete 7Results web page in a web browser and also in a text/
+HTML editor (NOT a word processing program such as Word).
+Complete the web page to appear as shown in the example below.
+NOTE: Add a 3 pt border around the image.
+(3)
+Save and close the 7Results file.
+[15]
+TOTAL: 150
+Copyright reserved
+
+
+===== PDF PAGE 20 =====
+Computer Applications Technology/P1 DBE/May/June 2025
+SC/NSC Confidential
+HTML TAG SHEET
+Basic Tags Formatting Tags continued
+Tag Description Tag Description
+Defines the body of the web Inserted before each list item,
+<body></body>
+page and adds a number or symbol
+<li></li>
+<body Sets the background colour of depending on the type of list
+bgcolor="pink"> the web page selected
+<body text="black"> Sets the colour of the body text <img src="name"/> Adds an image
+Contains information about the <img src="name" Aligns an image: can be
+<head></head>
+web page align="left"/> "right", "bottom", "top"
+Creates an HTML document – <p align="center"><img Aligns an image in the
+<html></html>
+starts and ends a web page src="name"/></p> "center", can also be "middle"
+<img src="name" Sets the size of the border
+<title></title> Defines a title for the web page
+border="1"/> around an image
+<br/> Inserts a line break <img src="name"
+Sets the height and width of an
+width="200" height
+<!-- --> Comment image
+="200"/>
+Text Tags Displays alternative text when
+Tag Description <img src="name" the mouse hovers over the
+alt="alternative text"/> image or when the image is
+<h1></h1> Creates the largest heading
+not found
+<h6></h6> Creates the smallest heading <hr/> Inserts a horizontal line
+<b></b> Creates bold text <hr size="3"/> Sets size (height) of a line
+<i></i> Creates italic text
+Sets the width of a line, in
+<u></u> Creates underlined text <hr width=”80%”/>
+percentage or absolute value
+<font size="3"></font> Sets size of font, from "1" to "7"
+<font color= "green">
+Sets font colour <hr color= "ff0000"/> Sets the colour of the line
+</font>
+<font face="Times New Table Tags
+Sets font type
+Roman"></font> Tag Description
+Links Tags <table></table> Creates a table
+Tag Description <tr></tr> Creates a row in a table
+<a href="URL"></a> Creates a hyperlink <td></td> Creates a cell in a table
+<a href="URL"><img
+Creates an image link
+src="name"/></a> Creates a table header (a cell
+<th></th>
+Creates a target location in the with bold, centred text)
+<a name="NAME"></a>
+document
+Links to a target location
+<a href="#NAME"></a> created somewhere else in the <table width="50"> Sets the width of the table
+document
+<a href= Sets the width of the border
+Links to an e-mail address <table border="1">
+"mailto:#NAME"></a> around the table cells
+Formatting Tags Sets the space between the
+<table cellspacing="1">
+Tag Description table cells
+Sets the space between a cell
+<p></p> Creates a new paragraph <table cellpadding="1">
+border and its contents
+Aligns a paragraph to the "left"
+Sets the alignment for cell(s)
+<p align="left"> (default), can also be "right" or
+<tr align="left"> ("left", can also be "center" or
+"center"
+"right")
+Horizontally centres text, a
+<center></center>
+section, table or an image
+Sets the vertical alignment for
+<ol type="A","a", Defines the type of numbering
+<tr valign="top"> cell(s) ("top", can also be
+"I","i","1"></ol> used
+"middle" or "bottom")
+<ol></ol> Creates a numbered list
+<ol type="A","a", Defines the type of numbering Sets the number of columns a
+<td colspan="2">
+"I","i","1"></ol> used cell should span
+<ul></ul> Creates a bulleted list
+Sets the number of rows a cell
+<ul type="disc", <td rowspan="4">
+Defines the type of bullets used should span
+"square","circle"> </ul>
+Copyright reserved
+
+
+===== PDF PAGE 21 =====
+Computer Applications Technology/P1 DBE/May/June 2025
+SC/NSC Confidential
+INPUT MASK CHARACTER SHEET
+CHARACTER DESCRIPTION
+0 Digit (0 to 9, entry required, plus [+] and minus [–] signs not allowed)
+9 Digit or space (entry not required, plus [+] and minus [–] signs not allowed)
+Digit or space (entry not required; spaces are displayed as blanks while
+# in Edit mode, but blanks are removed when data is saved; plus [+] and
+minus [–] signs allowed)
+L Letter (A to Z, entry required)
+? Letter (A to Z, entry optional)
+A Letter or digit (entry required)
+a Letter or digit (entry optional)
+& Any character or a space (entry required)
+C Any character or a space (entry optional)
+Decimal placeholder and thousand, date and time separators (The actual
+. , : ; - / character used depends on the settings in the Regional Settings
+Properties dialog box in the Windows Control Panel.)
+< Causes all characters to be converted to lower case
+> Causes all characters to be converted to upper case
+Causes the input mask to display from right to left, rather than from left to
+! right. Characters typed into the mask always fill it from left to right. You can
+include the exclamation mark anywhere in the input mask.
+Causes the character that follows to be displayed as the literal character
+\
+(e.g. \A is displayed as just A)
+Copyright reserved
+
+
+===== PDF PAGE 22 =====
+Computer Applications Technology/P1 DBE/May/June 2025
+SC/NSC Confidential
+YOU MAY USE THIS PAGE FOR ANY PLANNING PURPOSES.
+Copyright reserved
+
+
+===== PDF PAGE 23 =====
+Computer Applications Technology/P1 DBE/May/June 2025
+SC/NSC Confidential
+YOU MAY USE THIS PAGE FOR ANY PLANNING PURPOSES.
+Copyright reserved
+
+
+===== PDF PAGE 24 =====
+Computer Applications Technology/P1 DBE/May/June 2025
+SC/NSC Confidential
+Examin ation sticker
+150
+COMPUTER APPLICATIONS TECHNOLOGY P1 – MAY/JUNE 2025
+INFORMATION SHEET (to be completed by the candidate AFTER the 3-hour session)
+CENTRE NUMBER ________________________________________________________
+EXAMINATION NUMBER ____________________________________________________
+WORK STATION NUMBER __________________________________________________
+SUITE USED
+Microsoft Microsoft Microsoft
+(Mark appropriate Office 365
+Office 2016 Office 2019 Office 2021
+box with a cross (X))
+WEB BROWSER USED Other
+Mozilla Google Internet Microsoft
+(Mark appropriate (Specify)
+Firefox Chrome Explorer Edge
+box with a cross (X))
+FOLDER NAME ___________________________________________________________
+Candidate must enter the file name(s) used for each answer. Tick if saved and/or attempted.
+Marker
+Question Saved Attempted Maximum Mark
+File name Initial/
+Number () () Mark Achieved
+Code
+1 1eSports 27
+2 2Stats 18
+3 3Rank 16
+4 4Shop 24
+5 5Games 35
+6_1Tournament
+6 15
+6_2Entry
+7Report
+7Staff
+7 15
+7Export
+7Results
+TOTAL 150
+Comment: (for office/marker use only)
+________________________________________________________________________
+________________________________________________________________________
+Copyright reserved

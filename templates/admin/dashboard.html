@@ -1,0 +1,215 @@
+﻿{% extends "lms_base.html" %}
+{% block extra_css %}
+<style>
+  body { background: #0c0d0f !important; padding-top: 0 !important; color: #e6e7eb; }
+  main { padding: 0 !important; }
+  .sath-nav { background: transparent !important; border-bottom: none !important; }
+  .sath-brand,
+  .sath-links a,
+  .sath-links a.active,
+  .sath-links a.sath-admin,
+  .sath-links a:hover,
+  .sath-cta a:not(.sath-primary),
+  .sath-mobile-toggle { color: #e6e7eb !important; }
+  .sath-brand .sath-brand-accent { color: #e6e7eb !important; }
+  .sath-cta a.sath-primary { color: #0c0d0f !important; background:#e6e7eb !important; }
+</style>
+{% endblock %}
+{% block title %}Admin — South African Teachers Hub{% endblock %}
+{% block content %}
+<style>
+    .ax-wrap { max-width: 1320px; margin: 0 auto; padding: 30px 24px 80px; }
+
+    .ax-header { margin: 0 0 32px; padding: 0 4px 22px; border-bottom: 1px solid rgba(255,255,255,0.08); }
+    .ax-eyebrow {
+        font-size: 12px; font-weight: 500;
+        text-transform: none; letter-spacing: 0;
+        color: #94969c;
+        margin: 0 0 4px;
+        display: inline-flex; align-items: center; gap: 8px;
+    }
+    .ax-eyebrow i { color: #94969c; font-size: 12px; }
+    .ax-title {
+        font-size: 28px;
+        font-weight: 600; letter-spacing: -0.4px; line-height: 1.2;
+        color: #f5f5f6; margin: 0 0 6px;
+    }
+    .ax-sub { font-size: 14px; color: #94969c; margin: 0; letter-spacing: 0; }
+
+    /* Stat tiles ------------------------------------------------ */
+    .ax-stats {
+        display: grid; gap: 16px; margin-bottom: 36px;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 320px));
+        justify-content: start;
+    }
+    .ax-stat {
+        position: relative;
+        background: #131418;
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 12px;
+        padding: 20px;
+        min-height: 180px;
+        text-decoration: none; color: inherit;
+        display: flex; flex-direction: column;
+        transition: border-color .15s, background .15s;
+    }
+    .ax-stat:hover { border-color: rgba(255,255,255,0.18); background: #161719; }
+    .ax-stat-row { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 18px; }
+    .ax-stat-icon {
+        width: 36px; height: 36px; border-radius: 8px;
+        display: inline-flex; align-items: center; justify-content: center;
+        background: rgba(255,255,255,0.04);
+        border: 1px solid rgba(255,255,255,0.08);
+        color: #cecfd2;
+    }
+    .ax-stat-icon i { font-size: 15px; color: #cecfd2; }
+    .ax-stat.s-blue   .ax-stat-icon i,
+    .ax-stat.s-green  .ax-stat-icon i,
+    .ax-stat.s-purple .ax-stat-icon i,
+    .ax-stat.s-amber  .ax-stat-icon i { color: #cecfd2; }
+
+    .ax-stat-arrow {
+        width: 28px; height: 28px; border-radius: 999px;
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.10);
+        display: inline-flex; align-items: center; justify-content: center;
+        color: #94969c; font-size: 11px;
+        transition: background .12s, color .12s, border-color .12s;
+    }
+    .ax-stat:hover .ax-stat-arrow { border-color: rgba(255,255,255,0.22); color: #f5f5f6; }
+
+    .ax-stat-num {
+        font-size: 32px; font-weight: 600; line-height: 1;
+        letter-spacing: -0.6px; color: #f5f5f6;
+        margin-bottom: 8px; font-variant-numeric: tabular-nums;
+    }
+    .ax-stat-label {
+        font-size: 12px; font-weight: 500;
+        text-transform: none; letter-spacing: 0;
+        color: #94969c;
+    }
+
+    /* Two-column lists ------------------------------------------- */
+    .ax-cols { display: grid; gap: 16px; grid-template-columns: 1fr; }
+    @media (min-width: 880px) { .ax-cols { grid-template-columns: 1fr 1fr; } }
+
+    .ax-card {
+        background: #131418;
+        border: 1px solid rgba(255,255,255,0.08);
+        border-radius: 12px; overflow: hidden;
+    }
+    .ax-card-head {
+        display: flex; align-items: center; justify-content: space-between;
+        padding: 22px 24px 16px;
+    }
+    .ax-card-title {
+        font-size: 11px; font-weight: 600;
+        text-transform: uppercase; letter-spacing: 1.8px;
+        color: rgba(255,255,255,0.55);
+        margin: 0;
+    }
+    .ax-card-link {
+        font-size: 12px; color: rgba(255,255,255,0.5); text-decoration: none;
+        font-weight: 500;
+    }
+    .ax-card-link:hover { color: #fff; }
+
+    .ax-row {
+        display: flex; align-items: center; gap: 14px;
+        padding: 14px 24px;
+        border-top: 1px solid rgba(255,255,255,0.05);
+        transition: background .15s;
+    }
+    .ax-row:hover { background: rgba(255,255,255,0.025); }
+    .ax-avatar {
+        width: 36px; height: 36px; border-radius: 50%;
+        background: linear-gradient(135deg, #2a2d33, #4b515b);
+        display: inline-flex; align-items: center; justify-content: center;
+        font-size: 13px; font-weight: 700; color: #fff; flex-shrink: 0;
+        letter-spacing: -0.5px;
+    }
+    .ax-row-body { flex: 1; min-width: 0; }
+    .ax-row-name { font-size: 14px; font-weight: 600; color: #fff; letter-spacing: -0.2px; margin-bottom: 2px; }
+    .ax-row-meta { font-size: 12px; color: rgba(255,255,255,0.5); letter-spacing: -0.05px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .ax-row-courses { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 5px; }
+    .ax-course-pill {
+        font-size: 11px; font-weight: 500;
+        background: rgba(255,255,255,0.07);
+        border: 1px solid rgba(255,255,255,0.1);
+        color: rgba(255,255,255,0.7);
+        padding: 2px 9px; border-radius: 980px;
+        white-space: nowrap;
+    }
+    /* enrollment dropdown */
+    .ax-enroll-row {
+        padding: 12px 16px;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+    .ax-enroll-row:last-child { border-bottom: 0; }
+    .ax-enroll-trigger {
+        display: grid; grid-template-columns: 32px 1fr auto auto;
+        gap: 12px; align-items: center;
+        cursor: pointer; user-select: none;
+    }
+    .ax-enroll-trigger:hover .ax-row-name { color: #fff; }
+    .ax-enroll-chevron {
+        font-size: 11px; color: rgba(255,255,255,0.4);
+        transition: transform .2s ease;
+        margin-right: 4px;
+    }
+    .ax-enroll-row.open .ax-enroll-chevron { transform: rotate(90deg); }
+    .ax-enroll-courses {
+        display: none;
+        flex-direction: column; gap: 0;
+        padding: 6px 0 4px 44px;
+    }
+    .ax-enroll-row.open .ax-enroll-courses { display: flex; }
+    .ax-enroll-course-item {
+        font-size: 12.5px; color: rgba(255,255,255,0.55);
+        padding: 4px 0;
+        border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .ax-enroll-course-item:last-child { border-bottom: 0; }
+    .ax-row-side { font-size: 12px; color: rgba(255,255,255,0.45); font-weight: 500; flex-shrink: 0; }
+    .ax-score {
+        font-size: 14px; font-weight: 700; letter-spacing: -0.4px; flex-shrink: 0;
+        font-variant-numeric: tabular-nums;
+    }
+    .ax-score.pass { color: #6CCB5F; }
+    .ax-score.fail { color: #FF6F61; }
+
+    .ax-empty {
+        padding: 36px 24px; text-align: center;
+        font-size: 13px; color: rgba(255,255,255,0.4);
+    }
+
+    @media (max-width: 720px) {
+        .ax-wrap { padding: 4px 16px 56px; }
+        .ax-stats { grid-template-columns: 1fr; }
+        .ax-stat { padding: 20px; }
+        .ax-stat-num { font-size: 32px; }
+    }
+</style>
+
+<div class="ax-wrap">
+
+    <header class="ax-header">
+        <p class="ax-eyebrow"><i class="fas fa-shield-halved"></i> Admin</p>
+        <h1 class="ax-title">Control center.</h1>
+        <p class="ax-sub">Manage learners across the platform.</p>
+    </header>
+
+    <!-- Stat tiles -->
+    <div class="ax-stats">
+        <a href="{{ url_for('admin_users') }}" class="ax-stat s-amber">
+            <div class="ax-stat-row">
+                <div class="ax-stat-icon"><i class="fas fa-users"></i></div>
+                <span class="ax-stat-arrow"><i class="fas fa-arrow-right"></i></span>
+            </div>
+            <div class="ax-stat-num">{{ stats.users }}</div>
+            <div class="ax-stat-label">Users</div>
+        </a>
+    </div>
+
+</div>
+{% endblock %}

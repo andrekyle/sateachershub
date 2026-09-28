@@ -1,0 +1,628 @@
+﻿
+
+CAT P1 Nov 2022 
+
+CAT P1 Nov 2022
+
+Print / Save as PDF 
+
+Edit 
+
+Close 
+
+Past Paper Template
+
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+
+COMPUTER APPLICATIONS TECHNOLOGY P1
+
+NOVEMBER 2022
+
+MARKS: 180
+
+TIME: 3 Hours
+
+This question paper consists of 3 pages.
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+2 
+DBE/November 2022 
+
+INSTRUCTIONS AND INFORMATION
+
+Owing to the nature of this practical examination, it is important to note that, even if you complete the examination early, you will NOT be permitted to leave the examination room until all the administrative tasks associated with the examination have been finalised. During the examination, the standard examination rules regarding leaving the examination room apply. 
+
+If you are working on the network, or the data files have been preloaded on your system, you must follow the instructions provided by the invigilator/teacher. 
+
+At the end of the examination, you must make sure that ALL your answer files are saved on the network/computer as explained to you by the invigilator/teacher. 
+
+Make absolutely sure that all files can be read. Do NOT save unnecessary files/folders and do NOT hand in duplicate answer files/folders. Do NOT delete any original files that you did not work on. 
+
+The information sheet that has been provided with the question paper MUST BE COMPLETED AFTER THE THREE-HOUR EXAMINATION SESSION. Hand it to the invigilator at the end of the examination. 
+
+A copy of the master files will be available from the invigilator. Should there be any problems with a file, you may request another copy from the invigilator. 
+
+This question paper consists of SEVEN questions. Answer ALL the questions. 
+
+Read through each question before answering or solving the problem. Do NOT do more than is required by the question. 
+
+Ensure that you save each document using the file name given in the question paper. Save your work regularly as a precaution against possible power failures. 
+
+You may NOT use any resource material. 
+
+Accuracy will be taken into account. 
+
+Ensure that the regional settings are set to South Africa and date and time settings, number settings and currency settings are correctly set. 
+
+In all questions involving word processing, you should set the language to English (South Africa). The paper size is assumed to be A4 Portrait, unless instructed otherwise. Use centimetres as the unit of measurement. 
+
+Ensure that the Developer tab and Ruler are activated. 
+
+Ensure that the decimal symbol is set as a full stop ( . ) and the list separator is set as a comma ( , ). 
+
+Formulae and/or functions must be used for ALL calculations in questions involving spreadsheets. Use absolute cell references only where necessary to ensure that formulae are correct when you copy them to other cells in a spreadsheet. 
+
+NOTE: All formulae and/or functions should be inserted in such a manner that the correct results will still be obtained even if changes are made to the existing data.
+
+You may NOT use a word processing program such as Word to answer the HTML question. 
+
+Borders around images or screenshots in this question paper are intended for clarity. Do NOT insert borders unless you are instructed to do so. 
+
+Copyright reserved Please turn over 
+
+Computer Applications Technology/P1 
+3 
+DBE/November 2022 
+
+Use the correct settings or features in an application as required by a question. 
+
+The data files that you need to complete this question paper have been provided to you on the disk/CD/DVD/flash disk or on the disk space allocated to you. 
+
+Do the following:
+
+Verify the contents of the folder by opening one or more files. 
+
+Rename the folder with your examination number. 
+
+The list of files in the folder will be available on the next page.
+
+Copyright reserved Please turn over 
+
+Computer Applications Technology/P1 
+4 
+DBE/November 2022 
+
+SECTION A
+
+QUESTION 1: PRACTICAL
+
+1.1
+
+Change the font of the text Extract from Report to small caps. 
+
+(1)
+
+1.2
+
+Apply a text fill effect to the WordArt text KWAZULU-NATAL TOURISM as follows: Rectangular type gradient fill First gradient stop at the 60% position 
+
+(3)
+
+1.3
+
+Modify the style named Showcasting so that all the subheadings will display as shown below. 
+
+(3)
+
+1.4
+
+Find the citation in the third paragraph that refers to the (Department of Statistics South Africa) . Convert the citation to static text. 
+
+(1)
+
+1.5
+
+Find the text Question/Vraag 1.5 and replace it with a Circle Relationship SmartArt graphic as shown below. Format the font size of the text Tourism to 14 pt. 
+
+(4)
+
+1.6
+
+Find and replace all occurrences of the exact word tourism with a highlighted word tourism . 
+
+(2)
+
+1.7
+
+Find the text that starts with PUBLIC RELATIONS AND … and ends with … effects of the pandemic. and do the following: Place the text in two columns. Change the page orientation of ONLY this text to landscape. 
+
+(2)
+
+1.8
+
+Find the heading Pandemic and mark it as an index entry AND add a subentry called Covid to this main index entry. 
+
+(1)
+
+1.9
+
+Insert a bibliography in the Harvard – Anglia bibliography style below the text Question/Vraag 1.9 . 
+
+(2)
+
+1.10
+
+(3) Insert an index below the text Question/Vraag 1.10 so that the page numbers will be right-aligned with a solid line tab leader. Save and DO NOT CLOSE the 1Tourism document. 
+
+(3)
+
+1.11
+
+Do the following: Open the file 1Poster using the P1* password. Paste the group of five images from the 1Poster document into the 1Tourism document below the text Question/Vraag 1.11 . Edit the group of five images to appear as shown in the screenshot below. (4) Save and close the 1Tourism document and the 1Poster document. 
+
+(4)
+
+[26]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+5 
+DBE/November 2022 
+
+QUESTION 2: PRACTICAL
+
+2.1
+
+Modify the Drop Cap W found in the first paragraph as follows: Position the Drop Cap so that it does not appear in the margin. Format the Drop Cap to drop over three lines and set the distance between the Drop Cap and the text to 0.5 cm. 
+
+(3)
+
+2.2
+
+Insert a 3 pt paragraph border around the text that starts with Please share via … and that ends with … the number of shares. . 
+
+(2)
+
+2.3
+
+Create a link on the text Win! Win! Win! to navigate to the following website: https://gosafari.co.za 
+
+(1)
+
+2.4
+
+Edit the form below the heading Competition form as follows: 
+
+2.4.1
+
+Replace the text Question/Vraag 2.4.1 with an appropriate form control with the following options: 35 35 – 55 55 
+
+(2)
+
+2.4.2
+
+Format the Cell Number field to an appropriate data type and length. 
+
+(2)
+
+2.4.3
+
+The number of extra entries will be twice the number of times a person shared the form via WhatsApp. Modify the Extra entries field to calculate how many extra entries a person will get. HINT: Use the bookmark name inside the Number shared field. 
+
+(3)
+
+2.5
+
+Find the text that starts with Backpackers … and ends with … friends and family and apply a word processing feature to display the text as shown below. 
+
+(2)
+
+2.6
+
+Add a signature line below the text Question/Vraag 2.6 AND allow the signer to add comments. 
+
+(2)
+
+2.7
+
+Find the heading Competition Terms and Conditions and do the following: Change the character spacing of this text to condensed. (2) Change the paragraph spacing of the text below this heading to 15 pt after. Save and close the 2Competition document. 
+
+(2)
+
+[19]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+6 
+DBE/November 2022 
+
+QUESTION 3: PRACTICAL
+
+3.1
+
+Format cell A3 to appear exactly the same as cell A19. 
+
+(1)
+
+3.2
+
+Format cells A4:G4 to display as shown below. Domestic Recreation Food and Month Accommodation transport and culture Shopping Question 3.4 beverages Maand Verblyf Binnelandse Ontspanning Inkopies Vraag 3.4 Kos en drank vervoer en kultuur 
+
+(2)
+
+3.3
+
+Eight job opportunities were created for every R100 000 that tourists spent on accommodation. Insert a formula in cell B18 to determine the number of jobs that were created in 2020. Round off your answer to the next whole number. 
+
+(4)
+
+3.4
+
+The monthly total in column G is calculated by adding the amounts in each column (columns B to F). If a cell in one of the columns is empty, the cell in column G must also be empty. Insert a combination of functions in cell G5 to display the total spending for the month (January) and which will leave the cell empty if any data is missing in that row. Copy the function down to cells G6:G16. 
+
+(5)
+
+3.5
+
+(4) Apply conditional formatting to cells F20:F31 to format the cells with a blue fill colour when the amount for shopping in a particular month in 2021 is greater than the amount for shopping in the same month in 2020. Work in the Chart worksheet. 
+
+(4)
+
+3.6
+
+The graph/chart shows a comparison of the spending on food and beverages for every month of 2020 and 2021. Modify the graph/chart to appear as shown below. (5) NOTE: The series values were incorrectly applied for 2021. Save and close the 3Tourists spreadsheet. 
+
+(5)
+
+[21]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+7 
+DBE/November 2022 
+
+QUESTION 4: PRACTICAL
+
+4.1
+
+Insert a function in cell D3 to determine the most lions seen on any game drive. 
+
+(1)
+
+4.2
+
+Insert a SUMIFS function in cell D4 to determine the total number of lions seen at the Mpila Camp (column C) where the sightings included cubs. 
+
+(5)
+
+4.3
+
+Insert a VLOOKUP function in cell A7 to display the surname of the ranger based on the ID of the ranger and the list in the Rangers worksheet. 
+
+(3)
+
+4.4
+
+Game drives are classified as follows: Part of day Time of day Morning Start before 12:00 Afternoon Start from 12:00 and end before 17:30 Night Start from 17:30 Insert a nested IF function in cell D7 to classify the game drive time using the time in cell E7 and the time of day in cells J1:O3. 
+
+(6)
+
+4.5
+
+Each game drive lasts 2 hours and 45 minutes. (4) Insert a TIME function in cell F7 to display the time the game drive will end. Save and close the 4Sightings spreadsheet. 
+
+(4)
+
+[19]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+8 
+DBE/November 2022 
+
+QUESTION 5: PRACTICAL
+
+5.1
+
+Open the tbl5_1 table in Design View and edit it as follows: 
+
+5.1.1
+
+Change the field properties of the Surname field so that the field may not be left blank. 
+
+(1)
+
+5.1.2
+
+Each traveller has a unique code that automatically links his/her details to the agency, e.g. h020530@tvl, a990522@tvl, etc. Insert an input mask on the MemberNo field in the following lowercase format: First letter of the traveller s surname, followed by The date of birth as it appears in the ID number, followed by @tvl 
+
+(4)
+
+5.1.3
+
+Change the field properties of the TravelDate field as follows: Apply the medium date format. Set the Date Picker so that it will not display. 
+
+(2)
+
+5.1.4
+
+The Accommodation field should display options for accommodation types from the tblAccommodation table. Edit the field properties of the Accommodation field to display the types of accommodation where tourists can stay. 
+
+(1)
+
+5.1.5
+
+(3) Insert a field named IDCopy below the Surname field that will link to a certified copy of an identity document. Save and close the tbl5_1 table. 
+
+(3)
+
+5.2
+
+Open the frm5_2 form, based on the tblInfo table, in Design View. Modify the form to display as shown in the example below. NOTE: Insert the 5Logo image to be 9 cm wide and 4 cm high. Add a validation rule property to the Date field to only accept dates in the years 2023 to 2025. Save the changes to the form BEFORE testing your answer. Save and close the frm5_2 form. (5 ) 
+
+(1)
+
+5.3
+
+Open the query called qry5_3, based on the tblInfo table, in Design View. Display the records of all the travellers who booked in a group size of more than three people through the EasyStay booking agent and will be using a taxi or private option for transport. Save and close the qry5_3 query. 
+
+(5)
+
+5.4
+
+Open the qry5_4 query, based on the tblInfo table, in Design View. Display the total cost per booking agent. Save and close the qry5_4 query. 
+
+(2)
+
+5.5
+
+Open the qry5_5 query, based on the tblInfo table, in Design View. The calculated field Year determines whether a traveller was born in the year 19.. or the year 20.. . DO NOT modify the Year field. Insert a new calculated field DOB to combine the value in the Year field and the date of birth in the ID field to display as yyyymmdd, e.g. 19920731, 20051012, etc. Save and close the qry5_5 query. 
+
+(6)
+
+5.6
+
+Create a report called rpt5_6, based on the tblInfo table as follows: Display the Surname, Name, GroupSize, Accommodation and Transport fields. Display the total number of people per transport type in the group footer. Sort the information according to the Surname field. (6) Save and close the rpt5_6 report. Save and close the 5Bookings database. 
+
+(6)
+
+[31]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+9 
+DBE/November 2022 
+
+QUESTION 6: PRACTICAL
+
+6.1
+
+Open the incomplete 6_1Dolphin file in a web browser and also in a text/HTML editor. NOTE: Use the example above as a guide when answering this question. Question numbers appear as comments in the coding to indicate where you should insert the answer(s). DO NOT delete these comments. 
+
+6.1.1
+
+Add an attribute to the body tag so that the whole web page will display in a blue font colour. 
+
+(1)
+
+6.1.2
+
+Add tags to make the text Did you know? display as a level two heading. 
+
+(1)
+
+6.1.3
+
+Format the text that starts with The Dolphin Coast … and that ends with … year-round tropical climate. , as shown in the screenshot. 
+
+(1)
+
+6.1.4
+
+Create a link to the e-mail address, as shown at the bottom of the web page. (3) Save and close the 6_1Dolphin file. 
+
+(3)
+
+6.2
+
+Open the incomplete 6_2Heritage web page in a web browser and also in a text/HTML editor. Complete the web page to look exactly as shown in the example below. NOTE: The background colour of the table is beige. Save and close the 6_2Heritage file. ONE mark will be allocated for correctly closing tags and correctly nesting in both the files. 
+
+(9)
+
+[15]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P1 
+10 
+DBE/November 2022 
+
+QUESTION 7: PRACTICAL
+
+7.1
+
+Open the 7Map file. 
+
+7.1.1
+
+Insert a calculation in the table to determine the percentage of KwaZulu-Natal s contribution to tourism in South Africa. 
+
+(2)
+
+7.1.2
+
+Insert the value of the contribution of KwaZulu-Natal in the textbox provided. (3) Format and position the textbox to resemble the screenshot below. Save and close the 7Map document. 
+
+(3)
+
+7.2
+
+Open the 7TravelMode database. Import the 7Travellers spreadsheet as a linked table named Info in the 7TravelMode database. (3) Set the first row to appear as column headings. Save and close the 7TravelMode database. 
+
+(3)
+
+7.3
+
+Open the 7BigFive spreadsheet. The KZN Travel Agency is running a competition to promote awareness of the Big Five animals. As tourists see the animals within the week, it is recorded in cells B2:H7. Each animal seen can be recorded only ONCE during the week. Determine whether a tourist has seen all the Big Five animals (B10:B15) at the end of the week, by using the following steps: The data in cells I2:O7 will indicate whether each animal seen, is part of the Big Five or not. Use an OR function (NOT an IF statement) in cell M2 to determine whether the animal in cell F2 is a Big Five animal or not. Copy the function down to the other cells. (7) Use a formula in cell P3 to determine whether Bonakele saw all the Big Five animals. Save and close the 7BigFive spreadsheet. [15] TOTAL: 150 HTML TAG SHEET Basic Tags Formatting Tags continued Tag Description Tag Description Defines the body of the web Inserted before each list item, page and adds a number or symbol body Sets the background colour of depending on the type of list bgcolor= pink the web page selected Sets the colour of the body text Adds an image Contains information about the img src= name Aligns an image: can be right , web page align= left bottom , top Creates an HTML document – img Aligns an image in the center , starts and ends a web page src= name can also be middle img src= name Sets the size of the border Defines a title for the web page border= 1 around an image Inserts a line break img src= name Sets the height and width of an width= 200 height Comment image = 200 Text Tags Displays alternative text when Tag Description img src= name the mouse hovers over an alt= alternative text image or when the image is not Creates the largest heading found Creates the smallest heading Inserts a horizontal line Creates bold text Sets size (height) of a line Creates italic text Sets the width of a line, in Creates underlined text percentage or absolute value Sets size of font, from 1 to 7 Sets font colour Sets the colour of the line font face= Times New Table Tags Sets font type Roman Tag Description Links Tags Creates a table Tag Description Creates a row in a table Creates a hyperlink Creates a cell in a table img Creates an image link src= name Creates a table header (a cell Creates a target location in the with bold, centred text) document Links to a target location created somewhere else in the Sets the width of the table document a href= Sets the width of the border Links to an e-mail address mailto:#NAME around the table cells Sets the space between the Formatting Tags table cells Sets the space between a cell Tag Description border and its contents Creates a new paragraph Sets the alignment for cell(s) Aligns a paragraph to the left ( left , can also be center or (default), can also be right or right ) center Horizontally centres text, a section, table or an image Sets the vertical alignment for Creates a numbered list cell(s) ( top , can also be middle or bottom ) ol type= A , a , Defines the type of numbering I , i , 1 used Sets the number of columns a Creates a bulleted list cell should span ul type= disc , 
+
+(1)
+
+[9]
+
+TOTAL SECTION A: [140]
+
+GRAND TOTAL: 180
+
+Copyright reserved 
+
+Computer Applications Technology/P1 
+11 
+DBE/November 2022 
+
+Computer Applications Technology 
+DBE/May/June 2025 
+
+SC/NSC Confidential
+
+Examination sticker
+
+156
+
+COMPUTER APPLICATIONS TECHNOLOGY P1 – MAY/JUNE 2025
+
+INFORMATION SHEET (to be completed by the candidate AFTER the 3-hour session) 
+
+CENTRE NUMBER 
+
+EXAMINATION NUMBER 
+
+WORK STATION NUMBER 
+
+SUITE USED (Mark appropriate box with a cross (X)) 
+
+Microsoft Office 2016
+
+Microsoft Office 2019
+
+Microsoft Office 2021
+
+Office 365
+
+WEB BROWSER USED (Mark appropriate box with a cross (X)) 
+
+Mozilla Firefox
+
+Google Chrome
+
+Internet Explorer
+
+Microsoft Edge
+
+Other (Specify)
+
+FOLDER NAME 
+
+Candidate must enter the file name(s) used for each answer. Tick if saved and/or attempted.
+
+Question
+Number
+
+File name
+
+Saved
+(✓)
+
+Attempted
+(✓)
+
+Maximum
+Mark
+
+Mark
+Achieved
+
+Marker
+Initial/
+Code
+
+1
+
+1eSports
+
+27
+
+2
+
+2Stats
+
+19
+
+3
+
+3Rank
+
+21
+
+4
+
+4Shop
+
+24
+
+5
+
+5Games
+
+35
+
+6
+
+6_1Tournament
+
+15
+
+6_2Entry
+
+7
+
+7Report
+
+15
+
+7Staff
+
+7Export
+
+7Results
+
+TOTAL
+
+156
+
+Comment: (for office/marker use only) 
+
+Copyright reserved
+
+Copyright reserved

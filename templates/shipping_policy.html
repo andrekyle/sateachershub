@@ -1,0 +1,179 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Shipping Policy - South African Teachers Hub{% endblock %}
+
+{% block content %}
+<div class="min-h-screen bg-gray-50 py-12">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        <!-- Page Header -->
+        <div class="mb-8">
+            <h1 class="text-3xl font-light mb-2" style="color: #0078D4;">Shipping Policy</h1>
+            <p class="text-sm font-light text-gray-600">Last updated: October 2025</p>
+        </div>
+
+        <!-- Overview Section -->
+        <div class="bg-white rounded-lg shadow-sm mb-6 p-6" style="border: 0.5px solid #E5E7EB;">
+            <h2 class="text-xl font-light text-black mb-4">Overview</h2>
+            <p class="text-sm font-light text-gray-700 leading-relaxed">
+                At South African Teachers Hub, we strive to deliver your orders as quickly and efficiently as possible. 
+                We offer multiple shipping options to suit your needs, whether you need your items urgently 
+                or prefer a more economical delivery method.
+            </p>
+        </div>
+
+        <!-- Shipping Options -->
+        <div class="bg-white rounded-lg shadow-sm mb-6 p-6" style="border: 0.5px solid #E5E7EB;">
+            <h2 class="text-xl font-light text-black mb-6">Shipping Options</h2>
+            
+            <!-- Standard Shipping -->
+            <div class="mb-6 p-4 bg-gray-50 rounded-lg" style="border: 0.5px solid #E5E7EB;">
+                <h3 class="text-lg font-normal text-black mb-3">Standard Shipping</h3>
+                <div class="space-y-2 text-sm font-light text-gray-700">
+                    <p><span class="font-normal">Delivery Time:</span> 5-7 business days</p>
+                    <p><span class="font-normal">Cost:</span> R50 (Free on orders over R500)</p>
+                    <p><span class="font-normal">Tracking:</span> Available</p>
+                    <p class="mt-3">
+                        Our most popular option, perfect for regular deliveries. Your items will be carefully 
+                        packaged and shipped via our trusted courier partners.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Express Shipping -->
+            <div class="mb-6 p-4 bg-blue-50 rounded-lg" style="border: 0.5px solid #BFDBFE;">
+                <h3 class="text-lg font-normal text-black mb-3">Express Shipping</h3>
+                <div class="space-y-2 text-sm font-light text-gray-700">
+                    <p><span class="font-normal">Delivery Time:</span> 2-3 business days</p>
+                    <p><span class="font-normal">Cost:</span> R120</p>
+                    <p><span class="font-normal">Tracking:</span> Real-time tracking available</p>
+                    <p class="mt-3">
+                        Need it faster? Choose express shipping for priority handling and quicker delivery. 
+                        Ideal for gifts or urgent purchases.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Overnight Shipping -->
+            <div class="p-4 bg-blue-50 rounded-lg" style="border: 0.5px solid #BFDBFE;">
+                <h3 class="text-lg font-normal text-black mb-3">Overnight Shipping</h3>
+                <div class="space-y-2 text-sm font-light text-gray-700">
+                    <p><span class="font-normal">Delivery Time:</span> Next business day</p>
+                    <p><span class="font-normal">Cost:</span> R200</p>
+                    <p><span class="font-normal">Tracking:</span> Premium tracking with SMS updates</p>
+                    <p><span class="font-normal">Cutoff Time:</span> Order by 2:00 PM for next-day delivery</p>
+                    <p class="mt-3">
+                        Our fastest option for when you need it tomorrow. Orders placed before 2:00 PM on 
+                        weekdays will be delivered the next business day.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Processing Time -->
+        <div class="bg-white rounded-lg shadow-sm mb-6 p-6" style="border: 0.5px solid #E5E7EB;">
+            <h2 class="text-xl font-light text-black mb-4">Processing Time</h2>
+            <p class="text-sm font-light text-gray-700 leading-relaxed mb-4">
+                All orders are processed within 1-2 business days. Orders are not shipped or delivered on 
+                weekends or public holidays.
+            </p>
+            <p class="text-sm font-light text-gray-700 leading-relaxed">
+                If we are experiencing a high volume of orders, shipments may be delayed by a few days. 
+                We will notify you if this occurs and provide updated delivery estimates.
+            </p>
+        </div>
+
+        <!-- Shipping Destinations -->
+        <div class="bg-white rounded-lg shadow-sm mb-6 p-6" style="border: 0.5px solid #E5E7EB;">
+            <h2 class="text-xl font-light text-black mb-4">Shipping Destinations</h2>
+            <p class="text-sm font-light text-gray-700 leading-relaxed mb-4">
+                We currently ship to all addresses within South Africa, including:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-sm font-light text-gray-700 ml-4">
+                <li>Major cities and metropolitan areas</li>
+                <li>Suburban areas</li>
+                <li>Rural areas (may require additional delivery time)</li>
+                <li>PO Box addresses (Standard Shipping only)</li>
+            </ul>
+            <p class="text-sm font-light text-gray-700 leading-relaxed mt-4">
+                Note: Overnight and Express shipping options may not be available for all remote locations.
+            </p>
+        </div>
+
+        <!-- Order Tracking -->
+        <div class="bg-white rounded-lg shadow-sm mb-6 p-6" style="border: 0.5px solid #E5E7EB;">
+            <h2 class="text-xl font-light text-black mb-4">Order Tracking</h2>
+            <p class="text-sm font-light text-gray-700 leading-relaxed mb-4">
+                Once your order has been shipped, you will receive a confirmation email with a tracking 
+                number. You can track your package using:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-sm font-light text-gray-700 ml-4">
+                <li>Your South African Teachers Hub account - My Orders section</li>
+                <li>The tracking link in your shipping confirmation email</li>
+                <li>Our courier partner's website using your tracking number</li>
+            </ul>
+        </div>
+
+        <!-- Shipping Issues -->
+        <div class="bg-white rounded-lg shadow-sm mb-6 p-6" style="border: 0.5px solid #E5E7EB;">
+            <h2 class="text-xl font-light text-black mb-4">Lost or Damaged Shipments</h2>
+            <p class="text-sm font-light text-gray-700 leading-relaxed mb-4">
+                While rare, sometimes packages can be lost or damaged during transit. If this happens:
+            </p>
+            <ul class="list-disc list-inside space-y-2 text-sm font-light text-gray-700 ml-4 mb-4">
+                <li>Contact us immediately at support@brandcartel.co.za</li>
+                <li>Provide your order number and tracking information</li>
+                <li>We will investigate with our courier partner</li>
+                <li>You will receive a refund or replacement within 5-7 business days</li>
+            </ul>
+            <p class="text-sm font-light text-gray-700 leading-relaxed">
+                All shipments are insured, and we will work quickly to resolve any issues.
+            </p>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="bg-white rounded-lg shadow-sm mb-6 p-6" style="border: 0.5px solid #E5E7EB;">
+            <h2 class="text-xl font-light text-black mb-6">Questions About Shipping?</h2>
+            <p class="text-sm font-light text-gray-700 leading-relaxed mb-6">
+                If you have any questions about our shipping policy or need assistance with your order, 
+                please don't hesitate to contact us.
+            </p>
+            
+            <div class="grid md:grid-cols-2 gap-4">
+                <!-- Email Card -->
+                <div class="p-4 bg-blue-50 rounded-lg" style="border: 0.5px solid #BFDBFE;">
+                    <h3 class="text-base font-normal text-black mb-2">Email Support</h3>
+                    <a href="mailto:support@brandcartel.co.za" class="text-sm font-light hover:underline" style="color: #0078D4;">
+                        support@brandcartel.co.za
+                    </a>
+                    <p class="text-xs font-light text-gray-600 mt-2">
+                        Response within 24 hours
+                    </p>
+                </div>
+
+                <!-- Phone Card -->
+                <div class="p-4 bg-blue-50 rounded-lg" style="border: 0.5px solid #BFDBFE;">
+                    <h3 class="text-base font-normal text-black mb-2">Phone Support</h3>
+                    <a href="tel:+27123456789" class="text-sm font-light hover:underline" style="color: #0078D4;">
+                        +27 12 345 6789
+                    </a>
+                    <p class="text-xs font-light text-gray-600 mt-2">
+                        Mon-Fri: 9:00 AM - 5:00 PM SAST
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back Button -->
+        <div class="mt-8">
+            <a href="{{ url_for('index') }}" class="inline-block px-6 py-2.5 text-sm font-light text-white rounded transition" 
+               style="background-color: #0078D4;"
+               onmouseover="this.style.backgroundColor='#106EBE'"
+               onmouseout="this.style.backgroundColor='#0078D4'">
+                Back to Home
+            </a>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,437 @@
+
+
+===== PDF PAGE 1 =====
+Confidential
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+COMPUTER APPLICATIONS TECHNOLOGY P2
+MAY/JUNE 2024
+MARKS: 150
+TIME: 3 hours
+This question paper consists of 16 pages.
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 2 =====
+Computer Applications Technology/P2 2 DBE/May/June 2024
+SC/NSC Confidential
+INSTRUCTIONS AND INFORMATION
+1. This question paper consists of:
+SECTION A (25)
+SECTION B (75)
+SECTION C (50)
+2. Answer ALL the questions.
+3. Number the answers correctly according to the numbering system used in this
+question paper.
+4. Start EACH question on a NEW page.
+5. Do NOT write in the right-hand margin of the ANSWER BOOK.
+6. Leave a line after EACH subquestion.
+7. Generally, one mark is allocated per fact; therefore, a 2-mark question would
+require TWO facts, etc.
+8. Read the questions carefully. DO NOT give more answers than the question
+requires as it will NOT be marked.
+9. All answers MUST be related to Computer Applications Technology.
+10. Unless otherwise specified, answers such as 'cheaper', 'slower'/'faster', etc.
+will NOT be accepted.
+11. Do NOT use brand names in your answers, unless specifically required.
+12. Write neatly and legibly.
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 3 =====
+Computer Applications Technology/P2 3 DBE/May/June 2024
+SC/NSC Confidential
+SECTION A
+QUESTION 1: MULTIPLE-CHOICE QUESTIONS
+Various options are given as possible answers to the following questions. Choose the
+answer and write only the letter (A–D) next to the question numbers (1.1 to 1.10) in the
+ANSWER BOOK, e.g. 1.11 D.
+1.1 Which type of chart is recommended to illustrate a trend over a period of
+time?
+A Bar chart
+B Line chart
+C Pie chart
+D Bubble chart (1)
+1.2 Combining multiple technologies into a single device is known as …
+A point of sales.
+B convergence.
+C annexure.
+D peripheral. (1)
+1.3 A printer that can copy and scan is an example of a(n) … device.
+A multifunctional
+B multitasking
+C multiprocessing
+D input (1)
+1.4 This step of the information cycle can only take place after the data and
+instructions are in the RAM of the device:
+A Input
+B Save
+C Output
+D Processing (1)
+1.5 NFC cannot be used for …
+A unlocking your car doors.
+B pairing accessories.
+C connecting to a hotspot.
+D paying for your groceries. (1)
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 4 =====
+Computer Applications Technology/P2 4 DBE/May/June 2024
+SC/NSC Confidential
+1.6 The process of tricking users into following a hidden link on a web page is
+known as ...
+A click-jacking.
+B spoofing.
+C pharming.
+D adware. (1)
+1.7 A trend whereby objects and devices are connected to each other via the
+internet:
+A PAN
+B LTE
+C IoT
+D MAN (1)
+1.8 When an internet service is given a higher priority than other services, it is
+called …
+A shaping.
+B throttling.
+C internet cap.
+D bandwidth. (1)
+1.9 A/An … is normally the last step in a two-factor (two-step) authentication.
+A security question
+B validation text
+C username
+D one-time pin (OTP) (1)
+1.10 Which word processing feature cannot be used to make multiple changes at
+the same time, when formatting a document?
+A Styles
+B Find and Replace
+C Format Painter
+D Themes (1)
+[10]
+2024
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 5 =====
+Computer Applications Technology/P2 5 DBE/May/June 2024
+SC/NSC Confidential
+QUESTION 2: MATCHING ITEMS
+Choose a term/concept from COLUMN B that matches the description in COLUMN A.
+Write only the letter (A–T) next to the question numbers (2.1 to 2.10) in the
+ANSWER BOOK, e.g. 2.11 U.
+COLUMN A COLUMN B
+2.1 A printout is an example of a ... A firewall
+2.2 Data organised in a meaningful way B evidence
+2.3 A device on a network that allows or prevents C <ul>…</ul>
+access to certain ports or communication
+channels D joystick
+2.4 Distinguishes humans from bots on a website E e-mail address
+2.5 The type of cable used to transmit high quality F hard copy
+video and audio signals
+G HDMI
+2.6 Device used by hearing-impaired people
+H information
+2.7 HTML code to create a bulleted list
+I page break
+2.8 A field property setting in Access that will
+ensure that a field cannot be left blank J VGA
+2.9 A feature to ensure that a watermark only K section break
+displays on the first two pages of a document
+L <ol>…</ol>
+2.10 A control on the Developer Tab best suited for
+use with open-ended questions M soft copy
+N text form field
+O default value
+P vibrating panel
+Q switch
+R drop-down form field
+S required
+T CAPTCHA
+(10 x 1) [10]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 6 =====
+Computer Applications Technology/P2 6 DBE/May/June 2024
+SC/NSC Confidential
+QUESTION 3: TRUE/FALSE ITEMS
+Indicate whether the following statements are TRUE or FALSE. Write 'true' or 'false'
+next to the question numbers (3.1 to 3.5) in the ANSWER BOOK. If the statement is
+true, write 'TRUE'. If the statement is false, write 'FALSE' and change the underlined
+word(s) to make the statement TRUE. (Do NOT simply use the word 'NOT' to change
+the statement.)
+NO mark will be awarded if FALSE is written without a correct answer.
+EXAMPLES:
+QUESTION ANSWER
+Google is the world's most popular search
+True
+engine.
+An NIC has slots for hardware components,
+False – motherboard
+such as the CPU.
+3.1 Spyware is a banner or pop-up window that appears while you are browsing
+the internet. (1)
+3.2 A data label is a visual indicator on a graph of related sets of values in a
+worksheet. (1)
+3.3 An error in the program code is known as a Trojan. (1)
+3.4 802.11 refers to a set of specific standards and protocols for a wireless
+network. (1)
+3.5 A radio button group allows a user to select multiple options in a form. (1)
+[5]
+TOTAL SECTION A: 25
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 7 =====
+Computer Applications Technology/P2 7 DBE/May/June 2024
+SC/NSC Confidential
+SECTION B
+QUESTION 4: SYSTEMS TECHNOLOGIES
+4.1 Study the advertisement of two different laptops below and answer the
+questions that follow.
+LAPTOP A LAPTOP B
+ Upgradeable to Windows 11  Windows 11
+ Office 365  Office 365
+ 15.6-inch Full HD Display  15.6-inch Full HD Display
+ 8 GB RAM and 1 TB SSD Storage  16 GB RAM and 512 GB SSD Storage
+ Intel Core i5 10300H Processor  AMD Ryzen 5 5600H Processor
+ NVIDIA GeForce GDDR6 GPU  NVIDIA GeForce 1650 GPU
+ Blue LED Backlit Keyboard  HP Wide Vision 1024p Webcam
+ 720p Webcam with Privacy Shutter  Wi-Fi 6 & Bluetooth 5.2 combo
+ M100 RGB Mouse  1 micro SD Media Card Reader
+ NOD antivirus 3 months  Kaspersky 12 months
+4.1.1 Name the application suite advertised in both laptops. (1)
+4.1.2 Give TWO reasons why an operating system is required. (2)
+4.1.3 Suggest an alternative operating system for any of the laptops
+above. Motivate your answer. (2)
+4.1.4 Identify a high-definition input device in the advertisement. (1)
+4.1.5 Give ONE advantage of SSDs over HDDs in laptops. (1)
+4.1.6 Give TWO reasons why you would recommend Laptop B. (2)
+4.2 Define the term resolution. (2)
+4.3 Name the process of creating folders and organising files to work more
+efficiently on a computer. (1)
+4.4 Name TWO locations where you could create shortcuts to
+folders/applications on a computer. (2)
+4.5 Give TWO disadvantages of using online storage as compared to local
+storage. (2)
+4.6 Give ONE example of multitasking. (1)
+4.7 Explain TWO ways in which to safeguard data from being deleted or altered. (2)
+4.8 Briefly explain the purpose of drivers. (2)
+4.9 Give TWO advantages for using web-based applications. (2)
+4.10 Give TWO examples of Windows utility programs. (2)
+[25]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 8 =====
+Computer Applications Technology/P2 8 DBE/May/June 2024
+SC/NSC Confidential
+QUESTION 5: INTERNET AND NETWORK TECHNOLOGIES
+5.1 Give TWO reasons why buffering occurs when streaming a video. (2)
+5.2 Discuss TWO reasons why having a server in a school network is advisable. (2)
+5.3 Blogs and podcasts are websites designed for various purposes.
+5.3.1 Explain what a blog is. (1)
+5.3.2 Give TWO advantages of podcasts. (2)
+5.4 State TWO factors that will impact internet data usage. (2)
+5.5 Give TWO examples where grid computing can be used. (2)
+5.6 State TWO guidelines to follow when communicating with teachers on social
+media. (2)
+5.7 The principal is not receiving a specific e-mail with attachments from another
+school.
+Give TWO possible reasons why the service provider blocks the specific
+e-mail. (2)
+[15]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 9 =====
+Computer Applications Technology/P2 9 DBE/May/June 2024
+SC/NSC Confidential
+QUESTION 6: INFORMATION MANAGEMENT
+6.1 You have to collect data using a questionnaire from various learners in the
+province.
+Which data collection tool would you recommend? Motivate your choice. (2)
+6.2 Briefly explain what information sifting is. (1)
+6.3 Thandi used an image from the internet in her PAT report. An extract of the
+report is shown below.
+6.3.1 How can she ensure that a description of the picture appears in the
+table of figures? (1)
+6.3.2 Name TWO word processing features that can be used to give
+recognition to the sources. (2)
+6.4 Briefly explain TWO ways in which a spreadsheet chart can enhance a PAT
+report. (2)
+6.5 When formulating research questions, certain requirements need to be
+considered and evaluated.
+Name TWO requirements when setting research questions. (2)
+[10]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 10 =====
+Computer Applications Technology/P2 10 DBE/May/June 2024
+SC/NSC Confidential
+QUESTION 7: SOCIAL IMPLICATIONS
+7.1 Give TWO advantages of ICTs in society. (2)
+7.2 Discuss TWO effects of having a malicious bot/zombie computer on a
+network. (2)
+7.3 Information overload is a common occurrence these days.
+7.3.1 Briefly explain the concept of information overload. (1)
+7.3.2 State TWO ways in which information overload has an influence on
+a person's life. (2)
+7.4 Identity theft has increased in recent years.
+7.4.1 Briefly explain the term identity theft. (1)
+7.4.2 State TWO ways in which you can avoid becoming a victim of
+identity theft. (2)
+[10]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 11 =====
+Computer Applications Technology/P2 11 DBE/May/June 2024
+SC/NSC Confidential
+QUESTION 8: SOLUTION DEVELOPMENT
+8.1 Spreadsheets are used to organise and analyse information.
+8.1.1 What is the purpose of a COUNTA function? (1)
+8.1.2 When would one use the SUMIFS function? (2)
+8.1.3 When will the error message #REF! be displayed in an Excel
+spreadsheet? (1)
+8.1.4 Data in a spreadsheet is usually sorted on cell values.
+What other cell information can be used to sort data, excluding cell
+values? (1)
+8.2 Suggest any THREE changes to the HTML code below to resemble the
+screenshot of the webpage. Indicate the line number of the HTML code and
+the suggested change.
+HTML CODE:
+WEB PAGE:
+(3)
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 12 =====
+Computer Applications Technology/P2 12 DBE/May/June 2024
+SC/NSC Confidential
+8.3 The database application is used to create forms, reports and queries.
+8.3.1 A textbox was changed to a combo box on a form, but no values are
+visible in the combo box.
+Give TWO reasons why the values for the combo box do not
+appear. (2)
+8.3.2 Give TWO examples of functions that can be used in a report footer. (2)
+8.3.3 Study the screenshot of two different queries.
+Query 1
+Query 2
+Explain how the result of Query 2 will differ from Query 1 when
+executed. (3)
+[15]
+TOTAL SECTION B: 75
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 13 =====
+Computer Applications Technology/P2 13 DBE/May/June 2024
+SC/NSC Confidential
+SECTION C
+QUESTION 9: INTEGRATED SCENARIO
+The school has begun a Robotics Club. The club will host competitions,
+different speakers and exhibitions on robotics. You are requested to
+assist the teacher with admin and purchases for the Robotics Club.
+9.1 The Robotics Club wants to buy new desktop computers for members to
+learn basic computers skills.
+9.1.1 Give THREE hardware specifications to consider when buying a
+computer for basic computer skills.
+NOTE: Exclude any peripherals, such as mouse, keyboard, etc. (3)
+9.1.2 Suggest TWO factors to consider when selecting an operating
+system. (2)
+9.1.3 Give TWO reasons why you would suggest a wireless network for
+the club. (2)
+9.1.4 The club needs printouts done in colour.
+Give TWO other criteria, besides colour and cost, that you would
+use when selecting a printer. (2)
+9.1.5 One of the club members read about a printer's duty cycle.
+Explain what a duty cycle is. (2)
+9.2 The teacher decided to use a database to keep track of equipment allocated
+to the Robotics Club.
+9.2.1 Recommend a suitable optical storage media for making a backup
+of the database. (1)
+9.2.2 Name ONE factor to consider when selecting a primary key field in a
+database table. (1)
+9.2.3 Why would the teacher use an input mask when capturing cellphone
+numbers? (1)
+9.2.4 Give an alternative method to capture dates rather than typing the
+dates in the table. (1)
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 14 =====
+Computer Applications Technology/P2 14 DBE/May/June 2024
+SC/NSC Confidential
+9.3 The school will host a competition in June 2024. The competition will be
+promoted on a weblog.
+9.3.1 Give ONE other type of website to post details about the
+competition. Motivate your choice.
+NOTE: Do NOT give specific examples of websites. (2)
+9.3.2 A competition video is posted on the school's website. Users are
+prompted to install an add-on/plug-in.
+Give TWO reasons why an add-on/plug-in is needed. (2)
+9.3.3 The following URL appears long and untidy:
+https://www.schoolrobotics/robotics+for+kids&sa=X&sca_esv=8b9
+4fdf9c54254b4&hl=enUS&source=univ&tbm=shop&tbo=u&ved=1t:
+686…
+Suggest TWO other ways of displaying the URL link. (2)
+9.3.4 The results of the competition are captured in a spreadsheet.
+Suggest ONE spreadsheet feature for ranking contestants
+according to the highest scoring. (1)
+9.4 The Robotics Club received an interactive whiteboard as a donation.
+9.4.1 What is an interactive whiteboard? (1)
+9.4.2 Give TWO disadvantages of an interactive whiteboard. (2)
+[25]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 15 =====
+Computer Applications Technology/P2 15 DBE/May/June 2024
+SC/NSC Confidential
+QUESTION 10: INTEGRATED SCENARIO
+You have been invited to join the Historical Society.
+10.1 The Historical Society is planning a tour in September. Members must plan
+and prepare to travel wisely.
+10.1.1 State TWO safety measures to consider when using your mobile
+device at an airport/hotel. (2)
+10.1.2 Why is it important to remove any metadata from photos that will be
+publicly visible on websites? (1)
+10.1.3 Multiple small donations from online volunteer contributors will be
+received to assist members with the cost of travelling.
+What term describes this process? (1)
+10.1.4 Give TWO advantages of using video conferencing. (2)
+10.2 The Historical Society uses Fourth Industrial Revolution (4IR) equipment when
+viewing and visiting historical sites.
+10.2.1 Name TWO devices needed to experience virtual reality (VR). (2)
+10.2.2 The use of virtual reality equipment can negatively impact on a
+person's health.
+Name TWO negative health issues that one can experience. (2)
+10.2.3 How does augmented reality (AR) enhance the experience for the
+members when visiting historical sites? (2)
+10.2.4 Name a technology that forms part of the 4IR, excluding IoTs. (1)
+10.3 Members need to use a strong password to sign into their accounts.
+State THREE criteria that can be used to create a strong password. (3)
+10.4 While on tour, members will receive a brochure on cryptocurrency.
+10.4.1 Give TWO advantages of using cryptocurrency. (2)
+10.4.2 Cryptocurrency transactions are linked or chained together in a
+blockchain.
+Briefly explain what a blockchain is. (2)
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 16 =====
+Computer Applications Technology/P2 16 DBE/May/June 2024
+SC/NSC Confidential
+10.5 While on tour, the group will use a self-driving bus.
+10.5.1 Give TWO reasons why members would prefer NOT to use a
+self-driving bus. (2)
+10.5.2 Autonomous vehicles are known for being used in the collecting of
+big data.
+Briefly explain what big data is. (3)
+[25]
+TOTAL SECTION C: 50
+GRAND TOTAL: 150
+Copyright reserved

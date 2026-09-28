@@ -1,0 +1,837 @@
+{% extends "teacher/_layout.html" %}
+{% block extra_css %}
+<style>
+  body { background: #0b0b0d !important; padding-top: 0 !important; }
+  main { padding: 0 !important; }
+</style>
+{% endblock %}
+{% block t_title %}Profile{% endblock %}
+{% block t_sub %}Your account, school and subject details captured at sign-up.{% endblock %}
+
+{% block t_body %}
+<style>
+  /* Override the teacher shell's light Azure theme on this page (matches team.html) */
+  body { background: #0b0b0d !important; }
+  .t-shell {
+    background: #0b0b0d !important;
+    color: #f5f5f7 !important;
+    padding-top: 30px !important;
+  }
+  .t-shell .t-head { margin-top: 0 !important; padding-top: 0 !important; }
+  /* Defeat layout's universal black text rule */
+  .t-shell,
+  .t-shell *:not(.navbar):not(.navbar *) { color: #f5f5f7 !important; }
+  .t-shell .t-eyebrow,
+  .t-shell .t-eyebrow * { color: #9a9aa3 !important; }
+  .t-shell .t-sub,
+  .t-shell .t-sub * { color: #d6d6da !important; }
+  .t-shell .t-tabs a,
+  .t-shell .t-tabs a * { color: #d6d6da !important; }
+  .t-shell .t-tabs a.is-active,
+  .t-shell .t-tabs a.is-active * { color: #2997ff !important; }
+  .t-shell, .t-shell * {
+    --az-bg: #0b0b0d !important;
+    --az-surface: #1a1a1d !important;
+    --az-border: #2a2a2f !important;
+    --az-border-2: #3a3a40 !important;
+    --az-text: #f5f5f7 !important;
+    --az-text-2: #d6d6da !important;
+    --az-text-3: #9a9aa3 !important;
+    --bg: #0b0b0d !important;
+    --bg-elevated: #1a1a1d !important;
+    --bg-card: #1a1a1d !important;
+    --bg-input: #1a1a1d !important;
+    --text: #f5f5f7 !important;
+    --text-secondary: #d6d6da !important;
+    --text-tertiary: #9a9aa3 !important;
+    --separator: #2a2a2f !important;
+    --separator-light: #2a2a2f !important;
+    --fill: #1a1a1d !important;
+    --blue: #2997ff !important;
+  }
+  .t-shell .t-head { border-bottom-color: #2a2a2f !important; }
+  .t-shell .t-eyebrow { color: #9a9aa3 !important; }
+  .t-shell .t-title  { color: #f5f5f7 !important; }
+  .t-shell .t-sub    { color: #d6d6da !important; }
+  .t-shell .t-tabs   { border-bottom-color: #2a2a2f !important; }
+  .t-shell .t-tabs a { color: #d6d6da !important; }
+  .t-shell .t-tabs a:hover { color: #2997ff !important; background: rgba(41,151,255,0.08) !important; }
+  .t-shell .t-tabs a.is-active { color: #2997ff !important; border-bottom-color: #2997ff !important; }
+
+  /* Larger header on this page */
+  .t-shell .t-eyebrow { font-size: 14px !important; letter-spacing: 0.12em !important; }
+  .t-shell .t-title   { font-size: 34px !important; line-height: 1.12 !important; font-weight: 700 !important; margin: 4px 0 8px !important; }
+  .t-shell .t-sub     { font-size: 15px !important; line-height: 1.4 !important; }
+  .t-shell .t-head    { padding-bottom: 16px !important; margin-bottom: 16px !important; }
+
+  /* ---- Profile layout (Untitled UI horizontal sections) ---- */
+  .pf-grid { display: grid; grid-template-columns: 1fr; gap: 12px; }
+
+  .pf-card {
+    background: #141414 !important; border: 1px solid #2a2a2f; border-radius: 12px;
+    padding: 16px 20px;
+  }
+  .pf-card.pf-card-full { grid-column: 1 / -1; }
+  .pf-card h2 {
+    font-size: 15px; font-weight: 600; margin: 0 0 3px; color: #f5f5f7;
+  }
+  .pf-card p.muted { color: #9a9aa3; margin: 0 0 10px; font-size: 12px; }
+
+  /* Identity row */
+  .pf-identity {
+    display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  }
+  .pf-avatar-wrap { position: relative; flex-shrink: 0; }
+  .pf-avatar {
+    width: 56px; height: 56px; border-radius: 50%;
+    background: #0b0b0d; border: 1px solid #2a2a2f;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 600; color: #f5f5f7;
+    overflow: hidden;
+  }
+  .pf-avatar-img { object-fit: cover; }
+  .pf-avatar-cam {
+    position: absolute; bottom: -2px; right: -2px;
+    width: 24px; height: 24px; border-radius: 50%;
+    background: #2997ff; border: 2px solid #1a1a1d; color: #fff !important;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 10px; cursor: pointer;
+  }
+  .pf-avatar-cam:hover { background: #0a84ff; }
+  .pf-avatar-cam i { color: #fff !important; }
+
+  .pf-identity-text { flex: 1; min-width: 200px; }
+  .pf-identity-name {
+    font-size: 16px; font-weight: 600; margin: 0 0 1px; color: #f5f5f7;
+  }
+  .pf-identity-handle { color: #9a9aa3; margin: 0 0 5px; font-size: 12px; }
+
+  .pf-badge {
+    display: inline-block; padding: 3px 10px; border-radius: 999px;
+    background: #1A1A1A; color: #f5f5f7 !important;
+    border: 1px solid rgba(255,255,255,0.10);
+    font-size: 12px; font-weight: 400;
+  }
+  .pf-badge-success { background: #1A1A1A; color: #5be584 !important; border-color: rgba(91,229,132,0.30); }
+  .pf-badge-gray { background: #1A1A1A; color: #d6d6da !important; border-color: rgba(255,255,255,0.10); }
+
+  .pf-role-text {
+    display: inline-block; color: #d6d6da !important;
+    font-size: 12px; font-weight: 500;
+  }
+
+  .pf-identity-actions {
+    display: flex; gap: 6px; flex-wrap: wrap; margin-left: auto;
+  }
+
+  .btn-primary {
+    background: #2997ff; color: #fff !important; border: 1px solid #2997ff;
+    padding: 8px 16px; font-size: 14px; border-radius: 4px; cursor: pointer;
+    font-weight: 300; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .btn-primary, .btn-primary i { color: #fff !important; }
+  .btn-primary:hover { background: #0a84ff; border-color: #0a84ff; color: #fff !important; }
+
+  .pf-edit-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 12px; border-radius: 8px;
+    font-size: 13px; font-weight: 500; line-height: 1.2;
+    background: #141414; color: #f5f5f7;
+    border: 1px solid rgba(255,255,255,0.08);
+    cursor: pointer; font-family: inherit;
+    transition: background 120ms ease, border-color 120ms ease;
+  }
+  .pf-edit-btn:hover { background: #1A1A1A; border-color: rgba(255,255,255,0.18); }
+  .pf-edit-btn .pf-edit-ico { flex: 0 0 auto; color: #c084fc; }
+
+  .btn-secondary {
+    background: transparent; color: #d6d6da !important; border: 1px solid #3a3a40;
+    padding: 8px 16px; font-size: 14px; border-radius: 4px; cursor: pointer;
+    font-weight: 300; display: inline-flex; align-items: center; gap: 6px;
+  }
+  .btn-secondary:hover { background: #1f2128; color: #f5f5f7 !important; border-color: #4a4a52; }
+
+  .btn-link-danger {
+    background: transparent; border: 1px solid #3a3a40; color: #ff6b5e !important;
+    cursor: pointer; font-size: 14px; padding: 8px 16px; border-radius: 4px;
+    display: inline-flex; align-items: center; gap: 6px; font-weight: 300;
+  }
+  .btn-link-danger:hover { background: rgba(255,107,94,0.10); color: #ff8a80 !important; border-color: #ff6b5e; }
+
+  /* Detail rows table (kept for backwards-compat) */
+  .pf-list { width: 100%; border-collapse: collapse; }
+  .pf-list th, .pf-list td {
+    text-align: left; padding: 10px 12px; border-bottom: 1px solid #2a2a2f;
+    font-size: 14px; color: #f5f5f7;
+  }
+  .pf-list th {
+    color: #9a9aa3 !important; font-weight: 600; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.04em;
+    width: 38%;
+  }
+  .pf-list tbody tr:last-child td,
+  .pf-list tbody tr:last-child th { border-bottom: none; }
+  .pf-empty-text { color: #6b6b73 !important; font-style: italic; font-size: 13px; }
+
+  /* Section header sits on the LEFT, fields on the RIGHT (Untitled UI) */
+  .pf-section-head {
+    padding: 0; margin: 0;
+    border-bottom: 0;
+    flex: 0 0 220px;
+  }
+  .pf-section-head h2 { margin: 0 0 3px; color: #f5f5f7; font-size: 15px; font-weight: 600; }
+  .pf-section-head .muted { margin: 0; color: #9a9aa3; font-size: 12px; line-height: 1.35; }
+
+  .pf-card:has(.pf-section-head) {
+    display: flex; gap: 22px; align-items: flex-start;
+  }
+  .pf-card:has(.pf-section-head) .pf-fields { flex: 1; min-width: 0; }
+  @media (max-width: 880px) {
+    .pf-card:has(.pf-section-head) { flex-direction: column; gap: 12px; }
+    .pf-section-head { flex: 0 0 auto; }
+  }
+
+  /* Two-column field grid inside each card */
+  .pf-fields {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 10px 14px;
+  }
+  @media (max-width: 640px) { .pf-fields { grid-template-columns: 1fr; } }
+  .pf-field {
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-radius: 0;
+    padding: 2px 0 8px;
+    transition: none;
+  }
+  .pf-field:hover { background: transparent; border-color: rgba(255,255,255,0.08); }
+  .pf-field-full { grid-column: 1 / -1; }
+  .pf-field-label {
+    display: block;
+    color: #9a9aa3 !important;
+    font-size: 12px; font-weight: 500;
+    text-transform: none; letter-spacing: 0;
+    margin-bottom: 4px;
+  }
+  .pf-field-value {
+    display: block;
+    color: #f5f5f7;
+    font-size: 13px;
+    line-height: 1.3;
+    word-break: break-word;
+    font-weight: 400;
+  }
+  .pf-empty-text { color: #6b6b73 !important; font-style: italic; }
+
+  /* Chips for subjects */
+  .pf-chip-row { display: flex; flex-wrap: wrap; gap: 6px; }
+  .pf-chip {
+    display: inline-block;
+    background: transparent; color: #f5f5f7 !important;
+    border: 1px solid rgba(255,255,255,0.18); border-radius: 999px;
+    padding: 5px 12px; font-size: 13px; font-weight: 300;
+    letter-spacing: -0.005em;
+  }
+  .pf-empty {
+    padding: 12px; text-align: center; color: #9a9aa3 !important; font-size: 13px;
+    border: 1px dashed #3a3a40; border-radius: 4px;
+  }
+</style>
+
+{% set initials = ((current_user.first_name[:1] if current_user.first_name else '') + (current_user.last_name[:1] if current_user.last_name else '')) or current_user.username[:1]|upper %}
+
+<div class="pf-grid">
+
+  <!-- Identity card (full width) -->
+  <div class="pf-card pf-card-full">
+    <div class="pf-identity">
+      <div class="pf-avatar-wrap">
+        {% if current_user.profile_pic %}
+          <img src="{{ url_for('static', filename=current_user.profile_pic) }}" alt="" class="pf-avatar pf-avatar-img">
+        {% else %}
+          <div class="pf-avatar">{{ initials|upper }}</div>
+        {% endif %}
+        <button type="button" class="pf-avatar-cam" onclick="document.getElementById('pfAvatarInput').click()" title="Change photo">
+          <i class="fas fa-camera"></i>
+        </button>
+      </div>
+
+      <form id="pfAvatarForm" method="POST" action="{{ url_for('teacher_profile_avatar') }}" enctype="multipart/form-data" style="display:none">
+        <input type="file" id="pfAvatarInput" name="avatar" accept="image/png,image/jpeg,image/gif,image/webp,image/svg+xml"
+               onchange="document.getElementById('pfAvatarForm').submit()">
+      </form>
+
+      <div class="pf-identity-text">
+        <h2 class="pf-identity-name">{{ current_user.full_name }}</h2>
+        <p class="pf-identity-handle">@{{ current_user.username }} · {{ current_user.email }}</p>
+        <span class="pf-role-text">{{ role_label }}</span>
+      </div>
+
+      <div class="pf-identity-actions" style="margin-left:auto">
+        <button type="button" class="pf-edit-btn" onclick="pfOpenEditModal()">
+          <svg class="pf-edit-ico" viewBox="0 0 24 24" fill="none" stroke="url(#pfEditGrad)" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" width="15" height="15"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg>
+          <span>Edit profile</span>
+        </button>
+        <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+          <defs>
+            <linearGradient id="pfEditGrad" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#ff6b9d"/>
+              <stop offset="50%" stop-color="#c084fc"/>
+              <stop offset="100%" stop-color="#60a5fa"/>
+            </linearGradient>
+          </defs>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- Personal information -->
+  <div class="pf-card">
+    <div class="pf-section-head">
+      <h2>Personal information</h2>
+      <p class="muted">Your name and contact details from sign-up.</p>
+    </div>
+    <div class="pf-fields">
+      <div class="pf-field">
+        <span class="pf-field-label">First name</span>
+        <span class="pf-field-value">{% if current_user.first_name %}{{ current_user.first_name }}{% else %}<span class="pf-empty-text">Not set</span>{% endif %}</span>
+      </div>
+      <div class="pf-field">
+        <span class="pf-field-label">Last name</span>
+        <span class="pf-field-value">{% if current_user.last_name %}{{ current_user.last_name }}{% else %}<span class="pf-empty-text">Not set</span>{% endif %}</span>
+      </div>
+      <div class="pf-field">
+        <span class="pf-field-label">Username</span>
+        <span class="pf-field-value">@{{ current_user.username }}</span>
+      </div>
+      <div class="pf-field">
+        <span class="pf-field-label">Role</span>
+        <span class="pf-field-value">{{ role_label }}</span>
+      </div>
+      <div class="pf-field pf-field-full">
+        <span class="pf-field-label">Email</span>
+        <span class="pf-field-value">{{ current_user.email }}</span>
+      </div>
+      <div class="pf-field pf-field-full">
+        <span class="pf-field-label">Subscription</span>
+        <span class="pf-field-value">
+          {% if current_user.subscription_active %}
+            <span class="pf-badge pf-badge-success">Active</span>
+          {% else %}
+            <span class="pf-badge pf-badge-gray">Inactive</span>
+          {% endif %}
+        </span>
+      </div>
+    </div>
+  </div>
+
+  <!-- School & location -->
+  <div class="pf-card">
+    <div class="pf-section-head">
+      <h2>School &amp; location</h2>
+      <p class="muted">Where you teach.</p>
+    </div>
+    <div class="pf-fields">
+      <div class="pf-field pf-field-full">
+        <span class="pf-field-label">School name</span>
+        <span class="pf-field-value">{% if current_user.school_name %}{{ current_user.school_name }}{% else %}<span class="pf-empty-text">Not set</span>{% endif %}</span>
+      </div>
+      <div class="pf-field">
+        <span class="pf-field-label">District</span>
+        <span class="pf-field-value">{% if current_user.school_district %}{{ current_user.school_district }}{% else %}<span class="pf-empty-text">Not set</span>{% endif %}</span>
+      </div>
+      <div class="pf-field">
+        <span class="pf-field-label">Province</span>
+        <span class="pf-field-value">{% if current_user.province %}{{ current_user.province }}{% else %}<span class="pf-empty-text">Not set</span>{% endif %}</span>
+      </div>
+      <div class="pf-field">
+        <span class="pf-field-label">Town / City</span>
+        <span class="pf-field-value">{% if current_user.town %}{{ current_user.town }}{% else %}<span class="pf-empty-text">Not set</span>{% endif %}</span>
+      </div>
+      <div class="pf-field">
+        <span class="pf-field-label">Suburb</span>
+        <span class="pf-field-value">{% if current_user.suburb %}{{ current_user.suburb }}{% else %}<span class="pf-empty-text">Not set</span>{% endif %}</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Subjects (full width) -->
+  <div class="pf-card pf-card-full">
+    <h2>Subjects you teach</h2>
+    <p class="muted">Up to four subjects, captured at sign-up.</p>
+    {% if subjects_list %}
+      <div class="pf-chip-row">
+        {% for s in subjects_list %}
+          <span class="pf-chip" spellcheck="false" translate="no">{{ s }}</span>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="pf-empty">No subjects on file. Update your profile to add up to 4.</div>
+    {% endif %}
+  </div>
+
+</div>
+
+<!-- Edit profile modal -->
+<div id="pfEditOverlay" class="pf-modal-overlay" hidden onclick="pfCloseEditModal()"></div>
+<div id="pfEditModal" class="pf-modal pf-modal-wide" role="dialog" aria-modal="true" aria-labelledby="pfEditTitle" hidden>
+  <div class="pf-modal-h">
+    <div class="pf-modal-title" id="pfEditTitle">Edit profile</div>
+    <button type="button" class="pf-modal-close" onclick="pfCloseEditModal()" aria-label="Close">&times;</button>
+  </div>
+  <form method="POST" action="{{ url_for('teacher_profile_update') }}" id="pfEditForm">
+    <div class="pf-form-grid">
+      <div class="pf-form-group pf-form-group-full">
+        <div class="pf-form-section">Personal information</div>
+      </div>
+      <div class="pf-form-group">
+        <label class="pf-form-label">First name</label>
+        <input class="pf-form-input" type="text" name="first_name" value="{{ current_user.first_name or '' }}" autocomplete="given-name">
+      </div>
+      <div class="pf-form-group">
+        <label class="pf-form-label">Last name</label>
+        <input class="pf-form-input" type="text" name="last_name" value="{{ current_user.last_name or '' }}" autocomplete="family-name">
+      </div>
+      <div class="pf-form-group">
+        <label class="pf-form-label">Username</label>
+        <input class="pf-form-input" type="text" name="username" value="{{ current_user.username }}" required autocomplete="username">
+      </div>
+      <div class="pf-form-group">
+        <label class="pf-form-label">Email</label>
+        <input class="pf-form-input" type="email" name="email" value="{{ current_user.email }}" required autocomplete="email">
+      </div>
+
+      <div class="pf-form-group pf-form-group-full">
+        <div class="pf-form-section">School &amp; location</div>
+      </div>
+      <div class="pf-form-group pf-form-group-full">
+        <label class="pf-form-label">School name</label>
+        <input class="pf-form-input" type="text" name="school_name" value="{{ current_user.school_name or '' }}">
+      </div>
+      <div class="pf-form-group">
+        <label class="pf-form-label">District</label>
+        <input class="pf-form-input" type="text" name="school_district" value="{{ current_user.school_district or '' }}" placeholder="e.g. Johannesburg North">
+      </div>
+      <div class="pf-form-group">
+        <label class="pf-form-label">Province</label>
+        {% set _province_label = current_user.province if current_user.province else 'Select province' %}
+        <div class="pf-fdd" id="pfProvinceDD">
+          <button type="button" class="pf-fdd-toggle" onclick="pfToggleProvinceDD(event)">
+            <span class="pf-fdd-label">{{ _province_label }}</span>
+            <span class="pf-fdd-caret" aria-hidden="true">
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M1 1.5L6 6.5L11 1.5" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+          </button>
+          <input type="hidden" name="province" value="{{ current_user.province or '' }}">
+          <div class="pf-fdd-panel" hidden>
+            <div class="pf-fdd-item" data-value="">Select province</div>
+            {% for p in provinces %}
+            <div class="pf-fdd-item" data-value="{{ p }}">{{ p }}</div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="pf-form-group">
+        <label class="pf-form-label">Town / City</label>
+        <input class="pf-form-input" type="text" name="town" value="{{ current_user.town or '' }}" autocomplete="address-level2">
+      </div>
+      <div class="pf-form-group">
+        <label class="pf-form-label">Suburb</label>
+        <input class="pf-form-input" type="text" name="suburb" value="{{ current_user.suburb or '' }}" autocomplete="address-level3">
+      </div>
+
+      <div class="pf-form-group pf-form-group-full">
+        <div class="pf-form-section">Subjects you teach <span style="color:#9a9aa3;font-weight:400;font-size:12px;margin-left:8px"><span id="pfSubjCount">0</span> / 4 selected</span></div>
+      </div>
+      <div class="pf-form-group pf-form-group-full">
+        <div class="pf-subj-dd" id="pfSubjDD">
+          <button type="button" class="pf-form-input pf-subj-dd-btn" id="pfSubjDDBtn" aria-haspopup="listbox" aria-expanded="false" onclick="pfToggleSubjDD()">
+            <span id="pfSubjDDLabel">Select subjects…</span>
+          </button>
+          <div class="pf-subj-dd-menu" id="pfSubjDDMenu" role="listbox" aria-multiselectable="true" hidden>
+            {% for subj in all_subjects %}
+            <label class="pf-subj-opt" role="option">
+              <input type="checkbox" name="subjects" value="{{ subj }}" {% if subj in subjects_list %}checked{% endif %}>
+              <span>{{ subj }}</span>
+            </label>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="pf-subj-chips" id="pfSubjChips"></div>
+      </div>
+    </div>
+    <div class="pf-modal-footer">
+      <button type="button" class="pf-pbtn cancel" onclick="pfCloseEditModal()">Cancel</button>
+      <button type="submit" class="pf-pbtn primary">Save changes</button>
+    </div>
+  </form>
+</div>
+<style>
+.pf-modal-wide { max-width: 760px; }
+.pf-form-grid {
+  display: grid; grid-template-columns: 1fr 1fr; gap: 14px 16px;
+  padding: 4px 0 8px;
+}
+@media (max-width: 640px) { .pf-form-grid { grid-template-columns: 1fr; } }
+.pf-form-group { display: flex; flex-direction: column; gap: 6px; }
+.pf-form-group-full { grid-column: 1 / -1; }
+.pf-form-section {
+  display: flex; align-items: center; gap: 9px;
+  color: #f0f0f3 !important; font-size: 12px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 0.09em;
+  padding: 4px 0 9px; margin-top: 10px;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+}
+.pf-form-section::before {
+  content: ""; flex: 0 0 auto;
+  width: 3px; height: 13px; border-radius: 2px;
+  background: rgba(255,255,255,0.35);
+}
+.pf-form-section span { color: #9a9aa3 !important; }
+.pf-form-label {
+  color: #9a9aa3 !important; font-size: 12px; font-weight: 500;
+  text-transform: uppercase; letter-spacing: 0.04em;
+}
+.pf-form-input {
+  width: 100%; padding: 9px 12px;
+  background: #0f0f12; color: #f5f5f7 !important;
+  border: 1px solid #2a2a2f; border-radius: 6px;
+  font-size: 14px; line-height: 1.4;
+  transition: border-color .15s ease, background .15s ease;
+}
+.pf-form-input:hover { border-color: #3a3a40; }
+.pf-form-input:focus { outline: none; border-color: rgba(255,255,255,0.30); background: #131317; }
+.pf-form-input::placeholder { color: #6b6b73; }
+/* Kill the browser's blue/yellow autofill background */
+.pf-form-input:-webkit-autofill,
+.pf-form-input:-webkit-autofill:hover,
+.pf-form-input:-webkit-autofill:focus,
+.pf-form-input:-webkit-autofill:active,
+select.pf-form-input:-webkit-autofill,
+select.pf-form-input:-webkit-autofill:hover,
+select.pf-form-input:-webkit-autofill:focus,
+.pf-subj-dd-btn:-webkit-autofill,
+.pf-subj-dd-btn:-webkit-autofill:hover,
+.pf-subj-dd-btn:-webkit-autofill:focus {
+  -webkit-text-fill-color: #f5f5f7 !important;
+  -webkit-box-shadow: 0 0 0 1000px #0f0f12 inset !important;
+          box-shadow: 0 0 0 1000px #0f0f12 inset !important;
+  caret-color: #f5f5f7;
+  background-color: #0f0f12 !important;
+  transition: background-color 9999s ease-in-out 0s;
+}
+/* Native select dropdown — planner-spec (matches Past Papers) */
+select.pf-form-input { background-color: #141414 !important; color: #ffffff !important; color-scheme: dark; border-color: rgba(255,255,255,0.08) !important; border-radius: 8px !important; height: 36px !important; min-height: 36px !important; padding: 7px 36px 7px 12px !important; font-size: 14px !important; font-weight: 300 !important; letter-spacing: -0.005em !important; line-height: 1.3 !important; }
+select.pf-form-input:hover { background-color: #1A1A1A !important; border-color: rgba(255,255,255,0.18) !important; }
+select.pf-form-input:focus { background-color: #1A1A1A !important; border-color: rgba(255,255,255,0.30) !important; }
+select.pf-form-input option { background-color: #1A1A1A !important; color: #ffffff !important; font-weight: 300; }
+select.pf-form-input { appearance: none; -webkit-appearance: none; background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1.5L6 6.5L11 1.5' stroke='rgba(255,255,255,0.45)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>") !important; background-repeat: no-repeat !important; background-position: right 12px center !important; background-size: 12px 8px !important; }
+.pf-subj-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 6px; }
+.pf-subj-pill {
+  display: flex; align-items: center; gap: 8px;
+  padding: 7px 10px; border: 1px solid #2a2a2f; border-radius: 6px;
+  background: #0f0f12; cursor: pointer; user-select: none;
+  font-size: 13px; color: #d6d6da !important;
+  transition: border-color .15s ease, background .15s ease;
+}
+.pf-subj-pill:hover { border-color: #3a3a40; background: #131317; }
+.pf-subj-pill input { accent-color: #16a34a; cursor: pointer; }
+.pf-subj-pill input:checked + span { color: #ffffff !important; font-weight: 500; }
+.pf-subj-pill:has(input:checked) { border-color: rgba(255,255,255,0.30); background: rgba(255,255,255,0.06); }
+
+/* Subject multi-select dropdown — planner-spec */
+.pf-subj-dd { position: relative; }
+.pf-subj-dd-btn {
+  text-align: left; cursor: pointer;
+  height: 36px !important; min-height: 36px !important;
+  padding: 7px 36px 7px 12px !important;
+  background-color: #141414 !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 8px !important;
+  color: #ffffff !important;
+  font-size: 14px !important; font-weight: 300 !important;
+  letter-spacing: -0.005em !important; line-height: 1.3 !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1.5L6 6.5L11 1.5' stroke='rgba(255,255,255,0.45)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 12px 8px;
+}
+.pf-subj-dd-btn:hover { background-color: #1A1A1A !important; border-color: rgba(255,255,255,0.18) !important; }
+.pf-subj-dd-btn[aria-expanded="true"] { background-color: #1A1A1A !important; border-color: rgba(255,255,255,0.30) !important; }
+.pf-subj-dd-menu {
+  position: absolute; top: calc(100% + 4px); left: 0; right: 0;
+  max-height: 280px; overflow-y: auto;
+  background: #1A1A1A; border: 1px solid rgba(255,255,255,0.10); border-radius: 8px;
+  z-index: 50; padding: 4px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.55);
+}
+.pf-subj-dd-menu[hidden] { display: none !important; }
+.pf-subj-opt {
+  display: flex; align-items: center; gap: 8px;
+  padding: 6px 10px; border-radius: 5px; cursor: pointer; user-select: none;
+  font-size: 14px; font-weight: 300; letter-spacing: -0.005em;
+  color: #ffffff !important;
+}
+.pf-subj-opt:hover { background: rgba(255,255,255,0.06); }
+.pf-subj-opt input { accent-color: #16a34a; cursor: pointer; }
+.pf-subj-opt:has(input:checked) { background: rgba(255,255,255,0.08); }
+.pf-subj-opt input:checked + span { color: #ffffff !important; font-weight: 400; }
+
+/* Province .fdd dropdown — planner spec */
+.pf-fdd { position: relative; }
+.pf-fdd-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  width: 100%; height: 36px; min-height: 36px;
+  padding: 7px 12px;
+  background: #141414;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 8px;
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px; font-weight: 300;
+  letter-spacing: -0.005em; line-height: 1.3;
+  font-family: inherit; text-align: left;
+}
+.pf-fdd-toggle:hover { background: #1A1A1A; border-color: rgba(255,255,255,0.18); }
+.pf-fdd-toggle:focus { outline: none; background: #1A1A1A; border-color: rgba(255,255,255,0.30); }
+.pf-fdd-label {
+  flex: 1; min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis;
+}
+.pf-fdd-caret { margin-left: 8px; display: inline-flex; align-items: center; flex-shrink: 0; transition: transform .15s ease; }
+.pf-fdd.open .pf-fdd-caret { transform: rotate(180deg); }
+.pf-fdd-panel {
+  position: absolute; top: calc(100% + 4px); left: 0; right: 0; z-index: 50;
+  max-height: 280px; overflow-y: auto;
+  background: #1A1A1A; border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 8px; padding: 4px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.55);
+}
+.pf-fdd-panel[hidden] { display: none !important; }
+.pf-fdd-item {
+  padding: 6px 10px; border-radius: 5px; cursor: pointer;
+  font-size: 14px; font-weight: 300; letter-spacing: -0.005em;
+  color: #ffffff;
+}
+.pf-fdd-item:hover { background: rgba(255,255,255,0.06); }
+.pf-fdd-item.selected { background: rgba(255,255,255,0.08); }
+.pf-subj-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.pf-subj-chip {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: transparent; color: #f5f5f7 !important;
+  border: 1px solid rgba(255,255,255,0.18);
+  padding: 5px 6px 5px 14px; border-radius: 999px;
+  font-size: 14px; font-weight: 300; letter-spacing: -0.005em;
+}
+.pf-subj-chip button {
+  background: transparent; border: 0; color: #9a9aa3 !important;
+  cursor: pointer; font-size: 14px; line-height: 1;
+  padding: 0 6px; border-radius: 50%;
+}
+.pf-subj-chip button:hover { background: rgba(255,255,255,0.08); color: #fff !important; }
+.pf-pbtn.primary { background: #16a34a !important; color: #fff !important; border-color: #15803d !important; }
+.pf-pbtn.primary:hover { background: #15803d !important; border-color: #166534 !important; }
+</style>
+<script>
+function pfOpenEditModal(){
+  var o = document.getElementById('pfEditOverlay');
+  var m = document.getElementById('pfEditModal');
+  if (o) o.hidden = false;
+  if (m) { m.hidden = false; document.body.style.overflow = 'hidden'; }
+  pfUpdateSubjCount();
+}
+function pfCloseEditModal(){
+  var o = document.getElementById('pfEditOverlay');
+  var m = document.getElementById('pfEditModal');
+  if (o) o.hidden = true;
+  if (m) { m.hidden = true; document.body.style.overflow = ''; }
+}
+function pfUpdateSubjCount(){
+  var menu = document.getElementById('pfSubjDDMenu'); if (!menu) return;
+  var checked = menu.querySelectorAll('input[type="checkbox"]:checked');
+  var n = checked.length;
+  var c = document.getElementById('pfSubjCount'); if (c) c.textContent = n;
+  var label = document.getElementById('pfSubjDDLabel');
+  if (label) label.textContent = n ? (n + ' subject' + (n===1?'':'s') + ' selected') : 'Select subjects…';
+  // Render chip summary below the dropdown
+  var chips = document.getElementById('pfSubjChips');
+  if (chips){
+    chips.innerHTML = '';
+    Array.prototype.forEach.call(checked, function(cb){
+      var chip = document.createElement('span');
+      chip.className = 'pf-subj-chip';
+      chip.innerHTML = '<span></span><button type="button" aria-label="Remove">&times;</button>';
+      chip.firstChild.textContent = cb.value;
+      chip.querySelector('button').addEventListener('click', function(){
+        cb.checked = false;
+        pfUpdateSubjCount();
+      });
+      chips.appendChild(chip);
+    });
+  }
+}
+function pfToggleSubjDD(){
+  var btn  = document.getElementById('pfSubjDDBtn');
+  var menu = document.getElementById('pfSubjDDMenu');
+  if (!btn || !menu) return;
+  var open = menu.hidden;
+  menu.hidden = !open;
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+document.addEventListener('click', function(e){
+  var dd = document.getElementById('pfSubjDD');
+  var menu = document.getElementById('pfSubjDDMenu');
+  if (!dd || !menu || menu.hidden) return;
+  if (!dd.contains(e.target)){
+    menu.hidden = true;
+    var btn = document.getElementById('pfSubjDDBtn');
+    if (btn) btn.setAttribute('aria-expanded','false');
+  }
+});
+document.addEventListener('change', function(e){
+  if (e.target && e.target.matches('#pfSubjDDMenu input[type="checkbox"]')){
+    var menu = document.getElementById('pfSubjDDMenu');
+    var checked = menu.querySelectorAll('input[type="checkbox"]:checked');
+    if (checked.length > 4){ e.target.checked = false; alert('You can select up to 4 subjects.'); }
+    pfUpdateSubjCount();
+  }
+});
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') pfCloseEditModal();
+});
+// Move overlay + modal to <body> so position:fixed centers in viewport
+(function(){
+  ['pfEditOverlay','pfEditModal'].forEach(function(id){
+    var el = document.getElementById(id);
+    if (el && el.parentNode !== document.body) document.body.appendChild(el);
+  });
+})();
+// Province .fdd dropdown
+function pfToggleProvinceDD(e){
+  if (e) e.stopPropagation();
+  var dd = document.getElementById('pfProvinceDD'); if (!dd) return;
+  var panel = dd.querySelector('.pf-fdd-panel'); if (!panel) return;
+  var open = panel.hidden;
+  panel.hidden = !open;
+  dd.classList.toggle('open', open);
+}
+(function(){
+  var dd = document.getElementById('pfProvinceDD'); if (!dd) return;
+  var hidden = dd.querySelector('input[type="hidden"][name="province"]');
+  var label  = dd.querySelector('.pf-fdd-label');
+  var panel  = dd.querySelector('.pf-fdd-panel');
+  var items  = dd.querySelectorAll('.pf-fdd-item');
+  items.forEach(function(it){
+    if (hidden && it.dataset.value === hidden.value) it.classList.add('selected');
+    it.addEventListener('click', function(){
+      if (hidden) hidden.value = it.dataset.value;
+      if (label)  label.textContent = it.textContent.trim();
+      items.forEach(function(o){ o.classList.remove('selected'); });
+      it.classList.add('selected');
+      if (panel) panel.hidden = true;
+      dd.classList.remove('open');
+    });
+  });
+  document.addEventListener('click', function(e){
+    if (!dd.contains(e.target)) {
+      if (panel) panel.hidden = true;
+      dd.classList.remove('open');
+    }
+  });
+})();
+</script>
+
+{% if current_user.profile_pic %}
+<!-- Remove avatar confirm modal (matches planner popup style) -->
+<div id="pfRemoveOverlay" class="pf-modal-overlay" hidden onclick="pfCloseRemoveModal()"></div>
+<div id="pfRemoveModal" class="pf-modal" role="dialog" aria-modal="true" aria-labelledby="pfRemoveTitle" hidden>
+  <div class="pf-modal-h">
+    <div class="pf-modal-title" id="pfRemoveTitle">Remove profile picture</div>
+    <button type="button" class="pf-modal-close" onclick="pfCloseRemoveModal()" aria-label="Close">&times;</button>
+  </div>
+  <div class="pf-modal-body">
+    Your photo will be deleted and your initials will be shown instead. You can upload a new one any time.
+  </div>
+  <div class="pf-modal-footer">
+    <button type="button" class="pf-pbtn cancel" onclick="pfCloseRemoveModal()">Cancel</button>
+    <button type="button" class="pf-pbtn danger" onclick="document.getElementById('pfRemoveAvatarForm').submit()">Remove photo</button>
+  </div>
+</div>
+<style>
+.pf-modal-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0,0,0,0.5); z-index: 1099;
+}
+.pf-modal-overlay:not([hidden]) { display: block; }
+.pf-modal {
+  display: none; position: fixed; top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  background: #1a1a1d; color: #f5f5f7;
+  padding: 1.5rem;
+  border: 1px solid #2a2a2f;
+  border-radius: 15px;
+  box-shadow: 0 5px 30px rgba(0,0,0,0.5);
+  z-index: 1100; width: 90%; max-width: 480px;
+  max-height: 90vh; overflow-y: auto;
+}
+.pf-modal:not([hidden]) { display: block; }
+.pf-modal-h {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-bottom: 14px; margin-bottom: 14px;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+}
+.pf-modal-title { font-size: 1.1rem; font-weight: 600; color: #ffffff !important; }
+.pf-modal-close {
+  background: none; border: none; font-size: 1.5rem; line-height: 1;
+  cursor: pointer; color: rgba(255,255,255,0.55) !important;
+  padding: 2px 8px; border-radius: 6px;
+}
+.pf-modal-close:hover { color: #ffffff !important; background: rgba(255,255,255,0.08) !important; }
+.pf-modal-body {
+  color: rgba(255,255,255,0.78) !important;
+  font-size: 0.95rem; line-height: 1.5;
+  padding: 4px 0 6px;
+}
+.pf-modal-footer {
+  display: flex; justify-content: flex-end; gap: 8px;
+  margin-top: 16px; padding-top: 14px;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+.pf-pbtn {
+  padding: 8px 18px; border-radius: 8px; border: 1px solid transparent;
+  cursor: pointer; font-size: 0.88rem; font-weight: 600;
+  letter-spacing: -0.005em;
+  transition: background .15s ease, border-color .15s ease, transform .08s ease;
+}
+.pf-pbtn:active { transform: scale(0.98); }
+.pf-pbtn.cancel { background: transparent !important; color: rgba(255,255,255,0.85) !important; border-color: rgba(255,255,255,0.15) !important; }
+.pf-pbtn.cancel:hover { background: rgba(255,255,255,0.06) !important; border-color: rgba(255,255,255,0.30) !important; color: #ffffff !important; }
+.pf-pbtn.danger { background: #d92d20 !important; color: #ffffff !important; border-color: #d92d20 !important; }
+.pf-pbtn.danger:hover { background: #b42318 !important; border-color: #b42318 !important; }
+</style>
+<script>
+function pfOpenRemoveModal(){
+  var o = document.getElementById('pfRemoveOverlay');
+  var m = document.getElementById('pfRemoveModal');
+  if (o) o.hidden = false;
+  if (m) { m.hidden = false; document.body.style.overflow = 'hidden'; }
+}
+function pfCloseRemoveModal(){
+  var o = document.getElementById('pfRemoveOverlay');
+  var m = document.getElementById('pfRemoveModal');
+  if (o) o.hidden = true;
+  if (m) { m.hidden = true; document.body.style.overflow = ''; }
+}
+document.addEventListener('keydown', function(e){
+  if (e.key === 'Escape') pfCloseRemoveModal();
+});
+// Move overlay + modal to <body> so position:fixed centers in viewport
+// (a transformed ancestor would otherwise re-anchor them).
+(function(){
+  ['pfRemoveOverlay','pfRemoveModal'].forEach(function(id){
+    var el = document.getElementById(id);
+    if (el && el.parentNode !== document.body) document.body.appendChild(el);
+  });
+})();
+</script>
+{% endif %}
+{% endblock %}

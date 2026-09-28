@@ -1,0 +1,984 @@
+﻿
+
+CAT P2 May-June 2022 
+
+CAT P2 May-June 2022
+
+Print / Save as PDF 
+
+Edit 
+
+Close 
+
+Past Paper Template
+
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+
+COMPUTER APPLICATIONS TECHNOLOGY P2
+
+JUNE 2022
+
+MARKS: 150
+
+TIME: 3 Hours
+
+This question paper consists of 5 pages.
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+2 
+DBE/June 2022 
+
+INSTRUCTIONS AND INFORMATION
+
+This question paper consists of: 
+
+SECTION A (25)
+
+SECTION B (75)
+
+SECTION C (50)
+
+Answer ALL the questions. 
+
+Number the answers correctly according to the numbering system used in this question paper. 
+
+Start EACH question on a NEW page. 
+
+Do NOT write in the right-hand margin of the ANSWER BOOK. 
+
+Leave a line after EACH subquestion. 
+
+Generally, one mark is allocated per fact; therefore, a 2-mark question would require TWO facts, etc. 
+
+Read the questions carefully. DO NOT give more answers than the question requires as it will NOT be marked. 
+
+All answers MUST be related to Computer Applications Technology. 
+
+Unless otherwise specified, answers such as cheaper , slower / faster , etc. will NOT be accepted. 
+
+Do NOT use brand names in your answers, unless specifically required. 
+
+Write neatly and legibly. 
+
+Copyright reserved Please turn over 
+
+Computer Applications Technology/P2 
+3 
+DBE/June 2022 
+
+SECTION A
+
+QUESTION 1: MULTIPLE-CHOICE QUESTIONS
+
+Various options are given as possible answers to the following questions. Choose the answer and write only the letter (A–D) next to the question numbers (1.1 to 1.10) in the ANSWER BOOK, e.g. 1.11 D. 
+
+1.1
+
+A user may suffer from … when spending a lot of time at the computer. A RSI B ALU C ICT D HCI 
+
+(1)
+
+1.2
+
+Which ONE of the following is most likely to be the size of a data bundle bought by a user? A 1 MB B 100 KB C 1 GB D 5 TB 
+
+(1)
+
+1.3
+
+A … could be used to input data instead of using the number keys on a keyboard. A barcode scanner B touch pad C joystick D game controller 
+
+(1)
+
+1.4
+
+Which ONE of the following is NOT an example of a biometric input device? A Fingerprint reader B Microphone C Touch pad D Camera 
+
+(1)
+
+1.5
+
+Study the screenshot below and answer the question that follows. Which ONE of the following options would display the CORRECT result for cell D2? A Fail B 30 C D Pass 
+
+(1)
+
+1.6
+
+Which ONE of the following functions is used in a database, but NOT in a spreadsheet? A LEN B AVG C MAX D COUNT 
+
+(1)
+
+1.7
+
+In a word processor, the … fixes misspelt words without user input. A Thesaurus B Find and Replace C Spelling & Grammar D AutoCorrect 
+
+(1)
+
+1.8
+
+This type of file contains data which is most likely separated by commas: A csv B doc C xls D ppt 
+
+(1)
+
+1.9
+
+Which ONE of the following is the fastest option for permanent storage? A DVD B ROM C HDD D Cache 
+
+(1)
+
+1.10
+
+A point of sales (POS) system is typically linked to a … A spreadsheet. B database. C text file. D jpeg file. 
+
+(1)
+
+[10]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+4 
+DBE/June 2022 
+
+QUESTION 2: MATCHING ITEMS
+
+Choose a term/concept from COLUMN B that matches the description in COLUMN A. Write only the letter (A–T) next to the question numbers (2.1 to 2.10) in the ANSWER BOOK, e.g. 2.11 U. 
+
+COLUMN A
+
+COLUMN B
+
+2.1
+
+A program that enables a user to organise his/her files and folders
+
+A
+
+RAM
+
+2.2
+
+An application most suited for data analysis
+
+B
+
+LTE
+
+2.3
+
+Software that attempts to collect information about a user without his/her permission
+
+C
+
+word processing
+
+2.4
+
+A spreadsheet function that extracts text data
+
+D
+
+resolution
+
+2.5
+
+A standard used in wireless communication that provides high-speed data transfers
+
+E
+
+WAN
+
+2.6
+
+Certain internet services are given bandwidth preference over other services
+
+F
+
+shaping
+
+2.7
+
+An important consideration when purchasing a monitor
+
+G
+
+Disk Cleanup
+
+2.8
+
+A hardware component that will improve the performance of a computer
+
+H
+
+spyware
+
+2.9
+
+Type of network that connects offices of a company that are located in different cities
+
+I
+
+SUM
+
+2.10
+
+Unwanted e-mail sent to a large number of users
+
+J
+
+spam
+
+K
+
+MID
+
+L
+
+keyboard
+
+M
+
+LAN
+
+N
+
+phishing
+
+O
+
+VoIP
+
+P
+
+Explorer
+
+Q
+
+adware
+
+R
+
+spreadsheet
+
+S
+
+brightness
+
+T
+
+Bluetooth
+
+(10 x 1) [10]
+
+[10]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+5 
+DBE/June 2022 
+
+QUESTION 3: TRUE/FALSE ITEMS
+
+Indicate whether the following statements are TRUE or FALSE. Write ‘true’ or ‘false’ next to the question numbers (3.1 to 3.5) in the ANSWER BOOK. Correct the statement if it is FALSE by changing the underlined word(s) to make the statement TRUE. (Do NOT simply use the word ‘NOT’ to change the statement.) 
+
+NO mark will be awarded if only FALSE is written.
+
+EXAMPLES:
+
+QUESTION
+
+ANSWER
+
+A stylus can be used for more accurate input on some touch screens.
+
+True
+
+A sound card has slots for hardware components, such as the CPU.
+
+False, motherboard
+
+3.1
+
+HDMI cables transfer only video signals. 
+
+(1)
+
+3.2
+
+NFC requires the devices to be very close together for data transfer. 
+
+(1)
+
+3.3
+
+Data transfer speed in a Wi-Fi network could be improved if physical obstructions are removed. 
+
+(1)
+
+3.4
+
+Grid computing enables computers to perform intellectual tasks, such as decision-making and problem-solving. 
+
+(1)
+
+3.5
+
+Cryptocurrencies are very large data sets that are analysed to reveal trends. 
+
+(1)
+
+[5]
+
+TOTAL SECTION A: [25]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+6 
+DBE/June 2022 
+
+SECTION B
+
+QUESTION 4: SYSTEM TECHNOLOGIES
+
+4.1
+
+cloud computing? Do you store your data 
+
+[0]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+7 
+DBE/June 2022 
+
+QUESTION 5: INTERNET AND NETWORK TECHNOLOGIES
+
+5.1
+
+(4) in the cloud? Copy only columns 1, 3 and 4 in the ANSWER BOOK to answer this question. 6.2 Study the extract below and answer the questions that follow. Cape Town University Press Giant Elon Musk rocket is about to CRASH into the Moon after 7 years of chaos Harry Pettit, Deputy Technology and Science Editor 14:15, 25 Jan 2022 Updated: 17:01, 25 Jan 2022 A FOUR-TONNE chunk of a SpaceX is on a collision course with the Moon, according to online space junk trackers. The out-of-control booster was launched from Florida in February 2015 as part of the rocket firm s first interplanetary mission. (1) 6.2.1 What makes Harry Pettit a trustworthy source? (1) 6.2.2 How would you check if the information above is accurate? (2) 6.3 Which TWO word processing features can be used to reference a source in a document? 6.4 You gathered data from various sources when you did your PAT. You wish to use graphs to display your data analysis in the report. (1) 6.4.1 Give ONE reason to use a pie chart. 6.4.2 Give ONE reason to use a line chart. 
+
+(10)
+
+[10]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+8 
+DBE/June 2022 
+
+QUESTION 6: INFORMATION MANAGEMENT
+
+6.1
+
+Discuss the concept of communication in the information processing cycle. 
+
+(1)
+
+6.2
+
+Give ONE reason why a hard disk drive is not preferred in a laptop. 
+
+(1)
+
+6.3
+
+You wish to set up a small office home office (SOHO) with four computers. 
+
+6.3.1
+
+Explain TWO criteria that could be used to select a printer for this office. 
+
+(2)
+
+6.3.2
+
+What type of software licence would you prefer when installing an office suite for this office? Motivate your answer. 
+
+(2)
+
+6.3.3
+
+Give TWO benefits of buying a UPS for this office. 
+
+(2)
+
+6.3.4
+
+Which problem could arise if the printer purchased for this office is NOT set as the default printer? 
+
+(1)
+
+6.4
+
+Give TWO disadvantages of using open-source software. 
+
+(2)
+
+6.5
+
+Explain why a user would prefer using a virtual keyboard rather than a physical keyboard. 
+
+(1)
+
+6.6
+
+It is good practice to make backups of data. 
+
+6.6.1
+
+Give TWO reasons why it is important to make offline backups. 
+
+(2)
+
+6.6.2
+
+Why should you never make an offline backup of your work on the same device as the original work? 
+
+(1)
+
+6.6.3
+
+Name a file extension which is typically associated with backup file sizes that were reduced. 
+
+(1)
+
+6.7
+
+What change must be made to the resolution of a monitor to assist a visually impaired user? 
+
+(1)
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+9 
+DBE/June 2022 
+
+6.8
+
+What is the Task Manager most commonly used for? 
+
+(1)
+
+6.9
+
+Give TWO reasons why it is not recommended that an accountant uses a trial version of financial software. 
+
+(2)
+
+6.10
+
+Suggest TWO ways to resolve the problem of a mouse that does not work properly, other than replacing the mouse. 
+
+(2)
+
+6.11
+
+Name TWO kinds of information found in the metadata of a file. 
+
+(2)
+
+6.12
+
+Discuss the purpose of a QR code. 
+
+(1)
+
+[25]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+10 
+DBE/June 2022 
+
+QUESTION 7: SOCIAL IMPLICATIONS
+
+7.1
+
+Name a type of internet connection you would recommend for a school AND motivate your answer. 
+
+(2)
+
+7.2
+
+What is the advantage of using the https protocol over the http protocol? 
+
+(1)
+
+7.3
+
+Suggest TWO ways in which software can be used to protect a network from unauthorised users. 
+
+(2)
+
+7.4
+
+Give TWO reasons why some users prefer to listen to a podcast rather than reading text. 
+
+(2)
+
+7.5
+
+A particular router has only four network cable ports. State TWO ways to connect more than four devices to this router. 
+
+(2)
+
+7.6
+
+Give TWO reasons why internet access is important to users of computing devices. 
+
+(2)
+
+7.7
+
+Discuss TWO advantages of using a VPN. 
+
+(2)
+
+7.8
+
+You cannot connect to the computer network in your classroom. Suggest TWO possible ways to resolve this problem. 
+
+(2)
+
+[15]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+11 
+DBE/June 2022 
+
+QUESTION 8: SOLUTION DEVELOPMENT
+
+8.1
+
+Complete the table below to indicate whether each question is suitable or unsuitable to be used in a questionnaire, and give a motivation for your answer. 1 2 3 4 Question Suitable/ number Question Unsuitable Motivation What are the benefits of 
+
+(1)
+
+[1]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+12 
+DBE/June 2022 
+
+QUESTION 9: INTEGRATED SCENARIO
+
+9.1
+
+Give an example of a product that is considered to be intellectual property. 
+
+(1)
+
+9.2
+
+Give TWO guidelines that can be found in a school s BYOD policy. 
+
+(2)
+
+9.3
+
+Suggest TWO ways in which to prevent computer hardware theft in schools. 
+
+(2)
+
+9.4
+
+Explain TWO ways to protect your privacy when using the internet through a public hotspot. 
+
+(2)
+
+9.5
+
+Give ONE reason why some companies may NOT allow their employees to telecommute. 
+
+(1)
+
+9.6
+
+Discuss TWO negative effects a user can experience if he/she overuses social media. 
+
+(2)
+
+[10]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+13 
+DBE/June 2022 
+
+QUESTION 10
+
+10.1
+
+What is the purpose of using a bookmark in a word processing document? 
+
+(1)
+
+10.2
+
+How would you prepare the headings in a word processing document to appear in an automatic table of contents? 
+
+(1)
+
+10.3
+
+Study the design of the following database table: Field Name Data Type Description (Optional) sName Short Text Name of student sSurname Short Text Surname of student SA_ID Short Text South African ID Gender Short Text Male or Female Age Number Age in current year School Short Text Name of school 
+
+10.3.1
+
+Suggest an appropriate size for the sName field. 
+
+(1)
+
+10.3.2
+
+Which field would be appropriate to use as the primary key? 
+
+(1)
+
+10.3.3
+
+Which data type could be used for the Gender field to select an appropriate option? 
+
+(1)
+
+10.3.4
+
+Which field property of the School field would automatically insert data in that field? 
+
+(1)
+
+10.4
+
+A database contains several uniform resource locators (URLs). How would you be able to display all the records of URLs ending in .com in a database query? 
+
+(1)
+
+10.5
+
+Which spreadsheet feature can be used to copy the results of a formula from one spreadsheet to appear in another spreadsheet without copying the formula? 
+
+(1)
+
+10.6
+
+The spreadsheet below indicates the marks of some learners. 
+
+10.6.1
+
+The marks in column B were adjusted to display the next whole number in column C. Which spreadsheet function was used to return the next whole number in column C? 
+
+(1)
+
+10.6.2
+
+The function displayed in the formula bar was used to give the result in cell C6. Why is the result in cell C6 a 0 (zero)? 
+
+(1)
+
+10.6.3
+
+Which spreadsheet function can be used to determine the number of learners listed in the spreadsheet? 
+
+(1)
+
+10.7
+
+The following HTML code appeared in an HTML editor: Shopping List Butter Eggs Flour Soap Shampoo Toothpaste Illustrate how this web page would display. 
+
+(1)
+
+[12]
+
+TOTAL SECTION B: [73]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+14 
+DBE/June 2022 
+
+SECTION C
+
+QUESTION 11: SECTION C
+
+11.1
+
+The school will use computers to manage the talent show. 
+
+11.1.1
+
+Complete the missing specifications of an entry-level computer that could be used by the RCL. Write the answer next to the question number (9.1.1(a) to (c)) in the ANSWER BOOK. Computer Specifications Monitor 17 LCD display (a) … Celeron Storage device (b) … (c) … 802.11 
+
+(3)
+
+11.1.2
+
+Why would the RCL prefer to use tablets for the registration of participants in the talent show? 
+
+(1)
+
+11.1.3
+
+One of the RCL members recommended that they use voice recognition software for the registration. Give ONE motivation to support this suggestion AND ONE motivation NOT to support this suggestion. 
+
+(2)
+
+11.2
+
+Give TWO reasons why it would be better to use online storage for fundraising data. 
+
+(2)
+
+11.3
+
+Some participants complain that when they click on the link to the talent show website, it opens to an unexpected website. Give ONE reason why this occurs AND how can it be avoided in the future. 
+
+(2)
+
+11.4
+
+The worksheet below summarises ticket sales for the talent show for one night. 
+
+11.4.1
+
+State TWO spreadsheet features that the RCL could use so that fewer errors are made when data is captured. 
+
+(2)
+
+11.4.2
+
+The data of the ticket sales are stored in another worksheet. State TWO methods that were possibly used to display the number of tickets sold in column C, other than copying and pasting. 
+
+(2)
+
+11.4.3
+
+Suggest TWO formatting changes that can make the worksheet more user-friendly. 
+
+(2)
+
+11.5
+
+Discuss TWO ways in which ICTs can be used to distribute programmes, posters, tickets and duty rosters for the talent show, instead of printing them. 
+
+(2)
+
+11.6
+
+After the talent show, the audience can use their smartphones to vote for the best act. Give TWO advantages of using an online form to vote. 
+
+(2)
+
+11.7
+
+Trophies will be presented on the night of the talent show. Give TWO advantages of printing trophies with a 3D printer. 
+
+(2)
+
+11.8
+
+A member of the RCL will take photographs on the night of the talent show. 
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+15 
+DBE/June 2022 
+
+11.8.1
+
+State ONE possible problem when using a smartphone to take photographs at night. 
+
+(1)
+
+11.8.2
+
+Suggest TWO guidelines to follow before posting photographs on social media platforms. 
+
+(2)
+
+[25]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+16 
+DBE/June 2022 
+
+QUESTION 12
+
+12.1
+
+The laptops for the organisation need to be upgraded. Give a reason why the organisation may not be able to upgrade the laptops. 
+
+(1)
+
+12.2
+
+Internet connectivity is very important in an online educational environment. 
+
+12.2.1
+
+Give the definition of broadband. 
+
+(2)
+
+12.2.2
+
+What is the unit of measurement for data transfer speed? 
+
+(1)
+
+12.2.3
+
+What effect could throttling have on the users while learning online? 
+
+(1)
+
+12.3
+
+Give TWO disadvantages of video conferencing to deliver or access online lessons. 
+
+(2)
+
+12.4
+
+Any organisation should be aware of privacy and security issues. 
+
+12.4.1
+
+Explain why a keylogger is a threat to online privacy and security. 
+
+(2)
+
+12.4.2
+
+Give TWO advantages of two-factor or multi-factor authentication for the user. 
+
+(2)
+
+12.4.3
+
+Give TWO examples of web services that use two-factor or multi- factor authentication. 
+
+(2)
+
+12.5
+
+Give TWO reasons why some students did not receive e-mails that were sent out. 
+
+(2)
+
+12.6
+
+Students will need to install add-ons to use the organisation s software. 
+
+12.6.1
+
+What is the benefit of an add-on? 
+
+(1)
+
+12.6.2
+
+Give ONE example of an add-on. 
+
+(1)
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+17 
+DBE/June 2022 
+
+12.7
+
+Some lessons require augmented reality. Explain the concept of augmented reality. 
+
+(1)
+
+12.8
+
+Give TWO advantages of online learning for the learner. 
+
+(2)
+
+12.9
+
+The organisation requires learners to submit their work as PDF files. Which application, other than a PDF reader, can teachers use to open PDF files? 
+
+(1)
+
+12.10
+
+A part of the organisation s website does not display correctly. Study the HTML code below and answer the questions that follow. Online Courses Select a course Options Blue Green 
+
+12.10.1
+
+Why does the title Online Courses not display in the web browser tab as expected? 
+
+(1)
+
+12.10.2
+
+How many columns will there be in the first row of the table if the HTML code above is displayed in a web browser? 
+
+(1)
+
+12.11
+
+An image in another web page of the organisation displays incorrectly. The file name and file extension are correct in the HTML code, but only a part of the image displays in the browser. Suggest TWO ways to ensure that the image is fully visible. 
+
+(2)
+
+[25]
+
+TOTAL SECTION C: [50]
+
+GRAND TOTAL: 150
+
+Copyright reserved

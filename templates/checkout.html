@@ -1,0 +1,443 @@
+﻿{% extends "base.html" %}
+
+{% block title %}Checkout - South African Teachers Hub{% endblock %}
+
+{% block head %}
+<style>
+    /* Azure-style radio buttons */
+    input[type="radio"] {
+        appearance: none;
+        -webkit-appearance: none;
+        width: 18px;
+        height: 18px;
+        border: 1px solid var(--gray-400);
+        border-radius: 50%;
+        outline: none;
+        transition: all 0.2s ease;
+        position: relative;
+    }
+    
+    input[type="radio"]:checked {
+        border-color: var(--azure-blue);
+        border-width: 1px;
+        background-color: white;
+    }
+    
+    input[type="radio"]:checked::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background-color: var(--azure-blue);
+    }
+    
+    input[type="radio"]:hover {
+        border-color: var(--azure-blue);
+    }
+    
+    /* Subtle selected payment method highlighting */
+    input[type="radio"]:checked + div + div {
+        color: var(--azure-blue-dark);
+    }
+    
+    input[type="radio"]:checked + div span {
+        color: var(--azure-blue-dark);
+    }
+    
+    /* Selected payment method background */
+    input[type="radio"]:checked {
+        border-color: var(--azure-blue);
+    }
+    
+    input[type="radio"]:checked ~ span {
+        color: var(--azure-blue-dark);
+    }
+    
+    /* Payment method selection effect */
+    .payment-method-label:has(input:checked) {
+        background-color: #f0f7ff;
+        border-color: var(--azure-blue) !important;
+    }
+    
+    /* Azure-style form inputs */
+    .border:focus-within {
+        border-color: var(--azure-blue) !important;
+        box-shadow: 0 0 0 1px var(--azure-blue);
+    }
+    
+    input:focus, select:focus {
+        outline: none;
+    }
+    
+    /* Hide default select arrow */
+    select {
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 0.75rem center;
+        background-size: 12px;
+    }
+    
+    /* Styling for form field containers on hover */
+    .border:hover {
+        border-color: var(--gray-400);
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="bg-azure-grey min-h-screen">
+    <!-- Page Header -->
+    <div class="bg-white" style="border-bottom: 1px solid var(--gray-300);">
+        <div class="container mx-auto px-4 py-6">
+            <h1 class="text-2xl font-light text-black">Checkout</h1>
+            <p class="text-sm text-gray-500 font-light mt-1">Complete your order</p>
+        </div>
+    </div>
+    
+    <div class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2">
+                <form method="POST" class="space-y-5">
+                    <!-- Shipping Information - Azure Card -->
+                    <div class="azure-card p-6">
+                        <h2 class="text-base font-normal mb-4 text-black">Shipping Information</h2>
+                        
+                        <div class="space-y-3">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <!-- First Name - Subtle Style -->
+                                    <div class="border border-gray-200 rounded bg-white" style="border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+                                        <label class="block text-xs font-light text-gray-500 px-3 pt-2">First Name</label>
+                                        <input type="text" name="first_name" required 
+                                               class="w-full px-3 pb-2 pt-1 border-0 focus:ring-0 focus:outline-none text-sm"
+                                               placeholder="Enter first name" value="{{ current_user.first_name or '' }}">
+                                    </div>
+                                </div>
+                                <div>
+                                    <!-- Last Name - Subtle Style -->
+                                    <div class="border border-gray-200 rounded bg-white" style="border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+                                        <label class="block text-xs font-light text-gray-500 px-3 pt-2">Last Name</label>
+                                        <input type="text" name="last_name" required 
+                                               class="w-full px-3 pb-2 pt-1 border-0 focus:ring-0 focus:outline-none text-sm"
+                                               placeholder="Enter last name" value="{{ current_user.last_name or '' }}">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Phone Number - Subtle Style -->
+                            <div class="border border-gray-200 rounded bg-white" style="border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+                                <label class="block text-xs font-light text-gray-500 px-3 pt-2">Phone Number</label>
+                                <input type="tel" name="phone" required 
+                                       class="w-full px-3 pb-2 pt-1 border-0 focus:ring-0 focus:outline-none text-sm"
+                                       placeholder="Enter phone number" value="{{ current_user.phone or '' }}">
+                            </div>
+                            
+                            <!-- Email Address - Subtle Style -->
+                            <div class="border border-gray-200 rounded bg-white" style="border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+                                <label class="block text-xs font-light text-gray-500 px-3 pt-2">Email Address <span class="text-red-500">*</span></label>
+                                <input type="email" name="email" required 
+                                       class="w-full px-3 pb-2 pt-1 border-0 focus:ring-0 focus:outline-none text-sm"
+                                       placeholder="your.email@example.com" value="{{ current_user.email or '' }}">
+                                <p class="text-xs font-light text-gray-500 px-3 pb-2">Your invoice will be sent to this email address</p>
+                            </div>
+                            
+                            <!-- Street Address - Subtle Style -->
+                            <div class="border border-gray-200 rounded bg-white" style="border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+                                <label class="block text-xs font-light text-gray-500 px-3 pt-2">Street Address</label>
+                                <input type="text" name="street_address" required 
+                                       class="w-full px-3 pb-2 pt-1 border-0 focus:ring-0 focus:outline-none text-sm"
+                                       placeholder="Enter street address">
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <!-- Suburb - Subtle Style -->
+                                    <div class="border border-gray-200 rounded bg-white" style="border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+                                        <label class="block text-xs font-light text-gray-500 px-3 pt-2">Suburb</label>
+                                        <input type="text" name="suburb" required 
+                                               class="w-full px-3 pb-2 pt-1 border-0 focus:ring-0 focus:outline-none text-sm"
+                                               placeholder="Enter suburb">
+                                    </div>
+                                </div>
+                                <div>
+                                    <!-- City - Subtle Style -->
+                                    <div class="border border-gray-200 rounded bg-white" style="border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+                                        <label class="block text-xs font-light text-gray-500 px-3 pt-2">City</label>
+                                        <input type="text" name="city" required 
+                                               class="w-full px-3 pb-2 pt-1 border-0 focus:ring-0 focus:outline-none text-sm"
+                                               placeholder="Enter city">
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <!-- Province - Subtle Style -->
+                                    <div class="border border-gray-200 rounded bg-white" style="border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+                                        <label class="block text-xs font-light text-gray-500 px-3 pt-2">Province</label>
+                                        <select name="province" required 
+                                               class="w-full px-3 pb-2 pt-1 border-0 focus:ring-0 focus:outline-none text-sm appearance-none bg-transparent">
+                                            <option value="">Select province</option>
+                                            <option value="gauteng">Gauteng</option>
+                                            <option value="western-cape">Western Cape</option>
+                                            <option value="eastern-cape">Eastern Cape</option>
+                                            <option value="kwazulu-natal">KwaZulu-Natal</option>
+                                            <option value="free-state">Free State</option>
+                                            <option value="limpopo">Limpopo</option>
+                                            <option value="mpumalanga">Mpumalanga</option>
+                                            <option value="north-west">North West</option>
+                                            <option value="northern-cape">Northern Cape</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div>
+                                    <!-- Postal Code - Subtle Style -->
+                                    <div class="border border-gray-200 rounded bg-white" style="border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+                                        <label class="block text-xs font-light text-gray-500 px-3 pt-2">Postal Code</label>
+                                        <input type="text" name="postal_code" required 
+                                               class="w-full px-3 pb-2 pt-1 border-0 focus:ring-0 focus:outline-none text-sm"
+                                               placeholder="Enter postal code">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Payment Method - Azure Card -->
+                    <div class="azure-card p-6">
+                        <h2 class="text-base font-normal mb-4 text-black">Payment Method</h2>
+                        
+                        <div class="space-y-2.5">
+                            <!-- Credit Card - Subtle Azure Style -->
+                            <label class="payment-method-label flex items-center p-3.5 border border-gray-200 rounded cursor-pointer transition relative" 
+                                   style="border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+                                <input type="radio" name="payment_method" value="credit_card" checked 
+                                       class="mr-3">
+                                <div class="flex items-center">
+                                    <img src="{{ url_for('static', filename='images/visa.svg') }}" alt="Visa" class="h-5 mr-2">
+                                    <img src="{{ url_for('static', filename='images/card_16174534.svg') }}" alt="MasterCard" class="h-5">
+                                </div>
+                                <div class="flex-1 ml-3">
+                                    <span class="font-light text-sm text-gray-800 block">Credit Card</span>
+                                </div>
+                            </label>
+                            
+                            <!-- PayPal - Subtle Azure Style -->
+                            <label class="payment-method-label flex items-center p-3.5 border border-gray-200 rounded cursor-pointer transition relative" 
+                                   style="border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+                                <input type="radio" name="payment_method" value="paypal" 
+                                       class="mr-3">
+                                <div class="flex items-center">
+                                    <img src="{{ url_for('static', filename='images/paypal.svg') }}" alt="PayPal" class="h-5">
+                                </div>
+                                <div class="flex-1 ml-3">
+                                    <span class="font-light text-sm text-gray-800 block">PayPal</span>
+                                </div>
+                            </label>
+                            
+                            <!-- Cash on Delivery - Subtle Azure Style -->
+                            <label class="payment-method-label flex items-center p-3.5 border border-gray-200 rounded cursor-pointer transition relative" 
+                                   style="border-radius: 2px; box-shadow: 0 1px 2px rgba(0,0,0,0.03);">
+                                <input type="radio" name="payment_method" value="cash_on_delivery" 
+                                       class="mr-3">
+                                <div class="flex items-center">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M2 8V16C2 18.2091 3.79086 20 6 20H18C20.2091 20 22 18.2091 22 16V8C22 5.79086 20.2091 4 18 4H6C3.79086 4 2 5.79086 2 8Z" stroke="#444" stroke-width="1.5"/>
+                                        <path d="M12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" stroke="#444" stroke-width="1.5"/>
+                                    </svg>
+                                </div>
+                                <div class="flex-1 ml-3">
+                                    <span class="font-light text-sm text-gray-800 block">Cash on Delivery</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <!-- Place Order Button -->
+                    <button type="submit" class="btn-azure-primary w-full inline-flex items-center justify-center">
+                        <i class="fas fa-check mr-2 text-xs"></i>Place Order
+                    </button>
+                </form>
+            </div>
+            
+            <!-- Order Summary - Azure Card -->
+            <div>
+                <div class="azure-card p-5 sticky top-24">
+                    <h2 class="text-base font-normal mb-4 text-black pb-3" style="border-bottom: 1px solid var(--gray-300);">Order Summary</h2>
+                    
+                    <div class="space-y-3 mb-4">
+                        {% for item in items %}
+                        <div class="flex justify-between text-sm">
+                            <span class="text-black font-light">{{ item.product.name }} <span class="text-gray-400">x{{ item.quantity }}</span></span>
+                            <span class="font-light text-black">R{{ "%.2f"|format(item.subtotal) }}</span>
+                        </div>
+                        {% endfor %}
+                    </div>
+                    
+                    <div class="pt-4 space-y-2.5" style="border-top: 1px solid var(--gray-300);">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-black font-light">Subtotal (excl. VAT)</span>
+                            <span class="font-light text-black">R{{ "%.2f"|format(subtotal_excl_vat) }}</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-black font-light">VAT (15%)</span>
+                            <span class="font-light text-black">R{{ "%.2f"|format(vat_amount) }}</span>
+                        </div>
+                        <div class="flex justify-between text-sm pt-2" style="border-top: 1px solid var(--gray-200);">
+                            <span class="text-black font-light">Subtotal (incl. VAT)</span>
+                            <span class="font-light text-black">R{{ "%.2f"|format(total) }}</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-black font-light">Delivery</span>
+                            {% if delivery_charge > 0 %}
+                            <span class="font-light text-black">R{{ "%.2f"|format(delivery_charge) }}</span>
+                            {% else %}
+                            <span class="font-light text-green-600">Free</span>
+                            {% endif %}
+                        </div>
+                        {% if total < 500 and delivery_charge > 0 %}
+                        <div class="bg-blue-50 p-2 rounded text-xs font-light text-blue-700" style="border: 1px solid #BFDBFE;">
+                            <i class="fas fa-info-circle mr-1"></i>
+                            Add R{{ "%.2f"|format(500 - total) }} more for free delivery
+                        </div>
+                        {% endif %}
+                        <div class="pt-3 flex justify-between" style="border-top: 1px solid var(--gray-300);">
+                            <span class="font-normal text-base text-black">Total</span>
+                            <span class="font-normal text-lg text-azure">R{{ "%.2f"|format(grand_total) }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+// Handle checkout form submission via AJAX
+document.querySelector('form').addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(this);
+    const submitBtn = document.querySelector('button[type="submit"]');
+    
+    // Disable button and show loading
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Processing...';
+    
+    fetch('{{ url_for("checkout") }}', {
+        method: 'POST',
+        body: formData,
+        headers: {
+            'X-Requested-With': 'XMLHttpRequest'
+        }
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.success) {
+            // Clear cart count badge
+            const cartBadge = document.querySelector('.cart-count');
+            if (cartBadge) {
+                cartBadge.textContent = '0';
+                cartBadge.classList.add('hidden');
+            }
+            
+            // Show success notification in sidebar
+            showOrderSuccessNotification(data.order_id, data.order_number);
+        } else {
+            // Handle server-side errors
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = '<i class="fas fa-check mr-2 text-xs"></i>Place Order';
+            alert(data.error || 'An error occurred. Please try again.');
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fas fa-check mr-2 text-xs"></i>Place Order';
+        alert('An error occurred. Please try again.');
+    });
+});
+
+function showOrderSuccessNotification(orderId, orderNumber) {
+    const panel = document.getElementById('notificationPanel');
+    const overlay = document.getElementById('cartOverlay');
+    const titleEl = document.getElementById('notificationTitle');
+    const iconEl = document.getElementById('notificationIcon');
+    const content = document.getElementById('notificationContent');
+    const footer = document.getElementById('notificationFooter');
+    
+    // Update notification content - Azure theme
+    titleEl.textContent = 'Order Placed Successfully!';
+    iconEl.className = 'fas fa-check-circle text-xl';
+    iconEl.style.color = 'var(--success-green)';
+    
+    content.innerHTML = `
+        <div class="space-y-4">
+            <!-- Success Message - Azure Style -->
+            <div class="p-5 rounded" style="background-color: #F0F9FF; border: 1px solid #0078D4;">
+                <div class="flex items-start gap-3">
+                    <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0" style="background-color: #E3F2FD;">
+                        <i class="fas fa-check-circle text-xl" style="color: var(--success-green);"></i>
+                    </div>
+                    <div class="flex-1">
+                        <h3 class="font-normal text-black mb-1 text-base">Thank you for your order!</h3>
+                        <p class="text-sm font-light text-gray-700">Your order has been received and is being processed.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Order Details - Azure Card Style -->
+            <div class="azure-card p-5">
+                <div class="space-y-3 text-sm">
+                    <div class="flex justify-between items-center pb-3 border-b border-gray-200">
+                        <span class="font-light text-gray-600">Order Number:</span>
+                        <span class="font-medium text-sm" style="color: #0078D4;">${orderNumber || orderId}</span>
+                    </div>
+                    <div class="flex justify-between items-center">
+                        <span class="font-light text-gray-600">Status:</span>
+                        <span class="px-3 py-1 rounded text-xs font-normal" style="background-color: #FEF3C7; color: #F59E0B;">Pending</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Information Notice - Azure Style -->
+            <div class="p-4 rounded" style="background-color: #E3F2FD;">
+                <div class="flex items-start gap-2">
+                    <i class="fas fa-info-circle mt-0.5 text-sm" style="color: #0078D4;"></i>
+                    <div class="text-sm font-light text-gray-700 space-y-1">
+                        <p>You will receive an email confirmation shortly with your order details.</p>
+                        <p>You can track your order status from your account.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
+    
+    // Update footer with action buttons - Azure style
+    footer.innerHTML = `
+        <div class="space-y-2">
+            <a href="/order/${orderId}" class="btn-azure-primary w-full block text-center">
+                <i class="fas fa-receipt mr-2 text-xs"></i>View Order Details
+            </a>
+            <a href="/" class="btn-azure-secondary w-full block text-center">
+                <i class="fas fa-shopping-bag mr-2 text-xs"></i>Continue Shopping
+            </a>
+        </div>
+    `;
+    
+    // Show notification panel
+    panel.classList.add('active');
+    overlay.classList.add('active');
+}
+</script>
+
+{% endblock %}

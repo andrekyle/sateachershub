@@ -1,0 +1,251 @@
+﻿{% extends "lms_base.html" %}
+{% block title %}Sign in — South African Teachers Hub{% endblock %}
+{% block body_class %}auth-page{% endblock %}
+
+{% block extra_css %}
+<style>
+    html, html[data-theme="dark"] { background: #0B0D10 !important; height: 100% !important; }
+    body.auth-page { background: #0B0D10 !important; }
+</style>
+{% endblock %}
+
+{% block navbar %}{% endblock %}
+
+{% block hero %}
+<style>
+    html, body.auth-page {
+        margin: 0 !important; padding: 0 !important;
+        background: #0B0D10 !important;
+        color: #E6E8EB;
+        line-height: 0;
+        overflow: hidden;
+    }
+    .gx-auth-wrap {
+        position: fixed;
+        inset: 0;
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        min-height: 100vh;
+        width: 100vw;
+        line-height: 1.47059;
+    }
+    @media (max-width: 860px) {
+        body.auth-page { overflow: auto; }
+        .gx-auth-wrap { grid-template-columns: 1fr; }
+        .gx-pitch { display: none; }
+        .gx-form-card { min-height: 100vh; }
+    }
+
+    .gx-pitch {
+        position: relative;
+        overflow: hidden;
+        padding: 0;
+    }
+    .gx-pitch-img {
+        width: 100%; height: 100%;
+        object-fit: cover;
+        display: block;
+        filter: brightness(1.15) saturate(0.8);
+    }
+    .gx-form-card {
+        background: #0F1216;
+        border-left: 1px solid rgba(255,255,255,0.06);
+        padding: 20px 64px 40px 110px;
+        display: flex; flex-direction: column;
+        justify-content: flex-start;
+    }
+    .gx-form-inner { max-width: 380px; width: 100%; }
+    .gx-form-title {
+        font-size: 30px; font-weight: 700;
+        color: #F5F7FA; letter-spacing: -1.1px;
+        margin: 0 0 6px;
+    }
+    .gx-form-sub {
+        font-size: 14px; color: rgba(255,255,255,0.6);
+        margin: 0 0 32px; letter-spacing: -0.1px;
+    }
+    .gx-form { display: flex; flex-direction: column; gap: 14px; }
+
+    .gx-field { position: relative; }
+    .gx-label-row {
+        display: flex; align-items: center; justify-content: space-between;
+        margin: 0 0 8px;
+    }
+    .gx-label {
+        font-size: 11px; font-weight: 600;
+        text-transform: uppercase; letter-spacing: 1.4px;
+        color: rgba(255,255,255,0.7);
+    }
+    .gx-label-link {
+        font-size: 12px; color: rgba(255,255,255,0.65);
+        text-decoration: none; font-weight: 500;
+    }
+    .gx-label-link:hover { color: #fff; }
+    .gx-input {
+        width: 100%;
+        background: #15191F;
+        border: 1.5px solid #262B33;
+        border-radius: 12px;
+        padding: 13px 16px 13px 44px;
+        color: #F5F7FA;
+        font-size: 14.5px;
+        font-family: inherit;
+        letter-spacing: -0.1px;
+        transition: border-color .15s, background .15s;
+        appearance: none;
+        -webkit-appearance: none;
+    }
+    .gx-input::placeholder { color: rgba(255,255,255,0.3); }
+    .gx-input:focus {
+        outline: none;
+        border-color: rgba(255,255,255,0.35);
+        background: #181D24;
+    }
+    .gx-input:-webkit-autofill,
+    .gx-input:-webkit-autofill:hover,
+    .gx-input:-webkit-autofill:focus {
+        -webkit-box-shadow: 0 0 0 1000px #15191F inset !important;
+        -webkit-text-fill-color: #F5F7FA !important;
+        caret-color: #fff;
+    }
+    .gx-input-icon {
+        position: absolute; left: 16px; top: calc(50% + 12px); transform: translateY(-50%);
+        color: rgba(255,255,255,0.45); font-size: 14px;
+        pointer-events: none;
+    }
+    .gx-pwd-toggle {
+        position: absolute; right: 12px; top: calc(50% + 12px); transform: translateY(-50%);
+        background: none; border: none; cursor: pointer;
+        color: rgba(255,255,255,0.55); padding: 6px;
+    }
+    .gx-pwd-toggle:hover { color: #fff; }
+
+    .gx-btn {
+        margin-top: 8px;
+        display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+        background: #F5F7FA; color: #0B0D10;
+        font-weight: 600; font-size: 14.5px;
+        padding: 14px 22px; border-radius: 12px;
+        border: none; cursor: pointer;
+        letter-spacing: -0.1px;
+        transition: transform .2s var(--ease), background .2s;
+    }
+    .gx-btn:hover { background: #fff; transform: translateY(-1px); }
+    .gx-btn i { font-size: 12px; }
+
+    .gx-google {
+        display: inline-flex; align-items: center; justify-content: center; gap: 12px;
+        background: #15191F;
+        border: 1.5px solid #262B33;
+        color: #E6E8EB;
+        font-weight: 500; font-size: 14px;
+        font-family: 'Google Sans', Roboto, Arial, sans-serif;
+        padding: 11px 20px; border-radius: 8px;
+        cursor: pointer; width: 100%;
+        margin-bottom: 20px;
+        transition: background .15s, border-color .15s;
+        letter-spacing: 0.01em;
+    }
+    .gx-google:hover {
+        background: #1B2027;
+        border-color: #353B45;
+    }
+    .gx-google:active { background: #11151A; }
+    .gx-google svg { width: 20px; height: 20px; flex-shrink: 0; }
+
+    .gx-divider {
+        display: flex; align-items: center; gap: 14px;
+        margin: 0 0 20px;
+        font-size: 11px; font-weight: 600;
+        text-transform: uppercase; letter-spacing: 1.6px;
+        color: rgba(255,255,255,0.45);
+    }
+    .gx-divider::before, .gx-divider::after {
+        content: ''; flex: 1; height: 1px;
+        background: rgba(255,255,255,0.08);
+    }
+
+    .gx-foot {
+        margin-top: 24px;
+        text-align: center;
+        font-size: 13px;
+        color: rgba(255,255,255,0.6);
+    }
+    .gx-foot a { color: #fff; text-decoration: none; font-weight: 500; }
+    .gx-foot a:hover { text-decoration: underline; }
+
+    .gx-trust {
+        margin-top: 14px; text-align: center;
+        font-size: 11.5px; color: rgba(255,255,255,0.5);
+        letter-spacing: -0.05px;
+    }
+    .gx-trust i { color: #4ade80; margin-right: 5px; }
+
+    @media (max-width: 860px) {
+        .gx-form-card { padding: 48px 32px; }
+    }
+</style>
+
+<div class="gx-auth-wrap">
+
+    <!-- LEFT: image panel -->
+    <div class="gx-pitch">
+        <img class="gx-pitch-img" src="{{ url_for('static', filename='images/leftImage.jpg') }}" alt="" loading="eager" decoding="sync" fetchpriority="high">
+    </div>
+
+    <!-- RIGHT: form panel -->
+    <div class="gx-form-card">
+        <div class="gx-form-inner">
+            <h2 class="gx-form-title">Sign in.</h2>
+            <p class="gx-form-sub">Enter your details to continue.</p>
+
+            <button type="button" class="gx-google" onclick="alert('Google sign-in coming soon.');">
+                <svg viewBox="0 0 18 18" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <path fill="#4285F4" d="M17.64 9.2c0-.64-.06-1.25-.16-1.84H9v3.48h4.84c-.21 1.13-.84 2.08-1.79 2.72v2.26h2.9c1.7-1.56 2.69-3.87 2.69-6.62z"/>
+                    <path fill="#34A853" d="M9 18c2.43 0 4.47-.81 5.96-2.18l-2.9-2.26c-.81.54-1.84.86-3.06.86-2.35 0-4.34-1.59-5.05-3.72H.96v2.34A8.997 8.997 0 0 0 9 18z"/>
+                    <path fill="#FBBC05" d="M3.95 10.7A5.41 5.41 0 0 1 3.66 9c0-.59.1-1.16.29-1.7V4.96H.96A8.997 8.997 0 0 0 0 9c0 1.45.35 2.82.96 4.04l2.99-2.34z"/>
+                    <path fill="#EA4335" d="M9 3.58c1.32 0 2.51.45 3.44 1.35l2.58-2.58C13.46.89 11.43 0 9 0A8.997 8.997 0 0 0 .96 4.96l2.99 2.34C4.66 5.17 6.65 3.58 9 3.58z"/>
+                </svg>
+                Sign in with Google
+            </button>
+
+            <div class="gx-divider">Or sign in with email</div>
+
+            <form method="POST" class="gx-form">
+                <div class="gx-field">
+                    <div class="gx-label-row">
+                        <label class="gx-label">Email or username</label>
+                    </div>
+                    <input id="login-user" type="text" name="username" class="gx-input" required placeholder="you@example.com" autocomplete="username">
+                    <i class="gx-input-icon fas fa-envelope"></i>
+                </div>
+
+                <div class="gx-field">
+                    <div class="gx-label-row">
+                        <label class="gx-label">Password</label>
+                        <a href="#" class="gx-label-link" onclick="alert('Contact support to reset your password.'); return false;">Forgot?</a>
+                    </div>
+                    <input id="login-pwd" type="password" name="password" class="gx-input" required placeholder="Enter your password" autocomplete="current-password">
+                    <i class="gx-input-icon fas fa-lock"></i>
+                    <button type="button" class="gx-pwd-toggle" onclick="(function(b){var i=b.parentElement.querySelector('input');var e=b.querySelector('i');if(i.type==='password'){i.type='text';e.className='fas fa-eye-slash';}else{i.type='password';e.className='fas fa-eye';}})(this)" aria-label="Toggle password visibility">
+                        <i class="fas fa-eye"></i>
+                    </button>
+                </div>
+
+                <button type="submit" class="gx-btn">
+                    Sign in <i class="fas fa-arrow-right"></i>
+                </button>
+
+                <p class="gx-trust"><i class="fas fa-lock"></i> Secured with end-to-end encryption</p>
+            </form>
+
+            <p class="gx-foot">New to South African Teachers Hub? <a href="{{ url_for('register') }}">Create an account</a></p>
+        </div>
+    </div>
+
+</div>
+{% endblock %}
+
+{% block main %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block content %}{% endblock %}

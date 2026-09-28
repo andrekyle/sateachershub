@@ -1,0 +1,63 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+build/
+dist/
+*.egg-info/
+
+# Installer logs
+pip-log.txt
+
+# Environments
+env/
+venv/
+venv-py312/
+ENV/
+.venv/
+.env
+.env.local
+.env.development.local
+.env.production
+.env.test.local
+
+# Database files
+*.db
+instance/
+
+# Local runtime data and credentials
+cookies.txt
+*.log
+data/APP_USERS.csv
+data/APP_GENERATED_PAPERS.csv
+data/APP_TEACHER_DOCUMENTS.csv
+data/APP_TEACHER_SCHEDULES.csv
+
+# Caches
+.webassets-cache
+.pytest_cache/
+.mypy_cache/
+
+# OS-specific
+.DS_Store
+
+# Local uploads
+uploads/
+
+# Deployment specific
+.vercel
+node_modules/
+
+# Tailwind CSS standalone CLI
+tailwindcss
+
+# Coverage reports
+htmlcov/
+.coverage

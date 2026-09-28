@@ -1,0 +1,211 @@
+{% extends "lms_base.html" %}
+
+{% block title %}POPIA Compliance — South African Teachers Hub{% endblock %}
+
+{% block body_class %}apple-home{% endblock %}
+
+{% block head %}
+<script>document.documentElement.setAttribute('data-theme','light');</script>
+{% endblock %}
+
+{% block theme_init %}
+document.documentElement.setAttribute('data-theme','light');
+{% endblock %}
+
+{% block content %}
+<style>
+    html, body, main { background: #fff !important; color: #1d1d1f !important; font-weight: 400 !important; }
+    .navbar { background: rgba(255,255,255,0.92) !important; border-bottom: 1px solid rgba(0,0,0,0.08) !important; }
+    /* Force black nav text on this light page (overrides white-on-dark defaults) */
+    .sath-nav { background: #fff !important; border-bottom: 1px solid rgba(0,0,0,0.08) !important; }
+    .sath-brand { color: #000 !important; }
+    .sath-brand .sath-brand-accent { color: #06c !important; }
+    .sath-links a,
+    .sath-cta .sath-ghost { color: #000 !important; opacity: 1 !important; font-weight: 500 !important; }
+    .sath-links a:hover,
+    .sath-cta .sath-ghost:hover { color: #000 !important; background: rgba(0,0,0,0.05) !important; }
+    .sath-links a.active { color: #000 !important; }
+    .sath-links a.sath-admin { color: #000 !important; }
+    .sath-mobile-toggle { color: #000 !important; }
+    .popi-wrap { max-width: 720px; margin: 0 auto; padding: 60px 24px 80px; }
+    .popi-wrap h1 { font-size: 2.4rem; font-weight: 700; letter-spacing: -0.03em; margin-bottom: 6px; color: #1d1d1f; }
+    .popi-wrap .popi-sub { font-size: 1rem; color: #1d1d1f; margin-bottom: 6px; font-weight: 400; }
+    .popi-wrap .popi-date { font-size: 0.85rem; color: #1d1d1f; margin-bottom: 48px; font-weight: 400; }
+    .popi-wrap h2 { font-size: 1.1rem; font-weight: 700; color: #1d1d1f; margin: 36px 0 8px; }
+    .popi-wrap p { font-size: 0.95rem; color: #1d1d1f; line-height: 1.75; margin-bottom: 10px; font-weight: 400; }
+    .popi-wrap ol { padding-left: 1.4rem; margin: 8px 0 12px; }
+    .popi-wrap ol li { font-size: 0.95rem; color: #1d1d1f; line-height: 1.75; margin-bottom: 6px; font-weight: 400; }
+    .popi-wrap a { color: #2997ff; text-decoration: none; }
+    .popi-wrap a:hover { text-decoration: underline; }
+    .popi-wrap hr { border: none; border-top: 1px solid #e5e5e5; margin: 40px 0; }
+    .popi-wrap strong { color: #1d1d1f; font-weight: 600; }
+    .popi-wrap .popi-highlight {
+        border-left: 3px solid #2997ff;
+        padding: 14px 18px;
+        margin: 20px 0;
+        background: #f5f8ff;
+    }
+    .popi-wrap .popi-highlight p { margin-bottom: 0; }
+</style>
+
+<div class="popi-wrap">
+    <h1>POPIA Compliance</h1>
+    <p class="popi-sub">South African Teachers Hub's commitment to the Protection of Personal Information Act 4 of 2013.</p>
+    <p class="popi-date">Last updated: May 2026</p>
+
+    <div class="popi-highlight">
+        <p>South African Teachers Hub is fully committed to complying with the <strong>Protection of Personal Information Act 4 of 2013 (POPIA / POPI Act)</strong>, which came into full effect on 1 July 2021. This page explains how we implement POPIA's eight conditions for lawful processing of personal information.</p>
+    </div>
+
+    <h2>1. What Is POPIA?</h2>
+    <p>The Protection of Personal Information Act 4 of 2013 (POPIA) is South Africa's primary data protection law. It gives effect to the constitutional right to privacy and regulates how organisations collect, store, use, and share the personal information of individuals ("data subjects"). POPIA is administered by the <strong>Information Regulator of South Africa</strong>.</p>
+    <p>Any organisation that processes personal information of South African residents — including online platforms like ours — must comply with POPIA.</p>
+
+    <h2>2. Our Information Officer</h2>
+    <p>POPIA requires every organisation to designate a responsible party and an Information Officer. Our Information Officer is responsible for ensuring our compliance with POPIA and can be contacted at:</p>
+    <ol>
+        <li><strong>Organisation:</strong> South African Teachers Hub (a product of the South African Code Institute)</li>
+        <li><strong>Information Officer Email:</strong> <a href="mailto:privacy@sateachershub.co.za">privacy@sateachershub.co.za</a></li>
+        <li><strong>Response time:</strong> We aim to respond within 5 business days</li>
+    </ol>
+
+    <h2>3. The Eight Conditions for Lawful Processing</h2>
+    <p>POPIA requires that personal information is processed according to eight conditions. Here is how South African Teachers Hub meets each one:</p>
+
+    <h2>Condition 1 — Accountability</h2>
+    <p>South African Teachers Hub, as the responsible party, takes full accountability for the processing of personal information. We have:</p>
+    <ol>
+        <li>Designated a responsible Information Officer</li>
+        <li>Implemented internal data protection policies and procedures</li>
+        <li>Trained staff on their data protection obligations</li>
+        <li>Established a process for handling data subject requests and complaints</li>
+    </ol>
+
+    <h2>Condition 2 — Processing Limitation</h2>
+    <p>We only collect and process personal information that is:</p>
+    <ol>
+        <li><strong>Adequate</strong> — sufficient for the purpose but not excessive</li>
+        <li><strong>Relevant</strong> — directly related to providing our educational platform services</li>
+        <li><strong>Not excessive</strong> — we do not collect more than we need</li>
+        <li><strong>Lawfully obtained</strong> — collected with consent or another lawful basis</li>
+    </ol>
+    <p>We collect: name, email, password hash, optional profile information (school, subject, grade), content you create, and anonymised usage data. We do not collect unnecessary personal information.</p>
+
+    <h2>Condition 3 — Purpose Specification</h2>
+    <p>Personal information is collected for specific, explicitly defined, and lawful purposes:</p>
+    <ol>
+        <li>To create and manage your user account</li>
+        <li>To provide the platform's features (exam paper generation, LMS, quizzes)</li>
+        <li>To communicate important account and service updates</li>
+        <li>To improve our platform through anonymised analytics</li>
+        <li>To comply with South African legal obligations</li>
+    </ol>
+    <p>We do not process your personal information for any purpose incompatible with those stated above.</p>
+
+    <h2>Condition 4 — Further Processing Limitation</h2>
+    <p>We will not further process personal information in a manner incompatible with the original purpose for which it was collected. Specifically:</p>
+    <ol>
+        <li>We do <strong>not</strong> sell your personal information to third parties</li>
+        <li>We do <strong>not</strong> use your information for profiling or targeted advertising</li>
+        <li>We do <strong>not</strong> share your information with unrelated organisations without your consent</li>
+    </ol>
+
+    <h2>Condition 5 — Information Quality</h2>
+    <p>We take reasonable steps to ensure that the personal information we hold is accurate, complete, and up to date. You can update your profile information at any time from your account dashboard. If you believe we hold incorrect information about you, you have the right to request a correction.</p>
+
+    <h2>Condition 6 — Openness</h2>
+    <p>We are transparent about how we process your personal information:</p>
+    <ol>
+        <li>This POPIA Compliance page and our <a href="{{ url_for('privacy_policy') }}">Privacy Policy</a> explain all processing activities</li>
+        <li>We notify you at the point of collection what information is being collected and why</li>
+        <li>We do not process information in a manner that is hidden or unexpected</li>
+        <li>Any material changes to our processing practices are communicated to you with at least 14 days' notice</li>
+    </ol>
+
+    <h2>Condition 7 — Security Safeguards</h2>
+    <p>We implement appropriate technical and organisational security measures to protect your personal information:</p>
+    <ol>
+        <li><strong>Encryption in transit:</strong> All data transmitted to and from our platform uses HTTPS (TLS 1.2 or higher)</li>
+        <li><strong>Password security:</strong> Passwords are never stored in plain text — we use industry-standard hashing (Werkzeug/bcrypt)</li>
+        <li><strong>Access control:</strong> Database access is restricted to authorised personnel only, with role-based permissions</li>
+        <li><strong>Backups:</strong> Data is backed up regularly; backups are encrypted and stored securely</li>
+        <li><strong>Breach response:</strong> We have a documented incident response plan and will notify affected data subjects and the Information Regulator within 72 hours of discovering a material breach</li>
+    </ol>
+
+    <h2>Condition 8 — Data Subject Participation</h2>
+    <p>You have the right to participate in how your personal information is processed. Under POPIA you may:</p>
+    <ol>
+        <li><strong>Request access</strong> — obtain confirmation of whether we hold your personal information and request a copy</li>
+        <li><strong>Request correction</strong> — ask us to correct or delete inaccurate, irrelevant, excessive, out-of-date, or misleading information</li>
+        <li><strong>Object to processing</strong> — object on reasonable grounds to the processing of your personal information</li>
+        <li><strong>Request deletion</strong> — request deletion of your account and associated personal information</li>
+        <li><strong>Withdraw consent</strong> — where processing is based on consent, you may withdraw it at any time</li>
+    </ol>
+    <p>To exercise any of these rights, submit a request to <a href="mailto:privacy@sateachershub.co.za">privacy@sateachershub.co.za</a>. We will respond within 30 days as required by POPIA.</p>
+
+    <h2>4. Consent and Lawful Basis</h2>
+    <p>We rely on the following lawful grounds for processing personal information:</p>
+    <ol>
+        <li><strong>Consent (s11(1)(a)):</strong> You provide explicit consent when you register for an account by accepting our Terms of Service and Privacy Policy</li>
+        <li><strong>Contractual necessity (s11(1)(b)):</strong> Processing is necessary to perform the service agreement between you and South African Teachers Hub</li>
+        <li><strong>Legitimate interest (s11(1)(f)):</strong> We use anonymised analytics to improve the platform, where this does not prejudice your rights</li>
+        <li><strong>Legal obligation (s11(1)(c)):</strong> We process certain data to comply with South African tax and company law obligations</li>
+    </ol>
+
+    <h2>5. Special Personal Information</h2>
+    <p>POPIA provides enhanced protection for "special personal information" (such as race, health data, religious beliefs, political views, etc.). South African Teachers Hub does <strong>not</strong> intentionally collect any special personal information. If you believe you have inadvertently shared special personal information with us, please contact us immediately at <a href="mailto:privacy@sateachershub.co.za">privacy@sateachershub.co.za</a> and we will delete it promptly.</p>
+
+    <h2>6. Children's Personal Information</h2>
+    <p>POPIA and the Children's Act 38 of 2005 provide special protection for children under 18. South African Teachers Hub is designed for use by educators (adults 18+). Where teachers use the platform on behalf of learners as part of a school programme:</p>
+    <ol>
+        <li>The school and teacher bear responsibility for obtaining appropriate parental/guardian consent</li>
+        <li>We encourage schools to execute a data processing agreement with us — contact <a href="mailto:privacy@sateachershub.co.za">privacy@sateachershub.co.za</a></li>
+        <li>We do not use learner data for any purpose other than providing the educational service</li>
+    </ol>
+
+    <h2>7. Transborder Information Flows</h2>
+    <p>POPIA (section 72) restricts the transfer of personal information to foreign countries unless adequate protection is in place. Our approach:</p>
+    <ol>
+        <li>Our platform is hosted on <strong>Amazon Web Services (AWS)</strong>. AWS complies with numerous global security and privacy certifications (ISO 27001, SOC 2, GDPR). Data may reside in the AWS Cape Town region (af-south-1) or EU regions. AWS's Data Processing Addendum provides POPIA-equivalent protections — see <a href="https://aws.amazon.com/compliance/data-privacy/" target="_blank" rel="noopener">aws.amazon.com/compliance/data-privacy</a></li>
+        <li>Any third-party service providers who process data on our behalf (e.g. email delivery, payment processing) are bound by data processing agreements that require POPIA-equivalent protection</li>
+        <li>We do not transfer personal information to countries without adequate legal protection without your explicit consent</li>
+    </ol>
+
+    <h2>8. Data Retention and Deletion</h2>
+    <ol>
+        <li><strong>Active accounts:</strong> Personal information is retained for as long as your account remains active</li>
+        <li><strong>Deleted accounts:</strong> Personally identifiable information is purged within 30 days of account deletion</li>
+        <li><strong>Anonymised data:</strong> Aggregated, anonymised usage statistics that cannot be linked to any individual may be retained indefinitely for platform improvement</li>
+        <li><strong>Legal retention:</strong> Certain financial and transactional records are retained for up to 5 years as required by South African tax law</li>
+    </ol>
+
+    <h2>9. POPIA Breach Notification</h2>
+    <p>In the event of a security compromise that reasonably likely poses a risk of harm to you:</p>
+    <ol>
+        <li>We will notify the <strong>Information Regulator</strong> as soon as reasonably possible</li>
+        <li>We will notify affected data subjects as soon as reasonably possible</li>
+        <li>Notifications will describe the nature of the breach, the data affected, the measures taken, and the steps you can take to protect yourself</li>
+    </ol>
+    <p>To report a suspected breach or security vulnerability, contact <a href="mailto:privacy@sateachershub.co.za">privacy@sateachershub.co.za</a>.</p>
+
+    <h2>10. Filing a POPIA Complaint</h2>
+    <p>If you believe South African Teachers Hub has violated your rights under POPIA, please contact us first at <a href="mailto:privacy@sateachershub.co.za">privacy@sateachershub.co.za</a>. We will investigate and respond within 30 days.</p>
+    <p>If you are not satisfied with our response, you may escalate to the <strong>Information Regulator of South Africa</strong>:</p>
+    <ol>
+        <li><strong>Address:</strong> JD House, 27 Stiemens Street, Braamfontein, Johannesburg, 2001</li>
+        <li><strong>Complaints email:</strong> <a href="mailto:inforeg@justice.gov.za">inforeg@justice.gov.za</a></li>
+        <li><strong>General enquiries:</strong> <a href="mailto:inforeg@justice.gov.za">inforeg@justice.gov.za</a></li>
+        <li><strong>Phone:</strong> 012 406 4818</li>
+        <li><strong>Website:</strong> <a href="https://www.justice.gov.za/inforeg/" target="_blank" rel="noopener">www.justice.gov.za/inforeg</a></li>
+    </ol>
+
+    <h2>11. Related Policies</h2>
+    <ol>
+        <li><a href="{{ url_for('privacy_policy') }}">Privacy Policy</a> — detailed information on data collection and use</li>
+        <li><a href="{{ url_for('terms_of_service') }}">Terms of Service</a> — the agreement governing your use of the platform</li>
+    </ol>
+
+    <hr>
+    <p style="font-size:0.8rem; color:#1d1d1f; text-align:center; font-weight:400;">South African Teachers Hub is committed to full compliance with the Protection of Personal Information Act 4 of 2013 (POPIA).</p>
+</div>
+{% endblock %}

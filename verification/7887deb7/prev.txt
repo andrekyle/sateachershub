@@ -1,0 +1,978 @@
+﻿
+
+CAT P2 May-June 2023 
+
+CAT P2 May-June 2023
+
+Print / Save as PDF 
+
+Edit 
+
+Close 
+
+Past Paper Template
+
+SENIOR CERTIFICATE EXAMINATIONS/
+NATIONAL SENIOR CERTIFICATE EXAMINATIONS
+
+COMPUTER APPLICATIONS TECHNOLOGY P2
+
+JUNE 2023
+
+MARKS: 150
+
+TIME: 3 Hours
+
+This question paper consists of 5 pages.
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+2 
+DBE/June 2023 
+
+INSTRUCTIONS AND INFORMATION
+
+This question paper consists of: 
+
+SECTION A (25)
+
+SECTION B (75)
+
+SECTION C (50)
+
+Answer ALL the questions. 
+
+Number the answers correctly according to the numbering system used in this question paper. 
+
+Start EACH question on a NEW page. 
+
+Do NOT write in the right-hand margin of the ANSWER BOOK. 
+
+Leave a line after EACH subquestion. 
+
+Generally, one mark is allocated per fact; therefore, a 2-mark question would require TWO facts, etc. 
+
+Read the questions carefully. DO NOT give more answers than the question requires as it will NOT be marked. 
+
+All answers MUST be related to Computer Applications Technology. 
+
+Unless otherwise specified, answers such as cheaper , slower / faster , etc. will NOT be accepted. 
+
+Do NOT use brand names in your answers, unless specifically required. 
+
+Write neatly and legibly. 
+
+Copyright reserved Please turn over 
+
+Computer Applications Technology/P2 
+3 
+DBE/June 2023 
+
+SECTION A
+
+QUESTION 1: MULTIPLE-CHOICE QUESTIONS
+
+Various options are given as possible answers to the following questions. Choose the answer and write only the letter (A–D) next to the question numbers (1.1 to 1.10) in the ANSWER BOOK, e.g. 1.11 D. 
+
+1.1
+
+A router is categorised as a/an … device. A storage B input C communication D output 
+
+(1)
+
+1.2
+
+… is the unit of measurement used for the speed of an internet connection. A KB B Mbps C GHz D MHz 
+
+(1)
+
+1.3
+
+A firewall is used to stop … from accessing a computer. A approved programs B Trojans and worms C unauthorised programs D wireless fidelity (Wi-Fi) 
+
+(1)
+
+1.4
+
+A user entered the following search string in a search engine: OS –windows This search engine will return a list of websites that refer to … A the word OS but not the word windows . B both the word OS and the word windows . C the word windows but not the word OS . D neither the word windows nor the word OS . 
+
+(1)
+
+1.5
+
+OCR may fail to recognise alphabetical characters in a scanned document because … A the electronic files are too large. B a poor quality scanner was used. C the scanner malfunctioned. D a Wi-Fi scanner was used. 
+
+(1)
+
+1.6
+
+… is a concept which refers to technology that can learn and make decisions. A Augmented reality B Internet protocol C Virtual reality D Artificial intelligence 
+
+(1)
+
+1.7
+
+Which ONE of the following spreadsheet functions will identify the middle number in an ordered list? A MEDIAN B MID C AVERAGE D MODE 
+
+(1)
+
+1.8
+
+A type of internet attack that crashes a website by flooding it with requests: A Spoofing B Denial of service C Click-jacking D Social engineering 
+
+(1)
+
+1.9
+
+… is a disadvantage of having electronic access to the personal information of people. A Copyright infringement B Limited freedom of expression C Encrypted communications D Invasion of privacy 
+
+(1)
+
+1.10
+
+A system utility that can be used to check the performance of a CPU: A Task Manager B System Restore C Disk Management D Disk Cleanup 
+
+(1)
+
+[10]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+4 
+DBE/June 2023 
+
+QUESTION 2: MATCHING ITEMS
+
+Choose a term/concept from COLUMN B that matches the description in COLUMN A. Write only the letter (A–T) next to the question numbers (2.1 to 2.10) in the ANSWER BOOK, e.g. 2.11 U. 
+
+COLUMN A
+
+COLUMN B
+
+2.1
+
+Text, numbers and images in a format suitable for use by computers
+
+A
+
+asterisk (*)
+
+2.2
+
+Software used to remove malware from a computer system
+
+B
+
+currency
+
+2.3
+
+A wild card used in database queries
+
+C
+
+VPN
+
+2.4
+
+A type of printer that uses plastic to print
+
+D
+
+hashtag (#)
+
+2.5
+
+A file format that can be used to share data between applications
+
+E
+
+data
+
+2.6
+
+A word processing option that allows you to apply different footers in the same document
+
+F
+
+antivirus
+
+2.7
+
+A type of network with a very high level of security, that can be accessed over the internet
+
+G
+
+PDF
+
+2.8
+
+The evaluation of information that focuses on whether that information is still applicable
+
+H
+
+spyware
+
+2.9
+
+An update that corrects a single error found in software
+
+I
+
+authority
+
+2.10
+
+A type of program that infects a computer and tracks the user s internet activities
+
+J
+
+3D
+
+K
+
+service pack
+
+L
+
+information
+
+M
+
+laser
+
+N
+
+adware
+
+O
+
+next (header/footer)
+
+P
+
+WAN
+
+Q
+
+ad blocker
+
+R
+
+patch
+
+S
+
+section break
+
+T
+
+CSV
+
+(10 x 1) [10]
+
+[10]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+5 
+DBE/June 2023 
+
+QUESTION 3: TRUE/FALSE ITEMS
+
+Indicate whether the following statements are TRUE or FALSE. Write ‘true’ or ‘false’ next to the question numbers (3.1 to 3.5) in the ANSWER BOOK. Correct the statement if it is FALSE by changing the underlined word(s) to make the statement TRUE. (Do NOT simply use the word ‘NOT’ to change the statement.) 
+
+NO mark will be awarded if only FALSE is written.
+
+EXAMPLES:
+
+QUESTION
+
+ANSWER
+
+A stylus can be used for more accurate input on some touch screens.
+
+True
+
+A sound card has slots for hardware components, such as the CPU.
+
+False, motherboard
+
+3.1
+
+Orphan is the last line of a paragraph that appears by itself at the top of a word processing page. 
+
+(1)
+
+3.2
+
+Checking for objectivity is a method used by researchers to recognise bias or prejudice. 
+
+(1)
+
+3.3
+
+Absolute cell referencing is when the cell references in a spreadsheet formula change every time the formula is copied to another cell. 
+
+(1)
+
+3.4
+
+Phishing occurs when a user is redirected to a fake website even though the correct URL for a legitimate website is entered. 
+
+(1)
+
+3.5
+
+The NOW function returns both the current date and time in a spreadsheet. 
+
+(1)
+
+[5]
+
+TOTAL SECTION A: [25]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+6 
+DBE/June 2023 
+
+SECTION B
+
+QUESTION 4: SYSTEM TECHNOLOGIES
+
+4.1
+
+Name TWO input devices that can be used on a point of sale system. 
+
+(2)
+
+4.2
+
+Define the concept convergence. 
+
+(2)
+
+4.3
+
+Why are USB ports commonly used to connect peripheral devices? 
+
+(2)
+
+4.4
+
+Name TWO specifications you would consider when buying a monitor. 
+
+(2)
+
+4.5
+
+Give TWO reasons why your monitor does not display anything even though both the computer and the monitor are switched on. NOTE: Assume the monitor is in perfect working order. 
+
+(2)
+
+4.6
+
+Explain TWO limitations of using web-based applications. 
+
+(2)
+
+4.7
+
+You receive an error message about insufficient disk space while you are installing a specific program. Suggest TWO ways to solve the problem so that you can complete the installation. 
+
+(2)
+
+4.8
+
+Why would you distribute educational resources on an optical disk rather than over the internet? 
+
+(1)
+
+4.9
+
+NFC can be used to transfer photographs from one device to another by holding them close together, without using the internet or any cables. 
+
+4.9.1
+
+Give ONE disadvantage of using NFC in this situation. 
+
+(1)
+
+4.9.2
+
+Give TWO uses of NFC, other than transferring photographs. 
+
+(2)
+
+4.10
+
+Name TWO software technologies to assist physically disabled users who cannot use their hands to work on a computer. 
+
+(2)
+
+4.11
+
+Which application would a network administrator use so that all the computers in a computer centre are switched off at a certain time in the afternoon? 
+
+(1)
+
+4.12
+
+State TWO risks associated with using flawed software. 
+
+(2)
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+7 
+DBE/June 2023 
+
+4.13
+
+Give TWO advantages of using the Snipping Tool to make a screenshot rather than using the Print Screen option. 
+
+(2)
+
+[25]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+8 
+DBE/June 2023 
+
+QUESTION 5: INTERNET AND NETWORK TECHNOLOGIES
+
+5.1
+
+Define the concept grid computing. 
+
+(2)
+
+5.2
+
+Name ONE communication technology that uses light to transfer data. 
+
+(1)
+
+5.3
+
+Many people and organisations use video conferencing for meetings or events, e.g. Zoom, Skype or Google Meet. 
+
+5.3.1
+
+Suggest TWO good practices an organiser can implement to manage a video conference. 
+
+(2)
+
+5.3.2
+
+Explain TWO disadvantages of video conferencing. 
+
+(2)
+
+5.4
+
+Give TWO reasons why users cannot access a file on a network. 
+
+(2)
+
+5.5
+
+People in your household share the internet connection in your home. Give TWO ways to prevent problems, such as buffering and delays, while using the internet without having to close applications or restricting the number of users. 
+
+(2)
+
+5.6
+
+Give TWO reasons why instant messaging is widely used. 
+
+(2)
+
+5.7
+
+An internet service provider (ISP) offers the following internet connectivity options: ACCOUNT OPTIONS SERVICE OPTION 1 OPTION 2 Connection type Fibre Fibre Speed 30 meg 30 meg … Yes No Shaped Yes No … Yes No Price R299.00 R599.00 Complete the table above by giving the TWO aspects of the service offered by the ISP, taking the price of each option into consideration. 
+
+(15)
+
+[28]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+9 
+DBE/June 2023 
+
+QUESTION 6: INFORMATION MANAGEMENT
+
+6.1
+
+Give TWO aspects that you must include in a task definition for a research project, such as the PAT. 
+
+(2)
+
+6.2
+
+In the PAT you are required to develop questions on different levels. 
+
+6.2.1
+
+The table below gives examples of how the four levels of questions may start. The purpose of a level 3 question appears in the table. QUESTIONS STARTING LEVEL PURPOSE OF WITH … QUESTION Who, What, When, Where, 1 (a) … How many Why, How 2 (b) … If, What if 3 (c) Adjust, alter or predict Would it be better if … 4 (d) … How can I determine … What would be the best way … Complete the table by giving the purpose of the following: (a) A level 1 question (b) A level 2 question (c) A level 4 question 
+
+(3)
+
+6.2.2
+
+Give ONE reason for using questions on different levels when doing research. 
+
+(1)
+
+6.3
+
+Explain how you can avoid being guilty of plagiarism when doing research. 
+
+(2)
+
+6.4
+
+Study the survey below and discuss TWO reasons why this survey is NOT useful. 
+
+(2)
+
+[10]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+10 
+DBE/June 2023 
+
+QUESTION 7: SOCIAL IMPLICATIONS
+
+7.1
+
+Give TWO ways of reducing the possible negative impact of ICTs on the environment. 
+
+(2)
+
+7.2
+
+Explain TWO dangers of sharing your location online. 
+
+(2)
+
+7.3
+
+What can you do to prevent the spread of fake news when using social media? 
+
+(1)
+
+7.4
+
+Discuss TWO consequences for victims of identity theft. 
+
+(2)
+
+7.5
+
+Why is a screen lock pattern on a computing device generally considered less secure than a strong password? 
+
+(1)
+
+7.6
+
+Give TWO recommendations to prevent ransomware attacks. 
+
+(2)
+
+[10]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+11 
+DBE/June 2023 
+
+QUESTION 8: SOLUTION DEVELOPMENT
+
+8.1
+
+Consider the screenshot of a word processing document below. 
+
+8.1.1
+
+What is the purpose of using a ruler bar when working in a word processing document? 
+
+(2)
+
+8.1.2
+
+What type of text alignment was applied to the paragraph above AND what is the benefit of aligning text in this way? 
+
+(2)
+
+8.1.3
+
+Give ONE way of seeing the address referenced in the hyperlink in the paragraph above. 
+
+(1)
+
+8.2
+
+Study the screenshot of a spreadsheet below. 
+
+8.2.1
+
+Which spreadsheet feature would you use to complete the list of months in column A without having to type them in? 
+
+(1)
+
+8.2.2
+
+Give TWO ways of formatting the number values in columns B to D in a more meaningful way. 
+
+(2)
+
+8.2.3
+
+Why are the values (not the formatting) in the cell range D3:D9 NOT correct? 
+
+(1)
+
+8.2.4
+
+Name ONE function to determine the total of the values in columns B, C and D. 
+
+(1)
+
+8.3
+
+Study the screenshot of a database table in Design View below. 
+
+8.3.1
+
+Why would an input mask on the Worker_ID field be helpful? 
+
+(1)
+
+8.3.2
+
+Suggest THREE corrections to the validation rule so that it will accept only ages between 15 and 65 (including both 15 and 65) in the Age field. 
+
+(3)
+
+8.3.3
+
+Give ONE reason, other than the validation rule, why the current design of the Age field may cause errors. 
+
+(1)
+
+[15]
+
+TOTAL SECTION B: [88]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+12 
+DBE/June 2023 
+
+SECTION C
+
+QUESTION 9: INTEGRATED SCENARIO
+
+9.1
+
+A local business donated a fully functional computer to be used for the event. Study the specifications of this computer. COMPUTER SPECIFICATIONS Windows 7 1 GHz Celeron 120 GB HDD 1 GB RAM 14 LCD monitor 
+
+9.1.1
+
+Give TWO reasons why the latest Windows operating system cannot be installed on this computer. 
+
+(2)
+
+9.1.2
+
+Suggest an operating system that can be installed on this computer instead of proprietary software such as Windows. 
+
+(1)
+
+9.1.3
+
+Give ONE reason why it would not be advisable to upgrade this computer. 
+
+(1)
+
+9.2
+
+Details of the event were posted on social media. Give TWO advantages of using social media platforms to communicate with the public. 
+
+(2)
+
+9.3
+
+An invitation with a shortened URL was e-mailed to guests so that they could register to attend the event. 
+
+9.3.1
+
+The URL www.bit.ly/AgwzA1 was e-mailed. Give TWO reasons why the guests may not trust this shortened URL. 
+
+(2)
+
+9.3.2
+
+Give THREE benefits of using online forms instead of using pen- and-paper based forms to register for the event. 
+
+(3)
+
+9.4
+
+The data from the online forms is stored in a spreadsheet. 
+
+9.4.1
+
+Which mail merge option will you use to create name tags only for selected guests stored in the spreadsheet? 
+
+(1)
+
+9.4.2
+
+Name a spreadsheet function that can be used to select a winner in a lucky draw. 
+
+(1)
+
+9.5
+
+Your school considers providing free internet access to the public during the event. 
+
+9.5.1
+
+Give TWO possible reasons why your school should NOT offer free access to the internet. 
+
+(2)
+
+9.5.2
+
+Suggest TWO precautions you can take when you use free internet access. 
+
+(2)
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+13 
+DBE/June 2023 
+
+9.6
+
+Your school received various donations through crowdfunding. 
+
+9.6.1
+
+Explain the concept crowdfunding. 
+
+(2)
+
+9.6.2
+
+Name ONE crowdfunding platform. 
+
+(1)
+
+9.6.3
+
+Name TWO spreadsheet features (not functions) that can be used to determine the top ten amounts that were received through crowdfunding. 
+
+(2)
+
+9.7
+
+A past learner donated half a Bitcoin to the school for the event. 
+
+9.7.1
+
+What form of currency does Bitcoin belong to? 
+
+(1)
+
+9.7.2
+
+Give TWO benefits of making donations in Bitcoin. 
+
+(2)
+
+[25]
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+14 
+DBE/June 2023 
+
+QUESTION 10
+
+10.1
+
+The school uses e-mail communication to invite the community to participate in the club activities and also to keep them updated on activities. 
+
+10.1.1
+
+Which e-mail feature would the club secretary use to send an e-mail to many people at the same time? 
+
+(1)
+
+10.1.2
+
+How can the club secretary ensure that parents do not see each other s e-mail addresses when an e-mail is sent to many parents at the same time? 
+
+(1)
+
+10.1.3
+
+Parents complain that e-mails are going directly to their spam folder. Give ONE way in which parents can ensure that future e-mails from the school do not go into their spam folder. 
+
+(1)
+
+10.1.4
+
+The club secretary tried to send out a video via e-mail. An error message alerted the club secretary that the video attachment was too large. Suggest TWO ways in which the secretary can share the video electronically. Do NOT refer to storage media. 
+
+(2)
+
+10.2
+
+The club offers lockers with biometric locks for members to store their valuables in, while they are running or walking. 
+
+10.2.1
+
+Explain the concept biometric security. 
+
+(2)
+
+10.2.2
+
+Give TWO disadvantages of using biometric locks. 
+
+(2)
+
+10.3
+
+The club secretary set up the following database table to store the details of the members: FIELD NAME DESCRIPTION (OPTIONAL) Surname Surname of the member/Lid se van FirstName First name of the member/Lid se voornaam CellNumber Cellphone number of the member/Lid se selfoonnommer DOB Date of birth/Geboortedatum ChronicConditions ? 
+
+10.3.1
+
+Which database feature must be applied to a new or an existing field to uniquely identify each record? 
+
+(1)
+
+10.3.2
+
+Suggest a data type, together with a motivation, for the field ChronicConditions, other than Yes/No . 
+
+(2)
+
+10.4
+
+The chairperson of the club suggested that it would be more effective to create a website that would give information about the club activities and events. 
+
+10.4.1
+
+Give TWO user-centred design (UCD) guidelines a web designer should use to create a website. 
+
+(2)
+
+10.4.2
+
+The club s website should display the following table: The HTML code for this table is as follows: Distance 1 Marathon 2 Half marathon Suggest TWO corrections to the HTML code so that this table will display correctly. 
+
+(2)
+
+Copyright reserved 
+
+Please turn over 
+
+Computer Applications Technology/P2 
+15 
+DBE/June 2023 
+
+10.5
+
+The club uses a drone for various activities. 
+
+10.5.1
+
+Which technology allows a drone to create a map of the route that the runners will use? 
+
+(1)
+
+10.5.2
+
+Give TWO benefits of equipping a drone with a camera to follow the runners or walkers. 
+
+(2)
+
+10.5.3
+
+The drone pilot finds that there is not enough space on the SD card of the camera after recording the first race. How can this problem be solved without moving data or changing the SD card? 
+
+(1)
+
+10.6
+
+What category of user would want to use a computer with sophisticated hardware to edit videos? 
+
+(1)
+
+10.7
+
+The club members can exercise on equipment connected to AR (augmented reality) technology in the gym. 
+
+10.7.1
+
+Give the definition of AR technology. 
+
+(3)
+
+10.7.2
+
+Give ONE example of where AR can be used. 
+
+(1)
+
+[25]
+
+TOTAL SECTION C: [50]
+
+GRAND TOTAL: 150
+
+Copyright reserved

@@ -1,0 +1,498 @@
+
+
+===== PDF PAGE 1 =====
+NATIONAL
+SENIOR CERTIFICATE
+GRADE 12
+COMPUTER APPLICATIONS TECHNOLOGY P1
+NOVEMBER 2022
+MARKING GUIDELINES
+MARKS: 150
+CENTRE FINAL MARK
+NUMBER
+EXAMINATION
+NUMBER
+QUESTION 1 2 3 4 5 6 7 TOTAL
+POSSIBLE MARK 26 19 21 19 35 15 15 150
+CANDIDATE
+MARK
+MARKER CODE/
+SIGNATURE
+MODERATED
+MARK
+These marking guidelines consist of 13 pages.
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 2 =====
+Computer Applications Technology/P1 2 DBE/November 2022
+NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+Check the accuracy and skill required before awarding a mark throughout.
+QUESTION 1 File name: 1Tourism Total Q1: 26
+Maximum Candidate
+No. Criteria
+Mark Mark
+1.1 Small caps: Extract from Report 1
+ Font: Small caps  1
+1.2 Text Effect (inside shape): KWAZULU-NATAL 3
+ Text Fill: Gradient fill  1
+ Type: Rectangular  1
+ First Gradient Stop Position: 60%  1
+1.3 Styles AND Indentation: (Showcasting style) 3
+ Paragraph indentation: Left set as 0 cm  1
+ Paragraph indentation: Special: Hanging by 1.5 cm  1
+ Numbering style: 01., 02., …  1
+1.4 Citation: (Department of Statistics South Africa) 1
+ Citation in 3rd paragraph converted to static text  1
+1.5 SmartArt 4
+ SmartArt: Circle Relationship  1
+ Level 1: Tourism  1
+ Text 'Tourism': 14 pt  1
+ Level 2: Employment, Transport, Food  1
+(Note to marker: Accept if SmartArt graphic appears below the
+text 'Question/Vraag 1.5')
+1.6 Find: 'tourism' 2
+ Match case + Find whole words only  1
+ Format: Highlight  (Accept any colour) 1
+(Note to marker: 16 replacements)
+1.7 Columns AND Page Orientation: PUBLIC RELATIONS … 2
+effects of the pandemic.
+ Required text in 2 columns  1
+ Page orientation: Landscape applied to text in columns  1
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 3 =====
+Computer Applications Technology/P1 3 DBE/November 2022
+NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+1.8 Index: Pandemic 1
+ Subentry 'Covid' added to the main entry 'Pandemic'  1
+(Note to marker: Show/Hide: { XE "Pandemic:Covid" })
+1.9 Bibliography 2
+ Automatic bibliography added  1
+ Bibliography Style: Harvard - Anglia  1
+(Note to marker: References → Citations & Bibliography Group
+→ Style: Harvard)
+1.10 Index 3
+ Index inserted  1
+ Page numbers: Right aligned  1
+ Tab leader: Solid line  1
+ALT+F9: { INDEX \e " " \c "2" \z "7177" }
+1.11 Unzip 4
+ File 1Poster unzipped  1
+Image manipulation: Group of 5 images
+ Images appear on last page of 1Tourism document  1
+ All images are cropped to shape: Hexagons  1
+ Rhino image in line with and touches bottom of Elephant
+image  1
+Total for QUESTION 1 [26]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 4 =====
+Computer Applications Technology/P1 4 DBE/November 2022
+NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+Check the accuracy and skill required before awarding a mark throughout.
+QUESTION 2 File name: 2Competition Total Q2: 19
+Maximum Candidate
+No. Criteria
+Mark Mark
+2.1 Drop Cap: W… 3
+ Position: Dropped  (Not 'In margin') 1
+ Lines to drop: 3  1
+ Distance from text: 0.5 cm  1
+2.2 Paragraph border: Please share via … the number of 2
+shares.
+ Paragraph border inserted around text  1
+ Border line width: 3 pt  1
+2.3 Hyperlink: Win! Win! Win! 1
+ Hyperlink inserted to: https://gosafari.co.za/  1
+2.4.1 Form Control: Age field 2
+ Form control: Drop down form field  /Combo/List box 1
+content control
+ Options: <35; 35 – 55; >55  1
+2.4.2 Form Control: Cell Number field 2
+ Type: Regular text  1
+ Maximum length: 10  (Accept values between 11 and 14) 1
+2.4.3 Form Control: Extra entries field 3
+ Type: Calculation  1
+ Expression: =Share  *2  2
+Alt+F9: { FORMTEXT {=Share*2 }}
+2.5 Table manipulation/Text to table 2
+ Table appears  (3 rows x 3 columns) 1
+ Last two cells merged  1
+2.6 Signature Line feature 2
+ Signature line feature applied  1
+ 'Allow signer to add comments …' is checked  1
+(Note to marker: Right click → Signature Setup)
+2.7 Character & Paragraph spacing: Competition Terms … 2
+ Character spacing on heading: Condensed  1
+ Paragraph spacing of text below heading: 15 pt After  1
+Total for QUESTION 2 [19]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 5 =====
+Computer Applications Technology/P1 5 DBE/November 2022
+NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+QUESTION 3 File name: 3Tourists Total Q3: 21
+ Mark the questions from the formulae and not the values/answers in the cell.
+ Check against candidate's actual work (Cell references may differ, depending on the
+candidate's response).
+ Candidate may use multiple formulae, cells or 'building blocks' to reach answers.
+ Named ranges can be used instead of cell references.
+ The answers must still be correct even if values are changed in the existing data.
+Maximum Candidate
+No. Criteria
+Mark Mark
+Data worksheet
+3.1 Cell A3: Format 1
+ Format of cell A19 applied to cell A3  1
+3.2 Cells A4 to G4: Vertically Centred and Border 2
+lines/Column Width
+ Vertically Centred  1
+ Thick border lines applied to all cells  OR Column C width 1
+adjusted
+3.3 Cell B18: 4
+=ROUNDUP((B17/100000)*8,0)
+OR
+=ROUNDUP((SUM(B5:B16)/100000)*8,0)
+ ROUNDUP (…,0)  1
+ B17 OR SUM(B5:B16) /100000  2
+ *8  1
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 6 =====
+Computer Applications Technology/P1 6 DBE/November 2022
+NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+3.4 Cell G5: 5
+=IF(COUNT(B5:F5)=5,SUM(B5:F5),"")
+OR
+=IF(COUNT(B5:F5)<5,"",SUM(B5:F5))
+OR
+=IF(COUNTA(B5:F5)=5,SUM(B5:F5),"")
+OR
+=IF(COUNTA(B5:F5)<5,"",SUM(B5:F5))
+OR
+= IF(COUNTBLANK(B5:F5)=0,SUM(B5:F5),"")
+OR
+=IF(COUNTBLANK(B5:F5)>0,"",SUM(B5:F5))
+OR
+=IF(COUNTBLANK(B5:F5)<>0,"",SUM(B5:F5))
+OR
+=IF(COUNTBLANK(B5:F5)<1,SUM(B5:F5),"")
+ Function: IF  1
+ Criteria: Determine number of cells with/without values  1
+OR determine if all cells have values
+ Value if no empty cells are found:  SUM(B5:F5) 1
+ Value if empty cells are found:  "" 1
+ Copied down  1
+3.5 Cells F20:F31: Conditional Formatting 4
+(This Worksheet → Top rule → Check Edit Rule)
+ Condition/Criteria:
+Cell value >  F5  OR Cell value > $F5
+2
+OR=F5<F20 OR =$F5<$F20
+OR=F20>F5 OR =$F20>$F5
+ No absolute cell referencing on rows  1
+ Format: Blue fill colour  1
+Chart worksheet
+3.6 Chart/Graph 5
+ Data series for 2021: Series Value: Data!$C$20:$C$31  1
+ Data series for 2020: Series Name: 2020  1
+ Legend: below  1
+ Y-Axis: Number format: 'Use 1000 Separator'  1
+ X-Axis: Custom angle: -45°  1
+(Mark by inspection: Can vary between -30 to -50)
+Total for QUESTION 3 [21]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 7 =====
+Computer Applications Technology/P1 7 DBE/November 2022
+NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+QUESTION 4 File name: 4Sightings Total Q4: 19
+ Mark the questions from the formulae and not the values/answers in the cell.
+ Check against candidate's actual work (Cell references may differ, depending on the
+candidate's response).
+ Candidate may use multiple formulae, cells or 'building blocks' to reach answers.
+ Named ranges can be used instead of cell references.
+ The answers must still be correct even if values are changed in the existing data.
+Maximum Candidate
+No. Criteria
+Mark Mark
+Lions worksheet
+4.1 Cell D3: 1
+=MAX(G7:G105) OR =LARGE(G7:G105,1)
+ Function: MAX(G7:G105)  1
+4.2 Cell D4: 5
+=SUMIFS(G7:G105,C7:C105,"Mpila Camp",H7:H105,
+"TRUE")
+OR
+=SUMIFS(G7:G105,H7:H105,"TRUE",C7:C105,"Mpila Camp")
+ Sum range: G7:G105  1
+ Criteria range 1: C7:C105  1
+ Criteria 1: "Mpila Camp"  (Accept if wildcard was 1
+correctly used, e.g. "Mpila *", "Mp*", etc.)
+ Criteria range 2: H7:H105  1
+ Criteria 2: "TRUE"  OR TRUE 1
+4.3 Cell A7: 3
+=VLOOKUP(B7,Rangers!$B$2:$E$22,3)
+ Lookup value: B7 
+1
+ Table array: Rangers!$B$2:$E$22  OR
+1
+Rangers!$B$3:$E$22 OR 
+Rangers!B2:E22 OR
+Rangers!B3:E22
+ Row index number: 3  1
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 8 =====
+Computer Applications Technology/P1 8 DBE/November 2022
+NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+4.4 Cell D7: Nested IF function modification 6
+=IF(E7<$O$2,"Morning",IF(E7>=$O$3,"Night",
+"Afternoon"))
+OR
+=IF(E7>=$O$3,"Night",IF(E7<$O$2,"Morning",
+"Afternoon"))
+OR
+=IF(E7>=$O$3,"Night",IF(E7>=$O$2,"Afternoon",
+"Morning"))
+ Nested IF syntax: Returns correct output  1
+ Criteria: Start before 12:00
+o E7<$O$2  OR E7<O2 1
+o Output: "Morning"  1
+ Criteria: Start from 17:30 onwards
+o E7>=$O$3  OR E7>=O3 1
+o Output: "Night"  1
+ Criteria from 12:00 to before 17:30: "Afternoon"  1
+(Note to marker: Marks are allocated for two correct criteria
+and matching output and then one mark for the 'catch-all')
+(Accept reference to 'Oggend, Middag, Nag/Aand' for criteria)
+4.5 Cell F7: 4
+=E7+TIME(2,45,0) OR
+=TIME(HOUR(E7)+2,MINUTE(E7)+45,SECOND(E7))
+ Hour argument: +2 to original hour  1
+ Minute argument: +45 to original minutes  1
+ Second argument: 0  1
+ Cell reference: E7  1
+Total for QUESTION 4 [19]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 9 =====
+Computer Applications Technology/P1 9 DBE/November 2022
+NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+QUESTION 5 File name: 5Bookings Total Q5: 35
+Maximum Candidate
+No. Criteria
+Mark Mark
+Table: tbl5_1
+5.1.1 Field: Surname 1
+ Required: Yes  1
+5.1.2 Field: MemberNo (Input Mask) 4
+<L000000"@tvl"
+ < 
+1
+ L 
+1
+ 000000  1
+ "@tvl"  OR \@tvl 1
+5.1.3 Field: TravelDate 2
+ Format: Medium Date  1
+ Show Date Picker: Never  1
+5.1.4 Field: Accommodation (Lookup) 1
+ Row Source Type: Table/Query  1
+5.1.5 Field: IDCopy 3
+ Field IDCopy inserted  1
+ Position: Below Surname field  1
+ Data Type: Hyperlink  /Attachment/OLE object 1
+Form: frm5_2
+5.2  Image 5Logo inserted in the form header  1 5
+ Image size: 9 cm wide x 4 cm high  1
+ Date field: Validation rule
+Between #2023/01/01#  AND  #2025/12/31  3
+OR
+>= #2023/01/01# AND <=#2025/12/31
+OR
+> #2022/12/31# AND <#2026/01/01
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 10 =====
+Computer Applications Technology/P1 10 DBE/November 2022
+NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+Query: qry5_3
+5.3  Transport criteria: Taxi  OR Private  2 5
+ BookingAgent criteria: EasyStay  1
+ GroupSize criteria: >3 OR >=4 1
+ AND logic correctly applied  1
+OR
+(Expected number of records: 4 records)
+Query: qry5_4
+5.4  BookingAgent: Total Group By  1 2
+ Cost: Total: SUM  1
+Query: qry5_5
+5.5  Calculated field: DOB: [Year] & Left([ID],6) 6
+ DOB:  1
+ [Year]  1
+ &  1
+ Function: LEFT  1
+ [ID]  1
+ 6  1
+Report: rpt5_6
+5.6  Fields displayed: Surname, Name, GroupSize, 6
+Accommodation and Transport  1
+ Grouping: Transport  1
+ Function inserted in Transport footer  1
+ =SUM  ([GroupSize])  2
+ Sorted by Surname  1
+Total for QUESTION 5 [35]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 11 =====
+Computer Applications Technology/P1 11 DBE/November 2022
+NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+QUESTION 6 File names: 6_1Dolphin, 6_2Heritage Total Q6: 15
+ This question should be marked from the HTML code.
+ Numerical attribute values and single words do not need to be in inverted commas.
+Maximum Candidate
+No. Criteria
+Mark Mark
+6_1Dolphin
+6.1.1 Body tag: Text attribute 1
+<body text="blue">…</body>
+ Attribute: text="blue"  1
+(Note to marker: Do NOT accept font tags)
+6.1.2 Heading 2 tags: Did you know? 1
+<h2>Did you know?</h2>
+
+ Heading 2 tags inserted  1
+6.1.3 Bold tags 1
+<b>The Dolphin Coast … year-round tropical climate.</b>
+ Bold tags applied to text  1
+6.1.4 Link tags 3
+</p>For more information e-mail: <a href ="mailto:
+#dolphincoast@gmail.com">dolphincoast@gmail.com
+</a></p>
+1
+ Anchor tags inserted 
+ Attribute: href=mailto:dolphincoast@gmail.com  1
+(Accept with/without mailto and/or hash tag (#))
+ Text: dolphincoast@gmail.com (appears twice)  1
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 12 =====
+Computer Applications Technology/P1 12 DBE/November 2022
+NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+6_2Heritage
+6.2 …  8
+<img src="6_2Flamingo.jpg" width="500"/>
+…
+
+<table bgcolor="beige" border="5" height="10" >
+<tr>
+<td colspan="3" align="center"><b>10 Jewels of
+the Wetland Park</b></td>
+<td rowspan="4">Lake St Lucia</td>
+</tr>
+… 
+<ul type="circle">
+<li>Established: 1895</li>
+<li>Area: 3 280 km squared</li>
+<li>Reference No.: 345</li>
+<li>UNESCO Site Id: 914</li>
+<li>Designated: 2 October 1986</li>
+</ul>
+ Image
+ File extension for image: jpg  1
+ Table
+ Background colour: bgcolor="beige"  1
+ Colspan: colspan="3"  1
+ Alignment: align="center"  OR 1
+<th> … </th> OR
+<center> … </center>
+ Rowspan: rowspan="4"  1
+ Unordered list
+ Unordered list tags: <ul>…</ul> tags  1
+ Bullet type: type="circle"  1
+ List tag closed: Area: 3 280 km squared</li>  1
+Closing tag(s) or triangular brackets and nesting correctly
+used.  1 1
+Total for QUESTION 6 [15]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 13 =====
+Computer Applications Technology/P1 13 DBE/November 2022
+NSC – Marking Guidelines
+EXAMINATION
+NUMBER
+QUESTION 7 File names: 7Map, 7TravelMode, 7Travellers Total Q7: 15
+Maximum Candidate
+No. Criteria
+Mark Mark
+7Map
+7.1 Table calculation and Textbox 5
+7.1.1  Cell calculation: KwaZulu-Natal:
+=100-  SUM(ABOVE)  2
+OR
+=B11-SUM(B2:B9)
+OR
+=SUM(BELOW)-SUM(ABOVE)
+Alt+F9 { … }
+7.1.2  Textbox:
+ Position: Moved to KwaZulu-Natal area on the map  1
+ Shape border: No Outline  1
+ Rotation: Between 300° and 320°  (Mark by inspection) 1
+7TravelMode – Info table
+7.2  Imported 7Travellers spreadsheet into 7TravelMode database  1 3
+ As a linked table  1
+ Linked table named as Info  1
+7BigFive
+7.3 Cell M2: (Note to marker: OR function not IF statement) 7
+=OR(F2=$B$11,F2=$B$12,F2=$B$13,F2=$B$14,F2=$B$15)
+Versioning: Candidate and Marker MSO 365
+Marker in MSO 2016/2019/2021
+ Cell reference: F2  1
+ Reference to all 5 options in the OR function  1
+ Displays required result when copied down to cells M3:M7  1
+Cell P3:
+=COUNTIF(I3:O3,True)=5 OR
+=IF(COUNTIF(I3:O3,True)=5,True,False)
+ Determine if all Big Five animals were seen  1
+e.g. COUNTIF / IF(COUNTIF) function(s)
+ References cells in the range I3 to O3  1
+ Criteria: True  1
+ Logical: =5  / True, False (Ignore if quotation marks added) 1
+Total for QUESTION 7 [15]
+TOTAL 150
+Copyright reserved

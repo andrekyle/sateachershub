@@ -1,0 +1,884 @@
+﻿{% extends "lms_base.html" %}
+{% block title %}Our Mission · South African Teachers Hub{% endblock %}
+{% block body_class %}apple-home{% endblock %}
+
+{% block main %}
+<main style="padding: 0; min-height: 0;">
+{% block content %}
+<style>
+    /* Kill any white background bleed from body/main on this page */
+    body.apple-home { background: #000 !important; padding-top: 0 !important; }
+    /* Match navbar to the page's black background instead of hiding it */
+    body.apple-home .navbar {
+        background: #000 !important;
+        -webkit-backdrop-filter: none !important;
+        backdrop-filter: none !important;
+        border-bottom: 1px solid rgba(255,255,255,0.08) !important;
+    }
+    body.apple-home .navbar .nav-brand,
+    body.apple-home .navbar .nav-links a,
+    body.apple-home .navbar .nav-dropdown-toggle,
+    body.apple-home .navbar .nav-links a.admin-nav-btn { color: #f5f5f7 !important; }
+    body.apple-home .navbar .nav-links a:hover,
+    body.apple-home .navbar .nav-dropdown-toggle:hover,
+    body.apple-home .navbar .nav-links a.active { color: #fff !important; opacity: 1 !important; }
+    body.apple-home .nav-dropdown-menu { background: #1d1d1f !important; }
+    body.apple-home .nav-dropdown-menu a { color: #f5f5f7 !important; }
+    /* sath-nav (current navbar): black background, white text on this page */
+    body.apple-home .sath-nav { background: #000 !important; border-bottom: none !important; }
+    body.apple-home .sath-brand,
+    body.apple-home .sath-links a,
+    body.apple-home .sath-links a.active,
+    body.apple-home .sath-links a.sath-admin,
+    body.apple-home .sath-links a:hover,
+    body.apple-home .sath-cta .sath-ghost,
+    body.apple-home .sath-mobile-toggle { color: #f5f5f7 !important; }
+    body.apple-home .sath-cta a.sath-primary {
+        color: #fff !important;
+        background: #0071e3 !important;
+        border-color: #0071e3 !important;
+    }
+    body.apple-home .sath-cta a.sath-primary:hover {
+        color: #fff !important;
+        background: #0077ed !important;
+        border-color: #0077ed !important;
+    }
+    body.apple-home .sath-cta .sath-userpill {
+        color: #f5f5f7 !important;
+        background: rgba(255,255,255,0.06) !important;
+        border-color: rgba(255,255,255,0.12) !important;
+    }
+    body.apple-home .sath-cta .sath-userpill:hover {
+        background: rgba(255,255,255,0.10) !important;
+        border-color: rgba(255,255,255,0.22) !important;
+    }
+    body.apple-home .sath-brand .sath-brand-accent { color: #2997ff !important; }
+    .om-page {
+        background: #fbfbfd;
+        color: #1d1d1f;
+        font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'SF Pro Text',
+                     'Helvetica Neue', Helvetica, Arial, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        letter-spacing: 0;
+        line-height: 1.47059;
+    }
+    [data-theme="dark"] .om-page { background: #000; color: #f5f5f7; }
+
+    .om-section { padding: 96px 48px; }
+    .om-inner { max-width: 100%; margin: 0; }
+
+    /* Founder section is edge-to-edge */
+    .om-founder.om-section { padding: 0; }
+
+    /* Hero */
+    .om-hero {
+        text-align: center;
+        padding: 48px 48px;
+        height: calc(100vh - 56px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(180deg, #fbfbfd 0%, #ffffff 100%);
+    }
+    [data-theme="dark"] .om-hero { background: #000; }
+    .om-eyebrow {
+        font-size: 12px;
+        font-weight: 600;
+        color: #06c;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin: 0 0 14px;
+        display: inline-block;
+        position: relative;
+        padding-left: 18px;
+    }
+    .om-eyebrow::before {
+        content: ""; position: absolute; left: 0; top: 50%;
+        width: 12px; height: 1px; background: currentColor; opacity: 0.6;
+    }
+    [data-theme="dark"] .om-eyebrow { color: #2997ff; }
+    .om-hero h1 {
+        font-size: clamp(32px, 4.5vw, 60px);
+        font-weight: 600;
+        line-height: 1.2;
+        letter-spacing: -0.015em;
+        margin: 0 auto 18px;
+        max-width: 880px;
+        color: #1d1d1f;
+    }
+    [data-theme="dark"] .om-hero h1 { color: #f5f5f7; }
+    .om-hero h1 em {
+        font-style: normal;
+        background: linear-gradient(90deg, #06c 0%, #5e5ce6 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+    .om-hero p.lead {
+        font-size: clamp(19px, 1.6vw, 24px);
+        line-height: 1.33;
+        letter-spacing: 0.004em;
+        color: #000;
+        max-width: 720px;
+        margin: 0 auto;
+        font-weight: 400;
+    }
+    [data-theme="dark"] .om-hero p.lead { color: #a1a1a6; }
+
+    /* Founder note */
+    .om-founder { background: #f5f5f7; padding: 0; }
+    [data-theme="dark"] .om-founder { background: #0a0a0a; }
+    .om-founder-card {
+        max-width: 100%; margin: 0;
+        background: #fff;
+        border-radius: 0;
+        padding: 96px 48px;
+        box-shadow: none;
+    }
+    [data-theme="dark"] .om-founder-card { background: #1d1d1f; box-shadow: none; }
+    .om-founder-card-inner { max-width: 860px; margin: 0 auto; }
+    .om-founder-card h2 {
+        font-size: clamp(28px, 3vw, 40px);
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        line-height: 1.1;
+        margin: 0 0 22px;
+    }
+    .om-founder-card p {
+        font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", "Segoe UI", system-ui, sans-serif;
+        font-size: 18px; line-height: 1.6; color: #000;
+        margin: 0 0 18px;
+        font-weight: 450;
+        letter-spacing: 0.012em;
+        text-align: justify;
+        text-justify: inter-word;
+        hyphens: auto;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    .om-founder-card p strong { font-weight: 500; color: #1d1d1f; }
+    [data-theme="dark"] .om-founder-card p strong { color: #f5f5f7; }
+    .om-founder-card .signature { text-align: left; }
+    [data-theme="dark"] .om-founder-card p { color: #d2d2d7; }
+    .om-founder-card p:last-child { margin-bottom: 0; }
+    .om-founder-card .signature {
+        margin-top: 28px;
+        font-size: 16px; color: #000;
+        font-style: italic;
+    }
+
+    /* Section heading */
+    .om-h2 {
+        font-size: clamp(32px, 4.5vw, 56px);
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        line-height: 1.07;
+        margin: 0 0 18px;
+        text-align: center;
+        color: #1d1d1f;
+    }
+    [data-theme="dark"] .om-h2 { color: #f5f5f7; }
+    .om-sub {
+        font-size: clamp(19px, 1.6vw, 24px);
+        font-weight: 400;
+        line-height: 1.33;
+        letter-spacing: 0.004em;
+        color: #000;
+        text-align: center;
+        max-width: 720px;
+        margin: 0 auto 64px;
+    }
+    [data-theme="dark"] .om-sub { color: #a1a1a6; }
+
+    /* Pain points — mirrors landing page .ap-fcard style */
+    .om-pain-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+    }
+    .om-pain-card {
+        background: linear-gradient(180deg, #ffffff 0%, #fafafc 100%);
+        border-radius: 0;
+        padding: 36px 32px;
+        aspect-ratio: 1 / 1;
+        border: 1px solid rgba(0,0,0,0.04);
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.9),
+            0 1px 2px rgba(0,0,0,0.03),
+            0 18px 40px -20px rgba(0,0,0,0.14);
+        display: flex; flex-direction: column;
+        text-align: left;
+        transition: transform .25s, box-shadow .25s;
+    }
+    .om-pain-card:hover {
+        transform: translateY(-3px);
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.9),
+            0 2px 4px rgba(0,0,0,0.04),
+            0 26px 50px -18px rgba(0,0,0,0.22);
+    }
+    /* Alternating dark tiles — every 2nd in row */
+    .om-pain-grid > .om-pain-card:nth-child(even) {
+        background: linear-gradient(180deg, #1d1d1f 0%, #0c0c0e 100%);
+        border-color: rgba(255,255,255,0.06);
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.06),
+            0 1px 2px rgba(0,0,0,0.4),
+            0 24px 50px -20px rgba(0,0,0,0.55);
+    }
+    .om-pain-grid > .om-pain-card:nth-child(even):hover {
+        box-shadow:
+            inset 0 1px 0 rgba(255,255,255,0.06),
+            0 2px 4px rgba(0,0,0,0.5),
+            0 32px 60px -18px rgba(0,0,0,0.7);
+    }
+    .om-pain-grid > .om-pain-card:nth-child(even) h3 { color: #f5f5f7; }
+    .om-pain-grid > .om-pain-card:nth-child(even) p { color: rgba(255,255,255,0.65); }
+    .om-pain-grid > .om-pain-card:nth-child(even) .om-pain-ico { color: #2997ff; }
+
+    .om-pain-ico {
+        width: 48px; height: 48px;
+        margin-bottom: 26px;
+        color: #06c;
+    }
+    .om-pain-ico svg {
+        width: 100%; height: 100%;
+        stroke: currentColor; fill: none;
+        stroke-width: 1;
+        stroke-linecap: round; stroke-linejoin: round;
+    }
+    .om-pain-card h3 {
+        font-size: 24px;
+        font-weight: 600;
+        line-height: 1.15;
+        letter-spacing: -0.015em;
+        color: #1d1d1f;
+        margin: 0 0 10px;
+    }
+    .om-pain-card p {
+        font-size: 16px;
+        line-height: 1.5;
+        color: #000;
+        margin: 0;
+    }
+    @media (max-width: 900px) { .om-pain-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 560px) { .om-pain-grid { grid-template-columns: 1fr; } .om-pain-card { aspect-ratio: auto; } }
+
+    /* Promise — large statement bands */
+    /* Promise tiles section */
+    .om-promise-section { background: #fbfbfd; }
+    [data-theme="dark"] .om-promise-section { background: #0a0a0a; }
+
+    .om-promise {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    .om-promise-tile {
+        position: relative;
+        border-radius: 28px;
+        padding: 56px 52px 52px;
+        min-height: 460px;
+        display: flex; flex-direction: column;
+        overflow: hidden;
+        isolation: isolate;
+        transition: transform 480ms cubic-bezier(.2,.7,.2,1), box-shadow 480ms cubic-bezier(.2,.7,.2,1);
+        box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 12px 40px -12px rgba(0,0,0,0.18);
+    }
+    .om-promise-tile::before {
+        /* subtle inner highlight ring for depth */
+        content: "";
+        position: absolute; inset: 0;
+        border-radius: inherit;
+        box-shadow: inset 0 1px 0 rgba(255,255,255,0.08);
+        pointer-events: none;
+        z-index: 1;
+    }
+    .om-promise-tile:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 1px 2px rgba(0,0,0,0.05), 0 30px 60px -20px rgba(0,0,0,0.28);
+    }
+    .om-promise-tile .om-tile-art {
+        position: absolute;
+        top: 44px; right: 44px;
+        width: 96px; height: 96px;
+        opacity: 0.92;
+        z-index: 2;
+        pointer-events: none;
+    }
+    .om-promise-tile .om-tile-art svg {
+        width: 100%; height: 100%;
+        stroke: currentColor; fill: none;
+        stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .om-promise-tile .om-tile-body {
+        margin-top: auto;
+        position: relative;
+        z-index: 2;
+        max-width: 92%;
+    }
+
+    /* Tile 1 — Store: deep graphite */
+    .om-promise-tile.t1 {
+        background:
+            radial-gradient(120% 80% at 100% 0%, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0) 60%),
+            linear-gradient(180deg, #1d1d1f 0%, #0a0a0a 100%);
+        color: #f5f5f7;
+    }
+    /* Tile 2 — Retrieve: premium iCloud blue */
+    .om-promise-tile.t2 {
+        background:
+            radial-gradient(120% 90% at 0% 100%, rgba(0,0,0,0.18) 0%, rgba(0,0,0,0) 55%),
+            linear-gradient(180deg, #007aff 0%, #0040c1 100%);
+        color: #ffffff;
+    }
+    /* Tile 3 — Configure: clean ceramic white */
+    .om-promise-tile.t3 {
+        background:
+            radial-gradient(120% 80% at 100% 0%, rgba(0,0,0,0.04) 0%, rgba(0,0,0,0) 55%),
+            linear-gradient(180deg, #ffffff 0%, #f1f1f3 100%);
+        color: #1d1d1f;
+        box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 12px 40px -12px rgba(0,0,0,0.10);
+    }
+    .om-promise-tile.t3::before { box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06); }
+    /* Tile 4 — Hand over: deep evergreen */
+    .om-promise-tile.t4 {
+        background:
+            radial-gradient(120% 90% at 0% 100%, rgba(0,0,0,0.20) 0%, rgba(0,0,0,0) 55%),
+            linear-gradient(180deg, #0fa97e 0%, #04694f 100%);
+        color: #ffffff;
+    }
+
+    .om-promise-tile .label {
+        font-size: 12px; font-weight: 600;
+        text-transform: uppercase; letter-spacing: 0.14em;
+        opacity: 0.78;
+        margin: 0 0 16px;
+    }
+    .om-promise-tile h3 {
+        font-size: clamp(28px, 2.8vw, 38px);
+        font-weight: 600;
+        letter-spacing: -0.018em;
+        line-height: 1.06;
+        margin: 0 0 14px;
+    }
+    .om-promise-tile p:not(.label) {
+        font-size: 17px; line-height: 1.5;
+        opacity: 0.86;
+        margin: 0;
+        letter-spacing: 0.004em;
+        max-width: 38ch;
+    }
+    @media (max-width: 833px) {
+        .om-promise { grid-template-columns: 1fr; gap: 16px; }
+        .om-promise-tile { min-height: 380px; padding: 44px 36px; }
+        .om-promise-tile .om-tile-art { width: 72px; height: 72px; top: 32px; right: 32px; }
+    }
+
+    /* Belief statement */
+    .om-belief {
+        background: #1d1d1f; color: #fff;
+    }
+    [data-theme="dark"] .om-belief { background: #0a0a0a; }
+    .om-belief-text {
+        font-size: clamp(28px, 3.8vw, 48px);
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        line-height: 1.15;
+        text-align: center;
+        max-width: 1280px;
+        margin: 0 auto;
+    }
+    .om-belief-text em {
+        font-style: normal;
+        background: linear-gradient(90deg, #2997ff 0%, #5e5ce6 50%, #ff375f 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    /* Trust tile */
+    .om-trust {
+        background: #fbfbfd;
+    }
+    [data-theme="dark"] .om-trust { background: #000; }
+    .om-trust-tile {
+        max-width: 1280px;
+        margin: 0 auto;
+        background: linear-gradient(135deg, #f5f5f7 0%, #e8e8ed 100%);
+        border-radius: 28px;
+        padding: 72px 64px;
+        display: grid;
+        grid-template-columns: 1.1fr 1fr;
+        gap: 56px;
+        align-items: center;
+    }
+    [data-theme="dark"] .om-trust-tile {
+        background: linear-gradient(135deg, #1d1d1f 0%, #2c2c2e 100%);
+    }
+    .om-trust-tile .label {
+        font-size: 12px; font-weight: 600;
+        text-transform: uppercase; letter-spacing: 0.12em;
+        color: #06c;
+        margin: 0 0 14px;
+    }
+    [data-theme="dark"] .om-trust-tile .label { color: #2997ff; }
+    .om-trust-tile h3 {
+        font-size: clamp(28px, 3.4vw, 44px);
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        line-height: 1.08;
+        margin: 0 0 18px;
+        color: #1d1d1f;
+    }
+    [data-theme="dark"] .om-trust-tile h3 { color: #f5f5f7; }
+    .om-trust-tile p.lead {
+        font-size: 19px; line-height: 1.5; color: #000;
+        margin: 0 0 24px; font-weight: 400; letter-spacing: 0.004em;
+    }
+    [data-theme="dark"] .om-trust-tile p.lead { color: #d2d2d7; }
+    .om-trust-points { list-style: none; padding: 0; margin: 0; display: grid; gap: 18px; }
+    .om-trust-points li {
+        display: flex; gap: 14px; align-items: flex-start;
+    }
+    .om-trust-points .ico {
+        flex: 0 0 36px; height: 36px;
+        background: transparent;
+        color: #06c;
+        display: flex; align-items: center; justify-content: center;
+        box-shadow: none;
+        border-radius: 0;
+    }
+    .om-trust-points .ico svg {
+        width: 28px; height: 28px;
+        stroke: currentColor; fill: none;
+        stroke-width: 1;
+        stroke-linecap: round; stroke-linejoin: round;
+    }
+    [data-theme="dark"] .om-trust-points .ico { background: transparent; color: #2997ff; box-shadow: none; }
+    .om-trust-points h4 {
+        font-size: 17px; font-weight: 600; letter-spacing: -0.005em;
+        margin: 0 0 2px; color: #1d1d1f;
+    }
+    [data-theme="dark"] .om-trust-points h4 { color: #f5f5f7; }
+    .om-trust-points p {
+        font-size: 15px; color: #000; margin: 0; line-height: 1.45;
+        letter-spacing: 0.005em;
+    }
+    [data-theme="dark"] .om-trust-points p { color: #a1a1a6; }
+    @media (max-width: 833px) {
+        .om-trust-tile { grid-template-columns: 1fr; padding: 48px 28px; gap: 36px; }
+    }
+
+    /* Capabilities grid — premium icon-on-top tiles */
+    .om-cap-list {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1px;
+        background: #d2d2d7;
+        border: 1px solid #d2d2d7;
+        border-radius: 22px;
+        overflow: hidden;
+        margin: 0;
+    }
+    [data-theme="dark"] .om-cap-list { background: #2c2c2e; border-color: #2c2c2e; }
+    .om-cap-item {
+        display: flex; flex-direction: column; align-items: flex-start;
+        padding: 36px 30px 34px;
+        background: #ffffff;
+        gap: 18px;
+        transition: background 240ms ease;
+    }
+    [data-theme="dark"] .om-cap-item { background: #161617; }
+    .om-cap-item:hover { background: #fafafc; }
+    [data-theme="dark"] .om-cap-item:hover { background: #1d1d1f; }
+    .om-cap-icon {
+        width: 40px; height: 40px;
+        color: #06c;
+        display: flex; align-items: center; justify-content: center;
+    }
+    [data-theme="dark"] .om-cap-icon { color: #2997ff; }
+    .om-cap-icon svg {
+        width: 100%; height: 100%;
+        stroke: currentColor; fill: none;
+        stroke-width: 1; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .om-cap-item h4 {
+        font-size: 17px; font-weight: 600; letter-spacing: -0.005em;
+        margin: 0 0 8px;
+        color: #1d1d1f;
+        line-height: 1.25;
+    }
+    [data-theme="dark"] .om-cap-item h4 { color: #f5f5f7; }
+    .om-cap-item p {
+        font-size: 14px; color: #000; margin: 0; line-height: 1.5;
+        letter-spacing: 0.005em;
+    }
+    [data-theme="dark"] .om-cap-item p { color: #a1a1a6; }
+    @media (max-width: 1100px) { .om-cap-list { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 600px) { .om-cap-list { grid-template-columns: 1fr; } }
+
+    /* Final CTA */
+    .om-cta {
+        text-align: center;
+        background: linear-gradient(180deg, #ffffff 0%, #fbfbfd 100%);
+        padding: 120px 48px;
+    }
+    [data-theme="dark"] .om-cta { background: linear-gradient(180deg, #000 0%, #0a0a0a 100%); }
+    .om-cta h2 {
+        font-size: clamp(36px, 5vw, 64px);
+        font-weight: 600;
+        letter-spacing: -0.015em;
+        line-height: 1.07;
+        margin: 0 0 18px;
+    }
+    .om-cta p {
+        font-size: clamp(19px, 1.6vw, 24px);
+        font-weight: 400;
+        line-height: 1.33;
+        letter-spacing: 0.004em;
+        color: #000;
+        max-width: 640px; margin: 0 auto 36px;
+    }
+    [data-theme="dark"] .om-cta p { color: #a1a1a6; }
+    .om-btn-row { display: inline-flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+    .om-btn {
+        display: inline-block;
+        padding: 14px 28px;
+        border-radius: 980px;
+        font-size: 17px;
+        font-weight: 400;
+        letter-spacing: -0.005em;
+        text-decoration: none;
+        transition: opacity 120ms ease, transform 120ms ease;
+    }
+    .om-btn:hover { opacity: 0.85; }
+    .om-btn-primary { background: #06c; color: #fff; }
+    .om-btn-secondary { background: rgba(0,0,0,0.06); color: #1d1d1f; }
+    [data-theme="dark"] .om-btn-secondary { background: rgba(255,255,255,0.1); color: #f5f5f7; }
+</style>
+
+<div class="om-page">
+
+    <!-- Hero -->
+    <section class="om-hero">
+        <p class="om-eyebrow">Our Mission</p>
+        <h1>Built by a teacher.<br>For every teacher who deserves their evenings back.</h1>
+        <p class="lead">
+            South African Teachers Hub exists for one reason: so South African educators can stop drowning
+            in admin and get back to the work that drew them into the classroom in the first place.
+        </p>
+    </section>
+
+    <!-- Founder note -->
+    <section class="om-section om-founder">
+        <div class="om-founder-card">
+          <div class="om-founder-card-inner">
+            <h2>A note from the founder</h2>
+            <p>
+                I spent 17 years as a teacher and facilitator.
+            </p>
+            <p>
+                I know what it feels like to lose a Sunday to a question paper that should
+                have taken an hour. To rewrite the same instructions you wrote last term,
+                because last term's file is on a laptop you don't use anymore. To open a
+                memo at 11pm and realise it's the wrong version. To send a paper to your
+                HOD and spend three days bouncing tracked-changes back and forth before
+                it's finally approved.
+            </p>
+            <p>
+                And it's never as simple as just reusing last year's paper. Every year is
+                different. Some terms you don't get through every topic. Some terms you
+                cover more than the year before. So you sit down to recycle the old paper
+                and realise half of it tests work your class never reached, and a chunk of
+                what they did learn isn't on it at all. Which means editing question by
+                question, rebuilding the memo to match, re-checking the mark allocation,
+                and often just starting from a blank page anyway &mdash; on a Sunday night,
+                on a laptop, on your own time.
+            </p>
+            <p>
+                I know what that quietly takes from you. By Monday, the lesson you'd hoped
+                to plan a little better gets done from memory. The learner you meant to
+                check in with waits another week. The marking you wanted to give real
+                feedback on gets a tick and a number. You still show up &mdash; teachers
+                always do &mdash; but a little of the joy is left behind in the admin.
+            </p>
+            <p>
+                South African Teachers Hub is the tool I wish I'd had. A quiet workspace where every paper,
+                memo, rubric and assessment lives in one place &mdash; CAPS-aligned, easy
+                to edit when the year takes a different shape, and ready to hand to the
+                next teacher who walks into your classroom. So that the part of teaching
+                you actually love is the part you get to spend your time on.
+            </p>
+            <p class="signature">&mdash; The South African Teachers Hub team</p>
+          </div>
+        </div>
+    </section>
+
+    <!-- Pain points -->
+    <section class="om-section">
+        <div class="om-inner">
+            <h2 class="om-h2">We know what's stealing your weekends.</h2>
+            <p class="om-sub">
+                Because we lived it. Every one of these is a problem South African Teachers Hub was designed to remove.
+            </p>
+            <div class="om-pain-grid">
+                <div class="om-pain-card">
+                    <div class="om-pain-ico"><svg viewBox="0 0 24 24"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2Z"/><path d="M3 11h18"/></svg></div>
+                    <h3>Lost in folders.</h3>
+                    <p>
+                        Three laptops, two flash drives, a shared Google Drive nobody can find.
+                        Last year's paper is in there &mdash; somewhere.
+                    </p>
+                </div>
+                <div class="om-pain-card">
+                    <div class="om-pain-ico"><svg viewBox="0 0 24 24"><path d="M21 12a9 9 0 1 1-3-6.7"/><path d="M21 4v5h-5"/></svg></div>
+                    <h3>Re-doing the same work.</h3>
+                    <p>
+                        New term, new grade, new section &mdash; same questions retyped from scratch
+                        because the original file walked out the door with last year's HOD.
+                    </p>
+                </div>
+                <div class="om-pain-card">
+                    <div class="om-pain-ico"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1"/><path d="M9 11h6M9 15h6M9 19h4"/></svg></div>
+                    <h3>Moderation panic.</h3>
+                    <p>
+                        Cognitive levels, Bloom's distribution, weighting per topic &mdash;
+                        recalculated by hand, the night before submission.
+                    </p>
+                </div>
+                <div class="om-pain-card">
+                    <div class="om-pain-ico"><svg viewBox="0 0 24 24"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M19 21V8l-5-5H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2Z"/><path d="M8 13h8M8 17h6"/></svg></div>
+                    <h3>Version chaos.</h3>
+                    <p>
+                        Paper_FINAL.docx. Paper_FINAL_v2.docx. Paper_FINAL_USE_THIS.docx.
+                        Which one did the kids actually write?
+                    </p>
+                </div>
+                <div class="om-pain-card">
+                    <div class="om-pain-ico"><svg viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><circle cx="19" cy="15" r="4"/><path d="M19 13.5v1.5l1 1"/></svg></div>
+                    <h3>Knowledge that walks out.</h3>
+                    <p>
+                        A senior teacher retires and 25 years of carefully built assessments
+                        disappear with them. The new teacher starts from zero.
+                    </p>
+                </div>
+                <div class="om-pain-card">
+                    <div class="om-pain-ico"><svg viewBox="0 0 24 24"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg></div>
+                    <h3>Evenings that aren't yours.</h3>
+                    <p>
+                        Marking, typing, formatting, re-formatting. The job you were hired to do
+                        happens after your own children are asleep.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Promise tiles -->
+    <section class="om-section om-promise-section">
+        <div class="om-inner">
+            <h2 class="om-h2" style="white-space: nowrap; font-size: clamp(20px, 3.5vw, 52px);">What South African Teachers Hub gives back.</h2>
+            <p class="om-sub">
+                A repository, a workspace, and a quiet system that does the boring parts so you don't have to.
+            </p>
+            <div class="om-promise">
+                <div class="om-promise-tile t1">
+                    <div class="om-tile-art" aria-hidden="true">
+                        <svg viewBox="0 0 64 64">
+                            <rect x="10" y="14" width="36" height="44" rx="3"/>
+                            <rect x="16" y="8" width="36" height="44" rx="3"/>
+                            <path d="M24 22h20M24 30h20M24 38h14"/>
+                        </svg>
+                    </div>
+                    <div class="om-tile-body">
+                        <p class="label">Store</p>
+                        <h3>Every paper.<br>One place. Forever.</h3>
+                        <p>Past papers, memos, rubrics, SBAs &mdash; uploaded once, tagged by subject, grade and year. Searchable in a second.</p>
+                    </div>
+                </div>
+                <div class="om-promise-tile t2">
+                    <div class="om-tile-art" aria-hidden="true">
+                        <svg viewBox="0 0 64 64">
+                            <circle cx="28" cy="28" r="16"/>
+                            <path d="m40 40 14 14"/>
+                            <path d="M22 28h12M28 22v12"/>
+                        </svg>
+                    </div>
+                    <div class="om-tile-body">
+                        <p class="label">Retrieve</p>
+                        <h3>Find any question<br>in seconds.</h3>
+                        <p>Search by topic, cognitive level, year, or keyword. Pull a question, drop it into a new paper, move on.</p>
+                    </div>
+                </div>
+                <div class="om-promise-tile t3">
+                    <div class="om-tile-art" aria-hidden="true">
+                        <svg viewBox="0 0 64 64">
+                            <rect x="8" y="10" width="48" height="44" rx="4"/>
+                            <path d="M8 22h48"/>
+                            <circle cx="15" cy="16" r="1.4" fill="currentColor" stroke="none"/>
+                            <circle cx="21" cy="16" r="1.4" fill="currentColor" stroke="none"/>
+                            <path d="M16 32h14M16 40h22M16 48h10"/>
+                            <path d="M42 36l4 4 8-8"/>
+                        </svg>
+                    </div>
+                    <div class="om-tile-body">
+                        <p class="label">Configure</p>
+                        <h3>Build a paper without<br>retyping a word.</h3>
+                        <p>Mix questions across years and topics. South African Teachers Hub tracks marks, weightings and Bloom's levels automatically.</p>
+                    </div>
+                </div>
+                <div class="om-promise-tile t4">
+                    <div class="om-tile-art" aria-hidden="true">
+                        <svg viewBox="0 0 64 64">
+                            <path d="M10 34h36"/>
+                            <path d="m38 26 8 8-8 8"/>
+                            <path d="M14 18V14a4 4 0 0 1 4-4h32a4 4 0 0 1 4 4v36a4 4 0 0 1-4 4H18a4 4 0 0 1-4-4v-4"/>
+                        </svg>
+                    </div>
+                    <div class="om-tile-body">
+                        <p class="label">Hand over</p>
+                        <h3>Knowledge that stays<br>with the school.</h3>
+                        <p>When a teacher leaves, their work doesn't. Every assessment they built lives on for the next teacher to learn from.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Belief statement -->
+    <section class="om-section om-belief">
+        <p class="om-belief-text">
+            We believe teachers should focus on what matters most &mdash;
+            <em>students, teaching, and excellence</em> &mdash;
+            instead of fighting admin, year in and year out.
+        </p>
+    </section>
+
+    <!-- Trust: data integrity, safety & privacy -->
+    <section class="om-section om-trust">
+        <div class="om-trust-tile">
+            <div>
+                <p class="label">Data integrity, safety &amp; privacy</p>
+                <h3>Your assessments stay yours. Always.</h3>
+                <p class="lead">
+                    The papers you build are intellectual property &mdash; yours and your school's.
+                    South African Teachers Hub treats them that way. Encrypted at rest, locked behind your account,
+                    never used to train anything, never sold, never shared.
+                </p>
+            </div>
+            <ul class="om-trust-points">
+                <li>
+                    <div class="ico"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V7a4 4 0 0 1 8 0v4"/></svg></div>
+                    <div>
+                        <h4>Encrypted &amp; access-controlled</h4>
+                        <p>Every file encrypted at rest. Role-based access so only the right people in your school can see, edit or moderate.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="ico"><svg viewBox="0 0 24 24"><path d="M12 3 4 6v6c0 5 3.5 8.5 8 9 4.5-.5 8-4 8-9V6Z"/></svg></div>
+                    <div>
+                        <h4>POPIA-compliant by design</h4>
+                        <p>Hosted in line with South African data-protection law. Learner data minimised. Audit trails for every change.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7"/><path d="M3 4v5h5"/><path d="M12 8v4l3 2"/></svg></div>
+                    <div>
+                        <h4>Versioned &amp; backed up</h4>
+                        <p>Daily backups, point-in-time restore. Nothing lost to a hard drive failure or an accidentally-deleted folder.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="ico"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="m9 9 6 6M15 9l-6 6"/></svg></div>
+                    <div>
+                        <h4>Never used to train AI. Ever.</h4>
+                        <p>Your papers and memos are not training data. Not for us, not for anyone. They exist for your school and only your school.</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="ico"><svg viewBox="0 0 24 24"><path d="M14 3v4a1 1 0 0 0 1 1h4"/><path d="M19 21V8l-5-5H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h11a2 2 0 0 0 2-2Z"/><path d="M9 14h6m0 0-2-2m2 2-2 2"/></svg></div>
+                    <div>
+                        <h4>Yours to take with you</h4>
+                        <p>Export every paper, memo and rubric at any time, in standard formats. No lock-in &mdash; if you leave, your work leaves with you.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section class="om-section">
+        <div class="om-inner">
+            <h2 class="om-h2">Everything a teacher actually needs.</h2>
+            <p class="om-sub">
+                CAPS-aligned. School-ready. Built around how South African educators really work.
+            </p>
+            <div class="om-cap-list">
+                <div class="om-cap-item">
+                    <div class="om-cap-icon"><svg viewBox="0 0 40 40"><rect x="6" y="8" width="22" height="26" rx="2"/><path d="M12 14h10M12 20h10M12 26h6"/><circle cx="30" cy="28" r="6"/><path d="m34 32 4 4"/></svg></div>
+                    <h4>Question bank by subject &amp; topic</h4>
+                    <p>Tag every question by CAPS topic, cognitive level and difficulty. Reuse with one click.</p>
+                </div>
+                <div class="om-cap-item">
+                    <div class="om-cap-icon"><svg viewBox="0 0 40 40"><rect x="6" y="10" width="22" height="26" rx="2"/><rect x="12" y="4" width="22" height="26" rx="2"/><path d="M18 12h10M18 18h10M18 24h6"/></svg></div>
+                    <h4>Past paper repository</h4>
+                    <p>NSC papers, prelims, Term tests &mdash; all 25 NSC subjects, all years, indexed and ready.</p>
+                </div>
+                <div class="om-cap-item">
+                    <div class="om-cap-icon"><svg viewBox="0 0 40 40"><rect x="6" y="6" width="28" height="28" rx="3"/><path d="M6 14h28"/><path d="M12 22h8M12 28h12"/><path d="m24 22 3 3 5-5"/></svg></div>
+                    <h4>Paper builder with auto-totals</h4>
+                    <p>Drag, drop, configure. South African Teachers Hub calculates the marks, weighting and cognitive spread for you.</p>
+                </div>
+                <div class="om-cap-item">
+                    <div class="om-cap-icon"><svg viewBox="0 0 40 40"><path d="M8 6h18l8 8v20a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z"/><path d="M26 6v8h8"/><path d="m14 24 4 4 8-10"/></svg></div>
+                    <h4>Memos kept beside the paper</h4>
+                    <p>Memo lives with the question. No more hunting for the answer key the night before marking.</p>
+                </div>
+                <div class="om-cap-item">
+                    <div class="om-cap-icon"><svg viewBox="0 0 40 40"><rect x="6" y="8" width="28" height="26" rx="2"/><path d="M6 14h28"/><path d="M12 4v8M28 4v8"/><path d="M14 22h4M22 22h4M14 28h4M22 28h4"/></svg></div>
+                    <h4>Formal Assessment programmes</h4>
+                    <p>The full CAPS Programme of Assessment for every subject, kept current with DBE updates.</p>
+                </div>
+                <div class="om-cap-item">
+                    <div class="om-cap-icon"><svg viewBox="0 0 40 40"><circle cx="14" cy="14" r="4"/><circle cx="28" cy="14" r="4"/><path d="M6 30c0-4 3.5-7 8-7s8 3 8 7"/><path d="M22 30c0-4 2.5-7 6-7s6 3 6 7"/></svg></div>
+                    <h4>Department &amp; HOD workspace</h4>
+                    <p>Share assessments inside your subject department. Moderate without ten-page email threads.</p>
+                </div>
+                <div class="om-cap-item">
+                    <div class="om-cap-icon"><svg viewBox="0 0 40 40"><path d="M6 20a14 14 0 1 0 4-9.9"/><path d="M6 6v6h6"/><path d="M20 12v8l5 3"/></svg></div>
+                    <h4>Audit trail for moderation</h4>
+                    <p>Every change is logged. Show your moderator exactly who edited what, and when.</p>
+                </div>
+                <div class="om-cap-item">
+                    <div class="om-cap-icon"><svg viewBox="0 0 40 40"><path d="M22 6h10a2 2 0 0 1 2 2v24a2 2 0 0 1-2 2H22"/><path d="M6 20h22"/><path d="m22 14 6 6-6 6"/></svg></div>
+                    <h4>Yours forever &mdash; even if you leave</h4>
+                    <p>Export everything. Take it with you. Or hand the keys to the next teacher in seconds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="om-cta">
+        <h2>Get your evenings back.</h2>
+        <p>
+            Built in South Africa, for South African teachers. Free to try. No card required.
+        </p>
+        <div class="om-btn-row">
+            {% if current_user.is_authenticated %}
+                <a href="{{ url_for('teacher_dashboard') if current_user.role == 'teacher' else url_for('index') }}" class="om-btn om-btn-primary">Open my workspace</a>
+                <a href="{{ url_for('teacher_papers') if current_user.role == 'teacher' else url_for('index') }}" class="om-btn om-btn-secondary">Browse past papers</a>
+            {% else %}
+                <a href="{{ url_for('register') }}" class="om-btn om-btn-primary">Start for free</a>
+                <a href="{{ url_for('login') }}" class="om-btn om-btn-secondary">Sign in</a>
+            {% endif %}
+        </div>
+    </section>
+
+</div>
+{% endblock %}
+</main>
+{% endblock %}

@@ -1,0 +1,297 @@
+﻿{% extends "teacher/_layout.html" %}
+{% block extra_css %}
+<style>
+  body { background: #0b0b0d !important; padding-top: 0 !important; color: #f5f5f7; }
+  main { padding: 0 !important; }
+  .t-shell { padding-top: 30px !important; background: #0b0b0d !important; color: #f5f5f7 !important; }
+  .t-shell .t-head { margin-top: 0 !important; padding-top: 0 !important; }
+  .t-shell .t-eyebrow { color: #9a9aa3 !important; }
+  .t-shell .t-title, .t-shell .t-title * { color: #f5f5f7 !important; }
+  .t-shell .t-sub { color: #d6d6da !important; }
+  .sath-nav { background: transparent !important; border-bottom: none !important; }
+  .sath-brand,
+  .sath-links a,
+  .sath-links a.active,
+  .sath-links a.sath-admin,
+  .sath-links a:hover,
+  .sath-cta a:not(.sath-primary),
+  .sath-mobile-toggle { color: #f5f5f7 !important; }
+    .sath-brand .sath-brand-accent { color: #f5f5f7 !important; }
+  .sath-cta a.sath-primary { color: #fff !important; }
+
+  /* Card surfaces */
+    .t-shell .t-card {
+        background: rgba(20,20,20,0.52) !important;
+        border: 1px solid rgba(255,255,255,0.08) !important;
+        border-radius: 12px !important;
+        color: #f5f5f7 !important;
+    }
+    .t-shell .t-field > label {
+        color: #d6d6da !important;
+        font-size: 13px !important;
+        font-weight: 600 !important;
+    }
+</style>
+{% endblock %}
+{% block t_title %}Formal Assessment — {{ subject_label }}{% endblock %}
+{% block t_h1 %}Formal Assessment{% endblock %}
+{% block t_sub %}CAPS Programme of Assessment for {{ subject_label }} (DBE 2025/2026 ATP weightings).{% endblock %}
+
+{% block t_body %}
+<style>
+/* Larger header on this page */
+.t-shell .t-eyebrow { font-size: 14px !important; letter-spacing: 0.12em !important; }
+.t-shell .t-title   { font-size: 40px !important; line-height: 1.15 !important; font-weight: 700 !important; margin: 6px 0 10px !important; }
+.t-shell .t-sub     { font-size: 17px !important; line-height: 1.5 !important; }
+.t-shell .t-head    { padding-bottom: 26px !important; margin-bottom: 26px !important; }
+
+.fa-subject-picker { margin-top:10px; margin-bottom:18px; }
+.cap-tables { margin-top:22px; display:grid; grid-template-columns:1fr; gap:22px; }
+.cap-wrap h3 { font-size:14px; font-weight:600; letter-spacing:-0.2px; color:#f5f5f7; margin:0 0 8px; }
+.cap-wrap h3.cap-heading-grade { font-size:16px; font-weight:700; color:#f5f5f7; }
+.cap-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    font-size: 13px;
+    line-height: 1.45;
+    color: #f5f5f7;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    background: rgba(20,20,20,0.52);
+}
+.cap-table th, .cap-table td {
+    border-right: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    padding: 10px 12px;
+    text-align: left;
+    vertical-align: top;
+    color: #f5f5f7;
+}
+.cap-table tr > *:last-child { border-right: none; }
+.cap-table tbody tr:last-child td { border-bottom: none; }
+.cap-table thead th {
+    background: rgba(20,20,20,0.55) !important;
+    color:#b8b8c0 !important;
+    font-weight:700;
+    font-size:17px;
+    text-align:center;
+    border-color:rgba(255,255,255,0.06) !important;
+}
+.cap-table .cap-pct { text-align:center; font-weight:600; color:#f5f5f7; }
+.cap-table .cap-cat { text-align:center; font-weight:600; color:#f5f5f7; }
+.cap-table tbody tr:nth-child(odd) td { background: rgba(255,255,255,0.008); }
+.cap-table tbody tr:nth-child(even) td { background: rgba(255,255,255,0.016); }
+.cap-table tbody tr:hover td,
+[data-theme="dark"] .cap-table tbody tr:hover td { background: rgba(255,255,255,0.028) !important; color: #f5f5f7 !important; }
+.cap-table tbody tr:hover td p { color: #b8b8c0 !important; }
+.cap-table td p { margin:0 0 4px; color:#b8b8c0; font-size:12px; line-height:1.45; }
+.cap-table td p:last-child { margin-bottom:0; }
+.cap-note {
+    margin: 8px 0 0;
+    font-size: 12px;
+    color: #b8b8c0;
+    background: rgba(255,255,255,0.04);
+    border-left: 3px solid rgba(255,255,255,0.25);
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+/* Dropdown — planner spec, slim */
+.t-shell .fdd { color: #f5f5f7 !important; }
+.t-shell .fdd-toggle {
+  background: #141414 !important; color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+    border-radius: 12px !important;
+    padding: 8px 14px !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  letter-spacing: -0.005em !important;
+    min-height: 40px !important;
+  display: inline-flex; align-items: center; justify-content: space-between;
+  width: 100%;
+  transition: background .15s ease, border-color .15s ease !important;
+}
+.t-shell .fdd-toggle:hover { background: #1A1A1A !important; border-color: rgba(255,255,255,0.18) !important; }
+.t-shell .fdd-toggle:focus, .t-shell .fdd-toggle.is-open { border-color: rgba(255,255,255,0.30) !important; outline: none !important; box-shadow: none !important; }
+.t-shell .fdd-label { color: #ffffff !important; font-weight: 300 !important; }
+.t-shell .fdd-toggle .caret { color: rgba(255,255,255,0.45) !important; }
+.t-shell .fdd-panel {
+  background: #1A1A1A !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+    border-radius: 12px !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.55) !important;
+    padding: 6px !important;
+  margin-top: 4px !important;
+}
+.t-shell .fdd-item {
+  color: rgba(255,255,255,0.88) !important;
+  background: transparent !important;
+    padding: 7px 12px !important;
+    border-radius: 6px !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  cursor: pointer;
+}
+.t-shell .fdd-item:hover { background: rgba(255,255,255,0.06) !important; color: #ffffff !important; }
+.t-shell .fdd-item.selected,
+.t-shell .fdd-item.is-selected,
+.t-shell .fdd-item[aria-selected="true"] {
+  background: rgba(255,255,255,0.08) !important; color: #ffffff !important;
+}
+
+/* Field labels — sentence case */
+.t-shell .t-field > label {
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0 !important;
+  text-transform: none !important;
+    color: #d6d6da !important;
+}
+
+/* Override _layout.html forced black text — must be higher specificity than ".t-shell *:not(...)" */
+.t-shell.t-shell,
+.t-shell.t-shell .t-eyebrow,
+.t-shell.t-shell .t-title,
+.t-shell.t-shell .t-title *,
+.t-shell.t-shell .t-sub,
+.t-shell.t-shell .cap-wrap,
+.t-shell.t-shell .cap-wrap h3,
+.t-shell.t-shell .cap-wrap h3 *,
+.t-shell.t-shell .cap-table,
+.t-shell.t-shell .cap-table td,
+.t-shell.t-shell .cap-table .cap-cat,
+.t-shell.t-shell .cap-table .cap-pct { color: #f5f5f7 !important; }
+.t-shell.t-shell .t-eyebrow { color: #9a9aa3 !important; }
+.t-shell.t-shell .t-sub { color: #d6d6da !important; }
+.t-shell.t-shell .cap-table td p { color: #b8b8c0 !important; }
+.t-shell.t-shell .cap-note { color: #b8b8c0 !important; }
+.t-shell.t-shell .fdd-toggle,
+.t-shell.t-shell .fdd-toggle *,
+.t-shell.t-shell .fdd-label { color: #ffffff !important; }
+.t-shell.t-shell .fdd-toggle .caret { color: rgba(255,255,255,0.45) !important; }
+.t-shell.t-shell .fdd-item { color: rgba(255,255,255,0.88) !important; }
+.t-shell.t-shell .fdd-item:hover,
+.t-shell.t-shell .fdd-item.selected,
+.t-shell.t-shell .fdd-item.is-selected,
+.t-shell.t-shell .fdd-item[aria-selected="true"] { color: #ffffff !important; }
+.t-shell.t-shell .t-field > label { color: #d6d6da !important; }
+
+/* Subject dropdown sizing — match #bankFilterForm spec exactly */
+#faSubjectForm .fdd-toggle {
+    min-height: 40px !important;
+    height: auto !important;
+    padding: 8px 14px !important;
+    font-size: 14px !important;
+    font-weight: 300 !important;
+    line-height: 1.3 !important;
+    border-radius: 12px !important;
+    background: #141414 !important;
+    border: 1px solid rgba(255,255,255,0.08) !important;
+    color: #ffffff !important;
+}
+#faSubjectForm .fdd-toggle:hover { background: #1A1A1A !important; border-color: rgba(255,255,255,0.18) !important; }
+#faSubjectForm .fdd-toggle .fdd-label { color: #ffffff !important; font-weight: 300 !important; }
+#faSubjectForm .fdd-toggle .caret { color: rgba(255,255,255,0.45) !important; }
+#faSubjectForm .fdd-panel {
+    padding: 6px !important;
+    max-height: 340px !important;
+    overflow-y: auto !important;
+    overscroll-behavior: contain;
+    border-radius: 12px !important;
+    background: #1A1A1A !important;
+    border: 1px solid rgba(255,255,255,0.10) !important;
+    box-shadow: 0 12px 32px rgba(0,0,0,0.55) !important;
+    margin-top: 4px !important;
+}
+#faSubjectForm .fdd-panel::-webkit-scrollbar { width: 10px; }
+#faSubjectForm .fdd-panel::-webkit-scrollbar-track { background: #0f0f12; }
+#faSubjectForm .fdd-panel::-webkit-scrollbar-thumb { background: #3a3a40; border-radius: 4px; }
+#faSubjectForm .fdd-panel::-webkit-scrollbar-thumb:hover { background: #4a4a52; }
+#faSubjectForm .fdd-item {
+    display: flex; align-items: center;
+    padding: 7px 12px !important;
+    font-size: 14px !important;
+    font-weight: 300 !important;
+    border-radius: 6px !important;
+    color: rgba(255,255,255,0.88) !important;
+    background: transparent !important;
+    cursor: pointer;
+}
+#faSubjectForm .fdd-item:hover { background: rgba(255,255,255,0.06) !important; color: #ffffff !important; }
+#faSubjectForm .fdd-item.selected,
+#faSubjectForm .fdd-item.is-selected,
+#faSubjectForm .fdd-item.is-checked,
+#faSubjectForm .fdd-item[aria-selected="true"] {
+    background: rgba(255,255,255,0.08) !important;
+    color: #ffffff !important;
+}
+</style>
+
+<form method="get" id="faSubjectForm" class="t-card fa-subject-picker" style="display:flex; gap:12px; flex-wrap:wrap; align-items:flex-end;">
+    <div class="t-field" style="flex:0 0 320px;">
+        <label>Subject</label>
+        <div class="fdd" data-fdd="single" data-auto-submit="1">
+            <button type="button" class="fdd-toggle">
+                <span class="fdd-label">{{ subject }}</span>
+                <span class="caret">▾</span>
+            </button>
+            <input type="hidden" name="subject" value="{{ subject }}">
+            <div class="fdd-panel" style="max-height:340px; overflow-y:auto; overscroll-behavior:contain;">
+                {% for s in all_subjects %}
+                    <div class="fdd-item" data-value="{{ s }}">{{ s }}</div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <noscript><button class="t-thin-btn">Apply</button></noscript>
+</form>
+
+<div class="cap-tables">
+{% for tbl in subject_data.grades %}
+    {% set during_cells = tbl.during.cells %}
+    {% set eoy_cells = (tbl.eoy.cells if tbl.eoy else []) %}
+    {% set total_cols = during_cells|length + eoy_cells|length %}
+    <div class="cap-wrap">
+        <h3 class="cap-heading-grade">{{ tbl.heading }}</h3>
+        <table class="cap-table">
+            <colgroup>
+                {% for _ in range(total_cols) %}<col style="width: {{ (100 / total_cols)|round(2) }}%;">{% endfor %}
+            </colgroup>
+            <thead>
+                <tr><th colspan="{{ total_cols }}">Formal Assessment</th></tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="cap-cat" colspan="{{ during_cells|length }}">During the Year</td>
+                    {% if eoy_cells %}<td class="cap-cat" colspan="{{ eoy_cells|length }}">End-of-Year Examination</td>{% endif %}
+                </tr>
+                <tr>
+                    <td class="cap-pct" colspan="{{ during_cells|length }}">{{ tbl.during.pct }}%</td>
+                    {% if eoy_cells %}<td class="cap-pct" colspan="{{ eoy_cells|length }}">{{ tbl.eoy.pct }}%</td>{% endif %}
+                </tr>
+                <tr>
+                    {% for c in during_cells %}<td class="cap-cat">{{ c.name }}</td>{% endfor %}
+                    {% for c in eoy_cells %}<td class="cap-cat">{{ c.name }}</td>{% endfor %}
+                </tr>
+                <tr>
+                    {% for c in during_cells %}<td class="cap-pct">{{ c.pct }}%</td>{% endfor %}
+                    {% for c in eoy_cells %}<td class="cap-pct">{{ c.pct }}%</td>{% endfor %}
+                </tr>
+                <tr>
+                    {% for c in during_cells %}
+                        <td>{% for line in c.lines %}<p>{{ line }}</p>{% endfor %}</td>
+                    {% endfor %}
+                    {% for c in eoy_cells %}
+                        <td>{% for line in c.lines %}<p>{{ line }}</p>{% endfor %}</td>
+                    {% endfor %}
+                </tr>
+            </tbody>
+        </table>
+        {% if tbl.note %}<p class="cap-note">{{ tbl.note }}</p>{% endif %}
+    </div>
+{% endfor %}
+</div>
+
+{% endblock %}

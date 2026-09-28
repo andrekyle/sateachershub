@@ -1,0 +1,299 @@
+{% extends "base.html" %}
+
+{% block title %}Application Submitted - South African Teachers Hub Driver{% endblock %}
+
+{% block head %}
+<script src="https://unpkg.com/feather-icons"></script>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;600;700&display=swap');
+    
+    /* Azure Design System Colors */
+    :root {
+        --azure-blue: #0078D4;
+        --azure-blue-dark: #005A9E;
+        --azure-blue-light: #50E6FF;
+        --success-green: #107C10;
+        --white: #FFFFFF;
+        --gray-50: #FAFAFA;
+        --gray-100: #F8F8F8;
+        --gray-700: #605E5C;
+        --gray-800: #323130;
+    }
+
+    body {
+        font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+        background-color: var(--gray-50);
+        color: var(--gray-800);
+    }
+
+    .success-container {
+        max-width: 600px;
+        margin: 3rem auto;
+        padding: 0 1rem;
+    }
+
+    .success-card {
+        background: var(--white);
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        padding: 3rem 2rem;
+    }
+
+    .success-icon {
+        width: 80px;
+        height: 80px;
+        margin: 0 auto 2rem;
+        background: var(--success-green);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn-primary {
+        background: var(--azure-blue);
+        border: 1px solid var(--azure-blue);
+        color: var(--white);
+        border-radius: 4px;
+        transition: all 0.15s ease;
+        font-weight: 500;
+        font-size: 0.875rem;
+        padding: 0.75rem 1.5rem;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        margin: 0.5rem;
+    }
+
+    .btn-primary:hover {
+        background: var(--azure-blue-dark);
+        border-color: var(--azure-blue-dark);
+        color: var(--white);
+        text-decoration: none;
+    }
+
+    .btn-secondary {
+        background: var(--white);
+        color: var(--gray-800);
+        border: 1px solid #d1d5db;
+        border-radius: 4px;
+        transition: all 0.15s ease;
+        font-weight: 400;
+        font-size: 0.875rem;
+        padding: 0.75rem 1.5rem;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        text-decoration: none;
+        margin: 0.5rem;
+    }
+
+    .btn-secondary:hover {
+        background: var(--gray-100);
+        text-decoration: none;
+    }
+
+    .timeline {
+        text-align: left;
+        margin: 2rem 0;
+    }
+
+    .timeline-step {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 1.5rem;
+        padding-left: 0.5rem;
+    }
+
+    .timeline-step:last-child {
+        margin-bottom: 0;
+    }
+
+    .timeline-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 1rem;
+        flex-shrink: 0;
+    }
+
+    .timeline-icon.current {
+        background: var(--azure-blue);
+        color: white;
+    }
+
+    .timeline-icon.upcoming {
+        background: #e5e7eb;
+        color: #6b7280;
+    }
+
+    .timeline-content h4 {
+        font-weight: 500;
+        margin-bottom: 0.25rem;
+    }
+
+    .timeline-content p {
+        color: var(--gray-700);
+        font-size: 0.875rem;
+        margin: 0;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="success-container">
+    <div class="success-card">
+        <!-- Success Icon -->
+        <div class="success-icon">
+            <i data-feather="check" class="w-10 h-10 text-white"></i>
+        </div>
+        
+        <!-- Success Message -->
+        <h1 class="text-2xl font-light mb-4">Application Submitted Successfully!</h1>
+        <p class="text-gray-600 mb-6">
+            Thank you, <strong>{{ driver.full_name }}</strong>! Your driver application has been received and is now under review.
+        </p>
+        
+        <!-- Application Details -->
+        <div class="bg-gray-50 border border-gray-200 rounded-lg p-4 mb-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+                <div>
+                    <span class="font-medium text-gray-700">Application ID:</span>
+                    <span class="text-gray-600">{{ driver.id|string|truncate(8, True, '') }}</span>
+                </div>
+                <div>
+                    <span class="font-medium text-gray-700">Submitted:</span>
+                    <span class="text-gray-600">{{ driver.created_at.strftime('%Y-%m-%d %H:%M') }}</span>
+                </div>
+                <div>
+                    <span class="font-medium text-gray-700">Email:</span>
+                    <span class="text-gray-600">{{ driver.email }}</span>
+                </div>
+                <div>
+                    <span class="font-medium text-gray-700">Vehicle:</span>
+                    <span class="text-gray-600">{{ driver.vehicle_info }}</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- What's Next Timeline -->
+        <div class="timeline">
+            <h3 class="text-lg font-medium mb-4">What happens next?</h3>
+            
+            <div class="timeline-step">
+                <div class="timeline-icon current">
+                    <i data-feather="file-text" class="w-4 h-4"></i>
+                </div>
+                <div class="timeline-content">
+                    <h4>Document Review</h4>
+                    <p>We'll review all your submitted documents (1-2 business days)</p>
+                </div>
+            </div>
+            
+            <div class="timeline-step">
+                <div class="timeline-icon upcoming">
+                    <i data-feather="shield-check" class="w-4 h-4"></i>
+                </div>
+                <div class="timeline-content">
+                    <h4>Background Check</h4>
+                    <p>Criminal background verification (2-3 business days)</p>
+                </div>
+            </div>
+            
+            <div class="timeline-step">
+                <div class="timeline-icon upcoming">
+                    <i data-feather="car" class="w-4 h-4"></i>
+                </div>
+                <div class="timeline-content">
+                    <h4>Vehicle Inspection</h4>
+                    <p>Schedule and complete vehicle safety inspection</p>
+                </div>
+            </div>
+            
+            <div class="timeline-step">
+                <div class="timeline-icon upcoming">
+                    <i data-feather="book-open" class="w-4 h-4"></i>
+                </div>
+                <div class="timeline-content">
+                    <h4>Driver Training</h4>
+                    <p>Complete online driver orientation and safety training</p>
+                </div>
+            </div>
+            
+            <div class="timeline-step">
+                <div class="timeline-icon upcoming">
+                    <i data-feather="check-circle" class="w-4 h-4"></i>
+                </div>
+                <div class="timeline-content">
+                    <h4>Activation</h4>
+                    <p>Download the driver app and start earning!</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Important Information -->
+        <div class="bg-blue-50 border border-blue-200 rounded-lg p-4 mb-6 text-left">
+            <h4 class="font-medium text-blue-600 mb-2 flex items-center">
+                <i data-feather="info" class="w-4 h-4 mr-2"></i>
+                Important Information
+            </h4>
+            <ul class="text-sm text-blue-700 space-y-1">
+                <li>• We'll contact you at <strong>{{ driver.email }}</strong> with updates</li>
+                <li>• Keep your phone <strong>{{ driver.phone }}</strong> available for verification calls</li>
+                <li>• Processing typically takes 3-5 business days</li>
+                <li>• Ensure all your documents are valid and not expired</li>
+                <li>• You can check your application status by contacting support</li>
+            </ul>
+        </div>
+        
+        <!-- Action Buttons -->
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-2">
+            <a href="{{ url_for('index') }}" class="btn-primary">
+                <i data-feather="home" class="w-4 h-4"></i>
+                Back to Home
+            </a>
+            <a href="{{ url_for('contact') }}" class="btn-secondary">
+                <i data-feather="help-circle" class="w-4 h-4"></i>
+                Contact Support
+            </a>
+        </div>
+        
+        <!-- Additional Info -->
+        <div class="mt-8 pt-6 border-t border-gray-200">
+            <h4 class="font-medium mb-3">While you wait...</h4>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm text-gray-600">
+                <div>
+                    <h5 class="font-medium text-gray-800 mb-1">Download our app</h5>
+                    <p>Get familiar with the South African Teachers Hub Driver app interface</p>
+                </div>
+                <div>
+                    <h5 class="font-medium text-gray-800 mb-1">Prepare your vehicle</h5>
+                    <p>Ensure your vehicle is clean and roadworthy</p>
+                </div>
+                <div>
+                    <h5 class="font-medium text-gray-800 mb-1">Check requirements</h5>
+                    <p>Review driving requirements and delivery zones</p>
+                </div>
+                <div>
+                    <h5 class="font-medium text-gray-800 mb-1">Plan your schedule</h5>
+                    <p>Think about when you want to drive and earn</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    feather.replace();
+});
+</script>
+{% endblock %}

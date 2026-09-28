@@ -1,0 +1,96 @@
+﻿he folder <b>CAT P1 Nov 2025 DATA</b> with your examination number.</span></li>
+                    </ul>
+                
+            
+                
+                    <p class="instr-p">The following list of files will be available in the folder:</p>
+                
+            
+                
+                    <ul class="instr-bullets">
+                        <li><span class="txt"><b>1App</b> Image</span></li><li><span class="txt"><b>1Courses</b> Word processing file</span></li><li><span class="txt"><b>2Brochure</b> Word processing file</span></li><li><span class="txt"><b>3Lecturers</b> Spreadsheet</span></li><li><span class="txt"><b>4Students</b> Spreadsheet</span></li><li><span class="txt"><b>5Records</b> Database</span></li><li><span class="txt"><b>6_1Head</b> Image</span></li><li><span class="txt"><b>6_1Home</b> HTML file</span></li><li><span class="txt"><b>6_1Tech</b> Image</span></li><li><span class="txt"><b>6_2Course</b> Image</span></li><li><span class="txt"><b>6_2Popular</b> HTML file</span></li><li><span class="txt"><b>7Letter</b> Word processing file</span></li><li><span class="txt"><b>7NewStudents</b> Spreadsheet</span></li><li><span class="txt"><b>7Stats</b> Spreadsheet</span></li>
+                    </ul>
+                
+            
+            </div>
+        </li>
+        
+    </ol>
+
+    <div class="run-ftr">
+        <span>Copyright reserved</span>        <span></span>        <span>Please turn over</span>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+
+
+
+
+
+
+
+    
+    
+    
+    
+
+    
+        
+        
+        
+        
+        
+        
+        
+        
+            
+            
+                
+            
+        
+            
+            
+                
+            
+        
+            
+            
+                
+            
+        
+        
+        
+        
+
+        <div class="page">
+            <div class="run-hdr">
+                <span>Computer Applications Technology/P1</span>
+                <span>4</span>
+                <span>DBE/November 2025</span>
+            </div>
+            
+            <div class="run-sub-spacer" aria-hidden="true"></div>
+            
+
+            
+            
+            <div class="scenario-box"><div class="scenario-head">SCENARIO</div><div class="scenario-body">&lt;b&gt;TechnoGeek&lt;/b&gt; is a tertiary institution that specialises in computer-related courses. They have designed a few documents to promote the institution and need your assistance with modifying the files.</div></div>
+
+        
+        
+        <div class="q-head"><div class="pgbreak-ctrls pgbreak-ctrls-head"><button type="button" class="pgbreak-arrow" data-qid="7cdb9610-281d-4fe4-85f0-59048cd24869" data-action="up" title="Move this QUESTION heading up to the previous page">↑</button><button type="button" class="pgbreak-toggle" data-qid="7cdb9610-281d-4fe4-85f0-59048cd24869" title="Toggle: start this QUESTION on a new page">¶ break</button><button type="button" class="pgbreak-arrow" data-qid="7cdb9610-28

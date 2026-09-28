@@ -1,0 +1,238 @@
+{% extends "teacher/_layout.html" %}
+{% block extra_css %}
+<style>
+  body { background: #0b0b0d !important; padding-top: 0 !important; }
+  main { padding: 0 !important; }
+  .t-shell, .t-shell * {
+    --az-bg: #0b0b0d; --az-surface: #1a1a1d; --az-border: #2a2a2f;
+    --az-border-2: #3a3a40; --az-text: #f5f5f7; --az-text-2: #d6d6da;
+    --az-text-3: #9a9aa3;
+    --bg: #0b0b0d; --bg-elevated: #1a1a1d; --bg-card: #1a1a1d;
+    --bg-input: #1a1a1d; --text: #f5f5f7; --text-secondary: #d6d6da;
+    --text-tertiary: #9a9aa3; --separator: #2a2a2f; --separator-light: #2a2a2f;
+    --fill: #1a1a1d;
+  }
+  .t-shell { background: #0b0b0d; color: #f5f5f7; }
+  .t-shell .t-title, .t-shell .t-sub, .t-shell .t-eyebrow { color: #f5f5f7; }
+  .t-shell .t-eyebrow { color: #9a9aa3; }
+  .t-shell .t-tabs a { color: #d6d6da; }
+  .t-shell .t-tabs a.is-active { color: #2997ff; border-bottom-color: #2997ff; }
+  .t-shell .t-tabs a:hover { color: #2997ff; background: rgba(41,151,255,0.08); }
+</style>
+{% endblock %}
+{% block t_title %}Moderation queue{% endblock %}
+{% block t_sub %}Review papers your team flagged. Sign off to allow printing, or send back with notes.{% endblock %}
+
+{% block t_body %}
+<style>
+  body { background: #0b0b0d !important; }
+  .t-shell {
+    background: #0b0b0d !important;
+    color: #f5f5f7 !important;
+    padding-top: 30px !important;
+  }
+  .t-shell .t-head { margin-top: 0 !important; padding-top: 0 !important; }
+  /* Defeat layout's universal black text rule */
+  .t-shell,
+  .t-shell *:not(.navbar):not(.navbar *) { color: #f5f5f7 !important; }
+  .t-shell .t-eyebrow,
+  .t-shell .t-eyebrow * { color: #9a9aa3 !important; }
+  .t-shell .t-sub,
+  .t-shell .t-sub * { color: #d6d6da !important; }
+  .t-shell .t-tabs a,
+  .t-shell .t-tabs a * { color: #d6d6da !important; }
+  .t-shell .t-tabs a.is-active,
+  .t-shell .t-tabs a.is-active * { color: #2997ff !important; }
+  .t-shell .mod-meta,
+  .t-shell .mod-meta * { color: #9a9aa3 !important; }
+  .t-shell .mod-meta strong { color: #d6d6da !important; }
+  .t-shell .badge.flagged    { color: #ffd24a !important; }
+  .t-shell .badge.signed_off { color: #5fe084 !important; }
+  .t-shell .badge.rejected   { color: #ff8a80 !important; }
+  .t-shell .badge.accepted   { color: #7dd3fc !important; }
+  .t-shell .btn-primary, .t-shell .btn-primary * { color: #ffffff !important; }
+  .t-shell .btn-success, .t-shell .btn-success * { color: #04210d !important; }
+  .t-shell .btn-danger,  .t-shell .btn-danger  * { color: #ffffff !important; }
+  .t-shell .btn-link,    .t-shell .btn-link    * { color: #2997ff !important; }
+  .t-shell .empty { color: #9a9aa3 !important; }
+  .t-shell .prev-notes { color: #d6d6da !important; }
+  .t-shell, .t-shell * {
+    --az-bg: #0b0b0d !important;
+    --az-surface: #1a1a1d !important;
+    --az-border: #2a2a2f !important;
+    --az-border-2: #3a3a40 !important;
+    --az-text: #f5f5f7 !important;
+    --az-text-2: #d6d6da !important;
+    --az-text-3: #9a9aa3 !important;
+    --bg: #0b0b0d !important;
+    --bg-elevated: #1a1a1d !important;
+    --bg-card: #1a1a1d !important;
+    --bg-input: #1a1a1d !important;
+    --text: #f5f5f7 !important;
+    --text-secondary: #d6d6da !important;
+    --text-tertiary: #9a9aa3 !important;
+    --separator: #2a2a2f !important;
+    --separator-light: #2a2a2f !important;
+    --fill: #1a1a1d !important;
+    --blue: #2997ff !important;
+  }
+  .t-shell .t-head { border-bottom-color: #2a2a2f !important; }
+  .t-shell .t-eyebrow { color: #9a9aa3 !important; }
+  .t-shell .t-title  { color: #f5f5f7 !important; }
+  .t-shell .t-sub    { color: #d6d6da !important; }
+  .t-shell .t-tabs   { border-bottom-color: #2a2a2f !important; }
+  .t-shell .t-tabs a { color: #d6d6da !important; }
+  .t-shell .t-tabs a:hover { color: #2997ff !important; background: rgba(41,151,255,0.08) !important; }
+  .t-shell .t-tabs a.is-active { color: #2997ff !important; border-bottom-color: #2997ff !important; }
+
+  /* Larger header on this page */
+  .t-shell .t-eyebrow { font-size: 14px !important; letter-spacing: 0.12em !important; }
+  .t-shell .t-title   { font-size: 40px !important; line-height: 1.15 !important; font-weight: 700 !important; margin: 6px 0 10px !important; }
+  .t-shell .t-sub     { font-size: 17px !important; line-height: 1.5 !important; }
+  .t-shell .t-head    { padding-bottom: 26px !important; margin-bottom: 26px !important; }
+
+  .mod-card {
+    background: #141414 !important; border: 1px solid #2a2a2f; border-radius: 6px;
+    padding: 18px 22px; margin-bottom: 16px;
+  }
+  .mod-card h3 { font-size: 16px; font-weight: 600; margin: 0 0 4px; color: #f5f5f7; }
+  .mod-meta { color: #9a9aa3; font-size: 13px; margin: 0 0 12px; }
+  .mod-meta strong { color: #d6d6da; font-weight: 600; }
+  .badge {
+    display: inline-flex; align-items: center; justify-content: center;
+    padding: 3px 10px; border-radius: 6px;
+    font-size: 11px; font-weight: 600; text-transform: uppercase;
+    letter-spacing: 0.04em; text-align: center;
+  }
+  .badge.flagged    { background: rgba(255,196,0,0.18); color: #ffd24a; }
+  .badge.signed_off { background: rgba(48,209,88,0.18); color: #5fe084; }
+  .badge.rejected   { background: rgba(255,107,94,0.18); color: #ff8a80; }
+  .badge.accepted   { background: rgba(56,189,248,0.18); color: #7dd3fc; }
+  .ver-links { margin-top: 10px; display: flex; flex-wrap: wrap; gap: 6px; }
+  .ver-link {
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.10);
+  }
+  .ver-link:hover { background: rgba(255,255,255,0.10); }
+  .ver-link.original  { color: #fbbf24 !important; }
+  .ver-link.moderated { color: #4ade80 !important; }
+  .ver-link.final     { color: #7dd3fc !important; }
+  .mod-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+  .btn {
+    padding: 6px 14px; font-size: 13px; border-radius: 4px; cursor: pointer;
+    border: 1px solid transparent; font-weight: 600; text-decoration: none;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .btn-primary { background: #2997ff; color: #fff !important; border-color: #2997ff; }
+  .btn-primary:hover { background: #0a84ff; }
+  .btn-success { background: #30d158; color: #04210d !important; border-color: #30d158; }
+  .btn-success:hover { background: #25a847; }
+  .btn-danger  { background: #ff453a; color: #fff !important; border-color: #ff453a; }
+  .btn-danger:hover { background: #d4322a; }
+  .btn-link { background: none; color: #2997ff !important; }
+  .btn-link:hover { text-decoration: underline; }
+  textarea.mod-notes {
+    width: 100%; min-height: 70px; padding: 8px 10px;
+    border: 1px solid #3a3a40; border-radius: 4px; font-size: 13px;
+    font-family: "Segoe UI", sans-serif; color: #f5f5f7; background: #0b0b0d;
+    margin-top: 10px;
+  }
+  textarea.mod-notes:focus { outline: 2px solid #2997ff; outline-offset: -2px; }
+  .empty {
+    background: #141414; border: 1px dashed #3a3a40; border-radius: 6px;
+    padding: 36px; text-align: center; color: #9a9aa3; font-size: 14px;
+  }
+  .prev-notes {
+    background: rgba(255,255,255,0.04); border-left: 3px solid #3a3a40; padding: 10px 14px;
+    font-size: 13px; color: #d6d6da; margin-top: 10px; white-space: pre-wrap;
+  }
+</style>
+
+{% if not papers %}
+  <div class="empty">
+    No papers in your moderation queue. When teachers on your team flag a
+    paper, it will appear here for review.
+  </div>
+{% else %}
+  {% for p in papers %}
+    {% set owner = owners.get(p.owner_id) %}
+    <div class="mod-card">
+      <h3>
+        {{ p.title }}
+        <span class="badge {{ p.moderation_status }}">{{ p.moderation_status|replace('_',' ') }}</span>
+      </h3>
+      <p class="mod-meta">
+        <strong>{{ owner.full_name if owner else 'Unknown' }}</strong>
+        &middot; {{ p.subject }} &middot; Grade {{ p.grade }}
+        {% if p.exam_date %} &middot; {{ p.exam_date.strftime('%d %b %Y') }}{% endif %}
+        &middot; {{ p.total_marks }} marks
+        {% if p.flagged_at %}<br>Flagged {{ p.flagged_at.strftime('%d %b %Y %H:%M') }}{% endif %}
+      </p>
+
+      {% if p.moderator_notes and p.moderation_status != 'flagged' %}
+        <div class="prev-notes"><strong>Previous notes:</strong> {{ p.moderator_notes }}</div>
+      {% endif %}
+
+      {% set _has_orig = (p.sections_original or '').strip()|length > 0 %}
+      {% set _has_mod  = (p.sections_moderated or '').strip()|length > 0 %}
+      {% set _has_fin  = (p.sections_final or '').strip()|length > 0 %}
+      {% if _has_orig or _has_mod or _has_fin %}
+        <div style="font-size:10px;font-weight:600;color:#9a9aa3;margin-top:8px;margin-bottom:3px;letter-spacing:.05em;">QUESTION PAPER</div>
+        <div class="ver-links">
+          {% if _has_orig %}<a class="ver-link original" href="{{ url_for('teacher_paper_preview', paper_id=p.id, version='original', **{'from': 'moderation'}) }}" target="_blank"><i class="fas fa-clock-rotate-left"></i> Original</a>{% endif %}
+          {% if _has_mod %}<a class="ver-link moderated" href="{{ url_for('teacher_paper_preview', paper_id=p.id, version='moderated', **{'from': 'moderation'}) }}" target="_blank"><i class="fas fa-user-check"></i> Moderated</a>{% endif %}
+          {% if _has_fin %}<a class="ver-link final" href="{{ url_for('teacher_paper_preview', paper_id=p.id, version='final', **{'from': 'moderation'}) }}" target="_blank"><i class="fas fa-flag-checkered"></i> Final</a>{% endif %}
+        </div>
+        <div style="font-size:10px;font-weight:600;color:#9a9aa3;margin-top:6px;margin-bottom:3px;letter-spacing:.05em;">MEMO</div>
+        <div class="ver-links">
+          {% if _has_orig %}<a class="ver-link original" href="{{ url_for('teacher_paper_memo', paper_id=p.id, version='original', **{'from': 'moderation'}) }}" target="_blank"><i class="fas fa-clock-rotate-left"></i> Original</a>{% endif %}
+          {% if _has_mod %}<a class="ver-link moderated" href="{{ url_for('teacher_paper_memo', paper_id=p.id, version='moderated', **{'from': 'moderation'}) }}" target="_blank"><i class="fas fa-user-check"></i> Moderated</a>{% endif %}
+          {% if _has_fin %}<a class="ver-link final" href="{{ url_for('teacher_paper_memo', paper_id=p.id, version='final', **{'from': 'moderation'}) }}" target="_blank"><i class="fas fa-flag-checkered"></i> Final</a>{% endif %}
+        </div>
+      {% endif %}
+
+      <form method="post" action="{{ url_for('teacher_paper_sign_off', paper_id=p.id) }}">
+        <textarea name="notes" class="mod-notes"
+                  placeholder="Optional notes (will be saved with the paper)…">{{ p.moderator_notes or '' }}</textarea>
+        <div class="mod-actions">
+          <a class="btn btn-primary"
+             href="{{ url_for('teacher_paper_preview', paper_id=p.id, **{'from': 'moderation'}) }}">
+            <i class="fas fa-eye"></i> Preview paper
+          </a>
+          <a class="btn btn-link"
+             href="{{ url_for('teacher_paper_memo', paper_id=p.id, **{'from': 'moderation'}) }}">
+            <i class="fas fa-list-check"></i> Memo
+          </a>
+          <a class="btn btn-link"
+             href="{{ url_for('teacher_paper_edit', paper_id=p.id) }}">
+            <i class="fas fa-pen"></i> Edit
+          </a>
+          {% if p.moderation_status in ('flagged', 'rejected') %}
+            <button type="submit" class="btn btn-success">
+              <i class="fas fa-check"></i> Sign off
+            </button>
+            <button type="submit" class="btn btn-danger"
+                    formaction="{{ url_for('teacher_paper_reject', paper_id=p.id) }}">
+              <i class="fas fa-rotate-left"></i> Send back
+            </button>
+          {% elif p.moderation_status == 'signed_off' %}
+            <span class="badge signed_off">
+              Signed off {{ p.signed_off_at.strftime('%d %b %Y') if p.signed_off_at else '' }}
+            </span>
+          {% else %}
+            <span class="badge accepted">Final accepted by teacher</span>
+          {% endif %}
+        </div>
+      </form>
+    </div>
+  {% endfor %}
+{% endif %}
+{% endblock %}

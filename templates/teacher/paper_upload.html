@@ -1,0 +1,244 @@
+﻿{% extends "teacher/_layout.html" %}
+{% block t_title %}Upload past paper / resource{% endblock %}
+{% block t_sub %}PDF, Word, Excel, Access or ZIP files up to your server limit.{% endblock %}
+
+{% block t_body %}
+<style>
+/* Dark mode (matches bank_edit.html / generator) */
+body { background: #0b0b0d !important; }
+.t-shell {
+  background: #0b0b0d !important;
+  color: #f5f5f7 !important;
+}
+.t-shell, .t-shell *:not(.navbar):not(.navbar *) { color: #f5f5f7 !important; }
+.t-shell .t-eyebrow, .t-shell .t-eyebrow * { color: #9a9aa3 !important; }
+.t-shell .t-sub, .t-shell .t-sub * { color: #d6d6da !important; }
+.t-shell .t-head { border-bottom-color: #2a2a2f !important; }
+
+.t-shell .t-title {
+    font-size: clamp(36px, 4.2vw, 56px) !important;
+    font-weight: 700 !important;
+    letter-spacing: -1px !important;
+    line-height: 1.05 !important;
+    color: #f5f5f7 !important;
+}
+
+/* Card */
+.t-shell .t-card {
+  background: rgba(20,20,20,0.52) !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 12px !important;
+  color: #f5f5f7 !important;
+}
+
+/* Labels */
+.t-shell .t-field label,
+.t-shell label {
+  color: #d6d6da !important;
+  font-size: 13px; font-weight: 600;
+  text-transform: none; letter-spacing: 0;
+}
+
+/* Inputs / textareas / selects (planner-spec) */
+.t-shell.t-shell input[type="text"], .t-shell.t-shell input[type="search"],
+.t-shell.t-shell input[type="email"], .t-shell.t-shell input[type="number"],
+.t-shell.t-shell input[type="date"], .t-shell.t-shell input[type="file"],
+.t-shell.t-shell select, .t-shell.t-shell textarea,
+.t-shell.t-shell .t-field input, .t-shell.t-shell .t-field select, .t-shell.t-shell .t-field textarea,
+.t-shell.t-shell .t-card input, .t-shell.t-shell .t-card select, .t-shell.t-shell .t-card textarea {
+  background: #141414 !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  color: #f5f5f7 !important;
+  border-radius: 12px !important;
+  padding: 10px 16px !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  min-height: 40px;
+  box-shadow: none !important;
+  color-scheme: dark;
+}
+.t-shell.t-shell input:hover, .t-shell.t-shell select:hover, .t-shell.t-shell textarea:hover {
+  border-color: rgba(255,255,255,0.16) !important; background: #1A1A1A !important;
+}
+.t-shell.t-shell input:focus, .t-shell.t-shell select:focus, .t-shell.t-shell textarea:focus {
+  outline: none !important; border-color: rgba(255,255,255,0.30) !important; background: #1A1A1A !important; box-shadow: none !important;
+}
+.t-shell.t-shell input::placeholder, .t-shell.t-shell textarea::placeholder { color: #6b6b73 !important; }
+
+/* Native select: custom caret + dark options */
+.t-shell.t-shell select {
+  appearance: none !important; -webkit-appearance: none !important; -moz-appearance: none !important;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'><path d='M2 4l4 4 4-4' fill='none' stroke='rgba(255,255,255,0.45)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>") !important;
+  background-repeat: no-repeat !important;
+  background-position: right 12px center !important;
+  padding-right: 32px !important;
+}
+.t-shell.t-shell select option { background: #1A1A1A !important; color: #f5f5f7 !important; }
+
+/* Custom dropdown (fdd) — planner-spec dark, matches generator/bank pages */
+.t-shell .fdd { color: #f5f5f7 !important; position: relative; }
+.t-shell .fdd-toggle {
+  background: #141414 !important; color: #ffffff !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  border-radius: 12px !important;
+  padding: 8px 14px !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  min-height: 40px;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  width: 100%;
+  cursor: pointer;
+}
+.t-shell .fdd-toggle:hover { background: #1A1A1A !important; border-color: rgba(255,255,255,0.18) !important; }
+.t-shell .fdd-toggle:focus, .t-shell .fdd.open .fdd-toggle { border-color: rgba(255,255,255,0.30) !important; outline: none !important; box-shadow: none !important; }
+.t-shell .fdd-label { color: #ffffff !important; font-weight: 300 !important; }
+.t-shell .fdd-toggle .caret { color: rgba(255,255,255,0.45) !important; }
+.t-shell .fdd-panel {
+  display: none;
+  position: absolute; left: 0; right: 0; top: 100%;
+  z-index: 100;
+  background: #1A1A1A !important;
+  border: 1px solid rgba(255,255,255,0.10) !important;
+  border-radius: 8px !important;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.55) !important;
+  padding: 4px !important;
+  margin-top: 4px !important;
+}
+.t-shell .fdd.open .fdd-panel { display: block; }
+.t-shell .fdd-item {
+  color: rgba(255,255,255,0.88) !important;
+  background: transparent !important;
+  padding: 7px 12px !important;
+  border-radius: 6px !important;
+  font-size: 14px !important;
+  font-weight: 300 !important;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.t-shell .fdd-item:hover { background: rgba(255,255,255,0.06) !important; color: #fff !important; }
+.t-shell .fdd-item.is-selected,
+.t-shell .fdd-item.selected,
+.t-shell .fdd-item[aria-selected="true"] {
+  background: rgba(255,255,255,0.08) !important;
+  color: #ffffff !important;
+}
+
+/* File input */
+.t-shell.t-shell input[type="file"] { padding: 6px 10px !important; }
+.t-shell.t-shell input[type="file"]::file-selector-button,
+.t-shell.t-shell input[type="file"]::-webkit-file-upload-button {
+  background: #1f1f24; color: #f5f5f7;
+  border: 1px solid rgba(255,255,255,0.10);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 300;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.t-shell.t-shell input[type="file"]::file-selector-button:hover,
+.t-shell.t-shell input[type="file"]::-webkit-file-upload-button:hover { background: #26262c; }
+
+/* Buttons */
+.t-shell .t-btn {
+  background: transparent !important; color: #f5f5f7 !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+}
+.t-shell .t-btn:hover { background: #1A1A1A !important; border-color: rgba(255,255,255,0.18) !important; }
+.t-shell .t-btn.primary {
+  background: transparent !important; color: #f5f5f7 !important; border-color: rgba(255,255,255,0.08) !important;
+}
+.t-shell .t-btn.primary:hover { background: #1A1A1A !important; border-color: rgba(255,255,255,0.18) !important; }
+
+/* Defeat browser autofill (Title / Subject) */
+.t-shell.t-shell input:-webkit-autofill,
+.t-shell.t-shell input:-webkit-autofill:hover,
+.t-shell.t-shell input:-webkit-autofill:focus,
+.t-shell.t-shell input:-webkit-autofill:active,
+.t-shell.t-shell select:-webkit-autofill,
+.t-shell.t-shell textarea:-webkit-autofill {
+  -webkit-text-fill-color: #f5f5f7 !important;
+  -webkit-box-shadow: 0 0 0 1000px #141414 inset !important;
+  box-shadow: 0 0 0 1000px #141414 inset !important;
+  caret-color: #f5f5f7 !important;
+  border: 1px solid rgba(255,255,255,0.08) !important;
+  transition: background-color 9999s ease-in-out 0s, color 9999s ease-in-out 0s;
+}
+</style>
+
+<form method="post" enctype="multipart/form-data" class="t-card">
+    <div class="t-form-grid">
+        <div class="t-field span-2">
+            <label>Title *</label>
+            <input name="title" required placeholder="e.g. CAT P1 November 2023">
+        </div>
+        <div class="t-field span-2">
+            <label>Description</label>
+            <textarea name="description" placeholder="Optional notes for teachers."></textarea>
+        </div>
+        <div class="t-field">
+            <label>Grade</label>
+            <div class="fdd" data-fdd="single">
+                <button type="button" class="fdd-toggle">
+                    <span class="fdd-label" data-empty="—">—</span>
+                    <span class="caret">▾</span>
+                </button>
+                <input type="hidden" name="grade" value="">
+                <div class="fdd-panel">
+                    <div class="fdd-item" data-value="">—</div>
+                    {% for g in [10,11,12] %}<div class="fdd-item" data-value="{{ g }}">Grade {{ g }}</div>{% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="t-field">
+            <label>Paper year</label>
+            <input name="paper_year" type="number" min="2000" max="2099" placeholder="2024">
+        </div>
+        <div class="t-field">
+            <label>Paper number</label>
+            <div class="fdd" data-fdd="single">
+                <button type="button" class="fdd-toggle">
+                    <span class="fdd-label" data-empty="—">—</span>
+                    <span class="caret">▾</span>
+                </button>
+                <input type="hidden" name="paper_number" value="">
+                <div class="fdd-panel">
+                    <div class="fdd-item" data-value="">—</div>
+                    <div class="fdd-item" data-value="1">Paper 1</div>
+                    <div class="fdd-item" data-value="2">Paper 2</div>
+                </div>
+            </div>
+        </div>
+        <div class="t-field">
+            <label>Subject</label>
+            <input name="subject" value="CAT">
+        </div>
+        <div class="t-field">
+            <label>Type *</label>
+            <div class="fdd" data-fdd="single">
+                <button type="button" class="fdd-toggle">
+                    <span class="fdd-label">Past paper</span>
+                    <span class="caret">▾</span>
+                </button>
+                <input type="hidden" name="paper_type" value="past_paper" required>
+                <div class="fdd-panel">
+                    <div class="fdd-item" data-value="past_paper">Past paper</div>
+                    <div class="fdd-item" data-value="memo">Memo</div>
+                    <div class="fdd-item" data-value="data_files">Data files</div>
+                    <div class="fdd-item" data-value="other">Other</div>
+                </div>
+            </div>
+        </div>
+        <div class="t-field span-2">
+            <label>File *</label>
+            <input name="file" type="file" required>
+        </div>
+    </div>
+    <div style="margin-top:18px; display:flex; gap:10px;">
+        <button class="t-btn primary"><i class="fas fa-upload"></i> Upload</button>
+        <a class="t-btn" href="{{ url_for('teacher_papers') }}">Cancel</a>
+    </div>
+</form>
+{% endblock %}

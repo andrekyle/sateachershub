@@ -1,0 +1,1038 @@
+{% extends "lms_base.html" %}
+{% block navbar %}{% endblock %}
+{% block hero %}{% endblock %}
+{% block footer %}{% endblock %}
+{% block main %}
+<style>
+/* On teacher pages the top navbar sits on a dark grey background — force white text. */
+.navbar .nav-brand,
+.navbar .nav-links a,
+.navbar .nav-links a.active,
+.navbar .nav-dropdown-toggle,
+.navbar .nav-cta a,
+.navbar .nav-cta button { color: #FFFFFF !important; }
+.navbar .nav-links a:hover,
+.navbar .nav-dropdown-toggle:hover { color: #FFFFFF !important; opacity: 0.85; }
+
+/* Same treatment for the current sath-nav (which lms_base actually renders).
+   Teacher pages have a near-black body, so force light text on every nav item. */
+.sath-nav { background: #0a0a0a !important; border-bottom: none !important; }
+.sath-brand,
+.sath-links a,
+.sath-links a.active,
+.sath-links a.sath-admin,
+.sath-links a:hover,
+.sath-cta a:not(.sath-primary),
+.sath-mobile-toggle { color: #f5f5f7 !important; }
+.sath-cta a.sath-primary {
+    color: #fff !important;
+    background: #0071e3 !important;
+    border-color: #0071e3 !important;
+}
+.sath-cta a.sath-primary:hover {
+    color: #fff !important;
+    background: #0077ed !important;
+    border-color: #0077ed !important;
+}
+.sath-cta .sath-userpill {
+    color: #f5f5f7 !important;
+    background: rgba(255,255,255,0.06) !important;
+    border-color: rgba(255,255,255,0.12) !important;
+}
+.sath-cta .sath-userpill:hover {
+    background: rgba(255,255,255,0.10) !important;
+    border-color: rgba(255,255,255,0.22) !important;
+}
+.sath-brand .sath-brand-accent { color: #2997ff !important; }
+</style>
+<style>
+/* ===== Microsoft Azure portal color scheme (teacher pages only) ===== */
+.t-shell, .t-shell * {
+    --az-bg:        #0b0b0d;
+    --az-surface:   #1E2128;
+    --az-border:    rgba(255,255,255,0.08);
+    --az-border-2:  rgba(255,255,255,0.12);
+    --az-text:      #F1F2F4;
+    --az-text-2:    #A0A6B2;
+    --az-text-3:    #6B7280;
+    --az-blue:      #3B82F6;
+    --az-blue-dk:   #2563EB;
+    --az-blue-dr:   #93C5FD;
+    --az-blue-bg:   rgba(59,130,246,0.15);
+    --az-nav:       #3B82F6;
+    --az-red:       #F87171;
+    --az-red-dr:    #FCA5A5;
+    --az-green:     #4ADE80;
+    --az-amber:     #FCD34D;
+
+    /* Override base-theme tokens locally so existing rules using var(--text)
+       etc. inherit dark values inside the teacher shell. */
+    --bg:               #0b0b0d;
+    --bg-elevated:      #1E2128;
+    --bg-card:          #1E2128;
+    --bg-input:         #2A2D35;
+    --text:             #F1F2F4;
+    --text-secondary:   #A0A6B2;
+    --text-tertiary:    #6B7280;
+    --separator:        rgba(255,255,255,0.08);
+    --separator-light:  rgba(255,255,255,0.06);
+    --fill:             #2A2D35;
+    --blue:             #3B82F6;
+}
+.t-shell {
+    background: var(--az-bg);
+    color: var(--az-text);
+    width: min(1900px, calc(100vw - 20px));
+    max-width: none;
+    margin: 0;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 28px 32px 80px;
+    border-radius: 0;
+    font-family: "Segoe UI", "Segoe UI Variable", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    -webkit-font-smoothing: auto;
+    -moz-osx-font-smoothing: auto;
+}
+@media (max-width: 900px) {
+    .t-shell {
+        width: calc(100vw - 12px);
+        padding: 22px 18px 64px;
+    }
+}
+.t-shell, .t-shell p, .t-shell span, .t-shell div, .t-shell td, .t-shell li, .t-shell a {
+    font-weight: 400;
+}
+/* Header */
+.t-shell .t-head { border-bottom: 1px solid var(--az-border-2); }
+.t-shell .t-eyebrow { color: var(--az-text-3); font-size: 11px; letter-spacing: 0.16em; }
+.t-shell .t-title  { color: var(--az-text); font-size: 22px; letter-spacing: -0.3px; font-weight: 600; line-height: 1.2; }
+.t-shell .t-sub    { color: var(--az-text-2); font-size: 13px; margin-top: 4px; }
+/* Tabs ? Canonical command-bar style (CONSISTENT across all teacher pages) */
+.t-shell.t-shell .t-tabs {
+    gap: 0 !important;
+    padding: 0 !important;
+    border-bottom: 1px solid rgba(255,255,255,0.10) !important;
+    margin-bottom: 22px !important;
+    display: flex; flex-wrap: wrap;
+}
+.t-shell.t-shell .t-tabs a,
+.t-shell.t-shell .t-tabs a * {
+    padding: 12px 18px !important;
+    border-radius: 0 !important;
+    border: none !important;
+    color: #d6d6da !important;
+    background: transparent !important;
+    border-bottom: 2px solid transparent !important;
+    font-weight: 300 !important;
+    font-size: 15px !important;
+    letter-spacing: -0.005em !important;
+    text-decoration: none !important;
+    transition: color .15s ease, border-color .15s ease, background .15s ease !important;
+}
+.t-shell.t-shell .t-tabs a {
+    display: inline-flex; align-items: center;
+}
+.t-shell.t-shell .t-tabs a:hover,
+.t-shell.t-shell .t-tabs a:hover * {
+    color: #2997ff !important;
+    background: transparent !important;
+    border-bottom-color: transparent !important;
+}
+.t-shell.t-shell .t-tabs a.is-active,
+.t-shell.t-shell .t-tabs a.is-active * {
+    color: #2997ff !important;
+    background: transparent !important;
+    border-bottom-color: #2997ff !important;
+}
+/* Cards / rows / tables */
+.t-shell .t-card,
+.t-shell .t-row {
+    background: var(--az-surface);
+    border: 1px solid var(--az-border);
+    border-radius: 2px;
+    box-shadow: 0 1.6px 3.6px rgba(0,0,0,0.08), 0 0.3px 0.9px rgba(0,0,0,0.06);
+}
+.t-shell .t-empty  { background: var(--az-surface); border-color: var(--az-border-2); color: var(--az-text-3); }
+.t-shell .t-table th { color: var(--az-text-3); border-bottom-color: var(--az-border-2); }
+.t-shell .t-table td { color: var(--az-text); border-bottom-color: var(--az-border); }
+/* Buttons */
+.t-shell .t-btn {
+    background: var(--az-surface); color: var(--az-text);
+    border: 1px solid var(--az-border-2); border-radius: 6px;
+    transition: background .12s, border-color .12s;
+}
+.t-shell .t-btn:hover { background: #F3F2F1; border-color: var(--az-text-3); transform: none; }
+.t-shell .t-btn.primary {
+    background: var(--az-blue); color: #fff; border-color: var(--az-blue);
+}
+.t-shell .t-btn.primary:hover { background: var(--az-blue-dk); border-color: var(--az-blue-dk); }
+.t-shell .t-btn.danger {
+    color: var(--az-red); border-color: var(--az-red); background: var(--az-surface);
+}
+.t-shell .t-btn.danger:hover { background: var(--az-red); color: #fff; }
+.t-shell .t-thin-btn,
+.t-shell .t-icon-btn {
+    border-color: var(--az-border-2); color: var(--az-text-2);
+    border-radius: 2px;
+}
+.t-shell .t-thin-btn:hover,
+.t-shell .t-icon-btn:hover { color: var(--az-blue); border-color: var(--az-blue); }
+.t-shell .t-thin-btn.danger { color: var(--az-red); }
+.t-shell .t-thin-btn.danger:hover { background: var(--az-red); border-color: var(--az-red); color: #fff; }
+/* Form fields */
+.t-shell .t-field label { color: var(--az-text-3); }
+.t-shell .t-field input,
+.t-shell .t-field select,
+.t-shell .t-field textarea {
+    background: var(--az-surface); color: var(--az-text);
+    border: 1px solid var(--az-border-2); border-radius: 2px;
+}
+.t-shell .t-field input:focus,
+.t-shell .t-field select:focus,
+.t-shell .t-field textarea:focus { border-color: var(--az-blue); box-shadow: 0 0 0 1px var(--az-blue); }
+/* Chips */
+.t-shell .t-chip          { background: var(--az-blue-bg) !important; color: var(--az-blue-dr) !important; padding: 2px 8px !important; border-radius: 2px !important; font-weight: 500 !important; }
+.t-shell .t-chip.gray     { background: #EDEBE9 !important; color: var(--az-text-2) !important; }
+.t-shell .t-chip.green    { background: #DFF6DD !important; color: var(--az-green) !important; }
+.t-shell .t-chip.amber    { background: #FFF4CE !important; color: #8A6B00 !important; }
+.t-shell .t-chip.red      { background: #FDE7E9 !important; color: var(--az-red) !important; }
+/* Filter dropdown */
+.t-shell .fdd-toggle  { background: var(--az-surface); border-color: var(--az-border-2); color: var(--az-text); border-radius: 2px; }
+.t-shell .fdd-toggle:hover { border-color: var(--az-text-3); }
+.t-shell .fdd-toggle:focus { border-color: var(--az-blue); }
+.t-shell .fdd-panel   { background: var(--az-surface); border-color: var(--az-border-2); border-radius: 2px; box-shadow: 0 6.4px 14.4px rgba(0,0,0,0.13); }
+.t-shell .fdd-item    { color: var(--az-text); }
+.t-shell .fdd-item:hover    { background: #F3F2F1; }
+.t-shell .fdd-item.selected { background: rgba(255,255,255,0.10); color: #f5f5f7; }
+.t-shell .fdd-actions a     { color: var(--az-blue); }
+/* Modal */
+.t-shell .ui-modal { background: #141414; border-color: rgba(255,255,255,0.10); border-radius: 14px; }
+.t-shell .ui-modal h3 { color: var(--az-text); }
+.t-shell .ui-modal p  { color: var(--az-text-2); }
+.t-shell .ui-modal .ui-btn { background: #141414; color: var(--az-text); border-color: rgba(255,255,255,0.12); border-radius: 8px; }
+.t-shell .ui-modal .ui-btn:hover { border-color: rgba(255,255,255,0.28); background: #1A1A1A; }
+.t-shell .ui-modal .ui-btn.danger { background: #dc2626; border-color: #dc2626; }
+.t-shell .ui-modal .ui-btn.danger:hover { background: #b91c1c; border-color: #b91c1c; }
+.t-shell .ui-modal .ui-btn.primary { background: #16a34a; border-color: #16a34a; color: #fff; }
+.t-shell .ui-modal .ui-btn.primary:hover { background: #15803d; border-color: #15803d; }
+
+/* Azure blue banner table headers (Overview, Past papers, Question bank, Paper generator, Year planner) */
+.t-shell .t-table thead th,
+.t-shell table.t-table > thead > tr > th {
+    background: #1e1e22 !important;
+    color: #b8b8c0 !important;
+    border-color: rgba(255,255,255,0.08) !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 10px 14px;
+}
+/* Apply same banner to any generic table inside teacher cards */
+.t-shell .t-card table thead th,
+.t-shell .t-card table > thead > tr > th {
+    background: #1e1e22 !important;
+    color: #b8b8c0 !important;
+    border-color: rgba(255,255,255,0.08) !important;
+    font-weight: 600 !important;
+}
+
+/* Force all text inside the teacher shell to light colours (dark mode). */
+html, body { background: #0b0b0d !important; }
+.t-shell,
+.t-shell *:not(.navbar):not(.navbar *) {
+    color: #F1F2F4 !important;
+}
+/* Restore white text where it must stay white (Azure banners).
+   Uses repeated class for higher specificity than the universal black override. */
+.t-shell.t-shell .t-table thead th,
+.t-shell.t-shell .t-table thead th *,
+.t-shell.t-shell table.t-table > thead > tr > th,
+.t-shell.t-shell table.t-table > thead > tr > th *,
+.t-shell.t-shell .t-card table thead th,
+.t-shell.t-shell .t-card table thead th *,
+.t-shell.t-shell .cap-table thead th,
+.t-shell.t-shell .cap-table thead th *,
+.t-shell.t-shell table thead th,
+.t-shell.t-shell table thead th * { color: #b8b8c0 !important; background: #1e1e22 !important; }
+.t-shell.t-shell .t-card > h2:first-child,
+.t-shell.t-shell .t-card > h2:first-child *,
+.t-shell.t-shell .t-card > h3:first-child,
+.t-shell.t-shell .t-card > h3:first-child *,
+.t-shell.t-shell .t-card > h4:first-child,
+.t-shell.t-shell .t-card > h4:first-child *,
+.t-shell.t-shell .gen-h,
+.t-shell.t-shell .gen-h *,
+.t-shell.t-shell .yp-term-h,
+.t-shell.t-shell .yp-term-h * { color: #FFFFFF !important; }
+/* Active tab keeps its accent */
+.t-shell .t-tabs a.is-active,
+.t-shell .t-tabs a.is-active * { color: var(--az-blue) !important; }
+/* Moderation tab in green */
+.t-shell .t-tabs a.t-mod-link,
+.t-shell .t-tabs a.t-mod-link * { color: #2ecc71 !important; }
+.t-shell .t-tabs a.t-mod-link.is-active,
+.t-shell .t-tabs a.t-mod-link.is-active * { color: #2ecc71 !important; }
+/* Primary/danger buttons keep their on-color text */
+.t-shell .t-btn.primary, .t-shell .t-btn.primary * { color: #f5f5f7 !important; }
+.t-shell .ui-modal .ui-btn.danger, .t-shell .ui-modal .ui-btn.danger * { color: #FFFFFF !important; }
+
+/* ===== Azure blue section banners across teacher pages =====
+   Mirrors the planner "FORMAL ASSESSMENT" header look on:
+   Overview (Recent past papers, Upcoming planner items),
+   Past papers card heading, Question bank card heading,
+   Paper generator (Paper header, Cover/header/footer, Sections & questions, Question bank),
+   Year planner (per-term card header + sub-section labels).
+*/
+.t-shell .t-card > h2:first-child,
+.t-shell .t-card > h3:first-child,
+.t-shell .t-card > h4:first-child,
+.t-shell .gen-h,
+.t-shell .yp-term-h {
+    background: var(--az-blue) !important;
+    color: #FFFFFF !important;
+    padding: 10px 16px !important;
+    margin: -22px -22px 16px !important;   /* span full t-card width (t-card has 22px padding) */
+    border-bottom: 1px solid var(--az-blue) !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    font-size: 13px !important;
+    border-radius: 0 !important;
+    display: block;
+    text-align: center;
+}
+.t-shell .t-card > h2:first-child *,
+.t-shell .t-card > h3:first-child *,
+.t-shell .t-card > h4:first-child *,
+.t-shell .gen-h *,
+.t-shell .yp-section-h *,
+.t-shell .yp-term-h * { color: #FFFFFF !important; }
+/* yp-term has 0 padding; banner sits flush with rounded card top */
+.t-shell .yp-term .yp-term-h {
+    margin: 0 !important;
+    text-align: left;
+    padding: 12px 16px !important;
+    display: flex; justify-content: space-between; align-items: center; gap: 12px;
+}
+/* yp-section-h sits inside the term card body — no negative margin needed */
+.t-shell .yp-section-h {
+    margin: 12px 0 10px !important;
+    padding: 7px 10px !important;
+    border-radius: 0 !important;
+    border: 1px solid rgba(0,120,212,0.20) !important;
+    background: rgba(0,120,212,0.08) !important;
+    text-align: left;
+    border-bottom: 1px solid rgba(0,120,212,0.20) !important;
+}
+.t-shell.t-shell .yp-section-h,
+.t-shell.t-shell .yp-section-h * {
+    color: #004578 !important;
+}
+.t-shell .yp-term > .yp-section { padding-top: 0 !important; }
+.t-shell .yp-term > .yp-section.is-empty { display: block; }
+/* Generator h3 (.gen-h) sits inside its own panels – mirror t-card behavior */
+.t-shell .gen-h {
+    margin: -16px -16px 14px !important;
+    text-align: left;
+    padding: 10px 16px !important;
+}
+
+.t-head { display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap; padding-bottom:18px; border-bottom:1px solid var(--separator-light); margin-bottom:22px; }
+.t-eyebrow { font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:var(--text-tertiary); margin:0 0 6px; }
+.t-title { font-size: 22px; font-weight:700; letter-spacing:-0.3px; line-height:1.2; margin:0; color:var(--text); }
+.t-sub { color:var(--text-secondary); margin:4px 0 0; font-size:13px; }
+.t-tabs { display:flex; gap:6px; flex-wrap:wrap; margin: -10px 0 26px; }
+.t-tabs a { padding:8px 14px; font-size:13px; border-radius:999px; color:var(--text-secondary); border:1px solid var(--separator-light); background:transparent; text-decoration:none; }
+.t-tabs a.is-active { background:var(--text); color:var(--bg); border-color:var(--text); }
+.t-card { background:var(--bg-elevated); border:1px solid var(--separator-light); border-radius:14px; padding:22px; }
+.t-grid { display:grid; gap:16px; }
+.t-grid.cols-2 { grid-template-columns:repeat(2, minmax(0,1fr)); }
+.t-grid.cols-3 { grid-template-columns:repeat(3, minmax(0,1fr)); }
+.t-grid.cols-4 { grid-template-columns:repeat(4, minmax(0,1fr)); }
+@media (max-width: 880px){ .t-grid.cols-3, .t-grid.cols-4 { grid-template-columns:repeat(2, minmax(0,1fr)); } .t-grid.cols-2 { grid-template-columns:1fr; } }
+.t-stat { display:flex; flex-direction:column; gap:4px; }
+.t-stat .num { font-size:30px; font-weight:600; letter-spacing:-0.6px; }
+.t-stat .lbl { font-size:12px; letter-spacing:0.16em; text-transform:uppercase; color:var(--text-tertiary); }
+.t-btn { display:inline-flex; align-items:center; gap:8px; padding:9px 16px; border-radius:10px; font-size:13px; font-weight:500; border:1px solid var(--separator-light); background:var(--bg-elevated); color:var(--text); text-decoration:none; cursor:pointer; }
+.t-btn.primary { background:var(--text); color:var(--bg); border-color:var(--text); }
+.t-btn.danger { color:#DC2626; border-color:rgba(220,38,38,0.3); background:transparent; }
+.t-btn:hover { transform:translateY(-1px); }
+.t-row { display:flex; align-items:center; justify-content:space-between; gap:14px; padding:14px 16px; border:1px solid var(--separator-light); border-radius:12px; background:var(--bg-elevated); }
+.t-row + .t-row { margin-top:8px; }
+.t-row h4 { margin:0 0 3px; font-size:15px; font-weight:600; }
+.t-row p { margin:0; color:var(--text-secondary); font-size:12.5px; }
+.t-chip { display:inline-flex; align-items:center; gap:6px; padding:3px 10px; border-radius:999px; font-size:11px; background:rgba(0,120,212,0.10); color:#0078D4; font-weight:500; white-space:nowrap; }
+.t-chip.gray { background:rgba(120,120,128,0.14); color:var(--text-secondary); }
+.t-chip.green { background:rgba(34,197,94,0.14); color:#16A34A; }
+.t-chip.amber { background:rgba(245,158,11,0.14); color:#D97706; }
+.t-chip.red { background:rgba(220,38,38,0.14); color:#DC2626; }
+.t-form-grid { display:grid; gap:14px; grid-template-columns:1fr 1fr; }
+@media (max-width: 720px){ .t-form-grid { grid-template-columns:1fr; } }
+.t-field { display:flex; flex-direction:column; gap:6px; }
+.t-field.span-2 { grid-column: 1 / -1; }
+.t-field > label {
+    font-size:12px;
+    letter-spacing:0.10em;
+    text-transform:uppercase;
+    color:var(--text-tertiary);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.t-field input, .t-field select, .t-field textarea {
+    background:var(--bg); border:1.5px solid var(--separator-light); border-radius:10px;
+    padding:11px 13px; font-size:14px; color:var(--text); outline:none; font-family:inherit;
+}
+.t-field textarea { min-height:110px; resize:vertical; }
+.t-field input:focus, .t-field select:focus, .t-field textarea:focus { border-color:var(--blue); }
+.t-empty { padding:48px 20px; text-align:center; color:var(--text-tertiary); border:1px dashed var(--separator-light); border-radius:14px; }
+.t-empty i { font-size:36px; opacity:0.4; margin-bottom:10px; display:block; }
+.t-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border: 1px solid var(--separator-light);
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--az-surface, #FFFFFF);
+}
+.t-table th, .t-table td {
+    text-align: left;
+    padding: 12px 14px;
+    font-size: 13.5px;
+    line-height: 1.45;
+    border-bottom: 1px solid var(--separator-light);
+}
+.t-table th {
+    font-size: 11.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+    font-weight: 600;
+    white-space: nowrap;
+}
+.t-table td { color: var(--az-text, #1f1f1f); }
+.t-table thead tr:first-child th:first-child { border-top-left-radius: 10px; }
+.t-table thead tr:first-child th:last-child { border-top-right-radius: 10px; }
+.t-table tbody tr:last-child td { border-bottom: none; }
+.t-table tbody tr:nth-child(even) td { background: transparent; }
+
+/* ===== Shared minimal styling for all teacher pages ===== */
+
+/* Subtle hover highlight for easier row scanning. */
+.t-table tbody tr td,
+[data-theme="dark"] .t-table tbody tr td { border-bottom: none !important; }
+.t-table tbody tr:hover td,
+[data-theme="dark"] .t-table tbody tr:hover td { background: transparent !important; }
+.t-table tbody tr:hover td:first-child { border-top-left-radius: 6px; border-bottom-left-radius: 6px; }
+.t-table tbody tr:hover td:last-child  { border-top-right-radius: 6px; border-bottom-right-radius: 6px; }
+
+/* Chips ? flat thin text everywhere in teacher pages */
+.t-chip, .t-chip.gray, .t-chip.green, .t-chip.amber, .t-chip.red {
+    background: transparent !important;
+    color: var(--text-secondary) !important;
+    font-weight: 300 !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    font-size: 12.5px !important;
+}
+
+/* Thin outlined button (replacement for solid t-btn where used inline) */
+.t-thin-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 7px 14px;
+    background: transparent;
+    border: 1px solid rgba(127,127,127,0.30);
+    border-radius: 6px;
+    color: inherit;
+    font-size: 13px; font-weight: 400;
+    cursor: pointer;
+    text-decoration: none;
+    transition: color .15s, border-color .15s;
+}
+.t-thin-btn:hover { color: #0078D4; border-color: #0078D4; background: transparent; }
+.t-thin-btn.danger { color: #C42B1C; }
+.t-thin-btn.danger:hover { color: #fff; border-color: #C42B1C; background: #C42B1C; }
+.t-thin-btn svg { width: 14px; height: 14px; }
+
+/* Square icon-only button */
+.t-icon-btn {
+    display: inline-flex; align-items: center; justify-content: center;
+    width: 32px; height: 32px;
+    background: #2A2D35;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 6px;
+    color: #A0A6B2;
+    cursor: pointer;
+    margin-left: 6px;
+    transition: color .15s, border-color .15s, background .15s, box-shadow .15s;
+    text-decoration: none;
+    padding: 0;
+}
+.t-icon-btn:hover { color: #0078D4; border-color: #0078D4; background: #F3F9FD; box-shadow: 0 1px 2px rgba(0,0,0,0.06); }
+.t-icon-btn.danger { color: #C42B1C; border-color: #E5BAB4; background: #FFFFFF; }
+.t-icon-btn.danger:hover { color: #FFFFFF !important; border-color: #C42B1C !important; background: #C42B1C !important; box-shadow: 0 1.5px 4px rgba(196,43,28,0.30); }
+.t-icon-btn.danger:hover svg { stroke: #FFFFFF; }
+.t-icon-btn.danger:active { background: #A82218 !important; border-color: #A82218 !important; }
+.t-icon-btn:focus-visible { outline: 2px solid #0078D4; outline-offset: 1px; }
+.t-icon-btn svg { width: 16px; height: 16px; stroke-width: 1.1; }
+.t-icon-btn svg * { stroke-width: 1.1; }
+
+/* Filter / select dropdown (.fdd) */
+.fdd { position: relative; }
+.fdd-toggle {
+    display: flex; align-items: center; justify-content: space-between;
+    width: 100%; min-height: 34px;
+    padding: 6px 10px;
+    background: var(--bg-input, rgba(127,127,127,0.08));
+    border: 1px solid rgba(127,127,127,0.30);
+    border-radius: 6px;
+    color: inherit;
+    cursor: pointer;
+    font-size: 13px;
+    text-align: left;
+    font-family: inherit;
+}
+.fdd-toggle:hover { border-color: rgba(127,127,127,0.55); }
+.fdd-toggle:focus { outline: none; border-color: var(--blue, #0078D4); }
+.fdd-toggle .caret { margin-left: 8px; opacity: 0.6; }
+.fdd-toggle .fdd-label {
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.fdd-panel {
+    position: absolute; top: calc(100% + 4px); left: 0; right: 0; z-index: 50;
+    max-height: 280px; overflow-y: auto;
+    background: var(--bg-card, var(--bg-elevated, #1f1f1f));
+    border: 1px solid rgba(127,127,127,0.35);
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    padding: 4px 0;
+    display: none;
+}
+.fdd.open .fdd-panel { display: block; }
+.fdd-item {
+    display: flex; align-items: center; gap: 8px;
+    padding: 7px 12px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text);
+}
+.fdd-item:hover { background: rgba(127,127,127,0.12); }
+.fdd-item.selected { background: rgba(255,255,255,0.10); color: #f5f5f7; }
+.fdd-item input { margin: 0; }
+.fdd-actions {
+    display: flex; justify-content: space-between;
+    padding: 6px 10px; border-bottom: 1px solid rgba(127,127,127,0.18);
+    font-size: 12px;
+}
+.fdd-actions a { cursor: pointer; color: var(--blue, #0078D4); text-decoration: none; }
+.fdd-actions a:hover { text-decoration: underline; }
+
+/* Confirmation modal */
+.ui-modal-backdrop {
+    position: fixed; inset: 0; z-index: 1000;
+    background: transparent;
+    display: none;
+    pointer-events: none;
+}
+.ui-modal-backdrop.open { display: block; }
+.ui-modal-backdrop.no-overlay { background: transparent; }
+.ui-modal {
+    position: fixed;
+    background: #141414;
+    border: 1px solid rgba(255,255,255,0.10);
+    border-radius: 14px;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.55);
+    width: min(360px, calc(100vw - 32px));
+    padding: 18px 18px 14px;
+    pointer-events: auto;
+}
+.ui-modal h3 { margin: 0 0 8px; font-size: 17px; font-weight: 500; color: var(--text); }
+.ui-modal p  { margin: 0 0 18px; color: var(--text-secondary); font-size: 13.5px; line-height: 1.5; }
+.ui-modal-actions { display: flex; justify-content: flex-end; gap: 10px; }
+.ui-modal .ui-btn {
+    padding: 8px 16px; border-radius: 8px;
+    background: #141414; border: 1px solid rgba(255,255,255,0.12);
+    color: var(--text); font-size: 13px; cursor: pointer;
+    font-family: inherit;
+}
+.ui-modal .ui-btn:hover { border-color: rgba(255,255,255,0.28); background: #1A1A1A; }
+.ui-modal .ui-btn.danger { background: #dc2626; border-color: #dc2626; color: #fff; }
+.ui-modal .ui-btn.danger:hover { background: #b91c1c; border-color: #b91c1c; }
+.ui-modal .ui-btn.primary { background: #16a34a; border-color: #16a34a; color: #fff; }
+.ui-modal .ui-btn.primary:hover { background: #15803d; border-color: #15803d; }
+</style>
+
+<style>
+/* ============================================================
+   CAPS Studio — Sidebar shell (all teacher pages)
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+
+.cs-app {
+    display: flex;
+    position: fixed;
+    inset: 0;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Helvetica, Arial, sans-serif;
+}
+
+/* ---- SIDEBAR ---- */
+.cs-sidebar {
+    width: 198px;
+    min-width: 198px;
+    background: #141414;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    height: 100dvh;
+    max-height: 100vh;
+    max-height: 100dvh;
+    overflow: hidden;
+    position: relative;
+    z-index: 10;
+}
+.cs-app.sidebar-collapsed .cs-sidebar {
+    display: none;
+}
+/* Sidebar close button (inside the logo row) */
+.cs-sidebar-close {
+    margin-left: auto;
+    flex-shrink: 0;
+    width: 28px; height: 28px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    color: rgba(255,255,255,0.35);
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 16px;
+    transition: background .15s, color .15s;
+    text-decoration: none;
+}
+.cs-sidebar-close:hover { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.85); }
+/* Sidebar open button (in the t-head, hidden when sidebar is open) */
+.cs-sidebar-open {
+    display: none;
+    width: 34px; height: 34px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.12);
+    background: #141414;
+    color: rgba(255,255,255,0.65);
+    cursor: pointer;
+    align-items: center; justify-content: center;
+    font-size: 15px;
+    flex-shrink: 0;
+    transition: background .15s, color .15s;
+}
+.cs-sidebar-open:hover { background: #2a2d35; color: #fff; }
+.cs-app.sidebar-collapsed .cs-sidebar-open { display: flex; }
+html.light .cs-sidebar-open { background: #fff; border-color: #e2e8f0; color: #374151; }
+html.light .cs-sidebar-open:hover { background: #f1f5f9; }
+.cs-logo {
+    display: flex; align-items: center; gap: 9px;
+    padding: 16px 16px 12px;
+    text-decoration: none;
+}
+.cs-logo-icon {
+    width: 28px; height: 28px; background: #2a2d35;
+    border-radius: 7px;
+    display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.cs-logo-icon i { color: #fff; font-size: 14px; }
+.cs-logo-text { font-size: 14px; font-weight: 700; color: #ffffff; letter-spacing: -0.3px; }
+
+.cs-nav { flex: 1; padding: 6px 10px; display: flex; flex-direction: column; gap: 1px; overflow-y: auto; min-height: 0; }
+.cs-nav-item {
+    display: flex; align-items: center; gap: 9px;
+    padding: 6px 10px;
+    border-radius: 7px;
+    text-decoration: none;
+    font-size: 12px; font-weight: 300;
+    color: rgba(255,255,255,0.58) !important;
+    transition: background .15s, color .15s;
+}
+.cs-nav-item i { font-size: 13px; width: 16px; text-align: center; flex-shrink: 0; color: inherit !important; }
+.cs-nav-item svg { width: 15px; height: 15px; flex-shrink: 0; stroke: currentColor; }
+.cs-nav-item:hover { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.90) !important; }
+.cs-nav-item.active { background: rgba(255,255,255,0.13); color: #ffffff !important; font-weight: 400; }
+.cs-nav-item.active i { color: #ffffff !important; }
+.cs-nav-item.mod-link { color: rgba(74,222,128,0.75) !important; }
+.cs-nav-item.mod-link:hover, .cs-nav-item.mod-link.active { color: #4ADE80 !important; }
+
+.cs-sidebar-footer { padding: 16px 12px 28px; border-top: 1px solid rgba(255,255,255,0.08); flex-shrink: 0; }
+.cs-user-row {
+    display: flex; align-items: center; gap: 10px;
+    padding: 8px 10px; border-radius: 8px; margin-bottom: 2px;
+    text-decoration: none; transition: background .15s;
+}
+.cs-user-row:hover { background: rgba(255,255,255,0.06); }
+.cs-avatar {
+    width: 34px; height: 34px; border-radius: 50%;
+    background: #3a3f4b;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; overflow: hidden;
+    font-size: 13px; font-weight: 600; color: #fff !important;
+}
+.cs-avatar img { width: 100%; height: 100%; object-fit: cover; }
+.cs-user-name { font-size: 13px; font-weight: 500; color: #ffffff !important; line-height: 1.2; }
+.cs-user-sub  { font-size: 11px; color: rgba(255,255,255,0.45) !important; }
+.cs-signout {
+    display: flex; align-items: center; gap: 8px;
+    padding: 8px 10px; border-radius: 8px;
+    color: rgba(255,255,255,0.50) !important;
+    font-size: 13px; text-decoration: none;
+    transition: color .15s, background .15s;
+}
+.cs-signout:hover { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.80) !important; }
+.cs-signout i { font-size: 14px; }
+
+/* ---- MAIN CONTENT AREA ---- */
+.cs-main-wrap {
+    flex: 1;
+    background: #0b0b0d;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.t-shell {
+    flex: 1;
+    background: #0b0b0d !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    left: 0 !important;
+    transform: none !important;
+    padding: 32px 36px 80px !important;
+    border-radius: 0 !important;
+}
+@media (max-width: 900px) {
+    .cs-sidebar { display: none; }
+    .t-shell { padding: 20px 18px 60px !important; }
+}
+
+/* Dark overrides for t-head */
+.t-shell .t-head { border-bottom-color: rgba(255,255,255,0.08) !important; }
+.t-shell .t-eyebrow { color: #6B7280 !important; }
+.t-shell .t-title { color: #F1F2F4 !important; font-size: 22px !important; font-weight: 600 !important; }
+.t-shell .t-sub { color: #A0A6B2 !important; }
+
+/* Card banners in dark */
+.t-shell .t-card > h2:first-child,
+.t-shell .t-card > h3:first-child,
+.t-shell .t-card > h4:first-child,
+.t-shell .gen-h,
+.t-shell .yp-term-h {
+    background: #2563EB !important;
+    color: #FFFFFF !important;
+    border-bottom-color: rgba(255,255,255,0.10) !important;
+}
+
+/* Table even rows in dark */
+.t-table tbody tr:nth-child(even) td { background: transparent !important; }
+
+/* Kill the global lms_base tr:hover white flash inside the teacher shell */
+.cs-app tbody tr:hover,
+.cs-app .t-table tbody tr:hover td,
+.cs-app .t-card table tbody tr:hover td { background: transparent !important; }
+
+/* fdd panel dark */
+.t-shell .fdd-item:hover { background: rgba(255,255,255,0.07) !important; }
+.t-shell .fdd-item.selected { background: rgba(255,255,255,0.10) !important; color: #f5f5f7 !important; }
+
+/* icon btn dark hover */
+.t-icon-btn:hover { color: #ffffff !important; border-color: rgba(255,255,255,0.18) !important; background: rgba(255,255,255,0.08) !important; }
+.t-icon-btn.danger { color: #F87171 !important; border-color: rgba(248,113,113,0.35) !important; background: #2A2D35 !important; }
+.t-icon-btn.danger:hover { color: #fff !important; border-color: #F87171 !important; background: #F87171 !important; }
+
+/* t-btn dark */
+.t-shell .t-btn { background: transparent !important; color: #f5f5f7 !important; border-color: rgba(255,255,255,0.08) !important; border-radius: 8px !important; box-shadow: none !important; }
+.t-shell .t-btn:hover { background: #1A1A1A !important; border-color: rgba(255,255,255,0.18) !important; }
+.t-shell .t-btn.primary { background: transparent !important; color: #f5f5f7 !important; border-color: rgba(255,255,255,0.08) !important; }
+.t-shell .t-btn.primary:hover { background: #1A1A1A !important; border-color: rgba(255,255,255,0.18) !important; }
+.t-shell .t-btn.danger { color: #F87171 !important; border-color: rgba(248,113,113,0.35) !important; background: transparent !important; }
+.t-shell .t-btn.danger:hover { background: rgba(248,113,113,0.10) !important; border-color: rgba(248,113,113,0.6) !important; color: #F87171 !important; }
+
+/* thin-btn dark */
+.t-thin-btn { border-color: rgba(255,255,255,0.15) !important; color: #A0A6B2 !important; }
+.t-thin-btn:hover { color: #ffffff !important; border-color: rgba(255,255,255,0.18) !important; }
+.t-thin-btn.danger { color: #F87171 !important; border-color: rgba(248,113,113,0.35) !important; }
+.t-thin-btn.danger:hover { color: #fff !important; border-color: #F87171 !important; background: #F87171 !important; }
+
+/* chips dark */
+.t-chip, .t-chip.gray, .t-chip.green, .t-chip.amber, .t-chip.red {
+    color: #A0A6B2 !important;
+}
+
+/* fields dark */
+.t-shell .t-field input,
+.t-shell .t-field select,
+.t-shell .t-field textarea {
+    background: #2A2D35 !important;
+    border-color: rgba(255,255,255,0.12) !important;
+    color: #F1F2F4 !important;
+}
+.t-shell .t-field label { color: #6B7280 !important; }
+
+/* modal dark */
+.ui-modal { background: #141414 !important; border-color: rgba(255,255,255,0.10) !important; }
+.ui-modal h3 { color: #F1F2F4 !important; }
+.ui-modal p  { color: #A0A6B2 !important; }
+.ui-modal .ui-btn { background: #1f1f1f !important; color: #F1F2F4 !important; border-color: rgba(255,255,255,0.12) !important; }
+.ui-modal .ui-btn:hover { background: #262626 !important; border-color: rgba(255,255,255,0.22) !important; }
+.ui-modal .ui-btn.danger { background: #dc2626 !important; border-color: #dc2626 !important; color: #fff !important; }
+.ui-modal .ui-btn.primary { background: #16a34a !important; border-color: #16a34a !important; color: #fff !important; }
+.ui-modal .ui-btn.primary:hover { background: #15803d !important; border-color: #15803d !important; }
+
+/* empty state dark */
+.t-shell .t-empty { border-color: rgba(255,255,255,0.08) !important; color: #6B7280 !important; background: transparent !important; }
+</style>
+
+{% set ep = request.endpoint or '' %}
+
+<div class="cs-app" id="csApp">
+
+    {# ======== SIDEBAR ======== #}
+    <aside class="cs-sidebar">
+        <a href="{{ url_for('teacher_dashboard') }}" class="cs-logo">
+            <div class="cs-logo-icon"><i class="fas fa-graduation-cap"></i></div>
+            <span class="cs-logo-text">CAPS Studio</span>
+            <button class="cs-sidebar-close" id="sidebarClose" title="Close sidebar" aria-label="Close sidebar">&#8249;</button>
+        </a>
+        <nav class="cs-nav">
+            <a href="{{ url_for('teacher_dashboard') }}" class="cs-nav-item {% if ep == 'teacher_dashboard' %}active{% endif %}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/></svg><span>Dashboard</span>
+            </a>
+            <a href="{{ url_for('teacher_bank') }}" class="cs-nav-item {% if ep.startswith('teacher_bank') %}active{% endif %}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg><span>Question Bank</span>
+            </a>
+            <a href="{{ url_for('teacher_papers_generated') }}" class="cs-nav-item {% if 'paper_edit' in ep or 'papers_generated' in ep or 'paper_preview' in ep or 'paper_memo' in ep %}active{% endif %}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><line x1="10" y1="9" x2="8" y2="9"/></svg><span>Paper Generator</span>
+            </a>
+            <a href="{{ url_for('teacher_moderation_queue') }}" class="cs-nav-item mod-link {% if 'moderation' in ep %}active{% endif %}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg><span>Moderation</span>
+            </a>
+            <a href="{{ url_for('teacher_papers') }}" class="cs-nav-item {% if ep.startswith('teacher_paper') and 'generator' not in ep and 'generated' not in ep and 'edit' not in ep and 'preview' not in ep and 'memo' not in ep %}active{% endif %}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 14l1.45-2.9A2 2 0 0 1 9.24 10H20a2 2 0 0 1 1.94 2.5l-1.55 6A2 2 0 0 1 18.45 20H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h3.93a2 2 0 0 1 1.66.9l.82 1.2a2 2 0 0 0 1.66.9H18a2 2 0 0 1 2 2v2"/></svg><span>Past Papers</span>
+            </a>
+            <a href="{{ url_for('teacher_formal_assessment') }}" class="cs-nav-item {% if ep == 'teacher_formal_assessment' %}active{% endif %}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-2"/><rect x="9" y="3" width="6" height="4" rx="1"/><line x1="9" y1="12" x2="15" y2="12"/><line x1="9" y1="16" x2="13" y2="16"/></svg><span>Formal Assessment</span>
+            </a>
+            <a href="{{ url_for('teacher_planner') }}" class="cs-nav-item {% if ep.startswith('teacher_planner') %}active{% endif %}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg><span>Year Planner</span>
+            </a>
+            <a href="{{ url_for('teacher_team') }}" class="cs-nav-item {% if ep.startswith('teacher_team') %}active{% endif %}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg><span>Team</span>
+            </a>
+            {% if current_user.is_authenticated and current_user.is_admin %}
+            <a href="{{ url_for('admin_users') }}" class="cs-nav-item {% if ep and ep.startswith('admin_user') %}active{% endif %}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M16 11l2 2 4-4"/></svg><span>Users</span>
+            </a>
+            {% endif %}
+            <a href="{{ url_for('teacher_instruction_templates_list') }}" class="cs-nav-item {% if 'instruction_template' in ep %}active{% endif %}">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg><span>Templates</span>
+            </a>
+        </nav>
+        <div class="cs-sidebar-footer">
+            <a href="{{ url_for('teacher_profile') }}" class="cs-user-row">
+                <div class="cs-avatar">
+                    {% if current_user.profile_pic %}
+                        <img src="{{ url_for('static', filename=current_user.profile_pic) }}" alt="">
+                    {% else %}
+                        {{ (current_user.first_name[:1] if current_user.first_name else current_user.username[:1])|upper }}
+                    {% endif %}
+                </div>
+                <div>
+                    <div class="cs-user-name">{{ current_user.full_name }}</div>
+                    <div class="cs-user-sub">{% if current_user.school_name %}{{ current_user.school_name }}{% else %}Set school{% endif %}</div>
+                </div>
+            </a>
+            <a href="{{ url_for('logout') }}" class="cs-signout">
+                <i class="fas fa-arrow-right-from-bracket"></i><span>Sign out</span>
+            </a>
+        </div>
+    </aside>
+
+    {# ======== MAIN CONTENT ======== #}
+    <div class="cs-main-wrap">
+        <div class="t-shell">
+            <div class="t-head">
+                <div style="display:flex;align-items:center;gap:12px;">
+                    <button class="cs-sidebar-open" id="sidebarOpen" title="Open sidebar" aria-label="Open sidebar"><i class="fas fa-bars"></i></button>
+                    <div>
+                        <p class="t-eyebrow">{% block t_eyebrow %}Teacher workspace{% endblock %}</p>
+                        <h1 class="t-title">{% block t_title %}Teachers{% endblock %}</h1>
+                        <p class="t-sub">{% block t_sub %}Tools for planning, assessment and content delivery.{% endblock %}</p>
+                    </div>
+                </div>
+                <div>{% block t_action %}{% endblock %}</div>
+            </div>
+            {% block t_body %}{% endblock %}
+        </div>
+    </div>
+
+</div>
+
+<div class="ui-modal-backdrop" id="confirmBackdrop">
+    <div class="ui-modal" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+        <h3 id="confirmTitle">Confirm</h3>
+        <p id="confirmMessage">Are you sure?</p>
+        <div class="ui-modal-actions">
+            <button type="button" class="ui-btn" id="confirmCancel">Cancel</button>
+            <button type="button" class="ui-btn danger" id="confirmOk">Delete</button>
+        </div>
+    </div>
+</div>
+
+<script>
+(function(){
+    // ---- Global confirmation modal ---------------------------------------
+    var backdrop = document.getElementById('confirmBackdrop');
+    var msgEl    = document.getElementById('confirmMessage');
+    var okBtn    = document.getElementById('confirmOk');
+    var cancel   = document.getElementById('confirmCancel');
+    var pending  = null;
+
+    function close(){
+        backdrop.classList.remove('open');
+        backdrop.classList.remove('no-overlay');
+        pending = null;
+    }
+    cancel.addEventListener('click', close);
+    backdrop.addEventListener('click', function(e){ if (e.target === backdrop) close(); });
+    document.addEventListener('keydown', function(e){
+        if (e.key === 'Escape' && backdrop.classList.contains('open')) close();
+    });
+    okBtn.addEventListener('click', function(){
+        if (!pending) return;
+        var f = pending;
+        close();
+        f.dataset.confirmed = '1';
+        if (typeof f.requestSubmit === 'function') f.requestSubmit();
+        else f.submit();
+    });
+
+    // Move the modal markup to <body> so it isn't affected by any ancestor
+    // transform/filter/contain that turns position:fixed into absolute.
+    if (backdrop && backdrop.parentNode !== document.body) {
+        document.body.appendChild(backdrop);
+    }
+
+    document.querySelectorAll('form[data-confirm]').forEach(function(f){
+        f.addEventListener('submit', function(e){
+            if (f.dataset.confirmed === '1') {
+                f.dataset.confirmed = '0';
+                return;
+            }
+            e.preventDefault();
+            msgEl.textContent = f.dataset.confirm || 'Are you sure?';
+            // Customise the OK button per-form (label + variant).
+            var okLabel = f.dataset.confirmOk || 'Delete';
+            okBtn.textContent = okLabel;
+            var variant = (f.dataset.confirmVariant || 'danger').toLowerCase();
+            okBtn.classList.remove('danger', 'primary');
+            if (variant === 'primary') okBtn.classList.add('primary');
+            else okBtn.classList.add('danger');
+            pending = f;
+            backdrop.classList.toggle('no-overlay', f.dataset.confirmNoBackdrop === '1');
+            backdrop.classList.add('open');
+            // Position the modal near the triggering form so the user sees it
+            // where they clicked, not in the middle of the page.
+            try {
+                var modal = backdrop.querySelector('.ui-modal');
+                if (modal) {
+                    // Force fixed positioning regardless of any cascade override
+                    modal.style.setProperty('position', 'fixed', 'important');
+                    modal.style.setProperty('left', '0px', 'important');
+                    modal.style.setProperty('top',  '0px', 'important');
+                    modal.style.setProperty('right', 'auto', 'important');
+                    modal.style.setProperty('bottom', 'auto', 'important');
+                    modal.style.setProperty('margin', '0', 'important');
+                    modal.style.setProperty('transform', 'none', 'important');
+                    var rect = f.getBoundingClientRect();
+                    var mw = modal.offsetWidth;
+                    var mh = modal.offsetHeight;
+                    var vw = window.innerWidth;
+                    var vh = window.innerHeight;
+                    var pad = 8;
+                    // Horizontally centred in the viewport, vertically near
+                    // the row that was clicked.
+                    var left = Math.max(pad, (vw - mw) / 2);
+                    var top = rect.top - 8;
+                    if (top + mh > vh - pad) top = vh - mh - pad;
+                    if (top < pad) top = pad;
+                    modal.style.setProperty('left', left + 'px', 'important');
+                    modal.style.setProperty('top',  top  + 'px', 'important');
+                }
+            } catch(_) {}
+        }, false);
+    });
+
+    // ---- Sidebar collapse toggle ---------------------------------------
+    (function(){
+        var app = document.getElementById('csApp');
+        var closeBtn = document.getElementById('sidebarClose');
+        var openBtn  = document.getElementById('sidebarOpen');
+        var KEY = 'sath-sidebar-collapsed';
+        // Restore saved state instantly (no transition on load)
+        if (localStorage.getItem(KEY) === '1') {
+            app.classList.add('sidebar-collapsed');
+        }
+        function toggle() {
+            var collapsed = app.classList.toggle('sidebar-collapsed');
+            localStorage.setItem(KEY, collapsed ? '1' : '0');
+        }
+        if (closeBtn) closeBtn.addEventListener('click', function(e){ e.preventDefault(); toggle(); });
+        if (openBtn)  openBtn.addEventListener('click', toggle);
+    })();
+
+    // ---- Generic .fdd dropdown behaviour ---------------------------------
+    var allDD = document.querySelectorAll('.fdd');
+    allDD.forEach(function(dd){
+        var toggle = dd.querySelector('.fdd-toggle');
+        if (!toggle) return;
+        toggle.addEventListener('click', function(e){
+            e.stopPropagation();
+            allDD.forEach(function(o){ if (o !== dd) o.classList.remove('open'); });
+            dd.classList.toggle('open');
+        });
+    });
+    document.addEventListener('click', function(e){
+        allDD.forEach(function(dd){ if (!dd.contains(e.target)) dd.classList.remove('open'); });
+    });
+
+    // Single-select fdd backed by hidden input + .fdd-item[data-value]
+    document.querySelectorAll('.fdd[data-fdd="single"]').forEach(function(dd){
+        var label  = dd.querySelector('.fdd-label');
+        var hidden = dd.querySelector('input[type="hidden"]');
+        if (!hidden) return;
+        var items  = dd.querySelectorAll('.fdd-item[data-value]');
+        items.forEach(function(it){
+            if (it.dataset.value === hidden.value) it.classList.add('selected');
+            it.addEventListener('click', function(){
+                hidden.value = it.dataset.value;
+                if (label) label.textContent = it.textContent.trim();
+                items.forEach(function(o){ o.classList.remove('selected'); });
+                it.classList.add('selected');
+                dd.classList.remove('open');
+                if (dd.dataset.autoSubmit === '1') {
+                    var form = dd.closest('form');
+                    if (form) form.submit();
+                }
+            });
+        });
+    });
+})();
+</script>
+{% endblock %}

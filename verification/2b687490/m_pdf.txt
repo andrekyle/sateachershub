@@ -1,0 +1,525 @@
+
+
+===== PDF PAGE 1 =====
+NATIONAL
+SENIOR CERTIFICATE
+GRADE 12
+COMPUTER APPLICATIONS TECHNOLOGY P1
+NOVEMBER 2021
+MARKING GUIDELINES
+MARKS: 150
+CENTRE FINAL MARK
+NUMBER
+EXAMINATION
+NUMBER
+QUESTION 1 2 3 4 5 6 7 TOTAL
+POSSIBLE MARK 25 20 21 19 35 15 15 150
+CANDIDATE
+MARK
+MARKER CODE/
+SIGNATURE
+MODERATED
+MARK
+These marking guidelines consist of 13 pages.
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 2 =====
+Computer Applications Technology/P1 2 DBE/November 2021
+NSC Marking Guidelines
+EXAMINATION
+NUMBER
+ Check the accuracy and skill required before awarding a mark throughout.
+QUESTION 1 File name: 1Health Total Q1: 25
+Maximum Candidate
+No Criteria
+Mark Mark
+1.1 Page size 1
+ Page size set to A4  1
+1.2 Line spacing: 2nd paragraph – The following … 1
+ Line spacing set to Multiple, 1.15  1
+1.3 Find and Replace: (Expect 5 occurrences) 3
+ Only exact/lowercase text 'ozone' replaced  1
+ 'ozone' appears in Arial Narrow font  1
+1
+ 'ozone' appears in Bold and Italic 
+1.4 Text box: Nitrogen dioxide … from heart disease. 4
+ Text box inserted  1
+ Size: 9 cm high by 8 cm wide  1
+1
+ All data moved into text box  (No mark if copied)
+1
+ Text box top left corner aligned to 'air'  (Inspection)
+1.5 Columns: DOES IT MAKE … fuels and vehicles. 3
+ Text placed in two columns  1
+ Width of first column set to 8 cm  1
+1
+ Width of space between columns 1 cm 
+1.6 Multilevel List: On the road … keeping windows closed. 7
+(Note to marker: Mark from ruler)
+ Multilevel List applied to given text  1
+ Level 1: Format 1, 2, 3  (No full stop or bracket) 1
+2
+ Level 1: Aligned at 0 cm  text indent at 1 cm
+1
+ Level 2: Format a), b), c) 
+2
+ Level 2: Aligned at 1 cm  text indent at 2 cm 
+1.7 Source changed: UK Health Department 2
+ Type of source: Website  1
+ URL: http://www.airquality.co.uk  1
+1.8 Bibliography 1
+ (Any) automatic bibliography inserted  1
+1.9 Watermark 2
+ Picture 1Clean watermark inserted  1
+ Scale: 150%  1
+1.10 Inspect document 1
+ All hidden text removed  1
+Total for QUESTION 1 [25]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 3 =====
+Computer Applications Technology/P1 3 DBE/November 2021
+NSC Marking Guidelines
+EXAMINATION
+NUMBER
+ Check the accuracy and skill required before awarding a mark throughout.
+ Ignore spelling in all cases where it would not have any impact on the answer.
+QUESTION 2 File name: 2Marine Total Q2: 20
+Maximum Candidate
+No Criteria
+Mark Mark
+2.1 Small caps: UNESCO: Marine Pollution 1
+ Font changed to Small caps  1
+2.2 TOC 3
+ Table of Contents inserted  1
+ Heading 1 style: 1st heading: 'Marine Pollution'  1
+ 'Marine Pollution' at top of the next page  1
+2.3 Hyphenation 1
+ Hyphenation options: None  OR 1
+Paragraph formatting exceptions: Don't hyphenate
+2.4 Caption: Picture 1: © Malik Naumann | Marine Photobank 2
+ Appropriate caption  inserted (Alt + F9) 1
+ Caption is the picture's Alt text:   1
+2.5 Hyperlink: Picture 2: © Chris Deacutis 1
+ Hyperlink removed from picture  (Right click on image 1
+to check if hyperlink is removed)
+2.6 Image: Picture 4: © NOAA 1
+ Restored to original colour  (Not greyscale) 1
+2.7 Cross reference (Accept any picture & page no.) 2
+ Linked to (any) picture IOC UNESCO  1
+ Only page number displays  (Alt + F9) 1
+2.8 Footnote 4
+ Footnote inserted on 'UNEP'  1
+ Footnote numbering format set to A, B, C, …  1
+ Footnote set to 'Restart each page'  1
+1
+ Footnote text inserted  (Environment Programme)
+2.9 Field: NumWords (Alt + F9) {NUMWORDS \*MERGEFORMAT} 1
+ NumWords field inserted  1
+2.10 Page numbering 4
+ Automatic page numbering in Tildes format  1
+ Page numbering inserted in footer  1
+ TOC page and cover page not numbered, third page
+starts as number ~1~  1
+1
+ Page numbering continues on all remaining pages 
+Total for QUESTION 2 [20]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 4 =====
+Computer Applications Technology/P1 4 DBE/November 2021
+NSC Marking Guidelines
+EXAMINATION
+NUMBER
+QUESTION 3 File name: 3Projects Total Q3: 21
+ Mark the questions from the formulae and not the values/answers in the cell.
+ Check against candidate's actual work (Cell references may differ, depending on the
+candidate's response).
+ Candidate may use multiple formulae, cells or 'building blocks' to reach answers.
+ Named ranges can be used instead of cell references.
+ The answers must still be correct even if changes are made to the existing data.
+Maximum Candidate
+No Criteria
+Mark Mark
+Missions/Sheet1 worksheet
+3.1 Cell A1: Picture 2
+ Picture 3Logo inserted  1
+ Fits cell A1  (Mark by inspection) 1
+3.2 Cell A3: Fill 1
+ Pattern fill is the same as cell A2  1
+3.3 Worksheet renamed 1
+ Sheet1 worksheet renamed to Missions  1
+3.4 Cell F3: 2
+=COUNTIF(F6:F55,">55000")
+ COUNTIF and range: (F6:F55)  1
+ Criteria: ">55000"  1
+OR ">R55000"
+OR ">R55 000.00"
+3.5 Column G: Conditional Formatting 5
+= $C6:$C55 ="Air"
+OR
+=$C6 = "Air"
+ Formula:  =C6:C55 ="Air"  2
+ Absolute cell referencing not applied to rows:
+$C6:$C55 OR C6:C55  1
+ Conditional formatting applied to G6:G55  1
+ Format: Any fill colour  1
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 5 =====
+Computer Applications Technology/P1 5 DBE/November 2021
+NSC Marking Guidelines
+EXAMINATION
+NUMBER
+3.6 Cell J6: 4
+=HLOOKUP(D6,Categories!$B$1:$D$2,2,TRUE)
+OR
+=LOOKUP(D6,Categories! $B$1:$D$2)
+OR
+=XLOOKUP(D6, Categories! $B$1:$D$1,
+Categories!$B$2:$D$2,,-1)
+ LOOKUP function appropriately structured  1
+(HLOOKUP OR LOOKUP OR XLOOKUP)
+ Lookup value: D6  1
+ Table array: Categories!$B$1:$D$2  
+1
+OR Categories!$A$1:$D$2
+OR Categories!B1:D2
+OR Categories!A1:D2
+ Row index number: 2  1
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 6 =====
+Computer Applications Technology/P1 6 DBE/November 2021
+NSC Marking Guidelines
+EXAMINATION
+NUMBER
+3.7 Cell K6: 6
+=IF(E6<TODAY(),"Complete",IF(E6-
+TODAY()<=60,"Notify","*"))
+OR
+=IF(E6>=TODAY(),IF((E6-TODAY())<=60,
+"Notify","*"),"Complete")
+OR
+=IF(E6<TODAY(),"Complete",IF(E6-TODAY()>60,
+"*","Notify"))
+OR
+=IF(DAYS(E6,TODAY())<0,"Complete",
+IF(DAYS(E6,TODAY())<=60,"Notify","*"))
+Complete Notify *
+E6<TODAY() E6>=TODAY() and E6>TODAY()+60
+E6-TODAY()<=60
+TODAY() TODAY()+60
+OUTPUT Complete Notify *
+CRITERIA E6 < TODAY() E6 >=TODAY() E6 >
+AND TODAY()+60
+E6-TODAY() OR
+<=60 E6 >=
+TODAY()+60
+DESCRIP- Check E6 for Check for Check whether
+TION current date and current date and E6 is over 60
+before the whether the days after the
+current date current date is current date
+within 60 days of
+E6
+1
+ Function: Nested IF 
+1
+ First condition 
+1
+ Output for first condition 
+1
+ Second condition 
+1
+ Output for second condition 
+1
+ Output for third condition 
+Total for QUESTION 3 [21]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 7 =====
+Computer Applications Technology/P1 7 DBE/November 2021
+NSC Marking Guidelines
+EXAMINATION
+NUMBER
+QUESTION 4 File name: 4Air Total Q4: 19
+ Mark the questions from the formulae and not the values/answers in the cell.
+ Check against candidate's actual work (Cell references may differ, depending on the
+candidate's response).
+ Candidate may use multiple formulae, cells or 'building blocks' to reach answers.
+ Named ranges can be used instead of cell references.
+ The answers must still be correct even if changes are made to the existing data.
+Maximum Candidate
+No Criteria
+Mark Mark
+Quality worksheet
+4.1 Cell D3: 3
+=SMALL(E7:E153,2)
+ Function: SMALL  1
+ Cell range: E7:E153  1
+ 2  1
+4.2 Cell B7: Data Validation 1
+ Data validation source: $J$7:$J$8  1
+4.3 Cell G7: Text functions 4
+=LEFT($D$4,RIGHT(F7,1))
+OR
+=LEFT($D$4,MID(F7,2,1))
+OR
+=RIGHT($D$4,RIGHT(F7,1))
+OR
+=MID($D$4,RIGHT(F7,1))
+ Combination of text functions  1
+ Function: LEFT/RIGHT/MID  1
+ From the text in cell D4  1
+1
+ To extract correct number of characters from cell F7 
+(Note to marker: Accept other text functions such as REPT
+and TEXT if used correctly.)
+4.4 Print area 1
+ Print area set to cell range: A6:H40  1
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 8 =====
+Computer Applications Technology/P1 8 DBE/November 2021
+NSC Marking Guidelines
+EXAMINATION
+NUMBER
+Graph worksheet
+4.5 Cell H10 OR cell H2 5
+=SUMIFS(Quality!H7:H153,Quality!C7:C153,"Eastern
+Cape",Quality!D7:D153,2018)
+ Sum range: Quality!H7:H153  1
+ Criteria range 1: Quality!C7:C153  1
+ Criteria 1: "Eastern Cape"  1
+ Criteria range 2: Quality!D7:D153  1
+ Criteria 2: 2018  OR "2018" 1
+(Note to marker: Accept cell A2 or cell A10 if it refers
+to "Eastern Cape" and cell H1 if it refers to 2018.)
+4.6 Chart/Graph 5
+ Bar chart/graph created 
+1
+ Data selected: =Graph!$A$2:$A$10,Graph!$F$2:$F$10
+ OR 1
+=Graph!$A$1:$A$10,Graph!$F$1:$F$10
+ Bars display from smallest to largest  1
+ Chart title: Health incidents in 2016  1
+ Data labels appear on outside end of each bar 
+1
+Total for QUESTION 4 [19]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 9 =====
+Computer Applications Technology/P1 9 DBE/November 2021
+NSC Marking Guidelines
+EXAMINATION
+NUMBER
+QUESTION 5 File name: 5Save Total Q5: 35
+Maximum Candidate
+No Criteria
+Mark Mark
+Table: tbl5_1
+5.1.1 Field: Coverage 1
+ Field size changed to Decimal  1
+5.1.2 Field: PollutionType 2
+ Display control: Combo Box  1
+ Row Source: 'Air', 'Land', 'Water'  1
+5.1.3 Field: Level 3
+Validation rule: Between 100 And 1000 OR >=100 and
+<=1000 OR >99 and <1001
+ 100 and above  1
+ And  1
+ 1000 and below  1
+5.1.4 Field inserted 2
+ Field name: Evidence  1
+ Field type: Attachment, Hyperlink  1
+Form: frm5_2
+5.2  Form heading changed to 'Survey'  1 5
+ Only date  appears in form footer  2
+ Ion theme applied to the form  1
+1
+ YearBorn field format changed to Medium Date 
+Query: qry5_3
+5.3  Group by RecyclingActivity  1 3
+ Function AVG in DropOff  1
+ Average value displays no decimal places  1
+Query: qry5_4
+5.4  Only Name, Surname, (YearBorn,) Knowledge, 7
+RecyclingActivity, DropOff fields display  1
+ Sorted by Surname ascending  1
+ Knowledge field criteria: 'Yes'  1
+ OR 
+1
+1
+ RecyclingActivity field criteria: 'Very Active' 
+1
+ AND 
+1
+ DropOff field criteria: 15 
+(Expected number of records: 113)
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 10 =====
+Computer Applications Technology/P1 10 DBE/November 2021
+NSC Marking Guidelines
+EXAMINATION
+NUMBER
+Query: qry5_5
+5.5  YearBorn field criteria: >#1990/12/31#  1 5
+OR >=#1991/01/01#
+OR YEAR([YearBorn])>1990
+ Calculated field: NewDrop:[DropOff]*10/100+[DropOff]
+OR [DropOff]*110/100
+OR [DropOff]*1.1
+OR [DropOff]+[DropOff]*0.1
+ NewDrop:  1
+1
+ [DropOff] 
+1
+ * 
+ 10/100 + [DropOff] OR 110/100 OR 1.1 
+1
+(Expected number of records: 58)
+Report: rpt5_6
+5.6  DropOff field inserted and moved to correct position  1 7
+ Grouping inserted on RecyclingActivity  1
+ Any colour applied to the page header   1
+ Sorted by Surname  1
+ Function inserted in group header 
+1
+ = COUNT  (*)  OR any other field
+2
+Total for QUESTION 5 [35]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 11 =====
+Computer Applications Technology/P1 11 DBE/November 2021
+NSC Marking Guidelines
+EXAMINATION
+NUMBER
+QUESTION 6 File name: 6_1Clean, 6_2Pollute Total Q6: 15
+ This question should be marked from the HTML code.
+ Numerical attribute values and single words do not need to be in inverted commas.
+Maximum Candidate
+No Criteria
+Mark Mark
+6_1Clean
+6.1.1 Title tags 2
+<title>12345678</title>
+ Title tags  1
+ Examination number inserted  between two tags 1
+6.1.2 Font colour: Heading: The Global Crisis … 1
+<h1><font color="red">The Global Crisis of Plastic
+Pollution </font></h1>
+
+ Font set to a red colour  1
+6.1.3 Picture 2
+<img src="6_1Plastic.jpg" height="200" width="300"/>
+ Attribute scr changed to src  1
+ File extension png changed to jpg  1
+6.1.4 Table: rowspan 3
+<table border="5" width="300" cellpadding="10">
+<tr>
+<td rowspan="3">Tons per year</td>
+<td>China</td>
+ Only column inserted <td…>…</td>  1
+ Text 'Tons per year' inserted in first column  1
+ Rowspan="3"  1
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 12 =====
+Computer Applications Technology/P1 12 DBE/November 2021
+NSC Marking Guidelines
+EXAMINATION
+NUMBER
+6_2Pollute
+6.2 <body> 6
+<br/>
+<a href="6_1Clean.html">Home Page</a>
+<h2>Types of pollution</h2>
+<hr size="5" color="Black"/>
+<ol>
+<li>Air pollution</li>
+<ul type="square">
+<li>Ground-level ozone</li>
+<li>Carbon monoxide</li>
+<li>Sulphur oxides</li>
+<li>Nitrogen oxides</li>
+<li>Lead</li>
+</ul>
+<li>Water pollution</li>
+<li>Light pollution</li>
+<li>Noise pollution</li>
+<li>Soil pollution</li>
+</ol>
+</body>
+ Hyperlink
+ Tag for hyperlink correctly inserted  1
+ Horizontal line
+ Horizontal rule tag  1
+ size="5" (Accept any size larger than "1") 1
+ Unordered list
+1
+ <ul>…</ul> tags 
+1
+ Type="square" 
+ <li>Lead</li> 
+1
+Closing tag(s) or triangular brackets and nesting
+correctly used.  1 1
+Total for QUESTION 6 [15]
+Copyright reserved Please turn over
+
+
+===== PDF PAGE 13 =====
+Computer Applications Technology/P1 13 DBE/November 2021
+NSC Marking Guidelines
+EXAMINATION
+NUMBER
+QUESTION 7 File names: 7Letter, 7Merge, 7Date, 7Picture Total Q7: 15
+Maximum Candidate
+No Criteria
+Mark Mark
+7Letter, 7Merge
+7.1.1 Form controls 2
+ Form field set to Current Date  (Alt + F9, Form text Date) 1
+ '7' and '14' options appear in drop-down form field
+control  1
+7.1.2 Mail merge (Expect 21 letters) 6
+ 7Letter linked to 7Company  spreadsheet 1
+ Recipients' list is filtered to
+ Level = very high  1
+ Or  OR contains 'high' 1
+ Level = high  1
+ Merge fields inserted for Company name and Level  1
+ Mail merge completed 
+1
+(SELECT * from 'Sheet1$' WHERE 'Level'='very high' OR
+'Level'='high'/'Level' LIKE '%high%')
+7Date: Monthly worksheet
+7.2 Cell D3: 3
+=IF(AND(B3="Low",MONTH(C3)=11),A3," ")
+1
+ Criteria: Test if the level is low 
+2
+ Criteria: Test if the month  is 11 
+7.3 worksheet
+7.3 Filter 3
+ Filtered on column A: Very High  1
+ Filtered on column B: 2021  1
+ Names sorted alphabetically  1
+7Picture
+7.4 7Picture file extracted  1 1
+[15]
+TOTAL 150
+Copyright reserved
